@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const baseUrl = 'https://webtoolkit-pro.netlify.app'
+  const baseUrl = 'https://abusufyan-netizen.github.io/webtoolkit_pro'
   const now = new Date().toISOString()
 
   const pages = [

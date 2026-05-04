@@ -8,7 +8,7 @@ Disallow: /_next/
 User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://webtoolkit-pro.netlify.app/sitemap.xml`
+Sitemap: https://abusufyan-netizen.github.io/webtoolkit_pro/sitemap.xml`
 
   return new NextResponse(robots, {
     status: 200,
