@@ -2,63 +2,46 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
   const baseUrl = 'https://webtoolkit-pro.netlify.app'
-  
+  const now = new Date().toISOString()
+
+  const pages = [
+    { loc: '', priority: '1.0', freq: 'weekly' },
+    { loc: '/tools', priority: '0.9', freq: 'weekly' },
+    { loc: '/blog', priority: '0.8', freq: 'weekly' },
+    { loc: '/about', priority: '0.6', freq: 'monthly' },
+    { loc: '/contact', priority: '0.5', freq: 'monthly' },
+    { loc: '/privacy', priority: '0.3', freq: 'yearly' },
+    { loc: '/terms', priority: '0.3', freq: 'yearly' },
+    { loc: '/tools/json-formatter', priority: '0.8', freq: 'monthly' },
+    { loc: '/tools/password-generator', priority: '0.8', freq: 'monthly' },
+    { loc: '/tools/base64-encoder', priority: '0.8', freq: 'monthly' },
+    { loc: '/tools/url-encoder', priority: '0.8', freq: 'monthly' },
+    { loc: '/tools/lorem-ipsum', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/color-picker', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/word-counter', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/case-converter', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/timestamp-converter', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/binary-converter', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/hash-generator', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/html-encoder', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/css-unit-converter', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/uuid-generator', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/markdown-previewer', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/meta-tag-generator', priority: '0.7', freq: 'monthly' },
+  ]
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${baseUrl}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools/json-formatter</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools/password-generator</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools/base64-encoder</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools/url-encoder</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools/lorem-ipsum</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/tools/color-picker</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+${pages.map(p => `  <url>
+    <loc>${baseUrl}${p.loc}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>${p.freq}</changefreq>
+    <priority>${p.priority}</priority>
+  </url>`).join('\n')}
 </urlset>`
 
   return new NextResponse(sitemap, {
     status: 200,
-    headers: {
-      'Content-Type': 'application/xml',
-    },
+    headers: { 'Content-Type': 'application/xml' },
   })
 }

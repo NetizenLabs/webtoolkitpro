@@ -1,11 +1,21 @@
 import React from 'react'
 import './globals.css'
+import Header from '@/components/ui/Header'
+import Footer from '@/components/ui/Footer'
 
 export const metadata = {
   title: 'WebToolkit Pro - Free Online Developer Tools',
-  description: 'Free online web developer tools and utilities',
+  description: 'Free, premium online developer tools and utilities. JSON formatter, password generator, Base64 encoder, color picker, and 10+ more tools for web professionals.',
+  keywords: 'developer tools, JSON formatter, password generator, base64 encoder, online tools, web development, free tools',
   verification: {
     google: 'FftPyShaOpCI3ca1Cx9epz02Cl9CQ0cCLl87Kc69Iy8',
+  },
+  openGraph: {
+    title: 'WebToolkit Pro - Free Online Developer Tools',
+    description: 'Free, premium online developer tools and utilities for web professionals.',
+    url: 'https://webtoolkit-pro.netlify.app',
+    siteName: 'WebToolkit Pro',
+    type: 'website',
   },
 }
 
@@ -16,16 +26,16 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      </head>
+      <body className="bg-white text-gray-900 antialiased" style={{ fontFamily: 'Inter, sans-serif' }}>
         <div className="min-h-screen flex flex-col">
-          {children}
-          <footer className="bg-gray-900 text-white py-8 mt-auto">
-            <div className="max-w-6xl mx-auto px-4 text-center">
-              <p className="text-gray-400">
-                &copy; 2024 WebToolkit Pro. Free online developer tools.
-              </p>
-            </div>
-          </footer>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
