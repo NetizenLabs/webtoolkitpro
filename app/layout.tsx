@@ -25,6 +25,9 @@ export const metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  other: {
+    'google-adsense-account': 'ca-pub-4234692080899883',
+  },
 }
 
 interface RootLayoutProps {
