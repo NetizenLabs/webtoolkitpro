@@ -27,6 +27,7 @@ export async function GET() {
     { loc: '/tools/html-encoder', priority: '0.7', freq: 'monthly' },
     { loc: '/tools/css-unit-converter', priority: '0.7', freq: 'monthly' },
     { loc: '/tools/uuid-generator', priority: '0.7', freq: 'monthly' },
+    { loc: '/tools/js-minifier', priority: '0.8', freq: 'monthly' },
     { loc: '/tools/markdown-previewer', priority: '0.7', freq: 'monthly' },
     { loc: '/tools/meta-tag-generator', priority: '0.7', freq: 'monthly' },
     // Blog posts
