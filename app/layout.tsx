@@ -40,6 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body className="bg-white text-gray-900 antialiased">
         <div className="min-h-screen flex flex-col">

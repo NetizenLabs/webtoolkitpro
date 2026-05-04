@@ -62,7 +62,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-100"
+            className="md:hidden p-2.5 text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-100"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -71,10 +71,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Nav Overlay */}
+      {/* Mobile Nav Overlay - Using max-h for more reliable transition */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-2xl transition-all duration-300 ease-in-out origin-top ${
-          isOpen ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-0 invisible'
+        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <nav className="flex flex-col p-4 gap-2">
