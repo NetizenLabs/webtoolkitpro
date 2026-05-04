@@ -27,6 +27,9 @@ export const metadata = {
   },
   other: {
     'google-adsense-account': 'ca-pub-4234692080899883',
+    'geo.region': 'US',
+    'geo.placename': 'United States',
+    'content-language': 'en-US',
   },
 }
 

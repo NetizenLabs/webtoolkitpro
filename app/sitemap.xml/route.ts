@@ -40,6 +40,10 @@ export async function GET() {
     { loc: '/blog/enterprise-web-security-guide', priority: '0.9', freq: 'monthly' },
     { loc: '/blog/performance-optimization-guide', priority: '0.9', freq: 'monthly' },
     { loc: '/blog/securing-json-apis', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/jwt-security-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/modern-css-architecture', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/nextjs-vs-vite-comparison', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/automated-testing-guide', priority: '0.9', freq: 'monthly' },
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
