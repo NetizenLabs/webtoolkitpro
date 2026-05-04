@@ -12,6 +12,7 @@ export async function GET() {
     { loc: '/contact', priority: '0.5', freq: 'monthly' },
     { loc: '/privacy', priority: '0.3', freq: 'yearly' },
     { loc: '/terms', priority: '0.3', freq: 'yearly' },
+    { loc: '/disclaimer', priority: '0.3', freq: 'yearly' },
     { loc: '/tools/json-formatter', priority: '0.8', freq: 'monthly' },
     { loc: '/tools/password-generator', priority: '0.8', freq: 'monthly' },
     { loc: '/tools/base64-encoder', priority: '0.8', freq: 'monthly' },

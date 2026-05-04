@@ -2,6 +2,7 @@ import React from 'react'
 import './globals.css'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
+import CookieConsent from '@/components/ui/CookieConsent'
 
 export const metadata = {
   title: 'WebToolkit Pro - Free Online Developer Tools',
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <CookieConsent />
         </div>
       </body>
     </html>

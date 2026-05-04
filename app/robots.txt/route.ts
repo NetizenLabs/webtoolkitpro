@@ -5,6 +5,9 @@ export async function GET() {
 Allow: /
 Disallow: /_next/
 
+User-agent: Mediapartners-Google
+Allow: /
+
 Sitemap: https://webtoolkit-pro.netlify.app/sitemap.xml`
 
   return new NextResponse(robots, {
