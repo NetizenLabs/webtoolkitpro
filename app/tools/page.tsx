@@ -18,7 +18,12 @@ const tools = [
   { name: 'UUID Generator', description: 'Generate unique UUIDs/GUIDs instantly', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-800', category: 'Generators' },
   { name: 'Lorem Ipsum', description: 'Generate placeholder text for your designs', icon: AlignLeft, href: '/tools/lorem-ipsum', color: 'from-orange-500 to-orange-700', category: 'Generators' },
   { name: 'Meta Tag Generator', description: 'Generate SEO meta tags for your website', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-700', category: 'Generators' },
+  { name: 'Robots.txt Generator', description: 'Create optimized robots.txt files for search engines', icon: FileText, href: '/tools/robots-generator', color: 'from-orange-600 to-orange-800', category: 'Generators', releaseDate: '2026-05-05' },
   { name: 'Hash Generator', description: 'Generate MD5, SHA-1, SHA-256 hashes from text', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-700', category: 'Generators' },
+  { name: 'Sitemap Validator', description: 'Verify and validate your XML sitemaps for SEO', icon: Layers, href: '/tools/sitemap-validator', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-06' },
+  { name: 'Schema Generator', description: 'Generate JSON-LD structured data for Google', icon: Code, href: '/tools/schema-generator', color: 'from-emerald-600 to-emerald-800', category: 'SEO', releaseDate: '2026-05-07' },
+  { name: 'Color Contrast', description: 'Check WCAG accessibility color compliance', icon: Palette, href: '/tools/color-contrast', color: 'from-pink-500 to-pink-700', category: 'Design', releaseDate: '2026-05-08' },
+  { name: 'Markdown Converter', description: 'Convert Markdown text to clean HTML code', icon: FileCode, href: '/tools/markdown-converter', color: 'from-violet-500 to-violet-700', category: 'Formatters', releaseDate: '2026-05-09' },
   
   // Converters
   { name: 'Base64 Encoder', description: 'Encode and decode Base64 strings seamlessly', icon: FileText, href: '/tools/base64-encoder', color: 'from-purple-500 to-purple-700', category: 'Converters' },
@@ -35,20 +40,29 @@ const tools = [
   { name: 'Markdown Previewer', description: 'Write Markdown and see live HTML preview', icon: FileCode, href: '/tools/markdown-previewer', color: 'from-sky-500 to-sky-700', category: 'Utilities' },
 ]
 
-const categories = ['All', 'Formatters', 'Generators', 'Converters', 'Utilities']
+const categories = ['All', 'Formatters', 'Generators', 'Converters', 'Utilities', 'SEO', 'Design']
 
 export default function ToolsPage() {
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
 
+  const today = useMemo(() => new Date().toISOString().split('T')[0], [])
+  
+  const visibleTools = useMemo(() => {
+    return (tools as any[]).filter(tool => {
+      if (!tool.releaseDate) return true
+      return tool.releaseDate <= today
+    })
+  }, [today])
+
   const filteredTools = useMemo(() => {
-    return tools.filter(tool => {
+    return visibleTools.filter(tool => {
       const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase()) || 
                            tool.description.toLowerCase().includes(search.toLowerCase())
       const matchesCategory = activeCategory === 'All' || tool.category === activeCategory
       return matchesSearch && matchesCategory
     })
-  }, [search, activeCategory])
+  }, [search, activeCategory, visibleTools])
 
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50/50 min-h-screen">
