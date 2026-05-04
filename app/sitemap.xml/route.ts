@@ -46,6 +46,16 @@ export async function GET() {
     { loc: '/blog/automated-testing-guide', priority: '0.9', freq: 'monthly' },
     { loc: '/blog/serverless-computing-future', priority: '0.9', freq: 'monthly' },
     { loc: '/blog/ai-cybersecurity-trends', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/enterprise-js-frameworks', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/scalable-database-design', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/ui-ux-design-trends', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/pwa-development-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/microservices-architecture-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/headless-vs-traditional-cms', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/web-accessibility-best-practices', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/cloud-cost-management', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/edge-computing-guide', priority: '0.9', freq: 'monthly' },
+    { loc: '/blog/ai-in-devops-future', priority: '0.9', freq: 'monthly' },
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
