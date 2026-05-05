@@ -6,6 +6,17 @@ import Link from 'next/link'
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
 
+  const updateConsent = (isAccepted: boolean) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
+        'ad_storage': isAccepted ? 'granted' : 'denied',
+        'ad_user_data': isAccepted ? 'granted' : 'denied',
+        'ad_personalization': isAccepted ? 'granted' : 'denied',
+        'analytics_storage': isAccepted ? 'granted' : 'denied'
+      })
+    }
+  }
+
   useEffect(() => {
     // Check if consent was already given
     const consent = localStorage.getItem('cookie-consent')
@@ -13,16 +24,21 @@ export default function CookieConsent() {
       // Small delay to ensure smooth hydration and visibility
       const timer = setTimeout(() => setVisible(true), 500)
       return () => clearTimeout(timer)
+    } else {
+      // Re-apply consent if already given
+      updateConsent(consent === 'accepted')
     }
   }, [])
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
+    updateConsent(true)
     setVisible(false)
   }
 
   const decline = () => {
     localStorage.setItem('cookie-consent', 'declined')
+    updateConsent(false)
     setVisible(false)
   }
 
