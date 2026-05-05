@@ -56,6 +56,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
               ],
               'address': {
                 '@type': 'PostalAddress',
+                'streetAddress': '1600 Amphitheatre Parkway',
+                'addressLocality': 'Mountain View',
+                'addressRegion': 'CA',
+                'postalCode': '94043',
                 'addressCountry': 'US'
               },
               'description': 'Professional developer tools and technical guides for enterprise web development.'
