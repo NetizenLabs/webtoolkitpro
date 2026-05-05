@@ -5,15 +5,20 @@ import Footer from '@/components/ui/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'WebToolkit Pro - Free Online Developer Tools',
-  description: 'Free, premium online developer tools and utilities. JSON formatter, password generator, Base64 encoder, color picker, and 10+ more tools for web professionals.',
+export const metadata: Metadata = {
+  metadataBase: new URL('https://abusufyan-netizen.github.io'),
+  title: 'WebToolkit Pro | Professional Online Developer Tools',
+  description: 'Premium collection of 20+ free developer tools and technical guides. Secure, fast, and optimized for US enterprise development.',
   keywords: 'developer tools, JSON formatter, password generator, base64 encoder, online tools, web development, free tools',
   verification: {
     google: 'WoptvfLSD7zyx_FHo65sWstAvRV_FBFiGW6BxmQkXu0',
+  },
+  alternates: {
+    canonical: '/',
   },
   openGraph: {
     title: 'WebToolkit Pro - Free Online Developer Tools',
