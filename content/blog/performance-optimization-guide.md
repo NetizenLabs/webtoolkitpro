@@ -33,7 +33,7 @@ CLS measures visual stability. A high CLS means elements are jumping around whil
 INP is the newest Core Web Vital, measuring the overall responsiveness of your site to user interactions. Improve INP by:
 *   Minimizing long tasks on the main thread.
 *   Optimizing third-party scripts.
-*   Using lightweight utilities like our [JavaScript Minifier](https://abusufyan-netizen.github.io/tools/js-minifier/) to keep your bundle sizes small.
+*   Using lightweight utilities like our [JavaScript Minifier](https://wtkpro.site/tools/js-minifier/) to keep your bundle sizes small.
 
 ## The Financial Impact of Performance
 
@@ -43,7 +43,7 @@ For US-based e-commerce and SaaS companies, performance is directly tied to reve
 
 To maintain a high-performance codebase, developers should utilize tools that streamline their workflow:
 *   **Next.js Analytics**: Monitor real-world performance data.
-*   **WebToolkit Pro Utilities**: Use our suite of [Formatting Tools](https://abusufyan-netizen.github.io/tools/) to ensure your data structures are clean and your code is lean.
+*   **WebToolkit Pro Utilities**: Use our suite of [Formatting Tools](https://wtkpro.site/tools/) to ensure your data structures are clean and your code is lean.
 
 ## Conclusion
 

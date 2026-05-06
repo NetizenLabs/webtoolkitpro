@@ -41,7 +41,7 @@ Vite is the king of **Single Page Applications (SPAs)** and internal tools. If y
 
 ## The Role of Developer Utilities
 
-Regardless of which tool you choose, your code's quality remains paramount. Using professional utilities like our [JavaScript Minifier](https://abusufyan-netizen.github.io/tools/js-minifier/) and [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) ensures that your build pipeline remains efficient and your final bundle is optimized for the end-user.
+Regardless of which tool you choose, your code's quality remains paramount. Using professional utilities like our [JavaScript Minifier](https://wtkpro.site/tools/js-minifier/) and [JSON Formatter](https://wtkpro.site/tools/json-formatter/) ensures that your build pipeline remains efficient and your final bundle is optimized for the end-user.
 
 ## Conclusion: Which One is for You?
 

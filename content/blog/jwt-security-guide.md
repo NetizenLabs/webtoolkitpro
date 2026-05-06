@@ -38,7 +38,7 @@ To ensure your JWT implementation is robust, follow these guidelines:
 
 ## Tools for JWT Development
 
-Debugging tokens is a common task for developers. Using a professional [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) can help you visualize the structure of your claims before they are encoded, ensuring your payloads are clean and secure.
+Debugging tokens is a common task for developers. Using a professional [JSON Formatter](https://wtkpro.site/tools/json-formatter/) can help you visualize the structure of your claims before they are encoded, ensuring your payloads are clean and secure.
 
 ## Conclusion
 

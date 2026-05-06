@@ -10,7 +10,7 @@ import { Metadata } from 'next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abusufyan-netizen.github.io'),
+  metadataBase: new URL('https://wtkpro.site'),
   title: 'WebToolkit Pro | Professional Online Developer Tools',
   description: 'Premium collection of 20+ free developer tools and technical guides. Secure, fast, and optimized for US enterprise development.',
   keywords: 'developer tools, JSON formatter, password generator, base64 encoder, online tools, web development, free tools',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'WebToolkit Pro - Free Online Developer Tools',
     description: 'Free, premium online developer tools and utilities for web professionals.',
-    url: 'https://abusufyan-netizen.github.io',
+    url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     type: 'website',
   },
@@ -54,8 +54,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
               '@context': 'https://schema.org',
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
-              'url': 'https://abusufyan-netizen.github.io',
-              'logo': 'https://abusufyan-netizen.github.io/favicon.svg',
+              'url': 'https://wtkpro.site',
+              'logo': 'https://wtkpro.site/favicon.svg',
               'sameAs': [
                 'https://github.com/abusufyan-netizen/webtoolkit_pro'
               ],

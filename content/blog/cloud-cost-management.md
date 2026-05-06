@@ -29,7 +29,7 @@ For non-critical or interruptible workloads, use **Spot Instances** to save up t
 ## 4. The Hidden Costs: Data Egress and API Calls
 US enterprises are often shocked by their data egress (transfer) fees. Optimize your architecture by:
 *   Using Content Delivery Networks (CDNs) to cache data closer to the user.
-*   Optimizing your API payloads. Using a [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) and [Minifier](/tools/js-minifier/) can help you visualize and reduce the size of the data your services exchange.
+*   Optimizing your API payloads. Using a [JSON Formatter](https://wtkpro.site/tools/json-formatter/) and [Minifier](/tools/js-minifier/) can help you visualize and reduce the size of the data your services exchange.
 
 ## Conclusion
 

@@ -37,7 +37,7 @@ The "Never Trust, Always Verify" model is essential for modern cloud application
 Data is the lifeblood of your application. Securing it requires a multi-layered approach:
 
 ### Input Validation
-Never trust user input. Use robust validation libraries to ensure that data entering your system matches the expected format. Our [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) and [JS Minifier](https://abusufyan-netizen.github.io/tools/js-minifier/) help ensure your code and data are clean and optimized, reducing the surface area for attacks.
+Never trust user input. Use robust validation libraries to ensure that data entering your system matches the expected format. Our [JSON Formatter](https://wtkpro.site/tools/json-formatter/) and [JS Minifier](https://wtkpro.site/tools/js-minifier/) help ensure your code and data are clean and optimized, reducing the surface area for attacks.
 
 ### Encryption at Rest and in Transit
 Use strong hashing algorithms for passwords (like Argon2 or bcrypt). For data in transit, ensure that HSTS (HTTP Strict Transport Security) is enabled to force secure connections.
@@ -47,7 +47,7 @@ Use strong hashing algorithms for passwords (like Argon2 or bcrypt). For data in
 Modern security requires automation. Use CI/CD pipelines to:
 *   Run Static Application Security Testing (SAST) on every push.
 *   Automate dependency scanning to find vulnerable libraries.
-*   Use automated [Password Generators](https://abusufyan-netizen.github.io/tools/password-generator/) to ensure team credentials meet enterprise-grade entropy requirements.
+*   Use automated [Password Generators](https://wtkpro.site/tools/password-generator/) to ensure team credentials meet enterprise-grade entropy requirements.
 
 ## Conclusion
 

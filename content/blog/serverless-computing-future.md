@@ -19,7 +19,7 @@ Traditionally, serverless (Function-as-a-Service) was stateless, making it diffi
 
 ## Edge Computing and Latency Reduction
 
-US users demand instant results. By deploying code to the "Edge" (servers physically closer to the user), developers can achieve sub-50ms latency. Our [URL Encoder](https://abusufyan-netizen.github.io/tools/url-encoder/) and [JSON Validator](https://abusufyan-netizen.github.io/tools/json-formatter/) are designed with these performance principles in mind, ensuring a seamless experience regardless of user location.
+US users demand instant results. By deploying code to the "Edge" (servers physically closer to the user), developers can achieve sub-50ms latency. Our [URL Encoder](https://wtkpro.site/tools/url-encoder/) and [JSON Validator](https://wtkpro.site/tools/json-formatter/) are designed with these performance principles in mind, ensuring a seamless experience regardless of user location.
 
 ## Cost Optimization at Scale
 

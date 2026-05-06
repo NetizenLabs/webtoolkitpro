@@ -28,7 +28,7 @@ To protect your enterprise, you must fight AI with AI. Implementing an "AI-First
 Move beyond static signatures. Use machine learning models to detect anomalies in user behavior, such as unusual API call patterns or unexpected data exfiltration.
 
 ### 2. Zero-Trust Authentication
-In an age of AI-spoofed identities, single-factor authentication is obsolete. Enforce strict **Multi-Factor Authentication (MFA)** and hardware-based keys for all critical systems. Our [Password Generator](https://abusufyan-netizen.github.io/tools/password-generator/) helps ensure your initial credentials are high-entropy and resistant to brute-force AI attacks.
+In an age of AI-spoofed identities, single-factor authentication is obsolete. Enforce strict **Multi-Factor Authentication (MFA)** and hardware-based keys for all critical systems. Our [Password Generator](https://wtkpro.site/tools/password-generator/) helps ensure your initial credentials are high-entropy and resistant to brute-force AI attacks.
 
 ### 3. Continuous Code Auditing
 Integrate automated security scanning directly into your CI/CD pipeline. Tools that use AI to predict and prevent vulnerabilities before they reach production are now a requirement for US-based enterprises.

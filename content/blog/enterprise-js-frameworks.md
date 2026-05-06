@@ -50,7 +50,7 @@ Vue has gained significant traction in enterprise circles for its approachabilit
 
 For a US-based enterprise, the decision usually comes down to your existing team's skills. If you have a large team of Java or C# developers, **Angular**'s structure will feel familiar. If you need maximum flexibility and a fast time-to-market, **React** is the winner. If you want a balance of both, **Vue** is an excellent choice.
 
-Regardless of your choice, optimizing your final bundle is essential. Use our [JavaScript Minifier](https://abusufyan-netizen.github.io/tools/js-minifier/) to ensure your enterprise application loads instantly for your users.
+Regardless of your choice, optimizing your final bundle is essential. Use our [JavaScript Minifier](https://wtkpro.site/tools/js-minifier/) to ensure your enterprise application loads instantly for your users.
 
 ## Conclusion
 

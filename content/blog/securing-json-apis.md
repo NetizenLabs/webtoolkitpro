@@ -27,7 +27,7 @@ The first line of defense is ensuring that the JSON payload matches your expecta
 *   **Required Fields**: Prevent missing critical data.
 *   **Constraints**: Limit the length of strings and the range of numeric values.
 
-Using a professional [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) during development can help you visualize and debug complex schemas before they reach production.
+Using a professional [JSON Formatter](https://wtkpro.site/tools/json-formatter/) during development can help you visualize and debug complex schemas before they reach production.
 
 ## 2. Implementing Secure Authentication with JWT
 

@@ -47,7 +47,7 @@ Sharding involves splitting your large database into smaller, more manageable pi
 A scalable database must also be a secure one. Ensure your architecture includes:
 *   **Encryption at Rest**: Protecting data on the physical disk.
 *   **Point-in-Time Recovery**: Allowing you to restore your database to any specific second in the past.
-*   **Automated Validation**: Ensuring data entering the database is clean. Our [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) is an excellent tool for verifying complex data structures before they are persisted.
+*   **Automated Validation**: Ensuring data entering the database is clean. Our [JSON Formatter](https://wtkpro.site/tools/json-formatter/) is an excellent tool for verifying complex data structures before they are persisted.
 
 ## Conclusion
 

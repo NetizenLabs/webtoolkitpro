@@ -41,7 +41,7 @@ To get the most out of your automated tests, follow these enterprise-grade stand
 
 ## Data Consistency is Key
 
-Automated tests are only as good as the data you feed them. Using structured, valid data is essential. Our [JSON Formatter](https://abusufyan-netizen.github.io/tools/json-formatter/) and [Password Generator](https://abusufyan-netizen.github.io/tools/password-generator/) can help you generate and validate the test data you need for robust E2E scenarios.
+Automated tests are only as good as the data you feed them. Using structured, valid data is essential. Our [JSON Formatter](https://wtkpro.site/tools/json-formatter/) and [Password Generator](https://wtkpro.site/tools/password-generator/) can help you generate and validate the test data you need for robust E2E scenarios.
 
 ## Conclusion
 

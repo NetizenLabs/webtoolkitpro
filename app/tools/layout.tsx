@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Access a suite of professional, secure, and high-performance developer tools. From JSON formatting to secure password generation, optimized for US enterprise development.',
   keywords: 'professional developer tools, secure web utilities, enterprise coding tools, JSON formatter pro, secure password generator US',
   alternates: {
-    canonical: 'https://abusufyan-netizen.github.io/tools/',
+    canonical: 'https://wtkpro.site/tools/',
   },
 }
 
@@ -28,12 +28,12 @@ export default function ToolsLayout({
               '@type': 'ListItem',
               'position': 1,
               'name': 'Home',
-              'item': 'https://abusufyan-netizen.github.io'
+              'item': 'https://wtkpro.site'
             }, {
               '@type': 'ListItem',
               'position': 2,
               'name': 'Tools',
-              'item': 'https://abusufyan-netizen.github.io/tools/'
+              'item': 'https://wtkpro.site/tools/'
             }]
           }),
         }}

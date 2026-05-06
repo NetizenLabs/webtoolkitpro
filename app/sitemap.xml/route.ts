@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const baseUrl = 'https://abusufyan-netizen.github.io'
+  const baseUrl = 'https://wtkpro.site'
   const now = new Date().toISOString()
 
   const pages = [
