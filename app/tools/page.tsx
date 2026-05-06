@@ -5,7 +5,7 @@ import Link from 'next/link'
 import {
   FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
-  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2
+  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star
 } from 'lucide-react'
 
 const tools = [
@@ -144,7 +144,7 @@ export default function ToolsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {favoriteTools.map((tool) => (
                 <div key={`fav-${tool.href}`} className="relative group">
-                  <button 
+                  <button
                     onClick={(e) => toggleFavorite(e, tool.href)}
                     className="absolute top-6 right-6 p-2 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500 hover:scale-110 transition-transform z-20"
                     title="Remove from favorites"
@@ -178,18 +178,17 @@ export default function ToolsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredTools.map((tool) => (
               <div key={tool.href} className="relative group">
-                <button 
+                <button
                   onClick={(e) => toggleFavorite(e, tool.href)}
-                  className={`absolute top-6 right-6 p-2 rounded-full transition-all z-20 ${
-                    favorites.includes(tool.href) 
-                      ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500' 
+                  className={`absolute top-6 right-6 p-2 rounded-full transition-all z-20 ${favorites.includes(tool.href)
+                      ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500'
                       : 'bg-gray-50 dark:bg-slate-800 text-gray-300 dark:text-slate-600 hover:text-yellow-500'
-                  }`}
+                    }`}
                   title={favorites.includes(tool.href) ? "Remove from favorites" : "Add to favorites"}
                 >
                   <Star className={`w-5 h-5 ${favorites.includes(tool.href) ? 'fill-current' : ''}`} />
                 </button>
-                <Link 
+                <Link
                   href={tool.href}
                   className="flex flex-col h-full bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-300"
                 >
@@ -219,8 +218,8 @@ export default function ToolsPage() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">No tools found</h3>
             <p className="text-gray-500 dark:text-slate-400">We couldn't find any tools matching your search or filter.</p>
-            <button 
-              onClick={() => {setSearch(''); setActiveCategory('All')}}
+            <button
+              onClick={() => { setSearch(''); setActiveCategory('All') }}
               className="mt-6 text-blue-600 dark:text-blue-400 font-bold hover:underline"
             >
               Clear all filters
@@ -230,7 +229,7 @@ export default function ToolsPage() {
 
         {/* AdSense Slot */}
         <div className="max-w-3xl mx-auto mt-20 min-h-[250px] flex items-center justify-center">
-           {/* AdSense Rectangle */}
+          {/* AdSense Rectangle */}
         </div>
       </div>
     </div>
