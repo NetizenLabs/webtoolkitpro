@@ -4,6 +4,7 @@ import {
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
   Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star
 } from 'lucide-react'
+import Newsletter from '@/components/sections/Newsletter'
 
 const featuredTools = [
   { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-600' },
@@ -157,6 +158,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <Newsletter />
     </>
   )
 }

@@ -42,13 +42,20 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Legal</h4>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-blue-400 transition-colors">Terms of Service</Link></li>
-              <li><Link href="/disclaimer" className="hover:text-blue-400 transition-colors">Disclaimer & DMCA</Link></li>
-              <li><Link href="/sitemap.xml" className="hover:text-blue-400 transition-colors">Sitemap</Link></li>
-            </ul>
+            <h4 className="text-white font-bold mb-6">Join the Community</h4>
+            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+              Get the latest tools and technical SEO updates in your inbox.
+            </p>
+            <form className="space-y-3">
+              <input 
+                type="email" 
+                placeholder="email@example.com"
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+              />
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition-all shadow-lg shadow-blue-900/20">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
 

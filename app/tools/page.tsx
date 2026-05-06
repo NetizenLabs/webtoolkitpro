@@ -45,15 +45,36 @@ const categories = ['All', 'Formatters', 'Generators', 'Converters', 'Utilities'
 export default function ToolsPage() {
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
+  const [favorites, setFavorites] = useState<string[]>([])
 
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
   
+  useEffect(() => {
+    const saved = localStorage.getItem('wtk_favorites')
+    if (saved) setFavorites(JSON.parse(saved))
+  }, [])
+
+  const toggleFavorite = (e: React.MouseEvent, href: string) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const newFavorites = favorites.includes(href) 
+      ? favorites.filter(id => id !== href)
+      : [...favorites, href]
+    
+    setFavorites(newFavorites)
+    localStorage.setItem('wtk_favorites', JSON.stringify(newFavorites))
+  }
+
   const visibleTools = useMemo(() => {
     return (tools as any[]).filter(tool => {
       if (!tool.releaseDate) return true
       return tool.releaseDate <= today
     })
   }, [today])
+
+  const favoriteTools = useMemo(() => {
+    return visibleTools.filter(tool => favorites.includes(tool.href))
+  }, [visibleTools, favorites])
 
   const filteredTools = useMemo(() => {
     return visibleTools.filter(tool => {
@@ -113,6 +134,43 @@ export default function ToolsPage() {
         <div className="max-w-3xl mx-auto mb-12 min-h-[90px] flex items-center justify-center">
            {/* AdSense Leaderboard */}
         </div>
+
+        {/* Favorites Section */}
+        {favoriteTools.length > 0 && search === '' && activeCategory === 'All' && (
+          <div className="mb-16">
+            <div className="flex items-center gap-2 mb-8">
+              <Star className="w-6 h-6 text-yellow-500 fill-current" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Your Favorites</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {favoriteTools.map((tool) => (
+                <Link 
+                  key={`fav-${tool.href}`}
+                  href={tool.href}
+                  className="group bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full relative"
+                >
+                  <button 
+                    onClick={(e) => toggleFavorite(e, tool.href)}
+                    className="absolute top-6 right-6 p-2 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500 hover:scale-110 transition-transform z-10"
+                  >
+                    <Star className="w-5 h-5 fill-current" />
+                  </button>
+                  <div className={`w-14 h-14 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <tool.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded mb-2 inline-block">
+                      {tool.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{tool.name}</h3>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-12 border-b border-gray-100 dark:border-slate-800"></div>
+          </div>
+        )}
         
         {/* Tools Grid */}
         {filteredTools.length > 0 ? (
@@ -121,8 +179,18 @@ export default function ToolsPage() {
               <Link 
                 key={tool.href}
                 href={tool.href}
-                className="group bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full"
+                className="group bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full relative"
               >
+                <button 
+                  onClick={(e) => toggleFavorite(e, tool.href)}
+                  className={`absolute top-6 right-6 p-2 rounded-full transition-all z-10 ${
+                    favorites.includes(tool.href) 
+                      ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500' 
+                      : 'bg-gray-50 dark:bg-slate-800 text-gray-300 dark:text-slate-600 hover:text-yellow-500'
+                  }`}
+                >
+                  <Star className={`w-5 h-5 ${favorites.includes(tool.href) ? 'fill-current' : ''}`} />
+                </button>
                 <div className={`w-14 h-14 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   <tool.icon className="w-7 h-7 text-white" />
                 </div>
@@ -142,15 +210,15 @@ export default function ToolsPage() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-50 rounded-full mb-6">
-              <Search className="w-10 h-10 text-gray-300" />
+          <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-gray-200 dark:border-slate-800">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-50 dark:bg-slate-800 rounded-full mb-6">
+              <Search className="w-10 h-10 text-gray-300 dark:text-slate-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">No tools found</h3>
-            <p className="text-gray-500">We couldn't find any tools matching your search or filter.</p>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">No tools found</h3>
+            <p className="text-gray-500 dark:text-slate-400">We couldn't find any tools matching your search or filter.</p>
             <button 
               onClick={() => {setSearch(''); setActiveCategory('All')}}
-              className="mt-6 text-blue-600 font-bold hover:underline"
+              className="mt-6 text-blue-600 dark:text-blue-400 font-bold hover:underline"
             >
               Clear all filters
             </button>
