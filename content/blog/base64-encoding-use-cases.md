@@ -9,7 +9,7 @@ readTime: "5 min read"
 author: "WebToolkit Pro Team"
 image: "/blog/base64-encoding.jpg"
 imageAlt: "Diagram showing Base64 encoding process converting binary data to ASCII text"
-canonical: "https://webtoolkit-pro.netlify.app/blog/base64-encoding-use-cases/"
+canonical: "https://wtkpro.site/blog/base64-encoding-use-cases/"
 geo_region: "US"
 geo_placename: "United States"
 language: "en-US"
@@ -127,3 +127,4 @@ Use our **[Base64 Encoder/Decoder](/tools/base64-encoder/)** to convert text and
 Base64 encoding is a fundamental tool for transferring binary data through text-only channels. Use it for data URIs, email attachments, JWT tokens, and API payloads — but never mistake it for a security measure.
 
 **Try our free [Base64 Encoder/Decoder](/tools/base64-encoder/)** to encode and decode data instantly.
+

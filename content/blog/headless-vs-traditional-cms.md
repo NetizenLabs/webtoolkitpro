@@ -44,3 +44,4 @@ A modern digital presence requires both content and utility. By using a Headless
 If your goal is a simple website, a Traditional CMS may suffice. But if you are building a modern, high-performance, and multi-channel digital brand for the US market, **Headless** is the only way forward.
 
 *Audit your content structure today with our [JSON Formatter Tool](/tools/json-formatter/).*
+

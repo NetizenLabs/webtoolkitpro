@@ -45,3 +45,4 @@ Debugging tokens is a common task for developers. Using a professional [JSON For
 JWTs are an incredibly efficient way to handle authentication at scale, but they require discipline. By following these security-first practices, you can build a system that is both fast and resilient against modern threats.
 
 *Want to secure your team's access? Use our [Password Generator](/tools/password-generator/) for stronger secrets.*
+

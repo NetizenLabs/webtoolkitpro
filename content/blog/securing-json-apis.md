@@ -51,3 +51,4 @@ All JSON API traffic must be encrypted using TLS 1.3. Additionally:
 A secure API is the foundation of a successful digital product. By implementing strict validation, robust authentication, and continuous monitoring, you can protect your enterprise data and build trust with your US-based clients.
 
 *Explore our full suite of [API Development Tools](/tools/) to streamline your workflow.*
+

@@ -49,3 +49,4 @@ PWAs are naturally faster because they cache resources locally. Faster load time
 The PWA revolution is here. By turning your web presence into a Progressive Web App, you provide a superior experience that drives engagement, trust, and long-term revenue.
 
 *Ready to go mobile? Test your code with our [Responsive Design Tools](/tools/).*
+

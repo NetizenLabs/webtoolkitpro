@@ -33,3 +33,4 @@ One of the biggest drivers for serverless adoption in the US market is the "Pay-
 The future of web development is serverless. By embracing edge-first architectures and stateful functions, you can build applications that are as scalable as they are performant.
 
 *Stay ahead of the curve with our [Developer Suite](/tools/).*
+

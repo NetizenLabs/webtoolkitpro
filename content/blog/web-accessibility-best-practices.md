@@ -49,3 +49,4 @@ Automated tools are a great starting point, but manual testing is essential. Use
 Accessibility is about more than just compliance—it's about empathy and professional excellence. By building an inclusive digital environment, you ensure that your US-based brand is trusted and accessible to everyone.
 
 *Ensure your code is clean and valid with our [JavaScript Minifier](/tools/js-minifier/).*
+

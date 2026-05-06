@@ -38,3 +38,4 @@ Integrate automated security scanning directly into your CI/CD pipeline. Tools t
 The battle for cybersecurity in 2026 is a technological arms race. By staying informed and utilizing the latest defensive tools, you can ensure your applications remain a safe haven for your users.
 
 *Secure your code today with our [Enterprise Tools](/tools/).*
+

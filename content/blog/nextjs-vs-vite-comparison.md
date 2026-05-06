@@ -48,3 +48,4 @@ Regardless of which tool you choose, your code's quality remains paramount. Usin
 Choose **Next.js** if you need SEO, server-side features, or a robust framework backed by a major cloud provider. Choose **Vite** if you want the fastest possible development loop for a client-side application.
 
 *Building a Next.js app? Boost your SEO with our [Meta Tag Generator](/tools/meta-tag-generator/).*
+

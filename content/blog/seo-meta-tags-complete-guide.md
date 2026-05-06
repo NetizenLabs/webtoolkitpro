@@ -9,7 +9,7 @@ readTime: "10 min read"
 author: "WebToolkit Pro Team"
 image: "/blog/seo-meta-tags.jpg"
 imageAlt: "Search engine results page showing optimized meta tags and rich snippets"
-canonical: "https://webtoolkit-pro.netlify.app/blog/seo-meta-tags-complete-guide/"
+canonical: "https://wtkpro.site/blog/seo-meta-tags-complete-guide/"
 geo_region: "US"
 geo_placename: "United States"
 language: "en-US"
@@ -59,7 +59,7 @@ Use our [Meta Tag Generator](/tools/meta-tag-generator/) to create perfect meta 
 Prevent duplicate content issues by specifying the canonical URL:
 
 ```html
-<link rel="canonical" href="https://webtoolkit-pro.netlify.app/blog/seo-meta-tags-complete-guide/">
+<link rel="canonical" href="https://wtkpro.site/blog/seo-meta-tags-complete-guide/">
 ```
 
 ### 4. Robots Meta Tag
@@ -154,3 +154,4 @@ Don't write meta tags manually. Use our **[Meta Tag Generator](/tools/meta-tag-g
 ## Conclusion
 
 Meta tags are the bridge between your content and search engines. Get them right, and you'll see improvements in rankings, click-through rates, and social media engagement. Use the tools and best practices in this guide to optimize every page on your site.
+

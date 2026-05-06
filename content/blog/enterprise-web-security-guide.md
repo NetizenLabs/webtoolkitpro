@@ -54,3 +54,4 @@ Modern security requires automation. Use CI/CD pipelines to:
 Security is a journey, not a destination. By staying informed about the latest threats and utilizing professional developer utilities, you can build applications that are not only functional but resilient against the threats of 2026.
 
 *For more security insights, check out our [Security Guide for Developers](/blog/password-security-guide/).*
+

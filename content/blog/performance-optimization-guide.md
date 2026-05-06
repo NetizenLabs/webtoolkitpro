@@ -50,3 +50,4 @@ To maintain a high-performance codebase, developers should utilize tools that st
 Mastering performance is an ongoing process. By focusing on Core Web Vitals, you not only improve your SEO rankings but also provide a superior experience that keeps US-based users engaged and returning to your platform.
 
 *Ready to optimize your site? Start by auditing your code with our [Developer Tools](/tools/).*
+

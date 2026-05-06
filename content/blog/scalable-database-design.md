@@ -54,3 +54,4 @@ A scalable database must also be a secure one. Ensure your architecture includes
 Building a scalable database is an iterative process. By combining the right engine with smart scaling strategies and robust security, you can build a data foundation that supports your enterprise's growth for years to come.
 
 *Want to secure your database access? Generate strong secrets with our [Professional Password Tool](/tools/password-generator/).*
+

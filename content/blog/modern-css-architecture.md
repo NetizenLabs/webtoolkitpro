@@ -54,3 +54,4 @@ Large CSS files slow down your site and hurt your [Core Web Vitals](/blog/perfor
 A scalable CSS architecture is about more than just aesthetics—it's about engineering. By choosing the right tools and enforcing a strict design system, you can build frontend applications that are as robust and maintainable as your backend logic.
 
 *Want to keep your styles clean? Check out our [JS Minifier](/tools/js-minifier/) to optimize your associated scripts.*
+

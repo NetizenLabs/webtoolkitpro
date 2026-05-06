@@ -43,3 +43,4 @@ The role of the SRE is shifting from manual firefighting to managing AI-driven s
 AI is not replacing DevOps engineers; it is augmenting them. By embracing these intelligent workflows, your enterprise can deliver more value, faster, and with higher reliability than ever before.
 
 *Stay ahead of the AI revolution with our [Modern Developer Suite](/tools/).*
+

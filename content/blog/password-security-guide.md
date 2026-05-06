@@ -9,7 +9,7 @@ readTime: "8 min read"
 author: "WebToolkit Pro Team"
 image: "/blog/password-security.jpg"
 imageAlt: "Digital security shield representing strong password protection and cybersecurity"
-canonical: "https://webtoolkit-pro.netlify.app/blog/password-security-guide/"
+canonical: "https://wtkpro.site/blog/password-security-guide/"
 geo_region: "US"
 geo_placename: "United States"
 language: "en-US"
@@ -103,3 +103,4 @@ A password manager lets you use unique, complex passwords everywhere:
 Password security is your first line of defense against cyber threats. Use cryptographically strong, unique passwords for every account, enable two-factor authentication, and store everything in a trusted password manager.
 
 **Start generating secure passwords now** with our free [Password Generator](/tools/password-generator/).
+

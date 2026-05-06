@@ -39,3 +39,4 @@ For US-based enterprises, the next step is "Edge-First" development. This means 
 Edge computing is no longer a niche technology; it is a fundamental part of the modern web stack. By embracing the edge, you provide your US-based users with the fastest possible experience, driving higher engagement and higher advertiser value.
 
 *Test your site's performance with our [Global Web Utilities](/tools/).*
+
