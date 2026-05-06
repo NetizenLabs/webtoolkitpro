@@ -125,10 +125,10 @@ export default function Home() {
       </div>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-slate-950 transition-colors duration-300">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Why Developers Love Us</h2>
-          <p className="text-lg text-gray-500 mb-16 max-w-xl mx-auto">Designed for speed, built for professionals</p>
+          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Why Developers Love Us</h2>
+          <p className="text-lg text-gray-500 dark:text-slate-400 mb-16 max-w-xl mx-auto">Designed for speed, built for professionals</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
@@ -136,10 +136,10 @@ export default function Home() {
               { title: '100% Free', desc: 'No hidden paywalls, no sign-ups, no usage limits. Ever.', emoji: '🎁' },
               { title: 'Privacy First', desc: 'Your data never leaves your browser. Nothing is stored or sent.', emoji: '🔒' },
             ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center">
-                <div className="text-5xl mb-6">{item.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="flex flex-col items-center group">
+                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">{item.emoji}</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                <p className="text-gray-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -147,13 +147,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-extrabold mb-4">Ready to Boost Your Workflow?</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Join thousands of developers who use WebToolkit Pro every day.
+      <section className="py-24 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-blue-600/10 dark:bg-black/20 mix-blend-overlay"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Ready to Boost Your Workflow?</h2>
+          <p className="text-xl text-blue-50 dark:text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Join thousands of developers who use WebToolkit Pro every day to build better, faster, and more securely.
           </p>
-          <Link href="/tools" className="inline-flex items-center gap-2 bg-white text-blue-700 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+          <Link href="/tools" className="inline-flex items-center gap-2 bg-white text-blue-700 px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300">
             Get Started — It&apos;s Free <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
