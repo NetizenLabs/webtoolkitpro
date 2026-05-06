@@ -1,0 +1,38 @@
+name: Remote Publish to Reddit
+
+on:
+  # Allows manual triggering from any device (GitHub Web or App)
+  workflow_dispatch:
+  # Optional: Uncomment to publish automatically every time you push a new blog post
+  # push:
+  #   paths:
+  #     - 'content/blog/**'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install snoowrap dotenv gray-matter
+
+      - name: Run Auto-Publisher
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          REDDIT_SUBREDDITS: 'webdev,programming,javascript,sideproject'
+          DOMAIN: 'https://wtkpro.site'
+        run: node scripts/publish-reddit.mjs
