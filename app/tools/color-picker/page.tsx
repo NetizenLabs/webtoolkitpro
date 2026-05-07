@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Palette, Copy, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function ColorPicker() {
   const [color, setColor] = useState('#3b82f6')
@@ -46,6 +47,7 @@ export default function ColorPicker() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Color Picker" slug="color-picker" />
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-pink-600 rounded-xl">

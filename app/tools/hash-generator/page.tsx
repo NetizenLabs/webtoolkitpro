@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Shield, Copy, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function HashGenerator() {
   const [input, setInput] = useState('')
@@ -23,6 +24,7 @@ export default function HashGenerator() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Hash Generator" slug="hash-generator" />
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-gradient-to-br from-slate-500 to-slate-700 rounded-xl"><Shield className="w-8 h-8 text-white" /></div>

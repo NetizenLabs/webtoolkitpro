@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Binary } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function BinaryConverter() {
   const [input, setInput] = useState('')
@@ -17,6 +18,7 @@ export default function BinaryConverter() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Binary Converter" slug="binary-converter" />
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-gradient-to-br from-red-500 to-red-700 rounded-xl"><Binary className="w-8 h-8 text-white" /></div>

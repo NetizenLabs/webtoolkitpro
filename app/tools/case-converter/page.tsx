@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Type, Copy, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function CaseConverter() {
   const [text, setText] = useState('')
@@ -23,6 +24,7 @@ export default function CaseConverter() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="Case Converter" slug="case-converter" />
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl"><Type className="w-8 h-8 text-white" /></div>

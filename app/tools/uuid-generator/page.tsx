@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Shuffle, Copy, Check, RefreshCw } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function UuidGenerator() {
   const gen = () => crypto.randomUUID()
@@ -18,6 +19,7 @@ export default function UuidGenerator() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema name="UUID Generator" slug="uuid-generator" />
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-gradient-to-br from-lime-600 to-lime-800 rounded-xl"><Shuffle className="w-8 h-8 text-white" /></div>
