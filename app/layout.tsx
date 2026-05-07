@@ -22,10 +22,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'WebToolkit Pro - Free Online Developer Tools',
-    description: 'Free, premium online developer tools and utilities for web professionals.',
+    description: 'Free, premium online developer tools and utilities for web professionals. Secure, fast, and optimized for enterprise development.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'WebToolkit Pro Official Logo - Professional Developer Tools',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WebToolkit Pro | Professional Developer Tools',
+    description: 'The ultimate suite of 20+ free developer tools. Build faster, better, and more securely.',
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [
