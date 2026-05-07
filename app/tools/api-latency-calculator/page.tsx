@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import { DollarSign, TrendingDown, Clock, MousePointer2, AlertCircle, Info, Globe, TrendingUp, Terminal, Gauge } from 'lucide-react'
+import { DollarSign, TrendingDown, Clock, MousePointer2, AlertCircle, Info, Globe, TrendingUp, Terminal, Activity } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import AdSlot from '@/components/ads/AdSlot'
 
@@ -158,7 +158,7 @@ export default function ApiLatencyCalculator() {
 
             <div className="bg-red-50 dark:bg-red-900/10 p-8 rounded-[2.5rem] border border-red-100 dark:border-red-900/30">
               <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-6 flex items-center gap-2">
-                <Gauge className="w-6 h-6" /> Executive ROI Analysis
+                <Activity className="w-6 h-6" /> Executive ROI Analysis
               </h3>
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-4 border-b border-red-200/30">

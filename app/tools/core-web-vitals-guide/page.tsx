@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Zap, Clock, Layout, Info, CheckCircle2, AlertTriangle, TrendingUp, Gauge, Terminal, Globe } from 'lucide-react'
+import { Zap, Clock, Layout, Info, CheckCircle2, AlertTriangle, TrendingUp, Activity, Terminal, Globe } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import AdSlot from '@/components/ads/AdSlot'
 
@@ -66,7 +66,7 @@ export default function CoreWebVitalsGuide() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-            <Gauge className="w-4 h-4" /> 2026 Expert Technical Guide
+            <Activity className="w-4 h-4" /> 2026 Expert Technical Guide
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
             The Ultimate Guide to <br />
