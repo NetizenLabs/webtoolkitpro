@@ -4,10 +4,24 @@ import { Shuffle, Copy, Check, RefreshCw } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function UuidGenerator() {
-  const gen = () => crypto.randomUUID()
-  const [uuids, setUuids] = useState<string[]>([gen()])
+  const [uuids, setUuids] = useState<string[]>([])
   const [count, setCount] = useState(1)
   const [copied, setCopied] = useState<number|null>(null)
+
+  const gen = () => {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+      return crypto.randomUUID()
+    }
+    // Fallback for non-secure contexts or older environments
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  React.useEffect(() => {
+    setUuids([gen()])
+  }, [])
 
   const generate = () => {
     const arr = []

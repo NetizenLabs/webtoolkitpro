@@ -5,7 +5,8 @@ import Link from 'next/link'
 import {
   FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
-  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star
+  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
+  DollarSign, ClipboardList, TrendingDown
 } from 'lucide-react'
 
 const tools = [

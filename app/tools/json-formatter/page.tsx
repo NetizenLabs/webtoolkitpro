@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { FileJson, Copy, Trash2, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function JsonFormatter() {
   const [input, setInput] = useState('')

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Key, Copy, RefreshCw, Check } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function PasswordGenerator() {
   const [password, setPassword] = useState('')
