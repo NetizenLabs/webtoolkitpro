@@ -1,5 +1,6 @@
 'use client'
 
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { FileText, Copy, Download, RefreshCw, CheckCircle2, ArrowRight, Shield } from 'lucide-react'
 

@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import { DollarSign, TrendingDown, Clock, MousePointer2, AlertCircle, Info, Globe, TrendingUp, Terminal, Activity } from 'lucide-react'
+import Link from 'next/link'
+import { DollarSign, TrendingDown, Clock, MousePointer2, AlertCircle, Info, Globe, TrendingUp, Terminal, Activity, ArrowRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import AdSlot from '@/components/ads/AdSlot'
 

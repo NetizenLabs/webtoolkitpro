@@ -1,5 +1,6 @@
 'use client'
 
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { Zap, Clock, Layout, Info, CheckCircle2, AlertTriangle, TrendingUp, Activity, Terminal, Globe, ArrowRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
