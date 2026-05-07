@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Popular Tools</h4>
+            <h3 className="text-white font-bold mb-6">Popular Tools</h3>
             <ul className="space-y-4 text-sm">
               <li><Link href="/tools/json-formatter" className="hover:text-blue-400 transition-colors">JSON Formatter</Link></li>
               <li><Link href="/tools/password-generator" className="hover:text-blue-400 transition-colors">Password Generator</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Company</h4>
+            <h3 className="text-white font-bold mb-6">Company</h3>
             <ul className="space-y-4 text-sm">
               <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
               <li><Link href="/blog" className="hover:text-blue-400 transition-colors">Blog</Link></li>
@@ -50,6 +50,7 @@ export default function Footer() {
               <input 
                 type="email" 
                 placeholder="email@example.com"
+                aria-label="Email Address for Newsletter"
                 className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
               />
               <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition-all shadow-lg shadow-blue-900/20">
@@ -64,13 +65,25 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} WebToolkit Pro. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+            <Link 
+              href="https://github.com/abusufyan-netizen/webtoolkitpro" 
+              className="text-gray-500 hover:text-white transition-colors"
+              aria-label="GitHub Repository"
+            >
               <Github className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+            <Link 
+              href="#" 
+              className="text-gray-500 hover:text-white transition-colors"
+              aria-label="Twitter Profile"
+            >
               <Twitter className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+            <Link 
+              href="/contact" 
+              className="text-gray-500 hover:text-white transition-colors"
+              aria-label="Contact Email"
+            >
               <Mail className="w-5 h-5" />
             </Link>
           </div>
