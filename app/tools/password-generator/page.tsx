@@ -36,6 +36,35 @@ export default function PasswordGenerator() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://wtkpro.site'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Tools',
+                'item': 'https://wtkpro.site/tools'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Password Generator',
+                'item': 'https://wtkpro.site/tools/password-generator'
+              }
+            ]
+          }),
+        }}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-indigo-600 rounded-xl">
