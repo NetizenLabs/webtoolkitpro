@@ -32,7 +32,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-blue-100 dark:border-slate-800 rounded-full px-5 py-2 mb-8 text-sm font-medium text-blue-700 dark:text-blue-400 shadow-sm" style={{animation: 'fadeInDown 0.6s ease-out'}}>
             <Sparkles className="w-4 h-4" />
-            20+ Free Developer Tools — No Login Required
+            26+ Free Developer Tools — No Login Required
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight" style={{animation: 'fadeInUp 0.8s ease-out'}}>
@@ -68,7 +68,7 @@ export default function Home() {
       <section className="py-12 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: 'Free Tools', value: '20+', icon: Zap },
+            { label: 'Free Tools', value: '26+', icon: Zap },
             { label: 'Monthly Users', value: '5K+', icon: Users },
             { label: 'Star Rating', value: '4.9', icon: Star },
             { label: 'Lines of Code', value: '10K+', icon: Code },
@@ -114,7 +114,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/tools" className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:gap-3 transition-all">
-              View All 16+ Tools <ArrowRight className="w-5 h-5" />
+              View All 26+ Tools <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
