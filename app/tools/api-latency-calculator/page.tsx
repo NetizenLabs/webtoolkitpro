@@ -193,27 +193,45 @@ export default function ApiLatencyCalculator() {
           </div>
         </div>
 
-        <div className="mt-16 bg-white dark:bg-slate-900 p-10 rounded-[3rem] border border-gray-100 dark:border-slate-800 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
-            <Terminal className="w-6 h-6 text-red-600" /> Technical Impact Report
-          </h2>
-          <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-slate-400">
-            <p className="mb-6">
-              Latency isn't just a technical metric; it's a direct inhibitor of user satisfaction and business growth. In high-performance enterprise systems, every millisecond counts toward the final bottom line.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-3">
-                <h4 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                  <MousePointer2 className="w-4 h-4 text-red-500" /> Conversion Friction
-                </h4>
-                <p className="text-xs leading-relaxed">As latency increases, users experience 'micro-frustrations' that lead to session abandonment. This is especially critical in mobile-first environments.</p>
+        <div className="mt-16 bg-white dark:bg-slate-900 p-10 rounded-[3rem] border border-gray-100 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-10 opacity-5 group-hover:scale-110 transition-transform">
+            <Activity className="w-48 h-48 text-red-600" />
+          </div>
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+              <Terminal className="w-6 h-6 text-red-600" /> Technical Impact Report
+            </h2>
+            <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-slate-400 mb-10">
+              <p className="mb-6">
+                Latency isn't just a technical metric; it's a direct inhibitor of user satisfaction and business growth. In high-performance enterprise systems, every millisecond counts toward the final bottom line.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <h4 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <MousePointer2 className="w-4 h-4 text-red-500" /> Conversion Friction
+                  </h4>
+                  <p className="text-xs leading-relaxed">As latency increases, users experience 'micro-frustrations' that lead to session abandonment. This is especially critical in mobile-first environments.</p>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <Globe className="w-4 h-4 text-red-500" /> Global Edge Distribution
+                  </h4>
+                  <p className="text-xs leading-relaxed">Reducing latency often requires moving logic closer to the user via CDN edge workers (Next.js Edge Runtime or Cloudflare Workers).</p>
+                </div>
               </div>
-              <div className="space-y-3">
-                <h4 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                  <Globe className="w-4 h-4 text-red-500" /> Global Edge Distribution
-                </h4>
-                <p className="text-xs leading-relaxed">Reducing latency often requires moving logic closer to the user via CDN edge workers (Next.js Edge Runtime or Cloudflare Workers).</p>
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center justify-between p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 gap-6">
+              <div className="text-left">
+                <h4 className="font-bold text-red-700 dark:text-red-400 mb-1">Optimize Your Core Web Vitals</h4>
+                <p className="text-xs text-red-600/70 dark:text-red-400/70">Master the metrics Google uses to rank high-performance websites.</p>
               </div>
+              <Link 
+                href="/tools/core-web-vitals-guide/"
+                className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:shadow-lg transition-all hover:-translate-y-0.5 whitespace-nowrap"
+              >
+                Explore Expert Guide <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Zap, Clock, Layout, Info, CheckCircle2, AlertTriangle, TrendingUp, Activity, Terminal, Globe } from 'lucide-react'
+import Link from 'next/link'
+import { Zap, Clock, Layout, Info, CheckCircle2, AlertTriangle, TrendingUp, Activity, Terminal, Globe, ArrowRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import AdSlot from '@/components/ads/AdSlot'
 
@@ -162,11 +162,14 @@ export default function CoreWebVitalsGuide() {
               <Globe className="absolute -bottom-10 -right-10 w-40 h-40 opacity-10" />
               <h3 className="text-lg font-bold mb-2">Ready to Rank?</h3>
               <p className="text-sm text-blue-100 leading-relaxed mb-6">
-                Google prioritizes sites that pass all three Core Web Vitals. Use our SEO Checklist to track your progress.
+                Google prioritizes sites that pass all three Core Web Vitals. Use our expert SEO Checklist to track your progress.
               </p>
-              <button className="w-full py-3 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
-                View SEO Checklist
-              </button>
+              <Link 
+                href="/tools/seo-audit-checklist/"
+                className="inline-flex w-full py-3 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg items-center justify-center gap-2"
+              >
+                View SEO Checklist <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
             
             <AdSlot />

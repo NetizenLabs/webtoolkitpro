@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { FileJson, Copy, Trash2, Check } from 'lucide-react'
+import Link from 'next/link'
+import { FileJson, Copy, Trash2, Check, ArrowRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import AdSlot from '@/components/ads/AdSlot'
 
@@ -121,7 +121,27 @@ export default function JsonFormatter() {
           </button>
         </div>
         
-        <AdSlot className="mt-8" />
+        <div className="mt-12 bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-sm mb-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center shrink-0">
+                <FileJson className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-1">Technical Deep-Dive: JSON Syntax Errors</h4>
+                <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">Read our 2026 study on common enterprise JSON failure modes and optimization strategies.</p>
+              </div>
+            </div>
+            <Link 
+              href="/blog/json-syntax-errors-study/"
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:shadow-lg transition-all hover:-translate-y-0.5 whitespace-nowrap"
+            >
+              Read Study <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+        
+        <AdSlot />
       </div>
     </div>
   )

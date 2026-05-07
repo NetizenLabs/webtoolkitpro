@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { FileText, Copy, Download, RefreshCw, CheckCircle2 } from 'lucide-react'
+import Link from 'next/link'
+import { FileText, Copy, Download, RefreshCw, CheckCircle2, ArrowRight, Shield } from 'lucide-react'
 
 export default function RobotsGenerator() {
   const [allowAll, setAllowAll] = useState(true)
@@ -145,6 +145,25 @@ export default function RobotsGenerator() {
                 className="w-full h-full min-h-[300px] px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 outline-none font-mono text-sm text-gray-700"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Expert Templates CTA */}
+        <div className="mt-8 bg-orange-600 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl shadow-orange-500/20 group">
+          <Shield className="absolute -bottom-10 -right-10 w-40 h-40 opacity-10 group-hover:scale-110 transition-transform" />
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-left">
+              <h3 className="text-xl font-bold mb-2">Need a Battle-Tested robots.txt?</h3>
+              <p className="text-orange-100 text-sm leading-relaxed max-w-xl">
+                Don't start from scratch. Use our pre-configured, enterprise-grade templates for Next.js, WordPress, and E-commerce platforms.
+              </p>
+            </div>
+            <Link 
+              href="/tools/robots-txt-templates/"
+              className="inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-xl font-bold text-sm hover:shadow-lg transition-all hover:-translate-y-0.5 whitespace-nowrap"
+            >
+              View Expert Templates <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
