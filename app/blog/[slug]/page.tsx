@@ -19,6 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(params.slug)
   if (!post) return { title: 'Post Not Found' }
 
+  const ogImage = post.image 
+    ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`)
+    : 'https://wtkpro.site/og-image.png?v=1'
+
   return {
     title: `${post.title} | WebToolkit Pro Blog`,
     description: post.description,
@@ -37,11 +41,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: [post.author],
       tags: post.tags,
       locale: 'en_US',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      images: [ogImage],
     },
     robots: {
       index: true,
