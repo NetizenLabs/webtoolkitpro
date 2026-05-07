@@ -23,33 +23,48 @@ export default function HashGenerator() {
   const handleCopy = (key: string) => { navigator.clipboard.writeText(hashes[key]); setCopied(key); setTimeout(() => setCopied(null), 2000) }
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Hash Generator" slug="hash-generator" />
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="p-3 bg-gradient-to-br from-slate-500 to-slate-700 rounded-xl"><Shield className="w-8 h-8 text-white" /></div>
-          <div><h1 className="text-3xl font-bold text-gray-900">Hash Generator</h1><p className="text-gray-500">Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes from any text</p></div>
+        <div className="flex items-center gap-4 mb-8">
+          <div className="p-4 bg-gradient-to-br from-slate-500 to-slate-700 rounded-2xl shadow-lg shadow-slate-500/20">
+            <Shield className="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Hash Generator</h1>
+            <p className="text-gray-500 dark:text-slate-400">Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes from any text</p>
+          </div>
         </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm mb-6">
-          <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter text to hash..." className="w-full h-32 p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-slate-500 outline-none resize-none mb-4" />
-          <button onClick={generate} className="w-full py-3 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-900 transition-all mb-8">Generate Hashes</button>
+        
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 shadow-sm mb-6">
+          <textarea 
+            value={input} 
+            onChange={(e) => setInput(e.target.value)} 
+            placeholder="Enter text to hash..." 
+            className="w-full h-32 p-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-slate-500 outline-none resize-none mb-4 dark:text-white" 
+          />
+          <button onClick={generate} className="w-full py-4 bg-slate-800 dark:bg-slate-700 text-white rounded-2xl font-bold hover:bg-slate-900 dark:hover:bg-slate-600 transition-all shadow-lg mb-8">Generate Secure Hashes</button>
+          
           {Object.keys(hashes).length > 0 && (
             <div className="space-y-4">
               {Object.entries(hashes).map(([algo, hash]) => (
-                <div key={algo} className="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-bold text-gray-700">{algo}</span>
-                    <button onClick={() => handleCopy(algo)} className="text-sm text-slate-600 hover:text-slate-800 flex items-center gap-1">
-                      {copied===algo ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />} {copied===algo?'Copied':'Copy'}
+                <div key={algo} className="p-5 bg-gray-50 dark:bg-slate-800/50 rounded-2xl border border-gray-100 dark:border-slate-700 transition-all group">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">{algo} Algorithm</span>
+                    <button onClick={() => handleCopy(algo)} className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white flex items-center gap-1.5 font-bold transition-colors">
+                      {copied===algo ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />} 
+                      <span>{copied===algo ? 'Copied' : 'Copy Hash'}</span>
                     </button>
                   </div>
-                  <div className="font-mono text-xs text-gray-600 break-all">{hash}</div>
+                  <div className="font-mono text-sm text-gray-600 dark:text-slate-300 break-all bg-white dark:bg-slate-900 p-3 rounded-xl border border-gray-100 dark:border-slate-800">{hash}</div>
                 </div>
               ))}
             </div>
           )}
         </div>
-        <div className="h-[90px]">{/* AdSense slot */}</div>
+        <div className="h-[90px] bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
+        </div>
       </div>
     </div>
   )

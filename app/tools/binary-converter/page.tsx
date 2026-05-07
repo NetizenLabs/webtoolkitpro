@@ -17,31 +17,52 @@ export default function BinaryConverter() {
   }
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Binary Converter" slug="binary-converter" />
       <div className="max-w-3xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="p-3 bg-gradient-to-br from-red-500 to-red-700 rounded-xl"><Binary className="w-8 h-8 text-white" /></div>
-          <div><h1 className="text-3xl font-bold text-gray-900">Binary Converter</h1><p className="text-gray-500">Convert between binary, decimal, hexadecimal, and octal</p></div>
+        <div className="flex items-center gap-4 mb-8">
+          <div className="p-4 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl shadow-lg shadow-red-500/20">
+            <Binary className="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Binary Converter</h1>
+            <p className="text-gray-500 dark:text-slate-400">Convert between binary, decimal, hexadecimal, and octal</p>
+          </div>
         </div>
-        <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm mb-6">
-          <div className="flex gap-4 mb-6">
-            <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter a number..." className="flex-1 p-4 font-mono bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 outline-none" />
-            <select value={fromBase} onChange={(e) => setFromBase(e.target.value)} className="p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 outline-none font-semibold">
-              <option value="2">Binary</option><option value="8">Octal</option><option value="10">Decimal</option><option value="16">Hex</option>
+        
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 shadow-sm mb-6">
+          <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <input 
+              value={input} 
+              onChange={(e) => setInput(e.target.value)} 
+              placeholder="Enter a number..." 
+              className="flex-1 p-4 font-mono bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none dark:text-white" 
+            />
+            <select 
+              value={fromBase} 
+              onChange={(e) => setFromBase(e.target.value)} 
+              className="p-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none font-bold text-gray-700 dark:text-slate-300"
+            >
+              <option value="2">Binary (Base 2)</option>
+              <option value="8">Octal (Base 8)</option>
+              <option value="10">Decimal (Base 10)</option>
+              <option value="16">Hex (Base 16)</option>
             </select>
           </div>
-          <button onClick={convert} className="w-full py-3 bg-red-600 text-white rounded-xl font-semibold hover:bg-red-700 transition-all mb-8">Convert</button>
-          <div className="grid grid-cols-2 gap-4">
+          <button onClick={convert} className="w-full py-4 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-500/20 mb-8">Convert Now</button>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[{l:'Binary (Base 2)',v:results.binary},{l:'Decimal (Base 10)',v:results.decimal},{l:'Hex (Base 16)',v:results.hex},{l:'Octal (Base 8)',v:results.octal}].map(r=>(
-              <div key={r.l} className="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                <div className="text-xs text-gray-500 mb-1 font-semibold">{r.l}</div>
-                <div className="font-mono text-lg font-bold text-gray-900 break-all">{r.v || '—'}</div>
+              <div key={r.l} className="p-4 bg-gray-50 dark:bg-slate-800/50 rounded-2xl border border-gray-100 dark:border-slate-700">
+                <div className="text-[10px] text-gray-400 dark:text-slate-500 uppercase font-bold tracking-widest mb-1">{r.l}</div>
+                <div className="font-mono text-lg font-black text-gray-900 dark:text-white break-all">{r.v || '—'}</div>
               </div>
             ))}
           </div>
         </div>
-        <div className="h-[90px]">{/* AdSense slot */}</div>
+        <div className="h-[90px] bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
+        </div>
       </div>
     </div>
   )

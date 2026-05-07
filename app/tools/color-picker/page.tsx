@@ -46,23 +46,23 @@ export default function ColorPicker() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Color Picker" slug="color-picker" />
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="p-3 bg-pink-600 rounded-xl">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="p-4 bg-pink-600 rounded-2xl shadow-lg shadow-pink-600/20">
             <Palette className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Color Picker</h1>
-            <p className="text-gray-600">Pick colors and get their HEX, RGB, and HSL values</p>
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Color Picker</h1>
+            <p className="text-gray-500 dark:text-slate-400">Pick colors and get their HEX, RGB, and HSL values</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center space-y-6">
+          <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-slate-800 flex flex-col items-center justify-center space-y-6">
             <div 
-              className="w-full h-64 rounded-2xl shadow-inner transition-colors duration-200"
+              className="w-full h-64 rounded-2xl shadow-inner transition-colors duration-200 border border-gray-100 dark:border-slate-800"
               style={{ backgroundColor: color }}
             />
             <input 
@@ -74,47 +74,31 @@ export default function ColorPicker() {
           </div>
 
           <div className="space-y-4">
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">HEX</label>
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 font-mono text-lg">
-                  <span className="uppercase">{color}</span>
-                  <button 
-                    onClick={() => handleCopy(color.toUpperCase(), 'hex')}
-                    className={`p-2 rounded-lg transition-all ${copied === 'hex' ? 'text-green-600 bg-green-50' : 'text-gray-400 hover:bg-gray-100'}`}
-                  >
-                    {copied === 'hex' ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-                  </button>
+            <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-md border border-gray-100 dark:border-slate-800 space-y-4">
+              {[
+                { label: 'HEX', value: color.toUpperCase(), id: 'hex' },
+                { label: 'RGB', value: hexToRgb(color), id: 'rgb' },
+                { label: 'HSL', value: hexToHsl(color), id: 'hsl' }
+              ].map((type) => (
+                <div key={type.id}>
+                  <label className="block text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-2">{type.label}</label>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 font-mono text-lg">
+                    <span className={`dark:text-white ${type.id === 'hex' ? 'uppercase' : ''}`}>{type.value}</span>
+                    <button 
+                      onClick={() => handleCopy(type.value, type.id)}
+                      className={`p-2 rounded-xl transition-all ${copied === type.id ? 'text-green-600 bg-green-50 dark:bg-green-900/20' : 'text-gray-400 dark:text-slate-500 hover:bg-gray-100 dark:hover:bg-slate-700'}`}
+                    >
+                      {copied === type.id ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">RGB</label>
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 font-mono text-lg">
-                  <span>{hexToRgb(color)}</span>
-                  <button 
-                    onClick={() => handleCopy(hexToRgb(color), 'rgb')}
-                    className={`p-2 rounded-lg transition-all ${copied === 'rgb' ? 'text-green-600 bg-green-50' : 'text-gray-400 hover:bg-gray-100'}`}
-                  >
-                    {copied === 'rgb' ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">HSL</label>
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 font-mono text-lg">
-                  <span>{hexToHsl(color)}</span>
-                  <button 
-                    onClick={() => handleCopy(hexToHsl(color), 'hsl')}
-                    className={`p-2 rounded-lg transition-all ${copied === 'hsl' ? 'text-green-600 bg-green-50' : 'text-gray-400 hover:bg-gray-100'}`}
-                  >
-                    {copied === 'hsl' ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
+        </div>
+        
+        <div className="mt-12 h-[90px] bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
         </div>
       </div>
     </div>

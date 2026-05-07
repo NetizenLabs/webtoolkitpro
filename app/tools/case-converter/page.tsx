@@ -23,23 +23,48 @@ export default function CaseConverter() {
   ]
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Case Converter" slug="case-converter" />
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="p-3 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl"><Type className="w-8 h-8 text-white" /></div>
-          <div><h1 className="text-3xl font-bold text-gray-900">Case Converter</h1><p className="text-gray-500">Convert text between different letter cases instantly</p></div>
+        <div className="flex items-center gap-4 mb-8">
+          <div className="p-4 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-2xl shadow-lg shadow-cyan-500/20">
+            <Type className="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Case Converter</h1>
+            <p className="text-gray-500 dark:text-slate-400">Convert text between different letter cases instantly</p>
+          </div>
         </div>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="Type or paste your text here..." className="w-full h-56 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-cyan-500 outline-none resize-none mb-6" />
-        <div className="flex flex-wrap gap-3 mb-6">
+
+        <textarea 
+          value={text} 
+          onChange={(e) => setText(e.target.value)} 
+          placeholder="Type or paste your text here..." 
+          className="w-full h-64 p-8 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl shadow-sm focus:ring-2 focus:ring-cyan-500 outline-none resize-none mb-8 dark:text-white text-lg transition-all" 
+        />
+
+        <div className="flex flex-wrap gap-3 mb-8">
           {buttons.map(b => (
-            <button key={b.label} onClick={() => convert(b.fn)} className="px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-semibold text-sm text-gray-700 hover:bg-gray-50 hover:shadow-md transition-all">{b.label}</button>
+            <button 
+              key={b.label} 
+              onClick={() => convert(b.fn)} 
+              className="px-6 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl font-bold text-sm text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:shadow-md transition-all"
+            >
+              {b.label}
+            </button>
           ))}
-          <button onClick={handleCopy} className="px-5 py-2.5 bg-cyan-600 text-white rounded-xl font-semibold text-sm hover:bg-cyan-700 transition-all flex items-center gap-2">
-            {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />} {copied ? 'Copied' : 'Copy'}
+          <button 
+            onClick={handleCopy} 
+            className="px-6 py-3 bg-cyan-600 text-white rounded-2xl font-bold text-sm hover:bg-cyan-700 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20"
+          >
+            {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />} 
+            <span>{copied ? 'Copied' : 'Copy Text'}</span>
           </button>
         </div>
-        <div className="h-[90px]">{/* AdSense slot */}</div>
+
+        <div className="h-[90px] bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800 flex items-center justify-center">
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Ad Placement</span>
+        </div>
       </div>
     </div>
   )
