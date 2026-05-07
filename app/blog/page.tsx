@@ -112,6 +112,31 @@ export default function BlogPage() {
           {/* AdSense Rectangle */}
         </div>
 
+        {/* JSON-LD Breadcrumb List */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              'itemListElement': [
+                {
+                  '@type': 'ListItem',
+                  'position': 1,
+                  'name': 'Home',
+                  'item': 'https://wtkpro.site'
+                },
+                {
+                  '@type': 'ListItem',
+                  'position': 2,
+                  'name': 'Blog',
+                  'item': 'https://wtkpro.site/blog/'
+                }
+              ]
+            }),
+          }}
+        />
+
         {/* JSON-LD Structured Data for Blog listing */}
         <script
           type="application/ld+json"
