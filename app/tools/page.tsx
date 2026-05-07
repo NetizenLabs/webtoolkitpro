@@ -28,6 +28,7 @@ const tools = [
   { name: 'API Latency Cost Calculator', description: 'Calculate the financial impact of network latency on your revenue', icon: TrendingDown, href: '/tools/api-latency-calculator', color: 'from-red-600 to-red-800', category: 'SEO' },
   { name: 'AdSense Revenue Estimator', description: 'Project potential earnings based on traffic, niche, and CPC/CTR', icon: DollarSign, href: '/tools/adsense-calculator', color: 'from-emerald-500 to-emerald-700', category: 'SEO' },
   { name: 'Technical SEO Audit Checklist', description: 'Interactive checklist for comprehensive search engine optimization', icon: ClipboardList, href: '/tools/seo-audit-checklist', color: 'from-blue-600 to-blue-800', category: 'SEO' },
+  { name: 'Enterprise robots.txt Templates', description: 'Pre-configured, battle-tested robots.txt for Next.js, WP, and E-commerce', icon: FileText, href: '/tools/robots-txt-templates', color: 'from-orange-600 to-orange-800', category: 'SEO', releaseDate: '2026-05-07' },
   { name: 'WCAG Color Contrast Checker', description: 'Verify ADA and WCAG 2.1 accessibility compliance', icon: Palette, href: '/tools/color-contrast', color: 'from-pink-500 to-pink-700', category: 'Design', releaseDate: '2026-05-08' },
   { name: 'Markdown to HTML Converter', description: 'Convert documentation to clean, semantic HTML code', icon: FileCode, href: '/tools/markdown-converter', color: 'from-violet-500 to-violet-700', category: 'Formatters', releaseDate: '2026-05-09' },
 
