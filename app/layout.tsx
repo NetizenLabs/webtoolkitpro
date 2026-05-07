@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   verification: {
     google: 'mDdN3EPYoUOznSZf30r9MWseEpejEY2n2l18mhlQX1k',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: '/',
   },
