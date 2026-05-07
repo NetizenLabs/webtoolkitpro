@@ -11,9 +11,17 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
-  title: 'WebToolkit Pro | Professional Online Developer Tools',
-  description: 'Premium collection of 20+ free developer tools and technical guides. Secure, fast, and optimized for US enterprise development.',
-  keywords: 'developer tools, JSON formatter, password generator, base64 encoder, online tools, web development, free tools',
+  title: 'WebToolkit Pro | 20+ Premium Developer Tools & Technical Guides',
+  description: 'Premium collection of 20+ free developer tools and technical guides. Secure, fast, and optimized for enterprise development.',
+  keywords: 'developer tools, json formatter, password generator, webtoolkit pro, seo tools, technical guides, base64 encoder',
+  authors: [{ name: 'WebToolkit Pro' }],
+  creator: 'WebToolkit Pro',
+  publisher: 'WebToolkit Pro',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   verification: {
     google: 'mDdN3EPYoUOznSZf30r9MWseEpejEY2n2l18mhlQX1k',
   },
@@ -32,8 +40,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'WebToolkit Pro | Professional Online Developer Tools',
-    description: 'Premium developer tools and technical guides for enterprise web development. Format JSON, generate passwords, and more.',
+    title: 'WebToolkit Pro | 20+ Premium Developer Tools & Technical Guides',
+    description: 'Premium collection of 20+ free developer tools and technical guides. Secure, fast, and optimized for enterprise development.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     images: [
@@ -49,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WebToolkit Pro | Professional Online Developer Tools',
-    description: 'Premium developer tools and technical guides for enterprise web development.',
+    title: 'WebToolkit Pro | 20+ Premium Developer Tools & Technical Guides',
+    description: 'Premium collection of 20+ free developer tools and technical guides.',
     images: ['https://wtkpro.site/og-image.png?v=1'],
     creator: '@WebToolkitPro',
   },
