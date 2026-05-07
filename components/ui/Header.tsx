@@ -36,6 +36,8 @@ export default function Header() {
             <img 
               src="/logo-full.png" 
               alt="WebToolkit Pro" 
+              width={200}
+              height={50}
               className="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
