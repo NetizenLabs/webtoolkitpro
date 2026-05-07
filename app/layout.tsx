@@ -32,25 +32,27 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'WebToolkit Pro - Free Online Developer Tools',
-    description: 'Free, premium online developer tools and utilities for web professionals. Secure, fast, and optimized for enterprise development.',
+    title: 'WebToolkit Pro | Professional Online Developer Tools',
+    description: 'Premium developer tools and technical guides for enterprise web development. Format JSON, generate passwords, and more.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://wtkpro.site/og-image.png?v=1',
         width: 1200,
         height: 630,
-        alt: 'WebToolkit Pro Official Logo - Professional Developer Tools',
+        alt: 'WebToolkit Pro - Professional Developer Tools',
       },
     ],
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WebToolkit Pro | Professional Developer Tools',
-    description: 'The ultimate suite of 20+ free developer tools. Build faster, better, and more securely.',
-    images: ['/og-image.png'],
+    title: 'WebToolkit Pro | Professional Online Developer Tools',
+    description: 'Premium developer tools and technical guides for enterprise web development.',
+    images: ['https://wtkpro.site/og-image.png?v=1'],
+    creator: '@WebToolkitPro',
   },
   icons: {
     icon: [
