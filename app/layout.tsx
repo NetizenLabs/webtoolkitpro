@@ -87,6 +87,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
+        {/* CDN & Edge Performance Optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        
+        {/* Resource Hints for High Authority Assets */}
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <script
           id="theme-initializer"
           dangerouslySetInnerHTML={{
