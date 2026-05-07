@@ -225,17 +225,18 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
         </div>
 
-        {/* JSON-LD Structured Data - Article */}
+        {/* JSON-LD Structured Data - BlogPosting */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Article',
+              '@type': 'BlogPosting',
               'headline': post.title,
               'description': post.description,
-              'datePublished': post.date,
-              'dateModified': post.date,
+              'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.png',
+              'datePublished': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
+              'dateModified': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
               'author': {
                 '@type': 'Organization',
                 'name': post.author,
@@ -244,6 +245,10 @@ export default async function BlogPostPage({ params }: Props) {
               'publisher': {
                 '@type': 'Organization',
                 'name': 'WebToolkit Pro',
+                'logo': {
+                  '@type': 'ImageObject',
+                  'url': 'https://wtkpro.site/favicon.png'
+                },
                 'url': 'https://wtkpro.site',
               },
               'mainEntityOfPage': {
