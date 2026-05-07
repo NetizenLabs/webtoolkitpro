@@ -43,6 +43,7 @@ const tools = [
   // Utilities
   { name: 'Design Color Picker', description: 'Visual color selection with HEX and RGB export', icon: Palette, href: '/tools/color-picker', color: 'from-pink-500 to-pink-700', category: 'Utilities' },
   { name: 'Technical Word Counter', description: 'Accurate word, character, and sentence analysis', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-700', category: 'Utilities' },
+  { name: 'Social Preview Stress Tester', description: 'Real-time simulation of OG tags and Twitter cards for viral sharing optimization', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800', category: 'SEO', releaseDate: '2026-05-07' },
   { name: 'Live Markdown Previewer', description: 'Real-time rendering of Markdown into formatted text', icon: FileCode, href: '/tools/markdown-previewer', color: 'from-sky-500 to-sky-700', category: 'Utilities' },
 ]
 

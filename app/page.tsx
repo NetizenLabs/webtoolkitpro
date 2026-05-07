@@ -14,7 +14,7 @@ const featuredTools = [
   { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-600' },
   { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-700' },
   { name: 'Word Counter', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-600' },
-  { name: 'Meta Tag Generator', icon: Globe, href: '/tools/meta-tag-generator', color: 'from-rose-500 to-rose-600' },
+  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800' },
 ]
 
 export default function Home() {

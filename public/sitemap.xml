@@ -10,7 +10,7 @@
   <!-- High Authority Research Studies -->
   <url><loc>https://wtkpro.site/blog/json-syntax-errors-study/</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
 
-  <!-- Technical Articles & Guides (26 Pages) -->
+  <!-- Technical Articles & Guides -->
   <url><loc>https://wtkpro.site/blog/ai-cybersecurity-trends/</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://wtkpro.site/blog/ai-in-devops-future/</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://wtkpro.site/blog/automated-testing-guide/</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
@@ -38,7 +38,8 @@
   <url><loc>https://wtkpro.site/blog/ui-ux-design-trends/</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://wtkpro.site/blog/web-accessibility-best-practices/</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
 
-  <!-- Essential Tools (26 Pages) -->
+  <!-- Essential Tools (27 Pages) -->
+  <url><loc>https://wtkpro.site/tools/social-preview-tester/</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
   <url><loc>https://wtkpro.site/tools/api-latency-calculator/</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
   <url><loc>https://wtkpro.site/tools/adsense-calculator/</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
   <url><loc>https://wtkpro.site/tools/seo-audit-checklist/</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
