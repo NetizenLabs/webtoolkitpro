@@ -32,13 +32,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="bg-blue-600 p-1.5 rounded-xl group-hover:rotate-6 transition-transform duration-300 shadow-lg shadow-blue-200 dark:shadow-none">
-              <Box className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl md:text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-              WebToolkit<span className="text-blue-600 dark:text-blue-400">Pro</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <img 
+              src="/logo-full.png" 
+              alt="WebToolkit Pro" 
+              className="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
           
           {/* Desktop Nav */}
