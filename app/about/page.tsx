@@ -90,7 +90,7 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="text-center py-10">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Want to see our tools in action?</h2>
-          <Link href="/tools" className="inline-flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+          <Link href="/tools/" className="inline-flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
             Get Started for Free →
           </Link>
         </div>

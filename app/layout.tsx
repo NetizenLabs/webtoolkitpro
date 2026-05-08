@@ -36,9 +36,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://wtkpro.site/',
-  },
   openGraph: {
     title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
     description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON, generate passwords, and master SEO.',

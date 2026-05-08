@@ -1,5 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://wtkpro.site/',
+  },
+}
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
   Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2
