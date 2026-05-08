@@ -7,6 +7,16 @@ import ToolSchema from '@/components/seo/ToolSchema'
 import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
+const ResultCard = ({ title, passed, sub }: { title: string, passed: boolean, sub: string }) => (
+  <div className={`p-4 rounded-xl border-2 flex items-center justify-between ${passed ? 'border-green-100 bg-green-50 text-green-800' : 'border-red-100 bg-red-50 text-red-800'}`}>
+    <div>
+      <div className="font-bold text-sm">{title}</div>
+      <div className="text-xs opacity-75">{sub}</div>
+    </div>
+    {passed ? <CheckCircle2 className="w-6 h-6" /> : <AlertCircle className="w-6 h-6" />}
+  </div>
+);
+
 export default function ColorContrast() {
   const [foreground, setForeground] = useState('#2563EB')
   const [background, setBackground] = useState('#FFFFFF')
@@ -46,16 +56,6 @@ export default function ColorContrast() {
     calculateContrast()
   }, [foreground, background])
 
-  const ResultCard = ({ title, passed, sub }: { title: string, passed: boolean, sub: string }) => (
-    <div className={`p-4 rounded-xl border-2 flex items-center justify-between ${passed ? 'border-green-100 bg-green-50 text-green-800' : 'border-red-100 bg-red-50 text-red-800'}`}>
-      <div>
-        <div className="font-bold text-sm">{title}</div>
-        <div className="text-xs opacity-75">{sub}</div>
-      </div>
-      {passed ? <CheckCircle2 className="w-6 h-6" /> : <AlertCircle className="w-6 h-6" />}
-    </div>
-  )
-
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen font-sans">
       <BreadcrumbSchema name="Color Contrast Checker" slug="tools/color-contrast" />
@@ -84,7 +84,6 @@ export default function ColorContrast() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Inputs */}
           <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <RefreshCw className="w-5 h-5 text-pink-500" />
@@ -128,7 +127,6 @@ export default function ColorContrast() {
                 </div>
               </div>
 
-              {/* Preview Box */}
               <div 
                 className="mt-8 p-12 rounded-2xl border border-gray-200 flex flex-col items-center justify-center text-center transition-all shadow-inner"
                 style={{ backgroundColor: background, color: foreground }}
@@ -139,7 +137,6 @@ export default function ColorContrast() {
             </div>
           </div>
 
-          {/* Results */}
           <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
             <div className="text-center mb-8 pb-8 border-b border-gray-50">
               <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Contrast Ratio</div>
@@ -158,7 +155,6 @@ export default function ColorContrast() {
               <p className="text-xs text-blue-700 leading-relaxed">
                 <strong>WCAG Standards:</strong> AA is the standard requirement for most business sites. Large text is defined as 18pt+ or 14pt+ bold.
               </p>
-            </div>
             </div>
           </div>
         </div>

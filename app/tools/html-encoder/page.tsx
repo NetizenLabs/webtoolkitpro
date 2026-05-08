@@ -13,24 +13,35 @@ export default function HtmlEncoder() {
   const [output, setOutput] = useState('')
   const [copied, setCopied] = useState(false)
 
-  const encode = () => setOutput(input.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'))
+  const handleEncode = () => {
+    const encoded = input.replace(/&/g, '&amp;')
+                         .replace(/</g, '&lt;')
+                         .replace(/>/g, '&gt;')
+                         .replace(/"/g, '&quot;')
+                         .replace(/'/g, '&#039;');
+    setOutput(encoded);
+  };
   
-  const decode = () => { 
-    const d = document.createElement('div')
-    d.innerHTML = input
-    setOutput(d.textContent || '') 
-  }
+  const handleDecode = () => { 
+    if (typeof document !== 'undefined') {
+      const d = document.createElement('div');
+      d.innerHTML = input;
+      setOutput(d.textContent || ''); 
+    }
+  };
 
   const handleCopy = () => { 
-    navigator.clipboard.writeText(output)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000) 
-  }
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(output);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); 
+    }
+  };
 
   const clearAll = () => {
-    setInput('')
-    setOutput('')
-  }
+    setInput('');
+    setOutput('');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
@@ -78,13 +89,13 @@ export default function HtmlEncoder() {
             />
             <div className="flex gap-4">
               <button 
-                onClick={encode} 
+                onClick={handleEncode} 
                 className="flex-1 py-4 bg-violet-600 text-white rounded-2xl font-bold hover:bg-violet-700 transition-all shadow-lg shadow-violet-500/20 uppercase tracking-widest text-xs"
               >
                 Encode HTML
               </button>
               <button 
-                onClick={decode} 
+                onClick={handleDecode} 
                 className="flex-1 py-4 bg-gray-800 dark:bg-slate-800 text-white rounded-2xl font-bold hover:bg-gray-900 dark:hover:bg-slate-700 transition-all shadow-lg uppercase tracking-widest text-xs"
               >
                 Decode HTML
@@ -114,7 +125,6 @@ export default function HtmlEncoder() {
           </div>
         </div>
 
-        {/* Security Insight Footer */}
         <div className="bg-violet-600 rounded-[3rem] p-10 text-white relative overflow-hidden group mb-16 shadow-xl shadow-violet-500/20">
           <ShieldCheck className="absolute -bottom-10 -right-10 w-48 h-48 opacity-10 group-hover:scale-110 transition-transform" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
@@ -137,36 +147,28 @@ export default function HtmlEncoder() {
 
         <ToolInfo 
           title="HTML Entity Encoder & Decoder"
-          description="The WebToolkit Pro HTML Encoder/Decoder is a security-first utility designed for developers and content managers. HTML encoding is the process of converting special characters (like <, >, and &) into their corresponding HTML entities. This ensures that the characters are treated as literal text by the browser rather than executable code."
-          howItWorks="Our encoder uses a robust string replacement algorithm to sanitize the five key characters: ampersand (&), less-than (<), greater-than (>), double quotes (\\"), and single quotes ('). The decoder utilizes the browser's native DOM parser to safely re-interpret entities back into their original Unicode characters, providing a reliable way to audit and preview encoded content."
+          description="The WebToolkit Pro HTML Encoder/Decoder is a security-first utility designed for developers and content managers. HTML encoding is the process of converting special characters into their corresponding HTML entities."
+          howItWorks="Our encoder uses a robust string replacement algorithm to sanitize the five key characters: ampersand, less-than, greater-than, double quotes, and single quotes. The decoder utilizes the browser native DOM parser to safely re-interpret entities back into their original Unicode characters."
           features={[
             "Instant conversion of special characters to entities",
             "Safe-mode decoding using browser-native DOM parsing",
-            "Support for common entities (&lt;, &gt;, &amp;, &quot;, &#039;)",
-            "One-click 'Clear All' for rapid iteration",
+            "Support for common entities",
+            "One-click Clear All for rapid iteration",
             "High-contrast IDE-style result display",
-            "100% Client-side: Your data is never transmitted"
+            "100% Client-side processing"
           ]}
           faqs={[
             {
               q: "What is the primary purpose of HTML encoding?",
-              a: "HTML encoding is primarily used for security, specifically to prevent Cross-Site Scripting (XSS) attacks by ensuring that browser-executable characters are rendered as plain text."
+              a: "HTML encoding is primarily used for security, specifically to prevent Cross-Site Scripting (XSS) attacks."
             },
             {
               q: "Which characters MUST be encoded?",
-              a: "At a minimum, you should always encode <, >, &, \", and ' if they are being output inside an HTML element or attribute."
-            },
-            {
-              q: "Is there a difference between entity names and numbers?",
-              a: "Entity names (like &lt;) are easier for humans to read, while entity numbers (like &#60;) are sometimes more compatible with older character sets."
-            },
-            {
-              q: "Can I use this for email obfuscation?",
-              a: "Yes. Encoding your email address into HTML entities can sometimes help prevent simple scraper bots from harvesting your address from a webpage."
+              a: "At a minimum, you should always encode less-than, greater-than, ampersand, and quotes."
             }
           ]}
         />
       </div>
     </div>
-  )
+  );
 }
