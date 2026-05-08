@@ -15,34 +15,59 @@ export default function CdnReadinessTester() {
   const handleTest = async () => {
     if (!url) return
     setLoading(true)
+    setResults(null)
     try {
-      // Using AllOrigins CORS proxy to fetch headers
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
-      const response = await fetch(proxyUrl)
-      const data = await response.json()
+      const targetUrl = url.startsWith('http') ? url : `https://${url}`
+      const res = await fetch(`/api/proxy-headers?url=${encodeURIComponent(targetUrl)}`)
+      const data = await res.json()
       
-      // Simulating a header analysis based on the proxy response
-      // Note: AllOrigins doesn't return all raw headers, so we simulate the analysis for the demo
-      const isGithub = url.includes('github.io') || url.includes('wtkpro.site')
-      
-      setTimeout(() => {
-        setResults({
-          status: 'Analyzed',
-          cdn: isGithub ? 'GitHub Pages (Fastly Edge)' : 'Unknown / Non-Proxy',
-          headers: [
-            { name: 'X-Cache', value: isGithub ? 'HIT' : 'MISS', status: 'optimal' },
-            { name: 'Content-Encoding', value: 'br (Brotli)', status: 'optimal' },
-            { name: 'Server', value: isGithub ? 'GitHub.com' : 'Direct Server', status: 'warning' },
-          ],
-          score: isGithub ? 85 : 40,
-          recommendation: isGithub 
-            ? 'Your site is on GitHub Pages CDN. To get a 100% score on external checkers, we recommend enabling Cloudflare Proxy (Free) for wtkpro.site.'
-            : 'No recognized CDN headers found. We recommend using Cloudflare or Akamai for edge delivery.'
-        })
-        setLoading(false)
-      }, 1500)
-    } catch (error) {
+      if (data.error) throw new Error(data.error)
+
+      const h = data.headers
+      const analyzedHeaders = [
+        { 
+          name: 'X-Cache / CF-Cache', 
+          value: h['x-cache'] || h['cf-cache-status'] || h['x-vercel-cache'] || 'MISS/NONE', 
+          status: (h['x-cache']?.includes('HIT') || h['cf-cache-status'] === 'HIT' || h['x-vercel-cache'] === 'HIT') ? 'optimal' : 'warning' 
+        },
+        { 
+          name: 'Content-Encoding', 
+          value: h['content-encoding'] || 'identity', 
+          status: (h['content-encoding'] === 'br' || h['content-encoding'] === 'gzip') ? 'optimal' : 'warning' 
+        },
+        { 
+          name: 'Server', 
+          value: h['server'] || 'Unknown', 
+          status: h['server'] ? 'optimal' : 'warning' 
+        },
+        {
+          name: 'Latency',
+          value: `${data.latency}ms`,
+          status: data.latency < 200 ? 'optimal' : 'warning'
+        }
+      ]
+
+      // Calculate a real score
+      let score = 20
+      if (h['x-cache']?.includes('HIT') || h['cf-cache-status'] === 'HIT' || h['x-vercel-cache'] === 'HIT') score += 30
+      if (h['content-encoding'] === 'br') score += 25
+      if (h['content-encoding'] === 'gzip') score += 15
+      if (h['server']) score += 25
+      if (data.latency < 150) score += 10
+
+      setResults({
+        status: 'Analyzed',
+        cdn: h['server'] || 'Unknown Edge',
+        headers: analyzedHeaders,
+        score: Math.min(score, 100),
+        recommendation: score > 80 
+          ? 'Excellent! Your site is correctly optimized for edge delivery with active caching and compression.'
+          : 'Optimization required. We recommend enabling a CDN (like Cloudflare) and Brotli compression to improve global load times.'
+      })
+    } catch (error: any) {
       console.error('Test error:', error)
+      alert('Failed to analyze URL. Please make sure it is a valid, public website.')
+    } finally {
       setLoading(false)
     }
   }
