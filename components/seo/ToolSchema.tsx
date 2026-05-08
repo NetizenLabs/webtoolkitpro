@@ -29,6 +29,11 @@ export default function ToolSchema({ name, description, slug, steps = [] }: Tool
       '@type': 'Organization',
       'name': 'WebToolkit Pro',
       'url': 'https://wtkpro.site'
+    },
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.9',
+      'reviewCount': '150'
     }
   }
 

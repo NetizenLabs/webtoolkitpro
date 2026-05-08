@@ -8,6 +8,7 @@ interface BreadcrumbSchemaProps {
 }
 
 export default function BreadcrumbSchema({ name, slug }: BreadcrumbSchemaProps) {
+  const cleanSlug = slug.replace(/^tools\//, '').replace(/\/$/, '')
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -28,7 +29,7 @@ export default function BreadcrumbSchema({ name, slug }: BreadcrumbSchemaProps) 
         '@type': 'ListItem',
         'position': 3,
         'name': name,
-        'item': `https://wtkpro.site/tools/${slug}`
+        'item': `https://wtkpro.site/tools/${cleanSlug}/`
       }
     ]
   }
