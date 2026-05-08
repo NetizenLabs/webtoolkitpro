@@ -11,6 +11,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/',
+      'x-default': '/',
+    },
+  },
   title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
   description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON and master SEO.',
   keywords: 'developer tools, json formatter, password generator, webtoolkit pro, seo tools, technical guides, base64 encoder',

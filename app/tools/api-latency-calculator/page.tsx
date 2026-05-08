@@ -144,11 +144,19 @@ export default function ApiLatencyCalculator() {
             </div>
             
             <div className="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-3xl border border-amber-100 dark:border-amber-900/30">
-              <div className="flex gap-3">
-                <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <p className="text-xs text-amber-800 dark:text-amber-400 leading-relaxed">
-                  <strong>Technical Fact:</strong> Amazon research indicates that every 100ms of latency costs 1% in sales. Google found a 0.5s delay caused a 20% drop in traffic.
-                </p>
+              <div className="flex flex-col gap-4">
+                <div className="flex gap-3">
+                  <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                  <p className="text-xs text-amber-800 dark:text-amber-400 leading-relaxed">
+                    <strong>Technical Fact:</strong> Amazon research indicates that every 100ms of latency costs 1% in sales. 
+                  </p>
+                </div>
+                <Link 
+                  href="/blog/api-latency-study/"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 dark:text-amber-400 hover:gap-3 transition-all"
+                >
+                  Read our full 2026 Latency Study <ArrowRight className="w-3 h-3" />
+                </Link>
               </div>
             </div>
           </div>

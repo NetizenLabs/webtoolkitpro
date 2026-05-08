@@ -4,6 +4,13 @@ import { Mail, MessageSquare, Send } from 'lucide-react'
 export const metadata = {
   title: 'Contact Us - WebToolkit Pro',
   description: 'Get in touch with the WebToolkit Pro team. We love hearing from developers!',
+  alternates: {
+    canonical: 'https://wtkpro.site/contact/',
+    languages: {
+      'en-US': 'https://wtkpro.site/contact/',
+      'x-default': 'https://wtkpro.site/contact/',
+    },
+  },
 }
 
 export default function ContactPage() {

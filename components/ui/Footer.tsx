@@ -61,10 +61,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} WebToolkit Pro. All rights reserved.
-          </p>
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-500">
+            <span>&copy; {new Date().getFullYear()} WebToolkit Pro.</span>
+            <Link href="/privacy/" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms/" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/disclaimer/" className="hover:text-white transition-colors">DMCA</Link>
+            <Link href="/press-kit.md" className="hover:text-white transition-colors">Press Kit</Link>
+          </div>
           <div className="flex gap-6">
             <Link 
               href="https://github.com/abusufyan-netizen/webtoolkitpro" 

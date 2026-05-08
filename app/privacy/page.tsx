@@ -2,7 +2,14 @@ import React from 'react'
 
 export const metadata = { 
   title: 'Privacy Policy - WebToolkit Pro', 
-  description: 'WebToolkit Pro privacy policy. Learn how we handle your data, our use of cookies, and our commitment to GDPR, CCPA, and Google Consent Mode v2.' 
+  description: 'WebToolkit Pro privacy policy. Learn how we handle your data, our use of cookies, and our commitment to GDPR, CCPA, and Google Consent Mode v2.',
+  alternates: {
+    canonical: 'https://wtkpro.site/privacy/',
+    languages: {
+      'en-US': 'https://wtkpro.site/privacy/',
+      'x-default': 'https://wtkpro.site/privacy/',
+    },
+  },
 }
 
 export default function PrivacyPage() {
