@@ -13,6 +13,29 @@ export default function MetaTagGenerator() {
   const [url, setUrl] = useState('')
   const [author, setAuthor] = useState('')
   const [copied, setCopied] = useState(false)
+  const [fetching, setFetching] = useState(false)
+  const [fetchUrl, setFetchUrl] = useState('')
+
+  const handleFetch = async () => {
+    if (!fetchUrl) return
+    setFetching(true)
+    try {
+      const target = fetchUrl.startsWith('http') ? fetchUrl : `https://${fetchUrl}`
+      const res = await fetch(`/api/fetch-meta?url=${encodeURIComponent(target)}`)
+      const data = await res.json()
+      if (data.error) throw new Error(data.error)
+      
+      setTitle(data.title || '')
+      setDesc(data.description || '')
+      setKeywords(data.keywords || '')
+      setAuthor(data.author || '')
+      setUrl(data.url || '')
+    } catch (e: any) {
+      alert('Failed to fetch meta tags: ' + e.message)
+    } finally {
+      setFetching(false)
+    }
+  }
 
   const output = `<!-- Primary Meta Tags -->
 <title>${title}</title>
@@ -43,8 +66,8 @@ export default function MetaTagGenerator() {
         description="Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards to improve your search visibility and social media appearance."
         slug="meta-tag-generator"
         steps={[
-          "Enter your website title and a brief description.",
-          "Add relevant keywords separated by commas.",
+          "Enter your website URL to fetch existing tags or type them manually.",
+          "Optimize your title (50-60 characters) and description (150-160 characters).",
           "Include your site URL and author information.",
           "Copy the generated HTML tags and paste them into the <head> section of your website."
         ]}
@@ -58,6 +81,23 @@ export default function MetaTagGenerator() {
             <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Meta Tag Generator</h1>
             <p className="text-gray-500 dark:text-slate-400">Generate SEO-optimized meta tags for your website</p>
           </div>
+        </div>
+
+        <div className="mb-10 p-6 bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row gap-4">
+          <input 
+            type="text" 
+            placeholder="Enter website URL to fetch tags (e.g., wtkpro.site)..." 
+            value={fetchUrl}
+            onChange={(e) => setFetchUrl(e.target.value)}
+            className="flex-grow p-4 bg-gray-50 dark:bg-slate-800/50 border border-transparent rounded-2xl focus:ring-2 focus:ring-rose-500 outline-none dark:text-white font-medium"
+          />
+          <button 
+            onClick={handleFetch}
+            disabled={fetching}
+            className="px-8 py-4 bg-rose-600 text-white font-bold rounded-2xl hover:bg-rose-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+          >
+            {fetching ? 'Fetching...' : 'Fetch Existing Tags'}
+          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

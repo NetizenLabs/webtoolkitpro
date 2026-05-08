@@ -13,20 +13,27 @@ export default function SitemapValidator() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [results, setResults] = useState<string[]>([])
 
-  const validateSitemap = () => {
+  const validateSitemap = async () => {
     if (!url) return
     setStatus('loading')
+    setResults([])
     
-    // Simulating validation for demonstration
-    setTimeout(() => {
-      if (url.includes('sitemap.xml')) {
-        setStatus('success')
-        setResults(['Sitemap is accessible', 'Valid XML format', 'All URLs use HTTPS', 'No broken links found'])
-      } else {
+    try {
+      const targetUrl = url.startsWith('http') ? url : `https://${url}`
+      const res = await fetch(`/api/validate-sitemap?url=${encodeURIComponent(targetUrl)}`)
+      const data = await res.json()
+
+      if (data.error) {
         setStatus('error')
-        setResults(['Invalid URL format', 'Sitemap not found at this location'])
+        setResults([data.error])
+      } else {
+        setStatus('success')
+        setResults([...data.results, `Total Size: ${data.size}`])
       }
-    }, 1500)
+    } catch (e: any) {
+      setStatus('error')
+      setResults(['Failed to connect to the server. Please check the URL.'])
+    }
   }
 
   const clearAll = () => {
