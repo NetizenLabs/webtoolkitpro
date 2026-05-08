@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Transform Markdown text into clean, semantic HTML. Ideal for developers and content creators needing instant code generation.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/markdown-converter/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/markdown-converter/',
-      'x-default': 'https://wtkpro.site/tools/markdown-converter/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function MarkdownConverterLayout({
 }) {
   return <>{children}</>
 }
+

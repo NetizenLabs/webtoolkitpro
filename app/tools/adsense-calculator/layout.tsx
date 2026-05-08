@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Calculate potential earnings from Google AdSense based on traffic, CTR, and CPC. Analyze revenue impact across different niches.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/adsense-calculator/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/adsense-calculator/',
-      'x-default': 'https://wtkpro.site/tools/adsense-calculator/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function AdSenseLayout({
 }) {
   return <>{children}</>
 }
+

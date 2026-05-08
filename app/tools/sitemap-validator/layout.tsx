@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Validate your XML sitemap for structure, accessibility, and SEO best practices. Ensure Googlebot can crawl your most valuable pages efficiently.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/sitemap-validator/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/sitemap-validator/',
-      'x-default': 'https://wtkpro.site/tools/sitemap-validator/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function SitemapValidatorLayout({
 }) {
   return <>{children}</>
 }
+

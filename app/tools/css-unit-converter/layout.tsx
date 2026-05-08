@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Instant conversion between CSS units for responsive web design. Calculate pixel to rem, em, and viewport units with precision.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/css-unit-converter/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/css-unit-converter/',
-      'x-default': 'https://wtkpro.site/tools/css-unit-converter/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function CssUnitConverterLayout({
 }) {
   return <>{children}</>
 }
+

@@ -7,10 +7,6 @@ export const metadata = {
   description: 'Learn about WebToolkit Pro, the free online developer tools platform built for web professionals. Discover our mission, privacy values, and the team behind the tools.',
   alternates: {
     canonical: 'https://wtkpro.site/about/',
-    languages: {
-      'en-US': 'https://wtkpro.site/about/',
-      'x-default': 'https://wtkpro.site/about/',
-    },
   },
 }
 
@@ -105,3 +101,4 @@ export default function AboutPage() {
     </div>
   )
 }
+

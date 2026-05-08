@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Clean, format, and validate JSON data instantly. Enterprise-grade JSON beautifier with AST-aware syntax highlighting and error detection. Secure and fast.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/json-formatter/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/json-formatter/',
-      'x-default': 'https://wtkpro.site/tools/json-formatter/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function JsonFormatterLayout({
 }) {
   return <>{children}</>
 }
+

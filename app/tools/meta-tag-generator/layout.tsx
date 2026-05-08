@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Create Google-ready meta tags, Open Graph tags, and Twitter Cards to improve your search visibility and social media appearance. Optimize for higher CTR.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/meta-tag-generator/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/meta-tag-generator/',
-      'x-default': 'https://wtkpro.site/tools/meta-tag-generator/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function MetaTagGeneratorLayout({
 }) {
   return <>{children}</>
 }
+

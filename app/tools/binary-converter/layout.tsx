@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Convert between Binary, Decimal, Hexadecimal, and Plain Text. Essential utility for low-level programming and data analysis.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/binary-converter/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/binary-converter/',
-      'x-default': 'https://wtkpro.site/tools/binary-converter/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function BinaryConverterLayout({
 }) {
   return <>{children}</>
 }
+

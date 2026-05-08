@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Instantly transform text into Uppercase, Lowercase, Title Case, Sentence Case, or camelCase. Clean and fast text manipulation tool.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/case-converter/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/case-converter/',
-      'x-default': 'https://wtkpro.site/tools/case-converter/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function CaseConverterLayout({
 }) {
   return <>{children}</>
 }
+

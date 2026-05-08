@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Compress and optimize your JavaScript code for production. Reduce file size and improve page load speeds with enterprise-grade minification.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/js-minifier/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/js-minifier/',
-      'x-default': 'https://wtkpro.site/tools/js-minifier/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function JsMinifierLayout({
 }) {
   return <>{children}</>
 }
+

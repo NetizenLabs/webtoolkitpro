@@ -5,10 +5,6 @@ export const metadata = {
   description: 'WebToolkit Pro terms of service and usage agreement for wtkpro.site.',
   alternates: {
     canonical: 'https://wtkpro.site/terms/',
-    languages: {
-      'en-US': 'https://wtkpro.site/terms/',
-      'x-default': 'https://wtkpro.site/terms/',
-    },
   },
 }
 
@@ -66,3 +62,4 @@ export default function TermsPage() {
     </div>
   )
 }
+

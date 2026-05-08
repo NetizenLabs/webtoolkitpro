@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Control search engine crawler access and optimize your website\'s crawl budget with a perfectly formatted robots.txt file. Secure your site index.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/robots-generator/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/robots-generator/',
-      'x-default': 'https://wtkpro.site/tools/robots-generator/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function RobotsGeneratorLayout({
 }) {
   return <>{children}</>
 }
+

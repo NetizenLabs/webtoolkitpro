@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Comprehensive 2026 technical SEO audit checklist for webmasters and developers. Verify crawlability, indexability, and Core Web Vitals.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/seo-audit-checklist/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/seo-audit-checklist/',
-      'x-default': 'https://wtkpro.site/tools/seo-audit-checklist/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function SeoAuditLayout({
 }) {
   return <>{children}</>
 }
+

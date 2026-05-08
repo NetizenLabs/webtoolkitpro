@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   description: 'Generate cryptographically secure passwords using NIST-standard entropy. Customize length, symbols, and numbers for maximum security. 100% browser-based.',
   alternates: {
     canonical: 'https://wtkpro.site/tools/password-generator/',
-    languages: {
-      'en-US': 'https://wtkpro.site/tools/password-generator/',
-      'x-default': 'https://wtkpro.site/tools/password-generator/',
-    },
   },
 }
 
@@ -19,3 +15,4 @@ export default function PasswordGeneratorLayout({
 }) {
   return <>{children}</>
 }
+
