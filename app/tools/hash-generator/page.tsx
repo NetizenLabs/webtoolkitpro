@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Shield, Copy, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function HashGenerator() {
@@ -26,6 +28,17 @@ export default function HashGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Hash Generator" slug="hash-generator" />
+      <ToolSchema 
+        name="Secure Hashing Utility (SHA-256, SHA-512)" 
+        description="Generate secure cryptographic hashes using SHA-1, SHA-256, SHA-384, and SHA-512 algorithms instantly."
+        slug="hash-generator"
+        steps={[
+          "Enter your text or data into the input field.",
+          "Click 'Generate Secure Hashes' to calculate the values.",
+          "Compare the different algorithm outputs (SHA-256 is recommended for security).",
+          "Copy the generated hash for checksum or verification purposes."
+        ]}
+      />
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-4 bg-gradient-to-br from-slate-500 to-slate-700 rounded-2xl shadow-lg shadow-slate-500/20">
@@ -64,6 +77,38 @@ export default function HashGenerator() {
           )}
         </div>
         <AdSlot className="mt-8" />
+
+        <ToolInfo 
+          title="Hash Generator"
+          description="The WebToolkit Pro Hash Generator is a security-focused utility that allows you to calculate cryptographic checksums for any text or data. Hashing is a one-way mathematical function that turns an input into a fixed-size string of characters, which is typically a hexadecimal number."
+          howItWorks="Our tool utilizes the browser's native Web Crypto API (`crypto.subtle.digest`) to perform high-speed, secure hashing. Because it runs locally in your browser, your sensitive data is never transmitted over the network, ensuring maximum privacy for password hashing or data integrity checks."
+          features={[
+            "Support for SHA-1, SHA-256, SHA-384, and SHA-512",
+            "Hardware-accelerated hashing via Web Crypto API",
+            "Real-time hexadecimal output generation",
+            "Deterministic results (same input always yields same hash)",
+            "100% Client-side: Your data remains private",
+            "Optimized for large text blocks and API payloads"
+          ]}
+          faqs={[
+            {
+              q: "What is a cryptographic hash?",
+              a: "A hash is a 'digital fingerprint' of data. It's used to verify data integrity, ensuring that a file or message hasn't been altered."
+            },
+            {
+              q: "Which algorithm should I use?",
+              a: "For most modern security needs, SHA-256 is the standard. SHA-512 is even more secure but produces a longer string. SHA-1 is considered legacy and should be used only for compatibility."
+            },
+            {
+              q: "Can a hash be reversed?",
+              a: "No. Cryptographic hashes are designed to be one-way functions. You cannot derive the original text from the hash value."
+            },
+            {
+              q: "What is a hash collision?",
+              a: "A collision occurs when two different inputs produce the same hash output. Modern algorithms like SHA-256 are designed to make collisions statistically impossible."
+            }
+          ]}
+        />
       </div>
     </div>
   )

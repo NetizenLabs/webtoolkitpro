@@ -3,6 +3,8 @@
 import React, { useState, useMemo } from 'react'
 import { DollarSign, BarChart3, PieChart, Users, Target, Info, TrendingUp, Sparkles } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 const niches = [
@@ -33,6 +35,17 @@ export default function AdSenseCalculator() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="AdSense Revenue Estimator" slug="adsense-calculator" />
+      <ToolSchema 
+        name="Google AdSense Revenue Calculator" 
+        description="Estimate your potential website earnings from Google AdSense. Calculate revenue based on daily views, CTR, and CPC across different niches."
+        slug="adsense-calculator"
+        steps={[
+          "Select a niche preset (e.g., Technology, Finance) to load average CPC and CTR.",
+          "Adjust the daily page views slider to match your traffic expectations.",
+          "Fine-tune the CTR (Click-Through Rate) and CPC (Cost Per Click) values.",
+          "Analyze your projected daily, monthly, and yearly earnings."
+        ]}
+      />
       
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
@@ -173,6 +186,38 @@ export default function AdSenseCalculator() {
 
         {/* AdSense slot for the tool itself */}
         <AdSlot className="mt-16" />
+
+        <ToolInfo 
+          title="AdSense Revenue Estimator"
+          description="The WebToolkit Pro AdSense Revenue Estimator is a professional financial tool for publishers and content creators. It provides data-driven projections of potential advertising revenue by analyzing three critical variables: traffic volume, user engagement (CTR), and advertiser demand (CPC)."
+          howItWorks="Our calculator uses the standard revenue formula: `Earnings = Views x CTR x CPC`. We provide specialized 'Niche Presets' based on 2026 industry benchmarks. For instance, the Finance niche typically commands higher CPCs due to the high lifetime value of customers in that sector, whereas Entertainment relies on massive traffic volume to compensate for lower per-click values."
+          features={[
+            "Real-time revenue projections for daily/monthly/yearly",
+            "Niche-specific presets for Finance, Tech, Health, and more",
+            "Interactive traffic volume slider (up to 1M views)",
+            "Dynamic CTR and CPC fine-tuning controls",
+            "Responsive dashboard with dark mode support",
+            "100% Client-side: Your traffic data stays private"
+          ]}
+          faqs={[
+            {
+              q: "What is CTR in AdSense?",
+              a: "CTR (Click-Through Rate) is the percentage of visitors who click on an ad. A standard CTR for informational sites usually ranges between 1% and 2%."
+            },
+            {
+              q: "Why is Finance CPC so much higher than Travel?",
+              a: "Finance advertisers (banks, insurance, crypto) are willing to pay more for a lead because the profit from a single customer is significantly higher than that of a travel booking."
+            },
+            {
+              q: "How can I increase my AdSense earnings?",
+              a: "Focus on improving content quality to attract high-CPC advertisers, optimize ad placement for better CTR, and use SEO to drive organic traffic from high-income regions (Tier 1 countries)."
+            },
+            {
+              q: "Does traffic source affect revenue?",
+              a: "Yes. Organic search traffic usually yields higher CTR and CPC than social media traffic because search users have higher intent and are more likely to interact with relevant ads."
+            }
+          ]}
+        />
       </div>
     </div>
   )

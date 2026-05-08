@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import { Key, Copy, RefreshCw, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function PasswordGenerator() {
@@ -39,6 +41,17 @@ export default function PasswordGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Password Generator" slug="password-generator" />
+      <ToolSchema 
+        name="Secure Password Generator" 
+        description="Create secure, cryptographically random identifiers instantly. Optimized for US enterprise security standards."
+        slug="password-generator"
+        steps={[
+          "Choose your desired password length (4-64 characters).",
+          "Select characters to include (Uppercase, Numbers, Symbols).",
+          "Click the refresh icon to generate a new password.",
+          "Click 'Copy' to save it securely to your clipboard."
+        ]}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <div className="p-4 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-600/20">
@@ -112,6 +125,38 @@ export default function PasswordGenerator() {
         </div>
         
         <AdSlot className="mt-8" />
+
+        <ToolInfo 
+          title="Secure Password Generator"
+          description="The WebToolkit Pro Secure Password Generator is a cryptographically strong utility designed to help users create highly secure, unhackable passwords instantly. It follows NIST 800-63B standards for credential security."
+          howItWorks="Our generator uses the browser's native `crypto.getRandomValues()` API to ensure true cryptographic randomness. Unlike simple `Math.random()` functions, this method produces values that are statistically independent and unpredictable."
+          features={[
+            "Cryptographically secure random number generation (CSPRNG)",
+            "Customizable length up to 64 characters",
+            "Toggleable sets: Uppercase, Numbers, and Symbols",
+            "Instant entropy feedback for maximum security",
+            "100% Client-side: Your password never touches our servers",
+            "One-click copy with visual confirmation"
+          ]}
+          faqs={[
+            {
+              q: "What makes a password truly secure?",
+              a: "A secure password should have high entropy—a mix of lowercase, uppercase, numbers, and symbols—and be at least 12-16 characters long. Length is often more important than complexity."
+            },
+            {
+              q: "Why should I trust this generator?",
+              a: "This tool runs entirely in your browser. The code for generating the password is local to your machine, meaning the generated string is never sent over the network."
+            },
+            {
+              q: "How often should I change my passwords?",
+              a: "Current security best practices recommend changing passwords only when there is evidence of a compromise, provided you use a unique, strong password for every account."
+            },
+            {
+              q: "Are the passwords saved in my browser history?",
+              a: "No. The passwords are generated in memory and are not saved to localStorage or history. Once you close the tab, the data is gone."
+            }
+          ]}
+        />
       </div>
     </div>
   )

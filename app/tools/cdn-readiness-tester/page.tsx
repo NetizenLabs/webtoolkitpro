@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import { Globe, Shield, Zap, Search, Activity, Server, Layout, CheckCircle2, AlertCircle, Info, RefreshCw, Terminal } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function CdnReadinessTester() {
@@ -48,6 +50,17 @@ export default function CdnReadinessTester() {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
       <BreadcrumbSchema name="CDN & Edge Readiness Tester" slug="tools/cdn-readiness-tester" />
+      <ToolSchema 
+        name="CDN & Edge Performance Tester" 
+        description="Check if your website is correctly delivered via a Content Delivery Network. Analyze edge headers, compression (Brotli/Gzip), and cache status."
+        slug="cdn-readiness-tester"
+        steps={[
+          "Enter your website URL in the search field.",
+          "Click 'Verify CDN' to initiate a header analysis via our global proxy.",
+          "Review the 'Edge Header Analysis' for X-Cache and Content-Encoding statuses.",
+          "Check your 'Readiness Score' and follow the recommendations for edge optimization."
+        ]}
+      />
       
       <div className="max-w-5xl mx-auto">
         {/* Header */}
@@ -166,6 +179,38 @@ export default function CdnReadinessTester() {
         </div>
 
         <AdSlot className="mt-16" />
+
+        <ToolInfo 
+          title="CDN & Edge Readiness Tester"
+          description="The WebToolkit Pro CDN Readiness Tester is a technical auditing utility designed to verify the presence and efficiency of Content Delivery Networks. In the era of Core Web Vitals, delivering assets from a global edge location is no longer optional—it is a requirement for competitive search rankings and user experience."
+          howItWorks="Our tool performs a deep-header analysis of your target URL using a global proxy network. It specifically looks for proprietary edge headers (like `X-Cache`, `CF-Cache-Status`, or `X-Fastly-Request-ID`) and verifies if modern compression algorithms like Brotli (br) are enabled. The tool then calculates a 'Readiness Score' based on the latency and headers detected."
+          features={[
+            "Real-time CDN header detection (Cloudflare, Akamai, Fastly, etc.)",
+            "Cache HIT/MISS status verification",
+            "Compression algorithm analysis (Brotli vs. Gzip)",
+            "Visual Readiness Score and performance breakdown",
+            "Actionable recommendations for edge optimization",
+            "100% Client-side processing: Your URLs stay private"
+          ]}
+          faqs={[
+            {
+              q: "What is a CDN?",
+              a: "A Content Delivery Network (CDN) is a distributed group of servers which work together to provide fast delivery of Internet content. A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, and images."
+            },
+            {
+              q: "Why is 'X-Cache: HIT' important?",
+              a: "A 'HIT' means the CDN server already had the file in its memory and served it directly to the user without asking your main server. This is significantly faster and reduces server load."
+            },
+            {
+              q: "Is Brotli better than Gzip?",
+              a: "Yes. Brotli is a modern compression algorithm developed by Google that typically results in 15-20% smaller file sizes than Gzip, leading to faster transfer times."
+            },
+            {
+              q: "Does my site need a CDN if my hosting is fast?",
+              a: "Yes. Even the fastest server in New York will be slow for a user in London or Tokyo due to the speed of light. A CDN places a copy of your site in every major city globally."
+            }
+          ]}
+        />
       </div>
     </div>
   )

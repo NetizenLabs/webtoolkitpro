@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { Code2, Copy, Trash2, Check, Zap, ArrowRight, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function JsMinifier() {
@@ -38,6 +40,17 @@ export default function JsMinifier() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="JavaScript Minifier" slug="tools/js-minifier" />
+      <ToolSchema 
+        name="JavaScript Minifier & Compressor" 
+        description="Compress and optimize your JavaScript code for production. Remove comments, spaces, and reduce payload size for faster website performance."
+        slug="js-minifier"
+        steps={[
+          "Paste your JavaScript source code into the input panel.",
+          "Click 'Compress Script' to start the minification process.",
+          "Review the minified payload size and character count.",
+          "Copy the optimized code and deploy it to your production server."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -133,6 +146,38 @@ export default function JsMinifier() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="JavaScript Minifier"
+          description="The WebToolkit Pro JavaScript Minifier is a high-performance utility designed to optimize your frontend assets. Minification is the process of removing all unnecessary characters from source code without changing its functionality. This is a crucial step in modern web development to ensure fast load times and improved Core Web Vitals."
+          howItWorks="Our minifier uses advanced regex-based logic to strip single-line and multi-line comments, collapse redundant whitespace, and remove unnecessary semicolons or brackets where possible. This results in a smaller file size (payload) that requires less bandwidth and parses faster in the user's browser."
+          features={[
+            "Recursive comment removal (JS-style and Block)",
+            "Whitespace and line-break collapsing",
+            "Real-time character count and savings analysis",
+            "Safe-mode minification to prevent runtime errors",
+            "Optimized for modern ES6+ syntax",
+            "100% Client-side: Your source code stays private"
+          ]}
+          faqs={[
+            {
+              q: "What is the benefit of minification?",
+              a: "Minification reduces the size of your JavaScript files, leading to faster download times, reduced server bandwidth, and better performance scores in tools like PageSpeed Insights."
+            },
+            {
+              q: "Will minification break my code?",
+              a: "Standard minification (removing spaces and comments) is 100% safe. However, more aggressive 'obfuscation' or 'mangling' can sometimes cause issues; our tool focuses on safe, reliable compression."
+            },
+            {
+              q: "Should I minify code in development?",
+              a: "No. Minification makes code difficult to read and debug. You should keep your source code readable and only minify during your build process or production deployment."
+            },
+            {
+              q: "Does this tool support Babel or TypeScript?",
+              a: "Our tool processes valid JavaScript (ECMAScript). If you use TypeScript or modern experimental features, we recommend compiling them to JS before using this minifier."
+            }
+          ]}
+        />
       </div>
     </div>
   )

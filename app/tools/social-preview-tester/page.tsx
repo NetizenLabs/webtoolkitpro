@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import { Share2, Globe, Facebook, Twitter, Linkedin, Search, Info, AlertCircle, CheckCircle2, Copy, RefreshCw, Smartphone, Monitor } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function SocialPreviewTester() {
@@ -60,6 +62,17 @@ export default function SocialPreviewTester() {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
       <BreadcrumbSchema name="Social Preview Stress Tester" slug="tools/social-preview-tester" />
+      <ToolSchema 
+        name="Social Media Preview & Meta Tag Tester" 
+        description="Verify how your website looks on Facebook, Twitter, LinkedIn, and Google Search. Test and optimize your Open Graph tags and meta descriptions."
+        slug="social-preview-tester"
+        steps={[
+          "Enter your website URL to fetch current Open Graph and meta tags.",
+          "Use the 'Editor Stress Test' to simulate changes to your title and description.",
+          "Switch between 'Mobile' and 'Desktop' views to verify responsive rendering.",
+          "Review the live previews for Google, Facebook, Twitter, and LinkedIn."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
@@ -259,6 +272,38 @@ export default function SocialPreviewTester() {
         </div>
         
         <AdSlot className="mt-16" />
+
+        <ToolInfo 
+          title="Social Preview Stress Tester"
+          description="The WebToolkit Pro Social Preview Tester is a high-performance utility for digital marketers and web developers. It allows you to visualize and optimize your website's 'Social Identity' by simulating how links are rendered on the world's most popular social networks and search engines."
+          howItWorks="Our tool uses a global proxy to fetch the raw HTML of your target URL. It then parses the DOM for specific Open Graph (og:), Twitter Card (twitter:), and standard Meta tags. The 'Stress Test' feature calculates character counts in real-time against platform-specific truncation limits, ensuring your messaging is never cut off in a user's feed."
+          features={[
+            "Live previews for Facebook, Twitter (X), LinkedIn, and Google",
+            "Real-time meta tag editor with 'Stress Test' character counts",
+            "Responsive Mobile vs. Desktop preview toggle",
+            "Automatic truncation warnings for titles and descriptions",
+            "CORS-compliant metadata fetching via global proxy",
+            "100% Free: Essential for social media marketing campaigns"
+          ]}
+          faqs={[
+            {
+              q: "What are Open Graph tags?",
+              a: "Open Graph tags are snippets of code that control how URLs are displayed when shared on social media. They are part of Facebook's Open Graph protocol and are used by LinkedIn and other platforms."
+            },
+            {
+              q: "Why is my preview image not showing up?",
+              a: "Common issues include the image being too small (minimum 200x200px, recommended 1200x630px), the URL being incorrect, or the image being blocked by your server's robots.txt."
+            },
+            {
+              q: "How long is the ideal social description?",
+              a: "Most platforms truncate descriptions after 155-160 characters. Keeping your primary value proposition within the first 120 characters is a best practice."
+            },
+            {
+              q: "Does changing tags here update my website?",
+              a: "No. This tool is a simulator. Once you are happy with the preview, you must manually update the `<meta>` tags in your website's code or CMS."
+            }
+          ]}
+        />
       </div>
     </div>
   )

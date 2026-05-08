@@ -2,6 +2,9 @@
 import React, { useState } from 'react'
 import { Shuffle, Copy, Check, RefreshCw } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function UuidGenerator() {
   const [uuids, setUuids] = useState<string[]>([])
@@ -34,6 +37,17 @@ export default function UuidGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="UUID Generator (v4)" slug="uuid-generator" />
+      <ToolSchema 
+        name="UUID v4 Generator" 
+        description="Generate cryptographically secure, unique version 4 UUIDs (Universally Unique Identifiers) instantly for your applications and databases."
+        slug="uuid-generator"
+        steps={[
+          "Choose the number of UUIDs you want to generate (up to 100).",
+          "Click the refresh icon to generate new identifiers.",
+          "Copy individual UUIDs or all generated IDs at once.",
+          "Use the UUIDs in your source code, database entries, or API testing."
+        ]}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-4 bg-gradient-to-br from-lime-600 to-lime-800 rounded-2xl shadow-lg shadow-lime-500/20">
@@ -79,7 +93,39 @@ export default function UuidGenerator() {
             ))}
           </div>
         </div>
-        <div className="h-[90px]">{/* AdSense slot */}</div>
+        <AdSlot />
+
+        <ToolInfo 
+          title="UUID v4 Generator"
+          description="The WebToolkit Pro UUID v4 Generator is a specialized utility for creating Universally Unique Identifiers (UUIDs) based on the RFC 4122 version 4 specification. A UUID is a 128-bit value used for unique identification in software development, making them ideal for database primary keys, session IDs, and unique file names."
+          howItWorks="Our tool uses the cryptographically strong `crypto.randomUUID()` method available in modern browsers. This ensures that the generated UUIDs are statistically unique and predictable. For environments where the secure crypto API is unavailable, we provide a robust fallback that maintains high entropy using pseudo-random number generation."
+          features={[
+            "RFC 4122 compliant version 4 UUID generation",
+            "Batch generation of up to 100 UUIDs per click",
+            "Hardware-backed randomness via Web Crypto API",
+            "One-click copy for single or bulk identifiers",
+            "Clean, hexadecimal formatting with hyphens",
+            "100% Client-side: Identifiers are generated locally"
+          ]}
+          faqs={[
+            {
+              q: "What is a UUID?",
+              a: "UUID stands for Universally Unique Identifier. It's a standard for creating IDs that are highly likely to be unique across all systems and time."
+            },
+            {
+              q: "How many combinations are there in a UUID v4?",
+              a: "A UUID v4 has 122 bits of randomness, leading to approximately 5.3 x 10^36 possible unique combinations."
+            },
+            {
+              q: "Can two UUIDs be the same?",
+              a: "While mathematically possible, the probability of a collision (two identical UUIDs) is so astronomically low that they are considered unique for all practical purposes."
+            },
+            {
+              q: "What is the difference between UUID and GUID?",
+              a: "GUID (Globally Unique Identifier) is Microsoft's implementation of the UUID standard. For most modern use cases, they are interchangeable."
+            }
+          ]}
+        />
       </div>
     </div>
   )

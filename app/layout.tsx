@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
   title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
-  description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON, generate passwords, and master SEO.',
+  description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON and master SEO.',
   keywords: 'developer tools, json formatter, password generator, webtoolkit pro, seo tools, technical guides, base64 encoder',
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://wtkpro.site/',
   },
   openGraph: {
     title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',

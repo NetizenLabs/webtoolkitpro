@@ -15,7 +15,7 @@ geo_placename: "United States"
 language: "en-US"
 ---
 
-# JSON Formatting Best Practices for Clean APIs
+## JSON Formatting Best Practices for Clean APIs
 
 JSON (JavaScript Object Notation) has become the universal language of data exchange on the web. With over **90% of modern APIs** using JSON as their primary data format, understanding how to work with it efficiently is a must-have skill for every developer.
 

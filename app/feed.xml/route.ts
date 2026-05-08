@@ -8,7 +8,7 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>WebToolkit Pro - Developer Blog</title>
-  <link>${domain}/blog</link>
+  <link>${domain}/blog/</link>
   <description>Expert web development tips, tutorials, and guides for modern developers.</description>
   <language>en-us</language>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
@@ -18,10 +18,10 @@ export async function GET() {
       return `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>${domain}/blog/${post.slug}</link>
+      <link>${domain}/blog/${post.slug}/</link>
       <description><![CDATA[${post.description}]]></description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <guid>${domain}/blog/${post.slug}</guid>
+      <guid>${domain}/blog/${post.slug}/</guid>
       <category>${post.category}</category>
     </item>`
     })

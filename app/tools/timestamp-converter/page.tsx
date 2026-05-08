@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { Clock, RefreshCw, ArrowRightLeft, ArrowRight, Calendar, Trash2 } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function TimestampConverter() {
@@ -41,6 +43,17 @@ export default function TimestampConverter() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Unix Timestamp Converter" slug="tools/timestamp-converter" />
+      <ToolSchema 
+        name="Unix Timestamp & Epoch Converter" 
+        description="Convert between Unix timestamps (seconds or milliseconds) and human-readable dates in Local, UTC, and ISO formats."
+        slug="timestamp-converter"
+        steps={[
+          "Enter your Unix timestamp in the input field.",
+          "Observe the live system epoch time at the top for reference.",
+          "Click 'Convert to Date' to generate human-readable strings.",
+          "Review the Local, UTC, and ISO formatted results."
+        ]}
+      />
       
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -136,6 +149,38 @@ export default function TimestampConverter() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="Unix Timestamp & Epoch Converter"
+          description="The WebToolkit Pro Unix Timestamp Converter is a high-precision utility designed for backend developers, data engineers, and DevOps professionals. Unix time (also known as Epoch time) is a system for describing a point in time as the number of seconds that have elapsed since the Unix Epoch (January 1st, 1970 at 00:00:00 UTC)."
+          howItWorks="Our tool uses the standard JavaScript `Date` object to parse and format timestamps. It features an intelligent auto-detection algorithm that determines if your input is in seconds (10 digits) or milliseconds (13 digits), ensuring accurate conversion regardless of the source platform (e.g., PHP/Python vs. JavaScript/Java)."
+          features={[
+            "Real-time Unix Epoch clock display",
+            "Auto-detection of seconds vs. milliseconds",
+            "Simultaneous Local, UTC, and ISO-8601 formatting",
+            "One-click 'Reset to Now' functionality",
+            "Hardware-accurate system time synchronization",
+            "100% Client-side: Your timestamps stay private"
+          ]}
+          faqs={[
+            {
+              q: "What is the Unix Epoch?",
+              a: "The Unix Epoch is January 1, 1970, at 00:00:00 UTC. Unix timestamps count the number of seconds passed since this exact moment."
+            },
+            {
+              q: "What happens in the Year 2038 problem?",
+              a: "On January 19, 2038, 32-bit Unix timestamps will overflow. Modern systems use 64-bit integers to represent time, effectively solving this problem for billions of years."
+            },
+            {
+              q: "Why are my timestamps different by 1000x?",
+              a: "Some programming languages (like PHP and Python) use seconds by default, while others (like JavaScript and Java) use milliseconds. Our tool detects both formats automatically."
+            },
+            {
+              q: "Does this tool handle leap seconds?",
+              a: "Unix time ignores leap seconds, providing a linear representation of time that is easier for computers to compute but slightly out of sync with rotation-based solar time."
+            }
+          ]}
+        />
       </div>
     </div>
   )

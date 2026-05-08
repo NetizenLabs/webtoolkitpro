@@ -25,19 +25,19 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6">Popular Tools</h3>
             <ul className="space-y-4 text-sm">
-              <li><Link href="/tools/json-formatter" className="hover:text-blue-400 transition-colors">JSON Formatter</Link></li>
-              <li><Link href="/tools/password-generator" className="hover:text-blue-400 transition-colors">Password Generator</Link></li>
-              <li><Link href="/tools/base64-encoder" className="hover:text-blue-400 transition-colors">Base64 Encoder</Link></li>
-              <li><Link href="/tools/url-encoder" className="hover:text-blue-400 transition-colors">URL Encoder</Link></li>
+              <li><Link href="/tools/json-formatter/" className="hover:text-blue-400 transition-colors">JSON Formatter</Link></li>
+              <li><Link href="/tools/password-generator/" className="hover:text-blue-400 transition-colors">Password Generator</Link></li>
+              <li><Link href="/tools/base64-encoder/" className="hover:text-blue-400 transition-colors">Base64 Encoder</Link></li>
+              <li><Link href="/tools/url-encoder/" className="hover:text-blue-400 transition-colors">URL Encoder</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-bold mb-6">Company</h3>
             <ul className="space-y-4 text-sm">
-              <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><Link href="/blog" className="hover:text-blue-400 transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-400 transition-colors">Contact</Link></li>
+              <li><Link href="/about/" className="hover:text-blue-400 transition-colors">About Us</Link></li>
+              <li><Link href="/blog/" className="hover:text-blue-400 transition-colors">Blog</Link></li>
+              <li><Link href="/contact/" className="hover:text-blue-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
               <Twitter className="w-5 h-5" />
             </Link>
             <Link 
-              href="/contact" 
+              href="/contact/" 
               className="text-gray-500 hover:text-white transition-colors"
               aria-label="Contact Email"
             >

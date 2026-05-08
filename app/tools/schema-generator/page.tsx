@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { Code, Copy, CheckCircle2, RefreshCw, Trash2, ArrowRight, Database } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function SchemaGenerator() {
@@ -39,6 +41,17 @@ export default function SchemaGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="JSON-LD Schema Generator" slug="tools/schema-generator" />
+      <ToolSchema 
+        name="JSON-LD Schema Generator" 
+        description="Generate structured data for your website using JSON-LD. Improve search visibility, rich snippets, and SEO rankings."
+        slug="schema-generator"
+        steps={[
+          "Select the schema type (Organization, Website, LocalBusiness, etc.).",
+          "Fill in the required fields like Name, URL, and Description.",
+          "Review the generated JSON-LD script block in the output window.",
+          "Copy and paste the script into the <head> section of your HTML."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -165,6 +178,38 @@ export default function SchemaGenerator() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="JSON-LD Schema Generator"
+          description="The WebToolkit Pro JSON-LD Schema Generator is a powerful tool for creating structured data that search engines can easily understand. JSON-LD (JavaScript Object Notation for Linked Data) is the recommended format by Google for implementing schema markup, which can lead to enhanced search results known as 'Rich Snippets'."
+          howItWorks="Our tool allows you to input data for various entity types defined by Schema.org. It then formats this data into a standardized JSON-LD script. When search engine bots crawl your page, they parse this script to gain a deeper understanding of your site's content, which can improve your visibility in search results and AI-driven answer engines."
+          features={[
+            "Support for major schema types (Organization, WebSite, etc.)",
+            "Real-time JSON-LD script generation and formatting",
+            "Optimized for Google's Rich Results standards",
+            "Clean, minified output for faster page loads",
+            "No-code interface for complex structured data",
+            "100% Client-side processing for data privacy"
+          ]}
+          faqs={[
+            {
+              q: "What is JSON-LD?",
+              a: "JSON-LD stands for JavaScript Object Notation for Linked Data. It's a method of encoding structured data using JSON, making it easier for search engines to process."
+            },
+            {
+              q: "What are Rich Snippets?",
+              a: "Rich snippets are enhanced search results that display extra information like ratings, prices, or company logos. They often have higher click-through rates than standard results."
+            },
+            {
+              q: "Where should I put the schema code?",
+              a: "Google recommends placing the JSON-LD script within the <head> section of your HTML, but it can also be placed anywhere in the <body>."
+            },
+            {
+              q: "Does schema markup improve rankings?",
+              a: "While it's not a direct ranking factor, schema markup helps search engines understand your site better, which can lead to better visibility and higher click-through rates."
+            }
+          ]}
+        />
       </div>
     </div>
   )

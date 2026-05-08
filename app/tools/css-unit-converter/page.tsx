@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { Ruler, RefreshCw, ArrowRight, Layers } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function CssUnitConverter() {
@@ -31,6 +33,17 @@ export default function CssUnitConverter() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="CSS Unit Converter" slug="tools/css-unit-converter" />
+      <ToolSchema 
+        name="Universal CSS Unit Converter" 
+        description="Convert between pixels, rem, em, pt, and viewport units instantly. Essential for building responsive, accessible web interfaces."
+        slug="css-unit-converter"
+        steps={[
+          "Enter your source value in pixels (px).",
+          "Adjust the Base Font Size (default 16px) for relative calculations.",
+          "Review the converted values in the 'Computed Units' panel.",
+          "Use the relative units (rem/em) in your CSS for better accessibility."
+        ]}
+      />
       
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -130,6 +143,38 @@ export default function CssUnitConverter() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="CSS Unit Converter"
+          description="The WebToolkit Pro CSS Unit Converter is an essential utility for modern frontend developers and UI designers. It simplifies the process of creating responsive layouts by providing instant conversions between absolute units (like pixels) and relative units (like rem, em, and viewport percentages)."
+          howItWorks="Our tool calculates conversions based on a configurable 'Base Font Size'. By default, this is set to 16px, which is the standard browser default. The tool uses linear algebra to determine the relationship between your input and the target units, such as dividing pixels by the base to find 'rem', or calculating viewport percentages based on standard screen resolutions (1920x1080)."
+          features={[
+            "Instant conversion for px, rem, em, pt, vw, vh, and %",
+            "Configurable Base Font Size for project-specific scaling",
+            "Real-time reactive calculation engine",
+            "Responsive layout for desktop and mobile development",
+            "Educational tooltips for modern CSS best practices",
+            "100% Client-side: Your design values are private"
+          ]}
+          faqs={[
+            {
+              q: "Why should I use rem instead of px?",
+              a: "The 'rem' unit is relative to the root font size. If a user increases their browser's default font size for accessibility, a site using 'rem' will scale correctly, whereas 'px' will remain fixed and potentially unreadable."
+            },
+            {
+              q: "What is the difference between rem and em?",
+              a: "'rem' is always relative to the root (html) element, while 'em' is relative to the font size of the parent element. 'rem' is generally safer for global spacing to avoid 'compounding' issues."
+            },
+            {
+              q: "How do viewport units (vw/vh) work?",
+              a: "1vw is equal to 1% of the viewport's width, and 1vh is 1% of the viewport's height. These are ideal for full-screen layouts and fluid typography."
+            },
+            {
+              q: "Is 16px always the standard base?",
+              a: "Yes, 16px is the default font size in all modern browsers. However, some CSS frameworks (like Tailwind or Bootstrap) allow you to configure this base value."
+            }
+          ]}
+        />
       </div>
     </div>
   )

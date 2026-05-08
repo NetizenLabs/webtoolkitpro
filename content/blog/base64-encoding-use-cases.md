@@ -15,7 +15,7 @@ geo_placename: "United States"
 language: "en-US"
 ---
 
-# Base64 Encoding: What It Is and When to Use It
+## Base64 Encoding: What It Is and When to Use It
 
 Base64 is one of those fundamental concepts every developer encounters but few truly understand. This guide breaks down exactly what Base64 encoding is, how it works, and when you should (and shouldn't) use it.
 

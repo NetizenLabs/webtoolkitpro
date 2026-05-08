@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Zap, Clock, Layout, Info, CheckCircle2, AlertTriangle, TrendingUp, Activity, Terminal, Globe, ArrowRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function CoreWebVitalsGuide() {
@@ -62,6 +64,17 @@ export default function CoreWebVitalsGuide() {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
       <BreadcrumbSchema name="Core Web Vitals Monitoring Guide" slug="tools/core-web-vitals-guide" />
+      <ToolSchema 
+        name="Core Web Vitals Technical Guide" 
+        description="Master the three critical metrics Google uses to measure user experience: LCP, INP, and CLS. Learn how to optimize for better rankings."
+        slug="core-web-vitals-guide"
+        steps={[
+          "Select a metric (LCP, INP, or CLS) from the interactive dashboard.",
+          "Review the technical description and performance thresholds.",
+          "Implement the provided optimization tips for your specific metric.",
+          "Use our suggested monitoring stack to track real-world field data."
+        ]}
+      />
       
       <div className="max-w-5xl mx-auto">
         {/* Hero Section */}
@@ -174,8 +187,38 @@ export default function CoreWebVitalsGuide() {
             </div>
             
             <AdSlot />
-          </div>
-        </div>
+
+        <ToolInfo 
+          title="Core Web Vitals Optimization Guide"
+          description="The WebToolkit Pro Core Web Vitals Guide is an industry-leading technical resource for SEOs and frontend engineers. Core Web Vitals are a set of real-world, user-centered metrics that Google uses to quantify key aspects of the user experience, including loading speed, interactivity, and visual stability."
+          howItWorks="Our guide analyzes the three primary metrics—Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS)—providing specific thresholds for 'Good', 'Needs Improvement', and 'Poor' performance. We offer expert-level optimization strategies based on modern web development patterns like Edge SSR, partial hydration, and optimized image delivery."
+          features={[
+            "Deep-dive analysis of LCP, INP, and CLS",
+            "Performance threshold visualization and benchmarks",
+            "Actionable optimization tips for each metric",
+            "Technical monitoring stack recommendations",
+            "Regularly updated for 2026 ranking factors",
+            "100% Free: Comprehensive guide for technical teams"
+          ]}
+          faqs={[
+            {
+              q: "Why are Core Web Vitals important for SEO?",
+              a: "Google uses Core Web Vitals as a significant ranking factor (part of Page Experience signals). Sites that meet the 'Good' threshold often see higher rankings and better conversion rates."
+            },
+            {
+              q: "What is LCP (Largest Contentful Paint)?",
+              a: "LCP measures how long it takes for the largest visual element on the screen (usually a hero image or headline) to be fully rendered. It should happen within 2.5 seconds."
+            },
+            {
+              q: "How does INP differ from FID?",
+              a: "INP (Interaction to Next Paint) replaced FID (First Input Delay) in 2024. While FID only measured the very first interaction, INP measures all interactions during a user's visit, making it a more comprehensive responsiveness metric."
+            },
+            {
+              q: "What causes high CLS (Layout Shift)?",
+              a: "Common causes include images without defined dimensions, dynamic ad slots that shift content, and fonts that load late and cause text to reflow."
+            }
+          ]}
+        />
       </div>
     </div>
   )

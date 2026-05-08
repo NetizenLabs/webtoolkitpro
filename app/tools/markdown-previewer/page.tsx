@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { FileCode, Copy, Check, Trash2, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function MarkdownPreviewer() {
@@ -35,6 +37,17 @@ export default function MarkdownPreviewer() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Markdown Previewer" slug="tools/markdown-previewer" />
+      <ToolSchema 
+        name="Live Markdown Previewer" 
+        description="Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files."
+        slug="markdown-previewer"
+        steps={[
+          "Enter your Markdown text in the left editor panel.",
+          "Instantly see the rendered HTML preview on the right.",
+          "Use the styling features like bold, italic, and code blocks.",
+          "Copy the generated HTML code for use in your projects."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -105,6 +118,38 @@ export default function MarkdownPreviewer() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="Markdown Previewer"
+          description="The WebToolkit Pro Markdown Previewer is an advanced IDE-style utility for technical writers and developers. It provides a real-time side-by-side view of your Markdown source and the rendered HTML result, ensuring that your documentation is perfectly formatted before deployment."
+          howItWorks="Our previewer uses a sophisticated regex-based rendering engine to translate Markdown syntax into CSS-styled HTML components. It supports complex structures like nested lists, blockquotes, and inline code snippets, allowing you to visualize how your content will appear on platforms like GitHub, GitLab, or personal developer blogs."
+          features={[
+            "Real-time side-by-side Markdown rendering",
+            "Support for headers, emphasis, and blockquotes",
+            "Styled code blocks for technical documentation",
+            "Automatic link and image tag generation",
+            "Copyable HTML output for CMS integration",
+            "100% Client-side: Your content stays private"
+          ]}
+          faqs={[
+            {
+              q: "Why use a live previewer?",
+              a: "A live previewer allows you to catch formatting errors instantly, such as broken links or improperly nested lists, before you publish your documentation."
+            },
+            {
+              q: "Can I use custom CSS with this previewer?",
+              a: "The previewer uses our optimized 'prose' styling. While you can't inject custom CSS into the tool, the generated HTML can be styled with any external stylesheet."
+            },
+            {
+              q: "Does this support Markdown tables?",
+              a: "We currently focus on the most common Markdown structures. For complex table generation, we recommend using a dedicated table-to-markdown utility."
+            },
+            {
+              q: "Is it safe to paste sensitive notes?",
+              a: "Yes. Like all WebToolkit Pro tools, the Markdown Previewer runs entirely in your browser. No data is sent to our servers."
+            }
+          ]}
+        />
       </div>
     </div>
   )

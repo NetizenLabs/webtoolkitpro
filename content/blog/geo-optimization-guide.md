@@ -7,7 +7,7 @@ category: "SEO"
 image: "/blog/geo-optimization.jpg"
 ---
 
-# The Future of Search: Mastering Generative Engine Optimization (GEO) for Next.js
+## The Future of Search: Mastering Generative Engine Optimization (GEO) for Next.js
 
 For over two decades, search engine optimization (SEO) has been about one thing: ranking in the top 10 blue links on a Google Search Results Page (SERP). But in 2026, the landscape has shifted fundamentally. With the rise of AI-powered search engines—often called Large Model-based Search Engines (LSEs) like SearchGPT, Perplexity, and Google Gemini—the goal is no longer just to be "seen," but to be **"cited."**
 

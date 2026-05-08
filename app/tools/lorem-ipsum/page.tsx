@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { AlignLeft, Copy, RefreshCw, Check, Trash2, ArrowRight, Type } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 const LOREM_WORDS = [
@@ -53,6 +55,17 @@ export default function LoremIpsum() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Lorem Ipsum Generator" slug="tools/lorem-ipsum" />
+      <ToolSchema 
+        name="Lorem Ipsum Placeholder Generator" 
+        description="Generate high-quality Latin placeholder text for your website mockups, UI/UX designs, and typesetting layouts."
+        slug="lorem-ipsum"
+        steps={[
+          "Select the number of paragraphs you need (up to 20).",
+          "Click the refresh icon to generate new random text.",
+          "Review the generated text in the serif-styled editor.",
+          "Copy the text to your clipboard for use in your design tools."
+        ]}
+      />
       
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -135,6 +148,38 @@ export default function LoremIpsum() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="Lorem Ipsum Generator"
+          description="The WebToolkit Pro Lorem Ipsum Generator is a specialized utility for designers and developers who need high-quality dummy text for their layouts. Lorem ipsum is a pseudo-Latin text used in the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          howItWorks="Our generator uses a randomized selection of classic Latin words to construct grammatically balanced sentences and paragraphs. This ensures that the resulting text has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English for mockup purposes."
+          features={[
+            "Customizable paragraph count (1 to 20)",
+            "Randomized sentence and word distribution",
+            "High-contrast serif typography for better visualization",
+            "One-click regeneration for fresh content",
+            "Mobile-responsive design mockup view",
+            "100% Client-side: No data transmission required"
+          ]}
+          faqs={[
+            {
+              q: "What is the origin of Lorem Ipsum?",
+              a: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              q: "Why use Lorem Ipsum instead of English text?",
+              a: "Using dummy text allows clients and designers to focus on the visual elements of a layout (typography, white space, and grid) without being distracted by the literal meaning of the words."
+            },
+            {
+              q: "Is there a standard Lorem Ipsum passage?",
+              a: "The standard chunk of Lorem Ipsum used since the 1500s starts with 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...'"
+            },
+            {
+              q: "Does this generator support other languages?",
+              a: "Our current version focuses on the classic Latin-based Lorem Ipsum, which is the most widely recognized placeholder format in global design."
+            }
+          ]}
+        />
       </div>
     </div>
   )

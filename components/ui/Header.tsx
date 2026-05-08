@@ -18,10 +18,10 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: 'Tools', href: '/tools' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Tools', href: '/tools/' },
+    { name: 'Blog', href: '/blog/' },
+    { name: 'About', href: '/about/' },
+    { name: 'Contact', href: '/contact/' },
   ]
 
   return (
@@ -58,7 +58,7 @@ export default function Header() {
             ))}
             <ThemeToggle />
             <Link 
-              href="/tools" 
+              href="/tools/" 
               className="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-200 dark:hover:shadow-none transition-all duration-300"
             >
               Get Started
@@ -99,7 +99,7 @@ export default function Header() {
           ))}
           <div className="mt-4 pt-4 border-t border-gray-50 dark:border-slate-900">
             <Link 
-              href="/tools" 
+              href="/tools/" 
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl text-lg font-bold hover:bg-blue-700 shadow-lg shadow-blue-100 dark:shadow-none transition-all"
             >

@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { FileText, Copy, Download, RefreshCw, CheckCircle2, ArrowRight, Shield, Trash2 } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function RobotsGenerator() {
@@ -52,6 +54,17 @@ export default function RobotsGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Robots.txt Generator" slug="tools/robots-generator" />
+      <ToolSchema 
+        name="Robots.txt Generator & Manager" 
+        description="Control search engine crawler access and optimize your website's crawl budget with a perfectly formatted robots.txt file."
+        slug="robots-generator"
+        steps={[
+          "Select the global access rule (Allow All or Disallow All).",
+          "Enter your XML sitemap URL to help bots find your content faster.",
+          "Add custom exclusion rules for sensitive directories (e.g., /admin/).",
+          "Generate and download your robots.txt file to your root directory."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -182,6 +195,38 @@ export default function RobotsGenerator() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="Robots.txt Generator"
+          description="The WebToolkit Pro Robots.txt Generator is a mission-critical tool for SEOs and site administrators. A robots.txt file acts as a gatekeeper for search engine crawlers (like Googlebot), directing them to the areas of your site that should be indexed and protecting sensitive or low-value directories from being crawled."
+          howItWorks="Our generator follows the Robots Exclusion Protocol (REP). It allows you to define 'User-agents' and assign 'Allow' or 'Disallow' directives to specific URL paths. By adding your sitemap URL, you provide a clear roadmap for search engines, improving the efficiency of your site's indexing."
+          features={[
+            "NIST-compliant Robots Exclusion Protocol generation",
+            "Automatic sitemap URL integration and validation",
+            "Custom directive support for specific user-agents",
+            "Downloadable .txt file for instant deployment",
+            "Optimized templates for Next.js and React apps",
+            "100% Client-side: Your site structure stays private"
+          ]}
+          faqs={[
+            {
+              q: "What is crawl budget?",
+              a: "Crawl budget is the number of pages search engines crawl on your site within a given timeframe. Optimizing robots.txt helps you focus this budget on your most important pages."
+            },
+            {
+              q: "Does Disallow hide pages from search results?",
+              a: "Not necessarily. Disallow prevents crawling, but if a page is linked to from elsewhere, it might still be indexed. To prevent indexing, use a 'noindex' meta tag."
+            },
+            {
+              q: "Where should I place the robots.txt file?",
+              a: "The robots.txt file must be placed in the root directory of your website (e.g., https://example.com/robots.txt)."
+            },
+            {
+              q: "Can I use robots.txt to hide my admin panel?",
+              a: "Yes, Disallowing /admin/ or /wp-admin/ is a common practice to reduce server load from bots trying to crawl login pages."
+            }
+          ]}
+        />
       </div>
     </div>
   )

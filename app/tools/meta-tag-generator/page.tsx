@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Globe, Copy, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function MetaTagGenerator() {
@@ -36,6 +38,17 @@ export default function MetaTagGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Meta Tag Generator" slug="meta-tag-generator" />
+      <ToolSchema 
+        name="SEO Meta Tag Generator" 
+        description="Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards to improve your search visibility and social media appearance."
+        slug="meta-tag-generator"
+        steps={[
+          "Enter your website title and a brief description.",
+          "Add relevant keywords separated by commas.",
+          "Include your site URL and author information.",
+          "Copy the generated HTML tags and paste them into the <head> section of your website."
+        ]}
+      />
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <div className="p-4 bg-gradient-to-br from-rose-500 to-rose-700 rounded-2xl shadow-lg shadow-rose-500/20">
@@ -82,6 +95,38 @@ export default function MetaTagGenerator() {
         </div>
 
         <AdSlot className="mt-8" />
+
+        <ToolInfo 
+          title="Meta Tag Generator"
+          description="The WebToolkit Pro Meta Tag Generator is a professional utility designed to help web developers and SEO specialists create perfectly formatted meta tags. These tags are the backbone of search engine optimization, providing search engines like Google and Bing with essential information about your content."
+          howItWorks="Our tool generates a comprehensive set of meta tags, including Primary SEO tags (Title, Description, Keywords), Open Graph (OG) tags for Facebook and LinkedIn, and Twitter Cards. These tags ensure that your content looks professional and engaging when shared across all platforms."
+          features={[
+            "Optimized Primary Meta Tags (Title & Description)",
+            "Open Graph Protocol support for social media",
+            "Twitter Card integration for rich media sharing",
+            "Real-time code generation and formatting",
+            "Compliance with Google search snippet standards",
+            "Lightweight and 100% browser-based"
+          ]}
+          faqs={[
+            {
+              q: "What are meta tags?",
+              a: "Meta tags are snippets of text that describe a page's content; they don't appear on the page itself, but only in the page's source code. They tell search engines what the page is about."
+            },
+            {
+              q: "Why is the Meta Description important?",
+              a: "The meta description is the short paragraph of text that appears under your URL in search results. A well-written description can significantly increase your Click-Through Rate (CTR)."
+            },
+            {
+              q: "What is Open Graph?",
+              a: "Open Graph is a protocol created by Facebook that allows web pages to become rich objects in social graphs. It controls how your site appears when shared on platforms like Facebook, WhatsApp, and LinkedIn."
+            },
+            {
+              q: "How many keywords should I include?",
+              a: "Modern SEO focuses more on content relevance than the meta keywords tag, which Google largely ignores. However, it's still good practice to include 3-5 high-relevance keywords for other search engines."
+            }
+          ]}
+        />
       </div>
     </div>
   )

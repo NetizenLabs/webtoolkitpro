@@ -2,6 +2,10 @@
 
 import React, { useState } from 'react'
 import { FileCode, RefreshCw, Copy, CheckCircle2 } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function MarkdownConverter() {
   const [markdown, setMarkdown] = useState('# Welcome to WebToolkit Pro\n\nEdit this text to see it converted to **HTML**.')
@@ -29,7 +33,19 @@ export default function MarkdownConverter() {
   }
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 min-h-screen">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950 min-h-screen transition-colors duration-300">
+      <BreadcrumbSchema name="Markdown to HTML Converter" slug="markdown-converter" />
+      <ToolSchema 
+        name="Markdown to HTML Converter" 
+        description="Convert Markdown text to clean, semantic HTML instantly. Perfect for technical writers and developers."
+        slug="markdown-converter"
+        steps={[
+          "Enter your Markdown text in the input area.",
+          "Watch as the tool converts it to HTML in real-time.",
+          "Review the generated HTML code in the output panel.",
+          "Copy the HTML and paste it into your project or CMS."
+        ]}
+      />
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-violet-100 rounded-2xl mb-4">
@@ -77,6 +93,40 @@ export default function MarkdownConverter() {
             />
           </div>
         </div>
+        
+        <AdSlot className="mt-12" />
+
+        <ToolInfo 
+          title="Markdown to HTML Converter"
+          description="The WebToolkit Pro Markdown to HTML Converter is a robust utility designed for developers, technical writers, and content creators. Markdown is a lightweight markup language with plain-text-formatting syntax, and our converter ensures it translates into clean, valid, and semantic HTML5 code."
+          howItWorks="Our tool uses a real-time parsing engine that identifies Markdown patterns (such as headers, bold/italic text, lists, and links) and maps them to their equivalent HTML tags. This process allows you to write content quickly without worrying about complex HTML tags, while ensuring the output is optimized for search engines and accessibility."
+          features={[
+            "Real-time Markdown to HTML transformation",
+            "Support for headers (H1-H6), emphasis, and lists",
+            "Automatic 'prose' wrapper for easy styling",
+            "Clean, minified HTML output generation",
+            "Distraction-free IDE-style writing environment",
+            "100% Client-side: Your content is never transmitted"
+          ]}
+          faqs={[
+            {
+              q: "Why convert Markdown to HTML?",
+              a: "While many modern platforms support Markdown directly, some CMS systems and static sites require raw HTML for maximum control over styling and SEO metadata."
+            },
+            {
+              q: "Is the generated HTML semantic?",
+              a: "Yes. Our tool ensures that Markdown headers become <h1>, <h2>, etc., and that lists are properly formatted using <li> tags, which is essential for SEO."
+            },
+            {
+              q: "Does this tool support GitHub Flavored Markdown (GFM)?",
+              a: "We currently support standard Markdown syntax. For complex GFM features like task lists or tables, we recommend using our dedicated Markdown Previewer."
+            },
+            {
+              q: "Is there a size limit for the content?",
+              a: "Our converter can handle thousands of lines of text efficiently. For extremely large documents, your browser's performance may vary depending on available memory."
+            }
+          ]}
+        />
       </div>
     </div>
   )

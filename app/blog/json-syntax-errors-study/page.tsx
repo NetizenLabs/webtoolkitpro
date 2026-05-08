@@ -110,7 +110,7 @@ export default function JsonStudyPage() {
           <div className="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/30 mb-8 font-mono text-sm">
             <span className="text-amber-600 dark:text-amber-400 font-bold mb-2 block">// FIX IT INSTANTLY</span>
             <span className="text-gray-900 dark:text-slate-300">
-              Use the <a href="/tools/json-formatter" className="text-blue-600 underline font-bold">WebToolkit Pro JSON Formatter</a> to automatically convert quotes and fix commas.
+              Use the <a href="/tools/json-formatter/" className="text-blue-600 underline font-bold">WebToolkit Pro JSON Formatter</a> to automatically convert quotes and fix commas.
             </span>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function JsonStudyPage() {
               <Download className="w-5 h-5" />
               <span>Download Full PDF</span>
             </button>
-            <a href="/tools/json-formatter" className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20">
+            <a href="/tools/json-formatter/" className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20">
               <span>Fix Your JSON Now</span>
               <ArrowRight className="w-5 h-5" />
             </a>

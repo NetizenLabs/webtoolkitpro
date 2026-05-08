@@ -97,56 +97,73 @@ export default function ToolsPage() {
 
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 relative">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
-          <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-slate-500">
-            Developer Toolkit
-          </h1>
-          <p className="text-xl text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
-            A comprehensive suite of <span className="text-blue-600 dark:text-blue-400 font-bold">{tools.length}</span> free, high-performance tools built for the next generation of web professionals.
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 relative">
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-slate-500">
+              Developer Toolkit
+            </h1>
+            <p className="text-xl text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
+              A comprehensive suite of <span className="text-blue-600 dark:text-blue-400 font-bold">{tools.length}</span> free, high-performance tools built for the next generation of web professionals.
+            </p>
+          </div>
 
-        {/* Search and Filter Section */}
-        <div className="max-w-5xl mx-auto mb-20">
-          <div className="bg-white dark:bg-slate-900 p-2 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-2xl shadow-blue-900/5 dark:shadow-none flex flex-col md:flex-row items-center gap-2">
-            <div className="relative flex-grow w-full">
-              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
+          {/* Topical Hubs (Semantic Silos) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {[
+              { title: 'Hub A: Developer Tools', desc: 'Formatters, minifiers, and security utilities for engineers.', icon: Code2, tools: ['json-formatter', 'js-minifier', 'hash-generator', 'uuid-generator'], color: 'bg-blue-600' },
+              { title: 'Hub B: Content Tools', desc: 'Text converters, counters, and documentation utilities.', icon: FileText, tools: ['word-counter', 'case-converter', 'lorem-ipsum', 'markdown-converter'], color: 'bg-purple-600' },
+              { title: 'Hub C: SEO Utilities', desc: 'Metadata, sitemaps, and search optimization engines.', icon: Globe, tools: ['meta-tag-generator', 'robots-generator', 'sitemap-validator', 'schema-generator'], color: 'bg-emerald-600' },
+            ].map((hub) => (
+              <div key={hub.title} className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-all">
+                <div className={`w-12 h-12 ${hub.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10`}>
+                  <hub.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{hub.title}</h3>
+                <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{hub.desc}</p>
               </div>
-              <input
-                type="text"
-                placeholder="Search for a tool (e.g., JSON, Password, Encoder)..."
-                className="block w-full pl-14 pr-6 py-5 bg-transparent border-none focus:ring-0 outline-none text-lg font-medium dark:text-white placeholder:text-gray-400 dark:placeholder:text-slate-600"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-            
-            <div className="w-px h-10 bg-gray-100 dark:bg-slate-800 hidden md:block mx-2" />
+            ))}
+          </div>
 
-            <div className="relative group/nav w-full md:w-auto overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+          {/* Search and Filter Section */}
+          <div className="max-w-5xl mx-auto mb-20">
+            <div className="bg-white dark:bg-slate-900 p-2 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-2xl shadow-blue-900/5 dark:shadow-none flex flex-col md:flex-row items-center gap-2">
+              <div className="relative flex-grow w-full">
+                <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search for a tool (e.g., JSON, Password, Encoder)..."
+                  className="block w-full pl-14 pr-6 py-5 bg-transparent border-none focus:ring-0 outline-none text-lg font-medium dark:text-white placeholder:text-gray-400 dark:placeholder:text-slate-600"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
               
-              <div className="flex gap-2 overflow-x-auto py-2 px-6 no-scrollbar mask-fade-edges">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-6 py-3 rounded-2xl font-bold whitespace-nowrap transition-all duration-300 text-sm uppercase tracking-widest ${activeCategory === cat
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                      : 'bg-gray-50 dark:bg-slate-800/50 text-gray-500 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 border border-transparent'
-                      }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
+              <div className="w-px h-10 bg-gray-100 dark:bg-slate-800 hidden md:block mx-2" />
+
+              <div className="relative group/nav w-full md:w-auto overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+                
+                <div className="flex gap-2 overflow-x-auto py-2 px-6 no-scrollbar mask-fade-edges">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setActiveCategory(cat)}
+                      className={`px-6 py-3 rounded-2xl font-bold whitespace-nowrap transition-all duration-300 text-sm uppercase tracking-widest ${activeCategory === cat
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
+                        : 'bg-gray-50 dark:bg-slate-800/50 text-gray-500 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 border border-transparent'
+                        }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
         <AdSlot className="mb-12" />
 

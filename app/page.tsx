@@ -7,14 +7,14 @@ import {
 import Newsletter from '@/components/sections/Newsletter'
 
 const featuredTools = [
-  { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-600' },
-  { name: 'Password Generator', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-600' },
-  { name: 'Base64 Encoder', icon: FileText, href: '/tools/base64-encoder', color: 'from-purple-500 to-purple-600' },
-  { name: 'Color Picker', icon: Palette, href: '/tools/color-picker', color: 'from-pink-500 to-pink-600' },
-  { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-600' },
-  { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-700' },
-  { name: 'Word Counter', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-600' },
-  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800' },
+  { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },
+  { name: 'Password Generator', icon: Key, href: '/tools/password-generator/', color: 'from-indigo-500 to-indigo-600' },
+  { name: 'Base64 Encoder', icon: FileText, href: '/tools/base64-encoder/', color: 'from-purple-500 to-purple-600' },
+  { name: 'Color Picker', icon: Palette, href: '/tools/color-picker/', color: 'from-pink-500 to-pink-600' },
+  { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator/', color: 'from-slate-500 to-slate-600' },
+  { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator/', color: 'from-lime-600 to-lime-700' },
+  { name: 'Word Counter', icon: Hash, href: '/tools/word-counter/', color: 'from-teal-500 to-teal-600' },
+  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester/', color: 'from-blue-600 to-blue-800' },
 ]
 
 export default function Home() {
@@ -49,13 +49,13 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center" style={{animation: 'fadeInUp 1.2s ease-out'}}>
             <Link 
-              href="/tools"
+              href="/tools/"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-blue-200 dark:hover:shadow-none hover:-translate-y-0.5 transition-all duration-300"
             >
               Explore All Tools <ArrowRight className="w-5 h-5" />
             </Link>
             <Link 
-              href="/blog"
+              href="/blog/"
               className="inline-flex items-center gap-2 bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-xl font-bold text-lg border border-gray-200 dark:border-slate-800 hover:shadow-lg dark:hover:shadow-none hover:-translate-y-0.5 transition-all duration-300"
             >
               Read Our Blog
@@ -113,7 +113,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/tools" className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:gap-3 transition-all">
+            <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:gap-3 transition-all">
               View All 26+ Tools <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
           <p className="text-xl text-blue-50 dark:text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             Join thousands of developers who use WebToolkit Pro every day to build better, faster, and more securely.
           </p>
-          <Link href="/tools" className="inline-flex items-center gap-2 bg-white text-blue-700 px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300">
+          <Link href="/tools/" className="inline-flex items-center gap-2 bg-white text-blue-700 px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300">
             Get Started — It&apos;s Free <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

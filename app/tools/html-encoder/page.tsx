@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { Code, Copy, Check, Trash2, ArrowRight, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function HtmlEncoder() {
@@ -33,6 +35,17 @@ export default function HtmlEncoder() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="HTML Encoder/Decoder" slug="tools/html-encoder" />
+      <ToolSchema 
+        name="HTML Entity Encoder & Decoder" 
+        description="Encode or decode HTML entities to prevent XSS attacks and ensure proper character rendering in web browsers."
+        slug="html-encoder"
+        steps={[
+          "Paste your raw HTML or special characters into the input box.",
+          "Click 'Encode HTML' to convert symbols into entities like &amp;lt;.",
+          "Click 'Decode HTML' to revert entities back into their original characters.",
+          "Review the secure, sanitized output in the result panel."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -121,6 +134,38 @@ export default function HtmlEncoder() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="HTML Entity Encoder & Decoder"
+          description="The WebToolkit Pro HTML Encoder/Decoder is a security-first utility designed for developers and content managers. HTML encoding is the process of converting special characters (like <, >, and &) into their corresponding HTML entities. This ensures that the characters are treated as literal text by the browser rather than executable code."
+          howItWorks="Our encoder uses a robust string replacement algorithm to sanitize the five key characters: ampersand (&), less-than (<), greater-than (>), double quotes (\"), and single quotes ('). The decoder utilizes the browser's native DOM parser to safely re-interpret entities back into their original Unicode characters, providing a reliable way to audit and preview encoded content."
+          features={[
+            "Instant conversion of special characters to entities",
+            "Safe-mode decoding using browser-native DOM parsing",
+            "Support for common entities (&lt;, &gt;, &amp;, &quot;, &#039;)",
+            "One-click 'Clear All' for rapid iteration",
+            "High-contrast IDE-style result display",
+            "100% Client-side: Your data is never transmitted"
+          ]}
+          faqs={[
+            {
+              q: "What is the primary purpose of HTML encoding?",
+              a: "HTML encoding is primarily used for security, specifically to prevent Cross-Site Scripting (XSS) attacks by ensuring that browser-executable characters are rendered as plain text."
+            },
+            {
+              q: "Which characters MUST be encoded?",
+              a: "At a minimum, you should always encode <, >, &, \", and ' if they are being output inside an HTML element or attribute."
+            },
+            {
+              q: "Is there a difference between entity names and numbers?",
+              a: "Entity names (like &lt;) are easier for humans to read, while entity numbers (like &#60;) are sometimes more compatible with older character sets."
+            },
+            {
+              q: "Can I use this for email obfuscation?",
+              a: "Yes. Encoding your email address into HTML entities can sometimes help prevent simple scraper bots from harvesting your address from a webpage."
+            }
+          ]}
+        />
       </div>
     </div>
   )

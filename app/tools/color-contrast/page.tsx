@@ -2,6 +2,10 @@
 
 import React, { useState, useEffect } from 'react'
 import { Palette, Info, CheckCircle2, AlertCircle, RefreshCw } from 'lucide-react'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
+import AdSlot from '@/components/ads/AdSlot'
 
 export default function ColorContrast() {
   const [foreground, setForeground] = useState('#2563EB')
@@ -53,7 +57,19 @@ export default function ColorContrast() {
   )
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 min-h-screen font-sans">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen font-sans">
+      <BreadcrumbSchema name="Color Contrast Checker" slug="tools/color-contrast" />
+      <ToolSchema 
+        name="WCAG Color Contrast Checker" 
+        description="Verify that your website's color combinations meet WCAG 2.1 accessibility standards. Ensure high readability for all users."
+        slug="color-contrast"
+        steps={[
+          "Select or enter a hex code for the Foreground (text) color.",
+          "Select or enter a hex code for the Background color.",
+          "Check the real-time contrast ratio calculation.",
+          "Verify the WCAG AA and AAA pass/fail results for normal and large text."
+        ]}
+      />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-pink-100 rounded-2xl mb-4">
@@ -145,6 +161,43 @@ export default function ColorContrast() {
             </div>
           </div>
         </div>
+      </div>
+          </div>
+        </div>
+
+        <AdSlot className="mt-16" />
+
+        <ToolInfo 
+          title="WCAG Color Contrast Checker"
+          description="The WebToolkit Pro Color Contrast Checker is a critical utility for ensuring digital accessibility and inclusivity. It measures the difference in 'perceived luminance' between two colors, providing a ratio that determines if text is readable against its background for users with visual impairments."
+          howItWorks="Our tool implements the W3C's WCAG 2.1 formula for calculating relative luminance. We convert hex codes into linear RGB values, apply a gamma correction, and then compute the final ratio. This ensures that your design meets the strict AA (4.5:1) and AAA (7:1) standards required for government and enterprise web compliance."
+          features={[
+            "Real-time contrast ratio calculation (up to 21:1)",
+            "Pass/Fail indicators for WCAG AA and AAA standards",
+            "Support for both Normal and Large text sizes",
+            "Interactive color picker and hex input fields",
+            "Live visual preview of color combinations",
+            "100% Client-side: Your design palettes remain private"
+          ]}
+          faqs={[
+            {
+              q: "What is a 'Good' contrast ratio?",
+              a: "For standard text, a ratio of 4.5:1 is required for WCAG AA compliance. For higher AAA compliance, a ratio of 7:1 is recommended."
+            },
+            {
+              q: "What counts as 'Large Text'?",
+              a: "WCAG defines large text as anything 18pt (approximately 24px) or larger, or 14pt (approximately 18.6px) and bold."
+            },
+            {
+              q: "Why does contrast matter for SEO?",
+              a: "Accessibility is a key part of User Experience (UX), and Google has explicitly stated that UX is a ranking factor. Accessible sites also reach a wider audience."
+            },
+            {
+              q: "Does this tool support transparency (RGBA)?",
+              a: "This version focuses on solid hex colors. For transparent layers, the effective contrast depends on the colors visible through the alpha channel."
+            }
+          ]}
+        />
       </div>
     </div>
   )

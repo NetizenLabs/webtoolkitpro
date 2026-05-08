@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { FileJson, Copy, Trash2, Check, ArrowRight } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function JsonFormatter() {
@@ -51,6 +53,17 @@ export default function JsonFormatter() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="JSON Formatter" slug="json-formatter" />
+      <ToolSchema 
+        name="JSON Formatter & Validator" 
+        description="Clean, format, and validate your JSON data instantly. Enterprise-grade tool for modern web developers."
+        slug="json-formatter"
+        steps={[
+          "Paste your raw JSON into the input area.",
+          "Click 'Format Pretty' to beautify the code.",
+          "Check for syntax errors in the output window.",
+          "Copy the formatted JSON to your clipboard."
+        ]}
+      />
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <div className="p-4 bg-blue-600 rounded-2xl shadow-lg shadow-blue-600/20">
@@ -143,6 +156,38 @@ export default function JsonFormatter() {
         </div>
         
         <AdSlot />
+
+        <ToolInfo 
+          title="JSON Formatter & Validator"
+          description="The WebToolkit Pro JSON Formatter is an enterprise-grade utility designed for developers who need to clean, validate, and debug JSON data instantly. Our tool adheres strictly to the RFC 8259 specification, ensuring your data is always production-ready."
+          howItWorks="Our engine uses an Abstract Syntax Tree (AST) parser to analyze your JSON structure. It identifies syntax errors in real-time—such as trailing commas, unquoted keys, or invalid escape sequences—and provides immediate feedback with precise line numbers."
+          features={[
+            "Real-time JSON validation against RFC 8259 standards",
+            "Automatic quote conversion (Single to Double quotes)",
+            "Trailing comma removal and syntax error highlighting",
+            "One-click minification for optimized API payloads",
+            "100% Client-side processing for total data privacy",
+            "Smart indentation (2-space, 4-space, or Tab options)"
+          ]}
+          faqs={[
+            {
+              q: "Why is my JSON showing as invalid?",
+              a: "Common causes include trailing commas after the last item, using single quotes instead of double quotes, or unquoted keys. Our tool highlights exactly where these errors occur."
+            },
+            {
+              q: "Is my data stored on your servers?",
+              a: "No. Unlike other tools, WebToolkit Pro processes all JSON data directly in your browser. We never transmit or store your data, making it safe for sensitive API keys or personal information."
+            },
+            {
+              q: "Can I convert JSON to Minified format?",
+              a: "Yes. Simply paste your JSON and click the 'Minify' button to remove all whitespace and reduce payload size for faster network transmission."
+            },
+            {
+              q: "Does this tool support JSON5?",
+              a: "We currently focus on strict JSON (RFC 8259) to ensure compatibility with all standard APIs. However, our validator helps you convert loose JS objects into strict JSON."
+            }
+          ]}
+        />
       </div>
     </div>
   )

@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import { FileText, Copy, CheckCircle2, Info, Layout, ShoppingCart, Cpu, Globe, AlertTriangle, Terminal } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 const templates = [
@@ -93,6 +95,17 @@ export default function RobotsTemplates() {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
       <BreadcrumbSchema name="Enterprise robots.txt Templates" slug="tools/robots-txt-templates" />
+      <ToolSchema 
+        name="Enterprise robots.txt Generator & Templates" 
+        description="Access battle-tested robots.txt templates for Next.js, WordPress, and E-commerce. Optimize your crawl budget and manage AI bot access."
+        slug="robots-txt-templates"
+        steps={[
+          "Select your platform (Next.js, WordPress, or E-commerce) from the sidebar.",
+          "Review the optimized robots.txt content in the code editor.",
+          "Copy the generated code and replace 'yourdomain.com' with your actual URL.",
+          "Upload the robots.txt file to your website's root directory."
+        ]}
+      />
       
       <div className="max-w-5xl mx-auto">
         {/* Header */}
@@ -203,6 +216,38 @@ export default function RobotsTemplates() {
         </div>
 
         <AdSlot className="mt-16" />
+
+        <ToolInfo 
+          title="Enterprise robots.txt Templates"
+          description="The WebToolkit Pro Robots.txt Templates are a curated collection of production-ready configurations designed for high-authority domains. A well-configured robots.txt file is the cornerstone of technical SEO, directing search engine crawlers away from thin content and build artifacts toward your most valuable pages."
+          howItWorks="Our templates are built based on 2026 technical SEO standards, specifically addressing modern challenges like AI crawler management (GPTBot, CCBot) and Next.js internal build file protection. Each template uses the Robots Exclusion Protocol (REP) to define explicit Allow/Disallow rules for different User-agents, ensuring maximum efficiency for your site's crawl budget."
+          features={[
+            "Specialized templates for Next.js, WordPress, and E-commerce",
+            "Built-in AI bot protection and crawler management",
+            "Sitemap declaration integration",
+            "Crawl budget optimization strategies",
+            "Real-time code copying and preview",
+            "100% Free: Expert configurations for all webmasters"
+          ]}
+          faqs={[
+            {
+              q: "What is a robots.txt file?",
+              a: "Robots.txt is a text file webmasters create to instruct web robots (typically search engine robots) how to crawl pages on their website. It is part of the Robots Exclusion Protocol (REP)."
+            },
+            {
+              q: "Does robots.txt hide pages from search?",
+              a: "No. Robots.txt only prevents crawling. To hide a page from search results, you should use the `noindex` meta tag or header."
+            },
+            {
+              q: "Where should the robots.txt file be located?",
+              a: "The file must be placed in the top-level directory (root) of your website host. For example: `https://example.com/robots.txt`."
+            },
+            {
+              q: "How do I block ChatGPT from crawling my site?",
+              a: "You can use `User-agent: GPTBot` followed by `Disallow: /` in your robots.txt file to prevent OpenAI's crawler from accessing your content."
+            }
+          ]}
+        />
       </div>
     </div>
   )

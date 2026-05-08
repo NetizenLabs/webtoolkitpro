@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { Layers, Search, CheckCircle2, XCircle, Info, Trash2, ArrowRight, Globe } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function SitemapValidator() {
@@ -36,6 +38,17 @@ export default function SitemapValidator() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Sitemap XML Validator" slug="tools/sitemap-validator" />
+      <ToolSchema 
+        name="Sitemap XML Validator" 
+        description="Validate your website's XML sitemap for structure, accessibility, and SEO best practices to ensure optimal Google indexing."
+        slug="sitemap-validator"
+        steps={[
+          "Enter your absolute sitemap URL (e.g., https://example.com/sitemap.xml).",
+          "Click 'Validate' to start the structural analysis.",
+          "Review the health checklist for errors or optimization opportunities.",
+          "Fix any broken links or HTTPS issues identified by the validator."
+        ]}
+      />
       
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
@@ -141,6 +154,38 @@ export default function SitemapValidator() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="Sitemap XML Validator"
+          description="The WebToolkit Pro Sitemap XML Validator is an essential tool for ensuring that your website's primary navigation map is readable by search engines. An XML sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them."
+          howItWorks="Our validator analyzes your sitemap against the official sitemap.org protocol. It checks for XML syntax errors, verifies that all URLs are accessible (200 OK), ensures HTTPS usage, and confirms that the sitemap is correctly linked in your robots.txt file."
+          features={[
+            "Real-time XML syntax and structure validation",
+            "HTTPS security and protocol verification",
+            "Automatic link health and accessibility checks",
+            "Compliance verification with Google Search Console",
+            "Crawl budget efficiency recommendations",
+            "Support for both standard Sitemaps and Sitemap Indexes"
+          ]}
+          faqs={[
+            {
+              q: "What is an XML sitemap?",
+              a: "An XML sitemap is a list of your website's URLs that tells search engines about the structure of your site content. It helps bots crawl your site more efficiently."
+            },
+            {
+              q: "How many URLs can a sitemap have?",
+              a: "A single sitemap file cannot contain more than 50,000 URLs and must not exceed 50MB in size when uncompressed."
+            },
+            {
+              q: "Why is my sitemap returning an error?",
+              a: "Common errors include incorrect XML formatting, including 'noindex' pages, or having URLs that result in 404 errors. Our tool helps identify these specifically."
+            },
+            {
+              q: "Do I need a sitemap for a small site?",
+              a: "While Google can find most pages without a sitemap, it's still best practice to have one to ensure all pages are discovered, especially new ones."
+            }
+          ]}
+        />
       </div>
     </div>
   )

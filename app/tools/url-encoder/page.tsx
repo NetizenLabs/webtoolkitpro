@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { Link as LinkIcon, Copy, ArrowRightLeft, Check, Trash2, ArrowRight, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function UrlEncoder() {
@@ -40,6 +42,17 @@ export default function UrlEncoder() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="URL Encoder/Decoder" slug="tools/url-encoder" />
+      <ToolSchema 
+        name="Universal URL Encoder & Decoder" 
+        description="Encode or decode strings for URI compatibility. Ensure your query parameters and URLs are safe for all web browsers and servers."
+        slug="url-encoder"
+        steps={[
+          "Enter your raw URL or string in the input panel.",
+          "Click 'Encode URL' to convert special characters to percent-encoding.",
+          "Click 'Decode URL' to convert an encoded string back to plain text.",
+          "Use the 'Swap' feature to iteratively process complex nested URLs."
+        ]}
+      />
       
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
@@ -138,6 +151,38 @@ export default function UrlEncoder() {
         </div>
 
         <AdSlot />
+
+        <ToolInfo 
+          title="URL Encoder/Decoder"
+          description="The WebToolkit Pro URL Encoder/Decoder is a critical utility for ensuring data integrity during web transmission. URL encoding, also known as 'percent-encoding', is a mechanism for encoding information in a Uniform Resource Identifier (URI) by replacing 'unsafe' characters with a '%' followed by their two-digit hexadecimal equivalent."
+          howItWorks="Our tool uses the standard JavaScript `encodeURIComponent()` and `decodeURIComponent()` methods. These functions are designed to handle all non-standard characters, including spaces, emojis, and special symbols (like &, ?, and =), ensuring that your query strings are correctly interpreted by web servers and APIs without being truncated or corrupted."
+          features={[
+            "RFC 3986 compliant percent-encoding",
+            "Safe-mode decoding with error handling",
+            "Real-time transformation of URI components",
+            "One-click 'Swap' for multi-stage decoding",
+            "Clean, hexadecimal formatting for encoded outputs",
+            "100% Client-side: Your URLs are never tracked"
+          ]}
+          faqs={[
+            {
+              q: "Why do I need to encode URLs?",
+              a: "URLs can only contain certain characters from the US-ASCII character set. Characters outside this set (like spaces or non-English letters) must be encoded to work in a browser."
+            },
+            {
+              q: "What characters are usually encoded?",
+              a: "Reserved characters like '?', '&', '=', and '#' are often encoded when they appear in a query parameter value to prevent them from being interpreted as URL delimiters."
+            },
+            {
+              q: "Is there a difference between encodeURI and encodeURIComponent?",
+              a: "Yes. `encodeURI` is meant for a full URL (it doesn't encode /, ?, or &), while `encodeURIComponent` is meant for parameter values and encodes almost everything."
+            },
+            {
+              q: "What is a percent-encoded space?",
+              a: "A space character is typically encoded as '%20' in a URL, although in query parameters, it is sometimes represented as a '+' sign."
+            }
+          ]}
+        />
       </div>
     </div>
   )

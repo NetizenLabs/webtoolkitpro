@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Type, Copy, Check } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function CaseConverter() {
@@ -26,6 +28,17 @@ export default function CaseConverter() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Case Converter" slug="case-converter" />
+      <ToolSchema 
+        name="Universal Case Converter" 
+        description="Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly."
+        slug="case-converter"
+        steps={[
+          "Paste or type your text into the main editor.",
+          "Choose your desired case format from the available buttons.",
+          "Check the transformed text in the editor window.",
+          "Copy the converted text to your clipboard for use elsewhere."
+        ]}
+      />
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-4 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-2xl shadow-lg shadow-cyan-500/20">
@@ -64,6 +77,38 @@ export default function CaseConverter() {
         </div>
 
         <AdSlot className="mt-8" />
+
+        <ToolInfo 
+          title="Text Case Converter"
+          description="The WebToolkit Pro Case Converter is a streamlined utility for transforming the capitalization and formatting of your text. Whether you need to fix accidentally typed 'ALL CAPS', prepare SEO-friendly slugs, or format titles for publication, our tool handles all common text transformations with a single click."
+          howItWorks="Our tool applies specialized JavaScript string manipulation algorithms to your input. For example, 'Title Case' identifies word boundaries and capitalizes the first letter of each word, while 'Slug Case' removes special characters and replaces spaces with hyphens, making it ideal for creating clean website URLs."
+          features={[
+            "Instant UPPERCASE and lowercase conversion",
+            "Smart Title Case and Sentence case formatting",
+            "SEO-friendly slug-case generator",
+            "Alternating case (aLtErNaTiNg) for creative styling",
+            "Real-time text preview and editing",
+            "100% Client-side: Your text is never stored"
+          ]}
+          faqs={[
+            {
+              q: "What is Slug Case used for?",
+              a: "Slug case is primarily used in web development for creating SEO-friendly URLs. It replaces spaces with hyphens and removes special characters (e.g., 'Hello World' becomes 'hello-world')."
+            },
+            {
+              q: "How does Title Case work?",
+              a: "Our Title Case function capitalizes the first letter of every word in the string, making it perfect for blog post titles and headers."
+            },
+            {
+              q: "Can I undo a conversion?",
+              a: "While there isn't a direct undo button, you can simply paste your original text back into the editor if you change your mind."
+            },
+            {
+              q: "Is there a limit to how much text I can convert?",
+              a: "Our tool can handle large blocks of text efficiently, although very large files (several megabytes) may slow down the browser's response time."
+            }
+          ]}
+        />
       </div>
     </div>
   )

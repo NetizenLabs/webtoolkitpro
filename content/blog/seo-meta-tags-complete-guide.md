@@ -15,7 +15,7 @@ geo_placename: "United States"
 language: "en-US"
 ---
 
-# SEO Meta Tags: A Complete Guide for Developers
+## SEO Meta Tags: A Complete Guide for Developers
 
 Meta tags are the hidden foundation of SEO. They tell search engines what your page is about, control how it appears in search results, and influence how it's shared on social media. This guide covers every meta tag you need to know in 2026.
 

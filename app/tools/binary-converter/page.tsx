@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Binary } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ToolSchema from '@/components/seo/ToolSchema'
+import ToolInfo from '@/components/sections/ToolInfo'
 import AdSlot from '@/components/ads/AdSlot'
 
 export default function BinaryConverter() {
@@ -20,6 +22,17 @@ export default function BinaryConverter() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name="Binary Converter" slug="binary-converter" />
+      <ToolSchema 
+        name="Number System & Binary Converter" 
+        description="Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science and low-level programming."
+        slug="binary-converter"
+        steps={[
+          "Enter your number in the input field.",
+          "Select the base of your input number (Binary, Octal, Decimal, or Hex).",
+          "Click 'Convert Now' to calculate the values in all other bases.",
+          "Review the results for each number system in the grid below."
+        ]}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-4 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl shadow-lg shadow-red-500/20">
@@ -62,6 +75,38 @@ export default function BinaryConverter() {
           </div>
         </div>
         <AdSlot className="mt-8" />
+
+        <ToolInfo 
+          title="Number System & Binary Converter"
+          description="The WebToolkit Pro Binary Converter is a versatile utility for translating numbers between the four most common base systems used in computer science: Binary (Base 2), Octal (Base 8), Decimal (Base 10), and Hexadecimal (Base 16). Understanding these conversions is fundamental for software engineering, embedded systems development, and digital logic design."
+          howItWorks="Our tool utilizes the built-in JavaScript `parseInt()` function to interpret the input based on the selected source base. Once converted to a base-10 integer, the tool uses `.toString(base)` to generate the representation in all other systems. This ensures precision across large integers and supports high-speed calculations entirely within your browser."
+          features={[
+            "Real-time conversion across four major number systems",
+            "Support for Binary, Octal, Decimal, and Hexadecimal",
+            "Safe-mode parsing with 'Invalid' input detection",
+            "Responsive grid layout for comparing results",
+            "Distraction-free dark mode interface",
+            "100% Client-side: Your calculations stay private"
+          ]}
+          faqs={[
+            {
+              q: "What is the Binary system used for?",
+              a: "Binary is the fundamental language of computers. It uses only two digits, 0 and 1, representing the 'on' and 'off' states of transistors in a CPU."
+            },
+            {
+              q: "Why is Hexadecimal important in programming?",
+              a: "Hexadecimal (Base 16) is a human-friendly way to represent binary data. Each hex digit represents exactly 4 bits (a nibble), making it much easier to read memory addresses and color codes."
+            },
+            {
+              q: "How many bits are in a byte?",
+              a: "A byte is a unit of digital information that consists of 8 bits. In binary, a byte can represent 256 different values (0 to 255)."
+            },
+            {
+              q: "Can this tool handle fractional numbers?",
+              a: "This version focus on integer conversions. For floating-point or fixed-point binary conversions, specialized IEEE 754 calculators are typically required."
+            }
+          ]}
+        />
       </div>
     </div>
   )
