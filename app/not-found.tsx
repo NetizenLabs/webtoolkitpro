@@ -1,6 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
+import { Metadata } from 'next'
 import { Home, AlertCircle } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: '404 - Tool Not Found | WebToolkit Pro',
+  robots: {
+    index: false,
+    follow: true,
+  },
+}
 
 export default function NotFound() {
   return (

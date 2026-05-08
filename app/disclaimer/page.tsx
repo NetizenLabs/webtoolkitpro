@@ -3,6 +3,13 @@ import React from 'react'
 export const metadata = {
   title: 'Disclaimer & DMCA - WebToolkit Pro',
   description: 'Legal disclaimer and DMCA policy for WebToolkit Pro (wtkpro.site). Learn about our content usage and copyright policies.',
+  alternates: {
+    canonical: 'https://wtkpro.site/disclaimer/',
+    languages: {
+      'en-US': 'https://wtkpro.site/disclaimer/',
+      'x-default': 'https://wtkpro.site/disclaimer/',
+    },
+  },
 }
 
 export default function DisclaimerPage() {
