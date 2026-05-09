@@ -100,7 +100,14 @@ export default function Header() {
               <ChevronRight className="w-6 h-6 text-gray-300 dark:text-slate-700" />
             </Link>
           ))}
-          <div className="mt-4 pt-6 border-t border-gray-50 dark:border-slate-900">
+          <div className="mt-4 pt-6 border-t border-gray-50 dark:border-slate-900 space-y-4">
+            <Link 
+              href="/submit-tool/" 
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-5 rounded-[2rem] text-lg font-bold bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800"
+            >
+              Submit a Tool Idea
+            </Link>
             <Link 
               href="/tools/" 
               onClick={() => setIsOpen(false)}
