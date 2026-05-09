@@ -87,16 +87,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
-        {/* CDN & Edge Performance Optimization */}
+        {/* Performance & Resource Hints */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://wtkpro.site/api" />
+        <link rel="dns-prefetch" href="https://wtkpro.site/api" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        
+        {/* Priority Hints for Key Assets */}
+        <link rel="preload" href="/logo-full.png" as="image" />
+        
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
         
-        {/* Resource Hints for High Authority Assets */}
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <script
           id="theme-initializer"
           dangerouslySetInnerHTML={{
@@ -120,18 +122,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
               '@context': 'https://schema.org',
               '@type': 'BreadcrumbList',
               'itemListElement': [
-                {
-                  '@type': 'ListItem',
-                  'position': 1,
-                  'name': 'Home',
-                  'item': 'https://wtkpro.site'
-                },
-                {
-                  '@type': 'ListItem',
-                  'position': 2,
-                  'name': 'Tools',
-                  'item': 'https://wtkpro.site/tools'
-                }
+                { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://wtkpro.site' },
+                { '@type': 'ListItem', 'position': 2, 'name': 'Tools', 'item': 'https://wtkpro.site/tools' }
               ]
             }),
           }}
@@ -145,26 +137,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
               'name': 'WebToolkit Pro',
               'url': 'https://wtkpro.site',
               'logo': 'https://wtkpro.site/logo-full.png',
-              'sameAs': [
-                'https://github.com/abusufyan-netizen/webtoolkitpro'
-              ],
-              'address': {
-                '@type': 'PostalAddress',
-                'addressLocality': 'New York',
-                'addressRegion': 'NY',
-                'addressCountry': 'US'
-              },
+              'sameAs': ['https://github.com/abusufyan-netizen/webtoolkitpro'],
               'description': 'Premium developer tools and technical guides for enterprise web development.'
             }),
           }}
-        />
-        {/* AdSense Script using Next.js Script component for better error handling and performance */}
-        <Script
-          id="adsense-init"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
         />
         <Script id="google-consent-default" strategy="beforeInteractive">
           {`
@@ -178,9 +154,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `}
         </Script>
-        {/* Google Analytics 4 */}
+        {/* AdSense Script - Extreme Lazy Load */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1QB54ZRCS5"
+          id="adsense-init"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
+          crossOrigin="anonymous"
           strategy="lazyOnload"
         />
         <Script id="google-analytics" strategy="lazyOnload">
@@ -188,7 +167,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-1QB54ZRCS5');
+            gtag('config', 'G-1QB54ZRCS5', { 'send_page_view': false });
+            
+            // Send pageview only after user interaction or idle
+            window.addEventListener('scroll', () => {
+              if(!window.gtag_sent) {
+                gtag('config', 'G-1QB54ZRCS5');
+                window.gtag_sent = true;
+              }
+            }, { once: true });
           `}
         </Script>
       </head>
