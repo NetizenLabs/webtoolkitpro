@@ -25,6 +25,7 @@ const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return []
 
+  const now = new Date();
   const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith('.md'))
 
   const posts = files.map((filename) => {
@@ -32,7 +33,7 @@ export function getAllPosts(): BlogPost[] {
     const filePath = path.join(BLOG_DIR, filename)
     const fileContent = fs.readFileSync(filePath, 'utf-8')
     const { data, content } = matter(fileContent)
-
+    
     return {
       slug,
       title: data.title || '',
@@ -47,7 +48,10 @@ export function getAllPosts(): BlogPost[] {
       imageAlt: data.imageAlt || data.title || '',
       content,
     } as BlogPost
-  })
+  }).filter(post => {
+    const postDate = new Date(post.date);
+    return postDate <= now; // Hide future posts
+  });
 
   // Safe sort with date validation
   return posts.sort((a, b) => {
@@ -63,6 +67,10 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
+
+  // Hide future posts
+  const postDate = new Date(data.date);
+  if (postDate > new Date()) return null;
 
   // Use remark to convert markdown to HTML string
   const processedContent = await remark()

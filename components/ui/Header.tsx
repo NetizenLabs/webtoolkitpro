@@ -21,6 +21,7 @@ export default function Header() {
     { name: 'Tools', href: '/tools/' },
     { name: 'Blog', href: '/blog/' },
     { name: 'About', href: '/about/' },
+    { name: 'Submit Tool', href: '/submit-tool/' },
     { name: 'Contact', href: '/contact/' },
   ]
 

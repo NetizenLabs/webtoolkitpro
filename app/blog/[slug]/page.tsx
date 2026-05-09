@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -144,22 +145,35 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
 
-          <p className="text-lg text-gray-500 dark:text-slate-400 leading-relaxed mb-6">
+          <p className="text-lg text-gray-500 dark:text-slate-400 leading-relaxed mb-8">
             {post.description}
           </p>
 
-          <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-500 pb-6 border-b border-gray-100 dark:border-slate-800">
+          <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-500 pb-6 border-b border-gray-100 dark:border-slate-800 mb-10">
             <time dateTime={post.date} itemProp="datePublished">
               {formattedDate}
             </time>
             <span>•</span>
             <span itemProp="author">{post.author}</span>
           </div>
+
+          {/* Hero Image - Added to fix "missing images" issue */}
+          {post.image && (
+            <div className="relative aspect-[16/9] w-full mb-12 rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-slate-800 animate-in fade-in zoom-in duration-500">
+              <Image 
+                src={post.image} 
+                alt={post.imageAlt || post.title}
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+          )}
         </header>
 
         {/* Ad Slot - Top of Article */}
-        <div className="mb-10 min-h-[90px] flex items-center justify-center">
-          {/* AdSense In-Article Top */}
+        <div className="mb-10 min-h-[90px] flex items-center justify-center bg-gray-50/50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Advertisement</span>
         </div>
 
         {/* Article Content */}
