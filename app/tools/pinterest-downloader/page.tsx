@@ -161,16 +161,18 @@ export default function PinterestDownloader() {
 
         <div className="mb-12">
           <div className="flex flex-col sm:flex-row gap-4">
-            <div className="relative flex-grow group">
+            <div className="relative flex-grow">
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none z-10">
+                <Search className="w-6 h-6 text-gray-400 group-focus-within:text-red-500 transition-colors" />
+              </div>
               <input 
                 type="text"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && fetchPins()}
                 placeholder="Paste Pinterest URL..."
-                className="w-full p-5 sm:p-6 pl-14 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white transition-all shadow-xl text-base sm:text-lg"
+                className="w-full p-5 sm:p-6 pl-16 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white text-base sm:text-lg transition-[border-color,box-shadow] shadow-xl"
               />
-              <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-red-500 transition-colors" />
             </div>
             <button 
               onClick={fetchPins}
