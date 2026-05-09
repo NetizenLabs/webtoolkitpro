@@ -42,11 +42,12 @@ export async function GET(request: NextRequest) {
             });
           }
         }
-      } else {
-        const values = Object.values(obj);
-        for (const val of values) {
-          deepSearch(val, depth + 1);
-        }
+      }
+      
+      // Always continue searching children
+      const values = Object.values(obj);
+      for (const val of values) {
+        deepSearch(val, depth + 1);
       }
     };
 
