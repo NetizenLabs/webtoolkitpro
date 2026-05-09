@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
 import Image from 'next/image'
+import AdSlot from '@/components/ads/AdSlot'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -157,24 +158,24 @@ export default async function BlogPostPage({ params }: Props) {
             <span itemProp="author">{post.author}</span>
           </div>
 
-          {/* Hero Image - Added to fix "missing images" issue */}
+          {/* Hero Image - Optimized for Speed */}
           {post.image && (
-            <div className="relative aspect-[16/9] w-full mb-12 rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-slate-800 animate-in fade-in zoom-in duration-500">
+            <div className="relative aspect-[16/9] w-full mb-12 rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-slate-800 animate-in fade-in zoom-in duration-700">
               <Image 
                 src={post.image} 
                 alt={post.imageAlt || post.title}
                 fill
-                priority
+                priority={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 className="object-cover"
+                quality={85}
               />
             </div>
           )}
         </header>
 
         {/* Ad Slot - Top of Article */}
-        <div className="mb-10 min-h-[90px] flex items-center justify-center bg-gray-50/50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-800">
-          <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Advertisement</span>
-        </div>
+        <AdSlot minHeight="90px" className="mb-10" />
 
         {/* Article Content */}
         <div
@@ -227,9 +228,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {/* Ad Slot - Bottom of Article */}
-        <div className="mt-12 min-h-[250px] flex items-center justify-center">
-          {/* AdSense In-Article Bottom */}
-        </div>
+        <AdSlot minHeight="250px" className="mt-12" />
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (

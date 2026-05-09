@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
+import AdSlot from '@/components/ads/AdSlot'
 
 export const metadata = {
   title: 'Developer Blog - Web Development Tips & Tutorials | WebToolkit Pro',
@@ -58,9 +59,7 @@ export default function BlogPage() {
         </div>
 
         {/* Ad Slot - Top */}
-        <div className="max-w-3xl mx-auto mb-12 min-h-[90px] flex items-center justify-center">
-          {/* AdSense Leaderboard */}
-        </div>
+        <AdSlot minHeight="90px" className="mb-12 max-w-3xl mx-auto" />
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -109,9 +108,7 @@ export default function BlogPage() {
         </div>
 
         {/* Ad Slot - Bottom */}
-        <div className="max-w-3xl mx-auto mt-16 min-h-[250px] flex items-center justify-center">
-          {/* AdSense Rectangle */}
-        </div>
+        <AdSlot minHeight="250px" className="mt-16 max-w-3xl mx-auto" />
 
         {/* JSON-LD Breadcrumb List */}
         <script

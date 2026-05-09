@@ -11,14 +11,13 @@ interface AdSlotProps {
 const AdSlot: React.FC<AdSlotProps> = ({ className = '', id, minHeight = '90px' }) => {
   return (
     <div 
-      className={`w-full overflow-hidden flex items-center justify-center transition-all bg-gray-50/50 dark:bg-slate-900/50 rounded-xl border border-dashed border-gray-200 dark:border-slate-800 ${className}`}
+      className={`w-full overflow-hidden flex items-center justify-center transition-opacity duration-700 opacity-0 has-[.adsbygoogle]:opacity-100 has-[ins]:opacity-100 ${className}`}
       style={{ minHeight }}
       aria-hidden="true"
     >
       <div 
         id={id}
         className="ads-container w-full"
-        data-ad-slot-ready="true"
       >
         {/* AdSense will inject content here */}
       </div>
