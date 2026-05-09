@@ -26,18 +26,21 @@ export async function GET(request: NextRequest) {
     const scriptMatches = Array.from(html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g));
     
     const deepSearch = (obj: any, depth = 0) => {
-      if (!obj || typeof obj !== 'object' || depth > 10) return;
+      if (!obj || typeof obj !== 'object' || depth > 15) return;
       
-      if (obj.images && (obj.images.orig || obj.images['736x'])) {
-        const imgUrl = obj.images.orig?.url || obj.images['736x']?.url;
-        if (imgUrl && !seen.has(imgUrl)) {
-          seen.add(imgUrl);
-          pins.push({
-            id: obj.id || `pin_${pins.length}`,
-            title: obj.title || obj.grid_title || 'Pinterest Image',
-            url: imgUrl,
-            thumbnail: obj.images['236x']?.url || obj.images['474x']?.url || imgUrl
-          });
+      if (obj.images && (obj.images.orig || obj.images['736x'] || obj.images['max'])) {
+        const id = obj.id || obj.pin_id || Math.random().toString(36).substr(2, 9);
+        if (!seen.has(id)) {
+          const imgUrl = obj.images.orig?.url || obj.images['max']?.url || obj.images['736x']?.url;
+          if (imgUrl) {
+            seen.add(id);
+            pins.push({
+              id,
+              title: obj.title || obj.grid_title || obj.description || 'Pinterest Image',
+              url: imgUrl,
+              thumbnail: obj.images['236x']?.url || obj.images['474x']?.url || imgUrl
+            });
+          }
         }
       } else {
         const values = Object.values(obj);
@@ -54,26 +57,37 @@ export async function GET(request: NextRequest) {
       } catch (e) {}
     }
 
-    // Fallback: LD+JSON
-    if (pins.length < 5) {
-      const ldMatches = Array.from(html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g));
-      for (const match of ldMatches) {
-        try {
-          const data = JSON.parse(match[1]);
-          const items = data.itemListElement || [];
-          items.forEach((item: any) => {
-            if (item.image && !seen.has(item.image)) {
-              seen.add(item.image);
-              pins.push({
-                id: `ld_${pins.length}`,
-                title: item.name || 'Pinterest Image',
-                url: item.image,
-                thumbnail: item.image
-              });
-            }
+    // Fallback: LD+JSON (Very reliable for board initial pins)
+    const ldMatches = Array.from(html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g));
+    for (const match of ldMatches) {
+      try {
+        const data = JSON.parse(match[1]);
+        const extractFromLD = (obj: any) => {
+          if (!obj || typeof obj !== 'object') return;
+          if (obj['@type'] === 'ItemList' && obj.itemListElement) {
+            obj.itemListElement.forEach((item: any) => {
+              const pinData = item.item || item;
+              const imgUrl = pinData.image;
+              const pinUrl = pinData.url || '';
+              const id = pinUrl.match(/pin\/(\d+)/)?.[1] || Math.random().toString(36).substr(2, 9);
+              
+              if (imgUrl && !seen.has(id)) {
+                seen.add(id);
+                pins.push({
+                  id,
+                  title: pinData.name || 'Pinterest Image',
+                  url: imgUrl,
+                  thumbnail: imgUrl
+                });
+              }
+            });
+          }
+          Object.values(obj).forEach(val => {
+            if (val && typeof val === 'object') extractFromLD(val);
           });
-        } catch (e) {}
-      }
+        };
+        extractFromLD(data);
+      } catch (e) {}
     }
 
     // Final Fallback: Regex for originals
