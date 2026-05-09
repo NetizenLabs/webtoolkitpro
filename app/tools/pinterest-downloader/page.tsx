@@ -90,7 +90,8 @@ export default function PinterestDownloader() {
     if (pins.length === 0) return;
     setDownloading(true);
     try {
-      const JSZip = (await import('jszip')).default;
+      const JSZipModule: any = await import('jszip');
+      const JSZip = JSZipModule.default || JSZipModule;
       const zip = new JSZip();
       const folder = zip.folder("pinterest-downloads");
 
@@ -139,6 +140,7 @@ export default function PinterestDownloader() {
         ]}
       />
 
+      <div className="max-w-6xl mx-auto">
         {/* Locked Hero & Search Section to eliminate CLS */}
         <div className="min-h-[300px] mb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 min-h-[80px]">
