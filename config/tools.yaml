@@ -1066,6 +1066,9 @@ tools:
     tags: ["html", "beautifier", "formatter", "code-cleaner", "web-dev"]
     priority: 16
     releaseDate: "2026-05-10"
+    function:
+      primary: "Beautify and format HTML5 source code"
+      secondary: "Clean up messy or minified markup instantly"
     content:
       title: "Free Online HTML Beautifier & Formatter"
       description: "Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability and SEO-friendly markup."
@@ -1094,6 +1097,9 @@ tools:
     tags: ["css", "formatter", "beautifier", "styles", "frontend"]
     priority: 17
     releaseDate: "2026-05-10"
+    function:
+      primary: "Clean and format CSS stylesheets"
+      secondary: "Organize selectors and properties for readability"
     content:
       title: "Professional CSS Formatter & Beautifier"
       description: "Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS."
@@ -1126,6 +1132,9 @@ tools:
     tags: ["sql", "formatter", "database", "query-beautifier", "backend"]
     priority: 18
     releaseDate: "2026-05-10"
+    function:
+      primary: "Format and beautify SQL queries"
+      secondary: "Standardize indentation for complex database audits"
     content:
       title: "SQL Formatter - Beautify Database Queries"
       description: "Format your SQL queries for maximum readability. Supports standard SQL, PostgreSQL, and MySQL syntax for clean database documentation."
