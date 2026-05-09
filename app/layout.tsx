@@ -154,28 +154,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `}
         </Script>
-        {/* AdSense Script - Extreme Lazy Load */}
+        {/* AdSense Script - Optimized for Revenue & Speed */}
         <Script
           id="adsense-init"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        
+        {/* Google Analytics 4 - Standard high-performance loading */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1QB54ZRCS5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-1QB54ZRCS5', { 'send_page_view': false });
-            
-            // Send pageview only after user interaction or idle
-            window.addEventListener('scroll', () => {
-              if(!window.gtag_sent) {
-                gtag('config', 'G-1QB54ZRCS5');
-                window.gtag_sent = true;
-              }
-            }, { once: true });
+            gtag('config', 'G-1QB54ZRCS5');
           `}
         </Script>
       </head>
