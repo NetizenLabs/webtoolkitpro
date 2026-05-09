@@ -139,61 +139,63 @@ export default function PinterestDownloader() {
         ]}
       />
 
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 min-h-[80px]">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
-              <Download className="w-7 h-7 text-white" />
+        {/* Locked Hero & Search Section to eliminate CLS */}
+        <div className="min-h-[300px] mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 min-h-[80px]">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20 shrink-0">
+                <Download className="w-7 h-7 text-white" />
+              </div>
+              <div className="flex flex-col justify-center h-14">
+                <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-none">Pinterest Downloader</h1>
+                <p className="text-sm text-gray-500 dark:text-slate-400 mt-1">Save high-quality images and boards in one click</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Pinterest Downloader</h1>
-              <p className="text-gray-500 dark:text-slate-400">Save high-quality images and boards in one click</p>
+            
+            <div className="min-h-[60px] flex items-center">
+              {pins.length > 0 && (
+                <button 
+                  onClick={handleDownloadAll}
+                  disabled={downloading}
+                  className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-xl shadow-red-600/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed group animate-in fade-in zoom-in duration-300"
+                >
+                  {downloading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5 group-hover:bounce" />}
+                  <span>{downloading ? 'Creating ZIP...' : `Download ${pins.length} Images (ZIP)`}</span>
+                </button>
+              )}
             </div>
           </div>
-          
-          <div className="min-h-[60px] flex items-center">
-            {pins.length > 0 && (
+  
+          <div className="relative">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="relative flex-grow">
+                <div className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none z-10">
+                  <Search className="w-6 h-6 text-gray-400" />
+                </div>
+                <input 
+                  type="text"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && fetchPins()}
+                  placeholder="Paste Pinterest URL..."
+                  className="w-full h-16 sm:h-20 pl-16 sm:pl-20 pr-6 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white text-base sm:text-lg shadow-xl"
+                />
+              </div>
               <button 
-                onClick={handleDownloadAll}
-                disabled={downloading}
-                className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-xl shadow-red-600/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed group animate-in fade-in zoom-in duration-300"
+                onClick={fetchPins}
+                disabled={loading || !url}
+                className="px-8 h-16 sm:h-20 bg-red-600 text-white font-bold rounded-3xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50 shadow-lg shadow-red-600/20 shrink-0 flex items-center justify-center gap-2"
               >
-                {downloading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5 group-hover:bounce" />}
-                <span>{downloading ? 'Creating ZIP...' : `Download ${pins.length} Images (ZIP)`}</span>
+                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><Search className="w-5 h-5 sm:hidden" /> Fetch Images</>}
               </button>
+            </div>
+            {error && (
+              <div className="absolute top-full mt-4 w-full p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-2xl flex items-center gap-3 text-red-600 dark:text-red-400 z-20">
+                <AlertCircle className="w-5 h-5" />
+                <p className="text-sm font-medium">{error}</p>
+              </div>
             )}
           </div>
-        </div>
-
-        <div className="mb-12">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="relative flex-grow">
-              <div className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none z-10">
-                <Search className="w-6 h-6 text-gray-400 group-focus-within:text-red-500 transition-colors" />
-              </div>
-              <input 
-                type="text"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && fetchPins()}
-                placeholder="Paste Pinterest URL..."
-                className="w-full py-5 sm:py-6 pl-16 sm:pl-20 pr-6 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white text-base sm:text-lg transition-[border-color,box-shadow] shadow-xl"
-              />
-            </div>
-            <button 
-              onClick={fetchPins}
-              disabled={loading || !url}
-              className="px-8 py-5 bg-red-600 text-white font-bold rounded-3xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50 shadow-lg shadow-red-600/20 shrink-0 flex items-center justify-center gap-2"
-            >
-              {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><Search className="w-5 h-5 sm:hidden" /> Fetch Images</>}
-            </button>
-          </div>
-          {error && (
-            <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-2xl flex items-center gap-3 text-red-600 dark:text-red-400">
-              <AlertCircle className="w-5 h-5" />
-              <p className="text-sm font-medium">{error}</p>
-            </div>
-          )}
         </div>
 
         <div className="min-h-[400px]">
