@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
+/**
+ * Pinterest Downloader API (Professional Version)
+ * Inspired by pinterest-dl's reverse-engineered API logic.
+ */
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const url = searchParams.get('url');
@@ -11,33 +15,39 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    let finalResponse = await fetch(url, {
+    // 1. Follow redirects for shortened links (pin.it)
+    const initialRes = await fetch(url, { 
       redirect: 'follow',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
-      },
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
+      }
     });
+    const finalUrl = initialRes.url;
+    const html = await initialRes.text();
 
-    const finalUrl = finalResponse.url;
-    const html = await finalResponse.text();
+    // 2. Parse Username and Board Name from URL
+    const boardMatch = finalUrl.match(/pinterest\.com\/([^/]+)\/([^/]+)/);
+    const username = boardMatch?.[1];
+    const boardName = boardMatch?.[2];
+
     const pins: any[] = [];
     const seen = new Set();
-
-    // Helper: Normalize URL for deduplication (removes query params)
     const normalize = (u: string) => u.split('?')[0].split('#')[0];
 
-    const processItem = (obj: any) => {
+    // Extraction helper (Professional logic)
+    const extractPin = (obj: any) => {
       if (!obj || typeof obj !== 'object') return;
       
+      // Look for react_grid_pin or standard image structure
       const imgData = obj.images || obj;
       const rawUrl = imgData.orig?.url || imgData['max']?.url || imgData['736x']?.url || (typeof obj.url === 'string' && obj.url.includes('pinimg.com') ? obj.url : null);
       
-      if (rawUrl && (obj.images || (obj.id && obj.type === 'pin'))) {
+      if (rawUrl) {
         const normalizedUrl = normalize(rawUrl);
         if (!seen.has(normalizedUrl)) {
           seen.add(normalizedUrl);
           pins.push({
-            id: obj.id || Math.random().toString(36).substr(2, 9),
+            id: obj.id || obj.pin_id || Math.random().toString(36).substr(2, 9),
             title: obj.title || obj.grid_title || obj.description || 'Pinterest Image',
             url: rawUrl,
             thumbnail: imgData['236x']?.url || imgData['474x']?.url || rawUrl
@@ -48,69 +58,59 @@ export async function GET(request: NextRequest) {
 
     const deepSearch = (obj: any) => {
       if (!obj || typeof obj !== 'object') return;
-      processItem(obj);
+      extractPin(obj);
       Object.values(obj).forEach(val => {
         if (val && typeof val === 'object') deepSearch(val);
       });
     };
 
-    // 1. Scan all JSON script tags
-    const scriptMatches = Array.from(html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g));
-    for (const match of scriptMatches) {
-      try {
-        const data = JSON.parse(match[1]);
-        deepSearch(data);
-      } catch (e) {}
-    }
-
-    // 2. Scan LD+JSON
-    const ldMatches = Array.from(html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g));
-    for (const match of ldMatches) {
-      try {
-        const data = JSON.parse(match[1]);
-        const extractLD = (o: any) => {
-          if (!o || typeof o !== 'object') return;
-          if (o.itemListElement) {
-            o.itemListElement.forEach((item: any) => processItem(item.item || item));
-          }
-          Object.values(o).forEach(v => { if (v && typeof v === 'object') extractLD(v); });
-        };
-        extractLD(data);
-      } catch (e) {}
-    }
-
-    // 3. Board ID Detection & Mass Fetching (Simplified version of Step 190)
+    // 3. Resolve Board ID (Crucial for stability)
     let boardId = '';
     const idMatch = html.match(/"board":\{"id":"(\d+)"/) || html.match(/"board_id":"(\d+)"/);
     if (idMatch) boardId = idMatch[1];
 
-    if (boardId && pins.length > 5) {
-      // Just one extra batch of 250 pins to ensure we get a lot more without recursion complexity
-      const resourceUrl = `https://www.pinterest.com/resource/BoardFeedResource/get/?source_url=${encodeURIComponent(finalUrl)}&data=${encodeURIComponent(JSON.stringify({
-        options: { board_id: boardId, page_size: 250 },
-        context: {}
-      }))}&_=${Date.now()}`;
+    // 4. Initial Scrape (HTML Data Blobs)
+    const scriptMatches = Array.from(html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g));
+    scriptMatches.forEach(m => { try { deepSearch(JSON.parse(m[1])); } catch {} });
+
+    // 5. API Fetch (Professional Fallback - using BoardFeedResource)
+    // This mimics pinterest-dl's scrape phase
+    if (boardId && username && boardName) {
+      const options = {
+        board_id: boardId,
+        board_url: `/${username}/${boardName}/`,
+        page_size: 250,
+        field_set_key: "react_grid_pin",
+        redux_normalize_feed: true
+      };
+
+      const apiEndpoint = `https://www.pinterest.com/resource/BoardFeedResource/get/?source_url=${encodeURIComponent(`/${username}/${boardName}/`)}&data=${encodeURIComponent(JSON.stringify({ options, context: {} }))}&_=${Date.now()}`;
 
       try {
-        const res = await fetch(resourceUrl, {
+        const apiRes = await fetch(apiEndpoint, {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
             'X-Requested-With': 'XMLHttpRequest',
+            'x-pinterest-pws-handler': 'www/pin/[id].js' // Stability header from pinterest-dl
           }
         });
-        if (res.ok) {
-          const batchData = await res.json();
-          deepSearch(batchData);
+        
+        if (apiRes.ok) {
+          const data = await apiRes.json();
+          deepSearch(data);
         }
-      } catch (e) {}
+      } catch (e) {
+        console.error("API Fetch Error:", e);
+      }
     }
 
     if (pins.length === 0) {
-      return NextResponse.json({ error: 'No images found.' }, { status: 404 });
+      return NextResponse.json({ error: 'No images found. Please ensure the link is public.' }, { status: 404 });
     }
 
+    // Return sanitized pins
     return NextResponse.json({ pins });
   } catch (error: any) {
-    return NextResponse.json({ error: 'Failed to fetch images.' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to process Pinterest link.' }, { status: 500 });
   }
 }
