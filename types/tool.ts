@@ -12,6 +12,7 @@ export interface ToolConfig {
   name: string;
   slug: string;
   category: string;
+  icon?: string;
   subcategory?: string;
   tags: string[];
   priority?: number;

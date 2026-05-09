@@ -67,23 +67,27 @@ export default function Footer() {
           </div>
           <div className="flex gap-8">
             <Link 
-              href="https://github.com/abusufyan-netizen/webtoolkitpro" 
+              href="https://github.com/webtoolkit-pro" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-white transition-colors"
-              aria-label="GitHub Repository"
+              aria-label="GitHub Organization"
             >
               <Github className="w-5 h-5" />
             </Link>
             <Link 
-              href="#" 
+              href="https://x.com/WebToolkitPro" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-white transition-colors"
-              aria-label="Twitter Profile"
+              aria-label="Follow us on X (Twitter)"
             >
               <Twitter className="w-5 h-5" />
             </Link>
             <Link 
-              href="/contact/" 
+              href="mailto:contact@wtkpro.site" 
               className="text-gray-600 hover:text-white transition-colors"
-              aria-label="Contact Email"
+              aria-label="Email Contact Support"
             >
               <Mail className="w-5 h-5" />
             </Link>

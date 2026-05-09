@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 }
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
-  Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2
+  Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2,
+  CheckCircle, Server
 } from 'lucide-react'
 import Newsletter from '@/components/sections/Newsletter'
 import StatsDashboard from '@/components/sections/StatsDashboard'
@@ -179,6 +180,44 @@ export default function Home() {
           <Link href="/tools/" className="inline-flex items-center gap-3 bg-white text-blue-700 px-12 py-5 rounded-[2rem] font-black text-xl hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all">
             Get Started Free <ArrowRight className="w-6 h-6" />
           </Link>
+        </div>
+      </section>
+
+      {/* Engineering Excellence - SEO Content Boost */}
+      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-[var(--font-size-2xl)] font-black text-gray-900 dark:text-white mb-8 tracking-tight uppercase">
+                Engineered for the Modern Web
+              </h2>
+              <div className="prose dark:prose-invert max-w-none text-gray-500 dark:text-slate-400 space-y-6 text-sm font-medium leading-relaxed">
+                <p>
+                  At WebToolkit Pro, we believe that professional developer tools should be fast, private, and accessible. Our platform is built on a "Zero-Knowledge" architecture, meaning every byte of data you process—whether it's a sensitive JSON payload, a high-entropy password, or a complex CSS configuration—is handled entirely within your browser's memory. No data is ever transmitted to a server, ensuring 100% privacy and compliance with global security standards.
+                </p>
+                <p>
+                  Our suite of 65+ premium utilities is designed to bridge the gap between simple browser extensions and complex enterprise software. From the advanced Pinterest Board Downloader to our cryptographically secure UUID generators, every tool is optimized for the V8 engine, delivering sub-1ms execution times. We prioritize Core Web Vitals (LCP, CLS, and INP) to ensure that your workflow remains uninterrupted by slow load times or layout shifts.
+                </p>
+                <p>
+                  Beyond simple utilities, WebToolkit Pro serves as a comprehensive technical research hub. Our engineering team regularly publishes deep-dive studies into the "Agentic Web," 3ms TTFB standards, and the evolution of JSON-LD schema for AI-driven search engines like SGE and Perplexity. We don't just provide the tools; we provide the knowledge necessary to master the modern web ecosystem.
+                </p>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+              {[
+                { label: 'Client-Side Only', desc: 'JS Workers processing', icon: Zap },
+                { label: 'RFC Compliant', desc: 'Industry standards', icon: CheckCircle },
+                { label: 'No Tracking', desc: 'Zero data retention', icon: Shield },
+                { label: 'Cloud Native', desc: 'Edge delivery network', icon: Server },
+              ].map((feature) => (
+                <div key={feature.label} className="p-6 bg-gray-50 dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 hover:shadow-xl transition-all group">
+                  <feature.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <div className="font-bold text-gray-900 dark:text-white text-sm mb-1">{feature.label}</div>
+                  <div className="text-[10px] text-gray-400 dark:text-slate-500 font-bold uppercase tracking-widest">{feature.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

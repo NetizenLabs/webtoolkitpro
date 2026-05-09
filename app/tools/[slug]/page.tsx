@@ -58,7 +58,7 @@ export default function ToolPage({ params }: ToolPageProps) {
   const faqSchema = generateFAQSchema(tool)
 
   // Dynamic icon selection
-  const IconComponent = (Icons as any)[tool.category === 'Formatters' ? 'FileJson' : tool.category === 'Generators' ? 'Key' : 'Zap'] || Icons.Zap
+  const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">

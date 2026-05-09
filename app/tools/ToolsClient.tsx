@@ -98,8 +98,15 @@ export default function ToolsClient({ initialTools }: ToolsClientProps) {
       {/* Main Tools Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredTools.map((tool) => {
-          const IconComponent = (Icons as any)[tool.category === 'Formatters' ? 'FileJson' : tool.category === 'Generators' ? 'Key' : 'Zap'] || Icons.Zap
-          const toolColor = tool.category === 'Formatters' ? 'from-blue-500 to-blue-700' : tool.category === 'Generators' ? 'from-indigo-500 to-indigo-700' : 'from-slate-500 to-slate-700'
+          const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
+          const toolColor = 
+            tool.category === 'Formatters' ? 'from-blue-500 to-blue-700' : 
+            tool.category === 'Generators' ? 'from-indigo-500 to-indigo-700' : 
+            tool.category === 'SEO' ? 'from-blue-600 to-blue-800' :
+            tool.category === 'Converters' ? 'from-purple-500 to-purple-700' :
+            tool.category === 'Design' ? 'from-pink-500 to-pink-700' :
+            'from-slate-500 to-slate-700'
+          
           const href = `/tools/${tool.slug}`
 
           return (

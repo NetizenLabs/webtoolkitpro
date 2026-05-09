@@ -5,6 +5,7 @@ tools:
   - name: "JSON Formatter & Validator"
     slug: "json-formatter"
     category: "Formatters"
+    icon: "FileJson"
     subcategory: "json-tools"
     tags: ["json", "formatter", "validator", "beautifier", "minifier", "developer-tools"]
     priority: 3
@@ -66,6 +67,7 @@ tools:
   - name: "Secure Password Generator"
     slug: "password-generator"
     category: "Generators"
+    icon: "Key"
     tags: ["security", "password", "generator", "crypto", "privacy"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -102,6 +104,7 @@ tools:
   - name: "Pinterest Board Downloader"
     slug: "pinterest-downloader"
     category: "Utilities"
+    icon: "Download"
     tags: ["pinterest", "downloader", "image-extraction", "bulk-download", "creators"]
     priority: 1
     releaseDate: "2026-05-08"
@@ -137,6 +140,7 @@ tools:
   - name: "What is my IP Address?"
     slug: "what-is-my-ip"
     category: "Utilities"
+    icon: "Globe"
     tags: ["ip", "networking", "security", "location", "privacy"]
     priority: 2
     releaseDate: "2026-05-09"
@@ -168,6 +172,7 @@ tools:
   - name: "JS Code Minifier"
     slug: "js-minifier"
     category: "Formatters"
+    icon: "Zap"
     tags: ["javascript", "minifier", "compressor", "optimization", "performance"]
     priority: 4
     releaseDate: "2026-05-01"
@@ -198,7 +203,8 @@ tools:
 
   - name: "SEO Meta Tag Generator"
     slug: "meta-tag-generator"
-    category: "Generators"
+    category: "SEO"
+    icon: "Search"
     tags: ["seo", "meta-tags", "open-graph", "twitter-cards", "visibility"]
     priority: 5
     releaseDate: "2026-05-01"
@@ -230,6 +236,7 @@ tools:
   - name: "UUID v7 Generator"
     slug: "uuid-v7-generator"
     category: "Generators"
+    icon: "Hash"
     tags: ["uuid", "v7", "database", "sortable", "rfc-9562"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -258,6 +265,7 @@ tools:
   - name: "UUID/GUID Generator"
     slug: "uuid-generator"
     category: "Generators"
+    icon: "Hash"
     tags: ["uuid", "v4", "guid", "random", "identifier"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -285,7 +293,8 @@ tools:
 
   - name: "Lorem Ipsum Generator"
     slug: "lorem-ipsum"
-    category: "Generators"
+    category: "Design"
+    icon: "Type"
     tags: ["lorem-ipsum", "placeholder", "design", "mockup", "copywriting"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -313,7 +322,8 @@ tools:
 
   - name: "Advanced Robots.txt Generator"
     slug: "robots-generator"
-    category: "Generators"
+    category: "SEO"
+    icon: "Settings"
     tags: ["seo", "robots-txt", "crawler", "indexing", "googlebot"]
     priority: 10
     releaseDate: "2026-05-05"
@@ -342,6 +352,7 @@ tools:
   - name: "Secure Hash Generator"
     slug: "hash-generator"
     category: "Generators"
+    icon: "Shield"
     tags: ["security", "hashing", "sha256", "checksum", "integrity"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -369,7 +380,8 @@ tools:
 
   - name: "Sitemap XML Validator"
     slug: "sitemap-validator"
-    category: "Generators"
+    category: "SEO"
+    icon: "CheckCircle"
     tags: ["seo", "sitemap", "validator", "indexing", "google-search-console"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -397,7 +409,8 @@ tools:
 
   - name: "HTTP Redirect Checker"
     slug: "redirect-checker"
-    category: "Utilities"
+    category: "SEO"
+    icon: "ArrowRightLeft"
     tags: ["seo", "redirect", "trace", "301", "302"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -425,7 +438,8 @@ tools:
 
   - name: "JSON-LD Schema Generator"
     slug: "schema-generator"
-    category: "Generators"
+    category: "SEO"
+    icon: "Code"
     tags: ["seo", "schema", "json-ld", "structured-data", "rich-snippets"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -454,6 +468,7 @@ tools:
   - name: "API Latency Cost Calculator"
     slug: "api-latency-calculator"
     category: "Utilities"
+    icon: "Activity"
     tags: ["performance", "roi", "latency", "revenue", "business"]
     priority: 10
     releaseDate: "2026-05-05"
@@ -482,6 +497,7 @@ tools:
   - name: "AdSense Revenue Estimator"
     slug: "adsense-calculator"
     category: "Utilities"
+    icon: "DollarSign"
     tags: ["adsense", "revenue", "calculator", "monetization", "traffic"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -509,7 +525,8 @@ tools:
 
   - name: "Base64 Encoder/Decoder"
     slug: "base64-encoder"
-    category: "Generators"
+    category: "Converters"
+    icon: "FileText"
     tags: ["development", "base64", "encoding", "binary", "utility"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -537,7 +554,8 @@ tools:
 
   - name: "Binary Converter"
     slug: "binary-converter"
-    category: "Generators"
+    category: "Converters"
+    icon: "Binary"
     tags: ["math", "binary", "hex", "decimal", "conversion"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -565,7 +583,8 @@ tools:
 
   - name: "Case Converter"
     slug: "case-converter"
-    category: "Generators"
+    category: "Converters"
+    icon: "AlignLeft"
     tags: ["text", "formatting", "case", "seo", "utility"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -593,7 +612,8 @@ tools:
 
   - name: "CSS Unit Converter"
     slug: "css-unit-converter"
-    category: "Generators"
+    category: "Converters"
+    icon: "Ruler"
     tags: ["css", "frontend", "responsive", "units", "conversion"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -621,7 +641,8 @@ tools:
 
   - name: "URL Encoder/Decoder"
     slug: "url-encoder"
-    category: "Generators"
+    category: "Converters"
+    icon: "Link"
     tags: ["development", "url", "encoding", "uri", "seo"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -650,6 +671,7 @@ tools:
   - name: "CDN & Edge Readiness Tester"
     slug: "cdn-readiness-tester"
     category: "Utilities"
+    icon: "Zap"
     tags: ["performance", "cdn", "edge", "caching", "optimization"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -677,7 +699,8 @@ tools:
 
   - name: "WCAG Color Contrast Checker"
     slug: "color-contrast"
-    category: "Utilities"
+    category: "Design"
+    icon: "Layers"
     tags: ["design", "accessibility", "wcag", "colors", "compliance"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -705,7 +728,8 @@ tools:
 
   - name: "Universal Color Picker"
     slug: "color-picker"
-    category: "Generators"
+    category: "Design"
+    icon: "Palette"
     tags: ["design", "colors", "hex", "rgb", "hsl"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -733,7 +757,8 @@ tools:
 
   - name: "HTML Entity Encoder"
     slug: "html-encoder"
-    category: "Generators"
+    category: "Converters"
+    icon: "Code2"
     tags: ["security", "html", "encoding", "xss", "sanitization"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -761,7 +786,8 @@ tools:
 
   - name: "Unix Timestamp Converter"
     slug: "timestamp-converter"
-    category: "Generators"
+    category: "Converters"
+    icon: "Clock"
     tags: ["development", "time", "epoch", "timestamp", "utility"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -790,6 +816,7 @@ tools:
   - name: "Core Web Vitals Guide"
     slug: "core-web-vitals-guide"
     category: "Utilities"
+    icon: "Star"
     tags: ["seo", "performance", "technical", "cwv", "guide"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -815,7 +842,8 @@ tools:
 
   - name: "Markdown to HTML Converter"
     slug: "markdown-converter"
-    category: "Generators"
+    category: "Converters"
+    icon: "FileCode"
     tags: ["markdown", "html", "converter", "content", "utility"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -843,7 +871,8 @@ tools:
 
   - name: "Markdown Previewer"
     slug: "markdown-previewer"
-    category: "Utilities"
+    category: "Design"
+    icon: "Layout"
     tags: ["markdown", "preview", "editor", "documentation", "utility"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -871,7 +900,8 @@ tools:
 
   - name: "Robots.txt Templates"
     slug: "robots-txt-templates"
-    category: "Utilities"
+    category: "SEO"
+    icon: "ClipboardList"
     tags: ["seo", "robots", "technical", "crawler", "templates"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -897,7 +927,8 @@ tools:
 
   - name: "SEO Audit Checklist"
     slug: "seo-audit-checklist"
-    category: "Utilities"
+    category: "SEO"
+    icon: "CheckCircle"
     tags: ["seo", "audit", "technical", "checklist", "compliance"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -923,7 +954,8 @@ tools:
 
   - name: "Social Preview Tester"
     slug: "social-preview-tester"
-    category: "Utilities"
+    category: "SEO"
+    icon: "Share2"
     tags: ["seo", "social", "og-tags", "preview", "marketing"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -951,7 +983,8 @@ tools:
 
   - name: "Word Counter"
     slug: "word-counter"
-    category: "Generators"
+    category: "Converters"
+    icon: "Type"
     tags: ["text", "writing", "counter", "content", "seo"]
     priority: 10
     releaseDate: "2026-05-01"
@@ -979,7 +1012,8 @@ tools:
 
   - name: "Question Explorer (Reddit Insights)"
     slug: "question-explorer"
-    category: "SEO Tools"
+    category: "SEO"
+    icon: "Search"
     subcategory: "keyword-research"
     tags: ["seo", "keywords", "reddit", "questions", "content-strategy"]
     priority: 15
