@@ -7,7 +7,7 @@ tags: ["CSS", "responsive design", "web development", "frontend", "CSS units"]
 keywords: ["CSS units explained", "px vs rem vs em", "CSS unit converter", "responsive CSS units", "when to use rem vs px", "viewport units CSS", "CSS best practices"]
 readTime: "6 min read"
 author: "WebToolkit Pro Team"
-image: "/blog/css-units.jpg"
+image: "/blog/cat-css.png"
 imageAlt: "Visual comparison of different CSS units including px, rem, em, vh, and vw"
 canonical: "https://wtkpro.site/blog/css-units-explained/"
 geo_region: "US"
@@ -151,4 +151,5 @@ Stop doing mental math. Our **[CSS Unit Converter](/tools/css-unit-converter/)**
 Mastering CSS units is essential for building responsive, accessible websites. Use the right unit for each situation, and your layouts will work beautifully across every device and screen size.
 
 **Convert CSS units instantly** with our free [CSS Unit Converter](/tools/css-unit-converter/).
+
 

@@ -7,7 +7,7 @@ tags: ["API", "Performance", "Revenue", "Research"]
 keywords: ["API Latency Study 2026", "Impact of Speed on Revenue", "Web Performance Research US", "100ms latency cost", "Enterprise API Performance"]
 readTime: "18 min read"
 author: "WebToolkit Pro Research Lab"
-image: "/blog/latency-study.jpg"
+image: "/blog/cat-research.png"
 imageAlt: "A graph showing revenue dropping as latency increases"
 ---
 
@@ -50,3 +50,4 @@ If you are using this data in your own research or reporting, please link back t
 `Source: WebToolkit Pro - 2026 API Latency Research Study`
 
 *Want to calculate your own latency impact? Use our [API Latency Calculator](/tools/api-latency-calculator/).*
+
