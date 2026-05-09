@@ -37,4 +37,7 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'social-preview-tester': dynamic(() => import('@/components/tools/instances/SocialPreviewTester'), { loading: () => <ToolSkeleton />, ssr: false }),
   'word-counter': dynamic(() => import('@/components/tools/instances/WordCounter'), { loading: () => <ToolSkeleton />, ssr: false }),
   'question-explorer': dynamic(() => import('@/components/tools/instances/QuestionExplorer'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'html-beautifier': dynamic(() => import('@/components/tools/instances/HtmlBeautifier'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'css-formatter': dynamic(() => import('@/components/tools/instances/CssFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'sql-formatter': dynamic(() => import('@/components/tools/instances/SqlFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

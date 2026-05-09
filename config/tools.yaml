@@ -1057,3 +1057,63 @@ tools:
           value: "Budget, Trust, Technical, Validation"
         - label: "Processing"
           value: "100% Browser-Based"
+
+  - name: "HTML Beautifier"
+    slug: "html-beautifier"
+    category: "Formatters"
+    icon: "FileCode"
+    priority: 16
+    releaseDate: "2026-05-10"
+    content:
+      title: "Free Online HTML Beautifier & Formatter"
+      description: "Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability and SEO-friendly markup."
+      tldr: "Transform compressed or messy HTML into perfectly indented, readable code with one click."
+      entity_definition: "HTML Beautifier is a professional web engineering utility designed to standardize the structure and indentation of HTML5 source code. It handles complex nested structures, attributes, and inline elements, ensuring your markup follows W3C standards and maintains high readability for both developers and search engines."
+      how_it_works: "The tool uses the js-beautify engine to parse and reconstruct the HTML DOM tree, applying your preferred indentation and line-wrapping rules in real-time."
+      use_cases:
+        - "Cleaning up minified production HTML"
+        - "Standardizing code before a pull request"
+        - "Formatting machine-generated markup"
+      faq:
+        - question: "Does it support HTML5?"
+        - answer: "Yes, it fully supports all modern HTML5 tags, including custom elements and data attributes."
+
+  - name: "CSS Formatter"
+    slug: "css-formatter"
+    category: "Formatters"
+    icon: "Palette"
+    priority: 17
+    releaseDate: "2026-05-10"
+    content:
+      title: "Professional CSS Formatter & Beautifier"
+      description: "Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS."
+      tldr: "Clean up your CSS styles instantly with professional-grade indentation and formatting."
+      entity_definition: "CSS Formatter is a specialized styling utility that reorganizes CSS rules, selectors, and properties into a consistent format. It helps identify syntax errors, improves stylesheet maintainability, and ensures that large-scale design systems remain organized."
+      how_it_works: "It parses your CSS into a rule-based system and then outputs it using a standardized set of formatting rules, such as one property per line and consistent spacing."
+      use_cases:
+        - "Beautifying legacy stylesheets"
+        - "Formatting CSS output from preprocessors"
+        - "Improving code review efficiency"
+      faq:
+        - question: "Does it work with CSS variables?"
+        - answer: "Absolutely. It fully supports CSS3 variables, media queries, and nested rules."
+
+  - name: "SQL Formatter"
+    slug: "sql-formatter"
+    category: "Formatters"
+    icon: "Database"
+    priority: 18
+    releaseDate: "2026-05-10"
+    content:
+      title: "SQL Formatter - Beautify Database Queries"
+      description: "Format your SQL queries for maximum readability. Supports standard SQL, PostgreSQL, and MySQL syntax for clean database documentation."
+      tldr: "Transform messy, unreadable SQL queries into professional, well-structured database commands."
+      entity_definition: "SQL Formatter is a database engineering utility that applies strict structural formatting to SQL queries. By capitalizing keywords and indenting clauses like SELECT, FROM, and WHERE, it allows developers to quickly audit and optimize complex database operations."
+      how_it_works: "Using the sql-formatter engine, it tokenizes your query and rebuilds it using a tabular or block-based indentation style that highlights logic flow."
+      use_cases:
+        - "Formatting complex JOIN queries for documentation"
+        - "Auditing machine-generated SQL from ORMs"
+        - "Sharing readable queries in Slack or Jira"
+      faq:
+        - question: "Which SQL dialects are supported?"
+        - answer: "It supports Standard SQL, MySQL, PostgreSQL, and many other common database dialects."

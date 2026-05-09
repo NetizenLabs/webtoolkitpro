@@ -7,7 +7,7 @@ import {
   FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
   Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
-  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server
+  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server, Database
 } from 'lucide-react'
 import AdSlot from '@/components/ads/AdSlot'
 import { ToolConfig } from '@/types/tool'
@@ -78,6 +78,28 @@ export default function ToolsClient({ initialTools }: ToolsClientProps) {
 
   return (
     <div className="dynamic-padding max-w-[1400px] mx-auto">
+      {/* Premium Search Bar */}
+      <div className="relative mb-12 max-w-2xl mx-auto group">
+        <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+          <Search className="w-5 h-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+        </div>
+        <input
+          type="text"
+          placeholder="Search 33+ professional tools (e.g. JSON, Password, SEO)..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full pl-16 pr-8 py-5 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-[2rem] text-lg font-medium text-gray-900 dark:text-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/5 outline-none transition-all shadow-xl shadow-blue-900/5 placeholder:text-gray-400"
+        />
+        {search && (
+          <button 
+            onClick={() => setSearch('')}
+            className="absolute inset-y-0 right-6 flex items-center text-sm font-bold text-blue-600 hover:text-blue-700 uppercase tracking-widest"
+          >
+            Clear
+          </button>
+        )}
+      </div>
+
       {/* Category Tabs - Scrollable on mobile */}
       <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-6 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
         {categories.map(category => (

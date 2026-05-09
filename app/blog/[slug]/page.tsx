@@ -1,5 +1,5 @@
 import React from 'react'
-import { ShieldCheck } from 'lucide-react'
+import { ShieldCheck, Twitter, Mail } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
@@ -216,8 +216,39 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Social & Engineering Lab Section */}
+        <div className="mt-12 p-8 bg-gray-50 dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full" />
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div className="text-center md:text-left">
+              <h4 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">WTK Engineering Lab</h4>
+              <p className="text-sm text-gray-500 dark:text-slate-400 max-w-md font-medium leading-relaxed">
+                This research was conducted at our lab. For technical feedback or research inquiries, contact our lead engineer.
+              </p>
+              <div className="flex items-center justify-center md:justify-start gap-4 mt-4">
+                <a 
+                  href="mailto:safi4730358@gmail.com" 
+                  className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline uppercase tracking-widest flex items-center gap-1.5"
+                >
+                  <Mail className="w-3.5 h-3.5" /> safi4730358@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://x.com/WebToolkitPro" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-950 rounded-2xl font-bold text-sm hover:scale-105 transition-all shadow-xl shadow-blue-900/10"
+              >
+                <Twitter className="w-4 h-4" /> Follow on X
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Legal Disclaimer Section */}
-        <div className="mt-10 p-6 bg-amber-50/50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30 rounded-2xl">
+        <div className="mt-8 p-6 bg-amber-50/50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30 rounded-2xl">
           <h4 className="flex items-center gap-2 text-sm font-bold text-amber-800 dark:text-amber-400 mb-2 uppercase tracking-wide">
             <ShieldCheck className="w-4 h-4" /> Technical & Educational Disclaimer
           </h4>
