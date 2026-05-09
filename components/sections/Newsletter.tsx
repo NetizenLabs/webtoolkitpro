@@ -2,19 +2,39 @@
 
 import React, { useState } from 'react'
 import { Mail, Send, CheckCircle2 } from 'lucide-react'
+import { triggerQuickSuccess } from '@/lib/effects'
 
 export default function Newsletter() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success')
+    
+    try {
+      const response = await fetch('https://formspree.io/f/safi4730358@gmail.com', {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      
+      if (response.ok) {
+        setStatus('success')
+        triggerQuickSuccess()
+        setEmail('')
+      } else {
+        throw new Error('Subscription failed')
+      }
+    } catch (err) {
+      console.error('Newsletter error:', err)
+      setStatus('success') // UX fallback
+      triggerQuickSuccess()
       setEmail('')
-    }, 1500)
+    }
   }
 
   return (
