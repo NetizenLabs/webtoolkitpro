@@ -61,9 +61,9 @@ export default function Footer() {
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
           <div className="flex flex-wrap justify-center md:justify-start gap-6 text-gray-600">
             <span>&copy; {new Date().getFullYear()} WebToolkit Pro.</span>
-            <Link href="/privacy/" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/terms/" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="/disclaimer/" className="hover:text-white transition-colors">DMCA</Link>
+            <Link href="/privacy/" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms/" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/disclaimer/" className="hover:text-white transition-colors">Legal Disclaimer</Link>
           </div>
           <div className="flex gap-8">
             <Link 
@@ -88,6 +88,17 @@ export default function Footer() {
               <Mail className="w-5 h-5" />
             </Link>
           </div>
+        </div>
+
+        {/* Global Legal Disclaimer */}
+        <div className="mt-8 pt-8 border-t border-slate-900/50">
+          <p className="text-[9px] text-gray-700 leading-relaxed text-center font-medium max-w-4xl mx-auto uppercase tracking-[0.05em]">
+            Disclaimer: WebToolkit Pro is an independent resource for developers. All tools provided on this site are for informational and research purposes only. 
+            We are not affiliated with any third-party services mentioned (including Pinterest, Google, or others). 
+            All data processing occurs locally in your browser to ensure 100% privacy; we do not store your technical inputs. 
+            By using this site, you agree that WebToolkit Pro is not liable for any technical issues, data loss, or search engine ranking changes 
+            resulting from the use of our research or utilities.
+          </p>
         </div>
       </div>
     </footer>

@@ -285,6 +285,20 @@ export default function PinterestDownloader() {
             }
           ]}
         />
+
+        {/* Usage Disclaimer */}
+        <div className="mt-16 p-8 bg-gray-100 dark:bg-slate-900 rounded-[2.5rem] border border-gray-200 dark:border-slate-800">
+          <h4 className="flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white mb-4 uppercase tracking-widest">
+            <AlertCircle className="w-5 h-5 text-red-500" /> Legal & Usage Disclaimer
+          </h4>
+          <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed font-medium">
+            WebToolkit Pro is not affiliated with Pinterest. This tool is provided for personal use, educational purposes, and research only. 
+            Users are solely responsible for ensuring that their use of downloaded media complies with Pinterest's Terms of Service and 
+            international copyright laws. We do not host any of the images on our servers; our tool merely acts as a technical proxy 
+            to help you access publicly available links. Unauthorized commercial use of copyrighted material is strictly prohibited 
+            and is the sole responsibility of the user.
+          </p>
+        </div>
       </div>
     </div>
   )

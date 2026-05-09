@@ -212,6 +212,20 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Legal Disclaimer Section */}
+        <div className="mt-10 p-6 bg-amber-50/50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30 rounded-2xl">
+          <h4 className="flex items-center gap-2 text-sm font-bold text-amber-800 dark:text-amber-400 mb-2 uppercase tracking-wide">
+            <ShieldCheck className="w-4 h-4" /> Technical & Educational Disclaimer
+          </h4>
+          <p className="text-xs text-amber-700/80 dark:text-amber-500/80 leading-relaxed font-medium">
+            The technical studies, guides, and research provided on WebToolkit Pro are for educational and research purposes only. 
+            While we strive for 100% accuracy, web technologies and search engine algorithms (like Google SGE or Perplexity) evolve rapidly. 
+            Always verify technical implementations in a staging environment before deploying to production. WebToolkit Pro is not 
+            responsible for any third-party search engine ranking fluctuations or security vulnerabilities resulting from 
+            misinterpreted research data.
+          </p>
+        </div>
+
         {/* Ad Slot - Bottom of Article */}
         <div className="mt-12 min-h-[250px] flex items-center justify-center">
           {/* AdSense In-Article Bottom */}
