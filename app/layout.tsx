@@ -6,7 +6,7 @@ import CookieConsent from '@/components/ui/CookieConsent'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/next'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
