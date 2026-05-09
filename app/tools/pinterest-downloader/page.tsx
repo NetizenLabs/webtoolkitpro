@@ -133,6 +133,14 @@ export default function PinterestDownloader() {
         name="Pinterest Image & Board Downloader" 
         description="Download high-resolution images and entire boards from Pinterest instantly. No registration or extensions required."
         slug="pinterest-downloader"
+        features={[
+          "Bulk Board Downloading (Save up to 100 images at once)",
+          "Automatic Original Resolution detection",
+          "ZIP Packaging for easy organization",
+          "No login or browser extensions required",
+          "Works on mobile, tablet, and desktop",
+          "Secure and privacy-focused proxy fetching"
+        ]}
         steps={[
           "Paste the Pinterest Pin or Board URL into the input field.",
           "Click the search icon to fetch all available images.",

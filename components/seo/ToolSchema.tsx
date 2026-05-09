@@ -7,9 +7,10 @@ interface ToolSchemaProps {
   description: string
   slug: string
   steps?: string[]
+  features?: string[]
 }
 
-export default function ToolSchema({ name, description, slug, steps = [] }: ToolSchemaProps) {
+export default function ToolSchema({ name, description, slug, steps = [], features = [] }: ToolSchemaProps) {
   const url = `https://wtkpro.site/tools/${slug}/`
   
   const softwareSchema = {
@@ -20,6 +21,8 @@ export default function ToolSchema({ name, description, slug, steps = [] }: Tool
     'applicationCategory': 'DeveloperApplication',
     'operatingSystem': 'Any',
     'url': url,
+    'image': `https://wtkpro.site/blog/cat-tutorial.png`, // Fallback to tutorial category image
+    'featureList': features.length > 0 ? features.join(', ') : 'Free, Secure, Professional Developer Utility',
     'offers': {
       '@type': 'Offer',
       'price': '0',

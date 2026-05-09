@@ -4,6 +4,35 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
+const TOOL_LINKS = [
+  { keyword: 'Pinterest Downloader', url: '/tools/pinterest-downloader/' },
+  { keyword: 'Pinterest image downloader', url: '/tools/pinterest-downloader/' },
+  { keyword: 'JSON Formatter', url: '/tools/json-formatter/' },
+  { keyword: 'format JSON', url: '/tools/json-formatter/' },
+  { keyword: 'What is my IP', url: '/tools/what-is-my-ip/' },
+  { keyword: 'Redirect Checker', url: '/tools/redirect-checker/' },
+  { keyword: 'developer tools', url: '/tools/' },
+]
+
+function applySmartLinks(htmlString: string): string {
+  // Use a simple but effective regex approach to avoid complexity of JSDOM in small scripts
+  // However, we must be careful not to replace keywords inside <a> tags or attributes
+  let processedHtml = htmlString;
+  
+  TOOL_LINKS.forEach(({ keyword, url }) => {
+    // Regex explanation:
+    // (?<!href=")(?<!">) - Negative lookbehind to ensure it's not part of an existing link tag or attribute
+    // (?![^<]*<\/a>) - Negative lookahead to ensure it's not inside an <a>...</a> block
+    // \b - Word boundary
+    const regex = new RegExp(`(?<!href=")(?<!">)\\b${keyword}\\b(?![^<]*<\\/a>)`, 'gi');
+    processedHtml = processedHtml.replace(regex, (match) => {
+      return `<a href="${url}" class="text-blue-600 dark:text-blue-400 font-bold hover:underline transition-all decoration-blue-500/30">${match}</a>`;
+    });
+  });
+  
+  return processedHtml;
+}
+
 export interface BlogPost {
   slug: string
   title: string
@@ -76,7 +105,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const processedContent = await remark()
     .use(html)
     .process(content)
-  const htmlContent = processedContent.toString()
+  const rawHtml = processedContent.toString()
+  const htmlContent = applySmartLinks(rawHtml)
 
   return {
     slug,
