@@ -25,29 +25,31 @@ export async function GET(request: NextRequest) {
     // Aggressive Pin Extraction from ALL script tags
     const scriptMatches = Array.from(html.matchAll(/<script id=".*?" type="application\/json">([\s\S]*?)<\/script>/g));
     
-    const deepSearch = (obj: any, depth = 0) => {
-      if (!obj || typeof obj !== 'object' || depth > 15) return;
+    const deepSearch = (obj: any) => {
+      if (!obj || typeof obj !== 'object') return;
       
-      if (obj.images && (obj.images.orig || obj.images['736x'] || obj.images['max'])) {
-        const id = obj.id || obj.pin_id || Math.random().toString(36).substr(2, 9);
-        if (!seen.has(id)) {
-          const imgUrl = obj.images.orig?.url || obj.images['max']?.url || obj.images['736x']?.url;
-          if (imgUrl) {
-            seen.add(id);
-            pins.push({
-              id,
-              title: obj.title || obj.grid_title || obj.description || 'Pinterest Image',
-              url: imgUrl,
-              thumbnail: obj.images['236x']?.url || obj.images['474x']?.url || imgUrl
-            });
-          }
+      // Look for any object that has an image-like structure
+      const imgData = obj.images || obj;
+      const possibleUrl = imgData.orig?.url || imgData['max']?.url || imgData['736x']?.url || (typeof obj.url === 'string' && obj.url.includes('pinimg.com') ? obj.url : null);
+      
+      if (possibleUrl && (obj.images || (obj.id && obj.type === 'pin'))) {
+        if (!seen.has(possibleUrl)) {
+          seen.add(possibleUrl);
+          pins.push({
+            id: obj.id || obj.pin_id || Math.random().toString(36).substr(2, 9),
+            title: obj.title || obj.grid_title || obj.description || 'Pinterest Image',
+            url: possibleUrl,
+            thumbnail: imgData['236x']?.url || imgData['474x']?.url || possibleUrl
+          });
         }
       }
       
-      // Always continue searching children
+      // Exhaustive search of all children
       const values = Object.values(obj);
       for (const val of values) {
-        deepSearch(val, depth + 1);
+        if (val && typeof val === 'object') {
+          deepSearch(val);
+        }
       }
     };
 
@@ -72,8 +74,8 @@ export async function GET(request: NextRequest) {
               const pinUrl = pinData.url || '';
               const id = pinUrl.match(/pin\/(\d+)/)?.[1] || Math.random().toString(36).substr(2, 9);
               
-              if (imgUrl && !seen.has(id)) {
-                seen.add(id);
+              if (imgUrl && !seen.has(imgUrl)) {
+                seen.add(imgUrl);
                 pins.push({
                   id,
                   title: pinData.name || 'Pinterest Image',
