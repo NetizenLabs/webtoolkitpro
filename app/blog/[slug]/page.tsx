@@ -158,21 +158,6 @@ export default async function BlogPostPage({ params }: Props) {
             <span>•</span>
             <span itemProp="author">{post.author}</span>
           </div>
-
-          {/* Hero Image - Optimized for Speed */}
-          {post.image && (
-            <div className="relative aspect-[16/9] w-full mb-12 rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-slate-800 animate-in fade-in zoom-in duration-700">
-              <Image 
-                src={post.image} 
-                alt={post.imageAlt || post.title}
-                fill
-                priority={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                className="object-cover"
-                quality={85}
-              />
-            </div>
-          )}
         </header>
 
         {/* Ad Slot - Top of Article */}
