@@ -95,12 +95,15 @@ export default function PinterestDownloader() {
 
       const downloadPromises = pins.map(async (pin, index) => {
         try {
-          const response = await fetch(pin.url);
+          // Use our internal proxy to bypass CORS restrictions
+          const response = await fetch(`/api/proxy-image?url=${encodeURIComponent(pin.url)}`);
+          if (!response.ok) throw new Error('Failed to fetch via proxy');
+          
           const blob = await response.blob();
           const fileName = `${pin.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_${index}.jpg`;
           folder?.file(fileName, blob);
         } catch (e) {
-          console.error(`Failed to download image ${index}`);
+          console.error(`Failed to download image ${index}:`, e);
         }
       });
 
