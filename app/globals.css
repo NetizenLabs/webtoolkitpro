@@ -3,25 +3,60 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Fluid Typography - Scales perfectly from 320px to 1280px */
+    --font-size-base: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --font-size-lg: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --font-size-3xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+    --font-size-4xl: clamp(2.5rem, 2.1rem + 2vw, 4rem);
+
+    /* Fluid Spacing */
+    --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+    --space-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1rem);
+    --space-md: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+    --space-lg: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+    --space-xl: clamp(3rem, 2.25rem + 3.75vw, 6rem);
+  }
+
   html {
     scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+  }
+
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+}
+
+/* Optimized Mobile Animations */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }
 
-/* Animations for homepage */
 @keyframes float {
   0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-15px) scale(1.02); }
-}
-
-@media (max-width: 768px) {
-  .hero-blob {
-    animation: none !important;
-  }
+  50% { transform: translateY(-10px) scale(1.01); }
 }
 
 .hero-blob {
   will-change: transform;
+  transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  .hero-blob {
+    animation-duration: 4s !important;
+  }
 }
 
 :root {
@@ -40,7 +75,7 @@
   --border: #e2e8f0;
   --input: #e2e8f0;
   --ring: #2563eb;
-  --radius: 0.75rem;
+  --radius: 1rem;
 }
 
 .dark {
@@ -65,10 +100,13 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Smooth Interactive Elements */
 button, a, .transition-all {
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fadeInUp {
@@ -83,21 +121,28 @@ button, a, .transition-all {
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
   }
   
   .btn-primary {
-    @apply btn bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500;
+    @apply btn bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20;
   }
   
   .btn-secondary {
     @apply btn bg-gray-600 hover:bg-gray-700 text-white focus:ring-gray-500;
+  }
+
+  .card-premium {
+    @apply bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .dynamic-padding {
+    padding: var(--space-md);
   }
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }

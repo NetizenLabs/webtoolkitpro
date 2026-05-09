@@ -83,203 +83,98 @@ export default function ToolsClient() {
       if (!tool.releaseDate) return true
       return tool.releaseDate <= today
     }).sort((a, b) => {
-      // Primary sort by priority (lower is higher)
       if ((a.priority || 10) !== (b.priority || 10)) {
         return (a.priority || 10) - (b.priority || 10)
       }
-      // Secondary sort by releaseDate (newer first)
       if (a.releaseDate && b.releaseDate) {
         return b.releaseDate.localeCompare(a.releaseDate)
       }
-      // Tertiary sort by name
       return a.name.localeCompare(b.name)
     })
   }, [today])
+
+  const filteredTools = useMemo(() => {
+    return visibleTools.filter(tool => {
+      const matchesCategory = activeCategory === 'All' || tool.category === activeCategory
+      const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase()) || 
+                           tool.description.toLowerCase().includes(search.toLowerCase())
+      return matchesCategory && matchesSearch
+    })
+  }, [visibleTools, activeCategory, search])
 
   const favoriteTools = useMemo(() => {
     return visibleTools.filter(tool => favorites.includes(tool.href))
   }, [visibleTools, favorites])
 
-  const filteredTools = useMemo(() => {
-    return visibleTools.filter(tool => {
-      const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase()) ||
-        tool.description.toLowerCase().includes(search.toLowerCase())
-      const matchesCategory = activeCategory === 'All' || tool.category === activeCategory
-      return matchesSearch && matchesCategory
-    })
-  }, [search, activeCategory, visibleTools])
+  const hubs = [
+    { title: 'Pinterest Expert Hub', desc: 'Enterprise-grade board and image downloading', icon: Download, color: 'from-red-500 to-red-700', href: '/tools/pinterest-downloader', priority: 1 },
+    { title: 'Technical SEO Suite', desc: 'Check sitemaps, meta tags, and redirect health', icon: Globe, color: 'from-blue-600 to-blue-800', href: '/tools/meta-tag-generator', priority: 2 },
+    { title: 'Data Converter Pro', desc: 'Secure Base64, Binary, and URL encoding', icon: RefreshCw, color: 'from-purple-500 to-purple-700', href: '/tools/base64-encoder', priority: 3 },
+  ]
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50/50 dark:bg-slate-950/50 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 relative">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
-          <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-slate-500">
-            Developer Toolkit
-          </h1>
-          <p className="text-xl text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
-            A comprehensive suite of <span className="text-blue-600 dark:text-blue-400 font-bold">{tools.length}</span> free, high-performance tools built for the next generation of web professionals.
-          </p>
-        </div>
-
-        {/* Topical Hubs (Semantic Silos) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {[
-            { title: 'Developer Utilities', desc: 'Professional formatters, minifiers, and security tools for modern engineers.', icon: Code2, tools: ['json-formatter', 'js-minifier', 'hash-generator', 'uuid-generator'], color: 'bg-blue-600', cat: 'Formatters' },
-            { title: 'Content & Writing', desc: 'Accurate text converters, word counters, and documentation utilities.', icon: FileText, tools: ['word-counter', 'case-converter', 'lorem-ipsum', 'markdown-converter'], color: 'bg-purple-600', cat: 'Utilities' },
-            { title: 'Expert SEO Engines', desc: 'High-performance metadata, sitemaps, and search optimization tools.', icon: Globe, tools: ['meta-tag-generator', 'robots-generator', 'sitemap-validator', 'schema-generator'], color: 'bg-emerald-600', cat: 'SEO' },
-          ].map((hub) => (
-            <button 
-              key={hub.title} 
-              onClick={() => setActiveCategory(hub.cat)}
-              className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-blue-900/5 hover:-translate-y-1 hover:border-blue-500/50 transition-all text-left group"
-            >
-              <div className={`w-12 h-12 ${hub.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform`}>
-                <hub.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">{hub.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{hub.desc}</p>
-            </button>
-          ))}
-        </div>
-
-        {/* Search and Filter Section */}
-        <div className="max-w-5xl mx-auto mb-20">
-          <div className="bg-white dark:bg-slate-900 p-2 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-2xl shadow-blue-900/5 dark:shadow-none flex flex-col md:flex-row items-center gap-2">
-            <div className="relative flex-grow w-full">
-              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search for a tool (e.g., JSON, Password, Encoder)..."
-                className="block w-full pl-14 pr-6 py-5 bg-transparent border-none focus:ring-0 outline-none text-lg font-medium dark:text-white placeholder:text-gray-400 dark:placeholder:text-slate-600"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-            
-            <div className="w-px h-10 bg-gray-100 dark:bg-slate-800 hidden md:block mx-2" />
-
-            <div className="relative group/nav w-full md:w-auto overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
-              
-              <div className="flex gap-2 overflow-x-auto py-2 px-6 no-scrollbar mask-fade-edges">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-6 py-3 rounded-2xl font-bold whitespace-nowrap transition-all duration-300 text-sm uppercase tracking-widest ${activeCategory === cat
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                      : 'bg-gray-50 dark:bg-slate-800/50 text-gray-500 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 border border-transparent'
-                      }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <AdSlot className="mb-12" />
-
-        {/* Favorites Section */}
-        {favoriteTools.length > 0 && search === '' && activeCategory === 'All' && (
-          <div className="mb-16">
-            <div className="flex items-center gap-2 mb-8">
-              <Star className="w-6 h-6 text-yellow-500 fill-current" />
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Your Favorites</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {favoriteTools.map((tool) => (
-                <div key={`fav-${tool.href}`} className="relative group">
-                  <button
-                    onClick={(e) => toggleFavorite(e, tool.href)}
-                    className="absolute top-6 right-6 p-2 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500 hover:scale-110 transition-transform z-20"
-                    title="Remove from favorites"
-                  >
-                    <Star className="w-5 h-5 fill-current" />
-                  </button>
-                  <Link
-                    href={tool.href}
-                    className="flex flex-col h-full bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-300"
-                  >
-                    <div className={`w-14 h-14 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <tool.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="mb-4">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded mb-2 inline-block">
-                        {tool.category}
-                      </span>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{tool.name}</h3>
-                    </div>
-                    <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">{tool.description}</p>
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <div className="mt-12 border-b border-gray-100 dark:border-slate-800"></div>
-          </div>
-        )}
-
-        {/* Tools Grid */}
-        {filteredTools.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredTools.map((tool) => (
-              <div key={tool.href} className="relative group">
-                <button
-                  onClick={(e) => toggleFavorite(e, tool.href)}
-                  className={`absolute top-6 right-6 p-2 rounded-full transition-all z-20 ${favorites.includes(tool.href)
-                      ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-500'
-                      : 'bg-gray-50 dark:bg-slate-800 text-gray-300 dark:text-slate-600 hover:text-yellow-500'
-                    }`}
-                  title={favorites.includes(tool.href) ? "Remove from favorites" : "Add to favorites"}
-                >
-                  <Star className={`w-5 h-5 ${favorites.includes(tool.href) ? 'fill-current' : ''}`} />
-                </button>
-                <Link
-                  href={tool.href}
-                  className="flex flex-col h-full bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-300"
-                >
-                  <div className={`w-14 h-14 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <tool.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded mb-2 inline-block">
-                      {tool.category}
-                    </span>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{tool.name}</h3>
-                  </div>
-                  <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">{tool.description}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-50 dark:border-slate-800">
-                    <span className="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Launch Tool <Zap className="w-4 h-4 fill-current" />
-                    </span>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-gray-200 dark:border-slate-800">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-50 dark:bg-slate-800 rounded-full mb-6">
-              <Search className="w-10 h-10 text-gray-300 dark:text-slate-600" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">No tools found</h3>
-            <p className="text-gray-500 dark:text-slate-400">We couldn't find any tools matching your search or filter.</p>
-            <button
-              onClick={() => { setSearch(''); setActiveCategory('All') }}
-              className="mt-6 text-blue-600 dark:text-blue-400 font-bold hover:underline"
-            >
-              Clear all filters
-            </button>
-          </div>
-        )}
-
-        <AdSlot className="mt-20" />
+    <div className="dynamic-padding max-w-[1400px] mx-auto">
+      {/* Category Tabs - Scrollable on mobile */}
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-6 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+        {categories.map(category => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`px-6 py-3 rounded-2xl text-sm font-bold whitespace-nowrap transition-all ${
+              activeCategory === category 
+                ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 scale-105' 
+                : 'bg-white dark:bg-slate-900 text-gray-500 dark:text-slate-400 border border-gray-100 dark:border-slate-800 hover:border-blue-500/30'
+            }`}
+          >
+            {category}
+          </button>
+        ))}
       </div>
+
+      {/* Main Tools Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {filteredTools.map((tool) => (
+          <div key={tool.href} className="relative group">
+            <button 
+              onClick={(e) => toggleFavorite(e, tool.href)}
+              className={`absolute top-6 right-6 p-2 rounded-xl transition-all z-20 ${favorites.includes(tool.href) ? 'bg-rose-50 dark:bg-rose-900/20 text-rose-500' : 'text-gray-300 dark:text-slate-700 hover:text-rose-400'}`}
+            >
+              <Star className={`w-5 h-5 ${favorites.includes(tool.href) ? 'fill-rose-500' : ''}`} />
+            </button>
+            <Link 
+              href={tool.href} 
+              className="card-premium flex flex-col h-full p-8"
+            >
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <tool.icon className="w-7 h-7 text-white" />
+              </div>
+
+              <div className="flex-grow">
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {tool.name}
+                  </h3>
+                  {tool.priority <= 5 && (
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500 shrink-0" />
+                  )}
+                </div>
+                <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4">
+                  {tool.description}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50 dark:border-slate-800/50">
+                <span className="text-[10px] font-black text-gray-400 dark:text-slate-500 uppercase tracking-widest">{tool.category}</span>
+                <span className="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Launch <Zap className="w-4 h-4 fill-current" />
+                </span>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      <AdSlot className="mt-16" />
     </div>
   )
 }

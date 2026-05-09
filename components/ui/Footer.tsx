@@ -4,47 +4,44 @@ import { Box, Github, Twitter, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-gray-300 pt-16 pb-8 border-t border-slate-900">
+    <footer className="bg-slate-950 text-gray-400 pt-[var(--space-lg)] pb-8 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-blue-600 p-1.5 rounded-lg">
-                <Box className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
+            <Link href="/" className="flex items-center gap-2 mb-8">
+              <span className="text-2xl font-black text-white tracking-tighter">
                 WebToolkit<span className="text-blue-500">Pro</span>
               </span>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm leading-relaxed font-medium">
               Premium online tools for web developers and designers. 
-              Always free, always professional.
+              Secure, fast, and professional-grade engineering utilities.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6">Popular Tools</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Popular Tools</h3>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><Link href="/tools/pinterest-downloader/" className="hover:text-blue-400 transition-colors">Pinterest Downloader</Link></li>
               <li><Link href="/tools/json-formatter/" className="hover:text-blue-400 transition-colors">JSON Formatter</Link></li>
-              <li><Link href="/tools/password-generator/" className="hover:text-blue-400 transition-colors">Password Generator</Link></li>
-              <li><Link href="/tools/base64-encoder/" className="hover:text-blue-400 transition-colors">Base64 Encoder</Link></li>
-              <li><Link href="/tools/url-encoder/" className="hover:text-blue-400 transition-colors">URL Encoder</Link></li>
+              <li><Link href="/tools/what-is-my-ip/" className="hover:text-blue-400 transition-colors">What is my IP?</Link></li>
+              <li><Link href="/tools/redirect-checker/" className="hover:text-blue-400 transition-colors">Redirect Checker</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6">Company</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/about/" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><Link href="/blog/" className="hover:text-blue-400 transition-colors">Blog</Link></li>
-              <li><Link href="/submit-tool/" className="hover:text-blue-400 transition-colors">Submit a Tool</Link></li>
-              <li><Link href="/contact/" className="hover:text-blue-400 transition-colors">Contact</Link></li>
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Navigation</h3>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><Link href="/tools/" className="hover:text-blue-400 transition-colors">All Tools</Link></li>
+              <li><Link href="/blog/" className="hover:text-blue-400 transition-colors">Technical Blog</Link></li>
+              <li><Link href="/about/" className="hover:text-blue-400 transition-colors">Our Mission</Link></li>
+              <li><Link href="/contact/" className="hover:text-blue-400 transition-colors">Get in Touch</Link></li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold mb-6">Join the Community</h4>
-            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+          <div className="bg-slate-900/50 p-8 rounded-3xl border border-slate-800">
+            <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-xs">Developer Newsletter</h4>
+            <p className="text-xs text-gray-500 mb-6 leading-relaxed font-medium">
               Get the latest tools and technical SEO updates in your inbox.
             </p>
             <form className="space-y-3">
@@ -52,41 +49,40 @@ export default function Footer() {
                 type="email" 
                 placeholder="email@example.com"
                 aria-label="Email Address for Newsletter"
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-4 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all font-medium"
               />
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition-all shadow-lg shadow-blue-900/20">
-                Subscribe
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-2xl text-xs uppercase tracking-widest transition-all shadow-lg shadow-blue-950/50">
+                Join Now
               </button>
             </form>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-500">
+        <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+          <div className="flex flex-wrap justify-center md:justify-start gap-6 text-gray-600">
             <span>&copy; {new Date().getFullYear()} WebToolkit Pro.</span>
             <Link href="/privacy/" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms/" className="hover:text-white transition-colors">Terms</Link>
             <Link href="/disclaimer/" className="hover:text-white transition-colors">DMCA</Link>
-            <Link href="/press-kit.md" className="hover:text-white transition-colors">Press Kit</Link>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-8">
             <Link 
               href="https://github.com/abusufyan-netizen/webtoolkitpro" 
-              className="text-gray-500 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors"
               aria-label="GitHub Repository"
             >
               <Github className="w-5 h-5" />
             </Link>
             <Link 
               href="#" 
-              className="text-gray-500 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors"
               aria-label="Twitter Profile"
             >
               <Twitter className="w-5 h-5" />
             </Link>
             <Link 
               href="/contact/" 
-              className="text-gray-500 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors"
               aria-label="Contact Email"
             >
               <Mail className="w-5 h-5" />
