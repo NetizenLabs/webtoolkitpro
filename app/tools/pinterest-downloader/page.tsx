@@ -171,7 +171,7 @@ export default function PinterestDownloader() {
                 onChange={(e) => setUrl(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && fetchPins()}
                 placeholder="Paste Pinterest URL..."
-                className="w-full p-5 sm:p-6 pl-16 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white text-base sm:text-lg transition-[border-color,box-shadow] shadow-xl"
+                className="w-full py-5 sm:py-6 pl-16 sm:pl-20 pr-6 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white text-base sm:text-lg transition-[border-color,box-shadow] shadow-xl"
               />
             </div>
             <button 
