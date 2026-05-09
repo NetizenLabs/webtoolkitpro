@@ -43,7 +43,7 @@ export async function GET(request: NextRequest) {
     // Robust Board ID detection
     const reduxState = initialData.props?.initialReduxState || initialData.initialReduxState || {};
     const boards = reduxState.boards || {};
-    const boardId = Object.values(boards).find((b: any) => b.id)?.id || 
+    const boardId = (Object.values(boards).find((b: any) => b.id) as any)?.id || 
                     initialData.props?.data?.board?.id ||
                     initialData.page_props?.data?.board?.id;
     
