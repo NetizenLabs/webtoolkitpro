@@ -29,8 +29,8 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-950 dark:via-blue-950 dark:to-slate-950 py-[var(--space-lg)] lg:py-[var(--space-xl)]">
-        {/* Animated background blobs */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* Animated background blobs - Hidden on mobile for performance */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none hidden sm:block">
           <div className="hero-blob absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-20 dark:opacity-10 animate-[float_8s_ease-in-out_infinite]" />
           <div className="hero-blob absolute top-40 right-10 w-64 h-64 md:w-96 md:h-96 bg-purple-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay opacity-20 dark:opacity-10 animate-[float_10s_ease-in-out_infinite_reverse]" />
         </div>

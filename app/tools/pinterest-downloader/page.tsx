@@ -160,22 +160,24 @@ export default function PinterestDownloader() {
         </div>
 
         <div className="mb-12">
-          <div className="relative group">
-            <input 
-              type="text"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && fetchPins()}
-              placeholder="Paste Pinterest Pin or Board URL (e.g., https://pinterest.com/pin/123...)"
-              className="w-full p-6 pl-14 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white transition-all shadow-xl text-lg"
-            />
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-red-500 transition-colors" />
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="relative flex-grow group">
+              <input 
+                type="text"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && fetchPins()}
+                placeholder="Paste Pinterest URL..."
+                className="w-full p-5 sm:p-6 pl-14 bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 outline-none dark:text-white transition-all shadow-xl text-base sm:text-lg"
+              />
+              <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-red-500 transition-colors" />
+            </div>
             <button 
               onClick={fetchPins}
               disabled={loading || !url}
-              className="absolute right-3 top-1/2 -translate-y-1/2 px-6 py-3 bg-gray-900 dark:bg-red-600 text-white font-bold rounded-2xl hover:scale-105 transition-all disabled:opacity-50"
+              className="px-8 py-5 bg-red-600 text-white font-bold rounded-3xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50 shadow-lg shadow-red-600/20 shrink-0 flex items-center justify-center gap-2"
             >
-              {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Fetch Images'}
+              {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><Search className="w-5 h-5 sm:hidden" /> Fetch Images</>}
             </button>
           </div>
           {error && (
