@@ -8,6 +8,7 @@ import Script from 'next/script'
 import { Metadata } from 'next'
 // @ts-ignore
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -184,6 +185,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <CookieConsent />
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
