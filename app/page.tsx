@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
-  description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering. Format JSON, generate passwords, and master SEO.',
+  title: 'WebToolkit Pro - Premium Developer Tools for Modern Engineering',
+  description: 'Access 65+ secure, client-side developer tools. From JSON formatting to SEO optimization, WebToolkit Pro provides high-performance utilities for enterprise workflows.',
   alternates: {
     canonical: 'https://wtkpro.site/',
   },

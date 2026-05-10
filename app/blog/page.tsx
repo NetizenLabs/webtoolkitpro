@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/blog'
 import AdSlot from '@/components/ads/AdSlot'
 
 export const metadata = {
-  title: 'Developer Blog - Web Development Tips & Tutorials | WebToolkit Pro',
+  title: 'Engineering Blog: Technical Guides & Tutorials | WebToolkit Pro',
   description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
   keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
   alternates: {

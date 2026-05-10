@@ -4,9 +4,9 @@ import ToolsClient from './ToolsClient'
 import { getTools } from '@/lib/tools'
 
 export const metadata: Metadata = {
-  title: 'Professional Developer Tools & Secure Utilities | WebToolkit Pro',
-  description: 'Access 33+ free, high-performance developer tools for modern web professionals. Secure, fast, and optimized for enterprise engineering.',
-  keywords: 'professional developer tools, secure web utilities, enterprise coding tools, JSON formatter pro, secure password generator US',
+  title: 'Developer Tools Directory | Secure Web Utilities | WebToolkit Pro',
+  description: 'Browse our complete directory of 33+ professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.',
+  keywords: 'developer tools directory, web utilities list, professional coding tools, secure online tools',
   alternates: {
     canonical: 'https://wtkpro.site/tools/',
   },
