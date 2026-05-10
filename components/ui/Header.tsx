@@ -37,7 +37,7 @@ export default function Header() {
           <Link href="/" className="flex items-center group shrink-0" style={{ width: '200px', height: '40px' }}>
             <span className="sr-only">WebToolkit Pro Home</span>
             <Image 
-              src="/logo-full.png" 
+              src="/logo-optimized.webp" 
               alt="WebToolkit Pro" 
               width={200}
               height={40}

@@ -146,7 +146,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
               'url': 'https://wtkpro.site',
-              'logo': 'https://wtkpro.site/logo-full.png',
+              'logo': 'https://wtkpro.site/logo-optimized.webp',
               'sameAs': ['https://github.com/abusufyan-netizen/webtoolkitpro'],
               'description': 'Premium developer tools and technical guides for enterprise web development.'
             }),
