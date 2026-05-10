@@ -95,10 +95,17 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getPostBySlug(params.slug)
   if (!post) notFound()
 
-  // Get related posts (same category, excluding current)
+  // Get related posts (prioritize same category)
   const allPosts = getAllPosts()
   const relatedPosts = allPosts
     .filter((p) => p.slug !== post.slug)
+    .sort((a, b) => {
+      // Prioritize same category
+      if (a.category === post.category && b.category !== post.category) return -1
+      if (a.category !== post.category && b.category === post.category) return 1
+      // Then by date (already sorted by date usually, but just in case)
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    })
     .slice(0, 3)
 
   const formattedDate = new Date(post.date).toLocaleDateString('en-US', {

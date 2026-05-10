@@ -88,6 +88,15 @@ export default function ToolsClient({ initialTools }: ToolsClientProps) {
 
   return (
     <div className="dynamic-padding max-w-[1400px] mx-auto">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+          Professional Developer Tools
+        </h1>
+        <p className="text-xl text-gray-500 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          Secure, high-performance web utilities for modern engineering and technical SEO.
+        </p>
+      </div>
+
       {/* Premium Search Bar */}
       <div className="relative mb-12 max-w-2xl mx-auto group">
         <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
@@ -184,6 +193,47 @@ export default function ToolsClient({ initialTools }: ToolsClientProps) {
       </div>
 
       <AdSlot className="mt-16" />
+      
+      {/* SEO Hub Links - Ensuring category hubs have internal links */}
+      <section className="mt-20 pt-12 border-t border-gray-100 dark:border-slate-900">
+        <h2 className="text-xs font-black text-gray-400 dark:text-slate-500 uppercase tracking-[0.3em] mb-8 text-center">Browse by Engineering Expertise</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {categories.filter(c => c !== 'All').map(category => {
+            const slug = category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')
+            return (
+              <Link 
+                key={category}
+                href={`/tools/category/${slug}/`}
+                className="p-5 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800 text-center text-xs font-bold text-gray-600 dark:text-slate-400 hover:border-blue-500/30 hover:text-blue-600 transition-all shadow-sm"
+              >
+                {category} Hub
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* About Section - Boosting Text-HTML Ratio */}
+      <section className="mt-24 pt-16 border-t border-gray-100 dark:border-slate-900 max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Privacy-First Developer Utilities</h2>
+        <p className="text-lg text-gray-500 dark:text-slate-400 leading-relaxed mb-8">
+          WebToolkit Pro provides a curated suite of technical utilities designed for modern web developers, SEO specialists, and software architects. Every tool in our directory is built with a <strong>privacy-first approach</strong>—all processing happens locally in your browser, ensuring that your sensitive data never leaves your device.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <div>
+            <h3 className="text-sm font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">Zero Latency</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-500 leading-relaxed">By leveraging client-side JavaScript, our tools provide instant results without the need for server round-trips or API delays.</p>
+          </div>
+          <div>
+            <h3 className="text-sm font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">Secure by Design</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-500 leading-relaxed">We don't store your inputs. Whether you are generating passwords or formatting JSON, your data is processed entirely within your local memory.</p>
+          </div>
+          <div>
+            <h3 className="text-sm font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">Built for Professionals</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-500 leading-relaxed">Our utilities follow industry standards (RFC, ISO, W3C) to ensure that the outputs are production-ready for enterprise applications.</p>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

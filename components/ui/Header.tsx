@@ -35,6 +35,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
           <Link href="/" className="flex items-center group shrink-0" style={{ width: '200px', height: '40px' }}>
+            <span className="sr-only">WebToolkit Pro Home</span>
             <Image 
               src="/logo-full.png" 
               alt="WebToolkit Pro" 

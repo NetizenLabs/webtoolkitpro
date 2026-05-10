@@ -1,7 +1,7 @@
 ---
 title: "Web Accessibility (A11y): Legal Requirements & Performance Gains"
 description: "Master web accessibility (A11y) to comply with US legal requirements like the ADA while improving your site's SEO and user experience for all."
-date: "2026-05-15"
+date: "2026-05-10"
 category: "CSS"
 tags: ["Accessibility", "A11y", "SEO", "Enterprise"]
 keywords: ["Web Accessibility Best Practices 2026", "ADA Compliance for Websites", "Improving A11y for SEO", "WCAG 2.2 Guidelines", "Designing for All Users"]

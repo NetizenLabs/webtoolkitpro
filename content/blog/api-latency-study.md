@@ -1,7 +1,7 @@
 ---
 title: "The Cost of 100ms: A 2026 Study on API Latency and Revenue Loss"
 description: "Original research on how millisecond-level API latency impacts e-commerce conversion rates and user retention in the US market."
-date: "2026-05-15"
+date: "2026-05-10"
 category: "Research"
 tags: ["API", "Performance", "Revenue", "Research"]
 keywords: ["API Latency Study 2026", "Impact of Speed on Revenue", "Web Performance Research US", "100ms latency cost", "Enterprise API Performance"]

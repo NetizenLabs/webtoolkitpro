@@ -106,6 +106,37 @@ export default function BlogPage() {
             </Link>
           ))}
         </div>
+        
+        {/* Featured Technical Studies - Boosting Internal Link Depth */}
+        <section className="mt-20 pt-16 border-t border-gray-100 dark:border-slate-800">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-4 tracking-tight uppercase">Engineering Deep-Dives</h2>
+              <p className="text-gray-500 dark:text-slate-400 font-medium">Original technical research and whitepapers for modern web architects.</p>
+            </div>
+            <Link href="/about/" className="text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-widest hover:underline">About our research lab →</Link>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { slug: 'seo-meta-tags-complete-guide', title: 'The Complete Meta Tags Guide' },
+              { slug: 'geo-optimization-guide', title: 'GEO & AI Search Mastery' },
+              { slug: 'llm-latency-ux-impact', title: 'LLM Latency Performance Study' },
+              { slug: 'modern-css-architecture', title: 'Enterprise CSS Architecture' },
+              { slug: 'ai-cybersecurity-trends', title: 'Defending AI-Driven Attacks' },
+              { slug: 'privacy-first-web-development', title: 'The Future of Zero-Knowledge' }
+            ].map((study) => (
+              <Link 
+                key={study.slug}
+                href={`/blog/${study.slug}/`}
+                className="p-6 bg-gray-50 dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 hover:border-blue-500/30 transition-all group"
+              >
+                <div className="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3 opacity-60">Research Paper</div>
+                <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors leading-tight">{study.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* Ad Slot - Bottom */}
         <AdSlot minHeight="250px" className="mt-16 max-w-3xl mx-auto" />

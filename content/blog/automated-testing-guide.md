@@ -1,5 +1,5 @@
 ---
-title: "Automated Web Testing: Improving Reliability in Enterprise Apps"
+title: "Automated Web Testing for Enterprise"
 description: "Learn how to implement a robust automated testing strategy using Playwright and Cypress to ensure your web applications remain bug-free and performant."
 date: "2026-05-04"
 category: "Tutorials"

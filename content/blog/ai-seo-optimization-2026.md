@@ -1,5 +1,5 @@
 ---
-title: "Optimizing Structured Data for AI Search Engines: SGE and Perplexity in 2026"
+title: "AI SEO: Optimizing for SGE & Perplexity"
 description: "As AI-driven search engines replace traditional result pages, your schema strategy must evolve. Learn how to optimize JSON-LD for generative AI context."
 date: "2026-05-09"
 category: "SEO"

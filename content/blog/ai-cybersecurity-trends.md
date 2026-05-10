@@ -1,5 +1,5 @@
 ---
-title: "Cybersecurity Trends for Developers: Defending Against AI-Driven Attacks"
+title: "Cybersecurity: Defending AI-Driven Attacks"
 description: "Stay ahead of modern cyber threats with our guide on defending against AI-driven attacks, deepfakes, and automated exploit generation in 2026."
 date: "2026-05-08"
 category: "Security"

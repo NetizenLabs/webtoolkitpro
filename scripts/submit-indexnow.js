@@ -24,7 +24,7 @@ async function submitToIndexNow() {
 
         const endpoints = [
             'https://www.bing.com/indexnow',
-            'https://search.yandex.com/indexnow'
+            'https://yandex.com/indexnow'
         ];
 
         for (const endpoint of endpoints) {

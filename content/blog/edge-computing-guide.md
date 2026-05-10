@@ -1,7 +1,7 @@
 ---
-title: "Edge Computing: The New Frontier of Web Performance in 2026"
+title: "Edge Computing: The Future of Performance"
 description: "Discover how Edge Computing is revolutionizing the web. Learn how to deploy code closer to your US users to achieve sub-50ms latency."
-date: "2026-05-17"
+date: "2026-05-09"
 category: "Tutorials"
 tags: ["Edge", "Cloud", "Performance", "WebDev"]
 keywords: ["Edge Computing Guide 2026", "Benefits of Edge Functions", "Reducing Latency for US Users", "Cloudflare Workers vs AWS Lambda@Edge", "Modern Web Infrastructure"]

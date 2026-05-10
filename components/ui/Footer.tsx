@@ -57,13 +57,14 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <img 
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light" 
-                  alt="Product Hunt Featured" 
-                  width="180" 
-                  height="39" 
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
-                />
+                  <span className="sr-only">WebToolkit Pro on Product Hunt</span>
+                  <img 
+                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light" 
+                    alt="Product Hunt Featured" 
+                    width="180" 
+                    height="39" 
+                    className="grayscale hover:grayscale-0 transition-all duration-300"
+                  />
               </a>
             </div>
           </div>
@@ -71,20 +72,25 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Popular Tools</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/tools/pinterest-downloader/" className="hover:text-blue-400 transition-colors">Pinterest Downloader</Link></li>
-              <li><Link href="/tools/json-formatter/" className="hover:text-blue-400 transition-colors">JSON Formatter</Link></li>
-              <li><Link href="/tools/what-is-my-ip/" className="hover:text-blue-400 transition-colors">What is my IP?</Link></li>
-              <li><Link href="/tools/redirect-checker/" className="hover:text-blue-400 transition-colors">Redirect Checker</Link></li>
+              <li><Link href="/tools/pinterest-downloader/" className="hover:text-blue-400 transition-colors text-xs">Pinterest Downloader</Link></li>
+              <li><Link href="/tools/json-formatter/" className="hover:text-blue-400 transition-colors text-xs">JSON Formatter</Link></li>
+              <li><Link href="/tools/password-generator/" className="hover:text-blue-400 transition-colors text-xs">Secure Password Gen</Link></li>
+              <li><Link href="/tools/what-is-my-ip/" className="hover:text-blue-400 transition-colors text-xs">What is my IP?</Link></li>
+              <li><Link href="/tools/redirect-checker/" className="hover:text-blue-400 transition-colors text-xs">Redirect Checker</Link></li>
+              <li><Link href="/tools/category/revenue-analytics/" className="hover:text-blue-400 transition-colors text-xs">Revenue Analytics</Link></li>
+              <li><Link href="/tools/category/social-media-tools/" className="hover:text-blue-400 transition-colors text-xs">Social Media Hub</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Global Network</h3>
-            <ul className="space-y-4 text-sm font-medium text-gray-500">
-              <li><a href="https://www.severancecalculator.xyz/" target="_blank" className="hover:text-amber-400 transition-colors">Severance Pay Lab</a></li>
-              <li><a href="https://www.severancecalculator.xyz/uae-gratuity-calculator/" target="_blank" className="hover:text-amber-400 transition-colors">UAE Gratuity Tool</a></li>
-              <li><a href="https://wtkpro-hub.vercel.app/" target="_blank" className="hover:text-blue-400 transition-colors">Satellite Hub Index</a></li>
-              <li><Link href="/about/" className="hover:text-blue-400 transition-colors">Our Mission</Link></li>
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Technical Research</h3>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><Link href="/blog/seo-meta-tags-complete-guide/" className="hover:text-blue-400 transition-colors text-xs">SEO Meta Tags Guide</Link></li>
+              <li><Link href="/blog/geo-optimization-guide/" className="hover:text-blue-400 transition-colors text-xs">GEO Optimization</Link></li>
+              <li><Link href="/blog/llm-latency-ux-impact/" className="hover:text-blue-400 transition-colors text-xs">LLM Latency Study</Link></li>
+              <li><Link href="/blog/modern-css-architecture/" className="hover:text-blue-400 transition-colors text-xs">Modern CSS Guide</Link></li>
+              <li><Link href="/blog/ai-cybersecurity-trends/" className="hover:text-blue-400 transition-colors text-xs">AI Security Trends</Link></li>
+              <li><Link href="/about/" className="hover:text-blue-400 transition-colors text-xs">About WTK Pro</Link></li>
             </ul>
           </div>
 
@@ -129,6 +135,7 @@ export default function Footer() {
               className="text-gray-600 hover:text-white transition-colors"
               aria-label="GitHub Organization"
             >
+              <span className="sr-only">GitHub Organization</span>
               <Github className="w-5 h-5" />
             </Link>
             <Link 
@@ -138,6 +145,7 @@ export default function Footer() {
               className="text-gray-600 hover:text-white transition-colors"
               aria-label="Follow us on X (Twitter)"
             >
+              <span className="sr-only">Follow us on X (Twitter)</span>
               <Twitter className="w-5 h-5" />
             </Link>
             <a 
@@ -145,6 +153,7 @@ export default function Footer() {
               className="text-gray-600 hover:text-white transition-colors"
               aria-label="Email Contact Support"
             >
+              <span className="sr-only">Email Contact Support</span>
               <Mail className="w-5 h-5" />
             </a>
             <a 

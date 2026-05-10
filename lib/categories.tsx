@@ -1,6 +1,6 @@
 export const CATEGORY_PILLARS: Record<string, { title: string; description: string; keywords: string }> = {
   'developer-tools': {
-    title: 'Professional Developer Tools & Secure Utilities | WebToolkit Pro',
+    title: 'Core Developer Utilities & Formatting Hub | WebToolkit Pro',
     description: 'Core developer utilities including formatters, converters, generators, and code optimization tools. High-performance and secure.',
     keywords: 'developer tools, code formatters, secure utilities, web toolkit, developer productivity'
   },

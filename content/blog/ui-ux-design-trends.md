@@ -1,7 +1,7 @@
 ---
 title: "UI/UX Design Trends for the US Market: 2026 Edition"
 description: "Stay ahead of the curve with our guide on modern UI/UX trends. From glassmorphism to AI-driven interfaces, learn how to design for the US audience."
-date: "2026-05-11"
+date: "2026-05-10"
 category: "CSS"
 tags: ["UI", "UX", "Design", "Frontend"]
 keywords: ["UI/UX Design Trends 2026", "Modern Web Design Guide", "User Experience Best Practices US", "Glassmorphism and Minimalism", "Designing for US Market"]

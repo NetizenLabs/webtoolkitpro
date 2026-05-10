@@ -1,5 +1,5 @@
 ---
-title: "The Future of Search: Mastering Generative Engine Optimization (GEO) for Next.js"
+title: "Mastering GEO for Next.js in 2026"
 description: "As AI-driven search engines like SearchGPT and Google Gemini redefine the web, traditional SEO is no longer enough. Learn how to optimize your Next.js applications for the GEO era."
 date: "2026-05-07"
 category: "SEO"

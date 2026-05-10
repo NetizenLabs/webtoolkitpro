@@ -1,5 +1,5 @@
 ---
-title: "Breaking the Speed Barrier: How We Achieved a 3ms TTFB for WebToolkit Pro"
+title: "Achieving 3ms TTFB for WebToolkit Pro"
 description: "A technical deep dive into our global Edge infrastructure, CDN strategy, and ISR optimization that resulted in a near-instant 3ms Time to First Byte."
 date: "2026-05-09"
 category: "Research"
