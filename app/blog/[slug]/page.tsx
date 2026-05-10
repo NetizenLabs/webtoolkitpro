@@ -228,7 +228,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full" />
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
             <div className="text-center md:text-left">
-              <h4 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">WTK Engineering Lab</h4>
+              <h3 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">WTK Engineering Lab</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 max-w-md font-medium leading-relaxed">
                 This research was conducted at our lab. For technical feedback or research inquiries, contact our lead engineer.
               </p>
@@ -256,9 +256,9 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Legal Disclaimer Section */}
         <div className="mt-8 p-6 bg-amber-50/50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30 rounded-2xl">
-          <h4 className="flex items-center gap-2 text-sm font-bold text-amber-800 dark:text-amber-400 mb-2 uppercase tracking-wide">
+          <h3 className="flex items-center gap-2 text-sm font-bold text-amber-800 dark:text-amber-400 mb-2 uppercase tracking-wide">
             <ShieldCheck className="w-4 h-4" /> Technical & Educational Disclaimer
-          </h4>
+          </h3>
           <p className="text-xs text-amber-700/80 dark:text-amber-500/80 leading-relaxed font-medium">
             The technical studies, guides, and research provided on WebToolkit Pro are for educational and research purposes only. 
             While we strive for 100% accuracy, web technologies and search engine algorithms (like Google SGE or Perplexity) evolve rapidly. 

@@ -105,21 +105,21 @@ export default function HubPage({ params }: HubPageProps) {
               <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl flex items-center justify-center">
                  <Shield className="w-6 h-6 text-emerald-600" />
               </div>
-              <h4 className="text-xl font-bold dark:text-white">Secure Processing</h4>
+              <h3 className="text-xl font-bold dark:text-white">Secure Processing</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">Every tool in the {categoryName} suite processes data locally in your browser. No server transmission, guaranteed.</p>
            </div>
            <div className="space-y-4">
               <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-xl flex items-center justify-center">
                  <Star className="w-6 h-6 text-amber-600" />
               </div>
-              <h4 className="text-xl font-bold dark:text-white">V8 Optimized</h4>
+              <h3 className="text-xl font-bold dark:text-white">V8 Optimized</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">Engineered for high-performance handling of large payloads with minimal latency.</p>
            </div>
            <div className="space-y-4">
               <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl flex items-center justify-center">
                  <Code2 className="w-6 h-6 text-indigo-600" />
               </div>
-              <h4 className="text-xl font-bold dark:text-white">Developer First</h4>
+              <h3 className="text-xl font-bold dark:text-white">Developer First</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">Semantic output and keyboard-optimized interfaces for professional engineering workflows.</p>
            </div>
         </div>
@@ -129,11 +129,11 @@ export default function HubPage({ params }: HubPageProps) {
            <h2 className="text-3xl font-black text-center mb-12 dark:text-white uppercase tracking-tight">{categoryName} Hub FAQ</h2>
            <div className="space-y-8">
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800">
-                 <h4 className="font-bold text-lg mb-2 dark:text-white">Why use our {categoryName} tools?</h4>
+                 <h3 className="font-bold text-lg mb-2 dark:text-white">Why use our {categoryName} tools?</h3>
                  <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">Unlike generic online converters, our {categoryName.toLowerCase()} suite is optimized for technical accuracy and privacy. We follow strict RFC standards and never store your inputs.</p>
               </div>
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800">
-                 <h4 className="font-bold text-lg mb-2 dark:text-white">Are there any limits on file size?</h4>
+                 <h3 className="font-bold text-lg mb-2 dark:text-white">Are there any limits on file size?</h3>
                  <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm">Most tools in this hub support up to 10MB of text data, processed locally via your browser's memory for maximum speed.</p>
               </div>
            </div>

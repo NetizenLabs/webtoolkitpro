@@ -150,7 +150,7 @@ export default function ToolPage({ params }: ToolPageProps) {
           <aside className="w-full lg:w-80 shrink-0 space-y-8">
             <RelatedToolsSidebar relatedTools={relatedTools} />
             <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl text-white shadow-xl shadow-blue-500/20">
-              <h4 className="font-bold mb-2">Did you know?</h4>
+              <h3 className="font-bold mb-2 text-sm">Did you know?</h3>
               <p className="text-xs text-blue-100 leading-relaxed">
                 All processing happens locally in your browser. Your data never leaves your device.
               </p>

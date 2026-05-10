@@ -59,7 +59,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {faqs.map((faq, i) => (
             <div key={i} className="space-y-3">
-              <h4 className="font-bold text-gray-900 dark:text-white text-lg">{faq.q}</h4>
+              <h3 className="font-bold text-gray-900 dark:text-white text-lg">{faq.q}</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{faq.a}</p>
             </div>
           ))}

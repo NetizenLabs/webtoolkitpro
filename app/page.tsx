@@ -350,19 +350,19 @@ export default function Home() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                   <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
-                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Data & Formatting</h4>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Data & Formatting</h3>
                     <p className="text-sm">High-performance JSON formatters, SQL beautifiers, and Base64 encoders for clean data handling.</p>
                   </div>
                   <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
-                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">SEO & Visibility</h4>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">SEO & Visibility</h3>
                     <p className="text-sm">Generate metadata, validate sitemaps, and optimize for AI search engines like Perplexity and SGE.</p>
                   </div>
                   <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
-                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Security & Cryptography</h4>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Security & Cryptography</h3>
                     <p className="text-sm">Generate secure passwords, RFC-compliant UUIDs, and SHA-256 hashes with zero data retention.</p>
                   </div>
                   <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
-                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Media & Content</h4>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Media & Content</h3>
                     <p className="text-sm">Download Pinterest boards, count word density, and test social previews in real-time.</p>
                   </div>
                 </div>
