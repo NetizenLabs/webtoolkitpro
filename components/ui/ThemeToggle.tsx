@@ -33,7 +33,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-gray-200 hover:scale-110 transition-all border border-gray-200 dark:border-slate-700 shadow-sm flex items-center justify-center w-10 h-10 group"
+      className="p-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-gray-200 hover:scale-110 transition-all border border-gray-200 dark:border-slate-700 shadow-sm flex items-center justify-center w-10 h-10 group outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
       aria-label="Toggle Dark Mode"
     >
       {isDark ? (

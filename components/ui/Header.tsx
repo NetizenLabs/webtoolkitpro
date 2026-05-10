@@ -34,7 +34,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <Link href="/" className="flex items-center group shrink-0" style={{ width: '200px', height: '40px' }}>
+          <Link href="/" className="flex items-center group shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg" style={{ width: '200px', height: '40px' }}>
             <span className="sr-only">WebToolkit Pro Home</span>
             <Image 
               src="/logo-optimized.webp" 
@@ -58,8 +58,8 @@ export default function Header() {
                   key={link.name}
                   href={link.href} 
                   className={isCTA 
-                    ? "text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 border-2 border-blue-600/20 dark:border-blue-400/20 px-5 py-2.5 rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-950 transition-all duration-300"
-                    : "text-xs font-black uppercase tracking-widest text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 relative group"
+                    ? "text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 border-2 border-blue-600/20 dark:border-blue-400/20 px-5 py-2.5 rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-950 transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    : "text-xs font-black uppercase tracking-widest text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 relative group outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
                   }
                 >
                   {link.name}
@@ -77,7 +77,7 @@ export default function Header() {
           <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
             <button 
-              className="p-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-2xl transition-colors border border-gray-100 dark:border-slate-800 active:scale-90"
+              className="p-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-2xl transition-colors border border-gray-100 dark:border-slate-800 active:scale-90 outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -90,7 +90,7 @@ export default function Header() {
       {/* Mobile Nav Overlay */}
       <div 
         className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-950 border-b border-gray-100 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-blue-900/10 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
-          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >
         <nav className="flex flex-col p-6 gap-3">

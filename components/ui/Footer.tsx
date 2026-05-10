@@ -56,6 +56,7 @@ export default function Footer() {
                 href="https://www.producthunt.com/products/webtoolkit-pro?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-webtoolkit-pro" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg inline-block"
               >
                   <span className="sr-only">WebToolkit Pro on Product Hunt</span>
                   <img 
@@ -72,25 +73,25 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Popular Tools</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/tools/pinterest-downloader/" className="hover:text-blue-400 transition-colors text-xs">Pinterest Downloader</Link></li>
-              <li><Link href="/tools/json-formatter/" className="hover:text-blue-400 transition-colors text-xs">JSON Formatter</Link></li>
-              <li><Link href="/tools/password-generator/" className="hover:text-blue-400 transition-colors text-xs">Secure Password Gen</Link></li>
-              <li><Link href="/tools/what-is-my-ip/" className="hover:text-blue-400 transition-colors text-xs">What is my IP?</Link></li>
-              <li><Link href="/tools/redirect-checker/" className="hover:text-blue-400 transition-colors text-xs">Redirect Checker</Link></li>
-              <li><Link href="/tools/category/revenue-analytics/" className="hover:text-blue-400 transition-colors text-xs">Revenue Analytics</Link></li>
-              <li><Link href="/tools/category/social-media-tools/" className="hover:text-blue-400 transition-colors text-xs">Social Media Hub</Link></li>
+              <li><Link href="/tools/pinterest-downloader/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Pinterest Downloader</Link></li>
+              <li><Link href="/tools/json-formatter/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">JSON Formatter</Link></li>
+              <li><Link href="/tools/password-generator/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Secure Password Gen</Link></li>
+              <li><Link href="/tools/what-is-my-ip/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">What is my IP?</Link></li>
+              <li><Link href="/tools/redirect-checker/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Redirect Checker</Link></li>
+              <li><Link href="/tools/category/revenue-analytics/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Revenue Analytics</Link></li>
+              <li><Link href="/tools/category/social-media-tools/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Social Media Hub</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Technical Research</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/blog/seo-meta-tags-complete-guide/" className="hover:text-blue-400 transition-colors text-xs">SEO Meta Tags Guide</Link></li>
-              <li><Link href="/blog/geo-optimization-guide/" className="hover:text-blue-400 transition-colors text-xs">GEO Optimization</Link></li>
-              <li><Link href="/blog/llm-latency-ux-impact/" className="hover:text-blue-400 transition-colors text-xs">LLM Latency Study</Link></li>
-              <li><Link href="/blog/modern-css-architecture/" className="hover:text-blue-400 transition-colors text-xs">Modern CSS Guide</Link></li>
-              <li><Link href="/blog/ai-cybersecurity-trends/" className="hover:text-blue-400 transition-colors text-xs">AI Security Trends</Link></li>
-              <li><Link href="/about/" className="hover:text-blue-400 transition-colors text-xs">About WTK Pro</Link></li>
+              <li><Link href="/blog/seo-meta-tags-complete-guide/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">SEO Meta Tags Guide</Link></li>
+              <li><Link href="/blog/geo-optimization-guide/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">GEO Optimization</Link></li>
+              <li><Link href="/blog/llm-latency-ux-impact/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">LLM Latency Study</Link></li>
+              <li><Link href="/blog/modern-css-architecture/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Modern CSS Guide</Link></li>
+              <li><Link href="/blog/ai-cybersecurity-trends/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">AI Security Trends</Link></li>
+              <li><Link href="/about/" className="hover:text-blue-400 transition-colors text-xs outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">About WTK Pro</Link></li>
             </ul>
           </div>
 
@@ -112,7 +113,7 @@ export default function Footer() {
               />
               <button 
                 disabled={status === 'loading' || status === 'success'}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-2xl text-xs uppercase tracking-widest transition-all shadow-lg shadow-blue-950/50 flex items-center justify-center gap-2"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-2xl text-xs uppercase tracking-widest transition-all shadow-lg shadow-blue-950/50 flex items-center justify-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               >
                 {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Join Now'}
               </button>
@@ -123,16 +124,16 @@ export default function Footer() {
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
           <div className="flex flex-wrap justify-center md:justify-start gap-6 text-gray-600">
             <span>&copy; {new Date().getFullYear()} WebToolkit Pro.</span>
-            <Link href="/privacy/" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms/" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="/disclaimer/" className="hover:text-white transition-colors">Legal Disclaimer</Link>
+            <Link href="/privacy/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Privacy Policy</Link>
+            <Link href="/terms/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Terms of Service</Link>
+            <Link href="/disclaimer/" className="hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Legal Disclaimer</Link>
           </div>
           <div className="flex gap-8">
             <Link 
               href="https://github.com/webtoolkit-pro" 
               target="_blank"
               rel="me noopener noreferrer"
-              className="text-gray-600 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
               aria-label="GitHub Organization"
             >
               <span className="sr-only">GitHub Organization</span>
@@ -142,7 +143,7 @@ export default function Footer() {
               href="https://x.com/WebToolkitPro" 
               target="_blank"
               rel="me noopener noreferrer"
-              className="text-gray-600 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
               aria-label="Follow us on X (Twitter)"
             >
               <span className="sr-only">Follow us on X (Twitter)</span>
@@ -150,7 +151,7 @@ export default function Footer() {
             </Link>
             <a 
               href="mailto:safi4730358@gmail.com" 
-              className="text-gray-600 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
               aria-label="Email Contact Support"
             >
               <span className="sr-only">Email Contact Support</span>
@@ -158,7 +159,7 @@ export default function Footer() {
             </a>
             <a 
               href="tel:+1234567890" 
-              className="text-gray-600 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
               aria-label="Call Support"
             >
               <Box className="w-5 h-5" />
