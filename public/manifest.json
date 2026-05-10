@@ -1,0 +1,21 @@
+{
+  "name": "WebToolkit Pro",
+  "short_name": "WTK Pro",
+  "description": "65+ Premium Developer Tools & Expert Guides",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

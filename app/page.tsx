@@ -338,6 +338,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Detailed Technical Index - Boosting Content-Code Ratio */}
+      <section className="py-24 bg-white dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-8 tracking-tight uppercase">Master Your Technical Workflow</h2>
+              <div className="space-y-6 text-lg text-gray-500 dark:text-slate-400 leading-relaxed">
+                <p>
+                  WebToolkit Pro is more than just a collection of utilities; it is a comprehensive ecosystem designed to bridge the gap between complex engineering requirements and user-friendly interfaces. Our tools are categorized into specialized hubs to help you find exactly what you need for your daily development tasks.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+                  <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Data & Formatting</h4>
+                    <p className="text-sm">High-performance JSON formatters, SQL beautifiers, and Base64 encoders for clean data handling.</p>
+                  </div>
+                  <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">SEO & Visibility</h4>
+                    <p className="text-sm">Generate metadata, validate sitemaps, and optimize for AI search engines like Perplexity and SGE.</p>
+                  </div>
+                  <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Security & Cryptography</h4>
+                    <p className="text-sm">Generate secure passwords, RFC-compliant UUIDs, and SHA-256 hashes with zero data retention.</p>
+                  </div>
+                  <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Media & Content</h4>
+                    <p className="text-sm">Download Pinterest boards, count word density, and test social previews in real-time.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-[3rem] blur-3xl absolute inset-0 -z-10" />
+              <div className="p-12 bg-white dark:bg-slate-900 rounded-[3rem] border border-gray-100 dark:border-slate-800 shadow-2xl">
+                <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-6 uppercase">Why Content-Code Ratio Matters?</h3>
+                <p className="text-gray-500 dark:text-slate-400 leading-relaxed mb-6">
+                  In 2026, search engine algorithms prioritize "Information Gain." Sites with a healthy balance of technical utility and descriptive content rank higher because they provide both the tool and the context needed to use it effectively.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    'Improved semantic indexing for technical terms',
+                    'Higher engagement and lower bounce rates',
+                    'Better ranking for long-tail developer queries',
+                    'Enhanced authority in the AI search ecosystem'
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm font-bold text-gray-700 dark:text-slate-300">
+                      <CheckCircle className="w-5 h-5 text-blue-600" /> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Global Authority Network */}
       <section className="py-[var(--space-lg)] bg-gray-50/50 dark:bg-slate-900/50 border-t border-gray-100 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

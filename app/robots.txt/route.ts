@@ -7,7 +7,8 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://wtkpro.site/sitemap.xml`
+Sitemap: https://wtkpro.site/sitemap.xml
+Sitemap: https://wtkpro-hub.vercel.app/sitemap.xml`
 
   return new NextResponse(robots, {
     status: 200,

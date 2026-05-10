@@ -88,8 +88,10 @@ export const metadata: Metadata = {
     'MobileOptimized': '320',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'apple-mobile-web-app-title': 'WebToolkit Pro',
     'theme-color': '#2563eb',
   },
+  manifest: '/manifest.json',
 }
 
 interface RootLayoutProps {
@@ -166,7 +168,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Script>
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
         
