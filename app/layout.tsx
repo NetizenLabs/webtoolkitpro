@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'WebToolkit Pro',
+  },
   verification: {
     google: 'mDdN3EPYoUOznSZf30r9MWseEpejEY2n2l18mhlQX1k',
   },
@@ -79,6 +84,11 @@ export const metadata: Metadata = {
     'geo.region': 'US',
     'geo.placename': 'United States',
     'content-language': 'en-US',
+    'HandheldFriendly': 'True',
+    'MobileOptimized': '320',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'theme-color': '#2563eb',
   },
 }
 
@@ -96,9 +106,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="preconnect" href="https://wtkpro.site/api" />
         <link rel="dns-prefetch" href="https://wtkpro.site/api" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-        
-        {/* Priority Hints for Key Assets */}
-        <link rel="preload" href="/logo-full.png" as="image" />
         
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
         
@@ -157,10 +164,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `}
         </Script>
-        {/* AdSense Script - afterInteractive captures impressions fast without blocking FCP */}
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           crossOrigin="anonymous"
         />
         

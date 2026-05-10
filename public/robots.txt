@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /_next/
-Disallow: /404/
 
 Sitemap: https://wtkpro.site/sitemap.xml

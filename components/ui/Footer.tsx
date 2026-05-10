@@ -47,10 +47,25 @@ export default function Footer() {
                 WebToolkit<span className="text-blue-500">Pro</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed font-medium">
+            <p className="text-sm leading-relaxed font-medium mb-6">
               Premium online tools for web developers and designers. 
               Secure, fast, and professional-grade engineering utilities.
             </p>
+            <div className="opacity-60 hover:opacity-100 transition-opacity">
+              <a 
+                href="https://www.producthunt.com/products/webtoolkit-pro?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-webtoolkit-pro" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light" 
+                  alt="Product Hunt Featured" 
+                  width="180" 
+                  height="39" 
+                  className="grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -64,17 +79,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Navigation</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/tools/" className="hover:text-blue-400 transition-colors">All Tools</Link></li>
-              <li><Link href="/blog/" className="hover:text-blue-400 transition-colors">Technical Blog</Link></li>
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Global Network</h3>
+            <ul className="space-y-4 text-sm font-medium text-gray-500">
+              <li><a href="https://www.severancecalculator.xyz/" target="_blank" className="hover:text-amber-400 transition-colors">Severance Pay Lab</a></li>
+              <li><a href="https://www.severancecalculator.xyz/uae-gratuity-calculator/" target="_blank" className="hover:text-amber-400 transition-colors">UAE Gratuity Tool</a></li>
+              <li><a href="https://wtkpro-hub.vercel.app/" target="_blank" className="hover:text-blue-400 transition-colors">Satellite Hub Index</a></li>
               <li><Link href="/about/" className="hover:text-blue-400 transition-colors">Our Mission</Link></li>
-              <li><Link href="/contact/" className="hover:text-blue-400 transition-colors">Get in Touch</Link></li>
             </ul>
           </div>
 
           <div className="bg-slate-900/50 p-8 rounded-3xl border border-slate-800">
-            <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-xs">Developer Newsletter</h4>
+            <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-xs">Developer Newsletter</h3>
             <p className="text-xs text-gray-500 mb-6 leading-relaxed font-medium">
               Get the latest tools and technical SEO updates in your inbox.
             </p>
@@ -110,7 +125,7 @@ export default function Footer() {
             <Link 
               href="https://github.com/webtoolkit-pro" 
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="text-gray-600 hover:text-white transition-colors"
               aria-label="GitHub Organization"
             >
@@ -119,19 +134,26 @@ export default function Footer() {
             <Link 
               href="https://x.com/WebToolkitPro" 
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="text-gray-600 hover:text-white transition-colors"
               aria-label="Follow us on X (Twitter)"
             >
               <Twitter className="w-5 h-5" />
             </Link>
-            <Link 
-              href="mailto:contact@wtkpro.site" 
+            <a 
+              href="mailto:safi4730358@gmail.com" 
               className="text-gray-600 hover:text-white transition-colors"
               aria-label="Email Contact Support"
             >
               <Mail className="w-5 h-5" />
-            </Link>
+            </a>
+            <a 
+              href="tel:+1234567890" 
+              className="text-gray-600 hover:text-white transition-colors"
+              aria-label="Call Support"
+            >
+              <Box className="w-5 h-5" />
+            </a>
           </div>
         </div>
 

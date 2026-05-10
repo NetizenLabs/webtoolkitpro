@@ -120,10 +120,13 @@ export default function ContactPage() {
           </form>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 dark:text-slate-400 flex items-center justify-center gap-2 font-medium">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8">
+          <a href="mailto:safi4730358@gmail.com" className="text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 font-medium transition-colors">
             <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" /> safi4730358@gmail.com
-          </p>
+          </a>
+          <a href="tel:+1234567890" className="text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 font-medium transition-colors">
+            <MessageSquare className="w-5 h-5 text-blue-600 dark:text-blue-400" /> +1 (234) 567-890
+          </a>
         </div>
       </div>
     </div>
