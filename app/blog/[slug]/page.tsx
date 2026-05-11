@@ -150,11 +150,11 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#4A6080] font-mono">{post.readTime}</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 leading-tight tracking-tighter">
             {post.title}
           </h1>
 
-          <p className="text-xl text-[#8A9BBE] leading-relaxed mb-10 max-w-3xl">
+          <p className="text-xl text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-10 max-w-3xl">
             {post.description}
           </p>
 
@@ -190,15 +190,15 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Article Content */}
         <div
           className="prose prose-lg dark:prose-invert max-w-none
-            prose-headings:font-bold prose-headings:text-white prose-headings:tracking-tight
+            prose-headings:font-bold prose-headings:text-[#1E2D47] dark:prose-headings:text-white prose-headings:tracking-tight
             prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:pt-8 prose-h2:border-t prose-h2:border-[#1E2D47]/50
             prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
-            prose-p:text-[#8A9BBE] prose-p:leading-relaxed prose-p:mb-6
+            prose-p:text-gray-600 dark:prose-p:text-[#8A9BBE] prose-p:leading-relaxed prose-p:mb-6
             prose-a:text-[#00D4B4] prose-a:font-bold prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-white
+            prose-strong:text-[#1E2D47] dark:prose-strong:text-white
             prose-code:bg-[#0D1526] prose-code:px-2 prose-code:py-0.5 prose-code:rounded-[4px] prose-code:text-sm prose-code:text-[#00D4B4] prose-code:before:content-none prose-code:after:content-none
             prose-pre:bg-[#0B1120] prose-pre:text-white prose-pre:rounded-[12px] prose-pre:border prose-pre:border-[#1E2D47] prose-pre:p-6
-            prose-ul:text-[#8A9BBE] prose-ol:text-[#8A9BBE]
+            prose-ul:text-gray-600 dark:prose-ul:text-[#8A9BBE] prose-ol:text-gray-600 dark:prose-ol:text-[#8A9BBE]
             prose-li:mb-2
             prose-blockquote:border-l-[#00D4B4] prose-blockquote:bg-[#00D4B4]/5 prose-blockquote:rounded-r-[12px] prose-blockquote:py-2 prose-blockquote:italic
             prose-img:rounded-[12px] prose-img:border prose-img:border-[#1E2D47]"
@@ -222,8 +222,8 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
               <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold text-white mb-2">WTK Engineering Journal</h3>
-                <p className="text-sm text-[#8A9BBE] max-w-md font-medium leading-relaxed">
+                <h3 className="text-xl font-bold text-[#1E2D47] dark:text-white mb-2">WTK Engineering Journal</h3>
+                <p className="text-sm text-gray-600 dark:text-[#8A9BBE] max-w-md font-medium leading-relaxed">
                   Peer-reviewed technical research from our core engineering lab. For research inquiries or feedback.
                 </p>
                 <div className="flex items-center justify-center md:justify-start gap-6 mt-6">
@@ -248,7 +248,7 @@ export default async function BlogPostPage({ params }: Props) {
         {relatedPosts.length > 0 && (
           <section className="mt-24 pt-16 border-t border-[#1E2D47]" aria-label="Related articles">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold text-white tracking-tight">Further Reading</h2>
+              <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white tracking-tight">Further Reading</h2>
               <Link href="/blog/" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Journal Entries →</Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -262,7 +262,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <span className={`text-[9px] font-bold font-mono px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-[#0B1120] text-[#8A9BBE]'}`}>
                       {related.category}
                     </span>
-                    <h3 className="text-base font-bold text-white mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
+                    <h3 className="text-base font-bold text-[#1E2D47] dark:text-white mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
                       {related.title}
                     </h3>
                     <span className="text-[9px] font-mono uppercase font-bold tracking-widest text-[#4A6080]">{related.readTime}</span>

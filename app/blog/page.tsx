@@ -51,10 +51,10 @@ export default function BlogPage() {
           <span className="inline-block px-4 py-1.5 bg-[#00D4B4]/10 text-[#00D4B4] text-[10px] font-bold font-mono uppercase tracking-[0.2em] rounded-full mb-4 border border-[#00D4B4]/20">
             📝 Engineering Blog
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tighter">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
             Technical Guides & <span className="text-[#00D4B4]">Studies</span>
           </h1>
-          <p className="text-lg text-[#8A9BBE] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-[#8A9BBE] max-w-2xl mx-auto leading-relaxed">
             Expert web development insights to level up your skills. From security research to CSS architecture.
           </p>
         </div>
@@ -83,12 +83,12 @@ export default function BlogPage() {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
+                <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
                   {post.title}
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow relative z-10">
+                <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-8 flex-grow relative z-10">
                   {post.description}
                 </p>
 
@@ -114,8 +114,8 @@ export default function BlogPage() {
         <section className="mt-24 pt-16 border-t border-[#1E2D47]">
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Engineering Whitepapers</h2>
-              <p className="text-[#8A9BBE] font-medium">Original technical research for modern web architects.</p>
+              <h2 className="text-3xl font-bold text-[#1E2D47] dark:text-white mb-4 tracking-tight">Engineering Whitepapers</h2>
+              <p className="text-gray-600 dark:text-[#8A9BBE] font-medium">Original technical research for modern web architects.</p>
             </div>
             <Link href="/about/" className="text-[#00D4B4] font-bold text-[10px] uppercase tracking-widest hover:underline font-mono">Our Research Lab →</Link>
           </div>
@@ -135,7 +135,7 @@ export default function BlogPage() {
                 className="p-6 bg-[#0D1526] border border-[#1E2D47] rounded-[12px] hover:border-[#00D4B4]/30 transition-all group text-center"
               >
                 <div className="text-[9px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-3 opacity-60 font-mono">Research</div>
-                <h3 className="text-xs font-bold text-white group-hover:text-[#00D4B4] transition-colors leading-tight">{study.title}</h3>
+                <h3 className="text-xs font-bold text-[#1E2D47] dark:text-white group-hover:text-[#00D4B4] transition-colors leading-tight">{study.title}</h3>
               </Link>
             ))}
           </div>

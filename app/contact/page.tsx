@@ -59,8 +59,12 @@ export default function ContactPage() {
   return (
     <div className="dynamic-padding max-w-4xl mx-auto min-h-screen">
       <div className="text-center mb-16 pt-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tighter">Contact Engineering</h1>
-        <p className="text-lg text-[#8A9BBE]">Have a question, suggestion, or found a bug? We&apos;d love to hear from you.</p>
+        <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
+          Connect with <span className="text-[#00D4B4]">Us</span>
+        </h1>
+        <p className="text-xl text-gray-600 dark:text-[#8A9BBE] max-w-3xl mx-auto leading-relaxed">
+          Have a question about our engineering lab or need to report a technical issue? Our team is ready to assist.
+        </p>
       </div>
 
       <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 md:p-12 shadow-xl shadow-blue-500/5 relative overflow-hidden">
@@ -69,7 +73,7 @@ export default function ContactPage() {
         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="text-[10px] font-bold text-white mb-3 block uppercase tracking-widest font-mono">Your Name</label>
+              <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Your Name</label>
               <input 
                 required
                 name="name"
@@ -79,7 +83,7 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold text-white mb-3 block uppercase tracking-widest font-mono">Email Address</label>
+              <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Email Address</label>
               <input 
                 required
                 name="email"
@@ -90,7 +94,7 @@ export default function ContactPage() {
             </div>
           </div>
           <div>
-            <label className="text-[10px] font-bold text-white mb-3 block uppercase tracking-widest font-mono">Subject</label>
+            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Subject</label>
             <input 
               required
               name="subject"
@@ -100,7 +104,7 @@ export default function ContactPage() {
             />
           </div>
           <div>
-            <label className="text-[10px] font-bold text-white mb-3 block uppercase tracking-widest font-mono">Message</label>
+            <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white mb-3 block uppercase tracking-widest font-mono">Message</label>
             <textarea 
               required
               name="message"
@@ -137,17 +141,17 @@ export default function ContactPage() {
 
       {/* FAQ Section */}
       <section className="mt-24 border-t border-[#1E2D47] pt-16">
-        <h2 className="text-2xl font-bold text-white mb-12 text-center tracking-tight">Technical Support FAQ</h2>
+        <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-12 text-center tracking-tight">Technical Support FAQ</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">Security Standards</h3>
-            <p className="text-sm text-[#8A9BBE] leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
               All WebToolkit Pro utilities process data entirely within your local browser memory. We never transmit sensitive inputs—such as passwords, API keys, or JSON data—to our servers. Your data stays on your machine, exactly where it belongs.
             </p>
           </div>
-          <div>
-            <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">API & Rate Limits</h3>
-            <p className="text-sm text-[#8A9BBE] leading-relaxed">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-4 tracking-tight uppercase">High-Availability Infrastructure</h2>
+            <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
               Since our tools run client-side, there are no artificial API limits or throttling. You can use our formatters, encoders, and auditors as often as needed without ever hitting a quota or requiring a subscription.
             </p>
           </div>
