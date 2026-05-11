@@ -71,8 +71,18 @@ export default function Footer() {
               <li><Link href="/blog/seo-meta-tags-complete-guide/" className="hover:text-[#00D4B4] transition-colors text-xs">SEO Meta Tags Guide</Link></li>
               <li><Link href="/blog/geo-optimization-guide/" className="hover:text-[#00D4B4] transition-colors text-xs">GEO Optimization</Link></li>
               <li><Link href="/blog/llm-latency-ux-impact/" className="hover:text-[#00D4B4] transition-colors text-xs">LLM Latency Study</Link></li>
-              <li><Link href="/blog/modern-css-architecture/" className="hover:text-[#00D4B4] transition-colors text-xs">Modern CSS Guide</Link></li>
               <li><Link href="/about/" className="hover:text-[#00D4B4] transition-colors text-xs">About WTK Pro</Link></li>
+              <li><Link href="/author/" className="hover:text-[#00D4B4] transition-colors text-xs text-[#00D4B4]">Author Profile</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-[10px] font-mono">Our Network</h3>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><a href="https://www.severancecalculator.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Severance Calculator</a></li>
+              <li><a href="https://wtkpro.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Satellite Authority</a></li>
+              <li><a href="https://github.com/abusufyan-netizen" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Portfolio Lab</a></li>
+              <li><Link href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors text-xs">Partner With Us</Link></li>
             </ul>
           </div>
 
@@ -122,7 +132,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#8A9BBE]">
-            © {new Date().getFullYear()} WebToolkit Pro • Built for Engineers
+            © {new Date().getFullYear()} WebToolkit Pro • Built by <Link href="/author/" className="text-white hover:text-[#00D4B4] transition-colors">Abu Sufyan</Link>
           </p>
         </div>
       </div>
