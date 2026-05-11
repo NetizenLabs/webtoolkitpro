@@ -107,14 +107,14 @@ export default function Home() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="card-premium p-8 group flex flex-col items-start"
+                className="bg-[#0D1526] border border-[#1E2D47] rounded-[12px] p-8 group flex flex-col items-start hover:border-[#00D4B4]/50 transition-all duration-300"
               >
-                <div className={`w-14 h-14 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <tool.icon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[10px] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
+                  <tool.icon className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">{tool.name}</h3>
-                <span className="text-sm text-blue-600 dark:text-blue-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
-                  Try it free <ArrowRight className="w-4 h-4" />
+                <h3 className="text-xl font-bold text-white mb-2">{tool.name}</h3>
+                <span className="text-xs font-mono text-[#00D4B4] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+                  Try it free <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                 </span>
               </Link>
             ))}
@@ -129,20 +129,22 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950">
+      <section className="py-[var(--space-lg)] bg-[#0B1120]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white mb-16">Designed for Professionals</h2>
+          <h2 className="text-[var(--font-size-3xl)] font-bold text-white mb-16 tracking-tight">Designed for Professionals</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: 'Lightning Fast', desc: 'All tools run client-side. Zero server delays. Instant results.', emoji: '⚡' },
-              { title: 'Privacy First', desc: 'Your data never leaves your browser. 100% secure processing.', emoji: '🔒' },
-              { title: 'Enterprise Quality', desc: 'Expert-grade utilities for professional engineering workflows.', emoji: '💎' },
+              { title: 'Lightning Fast', desc: 'All tools run client-side. Zero server delays. Instant results.', icon: Zap },
+              { title: 'Privacy First', desc: 'Your data never leaves your browser. 100% secure processing.', icon: Shield },
+              { title: 'Enterprise Quality', desc: 'Expert-grade utilities for professional engineering workflows.', icon: Star },
             ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center group p-8 rounded-[2rem] hover:bg-gray-50 dark:hover:bg-slate-900/50 transition-colors">
-                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">{item.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{item.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed font-medium">{item.desc}</p>
+              <div key={item.title} className="flex flex-col items-center group p-8 rounded-[12px] bg-[#0D1526] border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 text-[#00D4B4]" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{item.title}</h3>
+                <p className="text-sm text-[#8A9BBE] leading-relaxed font-medium">{item.desc}</p>
               </div>
             ))}
           </div>

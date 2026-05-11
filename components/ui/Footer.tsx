@@ -137,7 +137,7 @@ export default function Footer() {
               aria-label="GitHub Organization"
             >
               <span className="sr-only">GitHub Organization</span>
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5" strokeWidth={1.5} />
             </Link>
             <Link 
               href="https://x.com/WebToolkitPro" 
@@ -147,7 +147,7 @@ export default function Footer() {
               aria-label="Follow us on X (Twitter)"
             >
               <span className="sr-only">Follow us on X (Twitter)</span>
-              <Twitter className="w-5 h-5" />
+              <Twitter className="w-5 h-5" strokeWidth={1.5} />
             </Link>
             <a 
               href="mailto:safi4730358@gmail.com" 
@@ -155,7 +155,7 @@ export default function Footer() {
               aria-label="Email Contact Support"
             >
               <span className="sr-only">Email Contact Support</span>
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5" strokeWidth={1.5} />
             </a>
             <a 
               href="tel:+1234567890" 
