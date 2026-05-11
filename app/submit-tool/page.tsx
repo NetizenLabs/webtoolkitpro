@@ -1,18 +1,31 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Send, Sparkles, MessageSquare, Code2, ShieldCheck, CheckCircle2, Zap } from 'lucide-react'
+import { Send, Sparkles, MessageSquare, Code2, ShieldCheck, CheckCircle2, Zap, Copy } from 'lucide-react'
 import { triggerSuccess } from '@/lib/effects'
 
 export default function SubmitToolPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
+  const [submissionId, setSubmissionId] = useState('')
+
+  const generateSubmissionId = () => {
+    return `WTK-${Math.random().toString(36).substring(2, 7).toUpperCase()}`
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('submitting')
     
+    const newId = generateSubmissionId()
+    setSubmissionId(newId)
+    
     try {
-      const formData = new FormData(e.target as HTMLFormElement)
+      const formElement = e.target as HTMLFormElement
+      const formData = new FormData(formElement)
+      
+      // Add submission ID to the form data for Formspree
+      formData.append('submission_id', newId)
+      
       const response = await fetch('https://formspree.io/f/safi4730358@gmail.com', {
         method: 'POST',
         body: formData,
@@ -42,9 +55,27 @@ export default function SubmitToolPage() {
             <CheckCircle2 className="w-10 h-10 text-[#00D4B4]" />
           </div>
           <h2 className="text-3xl font-bold text-[#1E2D47] dark:text-white mb-4 tracking-tighter uppercase">Idea Received!</h2>
-          <p className="text-gray-600 dark:text-[#8A9BBE] mb-8 font-medium leading-relaxed">
-            Your concept has been submitted to our research lab. We'll review the technical feasibility and reach out if it's a match!
+          <p className="text-gray-600 dark:text-[#8A9BBE] mb-6 font-medium leading-relaxed">
+            Your concept has been submitted to our research lab. We&apos;ll review the technical feasibility and reach out if it&apos;s a match!
           </p>
+
+          <div className="bg-[#0B1120] border border-[#1E2D47] rounded-[12px] p-4 mb-8 flex items-center justify-between group hover:border-[#00D4B4]/30 transition-all">
+            <div className="text-left">
+              <span className="text-[10px] font-bold text-[#4A6080] uppercase tracking-widest block mb-1">Tracking ID</span>
+              <span className="text-white font-mono font-bold tracking-wider">{submissionId}</span>
+            </div>
+            <button 
+              onClick={() => {
+                navigator.clipboard.writeText(submissionId)
+                // Optional: add a "Copied" toast here if you want
+              }}
+              className="p-2 text-[#4A6080] hover:text-[#00D4B4] transition-colors"
+              title="Copy ID"
+            >
+              <Copy className="w-4 h-4" />
+            </button>
+          </div>
+
           <button 
             onClick={() => setStatus('idle')}
             className="w-full py-4 bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-[12px] font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-blue-500/10"
@@ -147,6 +178,8 @@ export default function SubmitToolPage() {
       </div>
     </div>
   )
+}
+
 }
 
 
