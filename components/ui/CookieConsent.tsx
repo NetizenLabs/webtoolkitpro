@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { Shield } from 'lucide-react'
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
@@ -49,27 +50,26 @@ export default function CookieConsent() {
       className="fixed bottom-6 left-6 right-6 sm:left-auto sm:max-w-sm z-[200] transition-all duration-500 transform translate-y-0"
       style={{ animation: 'fadeIn 0.5s ease-out' }}
     >
-      <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-[2rem] shadow-2xl p-6 flex flex-col gap-5 ring-1 ring-black/5">
+      <div className="bg-[#0D1526] border border-[#1E2D47] rounded-[12px] shadow-2xl p-8 flex flex-col gap-6 ring-1 ring-[#00D4B4]/10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center shrink-0">
-             <span className="text-xl">🍪</span>
+          <div className="w-10 h-10 bg-[#00D4B4]/10 rounded-full flex items-center justify-center shrink-0">
+             <Shield className="w-5 h-5 text-[#00D4B4]" strokeWidth={1.5} />
           </div>
-          <h3 className="font-bold text-gray-900 dark:text-white text-sm uppercase tracking-widest">Privacy Preference</h3>
+          <h3 className="font-bold text-white text-xs uppercase tracking-[0.15em]">Privacy Preferences</h3>
         </div>
-        <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed font-medium">
-          We use cookies to enhance your experience and serve relevant ads via Google AdSense. 
-          Read our <Link href="/privacy/" className="text-blue-600 dark:text-blue-400 font-bold underline">Privacy Policy</Link>.
+        <p className="text-sm text-[#8A9BBE] leading-relaxed">
+          We use cookies to enhance your experience. Read our <Link href="/privacy/" className="text-[#00D4B4] font-bold hover:underline">Privacy Policy</Link>.
         </p>
-        <div className="flex gap-3">
+        <div className="flex gap-3 pt-2">
           <button
             onClick={decline}
-            className="flex-1 px-4 py-3 text-xs font-bold text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+            className="flex-1 px-4 py-3 text-xs font-bold text-[#8A9BBE] bg-[#0B1120] border border-[#1E2D47] rounded-[12px] hover:bg-[#152035] transition-colors"
           >
             Decline
           </button>
           <button
             onClick={accept}
-            className="flex-1 px-4 py-3 text-xs font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20 active:scale-95"
+            className="flex-1 px-4 py-3 text-xs font-bold text-[#0B1120] bg-gradient-to-r from-[#00D4B4] to-[#0094FF] rounded-[12px] hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10 active:scale-95"
           >
             Accept
           </button>
@@ -78,3 +78,4 @@ export default function CookieConsent() {
     </div>
   )
 }
+

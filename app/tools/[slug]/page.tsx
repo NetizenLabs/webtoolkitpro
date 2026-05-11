@@ -64,7 +64,7 @@ export default function ToolPage({ params }: ToolPageProps) {
   const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <div className="min-h-screen bg-[#0B1120] py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name={tool.name} slug={tool.slug} category={tool.category} />
       <ToolUsageTracker />
       
@@ -84,34 +84,26 @@ export default function ToolPage({ params }: ToolPageProps) {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Main Content Area */}
           <div className="flex-grow max-w-5xl">
-            <div className="flex items-center gap-4 mb-12">
-              <div className="p-4 bg-blue-600 rounded-2xl shadow-lg shadow-blue-600/20">
-                <IconComponent className="w-8 h-8 text-white" />
+            <div className="flex items-center gap-6 mb-12">
+              <div 
+                className="w-16 h-16 rounded-[12px] flex items-center justify-center shrink-0 shadow-xl shadow-blue-500/10"
+                style={{ background: 'linear-gradient(135deg, #00D4B4 0%, #0094FF 100%)' }}
+              >
+                <IconComponent className="w-8 h-8 text-[#0B1120]" strokeWidth={1.5} />
               </div>
               <div>
-                <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+                <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
                   {tool.content.title || tool.name}
                 </h1>
-                <p className="text-gray-500 dark:text-slate-400">
+                <p className="text-[#8A9BBE] font-medium">
                   {tool.function.primary} {tool.function.secondary ? `• ${tool.function.secondary}` : ''}
                 </p>
-                <Link href={`/tools/category/${categorySlug}`} className="inline-flex items-center gap-1.5 text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-2 hover:underline">
-                  Part of the {tool.category} Suite <ArrowRight className="w-3 h-3" />
+                <Link href={`/tools/category/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all">
+                  {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
                 </Link>
               </div>
             </div>
 
-            {/* TL;DR Hook Section */}
-            {tool.content.tldr && (
-              <div className="mb-12 p-1 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-in fade-in slide-in-from-top-4 duration-1000">
-                <div className="bg-white dark:bg-slate-900 rounded-[calc(1.5rem-1px)] p-6 md:p-8 flex items-start gap-6">
-                  <div className="w-12 h-12 shrink-0 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center">
-                    <Icons.Zap className="w-6 h-6 text-blue-600 animate-pulse" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mb-2">TL;DR / Quick Summary</div>
-                    <p className="text-xl font-bold text-gray-900 dark:text-white leading-tight italic">
-                      "{tool.content.tldr}"
                     </p>
                   </div>
                 </div>

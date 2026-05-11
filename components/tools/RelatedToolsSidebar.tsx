@@ -13,10 +13,10 @@ export default function RelatedToolsSidebar({ relatedTools }: RelatedToolsSideba
   if (relatedTools.length === 0) return null
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-sm">
-      <div className="flex items-center gap-2 mb-6">
-        <Zap className="w-5 h-5 text-blue-600" />
-        <h3 className="font-bold text-gray-900 dark:text-white uppercase tracking-tight text-sm">Related Utilities</h3>
+    <div className="bg-[#0D1526] p-8 rounded-[12px] border border-[#1E2D47] shadow-xl">
+      <div className="flex items-center gap-3 mb-8">
+        <Zap className="w-5 h-5 text-[#00D4B4]" strokeWidth={1.5} />
+        <h3 className="font-bold text-white uppercase tracking-[0.1em] text-xs">Related Utilities</h3>
       </div>
       
       <div className="space-y-4">
@@ -26,15 +26,15 @@ export default function RelatedToolsSidebar({ relatedTools }: RelatedToolsSideba
             href={`/tools/${tool.slug}/`}
             className="block group"
           >
-            <div className="p-4 rounded-2xl hover:bg-blue-50 dark:hover:bg-blue-900/10 border border-transparent hover:border-blue-100 dark:hover:border-blue-800 transition-all">
-              <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 text-sm mb-1 transition-colors">
+            <div className="p-5 rounded-[12px] bg-[#0B1120] border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all">
+              <h4 className="font-bold text-white group-hover:text-[#00D4B4] text-sm mb-1 transition-colors">
                 {tool.name}
               </h4>
-              <p className="text-xs text-gray-500 dark:text-slate-400 line-clamp-1">
+              <p className="text-xs text-[#8A9BBE] line-clamp-1 leading-relaxed">
                 {tool.content.description}
               </p>
-              <div className="mt-3 flex items-center gap-1 text-[10px] font-bold text-blue-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
-                Launch <ArrowRight className="w-3 h-3" />
+              <div className="mt-3 flex items-center gap-1 text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
+                Launch Tool <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
               </div>
             </div>
           </Link>
@@ -43,3 +43,4 @@ export default function RelatedToolsSidebar({ relatedTools }: RelatedToolsSideba
     </div>
   )
 }
+

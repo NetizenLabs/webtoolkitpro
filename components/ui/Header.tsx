@@ -28,8 +28,8 @@ export default function Header() {
 
   return (
     <header 
-      className={`bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 sticky top-0 z-[100] h-20 transition-all duration-300 ${
-        scrolled ? 'shadow-md' : ''
+      className={`bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-md border-b border-gray-100 dark:border-[#1E2D47] sticky top-0 z-[100] h-20 transition-all duration-300 ${
+        scrolled ? 'shadow-md shadow-blue-500/5' : ''
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
@@ -48,29 +48,29 @@ export default function Header() {
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className={isCTA 
-                    ? "text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 border-2 border-blue-600/20 dark:border-blue-400/20 px-5 py-2.5 rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-950 transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                    : "text-xs font-black uppercase tracking-widest text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 relative group outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
-                  }
+                  className={`text-sm font-bold uppercase tracking-widest transition-all hover:scale-105 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md px-3 py-2 ${
+                    isCTA 
+                      ? 'bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-lg px-5 py-2.5 shadow-lg shadow-blue-500/10' 
+                      : 'text-gray-600 dark:text-[#8A9BBE] hover:text-blue-600 dark:hover:text-[#00D4B4]'
+                  }`}
                 >
                   {link.name}
-                  {!isCTA && (
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                  )}
                 </Link>
-              );
+              )
             })}
-            <div className="w-px h-6 bg-gray-100 dark:bg-slate-800 mx-2" />
+            
+            <div className="h-6 w-px bg-gray-100 dark:bg-[#1E2D47]" />
             <ThemeToggle />
           </nav>
 
-          {/* Mobile Right Section */}
-          <div className="flex items-center gap-4 md:hidden">
+          {/* Mobile Toggle */}
+          <div className="md:hidden flex items-center gap-4">
             <ThemeToggle />
-            <button 
-              className="p-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-2xl transition-colors border border-gray-100 dark:border-slate-800 active:scale-90 outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            <button
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
+              className="p-2 rounded-lg text-gray-600 dark:text-[#8A9BBE] hover:bg-gray-100 dark:hover:bg-[#0D1526] focus:outline-none focus:ring-2 focus:ring-[#00D4B4] transition-all"
+              aria-expanded={isOpen}
+              aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <X className="w-6 h-6" strokeWidth={1.5} /> : <Menu className="w-6 h-6" strokeWidth={1.5} />}
             </button>
@@ -80,7 +80,7 @@ export default function Header() {
 
       {/* Mobile Nav Overlay */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-950 border-b border-gray-100 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-blue-900/10 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#0D1526] border-b border-gray-100 dark:border-[#1E2D47] shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
           isOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >
@@ -90,26 +90,19 @@ export default function Header() {
               key={link.name}
               href={link.href} 
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-between text-[var(--font-size-xl)] font-black text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 p-5 rounded-[2rem] hover:bg-gray-50 dark:hover:bg-slate-900 transition-all"
+              className="flex items-center justify-between text-lg font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] p-5 rounded-[12px] hover:bg-gray-50 dark:hover:bg-[#0B1120] transition-all"
             >
               {link.name}
-              <ChevronRight className="w-6 h-6 text-gray-300 dark:text-slate-700" />
+              <ChevronRight className="w-6 h-6 text-gray-300 dark:text-[#4A6080]" strokeWidth={1.5} />
             </Link>
           ))}
-          <div className="mt-4 pt-6 border-t border-gray-50 dark:border-slate-900 space-y-4">
-            <Link 
-              href="/submit-tool/" 
-              onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-5 rounded-[2rem] text-lg font-bold bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800"
-            >
-              Submit a Tool Idea
-            </Link>
+          <div className="mt-4 pt-6 border-t border-gray-100 dark:border-[#1E2D47] space-y-4">
             <Link 
               href="/tools/" 
               onClick={() => setIsOpen(false)}
-              className="btn-primary w-full py-5 rounded-[2rem] text-lg uppercase tracking-widest"
+              className="w-full py-5 rounded-[12px] text-lg font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] flex items-center justify-center shadow-xl shadow-blue-500/10"
             >
-              Start Building Now
+              Explore All Tools
             </Link>
           </div>
         </nav>
