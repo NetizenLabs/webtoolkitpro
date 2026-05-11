@@ -64,7 +64,7 @@ export default function ToolPage({ params }: ToolPageProps) {
   const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
 
   return (
-    <div className="min-h-screen bg-[#0B1120] py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <BreadcrumbSchema name={tool.name} slug={tool.slug} category={tool.category} />
       <ToolUsageTracker />
       

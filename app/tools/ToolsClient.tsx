@@ -90,7 +90,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
   ]
 
   return (
-    <div className="dynamic-padding max-w-[1400px] mx-auto min-h-screen bg-[#0B1120]">
+    <div className="dynamic-padding max-w-[1400px] mx-auto min-h-screen">
       <div className="text-center mb-16 pt-12">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tighter">
           {title || 'Professional Developer Tools'}

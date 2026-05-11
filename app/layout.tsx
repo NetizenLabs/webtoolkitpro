@@ -189,7 +189,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           `}
         </Script>
       </head>
-      <body className={`${dmSans.variable} ${spaceMono.variable} font-sans bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 antialiased transition-colors duration-300`}>
+      <body className={`${dmSans.variable} ${spaceMono.variable} font-sans bg-white dark:bg-[#0B1120] text-gray-900 dark:text-[#F0F6FF] antialiased transition-colors duration-300`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-grow animate-in fade-in duration-700">{children}</main>

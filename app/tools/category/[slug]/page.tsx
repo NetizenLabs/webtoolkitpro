@@ -30,12 +30,12 @@ export default function CategoryPillarPage({ params }: Props) {
   const tools = getToolsByCategory(categoryName)
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <h1 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+    <main className="min-h-screen pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 pt-12">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tighter">
           {categoryName}
         </h1>
-        <p className="text-xl text-gray-500 dark:text-slate-400 max-w-3xl leading-relaxed">
+        <p className="text-lg text-[#8A9BBE] max-w-3xl leading-relaxed">
           {CATEGORY_PILLARS[params.slug].description}
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function CategoryPillarPage({ params }: Props) {
       <ToolsClient 
         initialTools={tools} 
         isSubPage={true} 
-        title={`${categoryName} Utilities`} 
+        title={`${categoryName} Suite`} 
       />
     </main>
   )
