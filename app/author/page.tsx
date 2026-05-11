@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Github, Twitter, Mail, ExternalLink, Zap, Shield, Globe, Code2 } from 'lucide-react'
+import { Github, Twitter, Mail, ExternalLink, Zap, Shield, Globe, Code2, ArrowRight } from 'lucide-react'
 
 export const metadata = {
   title: 'Abu Sufyan - Lead Engineer & Author | WebToolkit Pro',
@@ -99,8 +99,32 @@ export default function AuthorPage() {
         </div>
       </div>
 
-      {/* Stats / Badges */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+      {/* Technical Research Section */}
+      <div className="mb-20">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight mb-8">Technical Research</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              title: 'The WebToolkit Pro Trust Network',
+              desc: 'Architectural overview of the decentralized authority hub and its impact on technical E-E-A-T.',
+              href: '/blog/webtoolkit-pro-trust-network/'
+            },
+            {
+              title: 'LLM Latency & UX Impact',
+              desc: 'A deep-dive into the performance standards required for the next generation of AI-driven web apps.',
+              href: '/blog/llm-latency-ux-impact/'
+            }
+          ].map((post) => (
+            <Link key={post.href} href={post.href} className="group p-8 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl hover:border-[#00D4B4]/30 transition-all shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#00D4B4] transition-colors">{post.title}</h3>
+              <p className="text-xs text-gray-500 dark:text-[#8A9BBE] leading-relaxed font-medium mb-4">{post.desc}</p>
+              <span className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
+                Read Publication <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
         {[
           { label: 'Core Tools', val: '65+', icon: Code2 },
           { label: 'Uptime', val: '99.99%', icon: Globe },

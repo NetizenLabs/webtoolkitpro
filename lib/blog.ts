@@ -23,6 +23,15 @@ const INTERNAL_LINKS = [
   { keyword: 'JS Frameworks', url: '/blog/enterprise-js-frameworks/' },
   { keyword: 'technical SEO', url: '/blog/ai-seo-optimization-2026/' },
   { keyword: 'structured data', url: '/blog/seo-meta-tags-complete-guide/' },
+  { keyword: 'RegEx Tester', url: '/tools/regex-tester/' },
+  { keyword: 'Regular Expressions', url: '/tools/regex-tester/' },
+  { keyword: 'JWT Decoder', url: '/tools/jwt-decoder/' },
+  { keyword: 'JSON Web Tokens', url: '/tools/jwt-decoder/' },
+  { keyword: 'Cron Generator', url: '/tools/cron-generator/' },
+  { keyword: 'crontab', url: '/tools/cron-generator/' },
+  { keyword: 'DEVHUB INDEX', url: 'https://devhubindex.vercel.app/' },
+  { keyword: 'Abu Sufyan', url: 'https://abusufyan.xyz' },
+  { keyword: 'Trust Network', url: '/blog/webtoolkit-pro-trust-network/' },
 ]
 
 function applySmartLinks(htmlString: string): string {

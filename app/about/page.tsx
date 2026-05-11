@@ -71,22 +71,40 @@ export default function AboutPage() {
         ))}
       </div>
 
-      {/* Why Free Section */}
-      <div className="bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] p-10 mb-20 relative overflow-hidden">
-        <div className="relative z-10 max-w-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tight">Zero-Trust Architecture</h2>
-              <p className="text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-6 font-medium">
-                We operate on a "Zero-Knowledge" principle. All processing happens locally in your browser using Client-Side Web Workers. Your API keys, sensitive strings, and code snippets never touch our servers.
-              </p>
-              <p className="text-gray-600 dark:text-[#8A9BBE] leading-relaxed font-medium">
-                This allows us to keep the lights on without ever charging you a subscription fee or selling your data to third parties.
-              </p>
+      {/* Trust Network Section */}
+      <div className="mb-20">
+        <div className="flex items-center gap-4 mb-10">
+          <h2 className="text-2xl font-bold tracking-tight text-white shrink-0">The Trust Network</h2>
+          <div className="flex-grow h-px bg-[#1E2D47]"></div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-8 bg-[#0D1526] border border-[#1E2D47] rounded-3xl relative group overflow-hidden">
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Sparkles className="w-12 h-12 text-[#00D4B4]" />
             </div>
+            <h3 className="text-lg font-bold text-white mb-3">DEVHUB INDEX</h3>
+            <p className="text-sm text-[#8A9BBE] leading-relaxed mb-6 font-medium">
+              Our high-velocity satellite hub dedicated to indexing technical documentation, API references, and emerging developer resources.
+            </p>
+            <a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all">
+              Explore Node <Globe2 className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="p-8 bg-[#0D1526] border border-[#1E2D47] rounded-3xl relative group overflow-hidden">
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Coffee className="w-12 h-12 text-[#0094FF]" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-3">Engineering Leadership</h3>
+            <p className="text-sm text-[#8A9BBE] leading-relaxed mb-6 font-medium">
+              Founded and architected by <a href="https://abusufyan.xyz" className="text-white hover:text-[#00D4B4] transition-colors">Abu Sufyan</a>, WebToolkit Pro follows a strict standard of engineering excellence and privacy-first design.
+            </p>
+            <Link href="/author/" className="inline-flex items-center gap-2 text-xs font-bold text-[#0094FF] uppercase tracking-widest hover:gap-3 transition-all">
+              Author Profile <Users className="w-4 h-4" />
+            </Link>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
       </div>
 
       {/* CTA */}
