@@ -80,8 +80,8 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-[10px] font-mono">Our Network</h3>
             <ul className="space-y-4 text-sm font-medium">
               <li><a href="https://www.severancecalculator.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Severance Calculator</a></li>
-              <li><a href="https://wtkpro.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Satellite Authority</a></li>
-              <li><a href="https://github.com/abusufyan-netizen" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Portfolio Lab</a></li>
+              <li><a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">DEVHUB INDEX</a></li>
+              <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors text-xs">Personal Portfolio</a></li>
               <li><Link href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors text-xs">Partner With Us</Link></li>
             </ul>
           </div>

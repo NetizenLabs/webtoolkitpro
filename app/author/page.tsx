@@ -25,6 +25,9 @@ export default function AuthorPage() {
           Lead Architect & System Designer
         </p>
         <div className="flex justify-center gap-4 mb-12">
+          <a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] text-gray-500 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all shadow-sm">
+            <ExternalLink className="w-5 h-5" />
+          </a>
           <a href="https://github.com/abusufyan-netizen" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] text-gray-500 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all shadow-sm">
             <Github className="w-5 h-5" />
           </a>
@@ -79,17 +82,17 @@ export default function AuthorPage() {
                 </div>
                 <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Global Labor Law Engine</p>
               </a>
-              <a href="https://wtkpro.xyz/" target="_blank" rel="noopener noreferrer" className="group block">
+              <a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="group block">
                 <div className="flex items-center justify-between text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors mb-1 font-bold">
-                  Satellite Hub <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
+                  DEVHUB INDEX <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
                 </div>
-                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Authority Link Resource</p>
+                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Enterprise Authority Hub</p>
               </a>
-              <a href="https://github.com/abusufyan-netizen" target="_blank" rel="noopener noreferrer" className="group block">
+              <a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="group block">
                 <div className="flex items-center justify-between text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors mb-1 font-bold">
-                  Open Source <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
+                  Personal Portfolio <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
                 </div>
-                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Public Engineering Portfolio</p>
+                <p className="text-xs text-gray-500 dark:text-[#8A9BBE] font-medium">Engineering Showcase</p>
               </a>
             </div>
           </div>
