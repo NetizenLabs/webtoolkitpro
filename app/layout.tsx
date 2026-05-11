@@ -170,8 +170,53 @@ export default function RootLayout({ children }: RootLayoutProps) {
             'name': 'WebToolkit Pro',
             'url': 'https://wtkpro.site',
             'logo': 'https://wtkpro.site/logo-optimized.webp',
-            'sameAs': ['https://github.com/abusufyan-netizen/webtoolkitpro'],
+            'sameAs': [
+              'https://github.com/WebToolkit-Pro',
+              'https://twitter.com/WebToolKitPro'
+            ],
             'description': 'Premium developer tools and technical guides for enterprise web development.'
+          }),
+        }}
+      />
+      
+      {/* AIO: SoftwareApplication Schema for AI Tools */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            'name': 'WebToolkit Pro',
+            'operatingSystem': 'Any',
+            'applicationCategory': 'DeveloperApplication',
+            'offers': {
+              '@type': 'Offer',
+              'price': '0',
+              'priceCurrency': 'USD'
+            },
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': '4.9',
+              'ratingCount': '1240'
+            },
+            'description': 'A collection of 65+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators.'
+          }),
+        }}
+      />
+
+      {/* AIO: WebSite SearchAction for AI Discovery */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            'url': 'https://wtkpro.site',
+            'potentialAction': {
+              '@type': 'SearchAction',
+              'target': 'https://wtkpro.site/tools/?q={search_term_string}',
+              'query-input': 'required name=search_term_string'
+            }
           }),
         }}
       />

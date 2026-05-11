@@ -1,0 +1,29 @@
+# WebToolkit Pro - Robots Configuration
+# Optimized for Search Engines and AI Crawlers (AIO)
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Explicitly Allow AI Crawlers
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+
+# Host and Sitemap
+Host: https://wtkpro.site
+Sitemap: https://wtkpro.site/sitemap.xml
