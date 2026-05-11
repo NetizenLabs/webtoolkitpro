@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Send, Sparkles, MessageSquare, Code2, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { Send, Sparkles, MessageSquare, Code2, ShieldCheck, CheckCircle2, Zap } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
 
 export default function SubmitToolPage() {
@@ -36,18 +36,18 @@ export default function SubmitToolPage() {
 
   if (status === 'success') {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center transition-colors duration-300">
+      <div className="min-h-screen dynamic-padding flex items-center justify-center">
         <div className="max-w-md w-full text-center animate-in zoom-in duration-500">
-          <div className="w-24 h-24 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-blue-500/10">
-            <CheckCircle2 className="w-12 h-12 text-blue-600 dark:text-blue-400" />
+          <div className="w-20 h-20 bg-[#00D4B4]/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-teal-500/10 border border-[#00D4B4]/20">
+            <CheckCircle2 className="w-10 h-10 text-[#00D4B4]" />
           </div>
-          <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter uppercase">Idea Received!</h2>
-          <p className="text-gray-500 dark:text-slate-400 mb-8 font-medium leading-relaxed">
+          <h2 className="text-3xl font-bold text-[#1E2D47] dark:text-white mb-4 tracking-tighter uppercase">Idea Received!</h2>
+          <p className="text-gray-600 dark:text-[#8A9BBE] mb-8 font-medium leading-relaxed">
             Your concept has been submitted to our research lab. We'll review the technical feasibility and reach out if it's a match!
           </p>
           <button 
             onClick={() => setStatus('idle')}
-            className="w-full py-5 bg-blue-600 text-white rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-blue-500/20"
+            className="w-full py-4 bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] rounded-[12px] font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-blue-500/10"
           >
             Submit Another Concept
           </button>
@@ -57,67 +57,72 @@ export default function SubmitToolPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl mb-6 shadow-lg shadow-blue-500/10">
-            <Send className="w-8 h-8" />
-          </div>
-          <h1 className="text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
+    <div className="min-h-screen dynamic-padding">
+      <div className="max-w-5xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-16 pt-12">
+          <span className="inline-block px-4 py-1.5 bg-[#00D4B4]/10 text-[#00D4B4] text-[10px] font-bold font-mono uppercase tracking-[0.2em] rounded-full mb-4 border border-[#00D4B4]/20">
+            💡 Submit a Tool
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter leading-tight">
             Build the Future of <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Developer Toolkit</span>
+            <span className="text-[#00D4B4]">Developer Utilities</span>
           </h1>
-          <p className="text-xl text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-[#8A9BBE] max-w-2xl mx-auto leading-relaxed">
             Have a technical challenge that needs a dedicated tool? Suggest your idea to our engineering team and get featured on WebToolkit Pro.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {/* Feature Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {[
-            { title: 'Community Driven', desc: 'We prioritize tools based on your feedback and real-world needs.', icon: MessageSquare, color: 'text-blue-600' },
-            { title: 'Open Spec', desc: 'Every tool we build follows strict RFC and NIST security standards.', icon: Code2, color: 'text-indigo-600' },
-            { title: 'Security First', desc: 'We only build zero-knowledge, 100% client-side utilities.', icon: ShieldCheck, color: 'text-emerald-600' },
+            { title: 'Community Driven', desc: 'We prioritize tools based on your feedback and real-world needs.', icon: MessageSquare, color: 'text-blue-500' },
+            { title: 'Open Spec', desc: 'Every tool we build follows strict RFC and NIST security standards.', icon: Code2, color: 'text-indigo-500' },
+            { title: 'Security First', desc: 'We only build zero-knowledge, 100% client-side utilities.', icon: ShieldCheck, color: 'text-[#00D4B4]' },
           ].map((item, i) => (
-            <div key={i} className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-blue-900/5">
-              <item.icon className={`w-8 h-8 ${item.color} mb-6`} />
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+            <div key={i} className="bg-[#0D1526] p-8 rounded-[12px] border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all duration-300 flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-[#0B1120] rounded-[10px] flex items-center justify-center mb-6 shadow-lg border border-[#1E2D47]">
+                <item.icon className={`w-6 h-6 ${item.color}`} />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 tracking-tight">{item.title}</h3>
+              <p className="text-sm text-[#8A9BBE] leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-white dark:bg-slate-900 rounded-[3rem] p-10 md:p-16 border border-gray-100 dark:border-slate-800 shadow-2xl shadow-blue-900/5 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 blur-[100px] rounded-full" />
+        {/* Submission Form */}
+        <div className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-8 md:p-12 shadow-2xl shadow-blue-900/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
           
           <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-sm font-bold text-gray-700 dark:text-slate-300 ml-2 uppercase tracking-widest">Your Name</label>
+                <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white uppercase tracking-widest font-mono ml-2">Your Name</label>
                 <input 
                   required
                   name="name"
                   type="text" 
-                  className="w-full bg-gray-50 dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl px-6 py-4 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all font-medium"
+                  className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-6 py-4 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
                   placeholder="John Doe"
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-sm font-bold text-gray-700 dark:text-slate-300 ml-2 uppercase tracking-widest">Email Address</label>
+                <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white uppercase tracking-widest font-mono ml-2">Email Address</label>
                 <input 
                   required
                   name="email"
                   type="email" 
-                  className="w-full bg-gray-50 dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl px-6 py-4 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all font-medium"
+                  className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-6 py-4 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
                   placeholder="john@example.com"
                 />
               </div>
             </div>
             <div className="space-y-3">
-              <label className="text-sm font-bold text-gray-700 dark:text-slate-300 ml-2 uppercase tracking-widest">Tool Concept / Idea</label>
+              <label className="text-[10px] font-bold text-[#8A9BBE] dark:text-white uppercase tracking-widest font-mono ml-2">Tool Concept / Idea</label>
               <textarea 
                 required
                 name="idea"
-                className="w-full bg-gray-50 dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-[2rem] px-6 py-6 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all font-medium min-h-[150px]"
+                className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-[12px] px-6 py-6 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium min-h-[150px] resize-none"
                 placeholder="Tell us about the tool... (e.g., 'A CSS-in-JS performance profiler' or 'A JWT debugger')"
               />
             </div>
@@ -125,17 +130,18 @@ export default function SubmitToolPage() {
             <button 
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl text-lg shadow-xl shadow-blue-500/20 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50"
+              className="w-full bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold py-5 rounded-[12px] text-xs uppercase tracking-widest hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-50"
             >
-              <Sparkles className={`w-5 h-5 ${status === 'submitting' ? 'animate-spin' : ''}`} />
-              {status === 'submitting' ? 'Submitting Concept...' : 'Submit Suggestion'}
+              <Sparkles className={`w-4 h-4 ${status === 'submitting' ? 'animate-spin' : ''}`} />
+              {status === 'submitting' ? 'Transmitting...' : 'Submit Suggestion'}
             </button>
           </form>
         </div>
 
+        {/* Footer Note */}
         <div className="mt-16 text-center">
-          <p className="text-gray-400 text-sm italic">
-            *Submitted ideas are reviewed by our engineering team. If we choose to build your tool, we'll reach out to offer you early access and a permanent contributor credit on the page. Contact us directly at safi4730358@gmail.com for collaboration.
+          <p className="text-[#4A6080] text-[10px] font-bold font-mono uppercase tracking-widest leading-relaxed">
+            *Submitted ideas are reviewed by our engineering team. If selected, we&apos;ll offer contributor credit.
           </p>
         </div>
       </div>
