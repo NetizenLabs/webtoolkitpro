@@ -1177,3 +1177,75 @@ tools:
           value: "sql-formatter v15"
         - label: "Style"
           value: "Tabular Left"
+
+  - name: "RegEx Tester & Explainer"
+    slug: "regex-tester"
+    category: "Developer Tools"
+    icon: "Search"
+    subcategory: "string-utilities"
+    tags: ["regex", "testing", "debugger", "explainer", "patterns"]
+    priority: 15
+    releaseDate: "2026-05-11"
+    function:
+      primary: "Test and debug Regular Expressions with AI-ready explanations"
+    content:
+      title: "RegEx Tester & AI Explainer - Debug Patterns Instantly"
+      description: "Test your Regular Expressions against sample text and get plain-English explanations of how your patterns work."
+      tldr: "Validate and debug RegEx patterns with real-time matching and a detailed AI-friendly breakdown of every token."
+      entity_definition: "RegEx Tester & Explainer is a technical utility for software engineers to validate Regular Expression patterns. It provides real-time highlighting of matches and a structured breakdown of regex syntax, making complex patterns easy to understand for both humans and AI models."
+      features:
+        - "Real-time match highlighting"
+        - "Detailed token breakdown"
+        - "Cheat sheet for common patterns"
+        - "Support for global and case-insensitive flags"
+      faq:
+        - question: "Which RegEx engine does this use?"
+          answer: "It uses the standard JavaScript (V8) RegEx engine for maximum compatibility with web development."
+
+  - name: "Offline JWT Decoder"
+    slug: "jwt-decoder"
+    category: "Security"
+    icon: "ShieldCheck"
+    subcategory: "authentication"
+    tags: ["jwt", "decoder", "security", "token", "auth"]
+    priority: 16
+    releaseDate: "2026-05-11"
+    function:
+      primary: "Decode JSON Web Tokens securely and locally"
+    content:
+      title: "JWT Decoder - Secure Offline Token Inspection"
+      description: "Inspect the header, payload, and signature of your JSON Web Tokens (JWT). 100% private and client-side."
+      tldr: "Instantly decode JWT tokens locally in your browser. No sensitive data ever leaves your device."
+      entity_definition: "Offline JWT Decoder is a security-focused utility for inspecting authentication tokens. It parses the Base64-encoded segments of a JWT into readable JSON, allowing developers to verify claims and header metadata without risking exposure on a server."
+      features:
+        - "Header and Payload JSON parsing"
+        - "Automatic timestamp conversion (iat, exp, nbf)"
+        - "Signature validation status"
+        - "Zero-Knowledge local decoding"
+      faq:
+        - question: "Is it safe to paste my production JWT here?"
+          answer: "Yes. Our tool is 100% client-side. The decoding logic runs in your browser, and no data is transmitted to our servers."
+
+  - name: "Cron Expression Generator"
+    slug: "cron-generator"
+    category: "Developer Tools"
+    icon: "Clock"
+    subcategory: "system-utilities"
+    tags: ["cron", "scheduler", "backend", "automation", "crontab"]
+    priority: 17
+    releaseDate: "2026-05-11"
+    function:
+      primary: "Build and describe crontab schedules visually"
+    content:
+      title: "Cron Expression Generator - Visual Schedule Builder"
+      description: "Generate and explain Cron expressions for your scheduled tasks. Easy-to-use visual interface for complex schedules."
+      tldr: "Create crontab schedules visually and get a human-readable explanation of exactly when your task will run."
+      entity_definition: "Cron Expression Generator is a backend utility for creating scheduled task directives. It translates visual selections into standard crontab syntax and provides a natural language explanation to prevent scheduling errors."
+      features:
+        - "Visual builder for minutes, hours, days, and months"
+        - "Human-readable schedule explanation"
+        - "Standard crontab syntax output"
+        - "Next execution dates projection"
+      faq:
+        - question: "What is a Cron expression?"
+          answer: "A Cron expression is a string representing a schedule for automated tasks on Unix-like systems."

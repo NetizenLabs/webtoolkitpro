@@ -10,6 +10,7 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import RelatedToolsSidebar from '@/components/tools/RelatedToolsSidebar'
 import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
 import AdSlot from '@/components/ads/AdSlot'
+import AIOContextButton from '@/components/tools/AIOContextButton'
 import { CATEGORY_MAP } from '@/lib/categories'
 import * as Icons from 'lucide-react'
 
@@ -136,6 +137,11 @@ export default function ToolPage({ params }: ToolPageProps) {
 
           {/* Sidebar Area */}
           <aside className="w-full lg:w-80 shrink-0 space-y-8">
+            <AIOContextButton 
+              toolName={tool.name} 
+              description={tool.content.description} 
+              features={tool.content.features} 
+            />
             <RelatedToolsSidebar relatedTools={relatedTools} />
             <div className="p-8 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[12px] text-[#0B1120] shadow-xl shadow-blue-500/10">
               <h3 className="font-bold mb-3 text-sm uppercase tracking-wider">Privacy First</h3>

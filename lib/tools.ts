@@ -65,6 +65,8 @@ export function generateSoftwareSchema(tool: ToolConfig) {
     'operatingSystem': 'Web Browser',
     'url': url,
     'featureList': tool.content.features.join(', '),
+    'isAccessibleForFree': true,
+    'version': tool.releaseDate,
     'offers': {
       '@type': 'Offer',
       'price': '0',
@@ -74,6 +76,11 @@ export function generateSoftwareSchema(tool: ToolConfig) {
       '@type': 'AggregateRating',
       'ratingValue': '4.9',
       'reviewCount': '150'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'WebToolkit Pro',
+      'url': 'https://wtkpro.site'
     }
   }
 }
