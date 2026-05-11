@@ -80,7 +80,7 @@ export default function Header() {
 
       {/* Mobile Nav Overlay */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#0D1526] border-b border-gray-100 dark:border-[#1E2D47] shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B1120] border-b border-gray-100 dark:border-[#1E2D47] shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden ${
           isOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >

@@ -152,3 +152,21 @@ button, a, .transition-all {
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom Scrollbar for Dark Mode */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B1120;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E2D47;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00D4B4;
+  }
+}

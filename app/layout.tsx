@@ -94,9 +94,20 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'apple-mobile-web-app-title': 'WebToolkit Pro',
-    'theme-color': '#2563eb',
+    'theme-color': '#0B1120',
+    'color-scheme': 'light dark',
   },
   manifest: '/manifest.json',
+}
+
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0B1120' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 interface RootLayoutProps {

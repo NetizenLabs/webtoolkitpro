@@ -99,7 +99,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               placeholder="Search tools (e.g. JSON, SEO, Security...)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] pl-12 pr-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#8A9BBE] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
+              className="w-full bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] pl-12 pr-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium appearance-none"
             />
           </div>
           <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
@@ -132,7 +132,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               <button 
                 onClick={(e) => toggleFavorite(e, href)}
                 aria-label={favorites.includes(href) ? `Remove ${tool.name} from favorites` : `Add ${tool.name} to favorites`}
-                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-black/10 dark:bg-[#0B1120]/50 text-gray-900 dark:text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
+                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-black/5 dark:bg-[#0B1120]/80 text-gray-900 dark:text-white backdrop-blur-md md:opacity-0 group-hover:opacity-100 transition-all hover:scale-110 active:scale-95"
               >
                 <Heart className={`w-4 h-4 ${favorites.includes(href) ? 'fill-rose-500 text-rose-500' : ''}`} strokeWidth={1.5} />
               </button>
