@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Send, Sparkles, MessageSquare, Code2, ShieldCheck, CheckCircle2, Zap } from 'lucide-react'
-import { triggerQuickSuccess } from '@/lib/effects'
+import { triggerSuccess } from '@/lib/effects'
 
 export default function SubmitToolPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
@@ -23,14 +23,14 @@ export default function SubmitToolPage() {
       
       if (response.ok) {
         setStatus('success')
-        triggerQuickSuccess()
+        triggerSuccess()
       } else {
         throw new Error('Submission failed')
       }
     } catch (err) {
       console.error('Submission error:', err)
       setStatus('success') // UX fallback
-      triggerQuickSuccess()
+      triggerSuccess()
     }
   }
 
