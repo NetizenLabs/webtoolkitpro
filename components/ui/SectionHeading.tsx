@@ -12,7 +12,7 @@ export default function SectionHeading({ number, title, className = '' }: Sectio
       <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-[10px] font-bold text-[#00D4B4] font-mono tracking-widest">
         {number}
       </span>
-      <h2 className="text-2xl font-bold tracking-tight text-white">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {title}
       </h2>
       <div className="flex-grow h-px bg-[#1E2D47]"></div>

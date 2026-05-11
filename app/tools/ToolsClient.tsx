@@ -79,20 +79,10 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
     })
   }, [visibleTools, activeCategory, search])
 
-  const favoriteTools = useMemo(() => {
-    return visibleTools.filter(tool => favorites.includes(`/tools/${tool.slug}`))
-  }, [visibleTools, favorites])
-
-  const hubs = [
-    { title: 'Pinterest Expert Hub', desc: 'Enterprise-grade board and image downloading', icon: Download, color: 'from-red-500 to-red-700', href: '/tools/pinterest-downloader', priority: 1 },
-    { title: 'Technical SEO Suite', desc: 'Check sitemaps, meta tags, and redirect health', icon: Globe, color: 'from-blue-600 to-blue-800', href: '/tools/meta-tag-generator', priority: 2 },
-    { title: 'Data Converter Pro', desc: 'Secure Base64, Binary, and URL encoding', icon: RefreshCw, color: 'from-purple-500 to-purple-700', href: '/tools/base64-encoder', priority: 3 },
-  ]
-
   return (
     <div className="dynamic-padding max-w-[1400px] mx-auto min-h-screen">
       <div className="text-center mb-16 pt-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tighter">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tighter">
           {title || 'Professional Developer Tools'}
         </h1>
         <p className="text-lg text-[#8A9BBE] max-w-2xl mx-auto mb-12">
@@ -109,7 +99,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               placeholder="Search tools (e.g. JSON, SEO, Security...)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-[#0D1526] border border-[#1E2D47] rounded-[12px] pl-12 pr-4 py-4 text-white placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
+              className="w-full bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] pl-12 pr-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
             />
           </div>
           <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
@@ -120,7 +110,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                 className={`px-6 py-4 rounded-[12px] text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
                   activeCategory === cat 
                     ? 'bg-[#00D4B4] text-[#0B1120] border-[#00D4B4]' 
-                    : 'bg-[#0D1526] text-[#8A9BBE] border-[#1E2D47] hover:border-[#00D4B4]/30'
+                    : 'bg-white dark:bg-[#0D1526] text-gray-500 dark:text-[#8A9BBE] border-gray-200 dark:border-[#1E2D47] hover:border-[#00D4B4]/30'
                 }`}
               >
                 {cat}
@@ -141,20 +131,20 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             <div key={tool.slug} className="relative group">
               <button 
                 onClick={(e) => toggleFavorite(e, href)}
-                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-[#0B1120]/50 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
+                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-black/10 dark:bg-[#0B1120]/50 text-gray-900 dark:text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
               >
-                <Heart className={`w-4 h-4 ${favorites.includes(href) ? 'fill-rose-500 text-rose-500' : 'text-white'}`} strokeWidth={1.5} />
+                <Heart className={`w-4 h-4 ${favorites.includes(href) ? 'fill-rose-500 text-rose-500' : ''}`} strokeWidth={1.5} />
               </button>
               <Link 
                 href={href} 
-                className="bg-[#0D1526] border border-[#1E2D47] rounded-[12px] flex flex-col h-full p-8 hover:border-[#00D4B4]/30 transition-all duration-300"
+                className="bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] flex flex-col h-full p-8 hover:border-[#00D4B4]/30 transition-all duration-300 shadow-sm"
               >
                 <div className="w-14 h-14 rounded-[10px] bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />
                 </div>
 
                 <div className="flex-grow">
-                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-[#00D4B4] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight group-hover:text-[#00D4B4] transition-colors">
                     {tool.name}
                   </h3>
                   <p className="text-sm text-[#8A9BBE] leading-relaxed line-clamp-2 mb-4">
@@ -162,11 +152,11 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between mt-auto pt-6 border-t border-[#1E2D47]/50">
-                  <span className="badge-pill bg-[#0B1120] text-[#4A6080] border border-[#1E2D47] text-[9px]">
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100 dark:border-[#1E2D47]/50">
+                  <span className="badge-pill bg-gray-50 dark:bg-[#0B1120] text-[#4A6080] border border-gray-200 dark:border-[#1E2D47] text-[9px]">
                     {tool.category}
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-widest">
+                  <span className="text-xs font-mono font-bold text-blue-600 dark:text-[#00D4B4] flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-widest">
                     Launch <Zap className="w-3 h-3 fill-current" />
                   </span>
                 </div>
@@ -177,7 +167,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       </div>
 
       {/* SEO Hub Links */}
-      <section className="mt-24 pt-16 border-t border-[#1E2D47]">
+      <section className="mt-24 pt-16 border-t border-gray-100 dark:border-[#1E2D47]">
         <SectionHeading number="02" title="Engineering Hubs" className="mb-12" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {categories.filter(c => c !== 'All').map(category => {
@@ -186,7 +176,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               <Link 
                 key={category}
                 href={`/tools/category/${slug}/`}
-                className="p-6 bg-[#0D1526] border border-[#1E2D47] rounded-[12px] text-center text-xs font-bold text-[#8A9BBE] uppercase tracking-widest hover:border-[#00D4B4]/30 hover:text-white transition-all shadow-xl"
+                className="p-6 bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] text-center text-xs font-bold text-gray-500 dark:text-[#8A9BBE] uppercase tracking-widest hover:border-[#00D4B4]/30 hover:text-blue-600 dark:hover:text-white transition-all shadow-xl"
               >
                 {category} Hub
               </Link>
@@ -196,24 +186,24 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       </section>
 
       {/* About Section */}
-      <section className="mt-24 pt-16 border-t border-[#1E2D47] max-w-4xl mx-auto">
-        <div className="bg-[#0D1526] border border-[#1E2D47] p-12 rounded-[12px] relative overflow-hidden text-center">
+      <section className="mt-24 pt-16 border-t border-gray-100 dark:border-[#1E2D47] max-w-4xl mx-auto">
+        <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] p-12 rounded-[12px] relative overflow-hidden text-center">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#00D4B4]/5 blur-[80px] rounded-full -translate-y-1/2" />
-          <h2 className="text-3xl font-bold text-white mb-6 tracking-tight relative z-10">Privacy-First Developer Utilities</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight relative z-10">Privacy-First Developer Utilities</h2>
           <p className="text-lg text-[#8A9BBE] leading-relaxed mb-12 relative z-10">
             WebToolkit Pro provides a curated suite of technical utilities designed for modern web developers, SEO specialists, and software architects.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left relative z-10">
             <div>
-              <h3 className="text-xs font-mono font-bold text-[#00D4B4] uppercase tracking-widest mb-4">Zero Latency</h3>
+              <h3 className="text-xs font-mono font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest mb-4">Zero Latency</h3>
               <p className="text-sm text-[#8A9BBE] leading-relaxed">Instant results powered by client-side JavaScript execution.</p>
             </div>
             <div>
-              <h3 className="text-xs font-mono font-bold text-[#00D4B4] uppercase tracking-widest mb-4">Secure by Design</h3>
+              <h3 className="text-xs font-mono font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest mb-4">Secure by Design</h3>
               <p className="text-sm text-[#8A9BBE] leading-relaxed">Your data never leaves your device. 100% browser-based processing.</p>
             </div>
             <div>
-              <h3 className="text-xs font-mono font-bold text-[#00D4B4] uppercase tracking-widest mb-4">Enterprise Ready</h3>
+              <h3 className="text-xs font-mono font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest mb-4">Enterprise Ready</h3>
               <p className="text-sm text-[#8A9BBE] leading-relaxed">Output follows industry standards (RFC, ISO, W3C) for production use.</p>
             </div>
           </div>
