@@ -128,22 +128,15 @@ export default function BlogPage() {
             <Link href="/about/" className="text-[#00D4B4] font-bold text-[10px] uppercase tracking-widest hover:underline font-mono">Our Research Lab →</Link>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { slug: 'seo-meta-tags-complete-guide', title: 'Meta Tags' },
-              { slug: 'geo-optimization-guide', title: 'GEO & AI' },
-              { slug: 'llm-latency-ux-impact', title: 'LLM Latency' },
-              { slug: 'modern-css-architecture', title: 'CSS Arch' },
-              { slug: 'ai-cybersecurity-trends', title: 'Cybersecurity' },
-              { slug: 'privacy-first-web-development', title: 'Privacy' }
-            ].map((study) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {posts.map((study) => (
               <Link 
                 key={study.slug}
                 href={`/blog/${study.slug}/`}
-                className="p-6 bg-[#0D1526] border border-[#1E2D47] rounded-[12px] hover:border-[#00D4B4]/30 transition-all group text-center"
+                className="p-6 bg-[#0D1526] border border-[#1E2D47] rounded-[12px] hover:border-[#00D4B4]/30 transition-all group text-center flex flex-col justify-center min-h-[120px]"
               >
-                <div className="text-[9px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-3 opacity-60 font-mono">Research</div>
-                <h3 className="text-xs font-bold text-[#1E2D47] dark:text-white group-hover:text-[#00D4B4] transition-colors leading-tight">{study.title}</h3>
+                <div className="text-[8px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-3 opacity-60 font-mono line-clamp-1">{study.category}</div>
+                <h3 className="text-[11px] font-bold text-[#1E2D47] dark:text-white group-hover:text-[#00D4B4] transition-colors leading-tight line-clamp-2">{study.title}</h3>
               </Link>
             ))}
           </div>
