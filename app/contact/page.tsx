@@ -137,11 +137,11 @@ export default function ContactPage() {
       </Suspense>
 
       <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-12 border-t border-[#1E2D47] pt-12">
-        <a href="mailto:contact@wtkpro.site" className="text-[#8A9BBE] hover:text-[#00D4B4] flex items-center gap-3 font-medium transition-colors">
+        <a href="mailto:safi4730358@gmail.com" className="text-[#8A9BBE] hover:text-[#00D4B4] flex items-center gap-3 font-medium transition-colors">
           <div className="w-10 h-10 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] flex items-center justify-center">
             <Mail className="w-4 h-4 text-[#00D4B4]" />
           </div> 
-          contact@wtkpro.site
+          safi4730358@gmail.com
         </a>
         <div className="text-[#8A9BBE] flex items-center gap-3 font-medium">
           <div className="w-10 h-10 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] flex items-center justify-center">

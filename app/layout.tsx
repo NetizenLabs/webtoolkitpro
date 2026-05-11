@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: 'WebToolkit Pro | 65+ Premium Developer Tools & Expert Guides',
     description: 'WebToolkit Pro offers 65+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering.',
     images: ['https://wtkpro.site/og-image.png?v=1'],
-    creator: '@WebToolkitPro',
+    creator: '@WebToolKitPro',
   },
   icons: {
     icon: [

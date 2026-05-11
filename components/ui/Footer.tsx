@@ -123,10 +123,10 @@ export default function Footer() {
             <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Github className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://twitter.com/wtkpro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Twitter className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="mailto:contact@wtkpro.site" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="mailto:safi4730358@gmail.com" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Mail className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>
