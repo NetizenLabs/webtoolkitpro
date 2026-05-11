@@ -107,7 +107,7 @@ export default function Home() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="bg-[#0D1526] border border-[#1E2D47] rounded-[12px] p-8 group flex flex-col items-start hover:border-[#00D4B4]/50 transition-all duration-300"
+                className="card-premium p-8 group flex flex-col items-start h-full"
               >
                 <div className="w-14 h-14 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[10px] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
                   <tool.icon className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />

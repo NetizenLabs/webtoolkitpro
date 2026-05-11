@@ -138,7 +138,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               </button>
               <Link 
                 href={href} 
-                className="bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] flex flex-col h-full p-8 hover:border-[#00D4B4]/30 transition-all duration-300 shadow-sm"
+                className="card-premium flex flex-col h-full p-8"
               >
                 <div className="w-14 h-14 rounded-[10px] bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />

@@ -138,7 +138,7 @@ button, a, .transition-all {
   }
 
   .card-premium {
-    @apply bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-[12px] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
+    @apply bg-white dark:bg-[var(--surface)] border border-gray-100 dark:border-[var(--border-color)] rounded-[20px] shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300;
   }
 }
 
@@ -153,20 +153,28 @@ button, a, .transition-all {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Custom Scrollbar for Dark Mode */
-@media (max-width: 768px) {
-  ::-webkit-scrollbar {
-    height: 4px;
-    width: 4px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #0B1120;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #1E2D47;
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #00D4B4;
-  }
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--elevated);
+  border-radius: 10px;
+  border: 2px solid var(--canvas);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--elevated) var(--canvas);
 }
