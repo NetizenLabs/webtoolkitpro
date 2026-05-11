@@ -96,6 +96,12 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-title': 'WebToolkit Pro',
     'theme-color': '#0B1120',
     'color-scheme': 'light dark',
+    'preconnect': 'https://wtkpro.site/api',
+    'dns-prefetch': [
+      'https://wtkpro.site/api',
+      'https://pagead2.googlesyndication.com'
+    ],
+    'x-dns-prefetch-control': 'on',
   },
   manifest: '/manifest.json',
 }
@@ -116,15 +122,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={dmSans.className} suppressHydrationWarning>
-      <head>
-        {/* Performance & Resource Hints */}
-        <link rel="preconnect" href="https://wtkpro.site/api" />
-        <link rel="dns-prefetch" href="https://wtkpro.site/api" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-        
-        <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        
+    <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`} suppressHydrationWarning>
+      <body className="font-sans bg-white dark:bg-[#0B1120] text-gray-900 dark:text-[#F0F6FF] antialiased transition-colors duration-300">
         <script
           id="theme-initializer"
           dangerouslySetInnerHTML={{
@@ -140,76 +139,77 @@ export default function RootLayout({ children }: RootLayoutProps) {
             `,
           }}
         />
-        {/* Global SEO & Trust Signals */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BreadcrumbList',
-              'itemListElement': [
-                { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://wtkpro.site' },
-                { '@type': 'ListItem', 'position': 2, 'name': 'Tools', 'item': 'https://wtkpro.site/tools' }
-              ]
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              'name': 'WebToolkit Pro',
-              'url': 'https://wtkpro.site',
-              'logo': 'https://wtkpro.site/logo-optimized.webp',
-              'sameAs': ['https://github.com/abusufyan-netizen/webtoolkitpro'],
-              'description': 'Premium developer tools and technical guides for enterprise web development.'
-            }),
-          }}
-        />
-        <Script id="google-consent-default" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              'ad_storage': 'denied',
-              'ad_user_data': 'denied',
-              'ad_personalization': 'denied',
-              'analytics_storage': 'denied'
-            });
-          `}
-        </Script>
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
-        
-        {/* Google Analytics 4 - Standard high-performance loading */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1QB54ZRCS5"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-1QB54ZRCS5');
-          `}
-        </Script>
-      </head>
-      <body className={`${dmSans.variable} ${spaceMono.variable} font-sans bg-white dark:bg-[#0B1120] text-gray-900 dark:text-[#F0F6FF] antialiased transition-colors duration-300`}>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-grow animate-in fade-in duration-700">{children}</main>
-          <Footer />
-          <CookieConsent />
-        </div>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow animate-in fade-in duration-700">{children}</main>
+        <Footer />
+        <CookieConsent />
+      </div>
+      
+      {/* Global SEO & Trust Signals */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://wtkpro.site' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Tools', 'item': 'https://wtkpro.site/tools' }
+            ]
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            'name': 'WebToolkit Pro',
+            'url': 'https://wtkpro.site',
+            'logo': 'https://wtkpro.site/logo-optimized.webp',
+            'sameAs': ['https://github.com/abusufyan-netizen/webtoolkitpro'],
+            'description': 'Premium developer tools and technical guides for enterprise web development.'
+          }),
+        }}
+      />
+      
+      <Script id="google-consent-default" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        `}
+      </Script>
+      
+      <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883"
+        strategy="lazyOnload"
+        crossOrigin="anonymous"
+      />
+      
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-1QB54ZRCS5"
+        strategy="lazyOnload"
+      />
+      <Script id="google-analytics" strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1QB54ZRCS5');
+        `}
+      </Script>
+
+      <Analytics />
+      <SpeedInsights />
+    </body>
+  </html>
   )
 }
