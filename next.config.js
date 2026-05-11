@@ -8,11 +8,13 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*).(webp|png|jpg|ico|svg|json|txt|xml)',
+        // Cache static assets but EXCLUDE robots.txt and sitemap.xml
+        // Using a negative lookahead to exclude these critical files
+        source: '/:path*((?!robots\\.txt|sitemap\\.xml).+\\.(?:webp|png|jpg|ico|svg|json|txt|xml))',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=86400, stale-while-revalidate=3600',
           },
         ],
       },
