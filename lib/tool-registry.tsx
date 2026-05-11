@@ -40,4 +40,7 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'html-beautifier': dynamic(() => import('@/components/tools/instances/HtmlBeautifier'), { loading: () => <ToolSkeleton />, ssr: false }),
   'css-formatter': dynamic(() => import('@/components/tools/instances/CssFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
   'sql-formatter': dynamic(() => import('@/components/tools/instances/SqlFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'regex-tester': dynamic(() => import('@/components/tools/instances/RegexTester'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'jwt-decoder': dynamic(() => import('@/components/tools/instances/JwtDecoder'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'cron-generator': dynamic(() => import('@/components/tools/instances/CronGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
