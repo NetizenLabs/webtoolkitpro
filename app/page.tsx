@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
   Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2,
-  CheckCircle, Server
+  CheckCircle, Server, RefreshCw
 } from 'lucide-react'
 import Newsletter from '@/components/sections/Newsletter'
 import StatsDashboard from '@/components/sections/StatsDashboard'
