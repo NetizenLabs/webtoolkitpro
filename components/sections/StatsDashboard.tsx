@@ -6,10 +6,10 @@ export default async function StatsDashboard() {
   const stats = await getGlobalStats()
 
   const statItems = [
-    { label: 'Free Tools', value: '33+', icon: Zap },
-    { label: 'Monthly Users', value: stats ? `${(stats.totalUsers / 1000).toFixed(1)}K+` : '12.4K+', icon: Users },
-    { label: 'Tools Run', value: stats ? stats.toolsRun.toLocaleString() : '128,420', icon: Star },
-    { label: 'Files Processed', value: stats ? stats.filesProcessed.toLocaleString() : '85,600', icon: Code },
+    { label: 'Tools Available', value: '40+', icon: Zap },
+    { label: 'Early Adopters', value: 'Verified', icon: Users },
+    { label: 'Tools Run', value: '250+', icon: Star },
+    { label: 'Client-Side', value: '100%', icon: Code },
   ]
 
   return (

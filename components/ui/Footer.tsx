@@ -16,7 +16,7 @@ export default function Footer() {
             </Link>
             <p className="text-[11px] leading-relaxed font-medium mb-6 text-[#4A6080]">
               The global standard for secure, client-side developer utilities. 
-              Built for sub-3ms performance and zero-knowledge privacy. 
+              Built for high-speed performance and privacy-first design. 
               WebToolkit Pro empowers engineers with enterprise-grade tools 
               that never transmit sensitive data.
             </p>

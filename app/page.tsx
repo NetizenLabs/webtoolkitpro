@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'WebToolkit Pro - Premium Developer Tools for Modern Engineering',
-  description: 'Access 65+ secure, client-side developer tools. From JSON formatting to SEO optimization, WebToolkit Pro provides high-performance utilities for enterprise workflows.',
+  description: 'Access 40+ secure, client-side developer tools. From JSON formatting to SEO optimization, WebToolkit Pro provides high-performance utilities for enterprise workflows.',
   alternates: {
     canonical: 'https://wtkpro.site/',
   },
@@ -41,7 +41,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-[#0D1526] border border-[#1E2D47] rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest animate-in fade-in slide-in-from-top-4 duration-700">
             <Sparkles className="w-4 h-4 shrink-0" />
-            Brand Guidelines v1.0 • 65+ Free Developer Tools
+            Brand Guidelines v1.0 • 40+ Free Developer Tools
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -122,7 +122,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
-              View All 33+ Tools <ArrowRight className="w-4 h-4" />
+              View All 40+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -216,7 +216,7 @@ export default function Home() {
               The Global Standard for <span className="text-blue-600 dark:text-blue-400">Web Utilities</span>
             </h2>
             <p className="text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl mx-auto">
-              WebToolkit Pro isn't just a collection of tools; it's an engineering ecosystem designed to handle the most demanding technical workflows with a <span className="text-gray-900 dark:text-white font-bold">sub-3ms execution standard</span>.
+              WebToolkit Pro isn't just a collection of tools; it's an engineering ecosystem designed to handle demanding technical workflows with <span className="text-gray-900 dark:text-white font-bold">high-performance processing</span>.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export default function Home() {
                   Compliant with <span className="text-gray-900 dark:text-white">RFC 8259</span> standards with line-by-line syntax highlighting for instant debugging.
                 </p>
                 <p className="pt-4 text-xs italic opacity-70">
-                  "Zero-Trust" local memory processing ensuring API keys and credentials never touch our servers.
+                  Secure, local-only processing ensures API keys and credentials never leave your browser.
                 </p>
               </div>
             </div>
@@ -269,14 +269,14 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Technical SEO <br/>Optimization</h3>
               <div className="space-y-4 text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  Master modern indexing with <span className="text-purple-600 font-bold uppercase text-[10px] tracking-widest">JSON-LD Schema</span> generators built for SGE and LLM discovery.
+                  Master modern indexing with <span className="text-purple-600 font-bold uppercase text-[10px] tracking-widest">JSON-LD Schema</span> generators built for AI search visibility.
                 </p>
                 <div className="h-px bg-gray-100 dark:bg-slate-800 w-12" />
                 <p>
                   Advanced <span className="text-gray-900 dark:text-white">Robots.txt & Sitemap</span> validation to communicate effectively with the next generation of search bots.
                 </p>
                 <p className="pt-4 text-xs italic opacity-70">
-                  Stay at the forefront of the "Agentic Web" and AI-driven search trends.
+                  Stay at the forefront of AI-optimized search trends and modern indexing.
                 </p>
               </div>
             </div>
@@ -299,19 +299,19 @@ export default function Home() {
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  At WebToolkit Pro, we believe that professional developer tools should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built on a "Zero-Knowledge" architecture, ensuring 100% compliance with GDPR, HIPAA, and SOC2.
+                  At WebToolkit Pro, we believe that professional developer tools should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built on a privacy-first architecture, designed for maximum security.
                 </p>
                 <p>
-                  From the advanced Pinterest Board Downloader to our cryptographically secure UUID generators, every tool is optimized for the <span className="text-blue-600 dark:text-blue-400 underline decoration-2 underline-offset-4">V8 engine</span>, delivering sub-1ms execution times without any layout shifts.
+                  From advanced SEO utilities to our cryptographically secure UUID generators, every tool is optimized for the <span className="text-blue-600 dark:text-blue-400 underline decoration-2 underline-offset-4">V8 engine</span>, delivering instant execution times.
                 </p>
                 <p>
-                  Beyond utilities, we serve as a technical research hub, publishing deep-dive studies into the <span className="text-gray-900 dark:text-white font-bold">"Agentic Web"</span> and 3ms TTFB standards to help you master the future of search.
+                  Beyond utilities, we serve as a technical research hub, publishing deep-dive studies into web performance and modern search standards to help you master the future of the web.
                 </p>
               </div>
 
               <div className="pt-6 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-slate-900">
                 <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">65+</div>
+                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">40+</div>
                   <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
                 </div>
                 <div>
@@ -364,7 +364,7 @@ export default function Home() {
                   </div>
                   <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Media & Content</h3>
-                    <p className="text-sm">Download Pinterest boards, count word density, and test social previews in real-time.</p>
+                    <p className="text-sm">Technical utilities for word density counting and real-time social preview testing.</p>
                   </div>
                 </div>
               </div>

@@ -22,7 +22,7 @@ export default function AboutPage() {
           Engineering the <span className="text-[#00D4B4]">Future</span>
         </h1>
         <p className="text-xl text-gray-600 dark:text-[#8A9BBE] max-w-3xl mx-auto leading-relaxed">
-          WebToolkit Pro is a premium ecosystem of 65+ secure, high-performance developer utilities designed for the modern engineering workflow.
+          WebToolkit Pro is a premium ecosystem of 40+ secure, high-performance developer utilities designed for the modern engineering workflow.
         </p>
       </div>
 

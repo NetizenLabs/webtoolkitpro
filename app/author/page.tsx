@@ -65,7 +65,7 @@ export default function AuthorPage() {
                 <Shield className="w-5 h-5 text-emerald-500" />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 dark:text-white text-sm">Zero-Trust Tools</h3>
+                <h3 className="font-bold text-gray-900 dark:text-white text-sm">Privacy-First Tools</h3>
                 <p className="text-xs text-gray-500 dark:text-[#8A9BBE] mt-1">Lead on client-side security standards.</p>
               </div>
             </div>
@@ -128,10 +128,10 @@ export default function AuthorPage() {
       {/* Stats / Badges */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
         {[
-          { label: 'Core Tools', val: '65+', icon: Code2 },
+          { label: 'Core Tools', val: '40+', icon: Code2 },
           { label: 'Uptime', val: '99.99%', icon: Globe },
           { label: 'Privacy', val: '100%', icon: Shield },
-          { label: 'Response', val: '3ms', icon: Zap },
+          { label: 'Response', val: 'Instant', icon: Zap },
         ].map((stat) => (
           <div key={stat.label} className="bg-white dark:bg-[#0D1526] p-6 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-center shadow-sm">
             <stat.icon className="w-5 h-5 text-[#00D4B4] mx-auto mb-3" strokeWidth={1.5} />
