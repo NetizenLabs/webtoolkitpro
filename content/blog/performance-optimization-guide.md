@@ -1,5 +1,6 @@
 ---
 title: "Optimizing Core Web Vitals for Enterprise Next.js Applications"
+seoTitle: "Optimizing Core Web Vitals Guide"
 description: "Learn how to achieve a perfect Lighthouse score and optimize LCP, CLS, and INP for large-scale Next.js sites to boost SEO and user experience."
 date: "2026-05-04"
 category: "Tutorials"

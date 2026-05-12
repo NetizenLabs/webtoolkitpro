@@ -67,8 +67,8 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#1E2D47]/50 gap-6">
           <div className="flex items-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] font-mono">
-            <Link href="/privacy-policy/" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
-            <Link href="/terms-of-service/" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
+            <Link href="/privacy/" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
+            <Link href="/terms/" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
             <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">XML Sitemap</Link>
             <Link href="/feed.xml" className="hover:text-[#00D4B4] transition-colors">RSS Feed</Link>
             <span className="text-[#4A6080]">v1.0.8</span>

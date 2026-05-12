@@ -112,8 +112,11 @@ export interface BlogPost {
   author: string
   image: string
   imageAlt: string
+  seoTitle?: string
   content: string
   htmlContent?: string
+  faqs?: { q: string; a: string }[]
+  expertTips?: string[]
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
@@ -141,9 +144,11 @@ export function getAllPosts(): BlogPost[] {
       readTime: data.readTime || '5 min read',
       tldr: data.tldr || '',
       author: data.author || 'WebToolkit Pro Team',
-      image: data.image || '',
       imageAlt: data.imageAlt || data.title || '',
+      seoTitle: data.seoTitle || '',
       content,
+      faqs: data.faqs || [],
+      expertTips: data.expertTips || [],
     } as BlogPost
   });
 
@@ -183,8 +188,11 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     author: data.author || 'WebToolkit Pro Team',
     image: data.image || '',
     imageAlt: data.imageAlt || data.title || '',
+    seoTitle: data.seoTitle || '',
     content,
     htmlContent,
+    faqs: data.faqs || [],
+    expertTips: data.expertTips || [],
   }
 }
 

@@ -1,5 +1,6 @@
 ---
 title: "Cloud Cost Management: A Strategic Guide for US Startups"
+seoTitle: "Cloud Cost Management Guide"
 description: "Master the art of FinOps. Learn how to optimize your cloud spend on AWS, Azure, and Google Cloud to increase your startup's runway in 2026."
 date: "2026-05-10"
 category: "Tutorials"

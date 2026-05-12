@@ -31,7 +31,8 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const tool = getToolBySlug(params.slug)
   if (!tool) return {}
 
-  const title = tool.meta?.title || `${tool.name} - Free Online ${tool.function.primary} | wtkpro`
+  const baseTitle = `${tool.name} - ${tool.function.primary}`
+  const title = tool.meta?.title || (baseTitle.length <= 61 ? `${baseTitle} | wtkpro` : `${tool.name} | wtkpro`)
   const description = tool.content.description
 
   return {

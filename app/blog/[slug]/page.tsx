@@ -26,8 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`)
     : 'https://wtkpro.site/og-image.png?v=1'
 
+  const baseTitle = post.seoTitle || post.title
+  const title = (baseTitle.length + 21 <= 70) 
+    ? `${baseTitle} | WebToolkit Pro Blog` 
+    : baseTitle.slice(0, 70 - 21).trim() + '... | WebToolkit Pro Blog'
+
   return {
-    title: `${post.title} | WebToolkit Pro Blog`,
+    title,
     description: post.description,
     keywords: post.keywords.join(', '),
     authors: [{ name: post.author }],
@@ -205,6 +210,49 @@ export default async function BlogPostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
         />
 
+        {/* Expert Tips Section */}
+        {post.expertTips && post.expertTips.length > 0 && (
+          <div className="mt-16 p-8 bg-gradient-to-br from-[#00D4B4]/10 to-[#0094FF]/10 border border-[#00D4B4]/20 rounded-[24px] relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+              <ShieldCheck className="w-20 h-20 text-[#00D4B4]" />
+            </div>
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-2 h-2 bg-[#00D4B4] rounded-full animate-pulse" />
+                <span className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest">Expert Recommendations</span>
+              </div>
+              <h3 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-6">Pro Insights</h3>
+              <ul className="space-y-4">
+                {post.expertTips.map((tip, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-sm text-gray-600 dark:text-[#8A9BBE] font-medium leading-relaxed">
+                    <span className="mt-1 text-[#00D4B4] font-mono text-[10px] font-bold">0{idx + 1}.</span>
+                    {tip}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {/* FAQ Section */}
+        {post.faqs && post.faqs.length > 0 && (
+          <section className="mt-20">
+            <h2 className="text-3xl font-bold text-[#1E2D47] dark:text-white mb-10 tracking-tight">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              {post.faqs.map((faq, idx) => (
+                <div key={idx} className="p-8 bg-[#0D1526] border border-[#1E2D47] rounded-[16px] group hover:border-[#00D4B4]/30 transition-all">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-start gap-3">
+                    <span className="text-[#00D4B4]">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-sm text-[#8A9BBE] leading-relaxed pl-7 border-l border-[#1E2D47] group-hover:border-[#00D4B4]/30 transition-colors">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Footer Meta */}
         <div className="mt-20 pt-12 border-t border-[#1E2D47]">
           <div className="flex flex-wrap gap-3 mb-12">
@@ -314,6 +362,27 @@ export default async function BlogPostPage({ params }: Props) {
           }),
         }}
       />
+
+      {/* JSON-LD FAQPage */}
+      {post.faqs && post.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              'mainEntity': post.faqs.map((faq) => ({
+                '@type': 'Question',
+                'name': faq.q,
+                'acceptedAnswer': {
+                  '@type': 'Answer',
+                  'text': faq.a,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
 
       {/* JSON-LD Breadcrumb */}
       <script
