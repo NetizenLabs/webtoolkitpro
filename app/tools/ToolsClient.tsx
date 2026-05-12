@@ -81,20 +81,17 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
 
   return (
     <div className="dynamic-padding max-w-[1400px] mx-auto min-h-screen">
-      <div className="text-center mb-16 pt-12">
-        {isSubPage ? (
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tighter">
-            {title || 'Professional Developer Tools'}
-          </h2>
-        ) : (
+      {!isSubPage && (
+        <div className="text-center mb-16 pt-12">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tighter">
             {title || 'Professional Developer Tools'}
           </h1>
-        )}
-        <p className="text-lg text-[#8A9BBE] max-w-2xl mx-auto mb-12">
-          Secure, client-side utilities for modern engineering workflows. 
-          Zero data leaves your browser.
-        </p>
+          <p className="text-lg text-[#8A9BBE] max-w-2xl mx-auto mb-12">
+            Secure, client-side utilities for modern engineering workflows. 
+            Zero data leaves your browser.
+          </p>
+        </div>
+      )}
 
         {/* Search & Filter */}
         <div className="flex flex-col md:flex-row gap-4 items-center justify-center max-w-4xl mx-auto">
