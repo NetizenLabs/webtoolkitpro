@@ -15,9 +15,9 @@ export default function Footer() {
               <Logo light />
             </Link>
             <p className="text-[11px] leading-relaxed font-medium mb-6 text-[#4A6080]">
-              The global standard for secure, client-side developer utilities. 
-              Built for high-speed performance and privacy-first design. 
-              WebToolkit Pro empowers engineers with enterprise-grade tools 
+              The global standard for secure, client-side developer utilities.
+              Built for high-speed performance and privacy-first design.
+              WebToolkit Pro empowers engineers with enterprise-grade tools
               that never transmit sensitive data.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-[#1E2D47] pb-2">Ecosystem</h3>
             <ul className="space-y-2 text-[11px] font-medium">
-              <li><a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">TradeConvert.pro</a></li>
+              <li><a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">TradeConvert</a></li>
               <li><a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">DEVHUB INDEX</a></li>
               <li><a href="https://www.severancecalculator.xyz/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Severance Calculator</a></li>
               <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Abu Sufyan Portfolio</a></li>
