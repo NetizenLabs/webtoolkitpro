@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Users, Zap, Shield, Heart, Code2, Globe2, Coffee, Sparkles } from 'lucide-react'
+import { Users, Zap, Shield, Heart, Code2, Globe2, Coffee, Sparkles, ArrowRight } from 'lucide-react'
 
 export const metadata = {
   title: 'About Us - WebToolkit Pro',
@@ -89,6 +89,19 @@ export default function AboutPage() {
             </p>
             <a href="https://devhubindex.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all">
               Explore Node <Globe2 className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="p-8 bg-[#0D1526] border border-[#1E2D47] rounded-3xl relative group overflow-hidden">
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Zap className="w-12 h-12 text-[#00D4B4]" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-3">TradeConvert.pro</h3>
+            <p className="text-sm text-[#8A9BBE] leading-relaxed mb-6 font-medium">
+              A specialized utility hub for the building trades, providing verified unit conversion and technical reference for construction engineers.
+            </p>
+            <a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all">
+              Launch Site <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 

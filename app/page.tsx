@@ -414,14 +414,14 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="https://wtkpro-hub.vercel.app/" target="_blank" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
-                <Globe className="w-6 h-6 text-blue-500" />
+            <Link href="https://tradeconvert.pro" target="_blank" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
+              <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                <RefreshCw className="w-6 h-6 text-emerald-500" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Satellite Hub Index</h3>
-              <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed">High-performance technical index bridging the gap between raw code and engineering excellence.</p>
-              <div className="text-blue-500 font-black text-xs uppercase tracking-widest flex items-center gap-2">
-                Launch Hub <ArrowRight className="w-4 h-4" />
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">TradeConvert Pro</h3>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-6 leading-relaxed">Professional unit conversion tools and technical reference tables for the building trades.</p>
+              <div className="text-emerald-500 font-black text-xs uppercase tracking-widest flex items-center gap-2">
+                Launch Tool <ArrowRight className="w-4 h-4" />
               </div>
             </Link>
 
