@@ -23,7 +23,7 @@ tools:
       library: "Native Browser Parser"
       
     content:
-      title: "JSON Formatter & Validator - Free Online Format and validate JSON data"
+      title: "Best Free Online JSON Formatter & Validator 2026"
       description: "Beautify, format, and validate your JSON data instantly. Enterprise-grade tool for modern web developers."
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
       entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using high-performance parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
@@ -81,7 +81,7 @@ tools:
       processing: "client-side"
       library: "window.crypto"
       
-    content:
+      title: "Secure Password Generator - Best Random Password Tool 2026"
       description: "US-standard cryptographically secure password generation tool. Create unhackable passwords instantly in your browser."
       tldr: "Generate high-entropy, unhackable passwords locally using the secure Web Crypto API."
       entity_definition: "Secure Password Generator is a privacy-focused utility that creates high-entropy, cryptographically secure passwords. It utilizes the browser's native Web Crypto API to ensure randomness that meets enterprise security standards. No passwords are ever stored or transmitted, making it safer than cloud-based alternatives."
