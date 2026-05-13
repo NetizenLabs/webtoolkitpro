@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Web Toolkit Pro - Premium Web Toolkit for Modern Engineering',
   description: 'Access 40+ secure, client-side developer tools in our free web toolkit. From JSON formatting to SEO optimization, this web toolkit provides high-performance utilities for enterprise workflows.',
-  keywords: ['web toolkit', 'google web toolkit', 'gwt web toolkit', 'web toolkits', 'what is google web toolkit'],
+  keywords: ['wtkpro', 'web toolkit', 'google web toolkit', 'gwt web toolkit', 'web toolkits', 'what is google web toolkit'],
   alternates: {
     canonical: 'https://wtkpro.site/',
   },

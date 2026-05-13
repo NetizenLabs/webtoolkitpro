@@ -94,24 +94,27 @@ const categoryColors: { [k: string]: string } = {
   'SEO': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
   'CSS': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800',
   'Research': 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
+  'Engineering': 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
+  'Developer Tools': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800',
+  'SEO Tools': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
+  'Design Tools': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800',
 }
 
 export default async function BlogPostPage({ params }: Props) {
   const post = await getPostBySlug(params.slug)
   if (!post) notFound()
 
-  // Get related posts (prioritize same category)
+  // Get related posts (mix of Blog and Journal)
+  const isJournal = (cat: string) => ['Research', 'Engineering', 'Security'].includes(cat)
   const allPosts = getAllPosts()
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== post.slug)
-    .sort((a, b) => {
-      // Prioritize same category
-      if (a.category === post.category && b.category !== post.category) return -1
-      if (a.category !== post.category && b.category === post.category) return 1
-      // Then by date (already sorted by date usually, but just in case)
-      return new Date(b.date).getTime() - new Date(a.date).getTime()
-    })
-    .slice(0, 3)
+  
+  const sameCategory = allPosts.filter(p => p.slug !== post.slug && p.category === post.category)
+  const differentType = allPosts.filter(p => p.slug !== post.slug && isJournal(p.category) !== isJournal(post.category))
+  
+  const relatedPosts = [
+    ...sameCategory.slice(0, 2),
+    ...differentType.slice(0, 1)
+  ].slice(0, 3)
 
   const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -296,8 +299,8 @@ export default async function BlogPostPage({ params }: Props) {
         {relatedPosts.length > 0 && (
           <section className="mt-24 pt-16 border-t border-[#1E2D47]" aria-label="Related articles">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white tracking-tight">Further Reading</h2>
-              <Link href="/blog/" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Journal Entries →</Link>
+              <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white tracking-tight">Blog & Journal Archive</h2>
+              <Link href="/blog/" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Entries →</Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (
