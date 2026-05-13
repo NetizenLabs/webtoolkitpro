@@ -51,4 +51,6 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'favicon-generator': dynamic(() => import('@/components/tools/instances/FaviconGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'xml-formatter': dynamic(() => import('@/components/tools/instances/XmlFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
   'text-cleaner': dynamic(() => import('@/components/tools/instances/TextCleaner'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'qr-code-generator': dynamic(() => import('@/components/tools/instances/QrCodeGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'php-serializer': dynamic(() => import('@/components/tools/instances/PhpSerializer'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

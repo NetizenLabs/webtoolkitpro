@@ -23,8 +23,8 @@ tools:
       library: "Native Browser Parser"
       
     content:
-      title: "Best Free Online JSON Formatter & Validator 2026"
-      description: "Beautify, format, and validate your JSON data instantly. Enterprise-grade tool for modern web developers."
+      title: "Best Free Online Hash Generator 2026 - SHA-256, MD5 & More"
+      description: "Generate secure hashes instantly including MD5, SHA-256, and SHA-512. Create unhackable password hashes locally in your browser for maximum privacy."
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
       entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using high-performance parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
       how_it_works: "Our engine uses a high-performance approach to parse your input. It identifies structural errors in real-time, providing exact line-number feedback for common issues like trailing commas or unquoted keys."
@@ -627,7 +627,8 @@ tools:
       output_formats: ["url"]
       processing: "client-side"
     content:
-      description: "Encode or decode strings for URI compatibility. Ensure your query parameters and URLs are safe for all web browsers and servers."
+      title: "Encode URI Component Online - Best URL Encoder/Decoder 2026"
+      description: "Encode or decode strings for URI compatibility. Use our free tool to encode URI components safely for web browsers and API requests. RFC 3986 compliant."
       entity_definition: "URL Encoder/Decoder is a web utility that converts special characters into percent-encoded strings. This ensures that URIs are correctly transmitted across HTTP protocols without data corruption or security issues."
       how_it_works: "It uses standard RFC 3986 encoding to replace unsafe characters with their hexadecimal equivalents."
       use_cases:
@@ -1643,4 +1644,65 @@ tools:
           value: "High-Performance"
         - label: "Execution"
           value: "Client-Side"
+
+  - name: "PHP Serializer & Deserializer"
+    slug: "php-serializer"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "serialization-tools"
+    tags: ["php", "serialize", "unserialize", "json", "converter"]
+    priority: 10
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Convert between PHP Serialized data and JSON"
+      secondary: "Repair and format PHP serialized strings"
+    content:
+      title: "Best Free Online PHP Serializer & Deserializer 2026"
+      description: "Convert PHP serialized strings to JSON and vice-versa instantly. Perfect for debugging database blobs or session data without needing a PHP server."
+      tldr: "Easily transform PHP serialized data into readable JSON or serialize JSON for PHP applications."
+      entity_definition: "PHP Serializer is a technical utility that handles the specialized 'serialize' format used in PHP development. It allows developers to view and edit complex PHP data structures by converting them into standard JSON. This is essential for debugging legacy databases and session files."
+      features:
+        - "JSON to PHP Serialization"
+        - "PHP Unserialization to JSON"
+        - "Support for arrays, strings, and objects"
+        - "Real-time error detection for broken strings"
+        - "100% private client-side processing"
+      faq:
+        - question: "Does it support PHP objects?"
+          answer: "Yes, it supports standard object serialization. However, custom class instances will be converted to generic objects."
+      technical_specs:
+        - label: "Library"
+          value: "php-serialize"
+        - label: "Execution"
+          value: "Local Browser"
+
+  - name: "QR Code Generator"
+    slug: "qr-code-generator"
+    category: "Generators"
+    icon: "QrCode"
+    subcategory: "marketing-tools"
+    tags: ["qr", "generator", "code", "barcode", "scan"]
+    priority: 15
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Generate high-quality QR codes"
+      secondary: "Create scanable codes for URLs and text"
+    content:
+      title: "Best Free Online QR Code Generator 2026 - High Quality"
+      description: "Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly. Download or copy as high-resolution images."
+      tldr: "Instantly create professional QR codes for any URL or text locally in your browser."
+      entity_definition: "QR Code Generator is a high-performance utility that converts text strings into 2D barcodes. It uses industry-standard encoding to ensure compatibility with all modern scanners. No data is sent to servers, making it safe for private information."
+      features:
+        - "Instant QR code generation"
+        - "High-resolution PNG download"
+        - "One-click copy to clipboard"
+        - "Privacy-first local processing"
+      faq:
+        - question: "Are these QR codes permanent?"
+          answer: "Yes. They are standard static QR codes that will work forever without any redirection."
+      technical_specs:
+        - label: "Engine"
+          value: "qrcode.js"
+        - label: "Output"
+          value: "PNG / Canvas"
 
