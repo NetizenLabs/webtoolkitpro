@@ -43,7 +43,7 @@ const EXAMPLES = [
   'How to Build a REST API in 2026',
   'The Ultimate Guide to CSS Grid Layouts',
   '10 Best Free Developer Tools (Tested & Reviewed)',
-  'What Is Machine Learning? A Beginner's Guide',
+  "What Is Machine Learning? A Beginner's Guide",
 ]
 
 export default function SlugGenerator() {
