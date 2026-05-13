@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'WebToolkit Pro - Premium Developer Tools for Modern Engineering',
-  description: 'Access 40+ secure, client-side developer tools. From JSON formatting to SEO optimization, WebToolkit Pro provides high-performance utilities for enterprise workflows.',
+  title: 'Web Toolkit Pro - Premium Web Toolkit for Modern Engineering',
+  description: 'Access 40+ secure, client-side developer tools in our free web toolkit. From JSON formatting to SEO optimization, this web toolkit provides high-performance utilities for enterprise workflows.',
+  keywords: ['web toolkit', 'google web toolkit', 'gwt web toolkit', 'web toolkits', 'what is google web toolkit'],
   alternates: {
     canonical: 'https://wtkpro.site/',
   },
@@ -45,15 +46,15 @@ export default function Home() {
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-700">
-            Build Faster with<br />
+            Build Faster with the Ultimate<br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
-              WebToolkit Pro
+              Web Toolkit
             </span>
           </h1>
 
           <p className="text-[var(--font-size-lg)] text-gray-600 dark:text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
             Format JSON. Generate passwords. Encode data. All client-side.<br />
-            Premium utilities for modern engineering workflows. No login required.
+            Premium utilities in our web toolkit for modern engineering workflows. No login required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
@@ -81,7 +82,7 @@ export default function Home() {
             >
               <img 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141100&theme=light&t=1778387824061" 
-                alt="WebToolkit Pro - 40+ premium developer tools with a perfect 100 speed score | Product Hunt" 
+                alt="Web Toolkit Pro - 40+ premium developer tools with a perfect 100 speed score | Product Hunt" 
                 width="250" 
                 height="54" 
                 className="dark:brightness-90 dark:contrast-125"
@@ -216,7 +217,7 @@ export default function Home() {
               The Global Standard for <span className="text-blue-600 dark:text-blue-400">Web Utilities</span>
             </h2>
             <p className="text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl mx-auto">
-              WebToolkit Pro isn't just a collection of tools; it's an engineering ecosystem designed to handle demanding technical workflows with <span className="text-gray-900 dark:text-white font-bold">high-performance processing</span>.
+              Our web toolkit isn't just a collection of tools; it's an engineering ecosystem designed to handle demanding technical workflows with <span className="text-gray-900 dark:text-white font-bold">high-performance processing</span>. Compared to other web toolkits, it stands out for its privacy.
             </p>
           </div>
 
@@ -299,7 +300,7 @@ export default function Home() {
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  At WebToolkit Pro, we believe that professional developer tools should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built for maximum security and local-first processing.
+                  At WebToolkit Pro, we believe that a professional web toolkit should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built for maximum security and local-first processing.
                 </p>
                 <p>
                   From advanced SEO utilities to our secure UUID generators, every tool is optimized for performance, delivering instant execution.
@@ -347,7 +348,7 @@ export default function Home() {
               <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-8 tracking-tight uppercase">Master Your Technical Workflow</h2>
               <div className="space-y-6 text-lg text-gray-500 dark:text-slate-400 leading-relaxed">
                 <p>
-                  WebToolkit Pro is more than just a collection of utilities; it is a comprehensive ecosystem designed to bridge the gap between complex engineering requirements and user-friendly interfaces. Our tools are categorized into specialized hubs to help you find exactly what you need for your daily development tasks.
+                  A versatile web toolkit is more than just a collection of utilities; it is a comprehensive ecosystem designed to bridge the gap between complex engineering requirements and user-friendly interfaces. Our tools are categorized into specialized hubs to help you find exactly what you need for your daily development tasks.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                   <div className="p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800">
@@ -389,6 +390,35 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO FAQs */}
+      <section className="py-[var(--space-xl)] bg-gray-50 dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-10 text-center uppercase">Web Toolkit FAQs</h2>
+          <div className="space-y-6">
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">What is Google Web Toolkit?</h3>
+              <p className="text-gray-600 dark:text-slate-400">Google Web Toolkit (GWT) is an open-source set of tools that allows web developers to create and maintain complex JavaScript front-end applications in Java. Our web toolkit is different, providing ready-to-use utilities directly in your browser.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How Google Web Toolkit works compared to modern web toolkits?</h3>
+              <p className="text-gray-600 dark:text-slate-400">While GWT compiles Java code into optimized JavaScript for browser execution, a modern web toolkit like ours provides native client-side web tools leveraging modern browser APIs. Many developers wonder how to add google web toolkit in eclipse or how to install google web toolkit development plugin in eclipse, but our toolkit requires no installation.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Can I add react-dom into wt web toolkit?</h3>
+              <p className="text-gray-600 dark:text-slate-400">Our web toolkit focuses on standalone, client-side developer utilities. It is not a framework where you add react-dom into wt web toolkit, but rather a collection of web toolkits for everyday developer tasks.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to use ajax toolkit in asp.net web application?</h3>
+              <p className="text-gray-600 dark:text-slate-400">Many developers ask how to add ajax toolkit reference in web.config or use it in ASP.NET. While we don't host ASP.NET components, our web toolkit can help format and validate the JSON, XML, or base64 data your AJAX calls rely on.</p>
+            </div>
+            <div className="p-6 bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">How to install web experience toolkit?</h3>
+              <p className="text-gray-600 dark:text-slate-400">You don't need to install anything. Unlike finding out how to install google web toolkit developer plugin for chrome or how to give attribution for google web toolkit, our web toolkit is instantly available online.</p>
             </div>
           </div>
         </div>
