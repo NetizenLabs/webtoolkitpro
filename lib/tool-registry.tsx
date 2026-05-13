@@ -49,4 +49,6 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'htaccess-generator': dynamic(() => import('@/components/tools/instances/HtaccessGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'json-to-csv': dynamic(() => import('@/components/tools/instances/JsonToCsv'), { loading: () => <ToolSkeleton />, ssr: false }),
   'favicon-generator': dynamic(() => import('@/components/tools/instances/FaviconGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'xml-formatter': dynamic(() => import('@/components/tools/instances/XmlFormatter'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'text-cleaner': dynamic(() => import('@/components/tools/instances/TextCleaner'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

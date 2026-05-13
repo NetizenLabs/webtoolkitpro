@@ -1552,3 +1552,95 @@ tools:
         - label: "Processing"
           value: "100% Client-Side"
 
+  - name: "XML Formatter"
+    slug: "xml-formatter"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "code-utilities"
+    tags: ["xml", "formatter", "beautifier", "validator", "online-tools"]
+    priority: 5
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Format and beautify XML data"
+      secondary: "Validate and minify XML strings"
+    content:
+      title: "Best Free Online XML Formatter 2026 - Beautify & Minify XML"
+      description: "Format, beautify, and minify your XML data instantly. Enterprise-grade tool with real-time validation and syntax highlighting. Clean your XML files for better readability."
+      tldr: "Instantly transform messy XML into clean, structured, and readable code locally in your browser."
+      entity_definition: "XML Formatter is a specialized utility that structures raw XML data into a readable format. It handles nested tags, attributes, and CDATA sections, providing custom indentation. Like all WebToolkit Pro tools, it operates entirely client-side for maximum privacy."
+      features:
+        - "Real-time XML beautification"
+        - "Aggressive XML minification"
+        - "Syntax error detection"
+        - "Custom indentation levels"
+        - "Privacy-first local processing"
+      faq:
+        - question: "Does it support large XML files?"
+          answer: "Yes, our engine is optimized for XML payloads up to 10MB."
+      technical_specs:
+        - label: "Parser"
+          value: "High-Performance"
+        - label: "Execution"
+          value: "Local (Client-Side)"
+
+  - name: "SQL Formatter"
+    slug: "sql-formatter"
+    category: "Developer Tools"
+    icon: "Database"
+    subcategory: "code-utilities"
+    tags: ["sql", "formatter", "beautifier", "minify", "database", "linearize"]
+    priority: 5
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Format and beautify SQL queries"
+      secondary: "Minify and linearize complex SQL statements"
+    content:
+      title: "SQL Formatter & Minifier - Best Online SQL Tool 2026"
+      description: "Beautify, format, and minify your SQL queries instantly. Supports multiple SQL dialects and provides clean, linearized output for database management."
+      tldr: "Clean up your SQL queries with professional formatting or linearize them for compact storage."
+      entity_definition: "SQL Formatter is a database utility that transforms raw SQL queries into human-readable code. It supports tabular formatting and can also 'linearize' queries (minify them into a single line) for better performance in scripts."
+      features:
+        - "Tabular SQL formatting"
+        - "SQL minification and linearization"
+        - "Support for complex JOINs and Subqueries"
+        - "One-click copy and download"
+      faq:
+        - question: "Which SQL dialects are supported?"
+          answer: "It supports standard SQL, MySQL, PostgreSQL, and SQL Server syntax."
+      technical_specs:
+        - label: "Library"
+          value: "sql-formatter"
+        - label: "Dialects"
+          value: "Multi-SQL"
+
+  - name: "Text Cleaner Pro"
+    slug: "text-cleaner"
+    category: "Writing Tools"
+    icon: "Eraser"
+    subcategory: "text-utilities"
+    tags: ["text", "cleaner", "formatter", "case-converter", "remove-spaces"]
+    priority: 15
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Clean and format messy text"
+      secondary: "Remove extra spaces, line breaks, and convert case"
+    content:
+      title: "Best Free Online Text Cleaner Pro 2026"
+      description: "Clean up your messy text instantly. Remove extra spaces, tabs, and line breaks. Convert case to uppercase or lowercase and format your text for professional use."
+      tldr: "Instantly clean and normalize your text by removing formatting artifacts and extra whitespace."
+      entity_definition: "Text Cleaner Pro is a text normalization utility that strips away common formatting issues like multiple spaces, unwanted line breaks, and inconsistent indentation. It provides a one-click 'Basic Clean' that makes text ready for professional documents or code comments."
+      features:
+        - "Remove multiple spaces and tabs"
+        - "Clear empty lines and trim whitespace"
+        - "Convert line breaks to single spaces"
+        - "Instant UPPERCASE and lowercase conversion"
+        - "100% privacy-focused client-side processing"
+      faq:
+        - question: "Is my text data safe?"
+          answer: "Yes. All processing happens in your browser. We never see or store your text."
+      technical_specs:
+        - label: "Regex Engine"
+          value: "High-Performance"
+        - label: "Execution"
+          value: "Client-Side"
+
