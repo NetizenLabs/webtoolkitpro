@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wtkpro.site/',
   },
-  title: 'WebToolkit Pro | Premium Web Toolkit Online for Developers',
-  description: 'Access 40+ free premium developer tools in WebToolkit Pro. Secure, client-side utilities for JSON formatting, SEO auditing, and enterprise-grade engineering.',
-  keywords: ['wtkpro', 'WebToolkit Pro', 'developer platform', 'engineering utilities', 'secure web tools', 'technical documentation', 'developer ecosystem'],
+  title: 'WebToolkit Pro (WTK) | 50+ Premium Web Toolkit Online Tools',
+  description: 'Access the most complete Web Toolkit online. 50+ free premium developer tools including JSON formatters, XML beautifiers, PHP serializers, and SEO audit utilities.',
+  keywords: ['wtk', 'wtkpro', 'Web Toolkit', 'Web Toolkit Online', 'WebToolkit Pro', 'developer platform', 'engineering utilities', 'secure web tools'],
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
   publisher: 'WebToolkit Pro',
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'WebToolkit Pro | Premium Web Toolkit Online for Developers',
-    description: 'Access 40+ free premium developer tools in our secure web toolkit. Utilities for JSON formatting, SEO auditing, and enterprise engineering.',
+    title: 'WebToolkit Pro (WTK) | 50+ Premium Web Toolkit Online Tools',
+    description: 'Access the most complete Web Toolkit online. 50+ free premium developer tools and engineering journals.',
     url: 'https://wtkpro.site',
     siteName: 'WebToolkit Pro',
     images: [
@@ -73,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WebToolkit Pro | 40+ Premium Developer Tools & Expert Guides',
-    description: 'WebToolkit Pro offers 40+ free premium developer tools and expert guides. Secure, fast, and optimized for enterprise engineering.',
+    title: 'WebToolkit Pro (WTK) | 50+ Premium Developer Tools',
+    description: 'WebToolkit Pro offers 50+ free premium developer tools. Secure, fast, and optimized for 2026 standards.',
     images: ['https://wtkpro.site/og-image.png?v=2'],
     creator: '@WebToolKitPro',
   },
