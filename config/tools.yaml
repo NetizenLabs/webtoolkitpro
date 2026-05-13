@@ -1213,3 +1213,133 @@ tools:
       faq:
         - question: "What is a Cron expression?"
           answer: "A Cron expression is a string representing a schedule for automated tasks on Unix-like systems."
+
+  - name: "Diff Checker"
+    slug: "diff-checker"
+    category: "Developer Tools"
+    icon: "GitCompare"
+    subcategory: "code-utilities"
+    tags: ["diff", "compare", "text", "code-review", "version-control"]
+    priority: 14
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Compare two text blocks and visualize differences line-by-line"
+      secondary: "Identify additions, deletions, and unchanged lines instantly"
+    content:
+      title: "Diff Checker - Free Online Text & Code Comparison Tool"
+      description: "Compare two pieces of text or code side-by-side and instantly see every addition, deletion, and unchanged line. Perfect for code reviews and document comparison."
+      tldr: "Paste two text blocks and get a color-coded, line-by-line diff with added/removed stats in real-time."
+      entity_definition: "Diff Checker is a developer utility that computes the longest common subsequence (LCS) between two text inputs and presents the delta in a color-coded format. It highlights additions in green and deletions in red, allowing engineers to perform code reviews, audit document changes, and debug configuration differences efficiently."
+      how_it_works: "The tool uses an LCS-based algorithm to compute the minimal set of changes between two inputs, displaying each line annotated as added, removed, or unchanged."
+      use_cases:
+        - "Code review and PR comparison"
+        - "Comparing configuration files"
+        - "Auditing document revisions"
+        - "Debugging output differences"
+      features:
+        - "Line-by-line LCS-based diffing"
+        - "Color-coded added/removed/unchanged lines"
+        - "Stats summary (added, removed, unchanged)"
+        - "One-click copy of the full diff"
+        - "100% client-side processing"
+      faq:
+        - question: "What algorithm does this use?"
+          answer: "It uses the Longest Common Subsequence (LCS) algorithm, the same foundation as Unix diff and Git."
+        - question: "Can I diff code files?"
+          answer: "Yes. Paste code from any language and the diff will compare it line by line."
+        - question: "Is my code sent to a server?"
+          answer: "No. All comparison happens locally in your browser. No data is transmitted."
+      technical_specs:
+        - label: "Algorithm"
+          value: "LCS (Longest Common Subsequence)"
+        - label: "Processing"
+          value: "100% Client-Side"
+        - label: "Output"
+          value: "Unified Diff Format"
+
+  - name: "CSS Gradient Generator"
+    slug: "css-gradient-generator"
+    category: "Design Tools"
+    icon: "Palette"
+    subcategory: "css-utilities"
+    tags: ["css", "gradient", "design", "colors", "frontend", "generator"]
+    priority: 13
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Generate beautiful linear, radial, and conic CSS gradients visually"
+      secondary: "Export production-ready CSS with custom color stops and angles"
+    content:
+      title: "CSS Gradient Generator - Free Online Visual Gradient Builder"
+      description: "Create stunning linear, radial, and conic CSS gradients with a visual editor. Add custom color stops, adjust angles, and copy production-ready CSS in one click."
+      tldr: "Design and export CSS gradients visually with real-time preview, custom stops, and instant CSS code output."
+      entity_definition: "CSS Gradient Generator is a visual design utility that allows developers and designers to construct complex CSS gradient declarations without writing code. It supports all three modern gradient types (linear-gradient, radial-gradient, conic-gradient), unlimited color stops, and provides the exact CSS output ready for production use."
+      how_it_works: "The tool renders a live preview as you adjust gradient type, angle, and color stops. It constructs the CSS gradient string in real-time based on your configuration."
+      use_cases:
+        - "Creating website background gradients"
+        - "Designing button and card hover effects"
+        - "Building hero section backgrounds"
+        - "Generating CSS for UI component libraries"
+      features:
+        - "Linear, radial, and conic gradient types"
+        - "Unlimited color stops with position control"
+        - "Angle presets and custom angle input"
+        - "One-click randomize for inspiration"
+        - "Instant CSS code copy"
+        - "Live preview"
+      faq:
+        - question: "Does this support transparency?"
+          answer: "Yes. Use the color picker to select any color including those with alpha transparency."
+        - question: "What browsers support conic gradients?"
+          answer: "All modern browsers (Chrome 69+, Firefox 83+, Safari 12.1+) support conic-gradient."
+        - question: "Can I add more than two color stops?"
+          answer: "Yes, you can add unlimited color stops using the Add Stop button."
+      technical_specs:
+        - label: "Output"
+          value: "W3C CSS3 Gradient Syntax"
+        - label: "Types"
+          value: "Linear, Radial, Conic"
+        - label: "Processing"
+          value: "100% Client-Side"
+
+  - name: "llms.txt Generator"
+    slug: "llms-txt-generator"
+    category: "SEO Tools"
+    icon: "Bot"
+    subcategory: "ai-optimization"
+    tags: ["llms", "ai", "seo", "geo", "crawler", "robots", "generative-engine-optimization"]
+    priority: 12
+    releaseDate: "2026-05-13"
+    function:
+      primary: "Generate a machine-readable llms.txt file to guide AI crawlers"
+      secondary: "Optimize your site for Generative Engine Optimization (GEO)"
+    content:
+      title: "llms.txt Generator - Free AI & LLM Crawler Optimization Tool"
+      description: "Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. The new robots.txt for the AI era."
+      tldr: "Create a compliant llms.txt file in seconds to ensure AI search engines and LLMs correctly index and attribute your content."
+      entity_definition: "llms.txt Generator is a Generative Engine Optimization (GEO) utility that creates the llms.txt standard file for websites. This emerging protocol—analogous to robots.txt—provides structured context to Large Language Models (LLMs) and AI crawlers, improving the accuracy of citations and increasing the likelihood of a site's content appearing in AI-generated answers from tools like ChatGPT, Perplexity, and Google's AI Overviews."
+      how_it_works: "Users enter their site details, description, and key sections. The tool formats this information into the standardized llms.txt Markdown structure, ready to be placed at the root of their website."
+      use_cases:
+        - "Optimizing sites for AI search engines (Perplexity, ChatGPT)"
+        - "Improving citation accuracy in AI-generated answers"
+        - "Controlling how LLMs represent your brand"
+        - "Implementing GEO (Generative Engine Optimization)"
+      features:
+        - "Structured Markdown output (llms.txt standard)"
+        - "AI indexing allow/block toggle"
+        - "Custom section builder"
+        - "Quick presets for SaaS, Blog, and E-commerce"
+        - "One-click copy output"
+      faq:
+        - question: "What is llms.txt?"
+          answer: "llms.txt is an emerging standard (like robots.txt but for AI) that provides structured context to LLMs about your website's content and purpose."
+        - question: "Where do I put the llms.txt file?"
+          answer: "Place it in the root of your website so it is accessible at yoursite.com/llms.txt."
+        - question: "Will this help me appear in ChatGPT answers?"
+          answer: "It helps AI models understand your site's context and authority, which can improve how they reference your content in generated answers."
+      technical_specs:
+        - label: "Format"
+          value: "Markdown (GFM)"
+        - label: "Standard"
+          value: "llms.txt Protocol"
+        - label: "Processing"
+          value: "100% Client-Side"

@@ -42,4 +42,7 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'regex-tester': dynamic(() => import('@/components/tools/instances/RegexTester'), { loading: () => <ToolSkeleton />, ssr: false }),
   'jwt-decoder': dynamic(() => import('@/components/tools/instances/JwtDecoder'), { loading: () => <ToolSkeleton />, ssr: false }),
   'cron-generator': dynamic(() => import('@/components/tools/instances/CronGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'diff-checker': dynamic(() => import('@/components/tools/instances/DiffChecker'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'css-gradient-generator': dynamic(() => import('@/components/tools/instances/CssGradientGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'llms-txt-generator': dynamic(() => import('@/components/tools/instances/LlmsTxtGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
