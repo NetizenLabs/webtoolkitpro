@@ -142,9 +142,20 @@ export default function FaviconGenerator() {
             <div className="flex items-end flex-wrap gap-4 p-6 bg-[#0D1526] border border-[#1E2D47] rounded-2xl">
               {FAVICON_SIZES.filter(s => s <= 192).map(size => (
                 <button key={size} onClick={() => setActiveSize(size)} className="flex flex-col items-center gap-2 group">
-                  <canvas ref={size === activeSize ? canvasRef : undefined} width={size} height={size} className={`rounded border-2 transition-all ${activeSize === size ? 'border-[#00D4B4]' : 'border-transparent'}`}
+                  <canvas 
+                    width={size} 
+                    height={size} 
+                    className={`rounded border-2 transition-all ${activeSize === size ? 'border-[#00D4B4]' : 'border-transparent'}`}
                     style={{ width: Math.max(size, 16), height: Math.max(size, 16) }}
-                    ref={el => { if (el) drawFavicon(el, size) }}
+                    ref={el => { 
+                      if (el) {
+                        if (size === activeSize) {
+                          // @ts-ignore
+                          canvasRef.current = el
+                        }
+                        drawFavicon(el, size) 
+                      }
+                    }}
                   />
                   <span className="text-[9px] font-bold text-gray-500">{size}px</span>
                 </button>
