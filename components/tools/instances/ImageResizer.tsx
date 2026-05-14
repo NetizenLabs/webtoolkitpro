@@ -78,32 +78,51 @@ export default function ImageResizer() {
 
       let finalUrl = ''
       let finalSize = 0
-      const mimeType = file?.type || 'image/jpeg'
+      
+      // Determine output format. If targetKB is set, we MUST use a format that supports quality (jpeg/webp).
+      // PNG is lossless and will ignore the quality parameter.
+      let outputMime = file?.type || 'image/jpeg'
+      if (targetKB > 0 && outputMime === 'image/png') {
+        outputMime = 'image/jpeg'
+      }
 
       if (targetKB > 0) {
-        // Quality-based compression to hit target KB
-        let quality = 0.95
-        let lastSize = Infinity
+        // Binary search for optimal quality to hit target KB
+        let minQuality = 0.01
+        let maxQuality = 0.99
+        let bestUrl = ''
+        let bestSize = 0
         const targetBytes = targetKB * 1024
 
-        // Iterative search for quality
-        for (let i = 0; i < 10; i++) {
-          finalUrl = canvas.toDataURL(mimeType, quality)
-          finalSize = Math.round((finalUrl.length * 3) / 4) // Approx bytes from base64
+        for (let i = 0; i < 8; i++) {
+          const currentQuality = (minQuality + maxQuality) / 2
+          const dataUrl = canvas.toDataURL(outputMime, currentQuality)
+          // Base64 size estimation: (stringLength - headerLength) * 3 / 4
+          const base64Data = dataUrl.split(',')[1]
+          const currentSize = Math.round((base64Data.length * 3) / 4)
 
-          if (Math.abs(finalSize - targetBytes) < targetBytes * 0.05 || quality < 0.1) {
-            break
-          }
-
-          if (finalSize > targetBytes) {
-            quality -= quality * 0.2
+          if (currentSize <= targetBytes) {
+            bestUrl = dataUrl
+            bestSize = currentSize
+            minQuality = currentQuality // Try higher quality
           } else {
-            quality += (1 - quality) * 0.2
+            maxQuality = currentQuality // Need lower quality
           }
         }
+        
+        // If we didn't find anything under targetBytes, use the lowest quality found
+        if (!bestUrl) {
+          bestUrl = canvas.toDataURL(outputMime, 0.01)
+          const base64Data = bestUrl.split(',')[1]
+          bestSize = Math.round((base64Data.length * 3) / 4)
+        }
+        
+        finalUrl = bestUrl
+        finalSize = bestSize
       } else {
-        finalUrl = canvas.toDataURL(mimeType, 0.9)
-        finalSize = Math.round((finalUrl.length * 3) / 4)
+        finalUrl = canvas.toDataURL(outputMime, 0.9)
+        const base64Data = finalUrl.split(',')[1]
+        finalSize = Math.round((base64Data.length * 3) / 4)
       }
 
       setResult({
