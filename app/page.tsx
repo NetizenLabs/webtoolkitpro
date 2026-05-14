@@ -424,6 +424,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Community Insights & Zaraz Integration */}
+      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-10 uppercase tracking-tight">Community Feedback</h2>
+          <div className="bg-gray-50 dark:bg-[#0D1526] p-8 rounded-[3rem] border border-gray-100 dark:border-[#1E2D47] shadow-sm overflow-hidden">
+            <div 
+              dangerouslySetInnerHTML={{ 
+                __html: '<!-- Zaraz Twitter Embed --><twitter-post tweet-id="1754336034228171055"></twitter-post>' 
+              }} 
+            />
+          </div>
+          <p className="mt-8 text-sm text-gray-500 dark:text-[#8A9BBE] font-medium italic">
+            Powered by Cloudflare Zaraz for maximum performance and privacy.
+          </p>
+        </div>
+      </section>
+
       {/* Global Authority Network */}
       <section className="py-[var(--space-lg)] bg-gray-50/50 dark:bg-slate-900/50 border-t border-gray-100 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
