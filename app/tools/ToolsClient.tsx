@@ -74,7 +74,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
     return visibleTools.filter(tool => {
       const matchesCategory = activeCategory === 'All' || tool.category === activeCategory
       const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase()) || 
-                           tool.content.description.toLowerCase().includes(search.toLowerCase())
+                           (tool.content?.description || '').toLowerCase().includes(search.toLowerCase())
       return matchesCategory && matchesSearch
     })
   }, [visibleTools, activeCategory, search])
@@ -151,7 +151,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                     {tool.name}
                   </h3>
                   <p className="text-sm text-[#8A9BBE] leading-relaxed line-clamp-2 mb-4">
-                    {tool.content.description}
+                    {tool.content?.description || `Free online ${tool.name} utility.`}
                   </p>
                 </div>
 

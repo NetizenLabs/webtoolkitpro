@@ -88,7 +88,7 @@ export default function Footer() {
             <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt">
               <Rocket className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="mailto:safi4730358@gmail.com" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="mailto:hello@wtkpro.site" className="p-2.5 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Mail className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>

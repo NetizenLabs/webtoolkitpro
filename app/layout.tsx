@@ -203,13 +203,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             'offers': {
               '@type': 'Offer',
               'price': '0',
-              'priceCurrency': 'USD'
+              'priceCurrency': 'USD',
             },
-            'aggregateRating': {
-              '@type': 'AggregateRating',
-              'ratingValue': '4.9',
-              'ratingCount': '1240'
-            },
+
             'description': 'A collection of 40+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators.'
           }),
         }}

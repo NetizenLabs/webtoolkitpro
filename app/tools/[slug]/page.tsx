@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
 
   const baseTitle = `${tool.name} | Best Free Online ${tool.category} 2026`
   const title = tool.meta?.title || (baseTitle.length <= 60 ? baseTitle : `${tool.name} | WebToolkit Pro`)
-  const description = tool.content.description
+  const description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
 
   return {
     title,
@@ -95,10 +95,10 @@ export default function ToolPage({ params }: ToolPageProps) {
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-[#1E2D47] dark:text-white tracking-tighter">
-                  {tool.content.title || tool.name}
+                  {tool.content?.title || tool.name}
                 </h1>
                 <p className="text-gray-600 dark:text-[#8A9BBE] font-medium">
-                  {tool.function.primary} {tool.function.secondary ? `• ${tool.function.secondary}` : ''}
+                  {tool.function?.primary} {tool.function?.secondary ? `• ${tool.function.secondary}` : ''}
                 </p>
                 <Link href={`/tools/category/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all">
                   {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />

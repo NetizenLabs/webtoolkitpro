@@ -81,6 +81,7 @@ tools:
       processing: "client-side"
       library: "window.crypto"
       
+    content:
       title: "Secure Password Generator - Best Random Password Tool 2026"
       description: "US-standard cryptographically secure password generation tool. Create unhackable passwords instantly in your browser."
       tldr: "Generate high-entropy, unhackable passwords locally using the secure Web Crypto API."
@@ -212,6 +213,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "UUID v7 Generator - Secure Sortable Time-Ordered Identifiers"
       description: "Generate time-ordered, database-friendly UUID v7 identifiers. Ideal for primary keys and distributed systems."
       entity_definition: "UUID v7 Generator is a specialized utility for creating sortable unique identifiers. Unlike traditional random UUIDs, version 7 includes a timestamp, making them highly efficient for database indexing and B-Tree performance."
       how_it_works: "Our tool combines a millisecond Unix timestamp with cryptographically secure randomness to produce identifiers that are both unique and chronological."
@@ -241,6 +243,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "UUID v4 Generator - RFC 4122 Compliant Random Identifiers"
       description: "Generate cryptographically secure, unique version 4 UUIDs instantly for your applications and databases."
       entity_definition: "UUID/GUID Generator is a standard utility for creating version 4 Universally Unique Identifiers. It uses hardware-backed entropy to ensure a collision-resistant stream of identifiers for developers and sysadmins."
       how_it_works: "The tool utilizes the browser's native crypto.randomUUID API for maximum randomness and security."
@@ -270,6 +273,7 @@ tools:
       output_formats: ["txt"]
       processing: "client-side"
     content:
+      title: "Lorem Ipsum Generator - Professional Design Placeholder Text"
       description: "Generate high-quality Latin placeholder text for your website mockups, UI/UX designs, and typesetting layouts."
       entity_definition: "Lorem Ipsum Generator is a classic typesetting utility that produces balanced Latin text. It allows designers to fill layouts with content that mimics the visual weight of real language without distracting from the design elements."
       how_it_works: "It uses a randomized dictionary of traditional Latin words to construct grammatically structured sentences and paragraphs."
@@ -329,6 +333,7 @@ tools:
       output_formats: ["hex"]
       processing: "client-side"
     content:
+      title: "Secure Hash Generator - SHA-256, MD5 & SHA-512 Online"
       description: "Generate secure cryptographic hashes using SHA-1, SHA-256, SHA-384, and SHA-512 algorithms instantly."
       entity_definition: "Secure Hash Generator is a cryptographic utility that produces one-way hashes of text data. It is commonly used for data integrity verification, checksum generation, and password storage research. It uses the hardware-accelerated Web Crypto API for maximum security and performance."
       how_it_works: "It uses the crypto.subtle.digest API to process input text into fixed-length hexadecimal strings."
@@ -687,6 +692,7 @@ tools:
       output_formats: ["ratio"]
       processing: "client-side"
     content:
+      title: "WCAG Color Contrast Checker - Accessibility Compliance Tool"
       description: "Verify that your website's color combinations meet WCAG 2.1 accessibility standards. Ensure high readability for all users."
       entity_definition: "WCAG Color Contrast Checker is an accessibility utility that measures the relative luminance between foreground and background colors. It provides a contrast ratio that determines compliance with international web accessibility standards (AA and AAA)."
       how_it_works: "It calculates the contrast ratio using the W3C WCAG formula and provides instant pass/fail results for different text sizes."
@@ -716,6 +722,7 @@ tools:
       output_formats: ["hex", "rgb", "hsl"]
       processing: "client-side"
     content:
+      title: "Universal Color Picker - HEX, RGB & HSL Converter"
       description: "Pick colors and instantly get their HEX, RGB, and HSL values. A lightweight, browser-native tool for designers and developers."
       entity_definition: "Universal Color Picker is a design utility for selecting and converting color values. It provides a visual interface for picking colors and automatically generates the corresponding codes in HEX, RGB, and HSL formats."
       how_it_works: "It utilizes the native browser color input and performs mathematical transformations to translate values across different color spaces."
@@ -863,6 +870,7 @@ tools:
       output_formats: ["preview"]
       processing: "client-side"
     content:
+      title: "Markdown Previewer - Live Side-by-Side Editor & Renderer"
       description: "Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files."
       entity_definition: "Markdown Previewer is a live editing utility for visualizing Markdown content. It provides a split-view interface where developers can write markup and see the rendered results instantly."
       how_it_works: "It renders Markdown into a styled 'prose' container in real-time using a browser-native parsing engine."
@@ -1345,88 +1353,6 @@ tools:
         - label: "Processing"
           value: "100% Client-Side"
 
-  - name: "Regex Tester"
-    slug: "regex-tester"
-    category: "Developer Tools"
-    icon: "Code"
-    subcategory: "code-utilities"
-    tags: ["regex", "regexp", "tester", "debug", "javascript", "pcre"]
-    priority: 15
-    releaseDate: "2026-05-13"
-    function:
-      primary: "Test and debug regular expressions with real-time matching"
-      secondary: "Explain regex patterns and visualize match groups"
-    content:
-      title: "Regex Tester - Free Online Regular Expression Debugger"
-      description: "Test your regular expressions in real-time with our visual regex debugger. Supports JavaScript flavor with detailed match explanations and group highlighting."
-      tldr: "Validate and debug regex patterns instantly with real-time highlighting, match counts, and detailed group information."
-      entity_definition: "Regex Tester is a specialized utility for developers to compose, test, and debug regular expressions. It provides a real-time execution environment where users can enter a pattern and test string, receiving immediate feedback on matches, capture groups, and potential errors. It is essential for validating complex validation logic and data extraction patterns."
-      how_it_works: "The tool executes the regex pattern against the test string using the browser's native JavaScript engine. It identifies all matches and capture groups, displaying them with distinct visual highlighting."
-      use_cases:
-        - "Validating email and URL patterns"
-        - "Testing data extraction logic"
-        - "Debugging complex string replacement rules"
-        - "Learning regex syntax with live feedback"
-      features:
-        - "Real-time regex matching"
-        - "Visual highlighting of match groups"
-        - "Match count and index tracking"
-        - "Support for global and case-insensitive flags"
-        - "Detailed explanation of the regex pattern"
-      faq:
-        - question: "Which regex flavor does this use?"
-          answer: "It uses the native JavaScript (V8) regex engine, which is very similar to PCRE."
-        - question: "Is my test data safe?"
-          answer: "Yes. All processing happens 100% client-side. No data is sent to our servers."
-      technical_specs:
-        - label: "Engine"
-          value: "JavaScript (V8)"
-        - label: "Processing"
-          value: "100% Client-Side"
-        - label: "Flags Supported"
-          value: "g, i, m, s, u, y"
-
-  - name: "JWT Decoder"
-    slug: "jwt-decoder"
-    category: "Security"
-    icon: "ShieldCheck"
-    subcategory: "authentication"
-    tags: ["jwt", "decoder", "auth", "security", "token", "json-web-token"]
-    priority: 16
-    releaseDate: "2026-05-13"
-    function:
-      primary: "Decode and inspect JSON Web Tokens (JWT) safely"
-      secondary: "Visualize header, payload, and signature components"
-    content:
-      title: "JWT Decoder - Free Online JSON Web Token Inspector"
-      description: "Decode and inspect your JSON Web Tokens (JWT) instantly. See the header, payload data, and signature info without sending your token to any server."
-      tldr: "Safely decode and inspect JWT tokens locally in your browser to view claims, expiry, and header metadata."
-      entity_definition: "JWT Decoder is a security-focused utility for developers to inspect the contents of JSON Web Tokens. It breaks down the encoded string into its three constituent parts: Header, Payload, and Signature. It automatically parses timestamps like 'exp' and 'iat' into human-readable dates, making it an essential tool for debugging authentication flows."
-      how_it_works: "The tool splits the JWT string by the '.' delimiter and uses Base64URL decoding on the first two segments to reveal the JSON objects inside."
-      use_cases:
-        - "Inspecting user claims in a token"
-        - "Verifying token expiration (exp)"
-        - "Checking authentication algorithms (alg)"
-        - "Debugging OAuth2 and OpenID Connect flows"
-      features:
-        - "Instant Base64URL decoding"
-        - "Human-readable timestamp conversion"
-        - "Color-coded component separation"
-        - "Automatic JSON formatting"
-        - "100% client-side (Zero-Knowledge)"
-      faq:
-        - question: "Is it safe to paste my production token here?"
-          answer: "Yes, because the decoding happens entirely in your browser. Our server never sees your token."
-        - question: "Does this verify the signature?"
-          answer: "This tool is a decoder. Verification requires your secret key, which should never be pasted into an online tool."
-      technical_specs:
-        - label: "Standard"
-          value: "RFC 7519"
-        - label: "Decoding"
-          value: "Base64URL"
-        - label: "Processing"
-          value: "100% Client-Side"
-
   - name: "Slug Generator"
     slug: "slug-generator"
     category: "SEO Tools"
@@ -1583,36 +1509,6 @@ tools:
           value: "High-Performance"
         - label: "Execution"
           value: "Local (Client-Side)"
-
-  - name: "SQL Formatter"
-    slug: "sql-formatter"
-    category: "Developer Tools"
-    icon: "Database"
-    subcategory: "code-utilities"
-    tags: ["sql", "formatter", "beautifier", "minify", "database", "linearize"]
-    priority: 5
-    releaseDate: "2026-05-13"
-    function:
-      primary: "Format and beautify SQL queries"
-      secondary: "Minify and linearize complex SQL statements"
-    content:
-      title: "SQL Formatter & Minifier - Best Online SQL Tool 2026"
-      description: "Beautify, format, and minify your SQL queries instantly. Supports multiple SQL dialects and provides clean, linearized output for database management."
-      tldr: "Clean up your SQL queries with professional formatting or linearize them for compact storage."
-      entity_definition: "SQL Formatter is a database utility that transforms raw SQL queries into human-readable code. It supports tabular formatting and can also 'linearize' queries (minify them into a single line) for better performance in scripts."
-      features:
-        - "Tabular SQL formatting"
-        - "SQL minification and linearization"
-        - "Support for complex JOINs and Subqueries"
-        - "One-click copy and download"
-      faq:
-        - question: "Which SQL dialects are supported?"
-          answer: "It supports standard SQL, MySQL, PostgreSQL, and SQL Server syntax."
-      technical_specs:
-        - label: "Library"
-          value: "sql-formatter"
-        - label: "Dialects"
-          value: "Multi-SQL"
 
   - name: "Text Cleaner Pro"
     slug: "text-cleaner"

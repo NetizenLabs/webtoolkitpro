@@ -59,14 +59,14 @@ export function generateSoftwareSchema(tool: ToolConfig) {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    'name': tool.content.title || tool.name,
-    'description': tool.content.description,
+    'name': tool.content?.title || tool.name,
+    'description': tool.content?.description || `Free online ${tool.name} utility.`,
     'applicationCategory': tool.category,
     'operatingSystem': 'Web Browser',
     'url': url,
-    'featureList': tool.content.features.join(', '),
+    'featureList': tool.content?.features?.join(', ') || 'Secure, fast, private',
     'isAccessibleForFree': true,
-    'version': tool.releaseDate,
+    'version': tool.releaseDate || '2026.01.01',
     'offers': {
       '@type': 'Offer',
       'price': '0',
@@ -86,7 +86,7 @@ export function generateSoftwareSchema(tool: ToolConfig) {
 }
 
 export function generateFAQSchema(tool: ToolConfig) {
-  const faqs = tool.content.faq && tool.content.faq.length > 0 
+  const faqs = tool.content?.faq && tool.content.faq.length > 0 
     ? tool.content.faq 
     : [
         {
