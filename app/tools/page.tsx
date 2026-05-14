@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Browse our complete directory of 40+ professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.',
   keywords: 'developer tools directory, web utilities list, professional coding tools, secure online tools',
   alternates: {
-    canonical: 'https://wtkpro.site/tools/',
+    canonical: 'https://wtkpro.site/tools',
   },
   robots: {
     index: true,

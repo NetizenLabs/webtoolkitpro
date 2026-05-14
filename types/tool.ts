@@ -41,6 +41,7 @@ export interface ToolConfig {
     use_cases: string[];
     features: string[];
     faq: ToolFAQ[];
+    keywords?: string[] | string;
     technical_specs?: TechnicalSpec[];
   };
 

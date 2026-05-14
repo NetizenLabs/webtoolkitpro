@@ -23,7 +23,7 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
   alternates: {
-    canonical: 'https://wtkpro.site/',
+    canonical: 'https://wtkpro.site',
   },
   title: 'WebToolkit Pro (WTK) | 50+ Premium Web Toolkit Online Tools',
   description: 'Access the most complete Web Toolkit online. 50+ free premium developer tools including JSON formatters, XML beautifiers, PHP serializers, and SEO audit utilities.',
@@ -208,7 +208,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             'url': 'https://wtkpro.site',
             'potentialAction': {
               '@type': 'SearchAction',
-              'target': 'https://wtkpro.site/tools/?q={search_term_string}',
+              'target': 'https://wtkpro.site/tools?q={search_term_string}',
               'query-input': 'required name=search_term_string'
             }
           }),

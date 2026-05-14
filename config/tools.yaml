@@ -22,9 +22,12 @@ tools:
       processing: "client-side"
       library: "Native Browser Parser"
       
+    meta:
+      title: "JSON Formatter with Line Numbers — Best Free Validator 2026"
     content:
       title: "Free JSON Formatter & Validator Online — Instant Results"
-      description: "Generate secure hashes instantly including MD5, SHA-256, and SHA-512. Create unhackable password hashes locally in your browser for maximum privacy."
+      description: "Format and validate JSON data instantly with line-number error detection. Our professional beautifier and minifier works 100% locally in your browser for total privacy."
+      keywords: ["json formatter with line numbers", "validate json online", "beautify json browser", "json validator offline", "fix json syntax errors", "json minifier for production"]
       tldr: "Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser."
       entity_definition: "JSON Formatter & Validator is a specialized developer utility that processes raw JSON data into human-readable, structured formats. It accepts standard JSON strings and text files, producing optimized, beautified output. Unlike standard text editors, this tool operates entirely in the browser using high-performance parsing, ensuring no data is ever transmitted to external servers. It is essential for debugging API responses and optimizing production payloads."
       how_it_works: "Our engine uses a high-performance approach to parse your input. It identifies structural errors in real-time, providing exact line-number feedback for common issues like trailing commas or unquoted keys."
@@ -81,9 +84,12 @@ tools:
       processing: "client-side"
       library: "window.crypto"
       
+    meta:
+      title: "High Entropy Random Password Generator — Secure & Offline"
     content:
-      title: "Secure Password Generator - Best Random Password Tool 2026"
-      description: "US-standard cryptographically secure password generation tool. Create unhackable passwords instantly in your browser."
+      title: "Secure Password Generator — Best Random Password Tool 2026"
+      description: "Generate cryptographically secure, high-entropy passwords that meet US enterprise standards. Works 100% offline using your browser's native crypto API."
+      keywords: ["random password generator", "secure passwords offline", "high entropy passwords", "generate strong passwords", "unhackable password tool", "cryptographically secure passwords"]
       tldr: "Generate high-entropy, unhackable passwords locally using the secure Web Crypto API."
       entity_definition: "Secure Password Generator is a privacy-focused utility that creates high-entropy, cryptographically secure passwords. It utilizes the browser's native Web Crypto API to ensure randomness that meets enterprise security standards. No passwords are ever stored or transmitted, making it safer than cloud-based alternatives."
       how_it_works: "The tool generates a stream of random bytes using cryptographically secure pseudorandom number generators (CSPRNG) and maps them to your selected character sets (uppercase, lowercase, numbers, symbols)."
@@ -115,8 +121,12 @@ tools:
       input_formats: ["none"]
       output_formats: ["json", "txt"]
       processing: "server-side"
+    meta:
+      title: "Check My Public IPv4 & IPv6 Address — Real-time Location Audit"
     content:
-      description: "Instantly find your public IPv4/IPv6 address, geographic location, and connection details with our secure IP checker."
+      title: "What is my IP Address? — Instant Public IP Checker"
+      description: "Instantly find your public IPv4/IPv6 address, approximate geographic location, and connection details with our secure, real-time IP checker."
+      keywords: ["what is my ip address", "check public ip", "find my ipv6", "ip address location finder", "vpn leak test", "public ip audit"]
       entity_definition: "What Is My IP Address is a real-time network diagnostic tool that identifies your public-facing internet identity. It detects your IP address (IPv4 or IPv6), approximate geographic location (City, Region, Country), and connection protocol. This tool is essential for verifying VPN connectivity and troubleshooting network configurations securely."
       how_it_works: "When you open this page, our global edge network analyzes the incoming HTTP headers. We extract the 'X-Forwarded-For' or 'X-Real-IP' headers to find your public address. Simultaneously, we use Vercel's Geo-IP database to resolve your approximate location."
       use_cases:
@@ -147,9 +157,12 @@ tools:
       input_formats: ["js", "txt"]
       output_formats: ["js", "txt"]
       processing: "client-side"
+    meta:
+      title: "JavaScript Code Minifier — Compress JS for Faster Page Load"
     content:
-      title: "JS Code Minifier - Free Online High-performance JavaScript compression for production deployment"
-      description: "Compress and optimize your JavaScript code for production. Remove comments, spaces, and reduce payload size for faster website performance."
+      title: "JS Code Minifier — High-Performance JavaScript Compression"
+      description: "Compress and optimize your JavaScript code for production. Remove comments, whitespace, and redundant characters to improve Core Web Vitals and page speed."
+      keywords: ["minify javascript online", "js compressor", "reduce js bundle size", "optimize javascript for production", "javascript code minifier", "compress js for speed"]
       entity_definition: "JS Code Minifier is a frontend optimization utility that strips unnecessary characters from JavaScript source code. By removing comments, redundant whitespace, and formatting, it significantly reduces file size, leading to faster download times and improved Core Web Vitals (LCP, TBT). It is a vital tool for preparing production-ready web assets."
       how_it_works: "Our minifier uses advanced regex-based logic to strip single-line and multi-line comments, collapse redundant whitespace, and remove unnecessary semicolons or brackets where possible."
       use_cases:
@@ -180,9 +193,12 @@ tools:
       input_formats: ["url", "txt"]
       output_formats: ["html"]
       processing: "client-side"
-    content:
+    meta:
       title: "Free Meta Tag Generator for SEO — Preview in Google & Social"
-      description: "Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards to improve your search visibility and social media appearance."
+    content:
+      title: "SEO Meta Tag Generator — Optimize for High Search Visibility"
+      description: "Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards. Preview how your site looks in Google and social media feeds before publishing."
+      keywords: ["seo meta tag generator", "create open graph tags", "twitter card generator", "google snippet preview tool", "meta description generator", "social media tag builder"]
       how_it_works: "Our tool generates a comprehensive set of meta tags. These tags ensure that your content looks professional and engaging when shared across all platforms."
       use_cases:
         - "Optimizing website SEO for Google"
@@ -212,9 +228,12 @@ tools:
       input_formats: ["none"]
       output_formats: ["txt"]
       processing: "client-side"
+    meta:
+      title: "UUID v7 Generator — Time-Ordered Sortable Identifiers for DBs"
     content:
-      title: "UUID v7 Generator - Secure Sortable Time-Ordered Identifiers"
-      description: "Generate time-ordered, database-friendly UUID v7 identifiers. Ideal for primary keys and distributed systems."
+      title: "UUID v7 Generator — Secure Sortable Time-Ordered Identifiers"
+      description: "Generate time-ordered, database-friendly UUID v7 identifiers. Ideal for primary keys, distributed systems, and performance-optimized SQL indexing."
+      keywords: ["uuid v7 generator", "time-ordered uuid", "sortable unique identifier", "rfc 9562 uuid", "database primary key generator", "next-gen uuid online"]
       entity_definition: "UUID v7 Generator is a specialized utility for creating sortable unique identifiers. Unlike traditional random UUIDs, version 7 includes a timestamp, making them highly efficient for database indexing and B-Tree performance."
       how_it_works: "Our tool combines a millisecond Unix timestamp with cryptographically secure randomness to produce identifiers that are both unique and chronological."
       use_cases:
@@ -242,9 +261,12 @@ tools:
       input_formats: ["none"]
       output_formats: ["txt"]
       processing: "client-side"
+    meta:
+      title: "Random UUID v4 Generator — RFC 4122 Compliant Online Tool"
     content:
-      title: "UUID v4 Generator - RFC 4122 Compliant Random Identifiers"
-      description: "Generate cryptographically secure, unique version 4 UUIDs instantly for your applications and databases."
+      title: "UUID v4 Generator — RFC 4122 Compliant Random Identifiers"
+      description: "Generate cryptographically secure, unique version 4 UUIDs instantly. Compliant with RFC 4122 standards for applications and high-scale databases."
+      keywords: ["random uuid generator", "guid generator online", "rfc 4122 uuid v4", "generate unique identifiers", "bulk uuid generator", "secure guid tool"]
       entity_definition: "UUID/GUID Generator is a standard utility for creating version 4 Universally Unique Identifiers. It uses hardware-backed entropy to ensure a collision-resistant stream of identifiers for developers and sysadmins."
       how_it_works: "The tool utilizes the browser's native crypto.randomUUID API for maximum randomness and security."
       use_cases:
@@ -272,9 +294,12 @@ tools:
       input_formats: ["none"]
       output_formats: ["txt"]
       processing: "client-side"
+    meta:
+      title: "Lorem Ipsum Generator — Professional Design Placeholder Text"
     content:
-      title: "Lorem Ipsum Generator - Professional Design Placeholder Text"
-      description: "Generate high-quality Latin placeholder text for your website mockups, UI/UX designs, and typesetting layouts."
+      title: "Lorem Ipsum Generator — Professional Design Placeholder Text"
+      description: "Generate high-quality Latin placeholder text for website mockups, UI/UX designs, and typesetting layouts. Customizable paragraph length and distribution."
+      keywords: ["lorem ipsum generator", "placeholder text generator", "dummy text for designers", "latin text generator", "typesetting placeholder", "ui ux mockup text"]
       entity_definition: "Lorem Ipsum Generator is a classic typesetting utility that produces balanced Latin text. It allows designers to fill layouts with content that mimics the visual weight of real language without distracting from the design elements."
       how_it_works: "It uses a randomized dictionary of traditional Latin words to construct grammatically structured sentences and paragraphs."
       use_cases:
@@ -302,9 +327,12 @@ tools:
       input_formats: ["txt", "url"]
       output_formats: ["txt"]
       processing: "client-side"
-    content:
+    meta:
       title: "Robots.txt Generator for WordPress & Any Site — Free Tool"
-      description: "Control search engine crawler access and optimize your website's crawl budget with a perfectly formatted robots.txt file."
+    content:
+      title: "Robots.txt Generator — Optimize Crawl Budget & SEO"
+      description: "Control search engine crawler access and optimize your website's crawl budget. Generate perfectly formatted, REP-compliant robots.txt files for WordPress and custom sites."
+      keywords: ["robots.txt generator", "create robots.txt for wordpress", "optimize crawl budget", "block googlebot guide", "seo robots.txt tool", "technical seo robots generator"]
       entity_definition: "Advanced Robots.txt Generator is an SEO governance utility that creates the robots.txt file for web servers. It directs search engine bots on which directories to index and which to ignore, ensuring optimal crawl budget utilization and protecting sensitive paths."
       how_it_works: "The tool generates REP-compliant directives (Allow, Disallow, Sitemap) based on user configuration."
       use_cases:
@@ -332,9 +360,12 @@ tools:
       input_formats: ["txt"]
       output_formats: ["hex"]
       processing: "client-side"
+    meta:
+      title: "SHA-256, MD5 & SHA-512 Hash Generator — Secure Checksum Tool"
     content:
-      title: "Secure Hash Generator - SHA-256, MD5 & SHA-512 Online"
-      description: "Generate secure cryptographic hashes using SHA-1, SHA-256, SHA-384, and SHA-512 algorithms instantly."
+      title: "Secure Hash Generator — SHA-256, MD5 & SHA-512 Online"
+      description: "Generate secure cryptographic hashes instantly using SHA-256, MD5, and SHA-512 algorithms. Verify file integrity and create secure checksums 100% locally."
+      keywords: ["sha-256 generator", "md5 hash online", "sha-512 checksum tool", "secure cryptographic hashing", "verify file integrity", "cryptographic hash calculator"]
       entity_definition: "Secure Hash Generator is a cryptographic utility that produces one-way hashes of text data. It is commonly used for data integrity verification, checksum generation, and password storage research. It uses the hardware-accelerated Web Crypto API for maximum security and performance."
       how_it_works: "It uses the crypto.subtle.digest API to process input text into fixed-length hexadecimal strings."
       use_cases:
@@ -362,9 +393,12 @@ tools:
       input_formats: ["url", "xml"]
       output_formats: ["txt"]
       processing: "server-side"
+    meta:
+      title: "Sitemap XML Validator — Check Sitemap Errors for Google Search Console"
     content:
-      title: "Sitemap XML Validator - Free Online Verify XML sitemap health and indexing compatibility"
-      description: "Validate your website's XML sitemap for structure, accessibility, and SEO best practices to ensure optimal Google indexing."
+      title: "Sitemap XML Validator — Verify Indexing Compatibility"
+      description: "Validate your website's XML sitemap for structure, accessibility, and SEO best practices. Ensure optimal Google indexing by catching syntax errors before submission."
+      keywords: ["sitemap xml validator", "validate sitemap for seo", "check sitemap errors online", "google search console sitemap test", "xml sitemap health check", "technical seo sitemap audit"]
       entity_definition: "Sitemap XML Validator is a technical SEO utility that audits sitemap files against the sitemap.org protocol. It identifies XML syntax errors, broken URLs, and security issues that could prevent search engines from correctly crawling a website."
       how_it_works: "Our tool fetches the provided sitemap URL and performs a structural analysis, checking for schema compliance and link health."
       use_cases:
@@ -392,9 +426,12 @@ tools:
       input_formats: ["url"]
       output_formats: ["json"]
       processing: "server-side"
+    meta:
+      title: "301 Redirect Checker — Trace URL Redirect Chains & Status Codes"
     content:
-      title: "HTTP Redirect Checker - Free Online Trace URL redirect chains and HTTP status codes"
-      description: "Trace the full path of any URL redirect. Audit 301 and 302 redirect chains to optimize SEO and fix redirect loops."
+      title: "HTTP Redirect Checker — Trace URL Redirect Chains"
+      description: "Trace the full path of any URL redirect chain. Audit 301 and 302 hops to optimize SEO performance and fix latent redirect loops that drain crawl budget."
+      keywords: ["301 redirect checker", "url redirect tracer", "check http status codes online", "302 redirect test", "trace redirect path", "audit redirect chains seo"]
       entity_definition: "HTTP Redirect Checker is a diagnostic tool that follows the path of a URL to its final destination. It records each 'hop' (301, 302, etc.), allowing developers to identify performance-draining chains or infinite loops."
       how_it_works: "Our server follows the HTTP 'Location' headers step-by-step, recording status codes and URLs until it reaches a terminal 200 OK status."
       use_cases:
@@ -422,9 +459,12 @@ tools:
       input_formats: ["txt"]
       output_formats: ["json"]
       processing: "client-side"
-    content:
+    meta:
       title: "Free Schema Markup Generator — JSON-LD for SEO & AI Search"
-      description: "Generate structured data for your website using JSON-LD. Improve search visibility, rich snippets, and SEO rankings."
+    content:
+      title: "JSON-LD Schema Generator — Create Google-Ready Structured Data"
+      description: "Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines."
+      keywords: ["json-ld schema generator", "structured data tool", "create rich snippets for google", "schema markup generator", "seo schema builder", "ai search optimization tool"]
       entity_definition: "JSON-LD Schema Generator is a no-code utility for creating structured data script blocks. It supports various schema types (Organization, WebSite, etc.) to help websites earn rich results in search engines."
       how_it_works: "It formats user-provided entity data into a valid JSON-LD script that can be embedded in a webpage's HTML."
       use_cases:
@@ -452,9 +492,12 @@ tools:
       input_formats: ["number"]
       output_formats: ["currency"]
       processing: "client-side"
+    meta:
+      title: "API Latency Cost Calculator — Revenue Loss Projection for Slow APIs"
     content:
-      title: "API Latency Cost Calculator - Free Online Analyze the financial impact of network latency on revenue"
-      description: "Analyze the financial cost of network latency on your business. Calculate conversion drops and revenue loss caused by slow API responses."
+      title: "API Latency Cost Calculator — Analyze Business Impact"
+      description: "Analyze the financial impact of network latency on your business revenue. Calculate conversion drops and projected revenue loss caused by slow API response times."
+      keywords: ["api latency cost calculator", "calculate revenue loss from latency", "business impact of slow api", "network performance roi", "api speed impact on conversion", "latency revenue loss projection"]
       entity_definition: "API Latency Cost Calculator is a business ROI utility that translates network performance metrics into financial data. It uses industry benchmarks to show how every 100ms of delay impacts conversion rates and bottom-line revenue."
       how_it_works: "It applies established performance-to-revenue models to your specific traffic and transaction data to estimate opportunity loss."
       use_cases:
@@ -482,9 +525,12 @@ tools:
       input_formats: ["number"]
       output_formats: ["currency"]
       processing: "client-side"
+    meta:
+      title: "AdSense Revenue Calculator — Estimate Earnings by Niche & Traffic"
     content:
-      title: "AdSense Revenue Estimator - Free Online Estimate website earnings from Google AdSense"
-      description: "Estimate your potential website earnings from Google AdSense. Calculate revenue based on daily views, CTR, and CPC across different niches."
+      title: "AdSense Revenue Estimator — Project Your Website Earnings"
+      description: "Estimate your potential website earnings from Google AdSense. Calculate projected revenue based on daily page views, CTR, and CPC across different industry niches."
+      keywords: ["adsense revenue estimator", "calculate website ad earnings", "cpc and ctr calculator", "potential ad revenue checker", "adsense income projection", "monetization calculator for blogs"]
       entity_definition: "AdSense Revenue Estimator is a financial modeling tool for digital publishers. It uses niche-specific CPC and CTR benchmarks to help creators project potential advertising income based on their traffic volume."
       how_it_works: "It calculates earnings using the standard formula (Views x CTR x CPC) with adjustable variables for different sectors."
       use_cases:
@@ -542,9 +588,12 @@ tools:
       input_formats: ["number"]
       output_formats: ["number"]
       processing: "client-side"
+    meta:
+      title: "Binary to Decimal & Hex Converter — Step-by-Step Base Conversion"
     content:
-      title: "Binary Converter - Free Online Convert numbers between binary, decimal, and hex"
-      description: "Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science and low-level programming."
+      title: "Binary Converter — Online Base System Translation"
+      description: "Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science students and low-level system programming."
+      keywords: ["binary converter online", "convert binary to decimal", "decimal to hex converter", "binary to hexadecimal translation", "base conversion tool", "binary calculator for developers"]
       entity_definition: "Binary Converter is a mathematical utility for translating integers between different base systems. It supports Base 2 (Binary), Base 8 (Octal), Base 10 (Decimal), and Base 16 (Hexadecimal) for technical analysis."
       how_it_works: "The tool parses the input based on the source base and recalculates the equivalent representation in all other target bases."
       use_cases:
@@ -572,9 +621,12 @@ tools:
       input_formats: ["txt"]
       output_formats: ["txt"]
       processing: "client-side"
+    meta:
+      title: "Case Converter — Transform Text to Title Case, Slug & UPPERCASE"
     content:
-      title: "Case Converter - Free Online Transform text between various capitalization formats"
-      description: "Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly."
+      title: "Text Case Converter — Instant Formatting Tool"
+      description: "Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly. Ideal for SEO slugs and clean content formatting."
+      keywords: ["case converter online", "convert text to title case", "slug generator from text", "sentence case converter", "transform text case", "kebab-case generator"]
       entity_definition: "Case Converter is a text manipulation utility that adjusts the capitalization of strings. It supports standard linguistic formats and developer-specific formats like kebab-case (slugs) for technical documentation."
       how_it_works: "It applies string transformation functions to reformat the input according to the selected case style."
       use_cases:
@@ -602,8 +654,12 @@ tools:
       input_formats: ["number"]
       output_formats: ["number"]
       processing: "client-side"
+    meta:
+      title: "PX to REM & EM Converter — CSS Responsive Units Calculator"
     content:
-      description: "Convert between pixels, rem, em, pt, and viewport units instantly. Essential for building responsive, accessible web interfaces."
+      title: "CSS Unit Converter — Responsive Web Design Calculator"
+      description: "Convert between pixels, rem, em, and viewport units instantly. Essential for building accessible, fluid, and responsive web interfaces based on modern CSS standards."
+      keywords: ["px to rem converter", "css unit converter", "convert pixels to em", "responsive font size calculator", "web design unit conversion", "viewport units calculator", "accessible css units"]
       entity_definition: "CSS Unit Converter is a frontend development utility for calculating relative sizing in web design. It allows developers to convert fixed pixel values into accessible units like rem, em, and viewport width (vw)."
       how_it_works: "Calculations are based on a configurable base font size (default 16px) and standard screen resolution benchmarks."
       use_cases:
@@ -631,9 +687,12 @@ tools:
       input_formats: ["url"]
       output_formats: ["url"]
       processing: "client-side"
+    meta:
+      title: "URL Encoder & Decoder — Safe URI Component Encoding Online"
     content:
-      title: "Encode URI Component Online - Best URL Encoder/Decoder 2026"
-      description: "Encode or decode strings for URI compatibility. Use our free tool to encode URI components safely for web browsers and API requests. RFC 3986 compliant."
+      title: "URL Encoder & Decoder — Safe URI Component Tools"
+      description: "Encode or decode strings for URI compatibility according to RFC 3986. Safely prepare URL components for web browsers, API requests, and search engine friendly links."
+      keywords: ["url encoder online", "uri component decoder", "percent encoding tool", "safe url string generator", "rfc 3986 url encoding", "api url debugger"]
       entity_definition: "URL Encoder/Decoder is a web utility that converts special characters into percent-encoded strings. This ensures that URIs are correctly transmitted across HTTP protocols without data corruption or security issues."
       how_it_works: "It uses standard RFC 3986 encoding to replace unsafe characters with their hexadecimal equivalents."
       use_cases:
@@ -661,9 +720,12 @@ tools:
       input_formats: ["url"]
       output_formats: ["json"]
       processing: "server-side"
+    meta:
+      title: "CDN & Edge Readiness Checker — Audit Cache & Compression Status"
     content:
-      title: "CDN & Edge Readiness Tester - Free Online Verify CDN presence and edge performance status"
-      description: "Check if your website is correctly delivered via a Content Delivery Network. Analyze edge headers, compression (Brotli/Gzip), and cache status."
+      title: "CDN & Edge Readiness Tester — Global Header Analysis"
+      description: "Check if your website is correctly delivered via a Content Delivery Network. Analyze edge headers, compression (Brotli/Gzip), and cache HIT/MISS status for maximum performance."
+      keywords: ["cdn readiness tester", "check cdn caching status", "brotli compression test", "edge header audit", "verify cloudflare cache", "cdn performance checker", "audit http cache headers"]
       entity_definition: "CDN & Edge Readiness Tester is a diagnostic tool for auditing edge network performance. It analyzes HTTP headers to detect CDN providers (Cloudflare, Fastly, etc.) and verifies the efficiency of caching and compression strategies."
       how_it_works: "It performs a global header analysis of the provided URL, checking for cache HIT/MISS statuses and supported compression algorithms."
       use_cases:
@@ -691,9 +753,12 @@ tools:
       input_formats: ["hex"]
       output_formats: ["ratio"]
       processing: "client-side"
+    meta:
+      title: "WCAG Color Contrast Checker — Accessibility Compliance for Designs"
     content:
-      title: "WCAG Color Contrast Checker - Accessibility Compliance Tool"
-      description: "Verify that your website's color combinations meet WCAG 2.1 accessibility standards. Ensure high readability for all users."
+      title: "WCAG Color Contrast Checker — Accessibility Compliance Tool"
+      description: "Ensure your website meets international accessibility standards. Audit color contrast ratios for WCAG 2.1 AA and AAA compliance to improve readability and user experience."
+      keywords: ["wcag color contrast checker", "accessibility color test", "aa and aaa compliance checker", "web accessibility tool online", "check contrast ratio", "design accessibility audit"]
       entity_definition: "WCAG Color Contrast Checker is an accessibility utility that measures the relative luminance between foreground and background colors. It provides a contrast ratio that determines compliance with international web accessibility standards (AA and AAA)."
       how_it_works: "It calculates the contrast ratio using the W3C WCAG formula and provides instant pass/fail results for different text sizes."
       use_cases:
@@ -721,9 +786,12 @@ tools:
       input_formats: ["color"]
       output_formats: ["hex", "rgb", "hsl"]
       processing: "client-side"
+    meta:
+      title: "HEX, RGB & HSL Color Picker — Advanced Web Design Tool"
     content:
-      title: "Universal Color Picker - HEX, RGB & HSL Converter"
-      description: "Pick colors and instantly get their HEX, RGB, and HSL values. A lightweight, browser-native tool for designers and developers."
+      title: "Universal Color Picker — Advanced Web Design Utility"
+      description: "Pick, convert, and organize colors using HEX, RGB, and HSL formats. An advanced visual tool for designers and developers to build harmonious color palettes."
+      keywords: ["hex color picker online", "rgb to hsl converter", "css color selector", "web design color tool", "find hex code from image", "advanced color palette builder"]
       entity_definition: "Universal Color Picker is a design utility for selecting and converting color values. It provides a visual interface for picking colors and automatically generates the corresponding codes in HEX, RGB, and HSL formats."
       how_it_works: "It utilizes the native browser color input and performs mathematical transformations to translate values across different color spaces."
       use_cases:
@@ -751,9 +819,12 @@ tools:
       input_formats: ["txt"]
       output_formats: ["txt"]
       processing: "client-side"
+    meta:
+      title: "HTML Entity Encoder & Decoder — Secure XSS Sanitization Tool"
     content:
-      title: "HTML Entity Encoder - Free Online Encode and decode HTML entities for web security"
-      description: "Encode or decode HTML entities to prevent XSS attacks and ensure proper character rendering in web browsers."
+      title: "HTML Entity Encoder — Secure Web Sanitization Utility"
+      description: "Safely encode and decode HTML entities to prevent XSS attacks and ensure correct browser rendering. Convert special characters into secure HTML entities instantly."
+      keywords: ["html entity encoder online", "decode html entities", "xss sanitization tool", "escape html characters", "secure web development utility", "html special character converter"]
       entity_definition: "HTML Entity Encoder is a security utility that converts special characters into their HTML entity equivalents (e.g., < becomes &lt;). This process is vital for preventing cross-site scripting (XSS) and ensuring characters are rendered correctly."
       how_it_works: "It identifies reserved HTML characters and replaces them with standardized entities, or reverts them during decoding."
       use_cases:
@@ -781,9 +852,12 @@ tools:
       input_formats: ["number"]
       output_formats: ["txt"]
       processing: "client-side"
+    meta:
+      title: "Unix Timestamp Converter — Convert Epoch to Human Readable Date"
     content:
-      title: "Unix Timestamp Converter - Free Online Convert between Unix timestamps and human dates"
-      description: "Convert between Unix timestamps (seconds or milliseconds) and human-readable dates in Local, UTC, and ISO formats."
+      title: "Unix Timestamp Converter — Online Epoch Date Tool"
+      description: "Convert Unix timestamps to human-readable dates and vice-versa. Supports seconds, milliseconds, and multiple timezones for precise developer debugging."
+      keywords: ["unix timestamp converter", "epoch to date online", "convert seconds to time", "linux timestamp tool", "mysql datetime to epoch", "programming date converter"]
       entity_definition: "Unix Timestamp Converter is a time-management utility for developers. it translates 'epoch time' (seconds since 1970) into readable date strings and back, supporting both 10-digit (seconds) and 13-digit (milliseconds) formats."
       how_it_works: "It uses the JavaScript Date engine to parse timestamps and generate standardized ISO, UTC, and Local time strings."
       use_cases:
@@ -809,9 +883,12 @@ tools:
       primary: "Technical guide for mastering Core Web Vitals"
     technical:
       processing: "client-side"
+    meta:
+      title: "Core Web Vitals Optimization Guide — LCP, INP & CLS Fixes"
     content:
-      title: "Core Web Vitals Guide - Free Online Technical guide for mastering Core Web Vitals"
-      description: "Master the three critical metrics Google uses to measure user experience: LCP, INP, and CLS. Learn how to optimize for better rankings."
+      title: "Core Web Vitals Guide — Master Search Experience Metrics"
+      description: "Master the three critical metrics Google uses to measure user experience: LCP, INP, and CLS. Learn how to audit and optimize for better 2026 search rankings."
+      keywords: ["core web vitals guide", "fix lcp and cls errors", "optimize inp for seo", "technical performance guide", "google page experience audit", "improve lighthouse score"]
       entity_definition: "Core Web Vitals Guide is a technical resource for understanding and optimizing Google's key user experience metrics. It covers LCP (Loading), INP (Interactivity), and CLS (Visual Stability) with 2026-compliant benchmarks."
       how_it_works: "The guide provides interactive threshold visualizations and actionable engineering strategies for improving each metric."
       use_cases:
@@ -839,9 +916,12 @@ tools:
       input_formats: ["md"]
       output_formats: ["html"]
       processing: "client-side"
+    meta:
+      title: "Markdown to HTML Converter — Semantic Code for Blogs & Docs"
     content:
-      title: "Markdown to HTML Converter - Free Online Convert Markdown text to semantic HTML code"
+      title: "Markdown to HTML Converter — Semantic Code for Blogs & Docs"
       description: "Convert Markdown text to clean, semantic HTML instantly. Perfect for technical writers and developers."
+      keywords: ["markdown to html converter", "convert md to html online", "gfm to html tool", "technical writing converter", "render markdown as html", "markdown syntax translator"]
       entity_definition: "Markdown to HTML Converter is a formatting utility that translates Markdown syntax into valid HTML5 code. It ensures that headers, lists, and formatting are correctly mapped to semantic web tags."
       how_it_works: "It uses a real-time parsing engine to identify Markdown patterns and generate the corresponding HTML output."
       use_cases:
@@ -869,9 +949,12 @@ tools:
       input_formats: ["md"]
       output_formats: ["preview"]
       processing: "client-side"
+    meta:
+      title: "Markdown Previewer — Live Side-by-Side Editor & Renderer"
     content:
-      title: "Markdown Previewer - Live Side-by-Side Editor & Renderer"
+      title: "Markdown Previewer — Live Side-by-Side Editor & Renderer"
       description: "Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files."
+      keywords: ["markdown previewer online", "live markdown editor", "github flavored markdown preview", "md renderer browser", "write markdown with preview", "visualize markdown text"]
       entity_definition: "Markdown Previewer is a live editing utility for visualizing Markdown content. It provides a split-view interface where developers can write markup and see the rendered results instantly."
       how_it_works: "It renders Markdown into a styled 'prose' container in real-time using a browser-native parsing engine."
       use_cases:
@@ -897,9 +980,12 @@ tools:
       primary: "Access battle-tested robots.txt configurations"
     technical:
       processing: "client-side"
+    meta:
+      title: "Robots.txt Templates for WordPress, Next.js & AI Bots"
     content:
-      title: "Robots.txt Templates - Free Online Access battle-tested robots.txt configurations"
+      title: "Robots.txt Templates — Expert SEO Configurations"
       description: "Access battle-tested robots.txt templates for Next.js, WordPress, and E-commerce. Optimize your crawl budget and manage AI bot access."
+      keywords: ["robots.txt templates", "best robots.txt for wordpress", "next.js robots.txt rules", "block ai crawlers robots.txt", "seo crawler templates", "robots.txt for e-commerce"]
       entity_definition: "Robots.txt Templates is a collection of expert-level configurations for the Robots Exclusion Protocol. It provides standardized rules for directing search engine crawlers and protecting site resources."
       how_it_works: "Users select a platform-specific template which can be customized and copied directly into their site root."
       use_cases:
@@ -925,9 +1011,12 @@ tools:
       primary: "Interactive technical SEO health audit"
     technical:
       processing: "client-side"
+    meta:
+      title: "Technical SEO Audit Checklist — Site Health & Indexing Review"
     content:
-      title: "SEO Audit Checklist - Free Online Interactive technical SEO health audit"
+      title: "SEO Audit Checklist — Technical Site Health Audit"
       description: "A comprehensive, interactive checklist for auditing your website's SEO health. Covers crawlability, indexing, speed, and content structure."
+      keywords: ["seo audit checklist", "technical seo audit tool", "website indexing checklist", "seo health check for developers", "technical seo ranking factors", "pre-launch seo audit"]
       entity_definition: "SEO Audit Checklist is an interactive utility for systemizing website audits. It tracks progress across 20+ technical ranking factors, including indexing, speed, and security."
       how_it_works: "It uses browser local storage to save audit progress and allows exporting results as Markdown."
       use_cases:
@@ -955,9 +1044,12 @@ tools:
       input_formats: ["url"]
       output_formats: ["preview"]
       processing: "server-side"
+    meta:
+      title: "Social Media Preview Tester — Facebook, Twitter & LinkedIn OG Tool"
     content:
-      title: "Social Preview Tester - Free Online Visualize and test social media meta tags"
+      title: "Social Preview Tester — Visual Open Graph Debugger"
       description: "Verify how your website looks on Facebook, Twitter, LinkedIn, and Google Search. Test and optimize your Open Graph tags and meta descriptions."
+      keywords: ["social preview tester", "test open graph tags", "twitter card validator online", "facebook debugger tool", "social share preview", "og tag tester"]
       entity_definition: "Social Preview Tester is a simulator for web metadata. It fetches and displays how a URL will appear when shared across social networks, allowing for real-time optimization of titles and images."
       how_it_works: "It extracts Open Graph and Twitter Card tags from a URL and renders them in simulated platform feeds."
       use_cases:
@@ -985,9 +1077,12 @@ tools:
       input_formats: ["txt"]
       output_formats: ["stats"]
       processing: "client-side"
+    meta:
+      title: "Word & Character Counter — Reading Time & Writing Stats Online"
     content:
-      title: "Word Counter - Free Online Real-time word, character, and sentence counting"
+      title: "Word Counter — Real-time Writing Statistics"
       description: "Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content."
+      keywords: ["word counter online", "character count tool", "reading time estimator", "count sentences and paragraphs", "writing statistics calculator", "best word counter for authors"]
       entity_definition: "Word Counter is a writing utility for analyzing text volume and complexity. It provides instant metrics for words, characters, and reading time, essential for meeting content length requirements."
       how_it_works: "It uses regex-based processing to identify word and sentence boundaries in the input text."
       use_cases:
@@ -1021,9 +1116,12 @@ tools:
       processing: "client-side"
       library: "Natural Language Pattern Matching"
       
+    meta:
+      title: "Reddit Question Explorer — Find High-Intent Content Ideas for SEO"
     content:
-      title: "Reddit-Powered Question Explorer"
-      description: "Discover the exact questions your customers are asking on Reddit. Analyze search intent and uncover content ideas that drive conversions."
+      title: "Reddit Question Explorer — Find Content Ideas & Search Intent"
+      description: "Discover the exact questions your customers are asking on Reddit. Analyze search intent and uncover long-tail content ideas that drive high-intent organic traffic."
+      keywords: ["reddit question explorer", "find questions on reddit", "keyword research from reddit", "content idea generator", "search intent analyzer", "people also ask reddit"]
       tldr: "Find the real pain points and questions being discussed by real people in your niche—instantly."
       entity_definition: "Question Explorer is an advanced SEO and content strategy utility that identifies high-intent user questions from social discussions. By analyzing common linguistic patterns and 'People Also Ask' triggers, it extracts the most valuable queries that potential customers have during their buying journey. It classifies results by search intent—such as budget planning, trust validation, or technical comparison—allowing marketers to create content that directly addresses specific audience needs."
       how_it_works: "The tool uses a specialized keyword-modifier engine to simulate Reddit's discussion patterns. It scans for 'How do I', 'What is the best', and 'Does anyone know' patterns within your niche to provide a prioritized list of high-value questions."
@@ -1061,9 +1159,12 @@ tools:
     function:
       primary: "Beautify and format HTML5 source code"
       secondary: "Clean up messy or minified markup instantly"
+    meta:
+      title: "HTML Beautifier & Formatter — Clean Messy Source Code for SEO"
     content:
-      title: "Free Online HTML Beautifier & Formatter"
-      description: "Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability and SEO-friendly markup."
+      title: "HTML Beautifier — Free Online Code Formatter"
+      description: "Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability, W3C compliance, and SEO-friendly markup."
+      keywords: ["html beautifier online", "format html code", "clean up html source", "indent html5", "seo friendly html formatter", "prettify markup", "html5 code cleaner"]
       tldr: "Transform compressed or messy HTML into perfectly indented, readable code with one click."
       entity_definition: "HTML Beautifier is a professional web engineering utility designed to standardize the structure and indentation of HTML5 source code. It handles complex nested structures, attributes, and inline elements, ensuring your markup follows W3C standards and maintains high readability for both developers and search engines."
       how_it_works: "The tool uses the js-beautify engine to parse and reconstruct the HTML DOM tree, applying your preferred indentation and line-wrapping rules in real-time."
@@ -1092,9 +1193,12 @@ tools:
     function:
       primary: "Clean and format CSS stylesheets"
       secondary: "Organize selectors and properties for readability"
+    meta:
+      title: "CSS Formatter & Beautifier — Organize Stylesheets & Design Tokens"
     content:
-      title: "Professional CSS Formatter & Beautifier"
-      description: "Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS."
+      title: "CSS Formatter — Professional Stylesheet Beautifier"
+      description: "Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS optimized for large-scale design systems."
+      keywords: ["css formatter online", "beautify css styles", "organize stylesheets", "css indentation tool", "clean css code", "minify css alternative", "css3 formatter"]
       tldr: "Clean up your CSS styles instantly with professional-grade indentation and formatting."
       entity_definition: "CSS Formatter is a specialized styling utility that reorganizes CSS rules, selectors, and properties into a consistent format. It helps identify syntax errors, improves stylesheet maintainability, and ensures that large-scale design systems remain organized."
       how_it_works: "It parses your CSS into a rule-based system and then outputs it using a standardized set of formatting rules, such as one property per line and consistent spacing."
@@ -1127,9 +1231,12 @@ tools:
     function:
       primary: "Format and beautify SQL queries"
       secondary: "Standardize indentation for complex database audits"
+    meta:
+      title: "SQL Formatter & Beautifier — Readable Queries for MySQL & Postgres"
     content:
-      title: "SQL Formatter - Beautify Database Queries"
-      description: "Format your SQL queries for maximum readability. Supports standard SQL, PostgreSQL, and MySQL syntax for clean database documentation."
+      title: "SQL Formatter — Beautify Database Queries Online"
+      description: "Format your SQL queries for maximum readability. Supports standard SQL, PostgreSQL, and MySQL syntax for clean database documentation and efficient audits."
+      keywords: ["sql formatter online", "beautify sql queries", "mysql query formatter", "postgresql code cleaner", "format database scripts", "sql indentation tool", "pretty print sql"]
       tldr: "Transform messy, unreadable SQL queries into professional, well-structured database commands."
       entity_definition: "SQL Formatter is a database engineering utility that applies strict structural formatting to SQL queries. By capitalizing keywords and indenting clauses like SELECT, FROM, and WHERE, it allows developers to quickly audit and optimize complex database operations."
       how_it_works: "Using the sql-formatter engine, it tokenizes your query and rebuilds it using a tabular or block-based indentation style that highlights logic flow."
@@ -1161,9 +1268,12 @@ tools:
     releaseDate: "2026-05-11"
     function:
       primary: "Test and debug Regular Expressions with AI-ready explanations"
+    meta:
+      title: "RegEx Tester & AI Explainer — Test & Debug Patterns Instantly"
     content:
-      title: "RegEx Tester & AI Explainer - Debug Patterns Instantly"
-      description: "Test your Regular Expressions against sample text and get plain-English explanations of how your patterns work."
+      title: "RegEx Tester & AI Explainer — Debug Patterns Instantly"
+      description: "Test your Regular Expressions against sample text and get plain-English, AI-ready explanations of how your patterns work. Perfect for debugging complex regex."
+      keywords: ["regex tester online", "regular expression debugger", "regex explainer ai", "test regex patterns", "javascript regex tool", "regex cheat sheet online", "debug regex with ai"]
       tldr: "Validate and debug RegEx patterns with real-time matching and a detailed AI-friendly breakdown of every token."
       entity_definition: "RegEx Tester & Explainer is a technical utility for software engineers to validate Regular Expression patterns. It provides real-time highlighting of matches and a structured breakdown of regex syntax, making complex patterns easy to understand for both humans and AI models."
       features:
@@ -1185,9 +1295,12 @@ tools:
     releaseDate: "2026-05-11"
     function:
       primary: "Decode JSON Web Tokens securely and locally"
+    meta:
+      title: "Secure JWT Decoder — Offline JSON Web Token Inspection"
     content:
-      title: "JWT Decoder - Secure Offline Token Inspection"
-      description: "Inspect the header, payload, and signature of your JSON Web Tokens (JWT). 100% private and client-side."
+      title: "Secure JWT Decoder — Offline Token Inspection"
+      description: "Inspect the header, payload, and signature of your JSON Web Tokens (JWT) safely. Our tool works 100% locally in your browser to ensure sensitive auth data never leaves your device."
+      keywords: ["jwt decoder online", "decode json web token", "offline jwt debugger", "inspect jwt payload", "secure auth token decoder", "base64 jwt parser", "jwt signature validator"]
       tldr: "Instantly decode JWT tokens locally in your browser. No sensitive data ever leaves your device."
       entity_definition: "Offline JWT Decoder is a security-focused utility for inspecting authentication tokens. It parses the Base64-encoded segments of a JWT into readable JSON, allowing developers to verify claims and header metadata without risking exposure on a server."
       features:
@@ -1209,9 +1322,12 @@ tools:
     releaseDate: "2026-05-11"
     function:
       primary: "Build and describe crontab schedules visually"
+    meta:
+      title: "Cron Expression Generator — Visual Schedule Builder & Explainer"
     content:
-      title: "Cron Expression Generator - Visual Schedule Builder"
-      description: "Generate and explain Cron expressions for your scheduled tasks. Easy-to-use visual interface for complex schedules."
+      title: "Cron Expression Generator — Visual Schedule Builder"
+      description: "Generate and explain Cron expressions for your scheduled tasks. Our easy-to-use visual interface translates complex crontab syntax into human-readable schedules."
+      keywords: ["cron generator online", "crontab builder", "cron expression explainer", "visual cron scheduler", "generate cron schedule", "linux crontab tool", "cron job helper"]
       tldr: "Create crontab schedules visually and get a human-readable explanation of exactly when your task will run."
       entity_definition: "Cron Expression Generator is a backend utility for creating scheduled task directives. It translates visual selections into standard crontab syntax and provides a natural language explanation to prevent scheduling errors."
       features:
@@ -1234,9 +1350,12 @@ tools:
     function:
       primary: "Compare two text blocks and visualize differences line-by-line"
       secondary: "Identify additions, deletions, and unchanged lines instantly"
+    meta:
+      title: "Online Diff Checker — Compare Text & Code Line-by-Line"
     content:
-      title: "Diff Checker - Free Online Text & Code Comparison Tool"
-      description: "Compare two pieces of text or code side-by-side and instantly see every addition, deletion, and unchanged line. Perfect for code reviews and document comparison."
+      title: "Diff Checker — Free Online Text & Code Comparison"
+      description: "Compare two pieces of text or code side-by-side and instantly see every addition, deletion, and unchanged line. Perfect for code reviews, document audits, and debugging differences."
+      keywords: ["diff checker online", "compare text files", "code diff tool", "side-by-side text comparison", "visualize code changes", "diff viewer online", "text difference finder"]
       tldr: "Paste two text blocks and get a color-coded, line-by-line diff with added/removed stats in real-time."
       entity_definition: "Diff Checker is a developer utility that computes the longest common subsequence (LCS) between two text inputs and presents the delta in a color-coded format. It highlights additions in green and deletions in red, allowing engineers to perform code reviews, audit document changes, and debug configuration differences efficiently."
       how_it_works: "The tool uses an LCS-based algorithm to compute the minimal set of changes between two inputs, displaying each line annotated as added, removed, or unchanged."
@@ -1277,9 +1396,12 @@ tools:
     function:
       primary: "Generate beautiful linear, radial, and conic CSS gradients visually"
       secondary: "Export production-ready CSS with custom color stops and angles"
+    meta:
+      title: "CSS Gradient Generator — Visual Linear, Radial & Conic Builder"
     content:
-      title: "CSS Gradient Generator - Free Online Visual Gradient Builder"
-      description: "Create stunning linear, radial, and conic CSS gradients with a visual editor. Add custom color stops, adjust angles, and copy production-ready CSS in one click."
+      title: "CSS Gradient Generator — Visual Design Tool"
+      description: "Create stunning linear, radial, and conic CSS gradients with a visual editor. Add custom color stops, adjust angles, and copy production-ready CSS code for your modern web projects."
+      keywords: ["css gradient generator", "linear gradient builder", "conic gradient online", "radial gradient tool", "visual css gradient editor", "generate css background gradient", "modern css gradients"]
       tldr: "Design and export CSS gradients visually with real-time preview, custom stops, and instant CSS code output."
       entity_definition: "CSS Gradient Generator is a visual design utility that allows developers and designers to construct complex CSS gradient declarations without writing code. It supports all three modern gradient types (linear-gradient, radial-gradient, conic-gradient), unlimited color stops, and provides the exact CSS output ready for production use."
       how_it_works: "The tool renders a live preview as you adjust gradient type, angle, and color stops. It constructs the CSS gradient string in real-time based on your configuration."
@@ -1321,9 +1443,12 @@ tools:
     function:
       primary: "Generate a machine-readable llms.txt file to guide AI crawlers"
       secondary: "Optimize your site for Generative Engine Optimization (GEO)"
+    meta:
+      title: "llms.txt Generator — Optimize Your Site for AI & LLM Crawlers"
     content:
-      title: "llms.txt Generator - Free AI & LLM Crawler Optimization Tool"
-      description: "Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. The new robots.txt for the AI era."
+      title: "llms.txt Generator — AI Crawler Optimization Tool"
+      description: "Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. Implement the new robots.txt for the AI era."
+      keywords: ["llms.txt generator", "ai crawler optimization", "generative engine optimization tool", "create llms.txt file", "seo for chatgpt", "llm-friendly website guide", "generative engine optimization (geo)"]
       tldr: "Create a compliant llms.txt file in seconds to ensure AI search engines and LLMs correctly index and attribute your content."
       entity_definition: "llms.txt Generator is a Generative Engine Optimization (GEO) utility that creates the llms.txt standard file for websites. This emerging protocol—analogous to robots.txt—provides structured context to Large Language Models (LLMs) and AI crawlers, improving the accuracy of citations and increasing the likelihood of a site's content appearing in AI-generated answers from tools like ChatGPT, Perplexity, and Google's AI Overviews."
       how_it_works: "Users enter their site details, description, and key sections. The tool formats this information into the standardized llms.txt Markdown structure, ready to be placed at the root of their website."
@@ -1364,9 +1489,12 @@ tools:
     function:
       primary: "Create SEO-friendly URL slugs from any text"
       secondary: "Remove stop words and special characters automatically"
+    meta:
+      title: "SEO Slug Generator — Create Clean Hyphenated URL Permalinks"
     content:
-      title: "Slug Generator - Create SEO-Friendly URL Permalinks"
-      description: "Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility."
+      title: "SEO Slug Generator — Create Clean URL Permalinks"
+      description: "Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility and user readability."
+      keywords: ["slug generator online", "create seo-friendly urls", "url slug builder", "clean permalink generator", "kebab-case text converter", "optimize url structure", "slugify text tool"]
       tldr: "Generate clean, hyphenated URL slugs from titles while removing unnecessary words for better SEO."
       entity_definition: "Slug Generator is an SEO utility that converts natural language titles into URL-safe strings. It normalizes text by converting to lowercase, replacing spaces with hyphens, and stripping non-alphanumeric characters. It includes an optional stop-word filter to keep URLs concise, which is a recognized best practice for search engine optimization."
       features:
@@ -1395,9 +1523,12 @@ tools:
     function:
       primary: "Generate Apache .htaccess redirect rules visually"
       secondary: "Create 301, 302 redirects and security rules"
+    meta:
+      title: "Htaccess Redirect Generator — Secure Apache 301 Rules Builder"
     content:
-      title: "Htaccess Generator - Free Apache Redirect & Security Tool"
-      description: "Build complex .htaccess redirect rules and security headers without touching code. Generate 301 redirects, force HTTPS, and block IP addresses easily."
+      title: "Htaccess Generator — Apache Redirect & Security Tool"
+      description: "Build complex .htaccess redirect rules and security headers without touching code. Generate 301 redirects, force HTTPS, and block IP addresses with production-ready Apache syntax."
+      keywords: ["htaccess generator online", "apache redirect rules builder", "create 301 redirects htaccess", "force https htaccess tool", "block ip htaccess generator", "server configuration utility", "htaccess security rules"]
       tldr: "Generate production-ready .htaccess code for redirects, HTTPS enforcement, and basic security hardening."
       entity_definition: "Htaccess Generator is a server-side configuration utility that simplifies the creation of Apache .htaccess files. It provides a visual interface for common tasks like 301/302 redirects, forcing HTTPS, and implementing security headers. It helps prevent syntax errors that can lead to 500 Internal Server Errors on Apache web servers."
       features:
@@ -1428,9 +1559,12 @@ tools:
     function:
       primary: "Convert JSON arrays and objects to CSV format"
       secondary: "Flatten nested JSON for spreadsheet compatibility"
+    meta:
+      title: "JSON to CSV Converter — Flatten Data for Excel & Sheets"
     content:
-      title: "JSON to CSV Converter - Free Online Data Export Tool"
-      description: "Convert your JSON data into clean CSV files for Excel or Google Sheets. Supports nested objects and automatic flattening for complex data structures."
+      title: "JSON to CSV Converter — Visual Data Transformation"
+      description: "Convert your JSON data into clean CSV files for Excel or Google Sheets. Our tool supports automatic flattening of nested objects for complex data structure analysis."
+      keywords: ["json to csv converter", "flatten json for excel", "convert json to spreadsheet", "json to csv online", "api data to csv tool", "nested json to flat csv", "transform json to table"]
       tldr: "Transform complex JSON data into flat CSV tables ready for spreadsheet analysis."
       entity_definition: "JSON to CSV Converter is a data transformation utility that maps structured JSON objects into a flat tabular format. It automatically handles nested objects using dot-notation flattening and converts arrays into delimited strings. This makes it possible to analyze API responses or document database exports in tools like Microsoft Excel or Google Sheets."
       features:
@@ -1459,9 +1593,12 @@ tools:
     function:
       primary: "Generate professional favicons and app icons"
       secondary: "Create PWA-ready manifest icons from text or emoji"
+    meta:
+      title: "Favicon & PWA Icon Generator — All Sizes for Modern Browsers"
     content:
-      title: "Favicon Generator - Create PWA Icons and Browser Favicons"
-      description: "Generate a complete set of favicons and PWA icons in seconds. Create professional icons from text or emoji and get all required sizes for modern browsers and mobile devices."
+      title: "Favicon Generator — PWA & Browser Icon Builder"
+      description: "Generate a complete set of favicons and PWA icons in seconds. Create professional icons from text or emoji with all required sizes for modern browsers, iOS, and Android."
+      keywords: ["favicon generator online", "pwa icon builder", "create apple touch icons", "android chrome manifest icons", "favicon from text emoji", "web app icon generator", "ico file generator"]
       tldr: "Create and download a full set of favicon sizes for your website or PWA instantly."
       entity_definition: "Favicon Generator is a design utility that simplifies the creation of website icons. It can generate icons from simple text or emojis, producing a comprehensive set of PNG files in various sizes (16x16 to 512x512). It also provides the necessary HTML snippets and manifest.json code to ensure your site looks professional on all devices and platforms."
       features:
@@ -1490,9 +1627,12 @@ tools:
     function:
       primary: "Format and beautify XML data"
       secondary: "Validate and minify XML strings"
+    meta:
+      title: "XML Formatter & Beautifier — Pretty Print XML with Indentation"
     content:
-      title: "Best Free Online XML Formatter 2026 - Beautify & Minify XML"
-      description: "Format, beautify, and minify your XML data instantly. Enterprise-grade tool with real-time validation and syntax highlighting. Clean your XML files for better readability."
+      title: "XML Formatter — Professional Code Beautifier"
+      description: "Format, beautify, and minify your XML data instantly. Enterprise-grade tool with real-time validation and syntax highlighting for better readability and sitemap auditing."
+      keywords: ["xml formatter online", "beautify xml code", "xml validator and formatter", "pretty print xml", "xml minifier", "format sitemap xml", "clean up xml source"]
       tldr: "Instantly transform messy XML into clean, structured, and readable code locally in your browser."
       entity_definition: "XML Formatter is a specialized utility that structures raw XML data into a readable format. It handles nested tags, attributes, and CDATA sections, providing custom indentation. Like all WebToolkit Pro tools, it operates entirely client-side for maximum privacy."
       features:
@@ -1521,9 +1661,12 @@ tools:
     function:
       primary: "Clean and format messy text"
       secondary: "Remove extra spaces, line breaks, and convert case"
+    meta:
+      title: "Text Cleaner Pro — Remove Extra Spaces & Format Messy Text"
     content:
-      title: "Best Free Online Text Cleaner Pro 2026"
-      description: "Clean up your messy text instantly. Remove extra spaces, tabs, and line breaks. Convert case to uppercase or lowercase and format your text for professional use."
+      title: "Text Cleaner Pro — Instant Formatting Utility"
+      description: "Clean up your messy text instantly. Remove extra spaces, tabs, and line breaks. Convert case and format your text for professional use with 100% client-side privacy."
+      keywords: ["text cleaner online", "remove extra spaces from text", "clean messy text formatting", "strip line breaks from text", "text normalization tool", "online character cleaner", "whitespace remover tool"]
       tldr: "Instantly clean and normalize your text by removing formatting artifacts and extra whitespace."
       entity_definition: "Text Cleaner Pro is a text normalization utility that strips away common formatting issues like multiple spaces, unwanted line breaks, and inconsistent indentation. It provides a one-click 'Basic Clean' that makes text ready for professional documents or code comments."
       features:
@@ -1552,9 +1695,12 @@ tools:
     function:
       primary: "Convert between PHP Serialized data and JSON"
       secondary: "Repair and format PHP serialized strings"
+    meta:
+      title: "PHP Serializer & Deserializer — Convert PHP Data to JSON"
     content:
-      title: "Best Free Online PHP Serializer & Deserializer 2026"
-      description: "Convert PHP serialized strings to JSON and vice-versa instantly. Perfect for debugging database blobs or session data without needing a PHP server."
+      title: "PHP Serializer — Secure Data Conversion Tool"
+      description: "Convert PHP serialized strings to JSON and vice-versa instantly. Perfect for debugging database blobs or session data locally without needing a PHP server."
+      keywords: ["php serializer online", "unserialize php string to json", "convert php array to json", "debug php serialized data", "php to json converter", "serialization repair tool", "php session decoder"]
       tldr: "Easily transform PHP serialized data into readable JSON or serialize JSON for PHP applications."
       entity_definition: "PHP Serializer is a technical utility that handles the specialized 'serialize' format used in PHP development. It allows developers to view and edit complex PHP data structures by converting them into standard JSON. This is essential for debugging legacy databases and session files."
       features:
@@ -1583,9 +1729,12 @@ tools:
     function:
       primary: "Generate high-quality QR codes"
       secondary: "Create scanable codes for URLs and text"
+    meta:
+      title: "QR Code Generator — Create High-Res Scannable Codes for Free"
     content:
-      title: "Best Free Online QR Code Generator 2026 - High Quality"
-      description: "Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly. Download or copy as high-resolution images."
+      title: "QR Code Generator — Create Scannable Codes Online"
+      description: "Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly with high-resolution PNG downloads."
+      keywords: ["qr code generator online", "create high-res qr codes", "scannable code builder", "qr code for wifi", "custom qr code with text", "vector qr code generator", "free qr code maker"]
       tldr: "Instantly create professional QR codes for any URL or text locally in your browser."
       entity_definition: "QR Code Generator is a high-performance utility that converts text strings into 2D barcodes. It uses industry-standard encoding to ensure compatibility with all modern scanners. No data is sent to servers, making it safe for private information."
       features:

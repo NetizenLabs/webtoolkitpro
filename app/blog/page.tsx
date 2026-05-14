@@ -9,12 +9,12 @@ export const metadata = {
   description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
   keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
   alternates: {
-    canonical: 'https://wtkpro.site/blog/',
+    canonical: 'https://wtkpro.site/blog',
   },
   openGraph: {
     title: 'Developer Blog - WebToolkit Pro',
     description: 'Expert web development tips, tutorials, and guides for modern developers.',
-    url: 'https://wtkpro.site/blog/',
+    url: 'https://wtkpro.site/blog',
     siteName: 'WebToolkit Pro',
     type: 'website',
     locale: 'en_US',
@@ -125,7 +125,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
             {currentBlogs.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}/`} className="group block h-full">
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block h-full">
                 <article className="bg-[#0D1526] rounded-[24px] border border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
@@ -169,7 +169,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
             {currentJournals.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}/`} className="group block h-full">
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block h-full">
                 <article className="bg-[#0B1120] rounded-[24px] border border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00D4B4]/10 to-[#0094FF]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
@@ -207,7 +207,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
             '@type': 'Blog',
             'name': 'WebToolkit Pro Developer Blog & Engineering Journal',
             'description': 'Expert web development tips, tutorials, and research papers.',
-            'url': 'https://wtkpro.site/blog/',
+            'url': 'https://wtkpro.site/blog',
             'publisher': {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
@@ -222,7 +222,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
                 '@type': 'Organization',
                 'name': post.author,
               },
-              'url': `https://wtkpro.site/blog/${post.slug}/`,
+              'url': `https://wtkpro.site/blog/${post.slug}`,
             })),
           }),
         }}

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: pillar.description,
     keywords: pillar.keywords,
     alternates: {
-      canonical: `https://wtkpro.site/tools/category/${params.slug}/`,
+      canonical: `https://wtkpro.site/tools/category/${params.slug}`,
     }
   }
 }

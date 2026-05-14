@@ -34,18 +34,23 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const baseTitle = `${tool.name} | Best Free Online ${tool.category} 2026`
   const title = tool.meta?.title || (baseTitle.length <= 60 ? baseTitle : `${tool.name} | WebToolkit Pro`)
   const description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
+  
+  // Use dedicated keywords if available, fallback to tags
+  const keywords = tool.content?.keywords 
+    ? (Array.isArray(tool.content.keywords) ? tool.content.keywords.join(', ') : tool.content.keywords)
+    : tool.tags.join(', ')
 
   return {
     title,
     description,
     alternates: {
-      canonical: `https://wtkpro.site/tools/${tool.slug}/`,
+      canonical: `https://wtkpro.site/tools/${tool.slug}`,
     },
-    keywords: tool.tags.join(', '),
+    keywords,
     openGraph: {
       title,
       description,
-      url: `https://wtkpro.site/tools/${tool.slug}/`,
+      url: `https://wtkpro.site/tools/${tool.slug}`,
       type: 'website',
     },
   }

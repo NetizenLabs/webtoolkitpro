@@ -19,11 +19,11 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'Blog', href: '/blog/' },
-    { name: 'About', href: '/about/' },
-    { name: 'Contact', href: '/contact/' },
-    { name: 'Submit Tool', href: '/submit-tool/' },
+    { name: 'Tools', href: '/tools' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Submit Tool', href: '/submit-tool' },
   ]
 
   return (

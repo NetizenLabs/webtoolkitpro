@@ -37,12 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: post.keywords.join(', '),
     authors: [{ name: post.author }],
     alternates: {
-      canonical: `https://wtkpro.site/blog/${post.slug}/`,
+      canonical: `https://wtkpro.site/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://wtkpro.site/blog/${post.slug}/`,
+      url: `https://wtkpro.site/blog/${post.slug}`,
       siteName: 'WebToolkit Pro',
       type: 'article',
       publishedTime: post.date,
@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
             </li>
             <li className="text-[#1E2D47]">/</li>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link href="/blog/" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
+              <Link href="/blog" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
                 <span itemProp="name">Knowledge Center</span>
               </Link>
               <meta itemProp="position" content="2" />
@@ -195,13 +195,13 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mb-16">
             <div className="flex items-center justify-between mb-4 px-2">
               <h3 className="text-[10px] font-bold text-[#4A6080] uppercase tracking-[0.2em] font-mono">Up-to-date Feed</h3>
-              <Link href="/blog/" className="text-[9px] font-bold text-[#00D4B4] hover:underline uppercase tracking-widest">View All</Link>
+              <Link href="/blog" className="text-[9px] font-bold text-[#00D4B4] hover:underline uppercase tracking-widest">View All</Link>
             </div>
             <div className="flex gap-4 overflow-x-auto pb-6 no-scrollbar snap-x">
               {allPosts.slice(0, 30).map((p) => (
                 <Link 
                   key={p.slug} 
-                  href={`/blog/${p.slug}/`}
+                  href={`/blog/${p.slug}`}
                   className={`flex-shrink-0 w-[280px] p-5 rounded-[16px] border snap-start transition-all ${
                     p.slug === post.slug 
                       ? 'bg-[#00D4B4]/10 border-[#00D4B4]/40' 
@@ -340,13 +340,13 @@ export default async function BlogPostPage({ params }: Props) {
           <section className="mt-24 pt-16 border-t border-[#1E2D47]" aria-label="Related articles">
             <div className="flex items-center justify-between mb-12">
               <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white tracking-tight">Blog & Journal Archive</h2>
-              <Link href="/blog/" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Entries →</Link>
+              <Link href="/blog" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Entries →</Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
-                  href={`/blog/${related.slug}/`}
+                  href={`/blog/${related.slug}`}
                   className="group block"
                 >
                   <article className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-6 hover:border-[#00D4B4]/30 transition-all h-full">
@@ -396,12 +396,12 @@ export default async function BlogPostPage({ params }: Props) {
             },
             'mainEntityOfPage': {
               '@type': 'WebPage',
-              '@id': `https://wtkpro.site/blog/${post.slug}/`,
+              '@id': `https://wtkpro.site/blog/${post.slug}`,
             },
             'keywords': post.keywords.join(', '),
             'articleSection': post.category,
             'inLanguage': 'en-US',
-            'url': `https://wtkpro.site/blog/${post.slug}/`,
+            'url': `https://wtkpro.site/blog/${post.slug}`,
           }),
         }}
       />
@@ -445,13 +445,13 @@ export default async function BlogPostPage({ params }: Props) {
                 '@type': 'ListItem',
                 'position': 2,
                 'name': 'Blog',
-                'item': 'https://wtkpro.site/blog/',
+                'item': 'https://wtkpro.site/blog',
               },
               {
                 '@type': 'ListItem',
                 'position': 3,
                 'name': post.title,
-                'item': `https://wtkpro.site/blog/${post.slug}/`,
+                'item': `https://wtkpro.site/blog/${post.slug}`,
               },
             ],
           }),

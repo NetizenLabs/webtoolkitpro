@@ -12,7 +12,7 @@ interface ToolSchemaProps {
 
 export default function ToolSchema({ name, description, slug, steps = [], features = [] }: ToolSchemaProps) {
   const url = `https://wtkpro.site/tools/${slug}/`
-  
+
   const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',

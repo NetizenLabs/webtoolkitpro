@@ -178,7 +178,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             return (
               <Link 
                 key={category}
-                href={`/tools/category/${slug}/`}
+                href={`/tools/category/${slug}`}
                 className="p-6 bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] text-center text-xs font-bold text-gray-500 dark:text-[#8A9BBE] uppercase tracking-widest hover:border-[#00D4B4]/30 hover:text-blue-600 dark:hover:text-white transition-all shadow-xl"
               >
                 {category} Hub
