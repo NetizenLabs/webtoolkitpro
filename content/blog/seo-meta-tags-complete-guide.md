@@ -104,6 +104,6 @@ Meta tags are the foundation of your digital visibility. By mastering title tags
 This research study was authored by the **WebToolkit Pro SEO & Data Lab**. We specialize in the technical intersection of web engineering and search visibility.
 
 **Follow the Research:** 
-- **Lead Engineer:** [safi4730358@gmail.com](mailto:safi4730358@gmail.com)
+- **Lead Engineer:** [hello@wtkpro.site](mailto:hello@wtkpro.site)
 - **X (Twitter):** [@WebToolkitPro](https://x.com/WebToolkitPro)
 - **GitHub:** [webtoolkit-pro](https://github.com/webtoolkit-pro)

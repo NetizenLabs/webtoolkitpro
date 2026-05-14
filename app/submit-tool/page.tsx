@@ -26,7 +26,7 @@ export default function SubmitToolPage() {
       // Add submission ID to the form data for Formspree
       formData.append('submission_id', newId)
       
-      const response = await fetch('https://formspree.io/f/safi4730358@gmail.com', {
+      const response = await fetch('https://formspree.io/f/hello@wtkpro.site', {
         method: 'POST',
         body: formData,
         headers: {

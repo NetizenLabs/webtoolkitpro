@@ -80,6 +80,6 @@ By focusing on Core Web Vitals, you don't just improve your SEO rankings; you pr
 This technical guide was authored by the **WebToolkit Pro Performance Lab**. Our mission is to democratize high-performance web engineering. 
 
 **Follow the Research:** 
-- **Lead Engineer:** [safi4730358@gmail.com](mailto:safi4730358@gmail.com)
+- **Lead Engineer:** [hello@wtkpro.site](mailto:hello@wtkpro.site)
 - **X (Twitter):** [@WebToolkitPro](https://x.com/WebToolkitPro)
 - **GitHub:** [webtoolkit-pro](https://github.com/webtoolkit-pro)

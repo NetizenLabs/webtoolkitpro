@@ -1,0 +1,484 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.wrap{padding:4px 0 48px}
+.page-title{font-size:20px;font-weight:600;color:var(--color-text-primary);margin-bottom:4px}
+.page-sub{font-size:13px;color:var(--color-text-secondary);margin-bottom:24px;line-height:1.6}
+.sec-label{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--color-text-secondary);margin:32px 0 14px;padding-bottom:6px;border-bottom:0.5px solid var(--color-border-tertiary)}
+/* pillar card */
+.pillar{border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:20px}
+.pillar-header{padding:14px 18px;display:flex;align-items:center;gap:12px}
+.pillar-icon{font-size:20px;flex-shrink:0}
+.pillar-meta{flex:1}
+.pillar-name{font-size:15px;font-weight:600;color:var(--color-text-primary)}
+.pillar-desc{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.pillar-stats{display:flex;gap:8px;flex-shrink:0}
+.pstat{border-radius:6px;padding:3px 8px;font-size:10px;font-weight:600}
+.vol-h{background:#DCFCE7;color:#16A34A}
+.vol-m{background:#FEF9C3;color:#CA8A04}
+.vol-l{background:#F1F5F9;color:#64748B}
+.comp-l{background:#DCFCE7;color:#16A34A}
+.comp-m{background:#FEF9C3;color:#CA8A04}
+.comp-h{background:#FEE2E2;color:#DC2626}
+/* cluster table */
+.cluster-table{width:100%;border-collapse:collapse;font-size:12px}
+.cluster-table th{text-align:left;padding:8px 12px;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--color-text-secondary);background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.cluster-table td{padding:9px 12px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;line-height:1.5}
+.cluster-table tr:last-child td{border-bottom:none}
+.cluster-table tr:hover td{background:var(--color-background-secondary)}
+.kw{font-family:var(--font-mono);font-size:11px;background:var(--color-background-secondary);border-radius:3px;padding:1px 5px;margin:1px 2px 1px 0;display:inline-block}
+.type-tool{color:#2563EB;font-weight:500}
+.type-blog{color:#7C3AED;font-weight:500}
+.type-hub{color:#0891B2;font-weight:500}
+.pri-1{color:#DC2626;font-weight:700}
+.pri-2{color:#D97706;font-weight:600}
+.pri-3{color:#16A34A;font-weight:500}
+/* content calendar */
+.cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cal-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px}
+.cal-month{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:8px}
+.cal-item{font-size:12px;color:var(--color-text-primary);padding:4px 0;border-bottom:0.5px solid var(--color-border-tertiary);line-height:1.5;display:flex;gap:6px;align-items:flex-start}
+.cal-item:last-child{border-bottom:none}
+.cal-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dot-tool{background:#2563EB}
+.dot-blog{background:#7C3AED}
+.dot-hub{background:#0891B2}
+/* internal link map */
+.link-map{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:18px;margin-bottom:12px}
+.link-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:12px;color:var(--color-text-primary);line-height:1.6}
+.link-row:last-child{margin-bottom:0}
+.arrow{color:var(--color-text-secondary);flex-shrink:0;font-family:monospace}
+.highlight-box{background:var(--color-background-warning);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px 16px;margin-top:16px;font-size:13px;color:var(--color-text-primary);line-height:1.7}
+.score-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.ss-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:12px;text-align:center}
+.ss-num{font-size:26px;font-weight:700;color:var(--color-text-primary);margin-bottom:2px}
+.ss-label{font-size:10px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:1px}
+</style>
+
+<div class="wrap">
+<p class="page-title">wtkpro.site — Deep Topical Map 2026</p>
+<p class="page-sub">Built using the $14K case study framework: niche filter → topical clusters → pillar + spoke → internal link architecture → content calendar. Every keyword, page type, and priority ranked by real traffic opportunity.</p>
+
+<!-- OPPORTUNITY SUMMARY -->
+<div class="score-summary">
+  <div class="ss-card"><p class="ss-num">6</p><p class="ss-label">Pillar clusters</p></div>
+  <div class="ss-card"><p class="ss-num">54</p><p class="ss-label">Target keywords</p></div>
+  <div class="ss-card"><p class="ss-num">31</p><p class="ss-label">Pages to create</p></div>
+  <div class="ss-card"><p class="ss-num">~180K</p><p class="ss-label">Combined monthly searches</p></div>
+</div>
+
+<!-- PILLAR 1: JSON -->
+<p class="sec-label">Pillar 1 · JSON Tools — Your biggest traffic opportunity</p>
+<div class="pillar">
+  <div class="pillar-header">
+    <span class="pillar-icon">{ }</span>
+    <div class="pillar-meta">
+      <p class="pillar-name">JSON Hub</p>
+      <p class="pillar-desc">Pillar page: /tools/category/json-tools/ · 8 tool pages + 6 blog posts</p>
+    </div>
+    <div class="pillar-stats"><span class="pstat vol-h">Vol: Very High</span><span class="pstat comp-m">Comp: Medium</span></div>
+  </div>
+  <table class="cluster-table">
+    <thead><tr><th>Page / Keyword</th><th>Target Keywords</th><th>Type</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>JSON Formatter</td>
+        <td><span class="kw">json formatter</span><span class="kw">json formatter online</span><span class="kw">json beautifier</span><span class="kw">format json online</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>JSON Validator</td>
+        <td><span class="kw">json validator</span><span class="kw">json lint</span><span class="kw">validate json online</span><span class="kw">json checker</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>JSON to CSV Converter</td>
+        <td><span class="kw">json to csv</span><span class="kw">convert json to csv online</span><span class="kw">json to csv converter</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>JSON to XML Converter</td>
+        <td><span class="kw">json to xml</span><span class="kw">convert json to xml</span><span class="kw">json xml converter online</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>JSON Diff Tool</td>
+        <td><span class="kw">json diff</span><span class="kw">compare json online</span><span class="kw">json compare tool</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: What is JSON? Complete Guide</td>
+        <td><span class="kw">what is json</span><span class="kw">json explained</span><span class="kw">json tutorial for beginners</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: JSON vs XML — Which to Use?</td>
+        <td><span class="kw">json vs xml</span><span class="kw">json vs xml comparison</span><span class="kw">when to use json vs xml</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: How to Fix Common JSON Errors</td>
+        <td><span class="kw">json parse error</span><span class="kw">invalid json fix</span><span class="kw">json syntax error</span><span class="kw">unexpected token json</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: JSON Schema Validation Guide</td>
+        <td><span class="kw">json schema validation</span><span class="kw">validate json schema online</span><span class="kw">json schema example</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: JSON Best Practices for APIs</td>
+        <td><span class="kw">json best practices</span><span class="kw">json api design</span><span class="kw">rest api json format</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Hub: JSON Tools Category Page</td>
+        <td><span class="kw">json tools online</span><span class="kw">online json utilities</span><span class="kw">best json tools</span></td>
+        <td><span class="type-hub">Hub</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PILLAR 2: PASSWORD & SECURITY -->
+<p class="sec-label">Pillar 2 · Password & Security — High CPC = High AdSense earnings</p>
+<div class="pillar">
+  <div class="pillar-header">
+    <span class="pillar-icon">🔐</span>
+    <div class="pillar-meta">
+      <p class="pillar-name">Security Hub</p>
+      <p class="pillar-desc">Pillar page: /tools/category/security/ · 5 tool pages + 5 blog posts</p>
+    </div>
+    <div class="pillar-stats"><span class="pstat vol-h">Vol: High</span><span class="pstat comp-m">Comp: Medium</span></div>
+  </div>
+  <table class="cluster-table">
+    <thead><tr><th>Page / Keyword</th><th>Target Keywords</th><th>Type</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Password Generator</td>
+        <td><span class="kw">password generator</span><span class="kw">random password generator</span><span class="kw">strong password generator</span><span class="kw">secure password generator online</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Hash Generator</td>
+        <td><span class="kw">sha256 generator</span><span class="kw">md5 hash generator</span><span class="kw">hash generator online</span><span class="kw">text to sha256</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>JWT Decoder</td>
+        <td><span class="kw">jwt decoder</span><span class="kw">decode jwt token online</span><span class="kw">jwt token parser</span><span class="kw">jwt debugger</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: How Secure is Your Password?</td>
+        <td><span class="kw">how secure is my password</span><span class="kw">password strength checker</span><span class="kw">what makes a strong password</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: MD5 vs SHA-256 — Which to Use?</td>
+        <td><span class="kw">md5 vs sha256</span><span class="kw">difference between md5 and sha256</span><span class="kw">which hash algorithm is best</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: What is JWT? A Complete Guide</td>
+        <td><span class="kw">what is jwt</span><span class="kw">json web token explained</span><span class="kw">jwt tutorial</span><span class="kw">how jwt works</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: Password Manager vs Browser Passwords</td>
+        <td><span class="kw">password manager vs browser</span><span class="kw">should i use password manager</span><span class="kw">best way to store passwords</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PILLAR 3: ENCODING -->
+<p class="sec-label">Pillar 3 · Encoding & Conversion — Low competition, steady traffic</p>
+<div class="pillar">
+  <div class="pillar-header">
+    <span class="pillar-icon">🔄</span>
+    <div class="pillar-meta">
+      <p class="pillar-name">Encoding Hub</p>
+      <p class="pillar-desc">Pillar page: /tools/category/encoding/ · 4 tool pages + 4 blog posts</p>
+    </div>
+    <div class="pillar-stats"><span class="pstat vol-m">Vol: Medium</span><span class="pstat comp-l">Comp: Low</span></div>
+  </div>
+  <table class="cluster-table">
+    <thead><tr><th>Page / Keyword</th><th>Target Keywords</th><th>Type</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Base64 Encoder / Decoder</td>
+        <td><span class="kw">base64 encoder</span><span class="kw">base64 decoder</span><span class="kw">base64 encode online</span><span class="kw">decode base64 string</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>URL Encoder / Decoder</td>
+        <td><span class="kw">url encoder</span><span class="kw">url decode online</span><span class="kw">percent encoding</span><span class="kw">encode url online</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Binary Converter</td>
+        <td><span class="kw">binary to text converter</span><span class="kw">text to binary</span><span class="kw">binary converter online</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: What is Base64? Complete Guide</td>
+        <td><span class="kw">what is base64 encoding</span><span class="kw">base64 explained</span><span class="kw">when to use base64</span><span class="kw">base64 vs encryption</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: Base64 in JWTs and APIs</td>
+        <td><span class="kw">base64 in jwt</span><span class="kw">base64 api authentication</span><span class="kw">http basic auth base64</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: URL Encoding Explained for Web Devs</td>
+        <td><span class="kw">url encoding explained</span><span class="kw">percent encoding web development</span><span class="kw">special characters in urls</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-3">P3 — Month 3</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PILLAR 4: REGEX -->
+<p class="sec-label">Pillar 4 · Regex — Evergreen, low competition, high intent</p>
+<div class="pillar">
+  <div class="pillar-header">
+    <span class="pillar-icon">.*</span>
+    <div class="pillar-meta">
+      <p class="pillar-name">Regex Hub</p>
+      <p class="pillar-desc">Pillar page: /tools/category/regex/ · 2 tool pages + 5 blog posts</p>
+    </div>
+    <div class="pillar-stats"><span class="pstat vol-m">Vol: Medium-High</span><span class="pstat comp-l">Comp: Low-Medium</span></div>
+  </div>
+  <table class="cluster-table">
+    <thead><tr><th>Page / Keyword</th><th>Target Keywords</th><th>Type</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Regex Tester</td>
+        <td><span class="kw">regex tester</span><span class="kw">regex tester online</span><span class="kw">test regex online</span><span class="kw">regex checker</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: Regex Cheat Sheet (JavaScript)</td>
+        <td><span class="kw">regex cheat sheet</span><span class="kw">regex cheat sheet javascript</span><span class="kw">regular expression cheat sheet</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: 20 Must-Know Regex Patterns</td>
+        <td><span class="kw">regex for email validation</span><span class="kw">regex patterns examples</span><span class="kw">regex for phone number</span><span class="kw">regex url validation</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: Regex in Python vs JavaScript</td>
+        <td><span class="kw">regex python vs javascript</span><span class="kw">regex differences by language</span><span class="kw">python regex tutorial</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: How to Avoid Regex Catastrophic Backtracking</td>
+        <td><span class="kw">regex backtracking</span><span class="kw">catastrophic backtracking fix</span><span class="kw">regex performance issues</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-3">P3 — Month 3</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PILLAR 5: SEO TOOLS -->
+<p class="sec-label">Pillar 5 · SEO Tools — High AdSense CPC ($3–8 per click)</p>
+<div class="pillar">
+  <div class="pillar-header">
+    <span class="pillar-icon">📊</span>
+    <div class="pillar-meta">
+      <p class="pillar-name">SEO Tools Hub</p>
+      <p class="pillar-desc">Pillar page: /tools/category/seo/ · 6 tool pages + 4 blog posts</p>
+    </div>
+    <div class="pillar-stats"><span class="pstat vol-h">Vol: High</span><span class="pstat comp-h">Comp: High</span></div>
+  </div>
+  <table class="cluster-table">
+    <thead><tr><th>Page / Keyword</th><th>Target Keywords</th><th>Type</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Meta Tag Generator</td>
+        <td><span class="kw">meta tag generator</span><span class="kw">og meta tag generator</span><span class="kw">generate meta tags free</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Schema / JSON-LD Generator</td>
+        <td><span class="kw">schema markup generator</span><span class="kw">json-ld generator</span><span class="kw">structured data generator free</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Robots.txt Generator</td>
+        <td><span class="kw">robots.txt generator</span><span class="kw">create robots txt online</span><span class="kw">robots txt file generator</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Redirect Checker</td>
+        <td><span class="kw">redirect checker</span><span class="kw">http redirect checker</span><span class="kw">301 redirect checker</span><span class="kw">check redirect chain</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: Complete Meta Tags Guide 2026</td>
+        <td><span class="kw">meta tags for seo</span><span class="kw">og meta tags guide</span><span class="kw">complete meta tag list</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: JSON-LD Schema Markup Tutorial</td>
+        <td><span class="kw">how to add schema markup</span><span class="kw">json-ld tutorial</span><span class="kw">schema org structured data</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: Core Web Vitals Guide 2026</td>
+        <td><span class="kw">core web vitals 2026</span><span class="kw">improve core web vitals</span><span class="kw">lcp fcp cls explained</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PILLAR 6: UUID & IDENTIFIERS -->
+<p class="sec-label">Pillar 6 · UUID & Identifiers — Underrated, very low competition</p>
+<div class="pillar">
+  <div class="pillar-header">
+    <span class="pillar-icon">🆔</span>
+    <div class="pillar-meta">
+      <p class="pillar-name">UUID & ID Hub</p>
+      <p class="pillar-desc">Pillar page: /tools/category/generators/ · 3 tool pages + 3 blog posts</p>
+    </div>
+    <div class="pillar-stats"><span class="pstat vol-m">Vol: Medium</span><span class="pstat comp-l">Comp: Very Low</span></div>
+  </div>
+  <table class="cluster-table">
+    <thead><tr><th>Page / Keyword</th><th>Target Keywords</th><th>Type</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>UUID v4 Generator</td>
+        <td><span class="kw">uuid generator</span><span class="kw">uuid v4 generator online</span><span class="kw">generate uuid</span><span class="kw">random uuid</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>UUID v7 Generator</td>
+        <td><span class="kw">uuid v7 generator</span><span class="kw">uuid v7 vs v4</span><span class="kw">generate uuid v7 online</span></td>
+        <td><span class="type-tool">Tool</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+      <tr>
+        <td>Blog: UUID v4 vs v7 — What Changed?</td>
+        <td><span class="kw">uuid v4 vs v7</span><span class="kw">uuid v7 explained</span><span class="kw">why use uuid v7</span><span class="kw">uuid versions compared</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-1">P1 — Now</span></td>
+      </tr>
+      <tr>
+        <td>Blog: UUID vs ULID vs NanoID</td>
+        <td><span class="kw">uuid vs ulid</span><span class="kw">nanoid vs uuid</span><span class="kw">best unique id generator</span><span class="kw">uuid alternatives</span></td>
+        <td><span class="type-blog">Blog</span></td>
+        <td><span class="pri-2">P2 — Month 2</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- INTERNAL LINK MAP -->
+<p class="sec-label">Internal link architecture — Every page talks to every other page</p>
+<div class="link-map">
+  <div class="link-row"><span class="arrow">→</span><span><strong>JSON Formatter tool</strong> links to: JSON Validator tool · "What is JSON?" blog · "How to fix JSON errors" blog · JSON Hub category page</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>"What is JSON?" blog</strong> links to: JSON Formatter tool · JSON Validator tool · "JSON vs XML" blog · JSON Hub page</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>Password Generator tool</strong> links to: Hash Generator tool · "How secure is your password?" blog · "What is JWT?" blog · Security Hub page</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>JWT Decoder tool</strong> links to: "What is JWT?" blog · Base64 Encoder tool · "Base64 in JWTs" blog · Security Hub page</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>Base64 Encoder tool</strong> links to: "What is Base64?" blog · URL Encoder tool · JWT Decoder tool · "Base64 in JWTs" blog</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>Regex Tester tool</strong> links to: "Regex Cheat Sheet" blog · "20 Must-Know Regex Patterns" blog · Regex Hub page</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>Meta Tag Generator tool</strong> links to: "Complete Meta Tags Guide" blog · Schema Generator tool · SEO Tools Hub</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>All Hub pages</strong> link to: all tools in that category + all blog posts in that category + Homepage</span></div>
+  <div class="link-row"><span class="arrow">→</span><span><strong>All blog posts</strong> end with: CTA to relevant tool + 2–3 related blog links + link back to category hub</span></div>
+</div>
+
+<!-- CONTENT CALENDAR -->
+<p class="sec-label">12-week content calendar — Ghulam Ali's method: cluster then publish</p>
+<div class="cal-grid">
+  <div class="cal-card">
+    <p class="cal-month">Week 1–2 · Foundation</p>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: What is JSON? Complete Guide (P1)</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: What is JWT? A Complete Guide (P1)</span></div>
+    <div class="cal-item"><span class="cal-dot dot-hub"></span><span>Hub: JSON Tools category page (P1)</span></div>
+    <div class="cal-item"><span class="cal-dot dot-hub"></span><span>Hub: Security Tools category page (P1)</span></div>
+  </div>
+  <div class="cal-card">
+    <p class="cal-month">Week 3–4 · Cluster #1</p>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: JSON vs XML — Which to Use?</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: How to Fix Common JSON Errors</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: What is Base64 Encoding?</span></div>
+    <div class="cal-item"><span class="cal-dot dot-tool"></span><span>Tool: Add JSON to CSV converter</span></div>
+  </div>
+  <div class="cal-card">
+    <p class="cal-month">Week 5–6 · Cluster #2</p>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: Regex Cheat Sheet (JavaScript)</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: 20 Must-Know Regex Patterns</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: How Secure is Your Password?</span></div>
+    <div class="cal-item"><span class="cal-dot dot-hub"></span><span>Hub: Regex category page</span></div>
+  </div>
+  <div class="cal-card">
+    <p class="cal-month">Week 7–8 · Cluster #3</p>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: UUID v4 vs v7 — What Changed?</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: MD5 vs SHA-256 Explained</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: Complete Meta Tags Guide 2026</span></div>
+    <div class="cal-item"><span class="cal-dot dot-tool"></span><span>Tool: Add JSON Diff / Compare tool</span></div>
+  </div>
+  <div class="cal-card">
+    <p class="cal-month">Week 9–10 · Cluster #4</p>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: JSON-LD Schema Markup Tutorial</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: Base64 in JWTs and APIs</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: UUID vs ULID vs NanoID</span></div>
+    <div class="cal-item"><span class="cal-dot dot-hub"></span><span>Hub: SEO Tools category page</span></div>
+  </div>
+  <div class="cal-card">
+    <p class="cal-month">Week 11–12 · Linkbuilding</p>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: Core Web Vitals Guide 2026</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: Regex in Python vs JavaScript</span></div>
+    <div class="cal-item"><span class="cal-dot dot-blog"></span><span>Blog: JSON Schema Validation Guide</span></div>
+    <div class="cal-item"><span class="cal-dot dot-tool"></span><span>Start forum + profile link building</span></div>
+  </div>
+</div>
+
+<div class="highlight-box" style="margin-top:20px">
+  <strong>The $14K insight applied to wtkpro.site:</strong> Ghulam Ali's site sold for $14K because it had topical authority (Google trusted it as the go-to resource for its niche), consistent content clusters, and internal linking that made every page reinforce every other page. Right now wtkpro.site has tools but almost no content. A site with 40+ tools and 0 supporting blog posts looks like a tool dump to Google — not an authority. Publishing 2 blog posts per week for 12 weeks, tightly clustered around your existing tools, is the single highest-ROI activity you can do right now. Each blog post that links to a tool is a free backlink to that tool from your own domain.
+</div>
+
+</div>

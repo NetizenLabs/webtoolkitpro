@@ -16,7 +16,7 @@ function ContactForm() {
     
     try {
       const formData = new FormData(e.target as HTMLFormElement)
-      const response = await fetch('https://formspree.io/f/safi4730358@gmail.com', {
+      const response = await fetch('https://formspree.io/f/hello@wtkpro.site', {
         method: 'POST',
         body: formData,
         headers: {
@@ -137,11 +137,11 @@ export default function ContactPage() {
       </Suspense>
 
       <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-12 border-t border-[#1E2D47] pt-12">
-        <a href="mailto:safi4730358@gmail.com" className="text-[#8A9BBE] hover:text-[#00D4B4] flex items-center gap-3 font-medium transition-colors">
+        <a href="mailto:hello@wtkpro.site" className="text-[#8A9BBE] hover:text-[#00D4B4] flex items-center gap-3 font-medium transition-colors">
           <div className="w-10 h-10 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] flex items-center justify-center">
             <Mail className="w-4 h-4 text-[#00D4B4]" />
           </div> 
-          safi4730358@gmail.com
+          hello@wtkpro.site
         </a>
         <div className="text-[#8A9BBE] flex items-center gap-3 font-medium">
           <div className="w-10 h-10 bg-[#0D1526] border border-[#1E2D47] rounded-[10px] flex items-center justify-center">

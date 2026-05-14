@@ -34,7 +34,7 @@ export default function AuthorPage() {
           <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] text-gray-500 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all shadow-sm">
             <Twitter className="w-5 h-5" />
           </a>
-          <a href="mailto:safi4730358@gmail.com" className="p-3 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] text-gray-500 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all shadow-sm">
+          <a href="mailto:hello@wtkpro.site" className="p-3 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] text-gray-500 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all shadow-sm">
             <Mail className="w-5 h-5" />
           </a>
         </div>

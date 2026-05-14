@@ -13,7 +13,7 @@ export default function Newsletter() {
     setStatus('loading')
     
     try {
-      const response = await fetch('https://formspree.io/f/safi4730358@gmail.com', {
+      const response = await fetch('https://formspree.io/f/hello@wtkpro.site', {
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: {
