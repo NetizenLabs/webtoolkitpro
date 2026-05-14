@@ -45,6 +45,7 @@ export default function Footer() {
               <li><Link href="/tools/sitemap-validator" className="hover:text-[#00D4B4] transition-colors">XML Sitemap Validator</Link></li>
               <li><Link href="/tools/redirect-checker" className="hover:text-[#00D4B4] transition-colors">HTTP Redirect Checker</Link></li>
               <li><Link href="/tools/what-is-my-ip" className="hover:text-[#00D4B4] transition-colors">IP Address & Geo Lookup</Link></li>
+              <li><Link href="/ai-visibility" className="hover:text-[#00D4B4] transition-colors font-bold text-[#00D4B4]">AI Visibility Report</Link></li>
               <li><Link href="/blog/seo-meta-tags-complete-guide" className="hover:text-[#00D4B4] transition-colors">Meta Tags Masterclass</Link></li>
               <li><Link href="/blog/ai-seo-optimization-2026" className="hover:text-[#00D4B4] transition-colors">AI Optimization (AIO)</Link></li>
             </ul>

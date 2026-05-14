@@ -60,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/ai-visibility`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    },
   ]
 
   return [...staticUrls, ...categoryUrls, ...blogUrls, ...toolUrls]
