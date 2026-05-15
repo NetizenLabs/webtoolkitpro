@@ -56,4 +56,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'image-resizer': dynamic(() => import('@/components/tools/instances/ImageResizer'), { loading: () => <ToolSkeleton />, ssr: false }),
   'xss-scanner': dynamic(() => import('@/components/tools/instances/XssScanner'), { loading: () => <ToolSkeleton />, ssr: false }),
   'sql-injection-sanitizer': dynamic(() => import('@/components/tools/instances/SqlSanitizer'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'csv-to-json': dynamic(() => import('@/components/tools/instances/CsvToJson'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'json-to-ts': dynamic(() => import('@/components/tools/instances/JsonToTs'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'yaml-to-json': dynamic(() => import('@/components/tools/instances/YamlToJson'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'json-to-yaml': dynamic(() => import('@/components/tools/instances/JsonToYaml'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
