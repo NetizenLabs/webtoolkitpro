@@ -97,14 +97,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: { [k: string]: string } = {
-  'Tools': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800',
+  'Tools': 'bg-[#0969DA]/10 dark:bg-[#00D4B4]/10 text-[#0969DA] dark:text-[#00D4B4] border-[#0969DA]/20 dark:border-[#00D4B4]/20',
   'Tutorials': 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800',
   'Security': 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800',
   'SEO': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
   'CSS': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800',
   'Research': 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
   'Engineering': 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
-  'Developer Tools': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800',
+  'Developer Tools': 'bg-[#0969DA]/10 dark:bg-[#00D4B4]/10 text-[#0969DA] dark:text-[#00D4B4] border-[#0969DA]/20 dark:border-[#00D4B4]/20',
   'SEO Tools': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
   'Design Tools': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800',
 }
@@ -136,23 +136,23 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="dynamic-padding max-w-4xl mx-auto min-h-screen">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-12 pt-12">
-          <ol className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-[#4A6080]" itemScope itemType="https://schema.org/BreadcrumbList">
+          <ol className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link href="/" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
                 <span itemProp="name">Root</span>
               </Link>
               <meta itemProp="position" content="1" />
             </li>
-            <li className="text-[#1E2D47]">/</li>
+            <li className="text-border">/</li>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link href="/blog" className="hover:text-[#00D4B4] transition-colors" itemProp="item">
                 <span itemProp="name">Knowledge Center</span>
               </Link>
               <meta itemProp="position" content="2" />
             </li>
-            <li className="text-[#1E2D47]">/</li>
+            <li className="text-border">/</li>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-[#8A9BBE]" itemProp="name">Entry</span>
+              <span className="text-muted-foreground" itemProp="name">Entry</span>
               <meta itemProp="position" content="3" />
             </li>
           </ol>
@@ -161,38 +161,38 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Post Header */}
         <header className="mb-12">
           <div className="flex items-center gap-4 mb-6">
-            <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-[#0D1526] text-[#8A9BBE] border-[#1E2D47]'}`}>
+            <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-elevated text-muted-foreground border-border'}`}>
               {post.category}
             </span>
-            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#4A6080] font-mono">{post.readTime}</span>
+            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-muted-foreground/60 font-mono">{post.readTime}</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 leading-tight tracking-tighter">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tighter">
             {post.title}
           </h1>
 
-          <p className="text-xl text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-10 max-w-3xl">
+          <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
             {post.description}
           </p>
 
-          <div className="flex items-center gap-4 text-[10px] font-mono font-bold uppercase tracking-widest text-[#4A6080] pb-8 border-b border-[#1E2D47] mb-12">
+          <div className="flex items-center gap-4 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60 pb-8 border-b border-border mb-12">
             <time dateTime={post.date} itemProp="datePublished">
               {formattedDate}
             </time>
-            <span className="text-[#1E2D47]">•</span>
-            <span itemProp="author" className="text-[#8A9BBE]">{post.author}</span>
+            <span className="text-border">•</span>
+            <span itemProp="author" className="text-muted-foreground">{post.author}</span>
           </div>
 
           {/* TL;DR Section */}
           {post.tldr && (
             <div className="mb-16 p-[1px] rounded-[12px] bg-gradient-to-r from-[#00D4B4] via-[#0094FF] to-indigo-600 shadow-2xl shadow-blue-500/10">
-              <div className="bg-[#0B1120] rounded-[11px] p-8 md:p-10 flex items-start gap-8">
+              <div className="bg-background rounded-[11px] p-8 md:p-10 flex items-start gap-8">
                 <div className="w-14 h-14 shrink-0 bg-[#00D4B4]/10 rounded-[10px] flex items-center justify-center border border-[#00D4B4]/20">
                   <ShieldCheck className="w-7 h-7 text-[#00D4B4]" />
                 </div>
                 <div>
                   <div className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-3 font-mono">Executive Summary</div>
-                  <p className="text-xl font-bold text-white leading-tight italic opacity-90">
+                  <p className="text-xl font-bold text-foreground leading-tight italic opacity-90">
                   &quot;{post.tldr}&quot;
                   </p>
                 </div>
@@ -214,11 +214,11 @@ export default async function BlogPostPage({ params }: Props) {
                   className={`flex-shrink-0 w-[280px] p-5 rounded-[16px] border snap-start transition-all ${
                     p.slug === post.slug 
                       ? 'bg-[#00D4B4]/10 border-[#00D4B4]/40' 
-                      : 'bg-[#0D1526] border-[#1E2D47] hover:border-[#00D4B4]/30'
+                      : 'bg-elevated border-border hover:border-[#00D4B4]/30'
                   }`}
                 >
-                  <div className="text-[8px] font-bold text-[#4A6080] uppercase tracking-widest mb-2 font-mono">{p.category}</div>
-                  <h3 className="text-sm font-bold text-white leading-tight line-clamp-2 mb-3">{p.title}</h3>
+                  <div className="text-[8px] font-bold text-muted-foreground/60 uppercase tracking-widest mb-2 font-mono">{p.category}</div>
+                  <h3 className="text-sm font-bold text-foreground leading-tight line-clamp-2 mb-3">{p.title}</h3>
                   <div className="flex items-center gap-2 text-[8px] font-bold text-[#00D4B4] uppercase tracking-widest">
                     Read Now <ChevronRight className="w-2 h-2" />
                   </div>
@@ -234,18 +234,18 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Article Content */}
         <div
           className="prose prose-lg dark:prose-invert max-w-none
-            prose-headings:font-bold prose-headings:text-[#1E2D47] dark:prose-headings:text-white prose-headings:tracking-tight
-            prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:pt-8 prose-h2:border-t prose-h2:border-[#1E2D47]/50
+            prose-headings:font-bold prose-headings:text-foreground dark:prose-headings:text-white prose-headings:tracking-tight
+            prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:pt-8 prose-h2:border-t prose-h2:border-border/50
             prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
-            prose-p:text-gray-600 dark:prose-p:text-[#8A9BBE] prose-p:leading-relaxed prose-p:mb-6
+            prose-p:text-muted-foreground/80 dark:prose-p:text-[#8A9BBE] prose-p:leading-relaxed prose-p:mb-6
             prose-a:text-[#00D4B4] prose-a:font-bold prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-[#1E2D47] dark:prose-strong:text-white
-            prose-code:bg-[#0D1526] prose-code:px-2 prose-code:py-0.5 prose-code:rounded-[4px] prose-code:text-sm prose-code:text-[#00D4B4] prose-code:before:content-none prose-code:after:content-none
-            prose-pre:bg-[#0B1120] prose-pre:text-white prose-pre:rounded-[12px] prose-pre:border prose-pre:border-[#1E2D47] prose-pre:p-6
-            prose-ul:text-gray-600 dark:prose-ul:text-[#8A9BBE] prose-ol:text-gray-600 dark:prose-ol:text-[#8A9BBE]
+            prose-strong:text-foreground dark:prose-strong:text-white
+            prose-code:bg-elevated prose-code:px-2 prose-code:py-0.5 prose-code:rounded-[4px] prose-code:text-sm prose-code:text-[#00D4B4] prose-code:before:content-none prose-code:after:content-none
+            prose-pre:bg-background prose-pre:text-foreground prose-pre:rounded-[12px] prose-pre:border prose-pre:border-border prose-pre:p-6
+            prose-ul:text-muted-foreground/80 dark:prose-ul:text-[#8A9BBE] prose-ol:text-muted-foreground/80 dark:prose-ol:text-[#8A9BBE]
             prose-li:mb-2
             prose-blockquote:border-l-[#00D4B4] prose-blockquote:bg-[#00D4B4]/5 prose-blockquote:rounded-r-[12px] prose-blockquote:py-2 prose-blockquote:italic
-            prose-img:rounded-[12px] prose-img:border prose-img:border-[#1E2D47]"
+            prose-img:rounded-[12px] prose-img:border prose-img:border-border"
           dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
         />
 
@@ -260,10 +260,10 @@ export default async function BlogPostPage({ params }: Props) {
                 <span className="w-2 h-2 bg-[#00D4B4] rounded-full animate-pulse" />
                 <span className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest">Expert Recommendations</span>
               </div>
-              <h3 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-6">Pro Insights</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Pro Insights</h3>
               <ul className="space-y-4">
                 {post.expertTips.map((tip, idx) => (
-                  <li key={idx} className="flex items-start gap-4 text-sm text-gray-600 dark:text-[#8A9BBE] font-medium leading-relaxed">
+                  <li key={idx} className="flex items-start gap-4 text-sm text-muted-foreground font-medium leading-relaxed">
                     <span className="mt-1 text-[#00D4B4] font-mono text-[10px] font-bold">0{idx + 1}.</span>
                     {tip}
                   </li>
@@ -276,14 +276,14 @@ export default async function BlogPostPage({ params }: Props) {
         {/* FAQ Section */}
         {post.faqs && post.faqs.length > 0 && (
           <section className="mt-20">
-            <h2 className="text-3xl font-bold text-[#1E2D47] dark:text-white mb-10 tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-10 tracking-tight">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {post.faqs.map((faq, idx) => (
-                <div key={idx} className="p-8 bg-[#0D1526] border border-[#1E2D47] rounded-[16px] group hover:border-[#00D4B4]/30 transition-all">
-                  <h3 className="text-lg font-bold text-white mb-3 flex items-start gap-3">
+                <div key={idx} className="p-8 bg-elevated border border-border rounded-[16px] group hover:border-[#00D4B4]/30 transition-all">
+                  <h3 className="text-lg font-bold text-foreground mb-3 flex items-start gap-3">
                     <span className="text-[#00D4B4]">Q.</span> {faq.q}
                   </h3>
-                  <p className="text-sm text-[#8A9BBE] leading-relaxed pl-7 border-l border-[#1E2D47] group-hover:border-[#00D4B4]/30 transition-colors">
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-7 border-l border-border group-hover:border-[#00D4B4]/30 transition-colors">
                     {faq.a}
                   </p>
                 </div>
@@ -293,24 +293,24 @@ export default async function BlogPostPage({ params }: Props) {
         )}
 
         {/* Footer Meta */}
-        <div className="mt-20 pt-12 border-t border-[#1E2D47]">
+        <div className="mt-20 pt-12 border-t border-border">
           <div className="flex flex-wrap gap-3 mb-12">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[10px] font-bold font-mono uppercase tracking-wider bg-[#0D1526] text-[#8A9BBE] px-4 py-2 rounded-full border border-[#1E2D47] hover:border-[#00D4B4]/30 transition-colors"
+                className="text-[10px] font-bold font-mono uppercase tracking-wider bg-elevated text-muted-foreground px-4 py-2 rounded-full border border-border hover:border-[#00D4B4]/30 transition-colors"
               >
                 #{tag}
               </span>
             ))}
           </div>
 
-          <div className="p-8 bg-[#0D1526] rounded-[12px] border border-[#1E2D47] relative overflow-hidden group">
+          <div className="p-8 bg-elevated rounded-[12px] border border-border relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
               <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold text-[#1E2D47] dark:text-white mb-2">WTK Engineering Journal</h3>
-                <p className="text-sm text-gray-600 dark:text-[#8A9BBE] max-w-md font-medium leading-relaxed">
+                <h3 className="text-xl font-bold text-foreground mb-2">WTK Engineering Journal</h3>
+                <p className="text-sm text-muted-foreground max-w-md font-medium leading-relaxed">
                   Peer-reviewed technical research from our core engineering lab. For research inquiries or feedback.
                 </p>
                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 mt-6">
@@ -327,7 +327,7 @@ export default async function BlogPostPage({ params }: Props) {
                   href="https://x.com/WebToolkitPro" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-8 py-3 bg-white text-[#0B1120] rounded-[12px] font-bold text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
+                  className="flex items-center gap-3 px-8 py-3 bg-foreground text-background rounded-[12px] font-bold text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
                 >
                   <Twitter className="w-3.5 h-3.5" /> Follow Twitter
                 </a>
@@ -346,9 +346,9 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Related Articles */}
         {relatedPosts.length > 0 && (
-          <section className="mt-24 pt-16 border-t border-[#1E2D47]" aria-label="Related articles">
+          <section className="mt-24 pt-16 border-t border-border" aria-label="Related articles">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white tracking-tight">Blog & Journal Archive</h2>
+              <h2 className="text-2xl font-bold text-foreground tracking-tight">Blog & Journal Archive</h2>
               <Link href="/blog" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Entries →</Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -358,14 +358,14 @@ export default async function BlogPostPage({ params }: Props) {
                   href={`/blog/${related.slug}`}
                   className="group block"
                 >
-                  <article className="bg-[#0D1526] rounded-[12px] border border-[#1E2D47] p-6 hover:border-[#00D4B4]/30 transition-all h-full">
-                    <span className={`text-[9px] font-bold font-mono px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-[#0B1120] text-[#8A9BBE]'}`}>
+                  <article className="bg-elevated rounded-[12px] border border-border p-6 hover:border-[#00D4B4]/30 transition-all h-full">
+                    <span className={`text-[9px] font-bold font-mono px-2 py-0.5 rounded-full uppercase tracking-wider ${categoryColors[related.category] || 'bg-background text-muted-foreground border-border'}`}>
                       {related.category}
                     </span>
-                    <h3 className="text-base font-bold text-white mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
+                    <h3 className="text-base font-bold text-foreground mt-4 mb-3 group-hover:text-[#00D4B4] transition-colors leading-snug">
                       {related.title}
                     </h3>
-                    <span className="text-[9px] font-mono uppercase font-bold tracking-widest text-[#4A6080]">{related.readTime}</span>
+                    <span className="text-[9px] font-mono uppercase font-bold tracking-widest text-muted-foreground/50">{related.readTime}</span>
                   </article>
                 </Link>
               ))}

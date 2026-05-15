@@ -32,10 +32,10 @@ export default function CategoryPillarPage({ params }: Props) {
   return (
     <main className="min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 pt-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
+        <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tighter">
           {categoryName}
         </h1>
-        <p className="text-lg text-gray-600 dark:text-[#8A9BBE] max-w-3xl leading-relaxed">
+        <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
           {CATEGORY_PILLARS[params.slug].description}
         </p>
       </div>

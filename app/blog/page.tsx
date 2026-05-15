@@ -41,7 +41,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
 }
 
 const categoryColors: { [k: string]: string } = {
-  'Tools': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800',
+  'Tools': 'bg-[#0969DA]/10 dark:bg-[#00D4B4]/10 text-[#0969DA] dark:text-[#00D4B4] border-[#0969DA]/20 dark:border-[#00D4B4]/20',
   'Tutorials': 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800',
   'Security': 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800',
   'SEO': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
@@ -74,8 +74,8 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
           href={page === 1 ? '/blog' : `/blog?${paramName}=${page}`}
           className={`w-10 h-10 flex items-center justify-center rounded-lg border font-bold font-mono text-xs transition-all ${
             page === currentPage 
-              ? 'bg-[#00D4B4] border-[#00D4B4] text-[#0B1120]' 
-              : 'bg-[#0D1526] border-[#1E2D47] text-[#8A9BBE] hover:border-[#00D4B4]/50'
+              ? 'bg-[#00D4B4] border-[#00D4B4] text-[#0D1117]' 
+              : 'bg-card border-border text-muted-foreground hover:border-[#00D4B4]/50'
           }`}
         >
           {page}
@@ -85,7 +85,7 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
       {currentPage < totalPages && (
         <Link 
           href={`/blog?${paramName}=${currentPage + 1}`}
-          className="p-2 rounded-lg bg-[#0D1526] border border-[#1E2D47] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all"
+          className="p-2 rounded-lg bg-elevated border border-border text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all"
         >
           <ChevronRight className="w-5 h-5" />
         </Link>
@@ -127,12 +127,12 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
 
         {/* Blogs Section */}
         <section className="mb-24">
-          <div className="flex items-center justify-between mb-12 border-b border-[#1E2D47] pb-6">
+          <div className="flex items-center justify-between mb-12 border-b border-border pb-6">
             <div>
-              <h2 className="text-3xl font-bold text-white tracking-tight">Technical Blogs</h2>
-              <p className="text-sm text-[#8A9BBE] mt-1">Tutorials, news, and deep dives for daily development.</p>
+              <h2 className="text-3xl font-bold text-foreground tracking-tight">Technical Blogs</h2>
+              <p className="text-sm text-muted-foreground mt-1">Tutorials, news, and deep dives for daily development.</p>
             </div>
-            <div className="text-[10px] font-mono font-bold text-[#4A6080] uppercase tracking-widest bg-[#0D1526] px-3 py-1 rounded-full border border-[#1E2D47]">
+            <div className="text-[10px] font-mono font-bold text-muted-foreground uppercase tracking-widest bg-muted dark:bg-elevated px-3 py-1 rounded-full border border-border">
               {blogs.length} Articles
             </div>
           </div>
@@ -140,23 +140,23 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
             {currentBlogs.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block h-full">
-                <article className="bg-[#0D1526] rounded-[24px] border border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
+                <article className="bg-card rounded-[24px] border border-border p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
-                    <span className={`text-[10px] font-bold px-3 py-1 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-[#0B1120] text-[#8A9BBE] border-[#1E2D47]'}`}>
+                    <span className={`text-[10px] font-bold px-3 py-1 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-background text-muted-foreground border-border'}`}>
                       {post.category}
                     </span>
-                    <span className="text-[10px] font-mono font-bold text-[#4A6080] uppercase tracking-widest">
+                    <span className="text-[10px] font-mono font-bold text-muted-foreground/60 uppercase tracking-widest">
                       {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
-                  <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10">{post.description}</p>
-                  <div className="flex items-center justify-between pt-6 border-t border-[#1E2D47]/30 relative z-10">
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10">{post.description}</p>
+                  <div className="flex items-center justify-between pt-6 border-t border-border/30 relative z-10">
                     <span className="text-[10px] font-bold text-[#00D4B4] flex items-center gap-2 uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
                       Read Entry <Zap className="w-3 h-3 fill-current" />
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#4A6080] font-mono">{post.readTime}</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground/50 font-mono">{post.readTime}</span>
                   </div>
                 </article>
               </Link>
@@ -171,12 +171,12 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
 
         {/* Journals Section */}
         <section className="mb-24">
-          <div className="flex items-center justify-between mb-12 border-b border-[#1E2D47] pb-6">
+          <div className="flex items-center justify-between mb-12 border-b border-border pb-6">
             <div>
               <h2 className="text-3xl font-bold text-[#00D4B4] tracking-tight">Engineering Journals</h2>
-              <p className="text-sm text-[#8A9BBE] mt-1">Peer-reviewed technical research and performance studies.</p>
+              <p className="text-sm text-muted-foreground mt-1">Peer-reviewed technical research and performance studies.</p>
             </div>
-            <div className="text-[10px] font-mono font-bold text-[#00D4B4]/60 uppercase tracking-widest bg-[#0D1526] px-3 py-1 rounded-full border border-[#00D4B4]/20">
+            <div className="text-[10px] font-mono font-bold text-[#00D4B4]/60 uppercase tracking-widest bg-elevated px-3 py-1 rounded-full border border-[#00D4B4]/20">
               {journals.length} Papers
             </div>
           </div>
@@ -184,21 +184,21 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
             {currentJournals.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block h-full">
-                <article className="bg-[#0B1120] rounded-[24px] border border-[#1E2D47] p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
+                <article className="bg-card rounded-[24px] border border-border p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00D4B4]/10 to-[#0094FF]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
                     <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#00D4B4]/10 text-[#00D4B4] border border-[#00D4B4]/20 uppercase tracking-widest font-mono">
                       {post.category}
                     </span>
-                    <span className="text-[10px] font-mono font-bold text-[#4A6080] uppercase tracking-widest">
+                    <span className="text-[10px] font-mono font-bold text-muted-foreground/50 uppercase tracking-widest">
                       STUDY NO. {post.slug.slice(0, 4).toUpperCase()}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
-                  <p className="text-sm text-[#8A9BBE] leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10 font-medium italic">&quot;{post.description}&quot;</p>
-                  <div className="flex items-center justify-between pt-6 border-t border-[#1E2D47]/30 relative z-10">
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10 font-medium italic">&quot;{post.description}&quot;</p>
+                  <div className="flex items-center justify-between pt-6 border-t border-border/30 relative z-10">
                     <span className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest">View Full Paper</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#4A6080] font-mono">{post.readTime}</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground/50 font-mono">{post.readTime}</span>
                   </div>
                 </article>
               </Link>

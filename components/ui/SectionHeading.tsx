@@ -16,7 +16,7 @@ export default function SectionHeading({ number, title, className = '', as: Tag 
       <Tag className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {title}
       </Tag>
-      <div className="flex-grow h-px bg-gray-100 dark:bg-[#1E2D47]"></div>
+      <div className="flex-grow h-px bg-border"></div>
     </div>
   )
 }

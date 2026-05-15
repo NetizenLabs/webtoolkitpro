@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white dark:bg-[#0B1120] py-[var(--space-lg)] lg:py-[var(--space-xl)] transition-colors duration-300">
+      <section className="relative overflow-hidden bg-background py-[var(--space-lg)] lg:py-[var(--space-xl)] transition-colors duration-300">
         {/* Animated background blobs - Refined for brand precision */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
@@ -46,14 +46,14 @@ export default function Home() {
             Brand Guidelines v1.1 • 150+ Free Developer Tools
           </div>
 
-          <h1 className="text-[var(--font-size-4xl)] font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tighter">
+          <h1 className="text-[var(--font-size-4xl)] font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
             Build Faster with the Ultimate<br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
               Web Toolkit
             </span>
           </h1>
 
-          <p className="text-[var(--font-size-lg)] text-gray-600 dark:text-[#8A9BBE] mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[var(--font-size-lg)] text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Format JSON. Generate passwords. Encode data. All in your browser.<br />
             Free, private tools for your daily coding tasks. No login required.
           </p>
