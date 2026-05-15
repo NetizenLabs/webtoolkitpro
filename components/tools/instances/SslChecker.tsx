@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ShieldCheck, Calendar, Lock, Globe, Search, Activity, CheckCircle2, AlertCircle } from 'lucide-react'
+import { ShieldCheck, Calendar, Lock, Globe, Search, Activity, CheckCircle2, AlertCircle, Hash } from 'lucide-react'
 
 export default function SslChecker() {
   const [domain, setDomain] = useState('')
