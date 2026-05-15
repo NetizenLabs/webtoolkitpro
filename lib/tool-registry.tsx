@@ -72,4 +72,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'docker-compose-gen': dynamic(() => import('@/components/tools/instances/DockerComposeGen'), { loading: () => <ToolSkeleton />, ssr: false }),
   'htaccess-generator': dynamic(() => import('@/components/tools/instances/HtaccessGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'dotenv-generator': dynamic(() => import('@/components/tools/instances/DotenvGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'css-shadow-gen': dynamic(() => import('@/components/tools/instances/CssShadowGen'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'pwa-manifest': dynamic(() => import('@/components/tools/instances/PwaManifest'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'emoji-picker': dynamic(() => import('@/components/tools/instances/EmojiPicker'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'readability-checker': dynamic(() => import('@/components/tools/instances/ReadabilityChecker'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
