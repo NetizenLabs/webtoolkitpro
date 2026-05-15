@@ -48,11 +48,11 @@ function applySmartLinks(htmlString: string): string {
   });
   // Tool Path Auto-Linker
   // Matches /tools/slug/ and converts to a styled link
-  const toolRegex = /(?<!href=")\/tools\/([a-z0-9-]+)\/(?![^<]*<\/a>)/gi;
+  const toolRegex = /(?<!href=")\/tools\/([a-z0-9-]+)\/?(?![^<]*<\/a>)/gi;
   processedHtml = processedHtml.replace(toolRegex, (match, slug) => {
     // Format the slug into a readable name (e.g., json-formatter -> Json Formatter)
     const name = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    return `<a href="${match}" class="text-[#00D4B4] font-bold hover:underline transition-all decoration-[#00D4B4]/30">${name}</a>`;
+    return `<a href="/tools/${slug}" class="text-[#00D4B4] font-bold hover:underline transition-all decoration-[#00D4B4]/30">${name}</a>`;
   });
 
   return processedHtml;

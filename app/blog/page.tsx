@@ -47,7 +47,7 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
     <div className="flex items-center justify-center gap-2 mt-12 mb-8">
       {currentPage > 1 && (
         <Link 
-          href={`/blog/?${paramName}=${currentPage - 1}`}
+          href={currentPage - 1 === 1 ? '/blog' : `/blog?${paramName}=${currentPage - 1}`}
           className="p-2 rounded-lg bg-[#0D1526] border border-[#1E2D47] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -57,7 +57,7 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
       {pages.map(page => (
         <Link
           key={page}
-          href={`/blog/?${paramName}=${page}`}
+          href={page === 1 ? '/blog' : `/blog?${paramName}=${page}`}
           className={`w-10 h-10 flex items-center justify-center rounded-lg border font-bold font-mono text-xs transition-all ${
             page === currentPage 
               ? 'bg-[#00D4B4] border-[#00D4B4] text-[#0B1120]' 
@@ -70,7 +70,7 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
 
       {currentPage < totalPages && (
         <Link 
-          href={`/blog/?${paramName}=${currentPage + 1}`}
+          href={`/blog?${paramName}=${currentPage + 1}`}
           className="p-2 rounded-lg bg-[#0D1526] border border-[#1E2D47] text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all"
         >
           <ChevronRight className="w-5 h-5" />
