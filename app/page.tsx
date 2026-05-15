@@ -65,7 +65,7 @@ export default function Home() {
               Explore All Tools <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link 
-              href="/blog/"
+              href="/blog"
               className="bg-[#0D1526] text-white border border-[#1E2D47] font-bold px-10 py-5 rounded-2xl hover:bg-[#152035] transition-all"
             >
               Read Our Blog
@@ -476,7 +476,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/blog/" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
+            <Link href="/blog" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
               <div className="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
                 <Code className="w-6 h-6 text-purple-500" />
               </div>

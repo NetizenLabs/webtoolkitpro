@@ -58,7 +58,7 @@ export default function CookieConsent() {
           <h3 className="font-bold text-white text-xs uppercase tracking-[0.15em]">Privacy Preferences</h3>
         </div>
         <p className="text-sm text-[#8A9BBE] leading-relaxed">
-          We use cookies to enhance your experience. Read our <Link href="/privacy/" className="text-[#00D4B4] font-bold hover:underline">Privacy Policy</Link>.
+          We use cookies to enhance your experience. Read our <Link href="/privacy" className="text-[#00D4B4] font-bold hover:underline">Privacy Policy</Link>.
         </p>
         <div className="flex gap-3 pt-2">
           <button

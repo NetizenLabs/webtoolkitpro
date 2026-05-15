@@ -140,7 +140,7 @@ export default function AuthorPage() {
       <div className="text-center py-20 border-t border-gray-100 dark:border-[#1E2D47]">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight uppercase">Collab with Abu Sufyan</h2>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/contact/" className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] px-8 py-4 rounded-[12px] font-bold text-xs uppercase tracking-widest hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all">
+          <Link href="/contact" className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] px-8 py-4 rounded-[12px] font-bold text-xs uppercase tracking-widest hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all">
             Direct Inquiry
           </Link>
           <a href="https://github.com/abusufyan-netizen" target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] text-gray-900 dark:text-white px-8 py-4 rounded-[12px] font-bold text-xs uppercase tracking-widest hover:border-[#00D4B4]/50 transition-all">

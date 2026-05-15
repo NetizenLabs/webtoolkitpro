@@ -6,6 +6,9 @@ import { Shield, Zap, Star, Code2, Info, CheckCircle2, AlertCircle } from 'lucid
 export const metadata: Metadata = {
   title: 'Brand Guidelines - WebToolkit Pro',
   description: 'Official visual identity and brand system for WebToolkit Pro.',
+  alternates: {
+    canonical: 'https://wtkpro.site/brand',
+  },
   robots: 'noindex, nofollow' // Internal document
 }
 
