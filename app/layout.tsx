@@ -99,9 +99,15 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-title': 'WebToolkit Pro',
     'theme-color': '#0B1120',
     'color-scheme': 'light dark',
-    'preconnect': 'https://wtkpro.site/api',
+    'preconnect': [
+      'https://wtkpro.site/api',
+      'https://fonts.googleapis.com',
+      'https://fonts.gstatic.com'
+    ],
     'dns-prefetch': [
       'https://wtkpro.site/api',
+      'https://fonts.googleapis.com',
+      'https://fonts.gstatic.com',
       'https://pagead2.googlesyndication.com'
     ],
     'x-dns-prefetch-control': 'on',

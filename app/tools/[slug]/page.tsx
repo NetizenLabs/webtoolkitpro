@@ -8,6 +8,8 @@ import { TOOL_COMPONENTS } from '@/lib/tool-registry'
 import ToolInfo from '@/components/sections/ToolInfo'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import RelatedToolsSidebar from '@/components/tools/RelatedToolsSidebar'
+import RelatedToolsWidget from '@/components/tools/RelatedToolsWidget'
+import { RELATED_TOOLS_MAP } from '@/lib/related-tools-map'
 import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
 import AdSlot from '@/components/ads/AdSlot'
 import AIOContextButton from '@/components/tools/AIOContextButton'
@@ -139,6 +141,15 @@ export default function ToolPage({ params }: ToolPageProps) {
               faqs={tool.content.faq.map(f => ({ q: f.question, a: f.answer }))}
               technicalSpecs={tool.content.technical_specs}
             />
+
+            {/* Related Tools Widget */}
+            {RELATED_TOOLS_MAP[tool.slug] && (
+              <RelatedToolsWidget 
+                featured={RELATED_TOOLS_MAP[tool.slug].featured}
+                cards={RELATED_TOOLS_MAP[tool.slug].cards}
+                pills={RELATED_TOOLS_MAP[tool.slug].pills}
+              />
+            )}
           </div>
 
           {/* Sidebar Area */}

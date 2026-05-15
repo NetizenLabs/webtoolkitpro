@@ -7,7 +7,8 @@ import {
   FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
   Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
   Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
-  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server, Database
+  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server, Database,
+  LayoutGrid, List, AlignJustify, Table, Info
 } from 'lucide-react'
 import AdSlot from '@/components/ads/AdSlot'
 import { ToolConfig } from '@/types/tool'
@@ -36,6 +37,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
   const [favorites, setFavorites] = useState<string[]>([])
+  const [viewMode, setViewMode] = useState<'grid' | 'list' | 'details'>('grid')
 
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
 
@@ -122,52 +124,157 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
           </div>
         </div>
 
-      <SectionHeading number="01" title={activeCategory === 'All' ? 'Complete Directory' : `${activeCategory} Suite`} className="mb-12" />
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+        <SectionHeading number="01" title={activeCategory === 'All' ? 'Complete Directory' : `${activeCategory} Suite`} className="mb-0" />
+        
+        <div className="flex items-center gap-2 bg-gray-100 dark:bg-[#0D1526] p-1 rounded-xl border border-gray-200 dark:border-[#1E2D47]">
+          <button 
+            onClick={() => setViewMode('grid')}
+            className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-[#00D4B4] text-[#0B1120] shadow-sm' : 'text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+            title="Large Icons"
+          >
+            <LayoutGrid className="w-5 h-5" strokeWidth={1.5} />
+          </button>
+          <button 
+            onClick={() => setViewMode('list')}
+            className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-[#00D4B4] text-[#0B1120] shadow-sm' : 'text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+            title="List"
+          >
+            <List className="w-5 h-5" strokeWidth={1.5} />
+          </button>
+          <button 
+            onClick={() => setViewMode('details')}
+            className={`p-2 rounded-lg transition-all ${viewMode === 'details' ? 'bg-[#00D4B4] text-[#0B1120] shadow-sm' : 'text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+            title="Details"
+          >
+            <AlignJustify className="w-5 h-5" strokeWidth={1.5} />
+          </button>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {filteredTools.map((tool) => {
-          const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
-          const href = `/tools/${tool.slug}`
+      {viewMode === 'grid' && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredTools.map((tool) => {
+            const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
+            const href = `/tools/${tool.slug}`
 
-          return (
-            <div key={tool.slug} className="relative group">
-              <button 
-                onClick={(e) => toggleFavorite(e, href)}
-                aria-label={favorites.includes(href) ? `Remove ${tool.name} from favorites` : `Add ${tool.name} to favorites`}
-                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-black/5 dark:bg-[#0B1120]/80 text-gray-900 dark:text-white backdrop-blur-md md:opacity-0 group-hover:opacity-100 transition-all hover:scale-110 active:scale-95"
-              >
-                <Heart className={`w-4 h-4 ${favorites.includes(href) ? 'fill-rose-500 text-rose-500' : ''}`} strokeWidth={1.5} />
-              </button>
+            return (
+              <div key={tool.slug} className="relative group">
+                <button 
+                  onClick={(e) => toggleFavorite(e, href)}
+                  aria-label={favorites.includes(href) ? `Remove ${tool.name} from favorites` : `Add ${tool.name} to favorites`}
+                  className="absolute top-6 right-6 z-10 p-2 rounded-full bg-black/5 dark:bg-[#0B1120]/80 text-gray-900 dark:text-white backdrop-blur-md md:opacity-0 group-hover:opacity-100 transition-all hover:scale-110 active:scale-95"
+                >
+                  <Heart className={`w-4 h-4 ${favorites.includes(href) ? 'fill-rose-500 text-rose-500' : ''}`} strokeWidth={1.5} />
+                </button>
+                <Link 
+                  href={href} 
+                  className="card-premium flex flex-col h-full p-8"
+                >
+                  <div className="w-14 h-14 rounded-[10px] bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />
+                  </div>
+
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight group-hover:text-[#00D4B4] transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-sm text-[#8A9BBE] leading-relaxed line-clamp-2 mb-4">
+                      {tool.content?.description || `Free online ${tool.name} utility.`}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4 flex-wrap mt-auto pt-6 border-t border-gray-100 dark:border-[#1E2D47]/50">
+                    <span className="px-4 py-2 bg-gray-50 dark:bg-[#0B1120] text-gray-500 dark:text-[#8A9BBE] border border-gray-200 dark:border-[#1E2D47] text-[9px] rounded-full font-bold uppercase tracking-widest leading-tight">
+                      {tool.category}
+                    </span>
+                    <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-2 group-hover:gap-3 transition-all uppercase tracking-widest shrink-0">
+                      Launch <Zap className="w-3.5 h-3.5 fill-current" />
+                    </span>
+                  </div>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+      )}
+
+      {viewMode === 'list' && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredTools.map((tool) => {
+            const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
+            const href = `/tools/${tool.slug}`
+
+            return (
               <Link 
+                key={tool.slug}
                 href={href} 
-                className="card-premium flex flex-col h-full p-8"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-xl hover:border-[#00D4B4]/50 group transition-all"
               >
-                <div className="w-14 h-14 rounded-[10px] bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center shrink-0">
+                  <IconComponent className="w-5 h-5 text-[#0B1120]" strokeWidth={1.5} />
                 </div>
-
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight group-hover:text-[#00D4B4] transition-colors">
+                <div className="flex-grow min-w-0">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white truncate group-hover:text-[#00D4B4]">
                     {tool.name}
                   </h3>
-                  <p className="text-sm text-[#8A9BBE] leading-relaxed line-clamp-2 mb-4">
-                    {tool.content?.description || `Free online ${tool.name} utility.`}
+                  <p className="text-[10px] text-[#8A9BBE] uppercase tracking-widest font-bold">
+                    {tool.category}
                   </p>
                 </div>
-
-                <div className="flex items-center justify-between gap-4 flex-wrap mt-auto pt-6 border-t border-gray-100 dark:border-[#1E2D47]/50">
-                  <span className="px-4 py-2 bg-gray-50 dark:bg-[#0B1120] text-gray-500 dark:text-[#8A9BBE] border border-gray-200 dark:border-[#1E2D47] text-[9px] rounded-full font-bold uppercase tracking-widest leading-tight">
-                    {tool.category}
-                  </span>
-                  <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-2 group-hover:gap-3 transition-all uppercase tracking-widest shrink-0">
-                    Launch <Zap className="w-3.5 h-3.5 fill-current" />
-                  </span>
-                </div>
+                <Zap className="w-4 h-4 text-[#00D4B4] opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
-            </div>
-          )
-        })}
-      </div>
+            )
+          })}
+        </div>
+      )}
+
+      {viewMode === 'details' && (
+        <div className="overflow-x-auto rounded-2xl border border-gray-200 dark:border-[#1E2D47] bg-white dark:bg-[#0D1526]">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-gray-100 dark:border-[#1E2D47] bg-gray-50 dark:bg-[#0B1120]">
+                <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Tool Name</th>
+                <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest hidden md:table-cell">Category</th>
+                <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest hidden lg:table-cell">Description</th>
+                <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredTools.map((tool) => {
+                const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
+                const href = `/tools/${tool.slug}`
+
+                return (
+                  <tr key={tool.slug} className="group border-b border-gray-50 dark:border-[#1E2D47]/50 hover:bg-gray-50/50 dark:hover:bg-[#0B1120]/50 transition-colors">
+                    <td className="px-6 py-4">
+                      <Link href={href} className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center shrink-0">
+                          <IconComponent className="w-4 h-4 text-[#0B1120]" strokeWidth={1.5} />
+                        </div>
+                        <span className="font-bold text-gray-900 dark:text-white group-hover:text-[#00D4B4] transition-colors">{tool.name}</span>
+                      </Link>
+                    </td>
+                    <td className="px-6 py-4 hidden md:table-cell">
+                      <span className="text-[10px] font-bold text-gray-500 dark:text-[#8A9BBE] uppercase tracking-widest bg-gray-100 dark:bg-[#0B1120] px-2 py-1 rounded">
+                        {tool.category}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 hidden lg:table-cell max-w-md">
+                      <p className="text-xs text-[#8A9BBE] line-clamp-1">{tool.content?.description}</p>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <Link href={href} className="text-[#00D4B4] hover:text-[#0094FF] transition-colors">
+                        <Zap className="w-4 h-4 inline-block" />
+                      </Link>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* SEO Hub Links */}
       <section className="mt-24 pt-16 border-t border-gray-100 dark:border-[#1E2D47]">
