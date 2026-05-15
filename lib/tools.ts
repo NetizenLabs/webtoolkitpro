@@ -131,3 +131,28 @@ export function getLatestTool(): ToolConfig | undefined {
     return dateB - dateA
   })[0]
 }
+
+export function getRelatedToolsForWidget(currentTool: ToolConfig) {
+  const related = getRelatedTools(currentTool, 10)
+  if (related.length === 0) return null
+
+  return {
+    featured: {
+      name: related[0].name,
+      href: `/tools/${related[0].slug}/`,
+      desc: related[0].function.primary,
+      icon: related[0].icon || '🛠️',
+      badge: 'Recommended'
+    },
+    cards: related.slice(1, 4).map(t => ({
+      name: t.name,
+      href: `/tools/${t.slug}/`,
+      desc: t.function.primary,
+      icon: t.icon || '🛠️'
+    })),
+    pills: related.slice(4).map(t => ({
+      name: t.name,
+      href: `/tools/${t.slug}/`
+    }))
+  }
+}

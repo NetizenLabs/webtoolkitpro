@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getToolBySlug, getTools, getRelatedTools, generateSoftwareSchema, generateFAQSchema } from '@/lib/tools'
+import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget, generateSoftwareSchema, generateFAQSchema } from '@/lib/tools'
 import { ArrowRight } from 'lucide-react'
 import { TOOL_COMPONENTS } from '@/lib/tool-registry'
 import ToolInfo from '@/components/sections/ToolInfo'
@@ -143,13 +143,17 @@ export default function ToolPage({ params }: ToolPageProps) {
             />
 
             {/* Related Tools Widget */}
-            {RELATED_TOOLS_MAP[tool.slug] && (
-              <RelatedToolsWidget 
-                featured={RELATED_TOOLS_MAP[tool.slug].featured}
-                cards={RELATED_TOOLS_MAP[tool.slug].cards}
-                pills={RELATED_TOOLS_MAP[tool.slug].pills}
-              />
-            )}
+            {(() => {
+              const widgetData = RELATED_TOOLS_MAP[tool.slug] || getRelatedToolsForWidget(tool);
+              if (!widgetData) return null;
+              return (
+                <RelatedToolsWidget 
+                  featured={widgetData.featured}
+                  cards={widgetData.cards}
+                  pills={widgetData.pills}
+                />
+              );
+            })()}
           </div>
 
           {/* Sidebar Area */}
