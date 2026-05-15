@@ -1795,6 +1795,396 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "CSV to JSON Converter"
+    slug: "csv-to-json"
+    category: "Data Formatters & Parsers"
+    icon: "FileJson"
+    subcategory: "converters"
+    tags: ["csv", "json", "data", "conversion", "import"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert CSV data to structured JSON format"
+      secondary: "Support for custom delimiters and nested object mapping"
+    technical:
+      input_formats: ["csv"]
+      output_formats: ["json"]
+      processing: "client-side"
+    meta:
+      title: "CSV to JSON Converter — Transform Data Online Free"
+    content:
+      title: "CSV to JSON Converter — Professional Data Transformation"
+      description: "Convert your CSV files and spreadsheets to perfectly structured JSON. Our high-performance converter supports custom delimiters, auto-type detection, and multi-row processing."
+      keywords: ["convert csv to json online", "csv to json converter free", "import csv to json online", "csv to nested json converter", "spreadsheet to json tool", "online data transformation utility"]
+      tldr: "Transform flat CSV data into structured, hierarchical JSON instantly with our professional-grade converter."
+      entity_definition: "CSV to JSON Converter is a data utility that translates comma-separated values (CSV) into JavaScript Object Notation (JSON). This is essential for developers who need to import spreadsheet data into web applications, databases, or configuration files that require a structured data format."
+      how_it_works: "The tool parses the CSV input row by row, using the first row as keys for the resulting JSON objects. it automatically detects data types (numbers, booleans, nulls) to ensure accuracy."
+      use_cases:
+        - "Migrating Excel data to NoSQL databases"
+        - "Creating mock data for API testing"
+        - "Transforming legacy reports into web-ready formats"
+      features:
+        - "Auto-detection of delimiters (Comma, Semicolon, Tab)"
+        - "Automatic data type inference"
+        - "Minified or Pretty-print JSON output"
+        - "One-click copy and file download"
+      faq:
+        - question: "Does it support large files?"
+        - answer: "Yes. Our client-side processing handles large CSVs directly in your browser without uploading data to any server."
+        - question: "Can I handle nested objects?"
+        - answer: "Yes, by using dot notation in your header row (e.g., 'user.name'), the converter can create nested JSON structures."
+
+  - name: "Base64 to Image Decoder"
+    slug: "base64-to-image"
+    category: "Data Formatters & Parsers"
+    icon: "Image"
+    subcategory: "converters"
+    tags: ["base64", "image", "decoder", "data-uri", "conversion"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Decode Base64 strings into viewable images"
+      secondary: "Support for PNG, JPG, WebP, and SVG data URIs"
+    technical:
+      input_formats: ["base64", "text"]
+      output_formats: ["image"]
+      processing: "client-side"
+    meta:
+      title: "Base64 to Image Decoder — Convert Data URI to Image Online"
+    content:
+      title: "Base64 to Image — Instant Visual Decoding"
+      description: "Convert Base64 strings and Data URIs back into viewable image files. Support for all major image formats including PNG, JPEG, GIF, and SVG with instant download."
+      keywords: ["convert base64 to image online", "base64 decoder free", "decode data uri to png", "view base64 string as image", "base64 to image converter online", "online image string decoder"]
+      tldr: "Instantly visualize and download images from Base64 strings or Data URIs."
+      entity_definition: "Base64 to Image Decoder is a utility for reverse-engineering binary data encoded as text. It takes a Base64 string (often found in CSS or JSON payloads) and renders it as a browser-compatible image, allowing developers to verify and save assets without needing server-side scripts."
+      how_it_works: "The tool parses the Base64 string, validates the MIME type (e.g., image/png), and uses the browser's native decoding to render the pixel data."
+      use_cases:
+        - "Debugging embedded CSS images"
+        - "Extracting images from database BLOB fields"
+        - "Viewing assets stored in JSON API responses"
+      features:
+        - "Instant visual preview"
+        - "Automatic MIME type detection"
+        - "One-click download as original format"
+        - "Support for large Data URIs"
+      faq:
+        - question: "What is a Data URI?"
+        - answer: "A Data URI is a way to embed file data (like an image) directly into HTML or CSS using Base64 encoding."
+        - question: "Does this upload my image?"
+        - answer: "No. The decoding happens 100% locally in your browser to ensure maximum privacy."
+
+  - name: "Image to Base64 Encoder"
+    slug: "image-to-base64"
+    category: "Data Formatters & Parsers"
+    icon: "Code"
+    subcategory: "converters"
+    tags: ["image", "base64", "encoder", "data-uri", "conversion"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Encode image files into Base64 strings"
+      secondary: "Generate ready-to-use Data URIs for HTML and CSS"
+    technical:
+      input_formats: ["image"]
+      output_formats: ["base64", "text"]
+      processing: "client-side"
+    meta:
+      title: "Image to Base64 Encoder — Generate Data URIs Online"
+    content:
+      title: "Image to Base64 — Optimize Your Frontend Assets"
+      description: "Convert your images (PNG, JPG, SVG, WebP) into Base64 strings and Data URIs. Perfect for embedding icons and small graphics directly into your HTML and CSS for better performance."
+      keywords: ["convert image to base64 online", "image to data uri free", "generate base64 string for image", "encode png to base64 online", "image string encoder online free", "optimize css with base64 images"]
+      tldr: "Eliminate HTTP requests by encoding small icons and images directly into your code."
+      entity_definition: "Image to Base64 Encoder is a performance-focused utility that converts binary image files into a text-based format. By using the resulting Base64 string or Data URI, developers can 'inline' graphics, reducing the number of external assets a browser needs to fetch."
+      how_it_works: "The tool reads the binary content of an uploaded image and encodes it using the Base64 algorithm, prepending the appropriate MIME type header."
+      use_cases:
+        - "Embedding small icons in CSS files"
+        - "Creating portable HTML templates"
+        - "Sending images via JSON APIs"
+      features:
+        - "Drag-and-drop file support"
+        - "Instant Data URI generation"
+        - "CSS background-image snippet output"
+        - "HTML <img> tag snippet output"
+      faq:
+        - question: "Does Base64 make my image smaller?"
+        - answer: "No. Base64 strings are typically about 33% larger than the original binary file. It is recommended only for very small files."
+        - question: "When should I use Base64 images?"
+        - answer: "Use them for small icons (under 2KB) to reduce the number of HTTP requests, which can improve perceived load speed."
+
+  - name: "JSON to XML Converter"
+    slug: "json-to-xml"
+    category: "Data Formatters & Parsers"
+    icon: "Code"
+    subcategory: "converters"
+    tags: ["json", "xml", "conversion", "data", "parsing"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Transform JSON objects into XML documents"
+      secondary: "Support for custom root elements and attribute mapping"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["xml"]
+      processing: "client-side"
+    meta:
+      title: "JSON to XML Converter — Transform Structured Data Online"
+    content:
+      title: "JSON to XML — Seamless Data Migration"
+      description: "Convert your JSON data into perfectly formatted XML. A professional tool for migrating web data to legacy systems, SOAP services, and enterprise XML architectures."
+      keywords: ["convert json to xml online", "json to xml converter free", "online json to xml parser", "transform json data to xml", "json to soap request builder", "structured data conversion tool"]
+      tldr: "Bridge the gap between modern JSON APIs and legacy XML systems with our precision converter."
+      entity_definition: "JSON to XML Converter is a bridging utility that maps the key-value structure of JSON into the hierarchical tag structure of XML (eXtensible Markup Language). This is vital for integrating modern JavaScript applications with enterprise backend systems that rely on XML schemas."
+      how_it_works: "The tool recursively traverses the JSON tree, creating XML nodes for every key and handling arrays as repeating elements."
+      use_cases:
+        - "Interfacing with legacy SOAP APIs"
+        - "Generating XML configuration files from JSON"
+        - "Migrating web data to enterprise XML databases"
+      features:
+        - "Custom Root Element definition"
+        - "Pretty-print XML output"
+        - "Support for XML attributes vs elements"
+        - "Validation of source JSON"
+      faq:
+        - question: "How are arrays handled in XML?"
+        - answer: "Arrays are typically converted into multiple sibling elements with the same tag name."
+        - question: "Can I use attributes in the conversion?"
+        - answer: "Yes, by using a special '@' prefix in your JSON keys, the tool can map values directly to XML attributes."
+
+  - name: "JSON to YAML Converter"
+    slug: "json-to-yaml"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["json", "yaml", "config", "conversion", "devops"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert JSON data to clean YAML format"
+      secondary: "Optimize configuration files for human readability"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["yaml"]
+      processing: "client-side"
+    meta:
+      title: "JSON to YAML Converter — Optimize Config Files Online"
+    content:
+      title: "JSON to YAML — Professional DevOps Utility"
+      description: "Transform your JSON objects into clean, human-readable YAML. Perfect for creating Docker, Kubernetes, and server configuration files from structured data."
+      keywords: ["convert json to yaml online", "json to yaml converter free", "generate yaml from json online", "json to kubernetes config tool", "optimize devops config files", "json to yml parser online"]
+      tldr: "Improve the readability of your configuration files by converting complex JSON into elegant YAML."
+      entity_definition: "JSON to YAML Converter is a DevOps-focused utility that translates the verbose JSON format into the concise, whitespace-dependent YAML (YAML Ain't Markup Language) format. YAML is the industry standard for configuration files due to its high readability and support for comments."
+      how_it_works: "The tool parses the JSON input and re-serializes it using standard YAML indentations and block styles."
+      use_cases:
+        - "Creating Kubernetes manifest files"
+        - "Migrating legacy configs to modern CI/CD pipelines"
+        - "Writing human-friendly documentation from JSON data"
+      features:
+        - "Support for YAML block and flow styles"
+        - "Automatic indentation detection"
+        - "Preservation of data types"
+        - "Real-time validation"
+      faq:
+        - question: "Which is better: JSON or YAML?"
+        - answer: "JSON is better for machine-to-machine communication, while YAML is superior for human-managed configuration files."
+        - question: "Does it support YAML anchors?"
+        - answer: "Our converter focus on standard JSON-to-YAML mapping; anchors are a YAML-specific feature not present in JSON."
+
+  - name: "HTML to Markdown Converter"
+    slug: "html-to-markdown"
+    category: "Data Formatters & Parsers"
+    icon: "FileText"
+    subcategory: "converters"
+    tags: ["html", "markdown", "conversion", "content", "parsing"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert HTML code to clean Markdown"
+      secondary: "Extract content from web pages for blogs and documentation"
+    technical:
+      input_formats: ["html"]
+      output_formats: ["markdown"]
+      processing: "client-side"
+    meta:
+      title: "HTML to Markdown Converter — Extract Content Online"
+    content:
+      title: "HTML to Markdown — Simplify Your Content Migration"
+      description: "Convert HTML code or entire web pages into clean, portable Markdown. Perfect for migrating blogs, creating documentation, and archiving web content."
+      keywords: ["convert html to markdown online", "html to md parser free", "extract markdown from html online", "html to markdown converter for github", "web content to markdown tool", "simplify html to markdown"]
+      tldr: "Clean up messy HTML and convert it into portable, readable Markdown in seconds."
+      entity_definition: "HTML to Markdown Converter is a content utility that parses HTML tags (like <h1>, <a>, <ul>) and translates them into their Markdown equivalents (# , [text](url), * ). This allows users to strip away the overhead of HTML while preserving the structure and formatting of the content."
+      how_it_works: "The tool uses a DOM parser to traverse the HTML tree and applies a mapping of standard tags to Markdown syntax."
+      use_cases:
+        - "Migrating WordPress posts to static site generators"
+        - "Archiving web articles for local reading"
+        - "Converting email templates to plain text"
+      features:
+        - "Support for GFM (GitHub Flavored Markdown)"
+        - "Automatic link and image preservation"
+        - "Table to Markdown conversion"
+        - "Option to strip custom tags"
+      faq:
+        - question: "Can it handle complex CSS?"
+        - answer: "No. Markdown only supports structural formatting; custom CSS styles are stripped during the conversion."
+        - question: "Is the output GitHub-ready?"
+        - answer: "Yes, our converter defaults to GFM, making it perfect for README files and GitHub issues."
+
+  - name: "URL Parser & Query Audit"
+    slug: "url-parser"
+    category: "Data Formatters & Parsers"
+    icon: "Link"
+    subcategory: "parsing-utilities"
+    tags: ["url", "parameters", "query-string", "parsing", "networking"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Parse and decode complex URLs and query strings"
+      secondary: "Identify parameters, protocol, and fragment details"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["data-table"]
+      processing: "client-side"
+    meta:
+      title: "URL Parser & Query Audit — Decode Parameters Online"
+    content:
+      title: "URL Parser — Advanced Query String Analysis"
+      description: "Break down complex URLs and decode query string parameters. A professional utility for debugging tracking IDs, UTM parameters, and API request strings."
+      keywords: ["parse url parameters online", "decode query string free", "url path analyzer online", "check utm parameters free", "url component parser tool", "online query string decoder"]
+      tldr: "Audit and decode every component of a URL, from query parameters to port numbers."
+      entity_definition: "URL Parser & Query Audit is a diagnostic utility that deconstructs a URL into its constituent parts (Protocol, Host, Port, Path, Search, Hash). It is particularly useful for auditing long query strings often used in digital marketing and API development."
+      how_it_works: "The tool utilizes the browser's native URL API to provide a high-precision breakdown and then applies URI decoding to every parameter for readability."
+      use_cases:
+        - "Debugging UTM tracking links"
+        - "Inspecting API endpoints with complex filters"
+        - "Verifying URL encoding accuracy"
+      features:
+        - "Key-Value table for query parameters"
+        - "Automatic URI component decoding"
+        - "Identification of Protocol and Port"
+        - "One-click copy of individual components"
+      faq:
+        - question: "What is a query string?"
+        - answer: "It is the part of a URL that follows the '?' symbol, used to pass data to the server."
+        - question: "Does it handle non-ASCII characters?"
+        - answer: "Yes, it automatically decodes URL-encoded characters (like %20 for space) into their original form."
+
+  - name: "JSON Schema Generator"
+    slug: "json-schema-gen"
+    category: "Data Formatters & Parsers"
+    icon: "Layout"
+    subcategory: "parsing-utilities"
+    tags: ["json", "schema", "validation", "data", "parsing"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate JSON Schema from sample data"
+      secondary: "Create validation rules and documentation for APIs"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["json-schema"]
+      processing: "client-side"
+    meta:
+      title: "JSON Schema Generator — Create Validation Rules Online"
+    content:
+      title: "JSON Schema Generator — Professional API Documentation"
+      description: "Automatically generate a valid JSON Schema from your sample JSON data. Create professional documentation and validation rules for your APIs in seconds."
+      keywords: ["generate json schema from json", "json schema builder online", "create api validation rules", "json to json-schema converter", "online schema generator for developers", "api documentation helper tool"]
+      tldr: "Instantly build professional validation rules by generating a JSON Schema from your data samples."
+      entity_definition: "JSON Schema Generator is a developer utility that infers a structural 'contract' from a sample JSON object. A JSON Schema defines the required keys, data types, and constraints of a JSON payload, making it essential for API validation and automated testing."
+      how_it_works: "The tool analyzes the keys and values in your JSON, identifying types (String, Integer, Array, Object) and generating the corresponding Schema.org or Draft-07 specification."
+      use_cases:
+        - "Documenting REST API responses"
+        - "Setting up automated validation for form data"
+        - "Defining contracts for microservices"
+      features:
+        - "Automatic data type inference"
+        - "Support for required vs optional fields"
+        - "Nested object and array support"
+        - "Draft-07 and Draft-04 compliance"
+      faq:
+        - question: "What is JSON Schema used for?"
+        - answer: "It is used to validate that a piece of JSON data follows a specific structure, which prevents errors in applications and APIs."
+        - question: "Can I edit the generated schema?"
+        - answer: "Yes, the tool provides a starting point that you can further refine with custom constraints like 'minLength' or 'pattern'."
+
+  - name: "Data Anonymizer (Sim)"
+    slug: "data-anonymizer"
+    category: "Data Formatters & Parsers"
+    icon: "UserX"
+    subcategory: "converters"
+    tags: ["privacy", "data", "anonymization", "security", "json"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Anonymize sensitive data in JSON or CSV"
+      secondary: "Replace PII with placeholder data for testing"
+    technical:
+      input_formats: ["json", "csv"]
+      output_formats: ["json", "csv"]
+      processing: "client-side"
+    meta:
+      title: "Data Anonymizer — Secure Sensitive Information Online"
+    content:
+      title: "Data Anonymizer — Privacy-First Testing Utility"
+      description: "Anonymize sensitive information (PII) in your JSON or CSV datasets. Replace names, emails, and phone numbers with realistic placeholders for secure application testing."
+      keywords: ["anonymize pii in json csv", "data masking tool online", "secure data testing utility", "replace sensitive info in datasets", "privacy compliance data tool", "anonymize datasets for testing"]
+      tldr: "Protect user privacy by masking sensitive information in your datasets before testing or sharing."
+      entity_definition: "Data Anonymizer (Sim) is a security-focused utility for developers handling sensitive user information. It identifies common Personally Identifiable Information (PII) patterns and replaces them with synthetic data, allowing for realistic testing without compromising real user privacy or GDPR compliance."
+      how_it_works: "The tool scans the input for keys matching 'email', 'name', 'phone', or 'address' and replaces their values with randomized placeholders while maintaining the data structure."
+      use_cases:
+        - "Preparing production data for staging environments"
+        - "Sharing bug reports without leaking user info"
+        - "Testing data processing pipelines securely"
+      features:
+        - "Automatic PII field detection"
+        - "Realistic placeholder generation"
+        - "Support for JSON and CSV formats"
+        - "100% Local processing for data security"
+      faq:
+        - question: "Is this GDPR compliant?"
+        - answer: "Yes, anonymizing data for testing is a core requirement of GDPR; however, always verify your specific legal requirements."
+        - question: "Can the data be reversed?"
+        - answer: "No. This tool uses 'Masking' and 'Replacement', not encryption, so the original data is destroyed and cannot be recovered."
+
+  - name: "JSON Formatter & Validator"
+    slug: "json-formatter-pro"
+    category: "Data Formatters & Parsers"
+    icon: "FileJson"
+    subcategory: "parsing-utilities"
+    tags: ["json", "formatter", "validator", "beautifier", "parsing"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Beautify and validate JSON data instantly"
+      secondary: "Repair common syntax errors and format for readability"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["json"]
+      processing: "client-side"
+    meta:
+      title: "JSON Formatter & Validator — Beautify & Repair Online"
+    content:
+      title: "JSON Formatter — High-Performance Syntax Audit"
+      description: "The ultimate tool for formatting and validating JSON. Beautify messy strings, identify syntax errors instantly, and repair common JSON issues for clean, readable data."
+      keywords: ["beautify json online free", "validate json schema online", "json syntax highlighter free", "repair broken json online", "json beautifier and formatter", "professional json utility"]
+      tldr: "The fastest way to beautify, validate, and repair your JSON data directly in the browser."
+      entity_definition: "JSON Formatter & Validator is an essential developer utility for working with JavaScript Object Notation. It transforms minified or messy code into a perfectly indented tree structure, highlighting syntax errors (like missing commas or unquoted keys) to save hours of debugging time."
+      how_it_works: "The tool uses a high-performance parser to ingest the string and a pretty-printer to output the formatted result with custom indentation levels."
+      use_cases:
+        - "Reading minified API responses"
+        - "Debugging configuration file errors"
+        - "Formatting JSON for technical documentation"
+      features:
+        - "Real-time syntax error highlighting"
+        - "Adjustable indentation (2 spaces, 4 spaces, Tab)"
+        - "Collapsible tree view for large objects"
+        - "One-click 'Fix' for common syntax mistakes"
+      faq:
+        - question: "Why is my JSON invalid?"
+        - answer: "Most common errors are trailing commas, unquoted keys, or mismatched brackets."
+        - question: "Can it handle huge files?"
+        - answer: "Yes, our optimized renderer can handle JSON objects up to several megabytes without freezing the browser."
+
   - name: "User-Agent Parser (Modern)"
     slug: "ua-parser"
     category: "Network & Performance"
