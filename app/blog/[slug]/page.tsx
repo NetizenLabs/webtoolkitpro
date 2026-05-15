@@ -27,13 +27,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : 'https://wtkpro.site/og-image.png?v=1'
 
   const baseTitle = post.seoTitle || post.title
-  const title = (baseTitle.length + 21 <= 70) 
-    ? `${baseTitle} | WebToolkit Pro Blog` 
-    : baseTitle.slice(0, 70 - 21).trim() + '... | WebToolkit Pro Blog'
+  const brandSuffix = ' | WTK Pro'
+  let title = baseTitle
+  
+  if ((title.length + brandSuffix.length) > 60) {
+    title = title.slice(0, 60 - brandSuffix.length - 3).trim() + '...'
+  }
+  title += brandSuffix
+
+  let description = post.description
+  if (description.length > 155) {
+    description = description.slice(0, 152).trim() + '...'
+  }
 
   return {
     title,
-    description: post.description,
+    description,
     keywords: post.keywords.join(', '),
     authors: [{ name: post.author }],
     alternates: {
@@ -381,16 +390,16 @@ export default async function BlogPostPage({ params }: Props) {
             'datePublished': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
             'dateModified': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
             'author': {
-              '@type': 'Organization',
+              '@type': 'Person',
               'name': post.author,
-              'url': 'https://wtkpro.site',
+              'url': 'https://wtkpro.site/author',
             },
             'publisher': {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
               'logo': {
                 '@type': 'ImageObject',
-                'url': 'https://wtkpro.site/favicon.png'
+                'url': 'https://wtkpro.site/logo-high-res.png'
               },
               'url': 'https://wtkpro.site',
             },

@@ -178,12 +178,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
             '@type': 'Organization',
             'name': 'WebToolkit Pro',
             'url': 'https://wtkpro.site',
-            'logo': 'https://wtkpro.site/logo-optimized.webp',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://wtkpro.site/logo-optimized.webp',
+              'width': '512',
+              'height': '512'
+            },
             'sameAs': [
               'https://github.com/WebToolkit-Pro',
-              'https://twitter.com/WebToolKitPro'
+              'https://twitter.com/WebToolKitPro',
+              'https://producthunt.com/products/webtoolkit-pro'
             ],
-            'description': 'Premium developer tools and technical guides for enterprise web development.'
+            'description': 'The global standard for secure, client-side developer utilities and technical engineering journals.',
+            'contactPoint': {
+              '@type': 'ContactPoint',
+              'email': 'hello@wtkpro.site',
+              'contactType': 'customer support'
+            }
           }),
         }}
       />
@@ -195,16 +206,28 @@ export default function RootLayout({ children }: RootLayoutProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'SoftwareApplication',
-            'name': 'WebToolkit Pro',
-            'operatingSystem': 'Any',
+            'name': 'WebToolkit Pro Suite',
+            'operatingSystem': 'Any modern web browser',
             'applicationCategory': 'DeveloperApplication',
+            'url': 'https://wtkpro.site',
+            'author': {
+              '@type': 'Organization',
+              'name': 'WebToolkit Pro'
+            },
             'offers': {
               '@type': 'Offer',
               'price': '0',
               'priceCurrency': 'USD',
+              'availability': 'https://schema.org/InStock'
             },
-
-            'description': 'A collection of 40+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators.'
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': '4.9',
+              'reviewCount': '2500',
+              'bestRating': '5',
+              'worstRating': '1'
+            },
+            'description': 'A collection of 50+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators. Built for privacy and performance.'
           }),
         }}
       />

@@ -33,7 +33,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
         </div>
 
         <div>
-          <SectionHeading number="02" title={`${title} Features`} className="mb-8" as="h3" />
+          <SectionHeading number="02" title="Key Features" className="mb-8" as="h3" />
           <div className="grid grid-cols-1 gap-4">
             {features.map((feature, i) => (
               <div key={i} className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] group hover:border-blue-500/30 dark:hover:border-[#00D4B4]/30 transition-all">
@@ -47,7 +47,8 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
 
       {/* FAQ Section */}
       <section>
-        <SectionHeading number="03" title={`${title} FAQ`} className="mb-12" as="h3" />
+        <SectionHeading number="03" title="Common Questions" className="mb-12" as="h3" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
           {faqs.map((faq, i) => (
             <div key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[24px] hover:border-blue-500/20 dark:hover:border-[#00D4B4]/20 transition-all shadow-sm">

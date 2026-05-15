@@ -20,14 +20,14 @@ import StatsDashboard from '@/components/sections/StatsDashboard'
 import { getAllPosts } from '@/lib/blog'
 
 const featuredTools = [
-  { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },
-  { name: 'Password Generator', icon: Key, href: '/tools/password-generator/', color: 'from-indigo-500 to-indigo-600' },
-  { name: 'Base64 Encoder', icon: FileText, href: '/tools/base64-encoder/', color: 'from-purple-500 to-purple-600' },
-  { name: 'Color Picker', icon: Palette, href: '/tools/color-picker/', color: 'from-pink-500 to-pink-600' },
-  { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator/', color: 'from-slate-500 to-slate-600' },
-  { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator/', color: 'from-lime-600 to-lime-700' },
-  { name: 'Word Counter', icon: Hash, href: '/tools/word-counter/', color: 'from-teal-500 to-teal-600' },
-  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester/', color: 'from-blue-600 to-blue-800' },
+  { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-600' },
+  { name: 'Password Generator', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-600' },
+  { name: 'Base64 Encoder', icon: FileText, href: '/tools/base64-encoder', color: 'from-purple-500 to-purple-600' },
+  { name: 'Color Picker', icon: Palette, href: '/tools/color-picker', color: 'from-pink-500 to-pink-600' },
+  { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-600' },
+  { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-700' },
+  { name: 'Word Counter', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-600' },
+  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800' },
 ]
 
 export default function Home() {

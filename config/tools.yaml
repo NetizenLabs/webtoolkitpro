@@ -5714,3 +5714,45 @@ tools:
         - answer: "For SEO, keeping content below 30% similarity with other pages is generally recommended."
         - question: "Is this a plagiarism checker?"
         - answer: "It is a *similarity* checker. It compares the two texts you provide, but it does not scan the entire internet for matches."
+
+  - name: "Site Audit Pro"
+    slug: "site-audit-pro"
+    category: "SEO Tools"
+    icon: "ShieldCheck"
+    tags: ["seo", "audit", "performance", "lighthouse", "core web vitals"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    
+    function:
+      primary: "Comprehensive technical SEO and performance audit"
+      secondary: "Analyze Core Web Vitals and accessibility"
+      
+    technical:
+      input_formats: ["url"]
+      output_formats: ["json", "pdf"]
+      processing: "server-side"
+      
+    meta:
+      title: "Site Audit Pro — Technical SEO & Performance Analyzer 2026"
+    content:
+      title: "Site Audit Pro — Comprehensive Technical SEO Analyzer"
+      description: "Analyze your website's technical SEO, performance, and accessibility instantly. Get actionable insights to improve Google rankings and Core Web Vitals with our professional auditor."
+      keywords: ["site audit pro", "technical seo audit", "website performance analyzer", "core web vitals checker", "lighthouse seo audit online", "technical seo auditor"]
+      tldr: "Run a full technical SEO and Core Web Vitals audit instantly."
+      entity_definition: "Site Audit Pro is a comprehensive website analysis utility engineered for professional SEOs and developers. It evaluates mission-critical technical SEO factors, accessibility compliance, and Core Web Vitals performance. By identifying bottlenecks and structural issues, it helps users optimize their sites for better search engine rankings and premium user experience."
+      how_it_works: "Our audit engine uses Lighthouse-inspired metrics and custom edge-based crawlers to analyze the target URL, scoring it against 50+ SEO and performance benchmarks."
+      use_cases:
+        - "Diagnosing technical SEO directive issues"
+        - "Monitoring Core Web Vitals improvements"
+        - "Auditing accessibility for ADA compliance"
+      features:
+        - "Lighthouse-powered performance scoring"
+        - "Technical SEO directive validation"
+        - "Accessibility and Best Practices audit"
+        - "Detailed actionable optimization recommendations"
+      faq:
+        - question: "What are Core Web Vitals?"
+          answer: "Core Web Vitals are a set of specific factors that Google considers important in a webpage's overall user experience, including loading speed, interactivity, and visual stability."
+        - question: "Is this audit as detailed as PageSpeed Insights?"
+          answer: "Yes, we utilize similar engine components to provide a professional-grade audit focusing on technical SEO and performance."
+

@@ -35,13 +35,22 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const tool = getToolBySlug(params.slug)
   if (!tool) return {}
 
-  const baseTitle = `${tool.name} | Best Online ${tool.category} 2026`
-  const title = tool.meta?.title || (baseTitle.length <= 60 ? baseTitle : `${tool.name} | WebToolkit Pro`)
+  const brandSuffix = ' | WTK Pro'
+  let title = tool.meta?.title || `${tool.name} | Best Online ${tool.category} 2026`
+  
+  if (title.length > 60) {
+    if (tool.name.length + brandSuffix.length <= 60) {
+      title = `${tool.name}${brandSuffix}`
+    } else {
+      title = title.slice(0, 57).trim() + '...'
+    }
+  }
+
   let description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
   
   // Truncate description to 155 chars for safety (SEO pixel limit)
   if (description.length > 155) {
-    description = description.substring(0, 152) + '...'
+    description = description.substring(0, 152).trim() + '...'
   }
   
   // Use dedicated keywords if available, fallback to tags
@@ -60,8 +69,25 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
       title,
       description,
       url: `https://wtkpro.site/tools/${tool.slug}`,
+      siteName: 'WebToolkit Pro',
+      locale: 'en_US',
       type: 'website',
+      images: [
+        {
+          url: 'https://wtkpro.site/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: tool.name,
+        }
+      ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://wtkpro.site/og-image.png'],
+    },
+
   }
 }
 

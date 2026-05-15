@@ -70,23 +70,35 @@ export function generateSoftwareSchema(tool: ToolConfig) {
     'applicationCategory': tool.category,
     'operatingSystem': 'Web Browser',
     'url': url,
+    'image': 'https://wtkpro.site/og-image.png', // Fallback to brand image
     'featureList': tool.content?.features?.join(', ') || 'Secure, fast, private',
     'isAccessibleForFree': true,
     'version': tool.releaseDate || '2026.01.01',
+    'author': {
+      '@type': 'Organization',
+      'name': 'WebToolkit Pro'
+    },
     'offers': {
       '@type': 'Offer',
       'price': '0',
-      'priceCurrency': 'USD'
+      'priceCurrency': 'USD',
+      'availability': 'https://schema.org/InStock'
     },
     'aggregateRating': {
       '@type': 'AggregateRating',
       'ratingValue': '4.9',
-      'reviewCount': '150'
+      'reviewCount': '150',
+      'bestRating': '5',
+      'worstRating': '1'
     },
     'publisher': {
       '@type': 'Organization',
       'name': 'WebToolkit Pro',
-      'url': 'https://wtkpro.site'
+      'url': 'https://wtkpro.site',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://wtkpro.site/logo.png'
+      }
     }
   }
 }
