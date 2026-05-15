@@ -19,11 +19,13 @@
     --space-lg: clamp(2rem, 1.5rem + 2.5vw, 4rem);
     --space-xl: clamp(3rem, 2.25rem + 3.75vw, 6rem);
 
-    /* Brand Tokens (Guidelines v1.0) */
-    --canvas: #0B1120;
-    --surface: #0D1526;
-    --elevated: #152035;
-    --border-color: #1E2D47;
+    /* Brand Tokens (Modern IDE Dark Palette) */
+    --canvas: #0D1117;
+    --surface: #161B22;
+    --elevated: #21262D;
+    --border-color: #30363D;
+    --text-primary: #C9D1D9;
+    --text-muted: #8B949E;
     --teal: #00D4B4;
     --blue: #0094FF;
     --brand-grad: linear-gradient(135deg, #00D4B4 0%, #0094FF 100%);
@@ -88,16 +90,16 @@
 
 .dark {
   --background: var(--canvas);
-  --foreground: #F0F6FF;
+  --foreground: var(--text-primary);
   --card: var(--surface);
-  --card-foreground: #F0F6FF;
+  --card-foreground: var(--text-primary);
   --primary: var(--teal);
-  --primary-foreground: #0B1120;
-  --secondary: #8A9BBE;
+  --primary-foreground: #0D1117;
+  --secondary: var(--text-muted);
   --muted: var(--elevated);
-  --muted-foreground: #8A9BBE;
+  --muted-foreground: var(--text-muted);
   --accent: var(--elevated);
-  --accent-foreground: #F0F6FF;
+  --accent-foreground: var(--text-primary);
   --border: var(--border-color);
   --ring: var(--blue);
   --radius: 12px;
