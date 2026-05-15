@@ -33,7 +33,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
         </div>
 
         <div>
-          <SectionHeading number="02" title={`${title} Features`} className="mb-8" />
+          <SectionHeading number="02" title={`${title} Features`} className="mb-8" as="h3" />
           <div className="grid grid-cols-1 gap-4">
             {features.map((feature, i) => (
               <div key={i} className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] group hover:border-blue-500/30 dark:hover:border-[#00D4B4]/30 transition-all">
@@ -47,7 +47,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
 
       {/* FAQ Section */}
       <section>
-        <SectionHeading number="03" title={`${title} FAQ`} className="mb-12" />
+        <SectionHeading number="03" title={`${title} FAQ`} className="mb-12" as="h3" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
           {faqs.map((faq, i) => (
             <div key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[24px] hover:border-blue-500/20 dark:hover:border-[#00D4B4]/20 transition-all shadow-sm">
@@ -61,7 +61,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
       {/* Technical Engine Specs */}
       {technicalSpecs && (
         <section>
-          <SectionHeading number="04" title={`${title} Engine Specs`} className="mb-12" />
+          <SectionHeading number="04" title={`${title} Engine Specs`} className="mb-12" as="h3" />
           <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 md:p-12 rounded-[24px] relative overflow-hidden group max-w-4xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/5 dark:from-[#00D4B4]/10 dark:to-[#0094FF]/5 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 relative z-10">

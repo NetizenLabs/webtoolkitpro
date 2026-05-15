@@ -157,7 +157,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-[var(--font-size-2xl)] font-black text-gray-900 dark:text-white mb-10 tracking-tight uppercase">Professional Ecosystem</h2>
+              <h3 className="text-[var(--font-size-2xl)] font-black text-gray-900 dark:text-white mb-10 tracking-tight uppercase">Professional Ecosystem</h3>
               <div className="space-y-10">
                 {[
                   { title: 'Formatters', desc: 'Beautify JSON and JS with AST-aware precision.' },
@@ -293,10 +293,10 @@ export default function Home() {
               <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
                 Engineering Excellence
               </div>
-              <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
+              <h3 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
                 Engineered for the <br/>
                 <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Modern Web Ecosystem</span>
-              </h2>
+              </h3>
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
@@ -345,7 +345,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-8 tracking-tight uppercase">Master Your Technical Workflow</h2>
+              <h3 className="text-4xl font-black text-gray-900 dark:text-white mb-8 tracking-tight uppercase">Master Your Technical Workflow</h3>
               <div className="space-y-6 text-lg text-gray-500 dark:text-slate-400 leading-relaxed">
                 <p>
                   A versatile web toolkit is more than just a collection of utilities; it is a comprehensive ecosystem designed to bridge the gap between complex engineering requirements and user-friendly interfaces. Our tools are categorized into specialized hubs to help you find exactly what you need for your daily development tasks.
