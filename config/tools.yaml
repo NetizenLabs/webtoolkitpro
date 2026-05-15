@@ -1220,71 +1220,6 @@ tools:
         - label: "Compatibility"
           value: "CSS3+"
 
-  - name: "SQL Formatter"
-    slug: "sql-formatter"
-    category: "Developer Tools"
-    icon: "Database"
-    subcategory: "database-utilities"
-    tags: ["sql", "formatter", "database", "query-beautifier", "backend"]
-    priority: 18
-    releaseDate: "2026-05-01"
-    function:
-      primary: "Format and beautify SQL queries"
-      secondary: "Standardize indentation for complex database audits"
-    meta:
-      title: "SQL Formatter & Beautifier — Readable Queries for MySQL & Postgres"
-    content:
-      title: "SQL Formatter — Beautify Database Queries Online"
-      description: "Format your SQL queries for maximum readability. Supports standard SQL, PostgreSQL, and MySQL syntax for clean database documentation and efficient audits."
-      keywords: ["sql formatter online", "beautify sql queries", "mysql query formatter", "postgresql code cleaner", "format database scripts", "sql indentation tool", "pretty print sql"]
-      tldr: "Transform messy, unreadable SQL queries into professional, well-structured database commands."
-      entity_definition: "SQL Formatter is a database engineering utility that applies strict structural formatting to SQL queries. By capitalizing keywords and indenting clauses like SELECT, FROM, and WHERE, it allows developers to quickly audit and optimize complex database operations."
-      how_it_works: "Using the sql-formatter engine, it tokenizes your query and rebuilds it using a tabular or block-based indentation style that highlights logic flow."
-      use_cases:
-        - "Formatting complex JOIN queries for documentation"
-        - "Auditing machine-generated SQL from ORMs"
-        - "Sharing readable queries in Slack or Jira"
-      features:
-        - "Dialect detection"
-        - "Keyword capitalization"
-        - "Tabular indentation"
-        - "DDL/DML support"
-      faq:
-        - question: "Which SQL dialects are supported?"
-          answer: "It supports Standard SQL, MySQL, PostgreSQL, and many other common database dialects."
-      technical_specs:
-        - label: "Engine"
-          value: "sql-formatter v15"
-        - label: "Style"
-          value: "Tabular Left"
-
-  - name: "RegEx Tester & Explainer"
-    slug: "regex-tester"
-    category: "Developer Tools"
-    icon: "Search"
-    subcategory: "string-utilities"
-    tags: ["regex", "testing", "debugger", "explainer", "patterns"]
-    priority: 15
-    releaseDate: "2026-05-11"
-    function:
-      primary: "Test and debug Regular Expressions with AI-ready explanations"
-    meta:
-      title: "RegEx Tester & AI Explainer — Test & Debug Patterns Instantly"
-    content:
-      title: "RegEx Tester & AI Explainer — Debug Patterns Instantly"
-      description: "Test your Regular Expressions against sample text and get plain-English, AI-ready explanations of how your patterns work. Perfect for debugging complex regex."
-      keywords: ["regex tester online", "regular expression debugger", "regex explainer ai", "test regex patterns", "javascript regex tool", "regex cheat sheet online", "debug regex with ai"]
-      tldr: "Validate and debug RegEx patterns with real-time matching and a detailed AI-friendly breakdown of every token."
-      entity_definition: "RegEx Tester & Explainer is a technical utility for software engineers to validate Regular Expression patterns. It provides real-time highlighting of matches and a structured breakdown of regex syntax, making complex patterns easy to understand for both humans and AI models."
-      features:
-        - "Real-time match highlighting"
-        - "Detailed token breakdown"
-        - "Cheat sheet for common patterns"
-        - "Support for global and case-insensitive flags"
-      faq:
-        - question: "Which RegEx engine does this use?"
-          answer: "It uses the standard JavaScript (V8) RegEx engine for maximum compatibility with web development."
-
   - name: "Offline JWT Decoder"
     slug: "jwt-decoder"
     category: "Security"
@@ -1311,33 +1246,6 @@ tools:
       faq:
         - question: "Is it safe to paste my production JWT here?"
           answer: "Yes. Our tool is 100% client-side. The decoding logic runs in your browser, and no data is transmitted to our servers."
-
-  - name: "Cron Expression Generator"
-    slug: "cron-generator"
-    category: "Developer Tools"
-    icon: "Clock"
-    subcategory: "system-utilities"
-    tags: ["cron", "scheduler", "backend", "automation", "crontab"]
-    priority: 17
-    releaseDate: "2026-05-11"
-    function:
-      primary: "Build and describe crontab schedules visually"
-    meta:
-      title: "Cron Expression Generator — Visual Schedule Builder & Explainer"
-    content:
-      title: "Cron Expression Generator — Visual Schedule Builder"
-      description: "Generate and explain Cron expressions for your scheduled tasks. Our easy-to-use visual interface translates complex crontab syntax into human-readable schedules."
-      keywords: ["cron generator online", "crontab builder", "cron expression explainer", "visual cron scheduler", "generate cron schedule", "linux crontab tool", "cron job helper"]
-      tldr: "Create crontab schedules visually and get a human-readable explanation of exactly when your task will run."
-      entity_definition: "Cron Expression Generator is a backend utility for creating scheduled task directives. It translates visual selections into standard crontab syntax and provides a natural language explanation to prevent scheduling errors."
-      features:
-        - "Visual builder for minutes, hours, days, and months"
-        - "Human-readable schedule explanation"
-        - "Standard crontab syntax output"
-        - "Next execution dates projection"
-      faq:
-        - question: "What is a Cron expression?"
-          answer: "A Cron expression is a string representing a schedule for automated tasks on Unix-like systems."
 
   - name: "Diff Checker"
     slug: "diff-checker"
@@ -1512,42 +1420,6 @@ tools:
         - label: "Processing"
           value: "100% Client-Side"
 
-  - name: "Htaccess Redirect Generator"
-    slug: "htaccess-generator"
-    category: "SEO Tools"
-    icon: "FileCode"
-    subcategory: "server-utilities"
-    tags: ["htaccess", "apache", "redirect", "seo", "301-redirect", "server"]
-    priority: 18
-    releaseDate: "2026-05-13"
-    function:
-      primary: "Generate Apache .htaccess redirect rules visually"
-      secondary: "Create 301, 302 redirects and security rules"
-    meta:
-      title: "Htaccess Redirect Generator — Secure Apache 301 Rules Builder"
-    content:
-      title: "Htaccess Generator — Apache Redirect & Security Tool"
-      description: "Build complex .htaccess redirect rules and security headers without touching code. Generate 301 redirects, force HTTPS, and block IP addresses with production-ready Apache syntax."
-      keywords: ["htaccess generator online", "apache redirect rules builder", "create 301 redirects htaccess", "force https htaccess tool", "block ip htaccess generator", "server configuration utility", "htaccess security rules"]
-      tldr: "Generate production-ready .htaccess code for redirects, HTTPS enforcement, and basic security hardening."
-      entity_definition: "Htaccess Generator is a server-side configuration utility that simplifies the creation of Apache .htaccess files. It provides a visual interface for common tasks like 301/302 redirects, forcing HTTPS, and implementing security headers. It helps prevent syntax errors that can lead to 500 Internal Server Errors on Apache web servers."
-      features:
-        - "301 and 302 redirect builder"
-        - "Force HTTPS / Force WWW rules"
-        - "IP blocking and directory index toggle"
-        - "Security header generation"
-        - "Instant code output"
-      faq:
-        - question: "Where do I put the .htaccess file?"
-          answer: "It should be placed in the root directory of your website (usually public_html or /var/www/html)."
-      technical_specs:
-        - label: "Server"
-          value: "Apache / Litespeed"
-        - label: "Output"
-          value: "Apache Rewrite Rules"
-        - label: "Processing"
-          value: "100% Client-Side"
-
   - name: "JSON to CSV Converter"
     slug: "json-to-csv"
     category: "Developer Tools"
@@ -1615,40 +1487,6 @@ tools:
           value: "PNG"
         - label: "Processing"
           value: "100% Client-Side"
-
-  - name: "XML Formatter"
-    slug: "xml-formatter"
-    category: "Developer Tools"
-    icon: "FileCode"
-    subcategory: "code-utilities"
-    tags: ["xml", "formatter", "beautifier", "validator", "online-tools"]
-    priority: 5
-    releaseDate: "2026-05-13"
-    function:
-      primary: "Format and beautify XML data"
-      secondary: "Validate and minify XML strings"
-    meta:
-      title: "XML Formatter & Beautifier — Pretty Print XML with Indentation"
-    content:
-      title: "XML Formatter — Professional Code Beautifier"
-      description: "Format, beautify, and minify your XML data instantly. Enterprise-grade tool with real-time validation and syntax highlighting for better readability and sitemap auditing."
-      keywords: ["xml formatter online", "beautify xml code", "xml validator and formatter", "pretty print xml", "xml minifier", "format sitemap xml", "clean up xml source"]
-      tldr: "Instantly transform messy XML into clean, structured, and readable code locally in your browser."
-      entity_definition: "XML Formatter is a specialized utility that structures raw XML data into a readable format. It handles nested tags, attributes, and CDATA sections, providing custom indentation. Like all WebToolkit Pro tools, it operates entirely client-side for maximum privacy."
-      features:
-        - "Real-time XML beautification"
-        - "Aggressive XML minification"
-        - "Syntax error detection"
-        - "Custom indentation levels"
-        - "Privacy-first local processing"
-      faq:
-        - question: "Does it support large XML files?"
-          answer: "Yes, our engine is optimized for XML payloads up to 10MB."
-      technical_specs:
-        - label: "Parser"
-          value: "High-Performance"
-        - label: "Execution"
-          value: "Local (Client-Side)"
 
   - name: "Text Cleaner Pro"
     slug: "text-cleaner"
@@ -5345,6 +5183,39 @@ tools:
         - question: "Can it handle subqueries?"
         - answer: "Yes, our formatter is designed to handle deeply nested subqueries and complex CTEs."
 
+  - name: "XML Formatter & Beautifier"
+    slug: "xml-formatter"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "data-formatting"
+    tags: ["xml", "formatter", "beautifier", "markup", "validation"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Beautify and validate XML markup"
+      secondary: "Structural indentation and syntax highlighting"
+    technical:
+      input_formats: ["xml", "txt"]
+      output_formats: ["xml", "txt"]
+      processing: "client-side"
+    meta:
+      title: "XML Formatter & Beautifier — Clean & Structure XML Data Online"
+    content:
+      title: "XML Formatter — Professional Markup Beautification"
+      description: "Format and structure XML data for better readability. Our secure XML beautifier provides precise indentation and structural validation for soap messages, sitemaps, and config files."
+      keywords: ["xml formatter online", "beautify xml code", "xml beautifier with indentation", "format sitemap xml", "clean xml data", "xml markup optimizer"]
+      tldr: "Instantly structure messy XML strings into clean, human-readable trees with precise hierarchical indentation."
+      entity_definition: "XML Formatter & Beautifier is a markup utility that processes Extensible Markup Language into a structured visual hierarchy. It handles nested tags, attributes, and namespaces, applying consistent indentation to make data structures easily navigable for developers and analysts."
+      how_it_works: "The tool parses the XML DOM and reconstructs the string with uniform spacing, ensuring each level of nesting is clearly visible."
+      use_cases:
+        - "Debugging SOAP or REST API responses"
+        - "Formatting sitemap.xml for manual review"
+        - "Cleaning up exported configuration files"
+      features:
+        - "Adjustable indentation (2 or 4 spaces)"
+        - "Support for CDATA sections"
+        - "Attribute alignment optimization"
+        - "Real-time structural validation"
       faq:
         - question: "Can it handle large XML files?"
         - answer: "Yes, our engine is optimized to process large XML payloads up to 10MB instantly."

@@ -113,7 +113,7 @@ export default function Home() {
                 <div className="w-14 h-14 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[10px] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
                   <tool.icon className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{tool.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{tool.name}</h3>
                 <span className="text-xs font-mono text-[#00D4B4] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
                   Try it free <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                 </span>
