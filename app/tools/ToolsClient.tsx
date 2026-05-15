@@ -188,9 +188,15 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                     <span className="px-4 py-2 bg-background dark:bg-elevated text-muted-foreground border border-border text-[9px] rounded-full font-bold uppercase tracking-widest leading-tight">
                       {tool.category}
                     </span>
-                    <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-2 group-hover:gap-3 transition-all uppercase tracking-widest shrink-0">
-                      Launch <Zap className="w-3.5 h-3.5 fill-current" />
-                    </span>
+                    {tool.isComingSoon ? (
+                      <span className="text-[10px] font-bold text-muted-foreground/60 flex items-center gap-2 uppercase tracking-widest shrink-0">
+                        Soon <Clock className="w-3.5 h-3.5" />
+                      </span>
+                    ) : (
+                      <span className="text-xs font-mono font-bold text-[#00D4B4] flex items-center gap-2 group-hover:gap-3 transition-all uppercase tracking-widest shrink-0">
+                        Launch <Zap className="w-3.5 h-3.5 fill-current" />
+                      </span>
+                    )}
                   </div>
                 </Link>
               </div>
@@ -222,7 +228,11 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                     {tool.category}
                   </p>
                 </div>
-                <Zap className="w-4 h-4 text-[#00D4B4] opacity-0 group-hover:opacity-100 transition-opacity" />
+                {tool.isComingSoon ? (
+                  <Clock className="w-4 h-4 text-muted-foreground/40" />
+                ) : (
+                  <Zap className="w-4 h-4 text-[#00D4B4] opacity-0 group-hover:opacity-100 transition-opacity" />
+                )}
               </Link>
             )
           })}
@@ -264,9 +274,13 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                       <p className="text-xs text-muted-foreground/50 line-clamp-1">{tool.content?.description}</p>
                     </td>
                     <td className="px-6 py-4 text-right">
-                      <Link href={href} className="text-[#00D4B4] hover:text-[#0094FF] transition-colors">
-                        <Zap className="w-4 h-4 inline-block" />
-                      </Link>
+                      {tool.isComingSoon ? (
+                        <span className="text-[10px] font-bold text-muted-foreground/40 uppercase tracking-widest">Soon</span>
+                      ) : (
+                        <Link href={href} className="text-[#00D4B4] hover:text-[#0094FF] transition-colors">
+                          <Zap className="w-4 h-4 inline-block" />
+                        </Link>
+                      )}
                     </td>
                   </tr>
                 )

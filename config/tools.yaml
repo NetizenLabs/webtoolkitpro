@@ -794,13 +794,8 @@ tools:
       how_it_works: "It performs a global header analysis of the provided URL, checking for cache HIT/MISS statuses and supported compression algorithms."
       use_cases:
         - "Verifying CDN deployment"
-        - "Auditing edge caching efficiency"
-        - "Optimizing global load times"
       features:
         - "Edge header detection"
-        - "Compression analysis (Brotli/Gzip)"
-        - "Readiness score calculation"
-      faq:
         - question: "Why is 'X-Cache: HIT' important?"
           answer: "It means the CDN served the file from memory, resulting in significantly faster load times."
 
@@ -5794,3 +5789,532 @@ tools:
           answer: "A redirect chain occurs when there are multiple redirects between the initial URL and the final destination. These should be minimized to improve page load speed and SEO authority."
         - question: "Does this tool follow meta-refresh redirects?"
           answer: "Yes, our advanced tracer can identify both server-side (HTTP 3xx) and client-side (HTML Meta Refresh) redirects."
+
+  - name: "RGBA to Hex Converter"
+    slug: "rgba-to-hex"
+    category: "Design Tools"
+    icon: "Palette"
+    tags: ["css", "color", "design", "rgba", "hex"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert RGBA colors to Hex/HexA format"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["hex"]
+      processing: "client-side"
+    content:
+      title: "RGBA to Hex Converter — Free CSS Color Tool"
+      description: "Convert RGBA color codes to Hex and HexA format instantly. Perfect for CSS developers and UI designers looking for precise color transparency control."
+      entity_definition: "RGBA to Hex Converter is a design utility that translates Red, Green, Blue, and Alpha values into hexadecimal strings. It supports modern CSS HexA (8-digit hex) for transparency, ensuring full compatibility with high-fidelity web designs."
+      how_it_works: "The tool recalculates the hexadecimal equivalent of each color channel and maps the alpha percentage to a two-digit hex value."
+      use_cases:
+        - "Converting design system tokens"
+        - "Debugging CSS color transparency"
+        - "Ensuring cross-browser color parity"
+      features:
+        - "Real-time color preview"
+        - "HexA (Transparency) support"
+        - "Copy-to-clipboard integration"
+      faq:
+        - question: "What is HexA?"
+          answer: "HexA is an 8-digit hexadecimal code where the last two digits represent the transparency (alpha) level."
+
+  - name: "Hex to RGB/RGBA Converter"
+    slug: "hex-to-rgb"
+    category: "Design Tools"
+    icon: "Palette"
+    tags: ["css", "color", "design", "hex", "rgba"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert Hex color codes to RGB/RGBA format"
+    technical:
+      input_formats: ["hex"]
+      output_formats: ["rgba"]
+      processing: "client-side"
+    content:
+      title: "Hex to RGB Converter — Professional CSS Color Tool"
+      description: "Instantly translate Hex color codes into RGB or RGBA values. Ideal for developers needing legacy or modern CSS color formats."
+      entity_definition: "Hex to RGB Converter is a utility for reversing color tokens. It breaks down hexadecimal strings into their component decimal values, allowing for easier manipulation of transparency in standard CSS and SASS/LESS projects."
+      how_it_works: "It parses the hex string and converts each 2-digit block into a 0-255 decimal integer."
+      use_cases:
+        - "Creating color variables in CSS"
+        - "Adjusting transparency on hex-based designs"
+      features:
+        - "Instant parsing"
+        - "Invalid hex detection"
+      faq:
+        - question: "Does it support 3-digit hex?"
+          answer: "Yes, our parser handles both short (3-digit) and standard (6-digit) hex formats."
+
+  - name: "PX to REM Converter"
+    slug: "px-to-rem"
+    category: "Design Tools"
+    icon: "Ruler"
+    tags: ["css", "frontend", "responsive", "units"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert pixels to relative REM units"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["number"]
+      processing: "client-side"
+    content:
+      title: "PX to REM Converter — Responsive CSS Sizing"
+      description: "Convert absolute pixels to relative REM units based on a configurable base font size. Essential for accessible and responsive web design."
+      entity_definition: "PX to REM Converter is a foundational utility for responsive typography. By converting fixed pixels to root-relative units, developers ensure that their layouts scale naturally with user accessibility settings."
+      how_it_works: "It divides the pixel value by the base font size (usually 16px) to generate the REM equivalent."
+      use_cases:
+        - "Building fluid layouts"
+        - "Meeting WCAG accessibility standards"
+      features:
+        - "Adjustable base font size"
+        - "Bulk conversion support"
+      faq:
+        - question: "What is the default base size?"
+          answer: "Most modern browsers use a default root font size of 16px."
+
+  - name: "REM to PX Converter"
+    slug: "rem-to-px"
+    category: "Design Tools"
+    icon: "Ruler"
+    tags: ["css", "frontend", "responsive", "units"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert relative REM units to absolute pixels"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["number"]
+      processing: "client-side"
+    content:
+      title: "REM to PX Converter — Professional Design Tool"
+      description: "Translate REM units back to absolute pixels. Useful for debugging responsive designs and aligning with static mockups."
+      entity_definition: "REM to PX Converter is a utility for translating responsive sizing back into fixed values. It helps developers verify the actual rendered size of elements in a static environment."
+      how_it_works: "It multiplies the REM value by the configurable base font size."
+      use_cases:
+        - "Debugging CSS inheritance"
+        - "Comparing code with Figma designs"
+      features:
+        - "Precise decimal handling"
+        - "Real-time updates"
+      faq:
+        - question: "Is PX still relevant?"
+          answer: "Yes, for borders and fixed-size decorative elements, pixels are still standard."
+
+  - name: "Aspect Ratio Calculator"
+    slug: "aspect-ratio-calc"
+    category: "Design Tools"
+    icon: "Layout"
+    tags: ["design", "math", "layout", "video", "image"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Calculate width/height proportions and responsive dimensions"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["number"]
+      processing: "client-side"
+    content:
+      title: "Aspect Ratio Calculator — Responsive Dimensions Tool"
+      description: "Calculate perfectly proportioned dimensions for images, videos, and UI elements. Supports 16:9, 4:3, and custom ratios."
+      entity_definition: "Aspect Ratio Calculator is a design utility for maintaining visual proportions. It helps creators determine the correct height or width for an element while preserving its intended shape, crucial for video streaming and responsive hero images."
+      how_it_works: "It uses cross-multiplication (Rule of Three) to find the missing dimension based on a known ratio."
+      use_cases:
+        - "Sizing YouTube thumbnails"
+        - "Setting responsive video containers"
+      features:
+        - "Common preset ratios"
+        - "Visual preview block"
+      faq:
+        - question: "What is 16:9?"
+          answer: "It is the standard widescreen ratio for most modern displays and HD videos."
+
+  - name: "Percentage Calculator"
+    slug: "percentage-calc"
+    category: "Developer Tools"
+    icon: "Activity"
+    tags: ["math", "logic", "calculator", "business"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Fast percentage calculations for data and design"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["number"]
+      processing: "client-side"
+    content:
+      title: "Percentage Calculator — Quick Math for Developers"
+      description: "Calculate percentages, increases, decreases, and differences instantly. Perfect for business logic, layout math, and data analysis."
+      entity_definition: "Percentage Calculator is a multi-purpose math utility. It streamlines common calculations used in frontend layout math (like column widths) and backend business logic (like tax or discount calculations)."
+      how_it_works: "It applies standard algebraic formulas to user-provided values."
+      use_cases:
+        - "Calculating layout widths"
+        - "Business data analysis"
+      features:
+        - "Multiple calculation types"
+        - "High precision output"
+      faq:
+        - question: "Can it handle negative numbers?"
+          answer: "Yes, our calculator supports full signed integer and decimal operations."
+
+  - name: "Binary to Decimal Converter"
+    slug: "binary-to-decimal"
+    category: "Math Tools"
+    icon: "Binary"
+    tags: ["binary", "math", "converter", "decimal"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert binary numbers to decimal format"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["number"]
+      processing: "client-side"
+    content:
+      title: "Binary to Decimal Converter — Quick Base-2 Conversion"
+      description: "Convert binary (base-2) strings to decimal (base-10) integers instantly. Essential for computer science and low-level programming."
+      entity_definition: "Binary to Decimal Converter is a mathematical utility for translating machine-readable binary strings into human-readable decimal values. It simplifies the understanding of bitwise data and memory addressing."
+      how_it_works: "It parses the binary string using base-2 logic and calculates the sum of powers of 2 for each active bit."
+      use_cases:
+        - "Learning computer science basics"
+        - "Debugging bitwise operations"
+      features:
+        - "Real-time conversion"
+        - "Large bit support"
+      faq:
+        - question: "What is the maximum value?"
+          answer: "Our converter handles up to 64-bit integers safely."
+
+  - name: "Decimal to Binary Converter"
+    slug: "decimal-to-binary"
+    category: "Math Tools"
+    icon: "Binary"
+    tags: ["binary", "math", "converter", "decimal"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert decimal numbers to binary format"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "Decimal to Binary Converter — Fast Math Tool"
+      description: "Translate standard decimal integers into binary strings. Perfect for students and engineers working with digital logic."
+      entity_definition: "Decimal to Binary Converter is a utility for generating machine-readable representations of standard numbers. It is a staple tool for digital circuit design and understanding computer memory structures."
+      how_it_works: "It repeatedly divides the decimal number by 2 and records the remainders to form the binary string."
+      use_cases:
+        - "Teaching digital logic"
+        - "Generating bitmasks"
+      features:
+        - "Instant base-2 output"
+        - "Bit padding options"
+
+  - name: "UUID v4 Generator"
+    slug: "uuid-v4-gen"
+    category: "Developer Tools"
+    icon: "Fingerprint"
+    tags: ["uuid", "id", "random", "security"]
+    priority: 12
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate cryptographically secure UUID v4 strings"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "UUID v4 Generator — Secure Random ID Tool"
+      description: "Generate unique, cryptographically secure UUID v4 identifiers. Perfect for database primary keys and session tracking."
+      entity_definition: "UUID v4 Generator is a security utility for creating universally unique identifiers. Using a high-entropy random number generator, it ensures that the probability of a collision is practically zero."
+      how_it_works: "It utilizes the window.crypto API to generate 128-bit random values and formats them according to the RFC 4122 standard."
+      use_cases:
+        - "Mocking database data"
+        - "Generating unique session tokens"
+      features:
+        - "Bulk generation"
+        - "One-click copy"
+      faq:
+        - question: "Is it truly unique?"
+          answer: "Yes, with over 5 undecillion possible combinations, the chance of a collision is effectively zero."
+
+  - name: "NanoID Generator"
+    slug: "nanoid-gen"
+    category: "Developer Tools"
+    icon: "Hash"
+    tags: ["id", "random", "nanoid", "url-friendly"]
+    priority: 12
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate compact, URL-friendly unique IDs"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "NanoID Generator — Fast & Compact ID Tool"
+      description: "Generate short, secure, and URL-friendly NanoIDs. A modern alternative to UUID for web applications."
+      entity_definition: "NanoID Generator is a utility for creating compact unique identifiers. Unlike UUIDs, NanoIDs are shorter and use a larger alphabet, making them ideal for URLs and distributed systems where space is a premium."
+      how_it_works: "It uses a cryptographically secure random generator and a customizable alphabet to create high-entropy strings."
+      use_cases:
+        - "Creating short URLs"
+        - "Component keys in React/Vue"
+      features:
+        - "Customizable length"
+        - "Alphabet selection"
+
+  - name: "Character Counter"
+    slug: "character-counter"
+    category: "Writing Tools"
+    icon: "Type"
+    tags: ["text", "seo", "editing", "length"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Count characters, words, and spaces in real-time"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["number"]
+      processing: "client-side"
+    content:
+      title: "Character Counter — Real-time Word & Letter Count"
+      description: "Count characters, words, lines, and spaces instantly. Essential for SEO meta descriptions, social media posts, and academic writing."
+      entity_definition: "Character Counter is a fundamental writing utility for maintaining content length requirements. It provides instant metrics on text density, helping users stay within strict limits for platforms like Twitter, Google Meta tags, and SMS."
+      how_it_works: "The tool monitors the input buffer and applies regex-based counting for words and characters in real-time."
+      use_cases:
+        - "Drafting meta descriptions"
+        - "Twitter character limit checking"
+      features:
+        - "Word vs Character toggle"
+        - "Excluding spaces option"
+
+  - name: "Whitespace Remover"
+    slug: "whitespace-remover"
+    category: "Developer Tools"
+    icon: "Eraser"
+    tags: ["text", "code", "formatting", "cleaning"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Strip leading, trailing, and redundant whitespaces"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "Whitespace Remover — Clean Up Your Code & Text"
+      description: "Instantly remove extra spaces, tabs, and line breaks from your text. Perfect for cleaning up messy code or data exports."
+      entity_definition: "Whitespace Remover is a utility for normalizing text structure. It removes non-essential invisible characters that can cause errors in code execution or parsing of CSV/JSON data."
+      how_it_works: "It uses global string replacement to collapse multiple spaces into single spaces or remove them entirely."
+      use_cases:
+        - "Cleaning database exports"
+        - "Minifying ad-hoc code snippets"
+      features:
+        - "Trim lines"
+        - "Collapse whitespace"
+
+  - name: "Duplicate Line Remover"
+    slug: "duplicate-line-remover"
+    category: "Developer Tools"
+    icon: "Copy"
+    tags: ["text", "data", "cleaning", "sorting"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Remove duplicate lines from lists and data"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "Duplicate Line Remover — List Cleaning Tool"
+      description: "Quickly remove duplicate entries from lists, logs, and datasets. Keep only unique items with one click."
+      entity_definition: "Duplicate Line Remover is a data normalization utility. It is essential for cleaning up log files, email lists, or keyword sets where redundant data can lead to skewed analysis or wasted resources."
+      how_it_works: "It splits the text into an array, filters through a unique Set, and joins the results back together."
+      use_cases:
+        - "Cleaning email lists"
+        - "Deduplicating SEO keywords"
+      features:
+        - "Case-sensitive option"
+        - "Alphabetical sorting"
+
+  - name: "Credit Card Validator"
+    slug: "credit-card-validator"
+    category: "Security Tools"
+    icon: "CreditCard"
+    tags: ["security", "validation", "ecommerce", "luhn"]
+    priority: 12
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Validate credit card numbers using the Luhn algorithm"
+    technical:
+      input_formats: ["number"]
+      output_formats: ["boolean"]
+      processing: "client-side"
+    content:
+      title: "Credit Card Validator — Luhn Algorithm Check"
+      description: "Verify the mathematical validity of any credit card number instantly. Supports Visa, Mastercard, Amex, and more."
+      entity_definition: "Credit Card Validator is a security utility that uses the ISO/IEC 7812 standard Luhn algorithm to check if a card number is well-formed. Note: This tool does not check balances or card status; it only verifies mathematical validity."
+      how_it_works: "It applies the Luhn check digit formula to the input string to verify its checksum."
+      use_cases:
+        - "Testing checkout forms"
+        - "Verifying manual data entry"
+      features:
+        - "Card type detection"
+        - "Checksum verification"
+      faq:
+        - question: "Is this secure?"
+          answer: "Yes, all processing happens in your browser. We never store or transmit card numbers."
+
+  - name: "SQL Injection Sanitizer"
+    slug: "sql-injection-sanitizer"
+    category: "Security Tools"
+    icon: "ShieldAlert"
+    tags: ["security", "sql", "backend", "defense"]
+    priority: 12
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Sanitize strings to prevent SQL injection attacks"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "SQL Injection Sanitizer — Secure Your Queries"
+      description: "Escape dangerous characters and normalize strings to prevent common SQL injection vulnerabilities in your database queries."
+      entity_definition: "SQL Injection Sanitizer is a defensive utility for backend developers. It helps identify and neutralize characters like single quotes, semicolons, and comments that are commonly exploited by attackers."
+      how_it_works: "It applies standard escaping rules (like mysql_real_escape_string) to the input text."
+      use_cases:
+        - "Prototyping secure queries"
+        - "Learning about SQLi vectors"
+      features:
+        - "Multiple dialect support"
+        - "Dangerous character highlighting"
+
+  - name: "IBAN Validator"
+    slug: "iban-validator"
+    category: "Security Tools"
+    icon: "ShieldCheck"
+    tags: ["security", "validation", "banking", "iban"]
+    priority: 11
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Verify the mathematical validity of any International Bank Account Number (IBAN)"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["boolean"]
+      processing: "client-side"
+    content:
+      title: "IBAN Validator — Secure Banking Validation Tool"
+      description: "Verify IBAN numbers instantly using the MOD-97 checksum algorithm. Support for over 70 countries to ensure accurate international wire transfers."
+      entity_definition: "IBAN Validator is a financial security utility for verifying the structure of International Bank Account Numbers. It ensures that account strings are well-formed according to ISO 13616, preventing costly errors in cross-border payments."
+      how_it_works: "It rearranges the IBAN characters, converts them to a large integer, and applies a modulo 97 operation to verify the checksum."
+      use_cases:
+        - "Verifying wire transfer details"
+        - "Testing payment gateways"
+      features:
+        - "MOD-97 checksum validation"
+        - "Country-specific format detection"
+
+  - name: "Broken Link Checker"
+    slug: "broken-link-checker"
+    category: "SEO Tools"
+    icon: "Link2Off"
+    tags: ["seo", "links", "audit", "status-codes"]
+    priority: 11
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Identify broken links (404s) and dead URLs on any page"
+    technical:
+      input_formats: ["url"]
+      output_formats: ["json", "txt"]
+      processing: "server-side"
+    content:
+      title: "Broken Link Checker — Technical SEO Auditor"
+      description: "Scan your website for dead links and 404 errors. Improve your search rankings and user experience by identifying broken paths instantly."
+      entity_definition: "Broken Link Checker is a specialized SEO utility for auditing hyperlink health. It crawls provided URLs to identify dead destinations that can trigger 'Google Search Console' errors and frustrate users."
+      how_it_works: "Our engine fetches the page, extracts all unique anchor tags, and performs an async HEAD request for each to verify status codes."
+      use_cases:
+        - "Post-migration site audits"
+        - "Content maintenance"
+      features:
+        - "Complete status mapping"
+        - "Redirection detection"
+
+  - name: "Image Compressor Pro"
+    slug: "image-compressor-pro"
+    category: "Design Tools"
+    icon: "Maximize"
+    tags: ["images", "compression", "performance", "webp"]
+    priority: 15
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Optimize images for the web with zero quality loss"
+    technical:
+      input_formats: ["png", "jpg", "webp"]
+      output_formats: ["webp", "jpg"]
+      processing: "client-side"
+    content:
+      title: "Image Compressor Pro — High-Performance Web Optimization"
+      description: "Compress images up to 80% without losing visual fidelity. Support for WebP conversion and bulk processing for modern web vitals."
+      entity_definition: "Image Compressor Pro is a client-side utility for optimizing media assets. By utilizing modern compression algorithms (like MozJPEG and OxiPNG) in the browser, it ensures that your site loads faster without compromising on design."
+      how_it_works: "It uses the canvas API and OffscreenCanvas workers to re-encode image data at optimal bitrates."
+      use_cases:
+        - "Optimizing blog featured images"
+        - "Reducing LCP (Largest Contentful Paint)"
+      features:
+        - "Bulk processing"
+        - "WebP export"
+
+  - name: "PDF to Text Extractor"
+    slug: "pdf-to-text-extractor"
+    category: "Developer Tools"
+    icon: "FileSearch"
+    tags: ["pdf", "text", "ocr", "extraction"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Extract raw text from PDF documents instantly"
+    technical:
+      input_formats: ["pdf"]
+      output_formats: ["text"]
+      processing: "client-side"
+    content:
+      title: "PDF to Text Extractor — Secure Local Data Extraction"
+      description: "Safely extract text from PDF files without uploading them to a server. Ideal for developers and researchers handling sensitive documents."
+      entity_definition: "PDF to Text Extractor is a privacy-first utility for accessing data locked in PDF containers. It processes files locally, making it the safest choice for legal and financial document analysis."
+      how_it_works: "It utilizes the PDF.js library to parse document layers and extract text primitives from each page."
+      use_cases:
+        - "Analyzing legal contracts"
+        - "Scraping data from reports"
+      features:
+        - "Multi-page support"
+        - "Privacy-first processing"
+
+  - name: "Text to Speech Pro"
+    slug: "text-to-speech-pro"
+    category: "Content Tools"
+    icon: "Volume2"
+    tags: ["accessibility", "audio", "ai", "tts"]
+    priority: 10
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert text to natural-sounding audio in your browser"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["audio"]
+      processing: "client-side"
+    content:
+      title: "Text to Speech Pro — Accessible Content Tool"
+      description: "Convert any text into high-quality audio using native browser speech synthesis. Support for multiple languages and natural voices."
+      entity_definition: "Text to Speech Pro is an accessibility utility for generating audio versions of written content. It helps developers test ARIA implementation and provides users with an alternative way to consume information."
+      how_it_works: "It utilizes the Web Speech API (SpeechSynthesis) to interface with the operating system's native voice engines."
+      use_cases:
+        - "Testing content accessibility"
+        - "Creating audio versions of blog posts"
+      features:
+        - "Multi-language support"
+        - "Adjustable pitch and rate"

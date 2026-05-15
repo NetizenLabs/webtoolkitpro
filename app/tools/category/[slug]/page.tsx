@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { getToolsByCategory } from '@/lib/tools'
 import { CATEGORY_PILLARS, CATEGORY_MAP } from '@/lib/categories'
 import ToolsClient from '../../ToolsClient'
+import { TOOL_COMPONENTS } from '@/lib/tool-registry'
 
 interface Props {
   params: { slug: string }
@@ -27,7 +28,10 @@ export default function CategoryPillarPage({ params }: Props) {
   const categoryName = CATEGORY_MAP[params.slug]
   if (!categoryName) notFound()
 
-  const tools = getToolsByCategory(categoryName)
+  const tools = getToolsByCategory(categoryName).map(tool => ({
+    ...tool,
+    isComingSoon: !TOOL_COMPONENTS[tool.slug]
+  }))
 
   return (
     <main className="min-h-screen pt-20">

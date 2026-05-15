@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import yaml from 'js-yaml'
 import { ToolConfig } from '@/types/tool'
+import { TOOL_COMPONENTS } from './tool-registry'
 
 const CONFIG_PATH = path.join(process.cwd(), 'config', 'tools.yaml')
 
@@ -13,7 +14,14 @@ export function getTools(): ToolConfig[] {
   try {
     const fileContents = fs.readFileSync(CONFIG_PATH, 'utf8')
     const data = yaml.load(fileContents) as { tools: ToolConfig[] }
-    cachedTools = data.tools || []
+    const rawTools = data.tools || []
+    
+    // Inject implementation status automatically
+    cachedTools = rawTools.map(tool => ({
+      ...tool,
+      isComingSoon: !TOOL_COMPONENTS[tool.slug]
+    }))
+    
     return cachedTools
   } catch (e) {
     console.error('Error loading tools.yaml:', e)

@@ -17,6 +17,7 @@ export interface ToolConfig {
   tags: string[];
   priority?: number;
   releaseDate?: string;
+  isComingSoon?: boolean;
   
   function: {
     primary: string;
