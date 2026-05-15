@@ -1,27 +1,46 @@
 'use client'
+
 import React, { useState } from 'react'
+import { FileText, Type, Hash, Info } from 'lucide-react'
 
 export default function WordCounter() {
   const [text, setText] = useState('')
-  const stats = {
-    characters: text.length,
-    words: text.trim() ? text.trim().split(/\s+/).length : 0,
-    sentences: text.trim() ? text.split(/[.!?]+/).filter(s => s.trim()).length : 0,
-    paragraphs: text.trim() ? text.split(/\n\n+/).filter(p => p.trim()).length : 0,
-    readingTime: Math.ceil((text.trim() ? text.trim().split(/\s+/).length : 0) / 200),
-  }
+
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0
+  const characters = text.length
+  const lines = text.split('\n').filter(l => l.trim()).length
 
   return (
     <div className="space-y-8">
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-        {Object.entries(stats).map(([key, val]) => (
-          <div key={key} className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800 p-4 text-center shadow-sm">
-            <div className="text-2xl font-black text-gray-900 dark:text-white">{val}</div>
-            <div className="text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-1">{key.replace(/([A-Z])/g, ' $1')}</div>
+      <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
+            <FileText className="w-5 h-5" />
+          </div>
+          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white">Professional Word Counter</h3>
+        </div>
+
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Start typing or paste your content here..."
+          className="w-full h-64 p-6 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm leading-relaxed outline-none"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { label: 'Words', value: words, icon: Type, color: 'text-blue-500' },
+          { label: 'Characters', value: characters, icon: Hash, color: 'text-green-500' },
+          { label: 'Total Lines', value: lines, icon: FileText, color: 'text-purple-500' },
+        ].map((item, i) => (
+          <div key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center">
+            <item.icon className={`w-8 h-8 mb-4 ${item.color}`} strokeWidth={1.5} />
+            <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{item.label}</span>
+            <span className="text-4xl font-black text-gray-900 dark:text-white">{item.value}</span>
           </div>
         ))}
       </div>
-      <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="Paste text..." className="w-full h-80 p-8 text-lg bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl outline-none resize-none dark:text-white transition-all shadow-sm" />
     </div>
   )
 }
