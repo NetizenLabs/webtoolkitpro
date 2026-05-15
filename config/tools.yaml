@@ -1795,6 +1795,279 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "Nginx Configuration Generator"
+    slug: "nginx-generator"
+    category: "Developer Tools"
+    icon: "Server"
+    subcategory: "server-optimization"
+    tags: ["nginx", "server", "config", "reverse-proxy", "ssl"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate optimized Nginx server configurations"
+      secondary: "Visual builder for reverse proxies, SSL, and security headers"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["text", "conf"]
+      processing: "client-side"
+    meta:
+      title: "Nginx Config Generator — Optimize Reverse Proxy & SSL"
+    content:
+      title: "Nginx Config Generator — Professional Server Scaffolding"
+      description: "Generate production-ready Nginx configuration files instantly. Build optimized reverse proxies, configure SSL/TLS, and implement enterprise-grade security headers with ease."
+      keywords: ["nginx reverse proxy config generator", "optimize nginx for performance", "nginx ssl configuration tool", "generate nginx server block", "nginx security headers generator", "nginx virtual host builder"]
+      tldr: "Scaffold professional Nginx server blocks with best-practice configurations for speed, security, and reverse proxy stability."
+      entity_definition: "Nginx Configuration Generator is a DevOps utility for scaffolding web server settings. It provides a visual interface to define server names, proxy destinations, and security policies, generating valid .conf files that adhere to modern engineering standards for high-concurrency environments."
+      how_it_works: "The tool utilizes a library of optimized Nginx templates, injecting user-provided parameters like domain names and port numbers into a structured configuration block."
+      use_cases:
+        - "Setting up a secure reverse proxy for Node.js"
+        - "Implementing HSTS and security headers"
+        - "Configuring static file serving with caching"
+      features:
+        - "Interactive reverse proxy builder"
+        - "SSL/TLS optimization presets"
+        - "Gzip and Brotli compression toggles"
+        - "Valid .conf output with comments"
+      faq:
+        - question: "Where do I put the Nginx config?"
+        - answer: "Usually in /etc/nginx/sites-available/ and then symlinked to /etc/nginx/sites-enabled/."
+        - question: "Is this config secure?"
+        - answer: "It follows current security best practices, but always audit your configuration before deploying to production."
+
+  - name: "Apache .htaccess Generator"
+    slug: "htaccess-generator"
+    category: "Developer Tools"
+    icon: "FileCode"
+    subcategory: "server-optimization"
+    tags: ["apache", "htaccess", "redirects", "security", "seo"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Build secure and SEO-friendly .htaccess files"
+      secondary: "Visual generator for 301 redirects and access control"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["htaccess", "txt"]
+      processing: "client-side"
+    meta:
+      title: ".htaccess Generator — 301 Redirects & Access Control"
+    content:
+      title: "Apache .htaccess Generator — Secure Server Configuration"
+      description: "Create perfectly formatted .htaccess files for your Apache server. Generate 301 redirects, block malicious IPs, and optimize caching for better SEO and performance."
+      keywords: ["htaccess 301 redirect generator", "block ip in htaccess online", "force https htaccess tool", "htaccess caching configuration", "apache security headers generator", "custom 404 page htaccess"]
+      tldr: "Master your Apache server's behavior with a visual .htaccess generator for redirects, security, and caching."
+      entity_definition: "Apache .htaccess Generator is a server governance utility for managing directory-level configurations. It translates complex RewriteRules and access directives into a human-readable interface, helping developers implement critical SEO redirects and security hardening without manual syntax errors."
+      how_it_works: "It assembles a sequence of Apache directives based on user input, ensuring the correct order of operations for mod_rewrite and access control modules."
+      use_cases:
+        - "Forcing HTTPS and non-www URLs"
+        - "Setting up persistent 301 redirects for site migrations"
+        - "Restricting access to sensitive directories"
+      features:
+        - "Visual 301/302 redirect builder"
+        - "IP-based access control (Allow/Deny)"
+        - "Cache-Control and Expires header generation"
+        - "Optimized for SEO and performance"
+      faq:
+        - question: "What is an .htaccess file?"
+        - answer: "It is a configuration file used on web servers running the Apache Web Server software to control the directory it "
+        - question: "Where do I upload the .htaccess?"
+        - answer: "In the root directory of your website via FTP or your file manager."
+
+  - name: "IPv4 Subnet Calculator"
+    slug: "subnet-calculator"
+    category: "Developer Tools"
+    icon: "Network"
+    subcategory: "networking-utilities"
+    tags: ["network", "ipv4", "subnet", "cidr", "engineering"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Calculate network subnets and CIDR masks"
+      secondary: "Visual breakdown of IP ranges and host capacities"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "IPv4 Subnet Calculator — CIDR & Network Mask Audit"
+    content:
+      title: "Subnet Calculator — Professional Networking Utility"
+      description: "Calculate IPv4 subnets, network masks, and host ranges with our professional CIDR calculator. Visual breakdown of usable IP addresses for network engineers and sysadmins."
+      keywords: ["visual subnet calculator for networking", "cidr to netmask conversion tool", "calculate usable ip range", "subnet mask finder", "ipv4 network calculator online", "ip subnetting guide tool"]
+      tldr: "Instantly calculate network masks, broadcast addresses, and usable IP ranges with our visual IPv4 subnetting engine."
+      entity_definition: "IPv4 Subnet Calculator is a technical networking utility for segmenting IP address spaces. It allows engineers to input a base IP and a CIDR suffix (e.g., /24) to receive a full breakdown of the network address, broadcast address, and the specific range of usable host IPs. This is critical for designing efficient local and wide-area networks."
+      how_it_works: "The tool performs bitwise operations on the IP address and the subnet mask to determine the boundaries of the network segment."
+      use_cases:
+        - "Designing office or data center networks"
+        - "Troubleshooting IP connectivity issues"
+        - "Preparing for networking certifications (CCNA, etc.)"
+      features:
+        - "CIDR and traditional mask support"
+        - "Visual binary representation of masks"
+        - "Usable host range identification"
+        - "Support for all IPv4 classes (A, B, C)"
+      faq:
+        - question: "What is CIDR?"
+        - answer: "Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses and IP routing."
+        - question: "How many hosts are in a /24 network?"
+        - answer: "A /24 network has 256 addresses, with 254 usable for hosts."
+
+  - name: "Port Scanner Simulation"
+    slug: "port-scanner"
+    category: "Developer Tools"
+    icon: "Shield"
+    subcategory: "security-utilities"
+    tags: ["security", "networking", "port-scanner", "audit", "privacy"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Simulate and explain network port status"
+      secondary: "Security educational tool for common web service ports"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "Online Port Scanner Simulation — Security Audit Helper"
+    content:
+      title: "Port Scanner Simulation — Network Security Audit"
+      description: "Analyze and understand common network ports and their security implications. A visual simulation of how port scanners detect open services on a network."
+      keywords: ["online port scanner local network test", "check open ports simulation", "common network ports list", "security port audit helper", "understand open ports", "visual port scanner online"]
+      tldr: "Understand and audit common network ports with our visual security simulation tool."
+      entity_definition: "Port Scanner Simulation is an educational security utility designed to demystify network scanning. It provides a visual interface for checking the 'status' of common service ports (like 80, 443, 22, 3306), explaining what each port does and the potential security risks associated with keeping it open to the public internet."
+      how_it_works: "The tool utilizes a library of common network ports and their associated services, providing a simulated scan experience that educates users on network hardening."
+      use_cases:
+        - "Educational security training"
+        - "Preparing for network audits"
+        - "Understanding server surface area risk"
+      features:
+        - "Interactive scanning simulation"
+        - "Detailed service descriptions (SSH, HTTP, SQL, etc.)"
+        - "Security risk assessment for each port"
+        - "No data collection for maximum privacy"
+      faq:
+        - question: "Does this actually scan my server?"
+        - answer: "For security and privacy reasons, this is a simulation tool. Real port scanning requires specific network permissions."
+        - question: "Why is port 22 dangerous?"
+        - answer: "Port 22 is used for SSH access; if left open with weak passwords, it is a primary target for brute-force attacks."
+
+  - name: "JavaScript Obfuscator (Safe Mode)"
+    slug: "js-obfuscator"
+    category: "Developer Tools"
+    icon: "Shield"
+    subcategory: "code-utilities"
+    tags: ["javascript", "obfuscator", "security", "protection", "minifier"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Protect JavaScript code from simple scraping"
+      secondary: "Safe-mode transformation to make code difficult to read"
+    technical:
+      input_formats: ["js", "txt"]
+      output_formats: ["js", "txt"]
+      processing: "client-side"
+    meta:
+      title: "JS Obfuscator (Safe Mode) — Protect Client-Side Scripts"
+    content:
+      title: "JavaScript Obfuscator — Secure Code Protection"
+      description: "Make your JavaScript code difficult to read and copy with our safe-mode obfuscator. Protect your intellectual property from simple scraping while maintaining code functionality."
+      keywords: ["protect javascript code from scraping", "obfuscate client side scripts safely", "js code protection tool", "make javascript unreadable online", "secure js obfuscation", "javascript protection for web"]
+      tldr: "Protect your client-side logic by making your JavaScript code difficult to reverse-engineer with our safe-mode obfuscator."
+      entity_definition: "JavaScript Obfuscator (Safe Mode) is a security utility that transforms readable source code into an equivalent version that is much harder for humans to understand. It uses techniques like variable renaming and string extraction to prevent simple 'view source' scraping of proprietary logic, without requiring heavy runtime overhead."
+      how_it_works: "The tool renames variables to short, non-descriptive names and reformats the code structure to eliminate human-readable patterns while preserving functional logic."
+      use_cases:
+        - "Protecting proprietary frontend algorithms"
+        - "Deterring scraping of client-side data structures"
+        - "Reducing casual reverse-engineering of web apps"
+      features:
+        - "Functional-safe variable renaming"
+        - "String literal extraction"
+        - "Dead-code injection (optional)"
+        - "100% browser-based processing"
+      faq:
+        - question: "Does obfuscation make my code 100% secure?"
+        - answer: "No. Obfuscation is a deterrent, not a bulletproof security measure. Expert developers can still reverse-engineer it."
+        - question: "Will it slow down my website?"
+        - answer: "In 'Safe Mode', the performance impact is negligible."
+
+  - name: "ASCII Art & Banner Generator"
+    slug: "ascii-art"
+    category: "Developer Tools"
+    icon: "Type"
+    subcategory: "text-formatting"
+    tags: ["ascii", "art", "banner", "terminal", "design"]
+    priority: 6
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert text into stylized ASCII banners"
+      secondary: "Professional terminal-style art for code and docs"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "ASCII Art & Banner Generator — Stylized Terminal Text"
+    content:
+      title: "ASCII Art Generator — Create Banners for Code & Docs"
+      description: "Convert any text into professional, stylized ASCII banners. Perfect for terminal headers, code comments, and project documentation with a retro engineering aesthetic."
+      keywords: ["ascii text banner generator for terminal", "create ascii art for code comments", "stylized terminal text tool", "ascii art generator for github", "retro engineering text art", "online ascii banner builder"]
+      tldr: "Turn your project titles into stylized ASCII banners for a professional, high-end terminal aesthetic."
+      entity_definition: "ASCII Art & Banner Generator is a design utility for creating text-based graphics using standard ASCII characters. It allows engineers to create bold headers for their source code files or terminal-based applications, improving visual organization and branding in text-only environments."
+      how_it_works: "It utilizes specialized fonts that map standard characters to multi-line block patterns composed of characters like #, @, and |."
+      use_cases:
+        - "Creating headers for README files"
+        - "Adding stylized banners to source code comments"
+        - "Personalizing terminal application splash screens"
+      features:
+        - "Multiple professional ASCII font styles"
+        - "Real-time preview and generation"
+        - "Adjustable width and alignment"
+        - "Clean, copy-ready text output"
+      faq:
+        - question: "Will these display correctly on all systems?"
+        - answer: "Yes, as they use standard ASCII characters, they work in any terminal or text editor."
+        - question: "Can I use these on GitHub?"
+        - answer: "Absolutely. They look great in README files when wrapped in a code block."
+
+  - name: "Morse Code & Phonetic Converter"
+    slug: "morse-code"
+    category: "Developer Tools"
+    icon: "Activity"
+    subcategory: "communication-tools"
+    tags: ["morse-code", "nato", "phonetic", "communication", "utility"]
+    priority: 6
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Translate text to Morse Code and Phonetic Alphabet"
+      secondary: "NATO phonetic alphabet and Morse code bridge"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["text"]
+      processing: "client-side"
+    meta:
+      title: "Morse Code & NATO Phonetic Alphabet Converter — Online Tool"
+    content:
+      title: "Morse Code & Phonetic Converter — Instant Translation"
+      description: "Translate text to Morse code or the NATO phonetic alphabet instantly. A professional utility for radio communication, technical naming, and secure messaging."
+      keywords: ["nato phonetic alphabet converter online", "morse code translator for radio", "international phonetic alphabet tool", "convert text to morse code", "alpha bravo charlie generator", "secure communication helper"]
+      tldr: "Instantly translate text into Morse code or the NATO phonetic alphabet for clear technical communication."
+      entity_definition: "Morse Code & Phonetic Converter is a communication utility that translates standard text into specialized signaling systems. It supports the International Morse Code (dots and dashes) and the NATO Phonetic Alphabet (Alpha, Bravo, Charlie), which is the global standard for clear radio and telephonic communication."
+      how_it_works: "The tool uses a standard dictionary mapping of alphanumeric characters to their corresponding Morse or Phonetic representations."
+      use_cases:
+        - "Standardizing technical naming conventions"
+        - "Radio communication training"
+        - "Educational exploration of signaling systems"
+      features:
+        - "Bi-directional Morse code translation"
+        - "Full NATO Phonetic Alphabet support"
+        - "Instant conversion as you type"
+        - "Clean, formatted text output"
+      faq:
+        - question: "What is the NATO Phonetic Alphabet?"
+        - answer: "It is a spelling alphabet used by radio operators to ensure letters are understood regardless of noise or accent."
+        - question: "Can this tool play the Morse audio?"
+        - answer: "Currently, we focus on high-speed text-based translation for documentation and communication."
+
   - name: "Cron Expression Generator"
     slug: "cron-generator"
     category: "Developer Tools"
