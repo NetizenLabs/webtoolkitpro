@@ -68,4 +68,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'heading-visualizer': dynamic(() => import('@/components/tools/instances/HeadingVisualizer'), { loading: () => <ToolSkeleton />, ssr: false }),
   'og-debugger': dynamic(() => import('@/components/tools/instances/OgDebugger'), { loading: () => <ToolSkeleton />, ssr: false }),
   'twitter-card-gen': dynamic(() => import('@/components/tools/instances/TwitterCardGen'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'nginx-generator': dynamic(() => import('@/components/tools/instances/NginxGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'docker-compose-gen': dynamic(() => import('@/components/tools/instances/DockerComposeGen'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'htaccess-generator': dynamic(() => import('@/components/tools/instances/HtaccessGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'dotenv-generator': dynamic(() => import('@/components/tools/instances/DotenvGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
 }
