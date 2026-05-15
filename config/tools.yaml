@@ -1795,6 +1795,435 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "Meta Description Length Checker"
+    slug: "meta-length-checker"
+    category: "SEO & Search Optimization"
+    icon: "Type"
+    subcategory: "content-optimization"
+    tags: ["meta-tags", "seo", "length", "optimization", "google"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Validate meta description lengths for search engines"
+      secondary: "Real-time character count for Google and Bing snippets"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["status-report"]
+      processing: "client-side"
+    meta:
+      title: "Meta Description Length Checker — Optimize Snippets Online"
+    content:
+      title: "Meta Length Checker — Perfect Your Search Snippets"
+      description: "Ensure your meta descriptions are the perfect length for Google and Bing. Our real-time character counter helps you stay within the 150-160 character limit to avoid truncation."
+      keywords: ["meta description length checker online", "check meta tag length for seo", "google snippet character count", "optimize meta description for ctr", "seo length validation tool", "meta tag length guide"]
+      tldr: "Optimize your meta descriptions with real-time character counting to ensure your marketing message is never cut off in search results."
+      entity_definition: "Meta Description Length Checker is a precision SEO utility for content optimization. It monitors the character count of meta descriptions as you type, providing visual feedback based on the 160-character industry standard. This ensures that the most important parts of your message are visible to users on the SERP."
+      how_it_works: "The tool calculates the string length in real-time and applies color-coded status indicators (Green for optimal, Red for too long) based on modern search engine display rules."
+      use_cases:
+        - "Drafting high-conversion meta descriptions"
+        - "Auditing existing tags for truncation issues"
+        - "Training content teams on SEO best practices"
+      features:
+        - "Real-time character and word counting"
+        - "Optimal length range indicators (120-160 chars)"
+        - "One-click copy for CMS entry"
+        - "Mobile vs Desktop limit guides"
+      faq:
+        - question: "Why is meta description length important?"
+        - answer: "If your description is too long, Google will truncate it with an ellipsis (...), potentially cutting off your call to action."
+        - question: "Does meta description affect ranking?"
+        - answer: "Not directly, but it significantly impacts Click-Through Rate (CTR), which is a vital user signal for SEO."
+
+  - name: "ALT Text Accessibility Audit"
+    slug: "alt-text-audit"
+    category: "SEO & Search Optimization"
+    icon: "Image"
+    subcategory: "on-page-seo"
+    tags: ["alt-text", "accessibility", "seo", "images", "audit"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Audit image ALT text for SEO and accessibility"
+      secondary: "Find missing or unoptimized alternative text tags"
+    technical:
+      input_formats: ["url", "html"]
+      output_formats: ["audit-report"]
+      processing: "client-side"
+    meta:
+      title: "ALT Text Accessibility Audit — Find Missing Image Tags"
+    content:
+      title: "ALT Text Audit — Optimize Image SEO & Accessibility"
+      description: "Audit your website's image ALT tags to improve search rankings and web accessibility. Identify missing alt text and unoptimized descriptions instantly."
+      keywords: ["find missing alt tags online", "accessibility audit for image seo", "check alt text for wcag", "optimize image alt tags", "seo image audit tool", "identify missing alt attributes"]
+      tldr: "Identify and optimize missing image ALT text to improve your site's accessibility and image search rankings."
+      entity_definition: "ALT Text Accessibility Audit is an on-page SEO and compliance utility. It scans a page's HTML for <img> tags and identifies those missing the 'alt' attribute. Proper alt text is essential for screen reader users and helps search engines understand the context of images, contributing to visibility in Google Image Search."
+      how_it_works: "The tool extracts all image sources and their associated alt attributes, providing a summary report of missing, short, or keyword-stuffed tags."
+      use_cases:
+        - "Auditing e-commerce product galleries"
+        - "Improving WCAG 2.1 accessibility scores"
+        - "Optimizing images for Google Image Search"
+      features:
+        - "Identification of empty alt attributes"
+        - "Character count validation for descriptions"
+        - "Visual preview of audited images"
+        - "Accessibility 'Risk Level' assessment"
+      faq:
+        - question: "What is the ideal alt text length?"
+        - answer: "Aim for under 125 characters to ensure compatibility with most screen readers."
+        - question: "Should I include 'image of' in my alt text?"
+        - answer: "No. Screen readers already announce that it is an image, so start directly with the description."
+
+  - name: "Robots.txt Validator (Advanced)"
+    slug: "robots-validator"
+    category: "SEO & Search Optimization"
+    icon: "Shield"
+    subcategory: "technical-seo"
+    tags: ["robots.txt", "seo", "validator", "crawling", "google"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Validate and test Robots.txt crawl directives"
+      secondary: "Check for syntax errors and logic conflicts"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["validation-report"]
+      processing: "client-side"
+    meta:
+      title: "Robots.txt Validator — Test Crawl Directives Online"
+    content:
+      title: "Robots.txt Validator — Professional Syntax Audit"
+      description: "Test and validate your robots.txt file to ensure search engines are crawling your site correctly. Identify logic conflicts and syntax errors that could block important pages."
+      keywords: ["test robots.txt crawl directives", "robots.txt syntax checker", "validate robots.txt online", "check crawl-delay settings", "robots.txt logic auditor", "test user-agent directives"]
+      tldr: "Prevent accidental indexing blocks by validating your robots.txt syntax and crawl logic with our professional auditor."
+      entity_definition: "Robots.txt Validator (Advanced) is a technical SEO utility for auditing the Robots Exclusion Protocol. It checks for common syntax errors (like missing colons or invalid user-agents) and identifies potential logic conflicts where a 'Disallow' directive might accidentally block a 'Sitemap' or a critical resource."
+      how_it_works: "The tool parses the robots.txt content using a strict state-machine that mimics the behavior of major search engine crawlers like Googlebot and Bingbot."
+      use_cases:
+        - "Verifying new robots.txt deployments"
+        - "Troubleshooting indexing issues"
+        - "Ensuring staging environments are correctly blocked"
+      features:
+        - "User-agent specific logic testing"
+        - "Identification of redundant directives"
+        - "Sitemap location validation"
+        - "Crawl-delay syntax checking"
+      faq:
+        - question: "Does robots.txt stop all bots?"
+        - answer: "No. While reputable bots like Googlebot follow it, malicious scrapers often ignore it."
+        - question: "Can robots.txt remove a page from search results?"
+        - answer: "No. It only stops crawling. To remove a page, use a 'noindex' meta tag."
+
+  - name: "Domain Authority Simulation"
+    slug: "authority-simulation"
+    category: "SEO & Search Optimization"
+    icon: "TrendingUp"
+    subcategory: "off-page-seo"
+    tags: ["seo", "authority", "backlinks", "simulation", "metrics"]
+    priority: 6
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Visualize and understand domain authority metrics"
+      secondary: "Simulate backlink power and link juice distribution"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["visual-model"]
+      processing: "client-side"
+    meta:
+      title: "Domain Authority Simulation — Understand Backlink Power"
+    content:
+      title: "Authority Simulation — Visualize Your Link Juice"
+      description: "Understand how domain authority and backlink power affect search rankings. A visual simulation of how link equity flows through a website's internal and external links."
+      keywords: ["understand domain authority metrics", "visualize backlink power simulation", "link juice distribution tool", "seo authority builder helper", "visualize pagerank simulation", "backlink value calculator"]
+      tldr: "Master the concept of 'Link Juice' and domain authority with our interactive visual simulation."
+      entity_definition: "Domain Authority Simulation is an educational SEO utility that models the concept of link equity (commonly known as 'Link Juice'). It allows users to visualize how a site's overall authority is built through backlinks and how that power is distributed across internal pages via linking structures."
+      how_it_works: "The tool uses a node-and-edge visualization to represent pages and links, simulating the transfer of 'authority points' based on standard SEO principles."
+      use_cases:
+        - "Educating clients on the importance of link building"
+        - "Planning internal linking strategies"
+        - "Understanding the 'PageRank' concept visually"
+      features:
+        - "Interactive link-power slider"
+        - "Visual flow of authority between nodes"
+        - "Calculation of 'Authority Leak' from external links"
+        - "Support for Nofollow vs Dofollow simulation"
+      faq:
+        - question: "Is this a real Moz/Ahrefs score?"
+        - answer: "No. This is a simulation designed to teach the underlying logic of how search engines might calculate authority."
+        - question: "What is the most important factor for authority?"
+        - answer: "The quality and relevance of incoming links from other high-authority domains."
+
+  - name: "Page Load Time Estimator (Local)"
+    slug: "load-time-estimator"
+    category: "Network & Performance"
+    icon: "Zap"
+    subcategory: "vitals-optimization"
+    tags: ["performance", "seo", "lcp", "fcp", "core-web-vitals"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Estimate LCP and FCP performance metrics"
+      secondary: "Visualize Core Web Vitals budget and load segments"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["visual-timeline"]
+      processing: "client-side"
+    meta:
+      title: "Page Load Time Estimator — Visualize Core Web Vitals Budget"
+    content:
+      title: "Load Time Estimator — Optimize Your Performance Budget"
+      description: "Estimate and visualize your website's performance budget. Understand how Largest Contentful Paint (LCP) and First Contentful Paint (FCP) are affected by asset sizes and network speed."
+      keywords: ["estimate lcp and fid metrics", "visualize web vitals budget", "performance budget calculator", "page load time simulation", "optimize site speed for seo", "web vitals audit helper"]
+      tldr: "Plan your performance budget and visualize how every kilobyte affects your Core Web Vitals scores."
+      entity_definition: "Page Load Time Estimator (Local) is a performance-focused SEO utility for planning Core Web Vitals compliance. It allows developers to input estimated asset sizes (HTML, JS, CSS, Images) and network conditions to see a visual 'waterfall' of how the page might load, helping to identify potential LCP bottlenecks early in the development process."
+      how_it_works: "The tool uses a simulation engine based on standard network latency and bandwidth formulas to generate a theoretical load timeline."
+      use_cases:
+        - "Planning performance budgets for new projects"
+        - "Identifying the impact of large images on LCP"
+        - "Educating teams on the importance of code splitting"
+      features:
+        - "Visual waterfall simulation"
+        - "Preset network speeds (3G, 4G, Fiber)"
+        - "LCP and FCP threshold indicators"
+        - "Asset-weight impact analysis"
+      faq:
+        - question: "What is an ideal LCP?"
+        - answer: "Google recommends a Largest Contentful Paint (LCP) of 2.5 seconds or less for a good user experience."
+        - question: "Does this measure my live site?"
+        - answer: "This is a planning and simulation tool. For live site measurements, use our 'Page Speed Insights' link in the sidebar."
+
+  - name: "Mobile-Friendly Meta Tag Gen"
+    slug: "mobile-meta-gen"
+    category: "SEO & Search Optimization"
+    icon: "Smartphone"
+    subcategory: "technical-seo"
+    tags: ["mobile-seo", "viewport", "meta-tags", "responsiveness", "google"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate and optimize Mobile Viewport meta tags"
+      secondary: "Standardized tags for responsive design and mobile-first indexing"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["html"]
+      processing: "client-side"
+    meta:
+      title: "Mobile-Friendly Meta Tag Gen — Viewport & Handheld Tags"
+    content:
+      title: "Mobile Meta Tag Generator — Optimize for Mobile SEO"
+      description: "Generate perfectly optimized viewport and mobile-friendly meta tags. Ensure your site passes the Google Mobile-Friendly test and ranks well in mobile-first indexing."
+      keywords: ["viewport meta tag generator", "optimize site for mobile search", "mobile friendly meta tags online", "handheldfriendly tag generator", "responsive design meta tags", "mobile first indexing seo tool"]
+      tldr: "Ensure your site is perfectly responsive and search-ready with optimized mobile meta tags."
+      entity_definition: "Mobile-Friendly Meta Tag Gen is a technical utility for implementing responsive design standards. It generates the 'viewport' tag and legacy tags like 'HandheldFriendly', which are essential for telling browsers and search engines how to scale content on smaller screens, a core requirement for Mobile-First Indexing."
+      how_it_works: "Users select their desired scaling behaviors, and the tool provides the exact HTML syntax required for the <head> section."
+      use_cases:
+        - "Setting up new responsive web projects"
+        - "Fixing 'Content wider than screen' errors in GSC"
+        - "Optimizing legacy sites for modern mobile browsers"
+      features:
+        - "Standard responsive viewport generator"
+        - "HandheldFriendly and MobileOptimized legacy support"
+        - "Theme-color and Apple-specific tag options"
+        - "One-click HTML code generation"
+      faq:
+        - question: "What is the standard viewport tag?"
+        - answer: "Usually: <meta name='viewport' content='width=device-width, initial-scale=1.0'>"
+        - question: "Does this affect mobile-first indexing?"
+        - answer: "Yes. Without a proper viewport tag, Google may assume your site is not mobile-friendly, which can harm your rankings."
+
+  - name: "Breadcrumb Schema Generator"
+    slug: "breadcrumb-schema"
+    category: "SEO & Search Optimization"
+    icon: "ChevronRight"
+    subcategory: "technical-seo"
+    tags: ["schema", "breadcrumb", "seo", "json-ld", "structured-data"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Create BreadcrumbList JSON-LD for SEO"
+      secondary: "Build hierarchical navigation markup for Google snippets"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["json-ld"]
+      processing: "client-side"
+    meta:
+      title: "Breadcrumb Schema Generator — Create JSON-LD Markup"
+    content:
+      title: "Breadcrumb Schema Generator — Improve Search Navigation"
+      description: "Generate perfectly formatted BreadcrumbList JSON-LD schema for your website. Improve your search snippets and help users understand your site's hierarchy."
+      keywords: ["create breadcrumb json-ld for seo", "breadcrumb markup builder", "generate breadcrumb schema online", "structured data for navigation", "breadcrumb snippet generator", "seo breadcrumb helper"]
+      tldr: "Improve your search engine appearance and site navigation with perfectly structured BreadcrumbList schema."
+      entity_definition: "Breadcrumb Schema Generator is a technical SEO utility that creates structured data for page navigation. By defining the hierarchy of a page within a site (e.g., Home > Category > Product), it allows Google to display a clean breadcrumb trail in search results instead of a messy URL string."
+      how_it_works: "Users input the names and URLs of their breadcrumb levels, and the tool generates a valid JSON-LD block that follows the Schema.org BreadcrumbList specification."
+      use_cases:
+        - "Optimizing e-commerce category pages"
+        - "Improving search snippet layout for blogs"
+        - "Enhancing site navigation clarity for crawlers"
+      features:
+        - "Support for multiple hierarchy levels"
+        - "Automatic JSON-LD syntax formatting"
+        - "Real-time visual breadcrumb preview"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "Do breadcrumbs help SEO?"
+        - answer: "Yes. They improve internal linking and help Google understand the relationship between different parts of your site."
+        - question: "Can I have two different breadcrumbs on one page?"
+        - answer: "It is recommended to have one primary path to avoid confusing both users and search engines."
+
+  - name: "FAQ Schema Generator"
+    slug: "faq-schema"
+    category: "SEO & Search Optimization"
+    icon: "HelpCircle"
+    subcategory: "technical-seo"
+    tags: ["schema", "faq", "seo", "json-ld", "rich-snippets"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate FAQPage JSON-LD for rich search snippets"
+      secondary: "Build question-and-answer markup for Google"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["json-ld"]
+      processing: "client-side"
+    meta:
+      title: "FAQ Schema Generator — Create Rich Snippet Markup Online"
+    content:
+      title: "FAQ Schema Generator — Boost Your Search Real Estate"
+      description: "Generate perfectly formatted FAQPage JSON-LD schema for your content. Get your questions and answers directly into Google's search results for higher visibility and CTR."
+      keywords: ["generate faq schema for google snippets", "faq json-ld builder", "create rich snippet faq markup", "online faq schema creator", "boost serps with faq markup", "faq schema generator for seo"]
+      tldr: "Maximize your search engine visibility by generating perfectly structured FAQ schema for your content."
+      entity_definition: "FAQ Schema Generator is a high-impact SEO utility that creates the FAQPage structured data required for interactive Google snippets. By marking up frequently asked questions, websites can occupy more vertical space on the SERP and provide immediate value to searchers, leading to increased brand authority and traffic."
+      how_it_works: "Users enter their questions and answers; the tool then serializes this data into a standardized JSON-LD object that search engine crawlers can easily ingest."
+      use_cases:
+        - "Capturing high-intent question-based traffic"
+        - "Improving visibility for service or product pages"
+        - "Expanding the footprint of blog posts in search results"
+      features:
+        - "Unlimited Question & Answer pairs"
+        - "Real-time JSON-LD code generation"
+        - "Visual preview of search snippet"
+        - "Automatic escaping of special characters"
+      faq:
+        - question: "Will FAQ schema always show up in Google?"
+        - answer: "Google only displays FAQ snippets for high-quality, relevant pages. Using the schema is a prerequisite, but not a guarantee."
+        - question: "Can I use links in FAQ answers?"
+        - answer: "Yes, standard HTML links are allowed in the answer field of the FAQ schema."
+
+  - name: "Review & Rating Schema Gen"
+    slug: "review-schema"
+    category: "SEO & Search Optimization"
+    icon: "Star"
+    subcategory: "technical-seo"
+    tags: ["schema", "review", "rating", "seo", "json-ld"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Create AggregateRating and Review JSON-LD"
+      secondary: "Generate star rating markup for search results"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["json-ld"]
+      processing: "client-side"
+    meta:
+      title: "Review & Rating Schema Gen — Create Star Rating Markup"
+    content:
+      title: "Review Schema Generator — Get Star Ratings in Search"
+      description: "Generate professional Review and AggregateRating JSON-LD schema for your products or services. Increase trust and click-through rates with star ratings in Google search results."
+      keywords: ["create star rating schema online", "review schema markup generator", "aggregate rating json-ld builder", "get stars in search results", "product review schema tool", "seo rating markup generator"]
+      tldr: "Build trust and visibility by adding perfectly formatted star rating schema to your search engine snippets."
+      entity_definition: "Review & Rating Schema Gen is an authority-building SEO utility. It helps websites generate the 'AggregateRating' markup needed to display gold stars in search results. This social proof is one of the most effective ways to increase CTR and establish credibility before a user even clicks on your site."
+      how_it_works: "Users input rating values (1-5), review counts, and item details; the tool then generates the complex nested JSON-LD structure required for the Schema.org Review specification."
+      use_cases:
+        - "Showcasing customer satisfaction on product pages"
+        - "Adding credibility to service landing pages"
+        - "Improving performance of affiliate review articles"
+      features:
+        - "Support for AggregateRating and Individual Reviews"
+        - "Visual star-rating preview"
+        - "Validation for required 'Author' and 'Item' fields"
+        - "One-click copy to clipboard"
+      faq:
+        - question: "Can I make up my own ratings?"
+        - answer: "No. Ratings should reflect genuine user feedback. Manipulating ratings can lead to SEO penalties."
+        - question: "Do I need individual reviews for the stars to show?"
+        - answer: "Google typically requires either a specific review or an aggregate of multiple reviews to display stars."
+
+  - name: "Local Business Schema Gen"
+    slug: "local-business-schema"
+    category: "SEO & Search Optimization"
+    icon: "MapPin"
+    subcategory: "technical-seo"
+    tags: ["local-seo", "schema", "business", "json-ld", "google-maps"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate LocalBusiness and Organization JSON-LD"
+      secondary: "Build address and contact markup for local search"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["json-ld"]
+      processing: "client-side"
+    meta:
+      title: "Local Business Schema Gen — Local SEO Markup Builder"
+    content:
+      title: "Local Business Schema Generator — Dominate Local Search"
+      description: "Generate perfectly formatted LocalBusiness JSON-LD schema for your business. Improve your presence in Google Maps and local search results with standardized NAP data."
+      keywords: ["generate local seo schema", "business json-ld builder for maps", "create local business markup", "nap data schema generator", "google maps seo tool", "structured data for local companies"]
+      tldr: "Scale your local search authority with perfectly formatted business schema for Google Maps and local search results."
+      entity_definition: "Local Business Schema Gen is a specialized SEO utility for brick-and-mortar companies. It creates the structured data necessary to define a business's Name, Address, and Phone number (NAP), as well as opening hours and geolocation. This helps Google connect your website to a physical location, boosting visibility in 'near me' searches."
+      how_it_works: "The tool provides a form for business details and coordinates, translating them into a valid LocalBusiness JSON-LD block that follows Schema.org standards."
+      use_cases:
+        - "Improving rankings in the Google 3-Pack"
+        - "Ensuring consistent NAP data across the web"
+        - "Enhancing brand presence in Knowledge Graph panels"
+      features:
+        - "Support for multiple business types (Restaurant, Store, etc.)"
+        - "Visual opening hours builder"
+        - "Geo-coordinate (Lat/Long) support"
+        - "Social media profile integration"
+      faq:
+        - question: "What is NAP consistency?"
+        - answer: "NAP stands for Name, Address, and Phone number. Consistency across your site and other directories is a key local SEO ranking factor."
+        - question: "Does this help my Google Business Profile?"
+        - answer: "Yes, it helps Google confirm that the information on your website matches your business profile."
+
+  - name: "Redirect Chain Finder (Sim)"
+    slug: "redirect-chain-finder"
+    category: "SEO & Search Optimization"
+    icon: "RefreshCw"
+    subcategory: "technical-seo"
+    tags: ["redirects", "seo", "301", "crawling", "performance"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Identify and visualize multiple redirect hops"
+      secondary: "Audit redirect chains for SEO and performance crawl budget"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["visual-chain"]
+      processing: "client-side"
+    meta:
+      title: "Redirect Chain Finder (Sim) — Audit Multi-Hop Redirects"
+    content:
+      title: "Redirect Chain Finder — Optimize Your Link Equity"
+      description: "Identify and visualize complex redirect chains on your website. Audit multiple 301 hops to improve page speed and preserve SEO link equity."
+      keywords: ["identify multiple redirect hops", "audit redirect chains for seo", "visualize 301 redirect paths", "fix redirect loops online", "seo redirect auditor helper", "link equity preservation tool"]
+      tldr: "Spot and fix performance-draining redirect chains to preserve your link equity and speed up your site."
+      entity_definition: "Redirect Chain Finder (Sim) is a technical SEO utility for auditing link paths. It helps developers visualize when a URL goes through multiple redirects (e.g., A -> B -> C) before reaching its destination. Eliminating these 'chains' reduces server load, improves page speed, and ensures search engines can crawl the site more efficiently."
+      how_it_works: "The tool simulates a crawler's path through a sequence of URLs, highlighting each 'hop' and its impact on the crawl budget and user experience."
+      use_cases:
+        - "Auditing site-wide migrations"
+        - "Identifying infinite redirect loops"
+        - "Recovering lost link juice from old URLs"
+      features:
+        - "Visual multi-hop timeline"
+        - "Identification of 'Hop Count' and latency"
+        - "301 vs 302 redirect type flagging"
+        - "One-click 'Shortest Path' recommendation"
+      faq:
+        - question: "Why are redirect chains bad for SEO?"
+        - answer: "Every hop delays the page load and can slightly dilute the 'link juice' passed from the original URL."
+        - question: "How many redirects are too many?"
+        - answer: "Ideally, keep it to one hop. Google may stop following a chain after 5 or more hops."
+
   - name: "Sitemap.xml Generator"
     slug: "sitemap-generator"
     category: "SEO & Search Optimization"
