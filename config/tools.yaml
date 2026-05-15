@@ -1795,6 +1795,396 @@ tools:
         - label: "Privacy"
           value: "100% Local"
 
+  - name: "Bcrypt Password Hasher"
+    slug: "bcrypt-hasher"
+    category: "Security Tools"
+    icon: "Lock"
+    subcategory: "password-security"
+    tags: ["bcrypt", "hashing", "security", "passwords", "cryptography"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate secure Bcrypt hashes for passwords"
+      secondary: "Support for custom salt rounds and verification"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["bcrypt-hash"]
+      processing: "client-side"
+    meta:
+      title: "Bcrypt Password Hasher — Generate Secure Hashes Online"
+    content:
+      title: "Bcrypt Hasher — Enterprise-Grade Password Security"
+      description: "Generate secure Bcrypt hashes for your application passwords. Our professional tool supports custom cost factors (salt rounds) and follows industry-standard security protocols for password storage."
+      keywords: ["hash password with bcrypt online", "secure password hashing free", "bcrypt hash generator online", "bcrypt salt rounds calculator", "online password hashing utility", "verify bcrypt hash online free"]
+      tldr: "Protect your users with industry-standard Bcrypt hashing, processed 100% locally in your browser."
+      entity_definition: "Bcrypt Password Hasher is a security utility that implements the Bcrypt hashing algorithm, a key-derivation function based on the Blowfish cipher. Bcrypt is specifically designed for password storage, as it includes a 'cost factor' that allows the hashing process to be intentionally slowed down to resist brute-force attacks."
+      how_it_works: "The tool generates a unique salt and hashes the input text using the specified rounds (cost), resulting in a secure string that includes the salt, cost, and hash data."
+      use_cases:
+        - "Setting up initial administrative passwords"
+        - "Generating secure hashes for database seeding"
+        - "Verifying Bcrypt hash integrity during debugging"
+      features:
+        - "Customizable cost factor (4-31 rounds)"
+        - "Automatic salt generation"
+        - "Real-time hashing and verification"
+        - "100% Local client-side processing"
+      faq:
+        - question: "What is a good cost factor for Bcrypt?"
+        - answer: "A cost factor of 10 or 12 is currently recommended for most web applications to balance security and performance."
+        - question: "Why is Bcrypt better than SHA-256 for passwords?"
+        - answer: "SHA-256 is designed to be fast, which makes it easier to crack via brute force. Bcrypt is intentionally slow and adaptive."
+
+  - name: "Argon2 Hasher (Modern)"
+    slug: "argon2-hasher"
+    category: "Security Tools"
+    icon: "Shield"
+    subcategory: "password-security"
+    tags: ["argon2", "hashing", "security", "passwords", "cryptography"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate Argon2 hashes (winner of PHC)"
+      secondary: "Configure memory, iterations, and parallelism settings"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["argon2-hash"]
+      processing: "client-side"
+    meta:
+      title: "Argon2 Hasher — Generate Modern Password Hashes"
+    content:
+      title: "Argon2 Hasher — The Gold Standard of Password Security"
+      description: "Generate Argon2 hashes, the winner of the Password Hashing Competition (PHC). Configure memory cost, iterations, and parallelism to create the most secure hashes available today."
+      keywords: ["generate argon2 hash online", "modern password hashing tool", "argon2id hash generator free", "argon2 memory cost calculator", "secure password hashing online", "argon2 vs bcrypt utility"]
+      tldr: "Implement the most advanced password hashing available with our professional Argon2 generator."
+      entity_definition: "Argon2 Hasher is a state-of-the-art security utility for password hashing. Argon2 was selected as the winner of the Password Hashing Competition in 2015 due to its resistance against GPU-based cracking attacks and its ability to trade off memory usage for increased security."
+      how_it_works: "The tool allows users to configure the Argon2id, Argon2i, or Argon2d variants, specifying the memory cost, time iterations, and parallel lanes to produce a highly secure hash."
+      use_cases:
+        - "Securing high-value user accounts"
+        - "Future-proofing password storage systems"
+        - "Benchmarking hashing performance on client hardware"
+      features:
+        - "Support for Argon2i, Argon2d, and Argon2id"
+        - "Configurable Memory and Time costs"
+        - "Parallelism settings for multi-core systems"
+        - "Standard PHC string format output"
+      faq:
+        - question: "What is Argon2id?"
+        - answer: "Argon2id is a hybrid version that provides the best balance of resistance against side-channel and GPU attacks, making it the recommended default."
+        - question: "Is Argon2 better than Bcrypt?"
+        - answer: "Yes, Argon2 is considered more secure because it can be tuned to use significant amounts of memory, which makes it much harder to crack with custom hardware like ASICs."
+
+  - name: "AES Encryption & Decryption"
+    slug: "aes-encryption"
+    category: "Security Tools"
+    icon: "Key"
+    subcategory: "cryptography"
+    tags: ["aes", "encryption", "decryption", "security", "privacy"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Encrypt and decrypt text with AES algorithms"
+      secondary: "Support for 128, 192, and 256-bit keys and custom IVs"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["base64", "hex"]
+      processing: "client-side"
+    meta:
+      title: "AES Encryption & Decryption — Secure Your Data Online"
+    content:
+      title: "AES Crypto — Professional Data Encryption"
+      description: "Secure your sensitive text and data with Advanced Encryption Standard (AES). Encrypt and decrypt strings using 128, 192, or 256-bit keys with professional-grade privacy and 100% local processing."
+      keywords: ["encrypt text with aes online", "secure data encryption free", "aes-256 encryption tool online", "decrypt aes string free", "online text encryption utility", "aes cbc mode generator"]
+      tldr: "Protect your sensitive information with industry-standard AES encryption, processed entirely on your device."
+      entity_definition: "AES Encryption & Decryption is a cryptographic utility that implements the Advanced Encryption Standard, a symmetric-key algorithm adopted by the U.S. government and used worldwide. AES is the de facto standard for securing data at rest and in transit, providing high-speed performance and robust security."
+      how_it_works: "The tool uses a secret key to transform plaintext into ciphertext through a series of mathematical rounds. it supports various modes of operation like CBC and GCM to ensure data integrity and confidentiality."
+      use_cases:
+        - "Sending sensitive passwords over insecure channels"
+        - "Securing notes and private information"
+        - "Testing application-level encryption logic"
+      features:
+        - "128, 192, and 256-bit key support"
+        - "Multiple modes: CBC, ECB, GCM"
+        - "Custom Initialization Vector (IV) support"
+        - "Base64 and Hex output formats"
+      faq:
+        - question: "What is the most secure AES mode?"
+        - answer: "AES-GCM is currently recommended as it provides both confidentiality and data integrity (authenticated encryption)."
+        - question: "Does WebToolkit Pro see my key?"
+        - answer: "No. All encryption and decryption happen in your browser. Your keys and data never leave your computer."
+
+  - name: "RSA Key Pair Generator"
+    slug: "rsa-key-gen"
+    category: "Security Tools"
+    icon: "Key"
+    subcategory: "cryptography"
+    tags: ["rsa", "keys", "security", "ssh", "cryptography"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Generate RSA public and private key pairs"
+      secondary: "Support for 1024, 2048, and 4096-bit key strengths"
+    technical:
+      input_formats: ["none"]
+      output_formats: ["pem", "pkcs8"]
+      processing: "client-side"
+    meta:
+      title: "RSA Key Pair Generator — Create Secure SSH Keys Online"
+    content:
+      title: "RSA Key Gen — Professional Asymmetric Encryption"
+      description: "Generate secure RSA public and private key pairs. Create keys for SSH, email encryption, and secure API communication with custom bit-lengths and professional PEM formatting."
+      keywords: ["generate rsa public private keys online", "ssh key builder free", "rsa 2048 bit key generator", "generate pem keys online free", "asymmetric encryption key tool", "create ssh-rsa keys online"]
+      tldr: "Generate secure, high-strength RSA key pairs for your development and security needs in seconds."
+      entity_definition: "RSA Key Pair Generator is a cryptographic utility for asymmetric encryption. Unlike symmetric encryption (like AES), RSA uses a pair of mathematically linked keys: a public key for encryption and a private key for decryption. This is the foundation of secure web communication (SSL/TLS) and SSH authentication."
+      how_it_works: "The tool utilizes a cryptographically secure random number generator to find large prime numbers and calculate the key parameters according to the RSA algorithm."
+      use_cases:
+        - "Setting up SSH access for servers"
+        - "Implementing secure digital signatures"
+        - "Creating keys for encrypted email (PGP/S/MIME)"
+      features:
+        - "Support for 1024, 2048, and 4096-bit keys"
+        - "PEM and PKCS#8 output formats"
+        - "Secure local-only generation"
+        - "One-click copy for both keys"
+      faq:
+        - question: "Is 2048 bits enough?"
+        - answer: "Yes, 2048-bit RSA is currently considered secure for most applications. For high-security environments, 4096-bit is recommended."
+        - question: "Why is it taking a long time?"
+        - answer: "Generating large prime numbers is computationally intensive, especially for 4096-bit keys on mobile devices."
+
+  - name: "Secure Password Auditor"
+    slug: "password-auditor"
+    category: "Security Tools"
+    icon: "ShieldAlert"
+    subcategory: "password-security"
+    tags: ["security", "passwords", "audit", "pwned", "privacy"]
+    priority: 9
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Audit password strength and breach status"
+      secondary: "Check against common patterns and 'Have I Been Pwned' database"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["audit-report"]
+      processing: "client-side"
+    meta:
+      title: "Secure Password Auditor — Check Strength & Breach Status"
+    content:
+      title: "Password Auditor — Protect Your Digital Identity"
+      description: "Audit your password's strength and check if it has been exposed in a data breach. A privacy-first tool that uses k-Anonymity to check against 10+ billion leaked credentials securely."
+      keywords: ["audit password strength online", "check password against pwned database", "secure password checker free", "is my password leaked online", "password security audit tool", "check credential breach status"]
+      tldr: "Identify weak or compromised passwords before hackers do, with our secure k-Anonymity auditor."
+      entity_definition: "Secure Password Auditor is a defensive security utility that evaluates the complexity of a password and its presence in known data breaches. It analyzes entropy, dictionary matches, and common patterns, providing a visual 'Risk Level' to help users improve their security posture."
+      how_it_works: "The tool calculates the SHA-1 hash of the password and sends only the first 5 characters to the 'Have I Been Pwned' API. This 'k-Anonymity' approach ensures that the full password or hash never leaves the browser."
+      use_cases:
+        - "Verifying the security of new account passwords"
+        - "Auditing employee password policies"
+        - "Checking if old credentials are still safe to use"
+      features:
+        - "Entropy and complexity scoring"
+        - "k-Anonymity breach checking"
+        - "Pattern and dictionary match detection"
+        - "Estimated time-to-crack visualization"
+      faq:
+        - question: "Is it safe to type my password here?"
+        - answer: "Yes. Your password is never sent to our servers, and we use a secure lookup method that prevents the breach database from seeing your password."
+        - question: "What is a 'Pwned' password?"
+        - answer: "A password that has appeared in a known data breach, meaning it is in a list used by hackers to hijack accounts."
+
+  - name: "XSS Payload Scanner (Sim)"
+    slug: "xss-scanner"
+    category: "Security Tools"
+    icon: "AlertTriangle"
+    subcategory: "security-audit"
+    tags: ["security", "xss", "audit", "input-validation", "dev"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Test text for potential XSS vulnerabilities"
+      secondary: "Identify dangerous scripts and unescaped HTML tags"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["risk-report"]
+      processing: "client-side"
+    meta:
+      title: "XSS Payload Scanner — Test for Injection Vulnerabilities"
+    content:
+      title: "XSS Scanner — Audit Your Input Validation"
+      description: "Identify potential Cross-Site Scripting (XSS) vulnerabilities in your text and code. A professional utility for auditing unescaped HTML tags and malicious script payloads in your applications."
+      keywords: ["test text for xss vulnerabilities", "secure input audit tool", "xss payload detector online", "audit html for script injection", "prevent xss in web apps", "security audit for input fields"]
+      tldr: "Spot dangerous XSS patterns and unescaped HTML tags before they become security vulnerabilities."
+      entity_definition: "XSS Payload Scanner (Sim) is a security-focused utility for developers. Cross-Site Scripting (XSS) occurs when an application includes untrusted data in a web page without proper validation. This tool scans input for common injection patterns—such as <script> tags, event handlers (onerror, onload), and encoded payloads—to help developers secure their input fields."
+      how_it_works: "The tool uses a comprehensive database of XSS vectors and heuristics to identify 'Risk Factors' in the provided text, providing recommendations for proper escaping and sanitization."
+      use_cases:
+        - "Auditing user comments for potential attacks"
+        - "Testing application input validation logic"
+        - "Educational demonstrations of XSS patterns"
+      features:
+        - "Identification of script tags and event handlers"
+        - "Detection of obfuscated and encoded payloads"
+        - "Risk-level categorization"
+        - "Sanitization recommendations"
+      faq:
+        - question: "Can this tool fix my code?"
+        - answer: "No, it identifies risks. To fix XSS, you should always use a trusted sanitization library and properly escape output in your framework."
+        - question: "What is a 'Persistent' XSS?"
+        - answer: "An attack where the malicious script is stored on the server (e.g., in a database) and served to every user who views the page."
+
+  - name: "JWT Signing Tool"
+    slug: "jwt-signer"
+    category: "Security Tools"
+    icon: "FileSignature"
+    subcategory: "security-audit"
+    tags: ["jwt", "security", "token", "signing", "auth"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Sign and verify JSON Web Tokens (JWT)"
+      secondary: "Support for HS256, RS256, and custom payloads"
+    technical:
+      input_formats: ["json"]
+      output_formats: ["jwt"]
+      processing: "client-side"
+    meta:
+      title: "JWT Signing Tool — Create Secure Tokens Online"
+    content:
+      title: "JWT Signer — Professional Auth Token Builder"
+      description: "Create, sign, and verify JSON Web Tokens (JWT) for your authentication systems. Support for HMAC (HS256) and RSA (RS256) signing algorithms with professional-grade security."
+      keywords: ["sign jwt with secret online", "create secure jwt token free", "jwt hs256 signer online", "generate rs256 jwt online", "verify jwt signature online free", "auth token generator for developers"]
+      tldr: "Build and test secure authentication tokens with our professional JWT signing and verification tool."
+      entity_definition: "JWT Signing Tool is a security utility for modern authentication systems. JSON Web Tokens are an open standard (RFC 7519) for securely transmitting information between parties as a JSON object. This tool allows developers to construct payloads and sign them with a secret key or private key to ensure they cannot be tampered with."
+      how_it_works: "The tool takes the Header, Payload, and Secret, encodes them using Base64Url, and calculates the signature using the selected algorithm (HMAC or RSA)."
+      use_cases:
+        - "Creating mock tokens for API testing"
+        - "Verifying production JWT signatures"
+        - "Debugging expired or invalid auth tokens"
+      features:
+        - "Support for HS256, HS384, HS512"
+        - "Support for RSA signing (RS256)"
+        - "Payload editor with real-time encoding"
+        - "Signature verification status"
+      faq:
+        - question: "Is my secret key safe?"
+        - answer: "Yes. All signing and hashing happen 100% locally in your browser. We never see your keys or your tokens."
+        - question: "What is the 'exp' claim?"
+        - answer: "It stands for 'Expiration Time' and defines the exact moment the token becomes invalid for security reasons."
+
+  - name: "File Hash Validator (SHA/MD5)"
+    slug: "file-checksum"
+    category: "Security Tools"
+    icon: "CheckCircle"
+    subcategory: "security-audit"
+    tags: ["security", "hashing", "file-integrity", "checksum", "sha256"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Verify file integrity with cryptographic hashes"
+      secondary: "Compare uploaded files against SHA-256, MD5, and SHA-1 checksums"
+    technical:
+      input_formats: ["file"]
+      output_formats: ["hash-report"]
+      processing: "client-side"
+    meta:
+      title: "File Hash Validator — Verify File Integrity Online"
+    content:
+      title: "File Checksum — Ensure Your Downloads are Safe"
+      description: "Verify the integrity of your downloaded files by comparing their cryptographic hashes. Support for SHA-256, SHA-1, and MD5 checksums with ultra-fast local processing."
+      keywords: ["verify file integrity with hash", "checksum validator online free", "check sha256 of file online", "verify md5 checksum free", "online file hash checker", "test file for tampering online"]
+      tldr: "Protect your system from corrupted or tampered files by verifying their cryptographic checksums."
+      entity_definition: "File Hash Validator is a security utility for supply-chain integrity. When you download software or large datasets, the provider often provides a 'checksum' (a unique string of characters). This tool calculates the hash of your local file so you can compare it; if they match, the file is identical and safe to use."
+      how_it_works: "The tool reads the binary data of your file locally and passes it through high-performance hashing algorithms (SHA-256, MD5) without ever uploading the file to a server."
+      use_cases:
+        - "Verifying OS ISO downloads"
+        - "Checking software updates for tampering"
+        - "Ensuring data integrity for large transfers"
+      features:
+        - "SHA-256, SHA-1, and MD5 support"
+        - "Direct local file processing (no upload)"
+        - "Real-time progress tracking for large files"
+        - "One-click comparison check"
+      faq:
+        - question: "Why do I need a checksum?"
+        - answer: "To ensure the file wasn't corrupted during download or maliciously modified by a middle-man."
+        - question: "Is MD5 still safe?"
+        - answer: "MD5 is fast but technically 'broken' for high-security use. Use SHA-256 whenever possible for integrity verification."
+
+  - name: "Data Masking Utility"
+    slug: "data-masking"
+    category: "Security Tools"
+    icon: "EyeOff"
+    subcategory: "privacy-audit"
+    tags: ["privacy", "security", "masking", "pii", "redaction"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Mask and redact sensitive data for screenshots"
+      secondary: "Identify and hide emails, phones, and credit cards from text"
+    technical:
+      input_formats: ["text"]
+      output_formats: ["masked-text"]
+      processing: "client-side"
+    meta:
+      title: "Data Masking Utility — Redact PII for Screenshots"
+    content:
+      title: "Data Masking — Secure Your Shared Information"
+      description: "Protect user privacy by masking sensitive information (PII) from your text and code. Automatically redact emails, credit cards, and phone numbers before taking screenshots or sharing logs."
+      keywords: ["mask sensitive data for screenshots", "redact pii from text online", "secure data masking free", "hide credit card numbers online", "anonymize log files online free", "privacy tool for developers"]
+      tldr: "Instantly redact sensitive user info from your text to ensure privacy and compliance when sharing data."
+      entity_definition: "Data Masking Utility is a privacy-focused utility for developers and support teams. It uses pattern matching to identify sensitive data types (like Credit Cards, SSNs, or API Keys) and replaces them with masks (e.g., ****-****-****-1234), allowing for secure sharing of logs or screenshots without leaking real user data."
+      how_it_works: "The tool applies a series of robust regular expressions to the input text, identifying PII and applying user-selected masking styles."
+      use_cases:
+        - "Cleaning logs for support tickets"
+        - "Preparing data for public documentation"
+        - "Anonymizing datasets for outsourced analysis"
+      features:
+        - "Automatic detection of CC, Email, and Phone"
+        - "Customizable masking characters"
+        - "Preserve-last-4-digits option"
+        - "100% Local processing for data security"
+      faq:
+        - question: "Can the masking be undone?"
+        - answer: "No. This tool replaces the original text with placeholder characters, so the original data is removed from the output."
+        - question: "Does it support custom patterns?"
+        - answer: "Yes, you can define custom words or patterns to be masked in the advanced settings."
+
+  - name: "SQL Injection Sanitizer (Sim)"
+    slug: "sql-sanitizer"
+    category: "Security Tools"
+    icon: "Database"
+    subcategory: "security-audit"
+    tags: ["security", "sql", "injection", "audit", "database"]
+    priority: 7
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Audit SQL for potential injection risks"
+      secondary: "Identify unescaped inputs and dangerous query patterns"
+    technical:
+      input_formats: ["sql"]
+      output_formats: ["risk-report"]
+      processing: "client-side"
+    meta:
+      title: "SQL Injection Sanitizer — Audit Database Security Online"
+    content:
+      title: "SQL Sanitizer — Protect Your Database from Attacks"
+      description: "Identify potential SQL injection risks in your queries and code. A professional utility for auditing dangerous query patterns and improving your database security posture."
+      keywords: ["audit sql for injection risks", "secure query builder helper", "sql injection detector online", "prevent sql injection in web apps", "database security audit online", "test sql for malicious inputs"]
+      tldr: "Spot dangerous SQL injection patterns and unescaped inputs before they compromise your database."
+      entity_definition: "SQL Injection Sanitizer (Sim) is a security-focused diagnostic utility. SQL injection is a vulnerability where an attacker can interfere with the queries that an application makes to its database. This tool scans SQL strings for common attack vectors—such as 'OR 1=1', union-based injections, and time-based delays—to help developers secure their data layer."
+      how_it_works: "The tool analyzes the SQL structure and identifies 'Injection Hotspots' where untrusted data could bypass security checks, providing recommendations for using parameterized queries."
+      use_cases:
+        - "Auditing legacy database code"
+        - "Testing application query-building logic"
+        - "Educational demonstrations of SQL injection vectors"
+      features:
+        - "Identification of common injection patterns"
+        - "Detection of comment-based bypasses"
+        - "Risk-level categorization"
+        - "Parameterized query recommendations"
+      faq:
+        - question: "How do I prevent SQL injection?"
+        - answer: "Always use prepared statements (parameterized queries) provided by your database driver instead of concatenating strings."
+        - question: "Does this tool work for all databases?"
+        - answer: "It focuses on standard SQL patterns common to MySQL, PostgreSQL, and SQL Server."
+
   - name: "JSON to TypeScript Interface"
     slug: "json-to-ts"
     category: "Data Formatters & Parsers"
