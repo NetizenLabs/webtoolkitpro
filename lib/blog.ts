@@ -40,6 +40,9 @@ const INTERNAL_LINKS = [
   { keyword: 'meta tags', url: '/blog/seo-meta-tags-complete-guide' },
   { keyword: 'XML formatter', url: '/tools/xml-formatter' },
   { keyword: 'Base64 encode', url: '/tools/base64-encoder' },
+  { keyword: 'Trump-Xi Summit', url: '/blog/trump-xi-summit-2026-tech-impact' },
+  { keyword: 'Iran Conflict', url: '/blog/iran-conflict-2026-cybersecurity' },
+  { keyword: 'Cybersecurity Threats', url: '/blog/iran-conflict-2026-cybersecurity' },
 ]
 
 function applySmartLinks(htmlString: string): string {
