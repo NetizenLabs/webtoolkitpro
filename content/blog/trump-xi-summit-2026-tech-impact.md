@@ -1,9 +1,9 @@
 ---
 title: "The 2026 Trump-Xi Summit: Geopolitics, Supply Chains & Cloud Tools for Developers"
 description: "How the historic Beijing summit between Trump and Xi Jinping is reshaping the global tech landscape. Learn about supply chain risks and the move toward offline-first development tools."
-date: "2026-05-16"
+date: "2026-05-17"
 category: "Engineering"
-tags: ["Geopolitics", "Supply-Chain", "Cloud-Infrastructure", "Web-Development"]
+tags: ["Geopolitics", "SupplyChain", "CloudInfrastructure", "WebDevelopment"]
 keywords: ["Trump Xi summit 2026 impact", "US China tech tensions", "global tech supply chain 2026", "offline-first developer tools", "Beijing summit news for developers"]
 readTime: "7 min read"
 tldr: "The 2026 Beijing Summit marks a critical shift in global tech interdependence. For developers, this means preparing for potential hardware tariffs, cloud regionalization, and a growing necessity for secure, client-side tools that function independently of international network stability."
