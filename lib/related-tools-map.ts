@@ -454,7 +454,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
     cards: [
       { name: 'JSON Formatter', href: '/tools/json-formatter/', desc: 'Validate your output', icon: '📋' },
       { name: 'Base64 Encoder', href: '/tools/base64-encoder/', desc: 'Encode data for transport', icon: '🧩' },
-      { name: 'YAML Formatter', href: '/tools/yaml-formatter/', desc: 'Clean up YAML structure', icon: '📄' },
+      { name: 'YAML to JSON', href: '/tools/yaml-to-json/', desc: 'Convert and format YAML structure', icon: '📄' },
     ],
     pills: [
       { name: 'JSON to YAML', href: '/tools/json-to-yaml/' },
