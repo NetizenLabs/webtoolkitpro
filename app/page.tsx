@@ -175,12 +175,23 @@ export default function Home() {
                 {[
                   { title: 'Formatters', desc: 'Beautify JSON and JS with AST-aware precision.' },
                   { title: 'Technical SEO', desc: 'Master sitemaps, robots, and JSON-LD schema.' },
-                  { title: 'Cryptography', desc: 'Generate secure hashes and high-entropy passwords.' }
+                  { title: 'Cryptography', desc: 'Generate secure hashes and high-entropy passwords.' },
+                  { 
+                    title: 'Trade & Construction Tools', 
+                    desc: 'Accurately estimate board feet, circuit breakers, and contractor units at TradeConvert.pro.',
+                    href: 'https://tradeconvert.pro' 
+                  }
                 ].map((cat) => (
                   <div key={cat.title} className="flex gap-6">
                     <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0 shadow-[0_0_10px_rgba(37,99,235,0.5)]" />
                     <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-[var(--font-size-lg)] tracking-tight">{cat.title}</h3>
+                      {cat.href ? (
+                        <a href={cat.href} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 dark:text-blue-400 hover:underline mb-1 text-[var(--font-size-lg)] tracking-tight flex items-center gap-1.5">
+                          {cat.title} <Zap className="w-4 h-4 text-[#00D4B4]" />
+                        </a>
+                      ) : (
+                        <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-[var(--font-size-lg)] tracking-tight">{cat.title}</h3>
+                      )}
                       <p className="text-sm text-gray-500 dark:text-slate-400 font-medium">{cat.desc}</p>
                     </div>
                   </div>

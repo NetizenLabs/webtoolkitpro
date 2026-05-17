@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Link from 'next/link'
 import { Github, Twitter, Mail, ExternalLink, Zap, Shield, Globe, Code2, ArrowRight } from 'lucide-react'
@@ -71,7 +72,7 @@ export default function AuthorPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="space-y-8">
           <div className="bg-gray-50 dark:bg-[#0D1526] p-8 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm">
             <h3 className="text-[10px] font-bold text-gray-400 dark:text-[#8A9BBE] uppercase tracking-widest font-mono mb-6">Network Contributions</h3>
