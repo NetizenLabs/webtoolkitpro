@@ -2434,6 +2434,45 @@ tools:
         - question: "Does it handle special characters?"
         - answer: "Yes, it automatically escapes characters like '&' and '<' to ensure the output is valid XML."
 
+  - name: "XML to JSON Converter"
+    slug: "xml-to-json"
+    category: "Data Formatters & Parsers"
+    icon: "FileCode"
+    subcategory: "converters"
+    tags: ["xml", "json", "config", "conversion", "developer-tools"]
+    priority: 8
+    releaseDate: "2026-05-15"
+    function:
+      primary: "Convert XML data to structured JSON"
+      secondary: "Simplify complex XML hierarchies for web applications"
+    technical:
+      input_formats: ["xml"]
+      output_formats: ["json"]
+      processing: "client-side"
+    meta:
+      title: "XML to JSON Converter — Transform XML to Structured Objects"
+    content:
+      title: "XML to JSON Converter — Modernize Your XML Data Instantly"
+      description: "Transform complex XML documents into clean, structured JSON objects. Perfect for web developers working with REST APIs, configuration files, and data integration."
+      keywords: ["convert xml to json online", "xml to json converter free", "online xml to json parser", "transform xml data to json", "simplify legacy xml configs", "xml to api data converter"]
+      tldr: "Simplify your web application integration by converting heavy XML documents into modern, lightweight JSON."
+      entity_definition: "XML to JSON Converter is a web utility designed to simplify integration tasks. It parses structural tag-based XML schemas and transforms them into clean, attribute-rich JSON objects. Since JSON is the native data format of the modern web, this utility allows engineers to quickly consume legacy payloads inside web frontends without complex server-side pre-processing."
+      how_it_works: "The converter parses the XML string into an in-memory DOM representation, recursively traverses the tree nodes, and constructs a clean JavaScript object before serializing it to formatted JSON."
+      use_cases:
+        - "Converting legacy XML feed payloads into clean JSON for frontend APIs"
+        - "Transforming SOAP API payloads into standard JSON structures"
+        - "Converting sitemap.xml files to JSON for custom analytics scripts"
+      features:
+        - "Clean, indentation-based JSON output"
+        - "Preservation of XML attributes and text nodes"
+        - "Syntax highlighting for easy validation"
+        - "Full client-side security with zero data transmission"
+      faq:
+        - question: "Does it support XML attributes?"
+          answer: "Yes. XML attributes are preserved and mapped as prefix properties in the resulting JSON keys."
+        - question: "Is my XML data secure?"
+          answer: "Absolutely. The transformation is performed entirely client-side using native JavaScript parsers, so no data is ever transmitted to external servers."
+
   - name: "XML to YAML Converter"
     slug: "xml-to-yaml"
     category: "Data Formatters & Parsers"

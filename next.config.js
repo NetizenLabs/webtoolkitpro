@@ -12,7 +12,47 @@ const nextConfig = {
     return [
       {
         source: '/tools/category/:category',
-        destination: '/tools/hub/:category',
+        destination: '/tools/hub/:category/',
+        permanent: true,
+      },
+      {
+        source: '/tools/uuid-v7',
+        destination: '/tools/uuid-v7-generator/',
+        permanent: true,
+      },
+      {
+        source: '/tools/uuid-v7/',
+        destination: '/tools/uuid-v7-generator/',
+        permanent: true,
+      },
+      {
+        source: '/tools/password-strength-tester',
+        destination: '/tools/password-auditor/',
+        permanent: true,
+      },
+      {
+        source: '/tools/password-strength-tester/',
+        destination: '/tools/password-auditor/',
+        permanent: true,
+      },
+      {
+        source: '/tools/json-to-markdown',
+        destination: '/tools/markdown-converter/',
+        permanent: true,
+      },
+      {
+        source: '/tools/json-to-markdown/',
+        destination: '/tools/markdown-converter/',
+        permanent: true,
+      },
+      {
+        source: '/tools/yaml-formatter',
+        destination: '/tools/yaml-to-json/',
+        permanent: true,
+      },
+      {
+        source: '/tools/yaml-formatter/',
+        destination: '/tools/yaml-to-json/',
         permanent: true,
       },
       {
