@@ -333,12 +333,14 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Free UUID v7 Generator Online — Secure & RFC 9562 Compliant
-      description: Generate cryptographically secure, time-ordered UUID version 7 identifiers instantly. Perfect for B-tree index optimizations, high-throughput distributed systems, and modern database primary keys. Processes 100% offline and local for maximum security.
+      title: Free UUIDv7 Generator Online — RFC 9562 Sortable UUID v7
+      description: Generate cryptographically secure, time-ordered UUIDv7 identifiers instantly. Perfect for B-tree index optimizations, high-throughput distributed systems, and database primary keys.
     content:
-      title: Free UUID v7 Generator Online — Secure Sortable Identifiers
-      description: Generate cryptographically secure, time-ordered UUID version 7 identifiers instantly. Perfect for B-tree index optimizations, high-throughput distributed systems, and database primary keys.
+      title: Free UUIDv7 Generator Online — Secure Sortable Identifiers
+      description: Generate cryptographically secure, time-ordered UUIDv7 (version 7) identifiers instantly. Perfect for B-tree index optimizations, high-throughput distributed systems, and database primary keys.
       keywords:
+        - uuidv7
+        - uuidv7 generator
         - uuid v7 generator
         - time-ordered uuid
         - sortable unique identifier
@@ -7221,12 +7223,13 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: XML Formatter Online — Clean & Beautify XML Markup
+      title: WebToolkit XML Formatter — Clean & Beautify XML Markup
       description: Format and beautify XML code instantly with our secure XML formatter online. Get structural validation and customizable indentation, 100% client-side.
     content:
-      title: XML Formatter Online — Beautiful XML Markup Beautifier
+      title: WebToolkit XML Formatter — Clean & Beautify XML Markup
       description: Format and beautify XML code instantly with our secure XML formatter online. Get structural validation and customizable indentation, 100% client-side.
       keywords:
+        - webtoolkit xml formatter
         - xml formatter online
         - xml formatter
         - beautify xml code free
