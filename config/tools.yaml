@@ -59,6 +59,7 @@ tools:
         - Dark-mode optimized UI for long-duration debugging sessions
       faq:
         - question: Is my JSON data secure on WebToolkit Pro?
+          answer: Yes. All formatting and validation happens 100% locally in your browser. None of your data is ever transmitted or uploaded to a server, ensuring total privacy.
         - question: How does this compare to cloud-based JSON formatters?
           answer: Most online formatters send your data to their servers for processing, where it can be logged or cached. WebToolkit Pro is 'Privacy-First'â€”all processing happens in your browser's memory and is cleared instantly when you close the tab.
         - question: Can I format very large JSON files?
@@ -2390,9 +2391,9 @@ tools:
         - 100% Local client-side processing
       faq:
         - question: What is a good cost factor for Bcrypt?
-        - answer: A cost factor of 10 or 12 is currently recommended for most web applications to balance security and performance.
+          answer: A cost factor of 10 or 12 is currently recommended for most web applications to balance security and performance.
         - question: Why is Bcrypt better than SHA-256 for passwords?
-        - answer: SHA-256 is designed to be fast, which makes it easier to crack via brute force. Bcrypt is intentionally slow and adaptive.
+          answer: SHA-256 is designed to be fast, which makes it easier to crack via brute force. Bcrypt is intentionally slow and adaptive.
   - name: Argon2 Hasher (Modern)
     slug: argon2-hasher
     category: Generators
@@ -2442,9 +2443,9 @@ tools:
         - Standard PHC string format output
       faq:
         - question: What is Argon2id?
-        - answer: Argon2id is a hybrid version that provides the best balance of resistance against side-channel and GPU attacks, making it the recommended default.
+          answer: Argon2id is a hybrid version that provides the best balance of resistance against side-channel and GPU attacks, making it the recommended default.
         - question: Is Argon2 better than Bcrypt?
-        - answer: Yes, Argon2 is considered more secure because it can be tuned to use significant amounts of memory, which makes it much harder to crack with custom hardware like ASICs.
+          answer: Yes, Argon2 is considered more secure because it can be tuned to use significant amounts of memory, which makes it much harder to crack with custom hardware like ASICs.
   - name: AES Encryption & Decryption
     slug: aes-encryption
     category: Generators
@@ -2495,9 +2496,9 @@ tools:
         - Base64 and Hex output formats
       faq:
         - question: What is the most secure AES mode?
-        - answer: AES-GCM is currently recommended as it provides both confidentiality and data integrity (authenticated encryption).
+          answer: AES-GCM is currently recommended as it provides both confidentiality and data integrity (authenticated encryption).
         - question: Does WebToolkit Pro see my key?
-        - answer: No. All encryption and decryption happen in your browser. Your keys and data never leave your computer.
+          answer: No. All encryption and decryption happen in your browser. Your keys and data never leave your computer.
   - name: RSA Key Pair Generator
     slug: rsa-key-gen
     category: Generators
@@ -2548,9 +2549,9 @@ tools:
         - One-click copy for both keys
       faq:
         - question: Is 2048 bits enough?
-        - answer: Yes, 2048-bit RSA is currently considered secure for most applications. For high-security environments, 4096-bit is recommended.
+          answer: Yes, 2048-bit RSA is currently considered secure for most applications. For high-security environments, 4096-bit is recommended.
         - question: Why is it taking a long time?
-        - answer: Generating large prime numbers is computationally intensive, especially for 4096-bit keys on mobile devices.
+          answer: Generating large prime numbers is computationally intensive, especially for 4096-bit keys on mobile devices.
   - name: Secure Password Auditor
     slug: password-auditor
     category: Developer Tools
@@ -2677,9 +2678,9 @@ tools:
         - Sanitization recommendations
       faq:
         - question: Can this tool fix my code?
-        - answer: No, it identifies risks. To fix XSS, you should always use a trusted sanitization library and properly escape output in your framework.
+          answer: No, it identifies risks. To fix XSS, you should always use a trusted sanitization library and properly escape output in your framework.
         - question: What is a 'Persistent' XSS?
-        - answer: An attack where the malicious script is stored on the server (e.g., in a database) and served to every user who views the page.
+          answer: An attack where the malicious script is stored on the server (e.g., in a database) and served to every user who views the page.
   - name: JWT Signing Tool
     slug: jwt-signer
     category: Generators
@@ -2729,9 +2730,9 @@ tools:
         - Signature verification status
       faq:
         - question: Is my secret key safe?
-        - answer: Yes. All signing and hashing happen 100% locally in your browser. We never see your keys or your tokens.
+          answer: Yes. All signing and hashing happen 100% locally in your browser. We never see your keys or your tokens.
         - question: What is the 'exp' claim?
-        - answer: It stands for 'Expiration Time' and defines the exact moment the token becomes invalid for security reasons.
+          answer: It stands for 'Expiration Time' and defines the exact moment the token becomes invalid for security reasons.
   - name: File Hash Validator (SHA/MD5)
     slug: file-checksum
     category: Developer Tools
@@ -2781,9 +2782,9 @@ tools:
         - One-click comparison check
       faq:
         - question: Why do I need a checksum?
-        - answer: To ensure the file wasn't corrupted during download or maliciously modified by a middle-man.
+          answer: To ensure the file wasn't corrupted during download or maliciously modified by a middle-man.
         - question: Is MD5 still safe?
-        - answer: MD5 is fast but technically 'broken' for high-security use. Use SHA-256 whenever possible for integrity verification.
+          answer: MD5 is fast but technically 'broken' for high-security use. Use SHA-256 whenever possible for integrity verification.
   - name: Data Masking Utility
     slug: data-masking
     category: Developer Tools
@@ -2833,9 +2834,9 @@ tools:
         - 100% Local processing for data security
       faq:
         - question: Can the masking be undone?
-        - answer: No. This tool replaces the original text with placeholder characters, so the original data is removed from the output.
+          answer: No. This tool replaces the original text with placeholder characters, so the original data is removed from the output.
         - question: Does it support custom patterns?
-        - answer: Yes, you can define custom words or patterns to be masked in the advanced settings.
+          answer: Yes, you can define custom words or patterns to be masked in the advanced settings.
   - name: SQL Injection Sanitizer (Sim)
     slug: sql-sanitizer
     category: Developer Tools
@@ -2885,9 +2886,9 @@ tools:
         - Parameterized query recommendations
       faq:
         - question: How do I prevent SQL injection?
-        - answer: Always use prepared statements (parameterized queries) provided by your database driver instead of concatenating strings.
+          answer: Always use prepared statements (parameterized queries) provided by your database driver instead of concatenating strings.
         - question: Does this tool work for all databases?
-        - answer: It focuses on standard SQL patterns common to MySQL, PostgreSQL, and SQL Server.
+          answer: It focuses on standard SQL patterns common to MySQL, PostgreSQL, and SQL Server.
   - name: JSON to TypeScript Interface
     slug: json-to-ts
     category: Developer Tools
@@ -2937,9 +2938,9 @@ tools:
         - One-click copy to IDE
       faq:
         - question: How are null values handled?
-        - answer: The tool identifies them as 'any' or 'null' and marks the field as optional if it's missing in some samples.
+          answer: The tool identifies them as 'any' or 'null' and marks the field as optional if it's missing in some samples.
         - question: Can it handle deep nesting?
-        - answer: Yes, it creates separate, named interfaces for every nested level to maintain clean, readable code.
+          answer: Yes, it creates separate, named interfaces for every nested level to maintain clean, readable code.
   - name: XML to CSV Converter
     slug: xml-to-csv
     category: Developer Tools
@@ -2989,9 +2990,9 @@ tools:
         - Instant file download
       faq:
         - question: What happens to deep nesting in CSV?
-        - answer: The tool uses dot-notation headers (e.g., 'User.Address.City') to preserve the relationship in a flat structure.
+          answer: The tool uses dot-notation headers (e.g., 'User.Address.City') to preserve the relationship in a flat structure.
         - question: Can I choose which tags to export?
-        - answer: Yes, our advanced mode allows you to specify the 'Base Node' to focus your CSV export on a specific part of the XML.
+          answer: Yes, our advanced mode allows you to specify the 'Base Node' to focus your CSV export on a specific part of the XML.
   - name: JSON to Go Struct
     slug: json-to-go
     category: Developer Tools
@@ -3041,9 +3042,9 @@ tools:
         - One-click copy to clipboard
       faq:
         - question: How does it handle underscores in keys?
-        - answer: The tool follows Go naming conventions (PascalCase for exported fields) while preserving the original name in the JSON tag.
+          answer: The tool follows Go naming conventions (PascalCase for exported fields) while preserving the original name in the JSON tag.
         - question: Does it support pointers?
-        - answer: Yes, you can toggle between value types and pointers for optional fields in the settings.
+          answer: Yes, you can toggle between value types and pointers for optional fields in the settings.
   - name: Cron Expression Descriptor
     slug: cron-descriptor
     category: Developer Tools
@@ -3094,9 +3095,9 @@ tools:
         - Visual execution calendar
       faq:
         - question: What is a Cron expression?
-        - answer: It is a string representing a schedule for running tasks at specific times or intervals on Unix-like operating systems.
+          answer: It is a string representing a schedule for running tasks at specific times or intervals on Unix-like operating systems.
         - question: Does it support special characters like 'L' or 'W'?
-        - answer: Yes, our descriptor supports advanced cron characters used in enterprise scheduling systems.
+          answer: Yes, our descriptor supports advanced cron characters used in enterprise scheduling systems.
   - name: Regular Expression Explainer
     slug: regex-explainer
     category: Developer Tools
@@ -3147,9 +3148,9 @@ tools:
         - Real-time explanation updates
       faq:
         - question: Why is Regex so hard?
-        - answer: Because it uses a very dense, non-obvious syntax where every character has a specific (and sometimes overlapping) meaning.
+          answer: Because it uses a very dense, non-obvious syntax where every character has a specific (and sometimes overlapping) meaning.
         - question: Does this tool test the matches?
-        - answer: This tool focuses on *explanation*. For real-time testing against sample strings, use our 'Regex Tester' tool in the sidebar.
+          answer: This tool focuses on *explanation*. For real-time testing against sample strings, use our 'Regex Tester' tool in the sidebar.
   - name: SQL Query Minifier
     slug: sql-minifier
     category: Developer Tools
@@ -3251,9 +3252,9 @@ tools:
         - Support for Primitive vs Wrapper types
       faq:
         - question: What is a POJO?
-        - answer: A Plain Old Java Object (POJO) is a simple class used to store data, without any complex business logic or framework requirements.
+          answer: A Plain Old Java Object (POJO) is a simple class used to store data, without any complex business logic or framework requirements.
         - question: How are dates handled?
-        - answer: They are typically mapped to 'String' or 'Date' depending on the format; you can customize the type in the generated code.
+          answer: They are typically mapped to 'String' or 'Date' depending on the format; you can customize the type in the generated code.
   - name: HTML Table to JSON Extractor
     slug: html-table-to-json
     category: Developer Tools
@@ -3304,9 +3305,9 @@ tools:
         - Cleaning of HTML tags within cells
       faq:
         - question: Can it handle merged cells (colspan)?
-        - answer: Yes, it intelligently handles colspans and rowspans to maintain data integrity during the extraction.
+          answer: Yes, it intelligently handles colspans and rowspans to maintain data integrity during the extraction.
         - question: Does it work with dynamic tables?
-        - answer: You need to paste the rendered HTML source of the table for the tool to process it.
+          answer: You need to paste the rendered HTML source of the table for the tool to process it.
   - name: CSV to XML Converter
     slug: csv-to-xml
     category: Developer Tools
@@ -3356,9 +3357,9 @@ tools:
         - Support for large datasets
       faq:
         - question: Can I use spaces in tag names?
-        - answer: No. XML tag names cannot contain spaces; the tool automatically converts spaces to underscores for validity.
+          answer: No. XML tag names cannot contain spaces; the tool automatically converts spaces to underscores for validity.
         - question: Does it handle special characters?
-        - answer: Yes, it automatically escapes characters like '&' and '<' to ensure the output is valid XML.
+          answer: Yes, it automatically escapes characters like '&' and '<' to ensure the output is valid XML.
   - name: XML to JSON Converter
     slug: xml-to-json
     category: Developer Tools
@@ -3460,9 +3461,9 @@ tools:
         - Real-time parsing and validation
       faq:
         - question: Is YAML better than XML?
-        - answer: For configuration and human readability, YAML is generally preferred. XML is better for strictly defined data schemas and document-centric data.
+          answer: For configuration and human readability, YAML is generally preferred. XML is better for strictly defined data schemas and document-centric data.
         - question: Does it support XML namespaces?
-        - answer: Yes, our converter can handle namespaces by optionally prefixing keys to maintain data uniqueness.
+          answer: Yes, our converter can handle namespaces by optionally prefixing keys to maintain data uniqueness.
   - name: CSV to JSON Converter
     slug: csv-to-json
     category: Developer Tools
@@ -3512,9 +3513,9 @@ tools:
         - One-click copy and file download
       faq:
         - question: Does it support large files?
-        - answer: Yes. Our client-side processing handles large CSVs directly in your browser without uploading data to any server.
+          answer: Yes. Our client-side processing handles large CSVs directly in your browser without uploading data to any server.
         - question: Can I handle nested objects?
-        - answer: Yes, by using dot notation in your header row (e.g., 'user.name'), the converter can create nested JSON structures.
+          answer: Yes, by using dot notation in your header row (e.g., 'user.name'), the converter can create nested JSON structures.
   - name: Base64 to Image Decoder
     slug: base64-to-image
     category: Developer Tools
@@ -3565,9 +3566,9 @@ tools:
         - Support for large Data URIs
       faq:
         - question: What is a Data URI?
-        - answer: A Data URI is a way to embed file data (like an image) directly into HTML or CSS using Base64 encoding.
+          answer: A Data URI is a way to embed file data (like an image) directly into HTML or CSS using Base64 encoding.
         - question: Does this upload my image?
-        - answer: No. The decoding happens 100% locally in your browser to ensure maximum privacy.
+          answer: No. The decoding happens 100% locally in your browser to ensure maximum privacy.
   - name: Image to Base64 Encoder
     slug: image-to-base64
     category: Developer Tools
@@ -3618,9 +3619,9 @@ tools:
         - HTML <img> tag snippet output
       faq:
         - question: Does Base64 make my image smaller?
-        - answer: No. Base64 strings are typically about 33% larger than the original binary file. It is recommended only for very small files.
+          answer: No. Base64 strings are typically about 33% larger than the original binary file. It is recommended only for very small files.
         - question: When should I use Base64 images?
-        - answer: Use them for small icons (under 2KB) to reduce the number of HTTP requests, which can improve perceived load speed.
+          answer: Use them for small icons (under 2KB) to reduce the number of HTTP requests, which can improve perceived load speed.
   - name: JSON to XML Converter
     slug: json-to-xml
     category: Developer Tools
@@ -3670,9 +3671,9 @@ tools:
         - Validation of source JSON
       faq:
         - question: How are arrays handled in XML?
-        - answer: Arrays are typically converted into multiple sibling elements with the same tag name.
+          answer: Arrays are typically converted into multiple sibling elements with the same tag name.
         - question: Can I use attributes in the conversion?
-        - answer: Yes, by using a special '@' prefix in your JSON keys, the tool can map values directly to XML attributes.
+          answer: Yes, by using a special '@' prefix in your JSON keys, the tool can map values directly to XML attributes.
   - name: JSON to YAML Converter
     slug: json-to-yaml
     category: Developer Tools
@@ -3722,9 +3723,9 @@ tools:
         - Real-time validation
       faq:
         - question: 'Which is better: JSON or YAML?'
-        - answer: JSON is better for machine-to-machine communication, while YAML is superior for human-managed configuration files.
+          answer: JSON is better for machine-to-machine communication, while YAML is superior for human-managed configuration files.
         - question: Does it support YAML anchors?
-        - answer: Our converter focus on standard JSON-to-YAML mapping; anchors are a YAML-specific feature not present in JSON.
+          answer: Our converter focus on standard JSON-to-YAML mapping; anchors are a YAML-specific feature not present in JSON.
   - name: HTML to Markdown Converter
     slug: html-to-markdown
     category: Developer Tools
@@ -3774,9 +3775,9 @@ tools:
         - Option to strip custom tags
       faq:
         - question: Can it handle complex CSS?
-        - answer: No. Markdown only supports structural formatting; custom CSS styles are stripped during the conversion.
+          answer: No. Markdown only supports structural formatting; custom CSS styles are stripped during the conversion.
         - question: Is the output GitHub-ready?
-        - answer: Yes, our converter defaults to GFM, making it perfect for README files and GitHub issues.
+          answer: Yes, our converter defaults to GFM, making it perfect for README files and GitHub issues.
   - name: URL Parser & Query Audit
     slug: url-parser
     category: Developer Tools
@@ -3826,9 +3827,9 @@ tools:
         - One-click copy of individual components
       faq:
         - question: What is a query string?
-        - answer: It is the part of a URL that follows the '?' symbol, used to pass data to the server.
+          answer: It is the part of a URL that follows the '?' symbol, used to pass data to the server.
         - question: Does it handle non-ASCII characters?
-        - answer: Yes, it automatically decodes URL-encoded characters (like %20 for space) into their original form.
+          answer: Yes, it automatically decodes URL-encoded characters (like %20 for space) into their original form.
   - name: JSON Schema Generator
     slug: json-schema-gen
     category: Developer Tools
@@ -3878,9 +3879,9 @@ tools:
         - Draft-07 and Draft-04 compliance
       faq:
         - question: What is JSON Schema used for?
-        - answer: It is used to validate that a piece of JSON data follows a specific structure, which prevents errors in applications and APIs.
+          answer: It is used to validate that a piece of JSON data follows a specific structure, which prevents errors in applications and APIs.
         - question: Can I edit the generated schema?
-        - answer: Yes, the tool provides a starting point that you can further refine with custom constraints like 'minLength' or 'pattern'.
+          answer: Yes, the tool provides a starting point that you can further refine with custom constraints like 'minLength' or 'pattern'.
   - name: Data Anonymizer (Sim)
     slug: data-anonymizer
     category: Developer Tools
@@ -3932,9 +3933,9 @@ tools:
         - 100% Local processing for data security
       faq:
         - question: Is this GDPR compliant?
-        - answer: Yes, anonymizing data for testing is a core requirement of GDPR; however, always verify your specific legal requirements.
+          answer: Yes, anonymizing data for testing is a core requirement of GDPR; however, always verify your specific legal requirements.
         - question: Can the data be reversed?
-        - answer: No. This tool uses 'Masking' and 'Replacement', not encryption, so the original data is destroyed and cannot be recovered.
+          answer: No. This tool uses 'Masking' and 'Replacement', not encryption, so the original data is destroyed and cannot be recovered.
   - name: JSON Formatter & Validator
     slug: json-formatter-pro
     category: Developer Tools
@@ -3984,9 +3985,9 @@ tools:
         - One-click 'Fix' for common syntax mistakes
       faq:
         - question: Why is my JSON invalid?
-        - answer: Most common errors are trailing commas, unquoted keys, or mismatched brackets.
+          answer: Most common errors are trailing commas, unquoted keys, or mismatched brackets.
         - question: Can it handle huge files?
-        - answer: Yes, our optimized renderer can handle JSON objects up to several megabytes without freezing the browser.
+          answer: Yes, our optimized renderer can handle JSON objects up to several megabytes without freezing the browser.
   - name: User-Agent Parser (Modern)
     slug: ua-parser
     category: Network & Performance
@@ -4036,9 +4037,9 @@ tools:
         - Browser Engine (Blink, WebKit, Gecko) details
       faq:
         - question: What is a User-Agent string?
-        - answer: It is a line of text that identifies your browser and operating system to the web server you are visiting.
+          answer: It is a line of text that identifies your browser and operating system to the web server you are visiting.
         - question: Why do some strings look identical?
-        - answer: Many modern browsers use similar 'base' strings (like Chrome using Safari/WebKit strings) for compatibility reasons; our parser looks for specific tokens to differentiate them.
+          answer: Many modern browsers use similar 'base' strings (like Chrome using Safari/WebKit strings) for compatibility reasons; our parser looks for specific tokens to differentiate them.
   - name: Browser Cache Header Builder
     slug: cache-header-gen
     category: Network & Performance
@@ -4088,9 +4089,9 @@ tools:
         - Visual explanation of cache behavior
       faq:
         - question: What is the best cache duration for images?
-        - answer: For static assets that don't change often, a duration of 1 year (max-age=31536000) is standard practice.
+          answer: For static assets that don't change often, a duration of 1 year (max-age=31536000) is standard practice.
         - question: How do I clear a browser cache remotely?
-        - answer: You can't directly, which is why 'cache busting' (adding a version hash to the filename) is essential when using long cache headers.
+          answer: You can't directly, which is why 'cache busting' (adding a version hash to the filename) is essential when using long cache headers.
   - name: JS Execution Time Audit (Sim)
     slug: js-execution-audit
     category: Network & Performance
@@ -4140,9 +4141,9 @@ tools:
         - Recommendations for code splitting and deferring
       faq:
         - question: What is a 'Long Task'?
-        - answer: In browser performance, any task that takes longer than 50ms is considered a long task because it blocks the user from interacting with the page.
+          answer: In browser performance, any task that takes longer than 50ms is considered a long task because it blocks the user from interacting with the page.
         - question: Does script size equal execution time?
-        - answer: Not necessarily. A small script with a complex loop can block the thread longer than a large script with simple logic.
+          answer: Not necessarily. A small script with a complex loop can block the thread longer than a large script with simple logic.
   - name: Resource Priority Mapper
     slug: resource-priority
     category: Network & Performance
@@ -4192,9 +4193,9 @@ tools:
         - One-click copy to head
       faq:
         - question: 'Preload vs Prefetch: what is the difference?'
-        - answer: Preload is for assets needed in the *current* page. Prefetch is for assets needed in the *next* page the user might visit.
+          answer: Preload is for assets needed in the *current* page. Prefetch is for assets needed in the *next* page the user might visit.
         - question: Can I preload everything?
-        - answer: No. Preloading too many assets can actually slow down your site by competing for bandwidth with other critical resources.
+          answer: No. Preloading too many assets can actually slow down your site by competing for bandwidth with other critical resources.
   - name: Network Throttling Visualizer
     slug: network-throttling
     category: Network & Performance
@@ -4244,9 +4245,9 @@ tools:
         - Interactive latency slider
       faq:
         - question: Why should I test on Slow 3G?
-        - answer: Google uses 'Slow 3G' throttling for its Lighthouse audits to ensure sites remain accessible even in suboptimal network conditions.
+          answer: Google uses 'Slow 3G' throttling for its Lighthouse audits to ensure sites remain accessible even in suboptimal network conditions.
         - question: Does this actually slow down my browser?
-        - answer: This is a simulation for visualization. To actually throttle your connection, use the 'Network' tab in your browser's DevTools.
+          answer: This is a simulation for visualization. To actually throttle your connection, use the 'Network' tab in your browser's DevTools.
   - name: HSTS Policy Generator
     slug: hsts-gen
     category: Generators
@@ -4296,9 +4297,9 @@ tools:
         - Nginx and Apache config snippets
       faq:
         - question: What is HSTS Preloading?
-        - answer: It is a list built into browsers that tells them to use HTTPS for your domain before the first time a user even visits your site.
+          answer: It is a list built into browsers that tells them to use HTTPS for your domain before the first time a user even visits your site.
         - question: Can HSTS break my site?
-        - answer: Yes, if you enable HSTS and then lose your SSL certificate, users will be unable to access your site until the max-age expires. Start with a short duration first.
+          answer: Yes, if you enable HSTS and then lose your SSL certificate, users will be unable to access your site until the max-age expires. Start with a short duration first.
   - name: Content Security Policy (CSP) Builder
     slug: csp-builder
     category: Developer Tools
@@ -4348,9 +4349,9 @@ tools:
         - Real-time policy validation and warnings
       faq:
         - question: Why is CSP so hard to implement?
-        - answer: Because it requires knowing every single external resource your site uses. If you miss one, that feature will break when the policy is live.
+          answer: Because it requires knowing every single external resource your site uses. If you miss one, that feature will break when the policy is live.
         - question: What is 'Report-Only' mode?
-        - answer: It's a way to test your CSP without actually blocking anything. The browser just sends reports of what *would* have been blocked.
+          answer: It's a way to test your CSP without actually blocking anything. The browser just sends reports of what *would* have been blocked.
   - name: Subresource Integrity (SRI) Hasher
     slug: sri-hasher
     category: Generators
@@ -4401,9 +4402,9 @@ tools:
         - Automatic crossorigin attribute inclusion
       faq:
         - question: What happens if the hash doesn't match?
-        - answer: The browser will refuse to execute the script or apply the stylesheet, protecting your users from potentially malicious code.
+          answer: The browser will refuse to execute the script or apply the stylesheet, protecting your users from potentially malicious code.
         - question: Does SRI affect performance?
-        - answer: The performance impact is negligible compared to the massive security benefit of preventing script injection.
+          answer: The performance impact is negligible compared to the massive security benefit of preventing script injection.
   - name: Permissions Policy Generator
     slug: permissions-policy
     category: Developer Tools
@@ -4453,9 +4454,9 @@ tools:
         - Instant header syntax generation
       faq:
         - question: Does this replace CSP?
-        - answer: No. CSP controls *resources* (like scripts), while Permissions Policy controls *browser features* (like the camera).
+          answer: No. CSP controls *resources* (like scripts), while Permissions Policy controls *browser features* (like the camera).
         - question: Why should I disable features I'm not using?
-        - answer: It's a security best practice (Principle of Least Privilege). If your site is compromised, the attacker still won't be able to access the user's mic if it's disabled via header.
+          answer: It's a security best practice (Principle of Least Privilege). If your site is compromised, the attacker still won't be able to access the user's mic if it's disabled via header.
   - name: DNS Propagation Checker
     slug: dns-propagation
     category: Network & Performance
@@ -4505,9 +4506,9 @@ tools:
         - Real-time refresh capability
       faq:
         - question: How long does DNS propagation take?
-        - answer: It can take anywhere from a few minutes to 48 hours, depending on the TTL (Time to Live) settings of your records.
+          answer: It can take anywhere from a few minutes to 48 hours, depending on the TTL (Time to Live) settings of your records.
         - question: Why do I see different results in different regions?
-        - answer: DNS servers update at different intervals. Some regions may pick up your changes faster than others due to cache expiration.
+          answer: DNS servers update at different intervals. Some regions may pick up your changes faster than others due to cache expiration.
   - name: Global Ping Test Online
     slug: ping-test
     category: Network & Performance
@@ -4558,9 +4559,9 @@ tools:
         - Visual performance charts
       faq:
         - question: What is a good ping time?
-        - answer: For web applications, anything under 100ms is considered good, while under 30ms is excellent.
+          answer: For web applications, anything under 100ms is considered good, while under 30ms is excellent.
         - question: Does this use ICMP or HTTP?
-        - answer: Due to browser security, we use high-precision HTTP timing to simulate real-world web user latency.
+          answer: Due to browser security, we use high-precision HTTP timing to simulate real-world web user latency.
   - name: SSL/TLS Certificate Auditor
     slug: ssl-checker
     category: Developer Tools
@@ -4610,9 +4611,9 @@ tools:
         - Certificate chain validation
       faq:
         - question: Why is my SSL certificate invalid?
-        - answer: Common reasons include expiration, mismatched domain names, or an untrusted issuing authority.
+          answer: Common reasons include expiration, mismatched domain names, or an untrusted issuing authority.
         - question: What is the difference between SSL and TLS?
-        - answer: TLS is the modern, more secure successor to SSL, though the term 'SSL' is still commonly used to refer to both.
+          answer: TLS is the modern, more secure successor to SSL, though the term 'SSL' is still commonly used to refer to both.
   - name: HTTP Header Inspector
     slug: header-inspector
     category: Network & Performance
@@ -4662,9 +4663,9 @@ tools:
         - Identification of server technology and version
       faq:
         - question: What are security headers?
-        - answer: They are HTTP response headers that tell the browser how to behave in terms of security, protecting against XSS and clickjacking.
+          answer: They are HTTP response headers that tell the browser how to behave in terms of security, protecting against XSS and clickjacking.
         - question: Why should I hide my server header?
-        - answer: Exposing specific server versions can help attackers identify known vulnerabilities; hiding them is a form of 'security by obscurity'.
+          answer: Exposing specific server versions can help attackers identify known vulnerabilities; hiding them is a form of 'security by obscurity'.
   - name: Gzip & Brotli Compression Tester
     slug: compression-test
     category: Network & Performance
@@ -4714,9 +4715,9 @@ tools:
         - Visual performance optimization tips
       faq:
         - question: 'Brotli vs Gzip: which is better?'
-        - answer: Brotli generally offers better compression ratios for text files, leading to smaller files and faster loads than Gzip.
+          answer: Brotli generally offers better compression ratios for text files, leading to smaller files and faster loads than Gzip.
         - question: How do I enable compression?
-        - answer: It is usually enabled via server configuration (nginx.conf or .htaccess) or through your CDN provider's settings.
+          answer: It is usually enabled via server configuration (nginx.conf or .htaccess) or through your CDN provider's settings.
   - name: DOM Depth & Complexity Analyzer
     slug: dom-analyzer
     category: Network & Performance
@@ -4767,9 +4768,9 @@ tools:
         - Comparison against 'Lighthouse' performance thresholds
       faq:
         - question: What is a good DOM node count?
-        - answer: Lighthouse recommends keeping the total number of DOM nodes below 1,500 and the depth below 32 levels.
+          answer: Lighthouse recommends keeping the total number of DOM nodes below 1,500 and the depth below 32 levels.
         - question: Why does a large DOM slow down my site?
-        - answer: The browser has to spend more time calculating styles, laying out elements, and re-rendering when anything changes.
+          answer: The browser has to spend more time calculating styles, laying out elements, and re-rendering when anything changes.
   - name: Critical Path CSS Generator
     slug: critical-css-gen
     category: Network & Performance
@@ -4821,9 +4822,9 @@ tools:
         - Integration guide for inlining styles
       faq:
         - question: What is 'Above-the-Fold' content?
-        - answer: It is the portion of a webpage that is visible to a user without scrolling when the page first loads.
+          answer: It is the portion of a webpage that is visible to a user without scrolling when the page first loads.
         - question: Do I still need my main stylesheet?
-        - answer: Yes. You inline the critical CSS and load the main stylesheet asynchronously for the rest of the page content.
+          answer: Yes. You inline the critical CSS and load the main stylesheet asynchronously for the rest of the page content.
   - name: CDN & Edge node Finder
     slug: cdn-finder
     category: Network & Performance
@@ -4873,9 +4874,9 @@ tools:
         - Site infrastructure 'Tech Stack' summary
       faq:
         - question: Why use a CDN?
-        - answer: A CDN reduces latency by serving content from servers physically closer to the user, improving speed and reliability.
+          answer: A CDN reduces latency by serving content from servers physically closer to the user, improving speed and reliability.
         - question: Can a site use multiple CDNs?
-        - answer: Yes, advanced architectures sometimes use 'Multi-CDN' setups for maximum redundancy and global performance.
+          answer: Yes, advanced architectures sometimes use 'Multi-CDN' setups for maximum redundancy and global performance.
   - name: WHOIS Lookup (Privacy Focus)
     slug: whois-lookup
     category: Network & Performance
@@ -4925,9 +4926,9 @@ tools:
         - Privacy-protected record flagging
       faq:
         - question: What is WHOIS privacy?
-        - answer: It is a service that hides a domain owner's personal contact information (like phone and email) from the public WHOIS database.
+          answer: It is a service that hides a domain owner's personal contact information (like phone and email) from the public WHOIS database.
         - question: Why is the owner information missing?
-        - answer: Many owners use 'Privacy Protection' or fall under GDPR regulations, which redact personal details from public view.
+          answer: Many owners use 'Privacy Protection' or fall under GDPR regulations, which redact personal details from public view.
   - name: IP Geolocation Finder
     slug: ip-geolocation
     category: Network & Performance
@@ -4978,9 +4979,9 @@ tools:
         - Latitude and Longitude coordinates
       faq:
         - question: How accurate is IP geolocation?
-        - answer: It is very accurate at the country level, but the city-level accuracy can vary depending on the provider and IP type.
+          answer: It is very accurate at the country level, but the city-level accuracy can vary depending on the provider and IP type.
         - question: Does this show my home address?
-        - answer: No. IP geolocation usually points to the nearest ISP exchange or data center, not a specific house or building.
+          answer: No. IP geolocation usually points to the nearest ISP exchange or data center, not a specific house or building.
   - name: Meta Description Length Checker
     slug: meta-length-checker
     category: SEO Tools
@@ -5030,9 +5031,9 @@ tools:
         - Mobile vs Desktop limit guides
       faq:
         - question: Why is meta description length important?
-        - answer: If your description is too long, Google will truncate it with an ellipsis (...), potentially cutting off your call to action.
+          answer: If your description is too long, Google will truncate it with an ellipsis (...), potentially cutting off your call to action.
         - question: Does meta description affect ranking?
-        - answer: Not directly, but it significantly impacts Click-Through Rate (CTR), which is a vital user signal for SEO.
+          answer: Not directly, but it significantly impacts Click-Through Rate (CTR), which is a vital user signal for SEO.
   - name: ALT Text Accessibility Audit
     slug: alt-text-audit
     category: SEO Tools
@@ -5083,9 +5084,9 @@ tools:
         - Accessibility 'Risk Level' assessment
       faq:
         - question: What is the ideal alt text length?
-        - answer: Aim for under 125 characters to ensure compatibility with most screen readers.
+          answer: Aim for under 125 characters to ensure compatibility with most screen readers.
         - question: Should I include 'image of' in my alt text?
-        - answer: No. Screen readers already announce that it is an image, so start directly with the description.
+          answer: No. Screen readers already announce that it is an image, so start directly with the description.
   - name: Robots.txt Validator (Advanced)
     slug: robots-validator
     category: SEO Tools
@@ -5135,9 +5136,9 @@ tools:
         - Crawl-delay syntax checking
       faq:
         - question: Does robots.txt stop all bots?
-        - answer: No. While reputable bots like Googlebot follow it, malicious scrapers often ignore it.
+          answer: No. While reputable bots like Googlebot follow it, malicious scrapers often ignore it.
         - question: Can robots.txt remove a page from search results?
-        - answer: No. It only stops crawling. To remove a page, use a 'noindex' meta tag.
+          answer: No. It only stops crawling. To remove a page, use a 'noindex' meta tag.
   - name: Domain Authority Simulation
     slug: authority-simulation
     category: SEO Tools
@@ -5187,9 +5188,9 @@ tools:
         - Support for Nofollow vs Dofollow simulation
       faq:
         - question: Is this a real Moz/Ahrefs score?
-        - answer: No. This is a simulation designed to teach the underlying logic of how search engines might calculate authority.
+          answer: No. This is a simulation designed to teach the underlying logic of how search engines might calculate authority.
         - question: What is the most important factor for authority?
-        - answer: The quality and relevance of incoming links from other high-authority domains.
+          answer: The quality and relevance of incoming links from other high-authority domains.
   - name: Page Load Time Estimator (Local)
     slug: load-time-estimator
     category: Network & Performance
@@ -5239,9 +5240,9 @@ tools:
         - Asset-weight impact analysis
       faq:
         - question: What is an ideal LCP?
-        - answer: Google recommends a Largest Contentful Paint (LCP) of 2.5 seconds or less for a good user experience.
+          answer: Google recommends a Largest Contentful Paint (LCP) of 2.5 seconds or less for a good user experience.
         - question: Does this measure my live site?
-        - answer: This is a planning and simulation tool. For live site measurements, use our 'Page Speed Insights' link in the sidebar.
+          answer: This is a planning and simulation tool. For live site measurements, use our 'Page Speed Insights' link in the sidebar.
   - name: Mobile-Friendly Meta Tag Gen
     slug: mobile-meta-gen
     category: SEO Tools
@@ -5291,9 +5292,9 @@ tools:
         - One-click HTML code generation
       faq:
         - question: What is the standard viewport tag?
-        - answer: 'Usually: <meta name=''viewport'' content=''width=device-width, initial-scale=1.0''>'
+          answer: 'Usually: <meta name=''viewport'' content=''width=device-width, initial-scale=1.0''>'
         - question: Does this affect mobile-first indexing?
-        - answer: Yes. Without a proper viewport tag, Google may assume your site is not mobile-friendly, which can harm your rankings.
+          answer: Yes. Without a proper viewport tag, Google may assume your site is not mobile-friendly, which can harm your rankings.
   - name: Breadcrumb Schema Generator
     slug: breadcrumb-schema
     category: SEO Tools
@@ -5343,9 +5344,9 @@ tools:
         - One-click copy to clipboard
       faq:
         - question: Do breadcrumbs help SEO?
-        - answer: Yes. They improve internal linking and help Google understand the relationship between different parts of your site.
+          answer: Yes. They improve internal linking and help Google understand the relationship between different parts of your site.
         - question: Can I have two different breadcrumbs on one page?
-        - answer: It is recommended to have one primary path to avoid confusing both users and search engines.
+          answer: It is recommended to have one primary path to avoid confusing both users and search engines.
   - name: FAQ Schema Generator
     slug: faq-schema
     category: SEO Tools
@@ -5395,9 +5396,9 @@ tools:
         - Automatic escaping of special characters
       faq:
         - question: Will FAQ schema always show up in Google?
-        - answer: Google only displays FAQ snippets for high-quality, relevant pages. Using the schema is a prerequisite, but not a guarantee.
+          answer: Google only displays FAQ snippets for high-quality, relevant pages. Using the schema is a prerequisite, but not a guarantee.
         - question: Can I use links in FAQ answers?
-        - answer: Yes, standard HTML links are allowed in the answer field of the FAQ schema.
+          answer: Yes, standard HTML links are allowed in the answer field of the FAQ schema.
   - name: Review & Rating Schema Gen
     slug: review-schema
     category: SEO Tools
@@ -5447,9 +5448,9 @@ tools:
         - One-click copy to clipboard
       faq:
         - question: Can I make up my own ratings?
-        - answer: No. Ratings should reflect genuine user feedback. Manipulating ratings can lead to SEO penalties.
+          answer: No. Ratings should reflect genuine user feedback. Manipulating ratings can lead to SEO penalties.
         - question: Do I need individual reviews for the stars to show?
-        - answer: Google typically requires either a specific review or an aggregate of multiple reviews to display stars.
+          answer: Google typically requires either a specific review or an aggregate of multiple reviews to display stars.
   - name: Local Business Schema Gen
     slug: local-business-schema
     category: SEO Tools
@@ -5499,9 +5500,9 @@ tools:
         - Social media profile integration
       faq:
         - question: What is NAP consistency?
-        - answer: NAP stands for Name, Address, and Phone number. Consistency across your site and other directories is a key local SEO ranking factor.
+          answer: NAP stands for Name, Address, and Phone number. Consistency across your site and other directories is a key local SEO ranking factor.
         - question: Does this help my Google Business Profile?
-        - answer: Yes, it helps Google confirm that the information on your website matches your business profile.
+          answer: Yes, it helps Google confirm that the information on your website matches your business profile.
   - name: Redirect Chain Finder (Sim)
     slug: redirect-chain-finder
     category: SEO Tools
@@ -5551,9 +5552,9 @@ tools:
         - One-click 'Shortest Path' recommendation
       faq:
         - question: Why are redirect chains bad for SEO?
-        - answer: Every hop delays the page load and can slightly dilute the 'link juice' passed from the original URL.
+          answer: Every hop delays the page load and can slightly dilute the 'link juice' passed from the original URL.
         - question: How many redirects are too many?
-        - answer: Ideally, keep it to one hop. Google may stop following a chain after 5 or more hops.
+          answer: Ideally, keep it to one hop. Google may stop following a chain after 5 or more hops.
   - name: Sitemap.xml Generator
     slug: sitemap-generator
     category: SEO Tools
@@ -5605,9 +5606,9 @@ tools:
         - One-click download for sitemap.xml
       faq:
         - question: Why do I need a sitemap?
-        - answer: A sitemap acts as a roadmap for search engines, helping them find all your pages, even those without many internal links.
+          answer: A sitemap acts as a roadmap for search engines, helping them find all your pages, even those without many internal links.
         - question: How often should I update it?
-        - answer: Whenever you add new content or change your site structure significantly.
+          answer: Whenever you add new content or change your site structure significantly.
   - name: Canonical URL Checker
     slug: canonical-checker
     category: SEO Tools
@@ -5658,9 +5659,9 @@ tools:
         - Visual success/warning indicators
       faq:
         - question: What is a canonical tag?
-        - answer: It is an HTML element that tells search engines which version of a URL is the original one.
+          answer: It is an HTML element that tells search engines which version of a URL is the original one.
         - question: Can I have multiple canonicals on one page?
-        - answer: No. Having more than one canonical tag can confuse search engines and lead to them ignoring both.
+          answer: No. Having more than one canonical tag can confuse search engines and lead to them ignoring both.
   - name: Hreflang Tag Generator
     slug: hreflang-generator
     category: SEO Tools
@@ -5711,9 +5712,9 @@ tools:
         - X-default tag support for fallback regions
       faq:
         - question: What is 'x-default'?
-        - answer: The x-default hreflang attribute is used for pages that don't target a specific language or region, acting as a global fallback.
+          answer: The x-default hreflang attribute is used for pages that don't target a specific language or region, acting as a global fallback.
         - question: Do I need hreflang if I only have one language?
-        - answer: No. Hreflang is only necessary if you have content translated or localized for different regions.
+          answer: No. Hreflang is only necessary if you have content translated or localized for different regions.
   - name: Google Snippet Previewer
     slug: snippet-preview
     category: SEO Tools
@@ -5763,9 +5764,9 @@ tools:
         - Bold keyword simulation
       faq:
         - question: How long should a meta title be?
-        - answer: Generally, keep it under 60 characters or 580 pixels to avoid truncation.
+          answer: Generally, keep it under 60 characters or 580 pixels to avoid truncation.
         - question: What is the best meta description length?
-        - answer: Aim for 150-160 characters (920 pixels) to ensure your message is fully displayed.
+          answer: Aim for 150-160 characters (920 pixels) to ensure your message is fully displayed.
   - name: Heading Structure Visualizer
     slug: heading-visualizer
     category: SEO Tools
@@ -5816,9 +5817,9 @@ tools:
         - Text-only 'outline' export
       faq:
         - question: Can I have more than one H1 tag?
-        - answer: Technically yes in HTML5, but for SEO best practices, it's recommended to have only one clear H1 per page.
+          answer: Technically yes in HTML5, but for SEO best practices, it's recommended to have only one clear H1 per page.
         - question: Why are skipped levels bad?
-        - answer: They confuse search engines about the relationship between topics and break the navigation experience for screen reader users.
+          answer: They confuse search engines about the relationship between topics and break the navigation experience for screen reader users.
   - name: Open Graph (OG) Debugger
     slug: og-debugger
     category: SEO Tools
@@ -5869,9 +5870,9 @@ tools:
         - Support for custom og:type and og:site_name
       faq:
         - question: What is the best size for og:image?
-        - answer: The recommended size is 1200 x 630 pixels for a perfect display on most platforms.
+          answer: The recommended size is 1200 x 630 pixels for a perfect display on most platforms.
         - question: Why isn't my image showing up?
-        - answer: Common reasons include absolute vs relative paths, file size limits, or the crawler being blocked by robots.txt.
+          answer: Common reasons include absolute vs relative paths, file size limits, or the crawler being blocked by robots.txt.
   - name: Twitter Card Generator
     slug: twitter-card-gen
     category: SEO Tools
@@ -5921,9 +5922,9 @@ tools:
         - One-click HTML code generation
       faq:
         - question: Which card type should I use?
-        - answer: Use 'Summary with Large Image' for high-impact visual content and 'Summary' for text-heavy articles.
+          answer: Use 'Summary with Large Image' for high-impact visual content and 'Summary' for text-heavy articles.
         - question: Do I need Twitter cards if I have Open Graph?
-        - answer: Twitter will fall back to Open Graph, but using dedicated Twitter cards allows for more control and specific formatting for the platform.
+          answer: Twitter will fall back to Open Graph, but using dedicated Twitter cards allows for more control and specific formatting for the platform.
   - name: SEO URL Slug Optimizer
     slug: slug-optimizer
     category: SEO Tools
@@ -5973,9 +5974,9 @@ tools:
         - One-click copy to clipboard
       faq:
         - question: Why remove 'stop words' like 'the' or 'and'?
-        - answer: Shorter URLs are generally more user-friendly and keep the focus on the primary keywords that search engines use for ranking.
+          answer: Shorter URLs are generally more user-friendly and keep the focus on the primary keywords that search engines use for ranking.
         - question: Should I change my slugs after publishing?
-        - answer: Only if absolutely necessary, and always implement a 301 redirect if you do to preserve your SEO authority.
+          answer: Only if absolutely necessary, and always implement a 301 redirect if you do to preserve your SEO authority.
   - name: Keyword Density Analyzer
     slug: keyword-density
     category: SEO Tools
@@ -6026,9 +6027,9 @@ tools:
         - Visual distribution charts
       faq:
         - question: What is the ideal keyword density?
-        - answer: There is no 'perfect' number, but generally, 1-2% for primary keywords is considered safe and effective.
+          answer: There is no 'perfect' number, but generally, 1-2% for primary keywords is considered safe and effective.
         - question: What is keyword stuffing?
-        - answer: It is the practice of overloading a page with keywords in an attempt to manipulate search rankings, which can lead to penalties.
+          answer: It is the practice of overloading a page with keywords in an attempt to manipulate search rankings, which can lead to penalties.
   - name: JSON-LD Schema Validator
     slug: schema-validator
     category: SEO Tools
@@ -6079,9 +6080,9 @@ tools:
         - Clean error reporting with line numbers
       faq:
         - question: Why is structured data important?
-        - answer: It helps search engines understand the context of your content, which can lead to enhanced display features like star ratings.
+          answer: It helps search engines understand the context of your content, which can lead to enhanced display features like star ratings.
         - question: Does this tool support Microdata?
-        - answer: Currently, we focus on JSON-LD, as it is the format officially recommended by Google for structured data.
+          answer: Currently, we focus on JSON-LD, as it is the format officially recommended by Google for structured data.
   - name: Nginx Configuration Generator
     slug: nginx-generator
     category: Developer Tools
@@ -6132,9 +6133,9 @@ tools:
         - Valid .conf output with comments
       faq:
         - question: Where do I put the Nginx config?
-        - answer: Usually in /etc/nginx/sites-available/ and then symlinked to /etc/nginx/sites-enabled/.
+          answer: Usually in /etc/nginx/sites-available/ and then symlinked to /etc/nginx/sites-enabled/.
         - question: Is this config secure?
-        - answer: It follows current security best practices, but always audit your configuration before deploying to production.
+          answer: It follows current security best practices, but always audit your configuration before deploying to production.
   - name: Apache .htaccess Generator
     slug: htaccess-generator
     category: Developer Tools
@@ -6185,9 +6186,9 @@ tools:
         - Optimized for SEO and performance
       faq:
         - question: What is an .htaccess file?
-        - answer: 'It is a configuration file used on web servers running the Apache Web Server software to control the directory it '
+          answer: 'It is a configuration file used on web servers running the Apache Web Server software to control the directory it '
         - question: Where do I upload the .htaccess?
-        - answer: In the root directory of your website via FTP or your file manager.
+          answer: In the root directory of your website via FTP or your file manager.
   - name: IPv4 Subnet Calculator
     slug: subnet-calculator
     category: Developer Tools
@@ -6237,9 +6238,9 @@ tools:
         - Support for all IPv4 classes (A, B, C)
       faq:
         - question: What is CIDR?
-        - answer: Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses and IP routing.
+          answer: Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses and IP routing.
         - question: How many hosts are in a /24 network?
-        - answer: A /24 network has 256 addresses, with 254 usable for hosts.
+          answer: A /24 network has 256 addresses, with 254 usable for hosts.
   - name: Port Scanner Simulation
     slug: port-scanner
     category: Developer Tools
@@ -6289,9 +6290,9 @@ tools:
         - No data collection for maximum privacy
       faq:
         - question: Does this actually scan my server?
-        - answer: For security and privacy reasons, this is a simulation tool. Real port scanning requires specific network permissions.
+          answer: For security and privacy reasons, this is a simulation tool. Real port scanning requires specific network permissions.
         - question: Why is port 22 dangerous?
-        - answer: Port 22 is used for SSH access; if left open with weak passwords, it is a primary target for brute-force attacks.
+          answer: Port 22 is used for SSH access; if left open with weak passwords, it is a primary target for brute-force attacks.
   - name: JavaScript Obfuscator (Safe Mode)
     slug: js-obfuscator
     category: Developer Tools
@@ -6343,9 +6344,9 @@ tools:
         - 100% browser-based processing
       faq:
         - question: Does obfuscation make my code 100% secure?
-        - answer: No. Obfuscation is a deterrent, not a bulletproof security measure. Expert developers can still reverse-engineer it.
+          answer: No. Obfuscation is a deterrent, not a bulletproof security measure. Expert developers can still reverse-engineer it.
         - question: Will it slow down my website?
-        - answer: In 'Safe Mode', the performance impact is negligible.
+          answer: In 'Safe Mode', the performance impact is negligible.
   - name: ASCII Art & Banner Generator
     slug: ascii-art
     category: Developer Tools
@@ -6395,9 +6396,9 @@ tools:
         - Clean, copy-ready text output
       faq:
         - question: Will these display correctly on all systems?
-        - answer: Yes, as they use standard ASCII characters, they work in any terminal or text editor.
+          answer: Yes, as they use standard ASCII characters, they work in any terminal or text editor.
         - question: Can I use these on GitHub?
-        - answer: Absolutely. They look great in README files when wrapped in a code block.
+          answer: Absolutely. They look great in README files when wrapped in a code block.
   - name: Morse Code & Phonetic Converter
     slug: morse-code
     category: Developer Tools
@@ -6447,9 +6448,9 @@ tools:
         - Clean, formatted text output
       faq:
         - question: What is the NATO Phonetic Alphabet?
-        - answer: It is a spelling alphabet used by radio operators to ensure letters are understood regardless of noise or accent.
+          answer: It is a spelling alphabet used by radio operators to ensure letters are understood regardless of noise or accent.
         - question: Can this tool play the Morse audio?
-        - answer: Currently, we focus on high-speed text-based translation for documentation and communication.
+          answer: Currently, we focus on high-speed text-based translation for documentation and communication.
   - name: Cron Expression Generator
     slug: cron-generator
     category: Developer Tools
@@ -6499,9 +6500,9 @@ tools:
         - Support for non-standard cron symbols
       faq:
         - question: What is a Cron job?
-        - answer: A cron job is a Linux command used for scheduling tasks to be executed periodically in the background.
+          answer: A cron job is a Linux command used for scheduling tasks to be executed periodically in the background.
         - question: Does this support 6-field cron (Quartz)?
-        - answer: Currently, we focus on the standard 5-field Linux crontab syntax for maximum compatibility.
+          answer: Currently, we focus on the standard 5-field Linux crontab syntax for maximum compatibility.
   - name: Regex Tester & Explainer
     slug: regex-tester
     category: Developer Tools
@@ -6552,9 +6553,9 @@ tools:
         - Support for global and multi-line flags
       faq:
         - question: Is my data sent to a server?
-        - answer: No. All regex matching happens locally in your browser, ensuring your test strings remain private.
+          answer: No. All regex matching happens locally in your browser, ensuring your test strings remain private.
         - question: Which regex dialect does this use?
-        - answer: It uses the standard ECMAScript (JavaScript) regex engine.
+          answer: It uses the standard ECMAScript (JavaScript) regex engine.
   - name: JWT Debugger & Inspector
     slug: jwt-debugger
     category: Developer Tools
@@ -6604,9 +6605,9 @@ tools:
         - 100% local and private processing
       faq:
         - question: Can this verify the token signature?
-        - answer: It can decode the signature part, but full verification requires the private key, which you should never paste into a web tool.
+          answer: It can decode the signature part, but full verification requires the private key, which you should never paste into a web tool.
         - question: Is it safe to paste my production tokens?
-        - answer: Because we process 100% on the client-side, your token never leaves your device.
+          answer: Because we process 100% on the client-side, your token never leaves your device.
   - name: Markdown to HTML Converter
     slug: markdown-to-html
     category: Developer Tools
@@ -6658,9 +6659,9 @@ tools:
         - Drag-and-drop file support
       faq:
         - question: What flavor of Markdown is supported?
-        - answer: We support CommonMark and the widely used GitHub-Flavored Markdown (GFM).
+          answer: We support CommonMark and the widely used GitHub-Flavored Markdown (GFM).
         - question: Can I use custom CSS for the preview?
-        - answer: The preview uses our premium brand design system for a clean, professional look.
+          answer: The preview uses our premium brand design system for a clean, professional look.
   - name: Curl to Fetch/Axios Converter
     slug: curl-converter
     category: Developer Tools
@@ -6710,9 +6711,9 @@ tools:
         - Clean, commented code output
       faq:
         - question: Does it support all Curl flags?
-        - answer: It supports the most common flags used for web APIs, including methods, headers, and data payloads.
+          answer: It supports the most common flags used for web APIs, including methods, headers, and data payloads.
         - question: Is my API key safe?
-        - answer: Yes. All parsing happens locally in your browser. Your keys are never transmitted to our servers.
+          answer: Yes. All parsing happens locally in your browser. Your keys are never transmitted to our servers.
   - name: Visual Code Diff Checker
     slug: code-diff
     category: Developer Tools
@@ -6763,9 +6764,9 @@ tools:
         - Zero-lag processing for large snippets
       faq:
         - question: Can it compare large files?
-        - answer: Yes, our engine is optimized to handle snippets up to 5,000 lines without performance degradation.
+          answer: Yes, our engine is optimized to handle snippets up to 5,000 lines without performance degradation.
         - question: Is this safe for proprietary code?
-        - answer: Absolutely. Comparison happens 100% locally in your browser.
+          answer: Absolutely. Comparison happens 100% locally in your browser.
   - name: HTML Entity Encoder/Decoder
     slug: html-entities
     category: Developer Tools
@@ -6817,9 +6818,9 @@ tools:
         - Clean, formatted output
       faq:
         - question: Why should I encode HTML?
-        - answer: To prevent the browser from executing symbols as code and to ensure special characters display correctly.
+          answer: To prevent the browser from executing symbols as code and to ensure special characters display correctly.
         - question: Does it support Unicode?
-        - answer: Yes, it can handle a wide range of Unicode characters and their corresponding entities.
+          answer: Yes, it can handle a wide range of Unicode characters and their corresponding entities.
   - name: Dotenv (.env) Generator
     slug: dotenv-generator
     category: Developer Tools
@@ -6870,9 +6871,9 @@ tools:
         - Private, local generation
       faq:
         - question: Should I commit .env files to Git?
-        - answer: No! Always add .env to your .gitignore. Only commit .env.example files without real secrets.
+          answer: No! Always add .env to your .gitignore. Only commit .env.example files without real secrets.
         - question: Are my secrets safe here?
-        - answer: Yes. Since this is a client-side tool, your values never leave your browser.
+          answer: Yes. Since this is a client-side tool, your values never leave your browser.
   - name: Git Command Helper
     slug: git-helper
     category: Developer Tools
@@ -6922,9 +6923,9 @@ tools:
         - Copy-ready code snippets
       faq:
         - question: How do I undo my last commit?
-        - answer: Use 'git reset --soft HEAD~1' to keep your changes but undo the commit itself.
+          answer: Use 'git reset --soft HEAD~1' to keep your changes but undo the commit itself.
         - question: Is this compatible with GitHub/GitLab?
-        - answer: Yes, these are standard Git commands that work with all remote providers.
+          answer: Yes, these are standard Git commands that work with all remote providers.
   - name: Docker Compose Scaffolder
     slug: docker-compose-gen
     category: Developer Tools
@@ -6975,9 +6976,9 @@ tools:
         - Valid YAML output with comments
       faq:
         - question: What is Docker Compose?
-        - answer: It is a tool for defining and running multi-container Docker applications using a YAML file.
+          answer: It is a tool for defining and running multi-container Docker applications using a YAML file.
         - question: Is this YAML file production-ready?
-        - answer: It provides a solid foundation, but production environments usually require additional security and scaling configurations.
+          answer: It provides a solid foundation, but production environments usually require additional security and scaling configurations.
   - name: YAML to JSON Converter
     slug: yaml-to-json
     category: Developer Tools
@@ -7030,9 +7031,9 @@ tools:
         - One-click copy to clipboard
       faq:
         - question: Why convert YAML to JSON?
-        - answer: While YAML is more human-readable, JSON is the standard for machine communication and API payloads.
+          answer: While YAML is more human-readable, JSON is the standard for machine communication and API payloads.
         - question: Are my secrets safe?
-        - answer: Yes. All conversion happens locally in your browser. We never see your data.
+          answer: Yes. All conversion happens locally in your browser. We never see your data.
   - name: HTML Code Minifier
     slug: html-minifier
     category: Network & Performance
@@ -7084,9 +7085,9 @@ tools:
         - Zero-lag processing for large documents
       faq:
         - question: Does minification affect SEO?
-        - answer: Yes, positively. Faster pages rank better, and minification is a key step in page speed optimization.
+          answer: Yes, positively. Faster pages rank better, and minification is a key step in page speed optimization.
         - question: Will it break my inline scripts?
-        - answer: Our minifier is designed to be safe, but you can toggle script minification if you have complex inline logic.
+          answer: Our minifier is designed to be safe, but you can toggle script minification if you have complex inline logic.
   - name: CSS Code Minifier
     slug: css-minifier
     category: Network & Performance
@@ -7138,9 +7139,9 @@ tools:
         - Instant savings report
       faq:
         - question: Should I minify CSS in development?
-        - answer: No. Keep your CSS readable during development and only minify during your build or deployment phase.
+          answer: No. Keep your CSS readable during development and only minify during your build or deployment phase.
         - question: Is this tool safe for modern CSS (Grid/Flexbox)?
-        - answer: Yes, our engine is compatible with all modern CSS3 properties and layouts.
+          answer: Yes, our engine is compatible with all modern CSS3 properties and layouts.
   - name: SQL Formatter & Beautifier
     slug: sql-formatter
     category: Developer Tools
@@ -7192,9 +7193,9 @@ tools:
         - Instant code block generation
       faq:
         - question: Does this store my database queries?
-        - answer: No. All formatting happens locally in your browser. Your sensitive database logic remains private.
+          answer: No. All formatting happens locally in your browser. Your sensitive database logic remains private.
         - question: Can it handle subqueries?
-        - answer: Yes, our formatter is designed to handle deeply nested subqueries and complex CTEs.
+          answer: Yes, our formatter is designed to handle deeply nested subqueries and complex CTEs.
   - name: XML Formatter & Beautifier
     slug: xml-formatter
     category: Developer Tools
@@ -7298,9 +7299,9 @@ tools:
         - Sentence and Toggle case options
       faq:
         - question: Which style should I use for my blog?
-        - answer: AP Style is the most common for online blogs and journalism.
+          answer: AP Style is the most common for online blogs and journalism.
         - question: Does it handle special names?
-        - answer: Yes, you can define 'protected words' that should always maintain their original capitalization.
+          answer: Yes, you can define 'protected words' that should always maintain their original capitalization.
   - name: PWA Manifest Generator
     slug: pwa-manifest
     category: Developer Tools
@@ -7350,9 +7351,9 @@ tools:
         - Instant manifest.json download
       faq:
         - question: What is a PWA?
-        - answer: A Progressive Web App is a website that uses modern web capabilities to provide an app-like experience on mobile and desktop.
+          answer: A Progressive Web App is a website that uses modern web capabilities to provide an app-like experience on mobile and desktop.
         - question: Where do I put the manifest file?
-        - answer: In the root directory of your site, and link to it in your HTML <head> with a <link rel='manifest'> tag.
+          answer: In the root directory of your site, and link to it in your HTML <head> with a <link rel='manifest'> tag.
   - name: CSS Box Shadow Generator
     slug: css-shadow-gen
     category: Design Tools
@@ -7402,9 +7403,9 @@ tools:
         - Real-time visual preview
       faq:
         - question: How do I make shadows look natural?
-        - answer: Use multiple layers of shadows with low opacity instead of one single dark shadow.
+          answer: Use multiple layers of shadows with low opacity instead of one single dark shadow.
         - question: Is this supported in all browsers?
-        - answer: Yes, box-shadow is a standard CSS3 property supported by all modern browsers.
+          answer: Yes, box-shadow is a standard CSS3 property supported by all modern browsers.
   - name: Readability Grade Calculator
     slug: readability-checker
     category: Content Utilities
@@ -7454,9 +7455,9 @@ tools:
         - Actionable advice for improvement
       faq:
         - question: What is a good readability score for the web?
-        - answer: A Flesch-Kincaid grade level of 6-8 is recommended for general web audiences.
+          answer: A Flesch-Kincaid grade level of 6-8 is recommended for general web audiences.
         - question: Does this handle different languages?
-        - answer: Currently, our formulas are optimized for English-language text analysis.
+          answer: Currently, our formulas are optimized for English-language text analysis.
   - name: Emoji Unicode Picker
     slug: emoji-picker
     category: Content Utilities
@@ -7507,9 +7508,9 @@ tools:
         - One-click copy to clipboard
       faq:
         - question: Are these emojis safe for all browsers?
-        - answer: Yes, we use standard Unicode emojis which are supported by all modern operating systems and browsers.
+          answer: Yes, we use standard Unicode emojis which are supported by all modern operating systems and browsers.
         - question: How do I use them in HTML?
-        - answer: You can either copy the character directly or use the provided HTML entity code (e.g., &#128512;).
+          answer: You can either copy the character directly or use the provided HTML entity code (e.g., &#128512;).
   - name: CSS Keyframe Generator
     slug: css-keyframes
     category: Design Tools
@@ -7559,9 +7560,9 @@ tools:
         - Clean CSS output with vendor prefixes
       faq:
         - question: What are @keyframes?
-        - answer: They are a CSS directive that defines the intermediate steps in a CSS animation sequence.
+          answer: They are a CSS directive that defines the intermediate steps in a CSS animation sequence.
         - question: Should I use JS for animations instead?
-        - answer: CSS animations are often smoother and more performance-efficient for UI transitions than JavaScript-based ones.
+          answer: CSS animations are often smoother and more performance-efficient for UI transitions than JavaScript-based ones.
   - name: Color Palette Extractor (CSS)
     slug: css-color-extractor
     category: Design Tools
@@ -7612,9 +7613,9 @@ tools:
         - Group colors by frequency
       faq:
         - question: Can it extract colors from a live URL?
-        - answer: Yes, by pasting the URL of a public CSS file, the tool can fetch and parse it instantly.
+          answer: Yes, by pasting the URL of a public CSS file, the tool can fetch and parse it instantly.
         - question: Does it find colors in inline styles?
-        - answer: Yes, if you paste the HTML source, it will scan all style attributes for color codes.
+          answer: Yes, if you paste the HTML source, it will scan all style attributes for color codes.
   - name: Webhook Payload Visualizer
     slug: webhook-visualizer
     category: Developer Tools
@@ -7664,9 +7665,9 @@ tools:
         - Automatic type identification
       faq:
         - question: Can I receive live webhooks here?
-        - answer: This tool is for *visualizing* payloads. For a live receiving endpoint, use services like Hookdeck or Webhook.site.
+          answer: This tool is for *visualizing* payloads. For a live receiving endpoint, use services like Hookdeck or Webhook.site.
         - question: Is my data private?
-        - answer: Yes. All visualization happens in your browser; your payload data is never stored on our servers.
+          answer: Yes. All visualization happens in your browser; your payload data is never stored on our servers.
   - name: Browser LocalStorage Auditor
     slug: storage-auditor
     category: Developer Tools
@@ -7716,9 +7717,9 @@ tools:
         - Export storage data as JSON
       faq:
         - question: Can I see storage for other websites?
-        - answer: No. For security reasons, browsers only allow a website to see its own storage (Same-Origin Policy).
+          answer: No. For security reasons, browsers only allow a website to see its own storage (Same-Origin Policy).
         - question: How much data can I store?
-        - answer: Most modern browsers allow around 5MB to 10MB of LocalStorage per domain.
+          answer: Most modern browsers allow around 5MB to 10MB of LocalStorage per domain.
   - name: Browser Feature Compatibility Check
     slug: browser-compat
     category: Developer Tools
@@ -7768,9 +7769,9 @@ tools:
         - Zero-configuration required
       faq:
         - question: Is this the same as 'Can I Use'?
-        - answer: No. 'Can I Use' tells you general support across all browsers; this tool tells you what is *actually* working in *your* browser right now.
+          answer: No. 'Can I Use' tells you general support across all browsers; this tool tells you what is *actually* working in *your* browser right now.
         - question: Does it detect mobile features?
-        - answer: Yes, it can detect mobile-specific features like Touch Events and Accelerometer support.
+          answer: Yes, it can detect mobile-specific features like Touch Events and Accelerometer support.
   - name: Text Similarity & Duplicate Scorer
     slug: text-similarity
     category: Content Utilities
@@ -7820,9 +7821,9 @@ tools:
         - SEO 'Risk Level' indicator
       faq:
         - question: What is a 'safe' similarity score?
-        - answer: For SEO, keeping content below 30% similarity with other pages is generally recommended.
+          answer: For SEO, keeping content below 30% similarity with other pages is generally recommended.
         - question: Is this a plagiarism checker?
-        - answer: It is a *similarity* checker. It compares the two texts you provide, but it does not scan the entire internet for matches.
+          answer: It is a *similarity* checker. It compares the two texts you provide, but it does not scan the entire internet for matches.
   - name: Site Audit Pro
     slug: site-audit-pro
     category: SEO Tools
