@@ -9,6 +9,7 @@ https://wtkpro.site/blog/3ms-ttfb-performance-study/
 https://wtkpro.site/blog/add-favicon-wordpress-2026/
 https://wtkpro.site/blog/ai-coding-tools-2026/
 https://wtkpro.site/blog/ai-cybersecurity-trends/
+https://wtkpro.site/blog/ai-first-development-2026/
 https://wtkpro.site/blog/ai-in-devops-future/
 https://wtkpro.site/blog/ai-seo-optimization-2026/
 https://wtkpro.site/blog/ai-web-dev-workflows-2026/
@@ -27,6 +28,7 @@ https://wtkpro.site/blog/css-gradients-wordpress/
 https://wtkpro.site/blog/css-units-explained/
 https://wtkpro.site/blog/decode-jwt-without-library/
 https://wtkpro.site/blog/diff-tools-for-wordpress/
+https://wtkpro.site/blog/edge-computing-core-web-vitals/
 https://wtkpro.site/blog/edge-computing-guide/
 https://wtkpro.site/blog/edge-computing-performance-2026/
 https://wtkpro.site/blog/enterprise-js-frameworks/
@@ -81,6 +83,7 @@ https://wtkpro.site/blog/secure-client-side-tools-privacy/
 https://wtkpro.site/blog/securing-json-apis/
 https://wtkpro.site/blog/seo-meta-tags-complete-guide/
 https://wtkpro.site/blog/seo-schema-generator-2026-guide/
+https://wtkpro.site/blog/server-first-rendering-2026/
 https://wtkpro.site/blog/server-first-vs-client-rendering-2026/
 https://wtkpro.site/blog/serverless-computing-future/
 https://wtkpro.site/blog/slug-generator-vs-manual-entry/
