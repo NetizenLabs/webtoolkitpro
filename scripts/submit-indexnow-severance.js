@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-const KEY = 'f45c2f8b88d34796b94904d5e3abf608';
+const KEY = '0ab9d98901c04def89a123ff88214bc1';
 const HOST = 'www.severancecalculator.xyz';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 

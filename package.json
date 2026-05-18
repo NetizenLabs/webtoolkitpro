@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/submit-indexnow.js",
+    "postbuild": "node scripts/submit-indexnow.js && node scripts/submit-indexnow-tradeconvert.js",
     "start": "next start",
     "lint": "next lint",
     "publish-reddit": "node scripts/publish-reddit.mjs",
