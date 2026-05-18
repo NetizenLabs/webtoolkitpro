@@ -34,7 +34,7 @@ How can your enterprise benefit from this decentralized model? Focus on these th
 
 ## Are Edge Functions the Future of Serverless?
 
-Platforms like Vercel, Netlify, and Cloudflare have popularized **Edge Functions**. These are lightweight, serverless scripts that run in specialized "V8 Isolates," starting up significantly faster than traditional containers. 
+Platforms like Vercel, Netlify, and Cloudflare have popularized **Edge Functions**. These are lightweight, serverless scripts that run in specialized "V8 Isolates," starting up significantly faster than traditional containers. In modern React frameworks, choosing the right build environment dictates how seamlessly you can deploy these edge scripts—such as in [Next.js vs. Vite build systems](/blog/nextjs-vs-vite-comparison/) which differ fundamentally in server-side edge runtime capabilities.
 
 ### Why Use Edge Functions Over Traditional Lambda?
 Traditional serverless functions (like AWS Lambda) often suffer from "Cold Starts"—a delay when the function hasn't been used recently. Edge Functions eliminate this problem, offering near-zero boot times and global distribution by default. They are perfect for A/B testing, geographic redirects, and dynamic image optimization.

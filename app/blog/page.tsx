@@ -18,8 +18,8 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
   }
 
   return {
-    title: 'Developer Blog: Guides, Tutorials & Performance Research',
-    description: 'Expert web development tips, tutorials, and guides. Learn about developer tools, JSON formatting, password security, SEO optimization, CSS best practices, and more.',
+    title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
+    description: 'Master modern web development with free expert-level tutorials, technical guides, and peer-reviewed performance journals. Learn secure workflows, CSS optimization, and technical SEO.',
     keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
     alternates: {
       canonical: url,
