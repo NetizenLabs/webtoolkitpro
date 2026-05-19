@@ -21,8 +21,42 @@ export default function Footer() {
               that never transmit sensitive data.
             </p>
             <div className="mb-6">
-              <a href="https://huntscreens.com/en/products/webtoolkitpro" target="_blank" rel="noopener noreferrer" title="Featured on HuntScreens" aria-label="Featured on HuntScreens">
-                <img src="https://shot.huntscreens.com/badge.svg" alt="Featured on HuntScreens" width="240" height="60" className="opacity-95 hover:opacity-100 transition-all filter drop-shadow-[0_2px_8px_rgba(0,212,180,0.1)]" loading="lazy" />
+              <a href="https://huntscreens.com/en/products/webtoolkitpro" target="_blank" rel="noopener noreferrer" title="Featured on HuntScreens" aria-label="Featured on HuntScreens" className="inline-block hover:scale-[1.02] active:scale-98 transition-all">
+                <svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="filter drop-shadow-[0_4px_12px_rgba(0,212,180,0.08)]">
+                  <rect width="238" height="58" x="1" y="1" rx="10" fill="#0F172A" stroke="url(#badge-border-gradient)" strokeWidth="1.5"/>
+                  <rect width="236" height="56" x="2" y="2" rx="9" fill="url(#badge-bg-gradient)"/>
+                  
+                  {/* Glowing dynamic background node */}
+                  <circle cx="36" cy="30" r="16" fill="#00D4B4" fillOpacity="0.06" filter="blur(4px)"/>
+                  
+                  {/* Custom HuntScreens Isometric Icon */}
+                  <g transform="translate(24, 18)">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#00D4B4" fillOpacity="0.8"/>
+                    <path d="M2 17L12 22L22 17" stroke="#0094FF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#00D4B4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </g>
+                  
+                  {/* Badge Typography */}
+                  <text x="64" y="25" fill="#8A9BBE" fontFamily="monospace" fontSize="9" fontWeight="bold" letterSpacing="0.15em">FEATURED ON</text>
+                  <text x="64" y="42" fill="#FFFFFF" fontFamily="system-ui, -apple-system, sans-serif" fontSize="15" fontWeight="800" letterSpacing="0.02em">HuntScreens</text>
+                  
+                  {/* Right chevron indicator */}
+                  <path d="M214 26L218 30L214 34" stroke="#00D4B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+
+                  {/* Gradient Definitions */}
+                  <defs>
+                    <linearGradient id="badge-bg-gradient" x1="0" y1="0" x2="240" y2="60" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#0B0F19"/>
+                      <stop offset="0.5" stopColor="#111827"/>
+                      <stop offset="1" stopColor="#0F172A"/>
+                    </linearGradient>
+                    <linearGradient id="badge-border-gradient" x1="0" y1="0" x2="240" y2="60" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#00D4B4" stopOpacity="0.4"/>
+                      <stop offset="0.5" stopColor="#0094FF" stopOpacity="0.1"/>
+                      <stop offset="1" stopColor="#312E81" stopOpacity="0.4"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
               </a>
             </div>
           </div>
