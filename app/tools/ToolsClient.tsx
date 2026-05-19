@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect, useDeferredValue } from 'react'
 import Link from 'next/link'
 import {
   Heart, Clock, Search, Zap, Settings, Layers, LayoutGrid, List, AlignJustify
@@ -69,14 +69,16 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
     })
   }, [initialTools, today, sortBy])
 
+  const deferredSearch = useDeferredValue(search)
+
   const filteredTools = useMemo(() => {
     return visibleTools.filter(tool => {
       const matchesCategory = activeCategory === 'All' || tool.category === activeCategory
-      const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase()) || 
-                           (tool.content?.description || '').toLowerCase().includes(search.toLowerCase())
+      const matchesSearch = tool.name.toLowerCase().includes(deferredSearch.toLowerCase()) || 
+                           (tool.content?.description || '').toLowerCase().includes(deferredSearch.toLowerCase())
       return matchesCategory && matchesSearch
     })
-  }, [visibleTools, activeCategory, search])
+  }, [visibleTools, activeCategory, deferredSearch])
 
   return (
     <div className="dynamic-padding max-w-[1400px] mx-auto min-h-screen">
