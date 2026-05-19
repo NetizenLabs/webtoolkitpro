@@ -31,7 +31,7 @@ export default function NotFound() {
             <Home className="w-5 h-5" /> Back to Home
           </Link>
           <Link 
-            href="/tools" 
+            href="/tools/" 
             className="inline-flex items-center gap-2 bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-2xl font-bold border border-gray-200 dark:border-slate-800 hover:bg-gray-50 dark:hover:bg-slate-800 transition-all"
           >
             Explore Tools

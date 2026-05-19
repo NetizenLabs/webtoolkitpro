@@ -44,7 +44,7 @@ export default function RelatedToolsSidebar({ relatedTools }: RelatedToolsSideba
       </div>
       
       <Link 
-        href="/tools" 
+        href="/tools/" 
         className="mt-6 block text-center py-3 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-blue-600 dark:hover:text-[#00D4B4] transition-colors border-t border-gray-100 dark:border-[#1E2D47] pt-6"
       >
         Browse Full Catalog

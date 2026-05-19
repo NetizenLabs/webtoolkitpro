@@ -19,11 +19,11 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: 'Tools', href: '/tools' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Submit Tool', href: '/submit-tool' },
+    { name: 'Tools', href: '/tools/' },
+    { name: 'Blog', href: '/blog/' },
+    { name: 'About', href: '/about/' },
+    { name: 'Contact', href: '/contact/' },
+    { name: 'Submit Tool', href: '/submit-tool/' },
   ]
 
   return (
@@ -58,7 +58,7 @@ export default function Header() {
             
             <div className="flex items-center gap-6 xl:gap-10">
               <Link 
-                href="/submit-tool" 
+                href="/submit-tool/" 
                 className="hidden xl:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] rounded-xl px-8 py-3.5 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 hover:shadow-2xl transition-all whitespace-nowrap"
               >
                 Submit Tool
@@ -102,7 +102,7 @@ export default function Header() {
           ))}
           <div className="mt-4 pt-6 border-t border-border space-y-4">
             <Link 
-              href="/tools" 
+              href="/tools/" 
               onClick={() => setIsOpen(false)}
               className="w-full py-5 rounded-[12px] text-lg font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] flex items-center justify-center shadow-xl shadow-blue-500/10"
             >

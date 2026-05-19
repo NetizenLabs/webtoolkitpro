@@ -11,7 +11,7 @@ export default function CTASection() {
         <p className="text-xl mb-8 opacity-90">
           Start using our free tools today and streamline your development workflow
         </p>
-        <Link href="/tools">
+        <Link href="/tools/">
           <Button variant="secondary" className="text-lg px-8 py-4">
             Get Started Now
           </Button>

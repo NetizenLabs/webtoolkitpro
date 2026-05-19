@@ -168,7 +168,7 @@ export default function AboutPage() {
       {/* CTA */}
       <div className="text-center py-20 border-t border-gray-100 dark:border-[#1E2D47]">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Ready to optimize your workflow?</h2>
-        <Link href="/tools" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 dark:bg-gradient-to-r dark:from-[#00D4B4] dark:to-[#0094FF] text-white dark:text-[#0B1120] px-10 py-4 rounded-[12px] font-bold text-sm uppercase tracking-widest shadow-lg shadow-blue-500/20 active:scale-95 transition-all">
+        <Link href="/tools/" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 dark:bg-gradient-to-r dark:from-[#00D4B4] dark:to-[#0094FF] text-white dark:text-[#0B1120] px-10 py-4 rounded-[12px] font-bold text-sm uppercase tracking-widest shadow-lg shadow-blue-500/20 active:scale-95 transition-all">
           Explore Directory <Zap className="w-4 h-4 fill-current" />
         </Link>
       </div>

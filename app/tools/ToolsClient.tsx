@@ -168,7 +168,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       {viewMode === 'grid' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredTools.map((tool) => {
-            const href = `/tools/${tool.slug}`
+            const href = `/tools/${tool.slug}/`
 
             return (
               <div key={tool.slug} className="relative group">
@@ -220,7 +220,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       {viewMode === 'list' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredTools.map((tool) => {
-            const href = `/tools/${tool.slug}`
+            const href = `/tools/${tool.slug}/`
 
             return (
               <Link 
@@ -263,7 +263,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             </thead>
             <tbody>
               {filteredTools.map((tool) => {
-                const href = `/tools/${tool.slug}`
+                const href = `/tools/${tool.slug}/`
 
                 return (
                   <tr key={tool.slug} className="group border-b border-border/30 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
@@ -308,7 +308,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             return (
               <Link 
                 key={slug}
-                href={`/tools/hub/${slug}`}
+                href={`/tools/hub/${slug}/`}
                 className="p-6 bg-background dark:bg-elevated border border-border rounded-[12px] text-center flex flex-col items-center justify-center gap-3 hover:border-[#00D4B4]/30 hover:shadow-2xl hover:shadow-[#00D4B4]/5 transition-all group"
               >
                 <div className="w-8 h-8 rounded-full bg-muted/20 flex items-center justify-center group-hover:bg-[#00D4B4]/20 transition-colors">

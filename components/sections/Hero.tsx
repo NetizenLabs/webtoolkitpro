@@ -13,7 +13,7 @@ export default function Hero() {
           converters and code generators.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/tools">
+          <Link href="/tools/">
             <Button variant="primary" className="text-lg px-8 py-4">
               Explore Tools
             </Button>

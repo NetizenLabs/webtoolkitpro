@@ -21,14 +21,14 @@ import StatsDashboard from '@/components/sections/StatsDashboard'
 import { getAllPosts } from '@/lib/blog'
 
 const featuredTools = [
-  { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter', color: 'from-blue-500 to-blue-600' },
-  { name: 'Password Generator', icon: Key, href: '/tools/password-generator', color: 'from-indigo-500 to-indigo-600' },
-  { name: 'Base64 Encoder', icon: FileText, href: '/tools/base64-encoder', color: 'from-purple-500 to-purple-600' },
-  { name: 'Color Picker', icon: Palette, href: '/tools/color-picker', color: 'from-pink-500 to-pink-600' },
-  { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator', color: 'from-slate-500 to-slate-600' },
-  { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator', color: 'from-lime-600 to-lime-700' },
-  { name: 'Word Counter', icon: Hash, href: '/tools/word-counter', color: 'from-teal-500 to-teal-600' },
-  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester', color: 'from-blue-600 to-blue-800' },
+  { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },
+  { name: 'Password Generator', icon: Key, href: '/tools/password-generator/', color: 'from-indigo-500 to-indigo-600' },
+  { name: 'Base64 Encoder', icon: FileText, href: '/tools/base64-encoder/', color: 'from-purple-500 to-purple-600' },
+  { name: 'Color Picker', icon: Palette, href: '/tools/color-picker/', color: 'from-pink-500 to-pink-600' },
+  { name: 'Hash Generator', icon: Shield, href: '/tools/hash-generator/', color: 'from-slate-500 to-slate-600' },
+  { name: 'UUID Generator', icon: Shuffle, href: '/tools/uuid-generator/', color: 'from-lime-600 to-lime-700' },
+  { name: 'Word Counter', icon: Hash, href: '/tools/word-counter/', color: 'from-teal-500 to-teal-600' },
+  { name: 'Social Preview Tester', icon: Share2, href: '/tools/social-preview-tester/', color: 'from-blue-600 to-blue-800' },
 ]
 
 export default function Home() {
@@ -72,13 +72,13 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/tools"
+              href="/tools/"
               className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] font-bold px-10 py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10"
             >
               Explore All Tools <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link 
-              href="/blog"
+              href="/blog/"
               className="bg-elevated text-foreground border border-border font-bold px-10 py-5 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-all"
             >
               Read Our Blog
@@ -135,7 +135,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/tools" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
+            <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
               View All 150+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -223,7 +223,7 @@ export default function Home() {
           <p className="text-[var(--font-size-lg)] text-blue-50 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
             Join thousands of developers who use WebToolkit Pro every day to build better, faster, and more securely.
           </p>
-          <Link href="/tools" className="inline-flex items-center gap-3 bg-white text-blue-700 px-12 py-5 rounded-[2rem] font-black text-xl hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all">
+          <Link href="/tools/" className="inline-flex items-center gap-3 bg-white text-blue-700 px-12 py-5 rounded-[2rem] font-black text-xl hover:shadow-2xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all">
             Get Started Free <ArrowRight className="w-6 h-6" />
           </Link>
         </div>
@@ -522,7 +522,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/blog" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
+            <Link href="/blog/" className="p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all group">
               <div className="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
                 <Code className="w-6 h-6 text-purple-500" />
               </div>
@@ -544,14 +544,14 @@ export default function Home() {
               <h2 className="text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight">Latest Insights</h2>
               <p className="text-sm text-gray-500 dark:text-slate-400 mt-1">Technical guides and engineering research papers.</p>
             </div>
-            <Link href="/blog" className="hidden sm:flex items-center gap-2 text-[#00D4B4] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
+            <Link href="/blog/" className="hidden sm:flex items-center gap-2 text-[#00D4B4] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
               View All Posts <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {getAllPosts().slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+              <Link key={post.slug} href={`/blog/${post.slug}/`} className="group">
                 <article className="bg-white dark:bg-[#0D1526] p-8 rounded-[32px] border border-gray-100 dark:border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all h-full flex flex-col relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#00D4B4]/5 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
@@ -580,7 +580,7 @@ export default function Home() {
           </div>
           
           <div className="mt-12 text-center sm:hidden">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-[#00D4B4] font-bold text-xs uppercase tracking-widest">
+            <Link href="/blog/" className="inline-flex items-center gap-2 text-[#00D4B4] font-bold text-xs uppercase tracking-widest">
               View All Posts <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

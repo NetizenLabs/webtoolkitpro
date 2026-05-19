@@ -284,7 +284,7 @@ export default function AIVisibilityPage() {
             We are constantly optimizing WebToolkit Pro to be the most AI-friendly developer resource on the web. 
             Check back daily for updated performance metrics.
           </p>
-          <Link href="/tools" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-xl shadow-blue-500/20">
+          <Link href="/tools/" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-xl shadow-blue-500/20">
             Explore AI-Optimized Tools <Zap className="w-5 h-5" />
           </Link>
         </div>

@@ -41,7 +41,7 @@ export default function RelatedToolsWidget({ featured, cards, pills }: RelatedTo
         </div>
         <Link 
           className="text-xs font-bold text-blue-600 dark:text-[#00D4B4] flex items-center gap-1.5 hover:gap-2 transition-all group" 
-          href="/tools"
+          href="/tools/"
         >
           Explore Registry <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
         </Link>
