@@ -39,19 +39,19 @@ export default function AboutPage() {
 
   const timelineMilestones = [
     {
-      year: '2024',
-      title: 'Foundation & Security Blueprints',
-      desc: 'Initial release with 30 security and encoding tools, establishing a 100% client-side compilation pipeline and strict zero-logging data protection.'
+      year: 'Dec 2025',
+      title: 'Platform Foundation & Security Blueprints',
+      desc: 'Platform blueprints finalized. Initiated development with core secure client-side utility templates, establishing strict zero-logging user data protection policies.'
     },
     {
-      year: '2025',
-      title: 'Scaling the Global Ecosystem',
-      desc: 'Expanded suite to 100+ utilities. Deployed advanced formatter compilers and localized SEO diagnostics to support international developer workflows.'
+      year: 'Jan 2026',
+      title: 'Directory Expansion & Global Scaling',
+      desc: 'Expanded the utility catalog to support broader API testing, formatting tools, AST parsers, and localized technical developer hubs.'
     },
     {
-      year: '2026',
+      year: 'May 2026',
       title: 'Premium Telemetry & Web Vitals Hardening',
-      desc: 'Upgraded layout system to Next.js 14, introduced deferred rendering to optimize mobile CPU execution paths, and expanded the directory to 150+ professional tools.'
+      desc: 'Upgraded layout architectures, optimized mobile execution pipelines using React 18 deferred rendering states, and achieved optimal performance scores.'
     }
   ]
 
