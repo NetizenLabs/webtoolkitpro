@@ -20,6 +20,11 @@ export default function Footer() {
               WebToolkit Pro empowers engineers with enterprise-grade tools
               that never transmit sensitive data.
             </p>
+            <div className="mb-6">
+              <a href="https://huntscreens.com/en/products/webtoolkitpro" target="_blank" rel="noopener noreferrer" title="Featured on HuntScreens" aria-label="Featured on HuntScreens">
+                <img src="https://shot.huntscreens.com/badge.svg" alt="Featured on HuntScreens" width="240" height="60" className="opacity-95 hover:opacity-100 transition-all filter drop-shadow-[0_2px_8px_rgba(0,212,180,0.1)]" loading="lazy" />
+              </a>
+            </div>
           </div>
 
           <div>

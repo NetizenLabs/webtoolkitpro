@@ -1,5 +1,5 @@
 import React from 'react'
-import { ShieldCheck, Twitter, Mail, Terminal, Rocket, ChevronRight, Zap } from 'lucide-react'
+import { ShieldCheck, Twitter, Mail, Terminal, Rocket, ChevronRight, Zap, Award, Flame, UserCheck, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
@@ -304,15 +304,29 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </div>
 
-          <div className="p-8 bg-elevated rounded-[12px] border border-border relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-              <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold text-foreground mb-2">WTK Engineering Journal</h3>
-                <p className="text-sm text-muted-foreground max-w-md font-medium leading-relaxed">
-                  Peer-reviewed technical research from our core engineering lab. For research inquiries or feedback.
-                </p>
-                <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 mt-6">
+          <div className="p-8 bg-elevated rounded-[24px] border border-border relative overflow-hidden group shadow-2xl">
+            {/* Ambient gradients */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-[#00D4B4]/10 transition-colors duration-500" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0094FF]/5 blur-3xl rounded-full -translate-x-1/3 translate-y-1/3" />
+            
+            <div className="relative z-10">
+              {/* Header block with Author bio */}
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-border/50">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-[#00D4B4] to-[#0094FF] p-[2px] shadow-lg">
+                    <div className="w-full h-full rounded-full bg-background flex items-center justify-center font-bold text-foreground text-lg">
+                      AS
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-extrabold text-foreground tracking-tight">Abu Sufyan</h3>
+                    <p className="text-xs text-muted-foreground font-mono font-bold uppercase tracking-wider">
+                      Lead Architect & Labor Law Researcher
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
                   <a href="mailto:contact@wtkpro.site" className="text-[10px] font-mono font-bold text-[#00D4B4] hover:underline uppercase tracking-widest flex items-center gap-2">
                     <Mail className="w-3.5 h-3.5" /> contact@wtkpro.site
                   </a>
@@ -321,23 +335,85 @@ export default async function BlogPostPage({ params }: Props) {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-col gap-3">
-                <a 
-                  href="https://x.com/WebToolkitPro" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-8 py-3 bg-foreground text-background rounded-[12px] font-bold text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
-                >
-                  <Twitter className="w-3.5 h-3.5" /> Follow Twitter
-                </a>
-                <a 
-                  href="https://www.producthunt.com/posts/webtoolkit-pro" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-8 py-3 bg-[#FF6154] text-white rounded-[12px] font-bold text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl"
-                >
-                  <Rocket className="w-3.5 h-3.5" /> Upvote on PH
-                </a>
+
+              {/* CoderLegion Integration Block */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-6">
+                <div className="md:col-span-7">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-block px-2 py-0.5 bg-indigo-500/10 text-indigo-400 text-[8px] font-bold font-mono uppercase tracking-widest rounded border border-indigo-500/20">
+                      Community Spotlight
+                    </span>
+                    <span className="text-[8px] text-muted-foreground/60 font-mono font-bold uppercase tracking-widest">
+                      CoderLegion Network
+                    </span>
+                  </div>
+                  
+                  <h4 className="text-base font-extrabold text-foreground mb-2 flex items-center gap-2">
+                    <Award className="w-4 h-4 text-[#00D4B4]" /> CoderLegion Profile
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                    Join my developer legion, track my learning checkpoints, and read my deep-dive algorithm analyses.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="bg-background/50 border border-border/80 px-3.5 py-2 rounded-lg flex items-center gap-2 hover:border-[#00D4B4]/30 transition-colors">
+                      <Flame className="w-3.5 h-3.5 text-orange-500" />
+                      <div className="text-[10px] font-mono">
+                        <span className="text-muted-foreground font-bold">Points:</span> <strong className="text-foreground">684</strong>
+                      </div>
+                    </div>
+                    <div className="bg-background/50 border border-border/80 px-3.5 py-2 rounded-lg flex items-center gap-2 hover:border-[#00D4B4]/30 transition-colors">
+                      <Award className="w-3.5 h-3.5 text-[#00D4B4]" />
+                      <div className="text-[10px] font-mono">
+                        <span className="text-muted-foreground font-bold">Badges:</span> <strong className="text-foreground">2</strong>
+                      </div>
+                    </div>
+                    <div className="bg-background/50 border border-border/80 px-3.5 py-2 rounded-lg flex items-center gap-2 hover:border-[#00D4B4]/30 transition-colors">
+                      <UserCheck className="w-3.5 h-3.5 text-blue-500" />
+                      <div className="text-[10px] font-mono">
+                        <span className="text-muted-foreground font-bold">Followers:</span> <strong className="text-foreground">1</strong>
+                      </div>
+                    </div>
+                    <div className="bg-background/50 border border-border/80 px-3.5 py-2 rounded-lg flex items-center gap-2 hover:border-[#00D4B4]/30 transition-colors">
+                      <BookOpen className="w-3.5 h-3.5 text-purple-500" />
+                      <div className="text-[10px] font-mono">
+                        <span className="text-muted-foreground font-bold">Posts:</span> <strong className="text-foreground">4</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a 
+                    href="https://coderlegion.com/user/abusuyfan" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[10px] font-bold text-[#00D4B4] hover:text-[#0094FF] uppercase tracking-widest font-mono transition-colors group/link"
+                  >
+                    View My Full Profile <ChevronRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+
+                <div className="md:col-span-5 flex flex-col justify-between p-5 bg-background/40 border border-border/60 rounded-[16px] hover:border-[#00D4B4]/30 transition-all">
+                  <div>
+                    <div className="text-[8px] font-bold text-muted-foreground/60 uppercase tracking-widest mb-2 font-mono flex items-center gap-1.5">
+                      <BookOpen className="w-3 h-3 text-[#0094FF]" /> Latest Publication
+                    </div>
+                    <h5 className="text-sm font-extrabold text-foreground leading-snug mb-3">
+                      How Diff Algorithms Work: Myers Algorithm Explained Simply
+                    </h5>
+                    <p className="text-[11px] text-muted-foreground leading-relaxed mb-4">
+                      An intuitive, visual explanation of Myers greedy diff algorithm, showing how modern source control computes edits in O(ND) time.
+                    </p>
+                  </div>
+
+                  <a 
+                    href="https://coderlegion.com/18153/how-diff-algorithms-work-myers-algorithm-explained-simply" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-foreground text-background dark:bg-white dark:text-[#0B1120] rounded-[10px] font-extrabold text-[9px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-md"
+                  >
+                    Read Article <ChevronRight className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

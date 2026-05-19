@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { getToolsByCategory, getCategories } from '@/lib/tools'
 import { ArrowRight, Zap, Star, Shield, Code2 } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
-import * as Icons from 'lucide-react'
+import DynamicIcon from '@/components/ui/DynamicIcon'
 import { CATEGORY_PILLARS, CATEGORY_MAP } from '@/lib/categories'
 
 interface HubPageProps {
@@ -79,7 +79,6 @@ export default function HubPage({ params }: HubPageProps) {
         {/* Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tools.map((tool) => {
-            const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
             return (
               <Link
                 key={tool.slug}
@@ -87,7 +86,7 @@ export default function HubPage({ params }: HubPageProps) {
                 className="group bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-2 transition-all duration-300 flex flex-col items-start"
               >
                 <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  <IconComponent className="w-8 h-8 text-[#00D4B4]" />
+                  <DynamicIcon name={tool.icon || 'Zap'} className="w-8 h-8 text-[#00D4B4]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-[#00D4B4] transition-colors">
                   {tool.name}

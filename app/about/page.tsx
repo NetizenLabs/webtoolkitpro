@@ -147,12 +147,20 @@ export default function AboutPage() {
               <Coffee className="w-12 h-12 text-indigo-600 dark:text-[#0094FF]" />
             </div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Engineering Leadership</h3>
-            <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-6 font-medium">
-              Founded and architected by <a href="https://abusufyan.xyz" className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] transition-colors font-bold">Abu Sufyan</a>, WebToolkit Pro follows a strict standard of engineering excellence and privacy-first design.
+            <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-4 font-medium">
+              Founded and architected by <a href="https://abusufyan.xyz" className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] transition-colors font-bold">Abu Sufyan</a>, WebToolkit Pro follows strict standards of engineering excellence.
             </p>
-            <Link href="/author/" className="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-[#0094FF] uppercase tracking-widest hover:gap-3 transition-all">
-              Author Profile <Users className="w-4 h-4" />
-            </Link>
+            <p className="text-xs text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-6 font-medium">
+              {"Track Abu Sufyan's latest publications, Myers algorithm breakdowns, and badges on CoderLegion (Points: 684 | Badges: 2)."}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/author/" className="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-[#0094FF] uppercase tracking-widest hover:gap-3 transition-all">
+                Author Profile <Users className="w-4 h-4" />
+              </Link>
+              <a href="https://coderlegion.com/user/abusuyfan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">
+                CoderLegion <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget, generateSoftwareSchema, generateFAQSchema } from '@/lib/tools'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
 import { TOOL_COMPONENTS } from '@/lib/tool-registry'
 import ToolInfo from '@/components/sections/ToolInfo'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
@@ -14,7 +14,7 @@ import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
 import AdSlot from '@/components/ads/AdSlot'
 import AIOContextButton from '@/components/tools/AIOContextButton'
 import { CATEGORY_MAP } from '@/lib/categories'
-import * as Icons from 'lucide-react'
+import DynamicIcon from '@/components/ui/DynamicIcon'
 import { getRelatedPostsForTool } from '@/lib/blog'
 import FurtherReading from '@/components/sections/FurtherReading'
 
@@ -97,9 +97,6 @@ export default function ToolPage({ params }: ToolPageProps) {
   const softwareSchema = generateSoftwareSchema(tool)
   const faqSchema = generateFAQSchema(tool)
 
-  // Dynamic icon selection
-  const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
-
   const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
 
   return (
@@ -128,7 +125,7 @@ export default function ToolPage({ params }: ToolPageProps) {
                 className="w-16 h-16 rounded-[12px] flex items-center justify-center shrink-0 shadow-xl shadow-blue-500/10"
                 style={{ background: 'linear-gradient(135deg, #00D4B4 0%, #0094FF 100%)' }}
               >
-                <IconComponent className="w-8 h-8 text-[#0B1120]" strokeWidth={1.5} />
+                <DynamicIcon name={tool.icon || 'Zap'} className="w-8 h-8 text-[#0B1120]" strokeWidth={1.5} />
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-[#1E2D47] dark:text-white tracking-tighter">
@@ -156,7 +153,7 @@ export default function ToolPage({ params }: ToolPageProps) {
               <div className="flex items-center gap-2">
                 <span className="text-gray-300 dark:text-gray-700">•</span>
                 <span className="flex items-center gap-1 text-emerald-600 dark:text-[#00D4B4] font-medium">
-                  <Icons.ShieldCheck className="w-4 h-4" strokeWidth={2} /> Fact-Checked & Verified
+                  <ShieldCheck className="w-4 h-4" strokeWidth={2} /> Fact-Checked & Verified
                 </span>
                 <span className="text-gray-300 dark:text-gray-700">•</span>
                 <span className="text-gray-400 dark:text-[#5B719E]">Compliance: 2026 Standards</span>
@@ -201,7 +198,7 @@ export default function ToolPage({ params }: ToolPageProps) {
             {/* E-E-A-T Sourcing & Client-Side Privacy Guarantee */}
             <div className="mt-12 p-8 bg-gray-50 dark:bg-[#0D1526]/50 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed shadow-inner">
               <div className="flex items-center gap-3 mb-4 text-[#1E2D47] dark:text-white font-bold text-base">
-                <Icons.Info className="w-5 h-5 text-blue-500 dark:text-[#00D4B4]" strokeWidth={2} />
+                <Info className="w-5 h-5 text-blue-500 dark:text-[#00D4B4]" strokeWidth={2} />
                 Editorial Standards & Processing Transparency
               </div>
               <p className="mb-3">

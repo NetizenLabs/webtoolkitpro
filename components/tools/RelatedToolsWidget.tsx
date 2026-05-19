@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Zap } from 'lucide-react'
-import * as LucideIcons from 'lucide-react'
+import DynamicIcon, { ICON_MAP } from '@/components/ui/DynamicIcon'
 
 interface ToolCard {
   href: string
@@ -22,9 +22,8 @@ interface RelatedToolsWidgetProps {
 export default function RelatedToolsWidget({ featured, cards, pills }: RelatedToolsWidgetProps) {
   // Function to render icon dynamically if it's a lucide icon name, else return as is (emoji)
   const renderIcon = (iconName: string) => {
-    const IconComponent = (LucideIcons as any)[iconName]
-    if (IconComponent) {
-      return <IconComponent className="w-6 h-6" strokeWidth={1.5} />
+    if (ICON_MAP[iconName]) {
+      return <DynamicIcon name={iconName} className="w-6 h-6" strokeWidth={1.5} />
     }
     return <span className="text-xl">{iconName}</span>
   }

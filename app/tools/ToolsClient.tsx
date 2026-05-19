@@ -3,16 +3,11 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import {
-  Download, RefreshCw, Heart, 
-  FileJson, Key, FileText, Link as LinkIcon, AlignLeft, Palette,
-  Hash, Type, Clock, Binary, Shield, Code, Ruler, Shuffle, FileCode, Globe,
-  Search, Filter, Laptop, Zap, Settings, Layout, Layers, Code2, Star,
-  DollarSign, ClipboardList, TrendingDown, Activity, Share2, Server, Database,
-  LayoutGrid, List, AlignJustify, Table, Info
+  Heart, Clock, Search, Zap, Settings, Layers, LayoutGrid, List, AlignJustify
 } from 'lucide-react'
 import AdSlot from '@/components/ads/AdSlot'
 import { ToolConfig } from '@/types/tool'
-import * as Icons from 'lucide-react'
+import DynamicIcon from '@/components/ui/DynamicIcon'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { CATEGORY_MAP } from '@/lib/categories'
 
@@ -173,7 +168,6 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       {viewMode === 'grid' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredTools.map((tool) => {
-            const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
             const href = `/tools/${tool.slug}`
 
             return (
@@ -190,7 +184,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                   className="card-premium flex flex-col h-full p-8"
                 >
                   <div className="w-14 h-14 rounded-[10px] bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-7 h-7 text-[#0D1117]" strokeWidth={1.5} />
+                    <DynamicIcon name={tool.icon || 'Zap'} className="w-7 h-7 text-[#0D1117]" strokeWidth={1.5} />
                   </div>
 
                   <div className="flex-grow">
@@ -226,7 +220,6 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
       {viewMode === 'list' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredTools.map((tool) => {
-            const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
             const href = `/tools/${tool.slug}`
 
             return (
@@ -236,7 +229,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                 className="flex items-center gap-4 p-4 bg-background dark:bg-elevated border border-border rounded-xl hover:border-[#00D4B4]/50 group transition-all"
               >
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center shrink-0">
-                  <IconComponent className="w-5 h-5 text-[#0D1117]" strokeWidth={1.5} />
+                  <DynamicIcon name={tool.icon || 'Zap'} className="w-5 h-5 text-[#0D1117]" strokeWidth={1.5} />
                 </div>
                 <div className="flex-grow min-w-0">
                   <h3 className="text-sm font-bold text-foreground truncate group-hover:text-[#00D4B4]">
@@ -270,7 +263,6 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
             </thead>
             <tbody>
               {filteredTools.map((tool) => {
-                const IconComponent = (Icons as any)[tool.icon || 'Zap'] || Icons.Zap
                 const href = `/tools/${tool.slug}`
 
                 return (
@@ -278,7 +270,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
                     <td className="px-6 py-4">
                       <Link href={href} className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00D4B4] to-[#0094FF] flex items-center justify-center shrink-0">
-                          <IconComponent className="w-4 h-4 text-[#0D1117]" strokeWidth={1.5} />
+                          <DynamicIcon name={tool.icon || 'Zap'} className="w-4 h-4 text-[#0D1117]" strokeWidth={1.5} />
                         </div>
                         <span className="font-bold text-foreground group-hover:text-[#00D4B4] transition-colors">{tool.name}</span>
                       </Link>
