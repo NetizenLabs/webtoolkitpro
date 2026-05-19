@@ -144,10 +144,16 @@ export interface BlogPost {
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 
+let cachedPosts: BlogPost[] | null = null
+const cachedPostsBySlug: Record<string, BlogPost> = {}
+
 export function getAllPosts(): BlogPost[] {
+  if (process.env.NODE_ENV === 'production' && cachedPosts) {
+    return cachedPosts
+  }
+
   if (!fs.existsSync(BLOG_DIR)) return []
 
-  const now = new Date();
   const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith('.md'))
 
   const posts = files.map((filename) => {
@@ -178,14 +184,24 @@ export function getAllPosts(): BlogPost[] {
   });
 
   // Safe sort with date validation
-  return posts.sort((a, b) => {
+  const sorted = posts.sort((a, b) => {
     const dateA = new Date(a.date).getTime()
     const dateB = new Date(b.date).getTime()
     return (isNaN(dateB) ? 0 : dateB) - (isNaN(dateA) ? 0 : dateA)
   })
+
+  if (process.env.NODE_ENV === 'production') {
+    cachedPosts = sorted
+  }
+
+  return sorted
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+  if (process.env.NODE_ENV === 'production' && cachedPostsBySlug[slug]) {
+    return cachedPostsBySlug[slug]
+  }
+
   const filePath = path.join(BLOG_DIR, `${slug}.md`)
   if (!fs.existsSync(filePath)) return null
 
@@ -203,7 +219,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const step1 = applySmartLinks(rawHtml)
   const htmlContent = applyPremiumStyles(step1)
 
-  return {
+  const post: BlogPost = {
     slug,
     title: data.title || '',
     description: data.description || '',
@@ -224,6 +240,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     steps: data.steps || [],
     type: ['Research', 'Engineering'].includes(data.category) ? 'journal' : 'blog',
   }
+
+  if (process.env.NODE_ENV === 'production') {
+    cachedPostsBySlug[slug] = post
+  }
+
+  return post
 }
 
 export function getAllSlugs(): string[] {

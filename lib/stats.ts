@@ -17,34 +17,31 @@ const DEFAULT_STATS: ToolStats = {
 }
 
 let cachedStats: ToolStats | null = null
-let lastCacheTime = 0
-const CACHE_TTL = 30000 // 30 seconds
-
-async function ensureStatsFile() {
-  try {
-    if (!fs.existsSync(STATS_FILE)) {
-      await fsPromises.writeFile(STATS_FILE, JSON.stringify(DEFAULT_STATS, null, 2))
-    }
-  } catch (e) {
-    console.error('Error ensuring stats file:', e)
-  }
-}
+let isInitialized = false
 
 export async function getGlobalStats(): Promise<ToolStats> {
-  const now = Date.now()
-  if (cachedStats && (now - lastCacheTime < CACHE_TTL)) {
+  if (isInitialized && cachedStats) {
     return cachedStats
   }
 
   try {
-    await ensureStatsFile()
     const data = await fsPromises.readFile(STATS_FILE, 'utf8')
     cachedStats = JSON.parse(data)
-    lastCacheTime = now
+    isInitialized = true
     return cachedStats || DEFAULT_STATS
-  } catch (e) {
-    console.error('Error reading stats:', e)
-    return cachedStats || DEFAULT_STATS
+  } catch (e: any) {
+    if (e.code === 'ENOENT') {
+      try {
+        await fsPromises.writeFile(STATS_FILE, JSON.stringify(DEFAULT_STATS, null, 2))
+      } catch (writeErr) {
+        console.error('Error writing default stats:', writeErr)
+      }
+    } else {
+      console.error('Error reading stats:', e)
+    }
+    cachedStats = DEFAULT_STATS
+    isInitialized = true
+    return DEFAULT_STATS
   }
 }
 
@@ -58,10 +55,12 @@ export async function incrementToolRun() {
     
     // Update cache immediately
     cachedStats = stats
-    lastCacheTime = Date.now()
 
-    // Write back asynchronously
-    await fsPromises.writeFile(STATS_FILE, JSON.stringify(stats, null, 2))
+    // Write back in a completely non-blocking deferred way without blocking current event loop execution
+    fsPromises.writeFile(STATS_FILE, JSON.stringify(stats, null, 2)).catch(err => {
+      console.error('Error writing stats asynchronously:', err)
+    })
+    
     return stats.toolsRun
   } catch (e) {
     console.error('Error incrementing stats:', e)

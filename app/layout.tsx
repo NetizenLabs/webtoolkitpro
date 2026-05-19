@@ -104,18 +104,6 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-title': 'WebToolkit Pro',
     'theme-color': '#0D1117',
     'color-scheme': 'light dark',
-    'preconnect': [
-      'https://wtkpro.site/api',
-      'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com'
-    ],
-    'dns-prefetch': [
-      'https://wtkpro.site/api',
-      'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com',
-      'https://pagead2.googlesyndication.com'
-    ],
-    'x-dns-prefetch-control': 'on',
   },
   manifest: '/manifest.json',
 }
@@ -145,6 +133,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+      </head>
       <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
         <script
           id="theme-initializer"
