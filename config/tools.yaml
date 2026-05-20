@@ -4692,6 +4692,7 @@ tools:
         - view website response headers online
         - check security headers report
         - inspect http status codes
+        - comprehensive header inspection tool
         - audit cache control headers
         - check server information headers
         - http header analyzer free
@@ -6532,6 +6533,9 @@ tools:
         - cron expression generator online
         - crontab builder linux
         - cron schedule explainer
+        - visual cron editor online
+        - advanced cron expression evaluator
+        - real-world cron examples
         - generate cron jobs for aws
         - human readable cron expressions
         - crontab syntax helper
@@ -6584,6 +6588,10 @@ tools:
         - regex tester javascript online
         - regular expression debugger with groups
         - visual regex match highlighter
+        - regular expression patterns library
+        - pattern regex matching utility
+        - alternative to regex101 tester
+        - free regex tools online
         - test regex against enterprise data
         - ai regex logic explainer
         - javascript regex builder tool
@@ -7488,6 +7496,7 @@ tools:
         - calculate flesh-kincaid readability online
         - check text reading level free
         - readability score calculator online
+        - accurate reading level calculator
         - gunning fog index tool
         - online content clarity auditor
         - improve writing readability online

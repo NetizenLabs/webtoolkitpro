@@ -4,7 +4,7 @@ description: "Master cron syntax with 20 production-ready cron expression exampl
 date: "2026-05-18"
 category: "Developer Tools"
 tags: ["Cron", "Backend", "DevOps", "Automation", "SysAdmin"]
-keywords: ["cron expression examples", "cron job examples", "database backup cron", "laravel queue cron", "github actions schedule", "crontab syntax format", "cron schedule interval", "crontab examples linux"]
+keywords: ["cron expression examples", "cron job examples", "database backup cron", "laravel queue cron", "github actions schedule", "crontab syntax format", "cron schedule interval", "crontab examples linux", "real world cron examples", "simple cron example format"]
 ---
 
 ## The Automation Engine: Why Crontabs Rule Modern Infrastructure
