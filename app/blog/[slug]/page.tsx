@@ -131,6 +131,12 @@ export default async function BlogPostPage({ params }: Props) {
     day: 'numeric',
   })
 
+  const formattedLastUpdated = new Date(post.lastUpdated).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
     <>
       <article className="dynamic-padding max-w-4xl mx-auto min-h-screen">
@@ -177,7 +183,9 @@ export default async function BlogPostPage({ params }: Props) {
               Published: {formattedDate}
             </time>
             <span className="text-border">•</span>
-            <span>Last Updated: {formattedDate}</span>
+            <time dateTime={post.lastUpdated} itemProp="dateModified">
+              Last Updated: {formattedLastUpdated}
+            </time>
             <span className="text-border">•</span>
             <span itemProp="author" className="text-muted-foreground">{post.author}</span>
           </div>
@@ -463,7 +471,7 @@ export default async function BlogPostPage({ params }: Props) {
             'description': post.description,
             'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.png',
             'datePublished': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
-            'dateModified': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
+            'dateModified': post.lastUpdated.includes('T') ? post.lastUpdated : `${post.lastUpdated}T09:00:00Z`,
             'author': {
               '@type': 'Person',
               'name': post.author === 'WebToolkit Pro Engineering' ? 'Abu Sufyan' : post.author,

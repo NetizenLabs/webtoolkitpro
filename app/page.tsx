@@ -14,10 +14,12 @@ export const metadata: Metadata = {
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
   Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2,
-  CheckCircle, Server, RefreshCw
+  CheckCircle, Server, RefreshCw, Terminal, BookOpen, ExternalLink, MessageSquare
 } from 'lucide-react'
 import Newsletter from '@/components/sections/Newsletter'
 import StatsDashboard from '@/components/sections/StatsDashboard'
+import SocialProof from '@/components/sections/SocialProof'
+import JsonMiniDemo from '@/components/sections/JsonMiniDemo'
 import { getAllPosts } from '@/lib/blog'
 
 const featuredTools = [
@@ -85,7 +87,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-12 flex justify-center">
+          {/* Product Hunt Badge */}
+          <div className="mt-10 flex justify-center">
             <a 
               href="https://www.producthunt.com/products/webtoolkit-pro?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-webtoolkit-pro" 
               target="_blank" 
@@ -100,6 +103,27 @@ export default function Home() {
                 className="dark:brightness-90 dark:contrast-125"
                 priority
               />
+            </a>
+          </div>
+
+          {/* Trust / As Seen On Strip */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
+            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 dark:text-[#4A6080] font-mono">As seen on</span>
+            <a href="https://www.producthunt.com/products/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow"
+              className="flex items-center gap-1.5 px-4 py-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-xl text-[11px] font-bold text-gray-600 dark:text-[#8A9BBE] hover:text-[#DA552F] hover:border-[#DA552F]/30 transition-all shadow-sm">
+              <span className="text-[#DA552F]">🚀</span> Product Hunt
+            </a>
+            <a href="https://huntscreens.com/en/products/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow"
+              className="flex items-center gap-1.5 px-4 py-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-xl text-[11px] font-bold text-gray-600 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/30 transition-all shadow-sm">
+              <span>📸</span> HuntScreens
+            </a>
+            <a href="https://dev.to/abusufyan909" target="_blank" rel="noopener noreferrer nofollow"
+              className="flex items-center gap-1.5 px-4 py-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-xl text-[11px] font-bold text-gray-600 dark:text-[#8A9BBE] hover:text-[#0094FF] hover:border-[#0094FF]/30 transition-all shadow-sm">
+              <Terminal className="w-3.5 h-3.5 text-[#0094FF]" /> DEV Community
+            </a>
+            <a href="https://coderlegion.com/user/abusuyfan" target="_blank" rel="noopener noreferrer nofollow"
+              className="flex items-center gap-1.5 px-4 py-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-xl text-[11px] font-bold text-gray-600 dark:text-[#8A9BBE] hover:text-[#00D4B4] hover:border-[#00D4B4]/30 transition-all shadow-sm">
+              <BookOpen className="w-3.5 h-3.5 text-[#00D4B4]" /> CoderLegion
             </a>
           </div>
         </div>
@@ -141,6 +165,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* JSON Mini Demo */}
+      <JsonMiniDemo />
 
       {/* Why Choose Us */}
       <section className="py-[var(--space-lg)] bg-gray-50 dark:bg-[#0B1120] transition-colors duration-300">
@@ -460,26 +487,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Community Insights & Zaraz Integration */}
-      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800 relative overflow-hidden">
-        {/* Subtle background glow for the embed */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-video bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-10 uppercase tracking-tighter">Community Feedback</h2>
-          <div className="bg-gray-50/50 dark:bg-[#0D1526]/50 backdrop-blur-sm p-4 md:p-12 rounded-[2.5rem] border border-gray-100 dark:border-[#1E2D47] shadow-2xl overflow-hidden group hover:border-[#00D4B4]/30 transition-all duration-500">
-            <div 
-              className="mx-auto max-w-full overflow-x-auto no-scrollbar flex justify-center"
-              dangerouslySetInnerHTML={{ 
-                __html: '<!-- Zaraz Twitter Embed --><twitter-post tweet-id="1754336034228171055"></twitter-post>' 
-              }} 
-            />
-          </div>
-          <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-[#4A6080] font-black">
-            Insight Powered by <span className="text-blue-600 dark:text-blue-400">Cloudflare Zaraz</span>
-          </p>
-        </div>
-      </section>
+      {/* Social Proof — Testimonials */}
+      <SocialProof />
 
       {/* Global Authority Network */}
       <section className="py-[var(--space-lg)] bg-gray-50/50 dark:bg-slate-900/50 border-t border-gray-100 dark:border-slate-800">
@@ -536,6 +545,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Founder Story */}
+      <section className="py-20 bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Avatar & identity */}
+            <div className="flex flex-col items-center lg:items-start gap-6">
+              <div className="relative">
+                <div className="w-32 h-32 rounded-[24px] overflow-hidden border-4 border-white dark:border-[#1E2D47] shadow-2xl shadow-blue-500/10">
+                  <Image
+                    src="/author-placeholder.png"
+                    alt="Abu Sufyan — Lead Architect, WebToolkit Pro"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-full flex items-center justify-center shadow-lg" title="Verified Builder">
+                  <CheckCircle className="w-4 h-4 text-white" strokeWidth={2.5} />
+                </div>
+              </div>
+              <div>
+                <div className="text-xl font-black text-gray-900 dark:text-white">Abu Sufyan</div>
+                <div className="text-xs text-[#00D4B4] font-mono font-bold uppercase tracking-widest">Lead Architect · WebToolkit Pro</div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Next.js', 'TypeScript', 'Edge Computing', 'Technical SEO', 'Privacy-First'].map((tag) => (
+                  <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-[#1E2D47] text-gray-700 dark:text-[#8A9BBE] text-[10px] font-bold font-mono rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link href="/author/" className="inline-flex items-center gap-2 text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all">
+                Full Profile <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
+            {/* Story */}
+            <div className="space-y-6">
+              <span className="inline-block px-4 py-1.5 bg-teal-50 dark:bg-[#00D4B4]/10 text-teal-700 dark:text-[#00D4B4] text-[10px] font-bold font-mono uppercase tracking-[0.2em] rounded-full border border-teal-200 dark:border-[#00D4B4]/20">
+                Why We Built This
+              </span>
+              <h2 className="text-3xl font-black text-gray-900 dark:text-white tracking-tight leading-[1.15]">
+                Tired of Pasting Secrets<br />into Random Cloud Tools?
+              </h2>
+              <div className="space-y-4 text-gray-600 dark:text-[#8A9BBE] text-base leading-relaxed font-medium">
+                <p>
+                  Every day, developers paste JWT tokens, API keys, passwords, and sensitive JSON payloads into online tools — tools that run on servers they don&apos;t control.
+                </p>
+                <p>
+                  I built WebToolkit Pro after dealing with this exact problem on enterprise projects. The solution was simple: move all processing into the browser. No server ever sees your data.
+                </p>
+                <p>
+                  150+ tools later — it&apos;s used by developers from startups to enterprises who care about speed, privacy, and doing things right.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link href="/tools/" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0B1120] font-bold px-6 py-3 rounded-[12px] text-xs uppercase tracking-widest hover:scale-[1.02] transition-all shadow-lg shadow-blue-500/10">
+                  Try the Tools <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link href="/about/" className="inline-flex items-center gap-2 bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] text-gray-900 dark:text-white font-bold px-6 py-3 rounded-[12px] text-xs uppercase tracking-widest hover:border-[#00D4B4]/50 transition-all">
+                  Our Mission
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Latest Insights Section */}
       <section className="py-24 bg-gray-50/30 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -550,9 +627,23 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getAllPosts().slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}/`} className="group">
-                <article className="bg-white dark:bg-[#0D1526] p-8 rounded-[32px] border border-gray-100 dark:border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all h-full flex flex-col relative overflow-hidden">
+            {getAllPosts().slice(0, 3).map((post) => {
+              // Dynamically determine related tool
+              const getRelatedTool = () => {
+                const text = (post.title + ' ' + post.tags.join(' ')).toLowerCase();
+                if (text.includes('json')) return { name: 'JSON Formatter', href: '/tools/json-formatter/' };
+                if (text.includes('jwt')) return { name: 'JWT Decoder', href: '/tools/jwt-decoder/' };
+                if (text.includes('regex')) return { name: 'RegEx Tester', href: '/tools/regex-tester/' };
+                if (text.includes('password') || text.includes('security')) return { name: 'Password Generator', href: '/tools/password-generator/' };
+                if (text.includes('seo') || text.includes('meta')) return { name: 'Meta Tag Generator', href: '/tools/meta-tag-generator/' };
+                if (text.includes('xml')) return { name: 'XML Formatter', href: '/tools/xml-formatter/' };
+                if (text.includes('base64')) return { name: 'Base64 Encoder', href: '/tools/base64-encoder/' };
+                return { name: 'Developer Suite', href: '/tools/' };
+              };
+              const relatedTool = getRelatedTool();
+
+              return (
+                <article key={post.slug} className="bg-white dark:bg-[#0D1526] p-8 rounded-[32px] border border-gray-100 dark:border-[#1E2D47] hover:border-[#00D4B4]/30 transition-all h-full flex flex-col relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#00D4B4]/5 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
                     <span className="text-[10px] font-bold px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800 rounded-full uppercase tracking-widest">
@@ -562,21 +653,28 @@ export default function Home() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10">
-                    {post.description}
-                  </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-[#1E2D47]/30 relative z-10">
-                    <span className="text-[10px] font-bold text-blue-600 dark:text-[#00D4B4] flex items-center gap-2 uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
-                      Read Entry <Zap className="w-3 h-3 fill-current" />
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-gray-300 dark:text-[#1E2D47]" />
+                  
+                  <Link href={`/blog/${post.slug}/`} className="block relative z-10 flex-grow">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-8 line-clamp-3">
+                      {post.description}
+                    </p>
+                  </Link>
+
+                  {/* Blog-to-Tool Cross Link */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-gray-100 dark:border-[#1E2D47]/30 relative z-10">
+                    <Link href={`/blog/${post.slug}/`} className="text-[10px] font-bold text-gray-900 dark:text-white flex items-center gap-2 uppercase tracking-widest hover:text-[#00D4B4] transition-colors">
+                      Read Entry <ArrowRight className="w-3 h-3" />
+                    </Link>
+                    <Link href={relatedTool.href} className="text-[10px] font-bold text-blue-600 dark:text-[#00D4B4] flex items-center gap-2 uppercase tracking-widest hover:underline">
+                      <Zap className="w-3 h-3" /> Try {relatedTool.name}
+                    </Link>
                   </div>
                 </article>
-              </Link>
-            ))}
+              );
+            })}
           </div>
           
           <div className="mt-12 text-center sm:hidden">
@@ -588,6 +686,40 @@ export default function Home() {
       </section>
 
       <Newsletter />
+
+      {/* Topic Hubs */}
+      <section className="py-20 bg-gray-50 dark:bg-[#0B1120] border-t border-gray-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-black text-gray-900 dark:text-white tracking-tight uppercase mb-3">
+              Explore by Topic
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-slate-400 font-medium max-w-xl mx-auto">
+              Every hub is a curated collection of tools + guides built around a specific developer workflow.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { label: 'Developer Suite', href: '/tools/hub/developer-tools/', emoji: '⚡', desc: 'Core utilities' },
+              { label: 'SEO Performance', href: '/tools/hub/seo-tools/', emoji: '📈', desc: 'Rank higher' },
+              { label: 'Edge & Network', href: '/tools/hub/network-performance/', emoji: '🌐', desc: 'Speed tools' },
+              { label: 'Security Generators', href: '/tools/hub/generators/', emoji: '🔐', desc: 'Crypto utilities' },
+              { label: 'Ad Revenue Calc', href: '/tools/hub/revenue-analytics/', emoji: '💰', desc: 'Monetize smarter' },
+              { label: 'Content Optimization', href: '/tools/hub/content-utilities/', emoji: '✍️', desc: 'Write better' },
+            ].map((hub) => (
+              <a
+                key={hub.href}
+                href={hub.href}
+                className="group flex flex-col items-center text-center p-5 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[18px] hover:border-[#00D4B4]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="text-2xl mb-3">{hub.emoji}</span>
+                <span className="font-bold text-gray-900 dark:text-white text-xs leading-snug group-hover:text-[#00D4B4] transition-colors">{hub.label}</span>
+                <span className="text-[10px] text-gray-400 dark:text-[#4A6080] font-mono mt-1">{hub.desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

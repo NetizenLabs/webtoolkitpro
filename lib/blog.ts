@@ -125,6 +125,7 @@ export interface BlogPost {
   title: string
   description: string
   date: string
+  lastUpdated: string
   category: string
   tags: string[]
   keywords: string[]
@@ -167,6 +168,7 @@ export function getAllPosts(): BlogPost[] {
       title: data.title || '',
       description: data.description || '',
       date: data.date || new Date().toISOString(),
+      lastUpdated: data.lastUpdated || data.date || new Date().toISOString(),
       category: data.category || 'General',
       tags: data.tags || [],
       keywords: data.keywords || [],
@@ -224,6 +226,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     title: data.title || '',
     description: data.description || '',
     date: data.date || new Date().toISOString(),
+    lastUpdated: data.lastUpdated || data.date || new Date().toISOString(),
     category: data.category || 'General',
     tags: data.tags || [],
     keywords: data.keywords || [],
