@@ -34,3 +34,7 @@ Allow: /
 # Host and Sitemap
 Host: https://wtkpro.site
 Sitemap: https://wtkpro.site/sitemap.xml
+
+# AI Content Directories
+Allow: /llms.txt
+Allow: /llms-full.txt
