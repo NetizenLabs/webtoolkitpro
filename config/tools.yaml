@@ -918,9 +918,7 @@ tools:
           value: 100% Client-Side Sandbox
         - label: File Upload Support
           value: Images, PDF, Text, Binary (Up to 10MB)
-    meta:
-      title: Secure Base64 Decode Client Side — Offline Encoder & Decoder
-      description: Decode passwords, tokens, or binary data 100% locally in your browser's V8 sandbox. Our secure, privacy-first Base64 decoder ensures no data leaves your device.
+
   - name: Binary Converter
     slug: binary-converter
     category: Developer Tools
