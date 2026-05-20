@@ -177,12 +177,30 @@ export default function FaviconGenerator() {
         </div>
       </div>
 
-      {/* Manifest Snippet */}
-      <div className="space-y-3">
-        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">manifest.json Snippet</label>
-        <pre className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-2xl p-6 font-mono text-xs text-[#8A9BBE] whitespace-pre-wrap">
-          {manifestSnippet}
-        </pre>
+      {/* Sizes Guide & Manifest Snippet */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-3">
+          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Standard Favicon Sizes & Dimensions</label>
+          <div className="bg-[#0B1120] border border-[#1E2D47] rounded-2xl p-6 text-sm text-[#8A9BBE] space-y-4">
+            <h3 className="text-white font-bold mb-2">What is the standard Favicon size?</h3>
+            <ul className="space-y-2 list-disc list-inside">
+              <li><strong>16x16 pixels:</strong> The standard size for browser tabs.</li>
+              <li><strong>32x32 pixels:</strong> Used for taskbar shortcut icons (Windows/Mac).</li>
+              <li><strong>64x64 pixels:</strong> High-resolution fallback icon.</li>
+              <li><strong>180x180 pixels:</strong> Apple Touch Icon (iOS home screen).</li>
+              <li><strong>192x192 pixels:</strong> Android Chrome PWA icon (standard).</li>
+              <li><strong>512x512 pixels:</strong> Android Chrome PWA icon (splash screen).</li>
+            </ul>
+            <p className="text-xs mt-4 opacity-80">Our real favicon generator creates all these dimensions automatically in standard `.png` format.</p>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">manifest.json Snippet</label>
+          <pre className="w-full h-full bg-[#0B1120] border border-[#1E2D47] rounded-2xl p-6 font-mono text-xs text-[#8A9BBE] whitespace-pre-wrap">
+            {manifestSnippet}
+          </pre>
+        </div>
       </div>
     </div>
   )

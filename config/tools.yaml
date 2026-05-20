@@ -709,12 +709,16 @@ tools:
       title: JSON-LD Schema Generator â€” Create Google-Ready Structured Data
       description: Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines.
       keywords:
+        - json-ld
+        - json ld schema
         - json-ld schema generator
-        - structured data tool
-        - create rich snippets for google
-        - schema markup generator
-        - seo schema builder
-        - ai search optimization tool
+        - ld json schema generator
+        - jsonld generator
+        - schema json ld
+        - json ld builder
+        - ld json schema
+        - schema json-ld
+        - json-ld code
       entity_definition: The WebToolkit Pro JSON-LD Schema Generator is a specialized technical SEO utility for building 'Linked Data' structures. In 2026, structured data has become the most critical component for achieving visibility in AI-driven search engines (Google SGE, Perplexity). This tool simplifies the complex process of writing Schema.org compliant scripts, allowing you to define entities like Organizations, Products, FAQs, and SoftwareApplications in a format that AI models can perfectly parse. By providing high-fidelity JSON-LD, you ensure that your site is eligible for 'Rich Results' (stars, prices, FAQs) and is cited as a primary source in generative AI summaries. Our generator is 100% client-side, ensuring your internal data models remain private.
       how_it_works: The generator uses a schema-mapped interface that follows the official Schema.org vocabulary. As you fill out the fields, the tool dynamically constructs a valid JSON-LD <script> block. It automatically includes mandatory fields like '@context' and '@type' while providing optional fields for deep-entity linking (such as 'sameAs' for Wikidata connections).
       use_cases:
@@ -857,17 +861,24 @@ tools:
       output_formats:
         - txt
       processing: client-side
+    meta:
+      title: Base64 Encoding & Decoding Tool â€” Secure & Local
+      description: Decode passwords, tokens, or binary data 100% locally in your browser. Our secure, privacy-first Base64 encoding tool ensures no data leaves your device.
     content:
-      title: Secure Client-Side Base64 Encoder & Decoder Online
-      description: Decode passwords, tokens, or binary data 100% locally in your browser's V8 sandbox. Our secure, privacy-first Base64 decoder ensures no data leaves your device.
+      title: Secure Client-Side Base64 Encoding & Decoding Tool
+      description: Decode passwords, tokens, or binary data 100% locally in your browser. Our secure, privacy-first Base64 encoding tool ensures no data leaves your device.
       keywords:
-        - secure base64 decode client side
-        - base64 decode online secure
-        - safe client side base64 decoder
-        - offline base64 encoder decoder
-        - base64 encode decode browser sandbox
-        - secure base64 decoding tool
-        - client side base64 translator
+        - base64 encoding
+        - base64 encoded
+        - base64 format
+        - base64
+        - what is base64
+        - b64 encoding
+        - 64 encoding
+        - base64 encryption
+        - encoded 64
+        - b64 encode
+        - base 64 encoding
       tldr: Securely encode or decode text and binary data to/from Base64 standard RFC 4648 completely locally in your browser's execution context.
       entity_definition: The WebToolkit Pro Secure Base64 Encoder and Decoder is an enterprise-grade utility built specifically for developers, security analysts, and systems engineers who require absolute confidentiality. In modern API integration and network debugging, base64 is standard for transmitting complex byte arrays, authentication credentials (Basic Auth headers), and files across text-oriented media. However, pasting proprietary tokens or passwords into standard cloud-based decoders presents major compliance and leakage risks. Our utility solves this by running 100% locally inside your web browser’s sandboxed environment. Using native multi-byte UTF-8 standard wrappers, this tool ensures emojis and foreign character encodings do not result in corrupted string translations, while also keeping your raw credentials completely private.
       how_it_works: The encoder utilizes your browser's high-performance native V8 text compiler structures. Standard string values are translated into 8-bit unsigned integer streams, then segmented into 6-bit index pools mapped directly against standard RFC 4648 characters. The decoder operates in reverse, reading Base64 groups, recreating the binary array, and compiling it back to plain text using native client-side TextDecoder interfaces.
@@ -2149,19 +2160,20 @@ tools:
       primary: Generate professional favicons and app icons
       secondary: Create PWA-ready manifest icons from text or emoji
     meta:
-      title: 'Favicon Generator: Create Web & Mobile App Icons'
-      description: Generate a complete set of favicons and PWA icons in seconds. Create professional icons from text or emoji with all required sizes for modern browsers, iOS, and Android.
+      title: 'Real Favicon Generator & Size Guide 2026'
+      description: Generate a complete set of favicons and PWA icons with exact standard sizes in seconds. Create professional .ico and .png icons from text or emoji.
     content:
-      title: Favicon Generator â€” PWA & Browser Icon Builder
-      description: Generate a complete set of favicons and PWA icons in seconds. Create professional icons from text or emoji with all required sizes for modern browsers, iOS, and Android.
+      title: Real Favicon Generator & Sizes â€” PWA Icon Builder
+      description: Generate a complete set of favicons and PWA icons with exact standard sizes in seconds. Create professional .ico and .png icons from text or emoji.
       keywords:
-        - favicon generator online
-        - pwa icon builder
+        - real favicon generator
+        - favicon size
+        - favicon sizes
+        - size of a favicon
+        - favicon dimensions
+        - favicon ico size
+        - favicon image size
         - create apple touch icons
-        - android chrome manifest icons
-        - favicon from text emoji
-        - web app icon generator
-        - ico file generator
       tldr: Create and download a full set of favicon sizes for your website or PWA instantly.
       entity_definition: Favicon Generator is a design utility that simplifies the creation of website icons. It can generate icons from simple text or emojis, producing a comprehensive set of PNG files in various sizes (16x16 to 512x512). It also provides the necessary HTML snippets and manifest.json code to ensure your site looks professional on all devices and platforms.
       features:
@@ -5146,18 +5158,20 @@ tools:
         - validation-report
       processing: client-side
     meta:
-      title: Robots.txt Validator â€” Test Crawl Directives Online
-      description: Test and validate your robots.txt file to ensure search engines are crawling your site correctly. Identify logic conflicts and syntax errors that could block important pages.
+      title: Robots.txt Validator & Tester â€” Validate Crawl Rules Free
+      description: Test and validate your robots.txt file. Our free robots.txt validator checks for syntax errors, crawl directives, and logic conflicts that block Googlebot.
     content:
-      title: Robots.txt Validator â€” Professional Syntax Audit
-      description: Test and validate your robots.txt file to ensure search engines are crawling your site correctly. Identify logic conflicts and syntax errors that could block important pages.
+      title: Robots.txt Validator â€” Test & Validate Directives
+      description: Test and validate your robots.txt file. Our free robots.txt validator checks for syntax errors, crawl directives, and logic conflicts that block Googlebot.
       keywords:
-        - test robots.txt crawl directives
-        - robots.txt syntax checker
-        - validate robots.txt online
-        - check crawl-delay settings
-        - robots.txt logic auditor
-        - test user-agent directives
+        - robots.txt validator
+        - robots txt validator
+        - robots txt validate
+        - robots txt validation
+        - robot.txt validator
+        - robot txt validator
+        - validate robots txt
+        - robots.txt file validator
       tldr: Prevent accidental indexing blocks by validating your robots.txt syntax and crawl logic with our professional auditor.
       entity_definition: Robots.txt Validator (Advanced) is a technical SEO utility for auditing the Robots Exclusion Protocol. It checks for common syntax errors (like missing colons or invalid user-agents) and identifies potential logic conflicts where a 'Disallow' directive might accidentally block a 'Sitemap' or a critical resource.
       how_it_works: The tool parses the robots.txt content using a strict state-machine that mimics the behavior of major search engine crawlers like Googlebot and Bingbot.
@@ -6196,18 +6210,19 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: .htaccess Generator â€” 301 Redirects & Access Control
-      description: Create perfectly formatted .htaccess files for your Apache server. Generate 301 redirects, block malicious IPs, and optimize caching for better SEO and performance.
+      title: .htaccess Generator & Tester â€” 301 Redirects & Rewrite Rules
+      description: Create and test .htaccess files for your Apache server. Generate 301 redirects, rewrite rules, and validate configuration for better SEO and performance.
     content:
-      title: Apache .htaccess Generator â€” Secure Server Configuration
-      description: Create perfectly formatted .htaccess files for your Apache server. Generate 301 redirects, block malicious IPs, and optimize caching for better SEO and performance.
+      title: Apache .htaccess Generator & Tester
+      description: Create and test .htaccess files for your Apache server. Generate 301 redirects, rewrite rules, and validate configuration for better SEO and performance.
       keywords:
+        - htaccess validator
+        - test htaccess
+        - rewrite rule tester
+        - htaccess tester
         - htaccess 301 redirect generator
         - block ip in htaccess online
         - force https htaccess tool
-        - htaccess caching configuration
-        - apache security headers generator
-        - custom 404 page htaccess
       tldr: Master your Apache server's behavior with a visual .htaccess generator for redirects, security, and caching.
       entity_definition: Apache .htaccess Generator is a server governance utility for managing directory-level configurations. It translates complex RewriteRules and access directives into a human-readable interface, helping developers implement critical SEO redirects and security hardening without manual syntax errors.
       how_it_works: It assembles a sequence of Apache directives based on user input, ensuring the correct order of operations for mod_rewrite and access control modules.
