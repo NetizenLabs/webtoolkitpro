@@ -19,10 +19,20 @@ export default function ToolRating({ toolName, slug }: ToolRatingProps) {
     }
   }, [slug])
 
-  const handleVote = (rating: number) => {
+  const handleVote = async (rating: number) => {
     if (hasVoted) return
     setHasVoted(true)
     localStorage.setItem(`wtkpro_rating_${slug}`, rating.toString())
+
+    try {
+      await fetch('/api/rate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, toolName, rating })
+      })
+    } catch (e) {
+      console.error('Failed to submit rating notification', e)
+    }
   }
 
   return (
