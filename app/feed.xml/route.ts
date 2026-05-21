@@ -1,5 +1,7 @@
 import { getAllPosts } from '@/lib/blog'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   const posts = getAllPosts()
   const domain = 'https://wtkpro.site'
@@ -15,12 +17,14 @@ export async function GET() {
   <atom:link href="${domain}/feed.xml" rel="self" type="application/rss+xml" />
   ${posts
     .map((post) => {
+      const d = new Date(post.date)
+      const pubDate = isNaN(d.getTime()) ? new Date().toUTCString() : d.toUTCString()
       return `
     <item>
       <title><![CDATA[${post.title}]]></title>
       <link>${domain}/blog/${post.slug}/</link>
       <description><![CDATA[${post.description}]]></description>
-      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      <pubDate>${pubDate}</pubDate>
       <guid>${domain}/blog/${post.slug}/</guid>
       <category>${post.category}</category>
     </item>`

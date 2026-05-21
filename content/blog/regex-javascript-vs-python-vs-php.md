@@ -12,15 +12,15 @@ image: "/blog/regex-languages.jpg"
 imageAlt: "Code snippets showing divergent regex engine behaviors across V8, Python, and PCRE2"
 expertTips:
   - "Never copy a Python or PHP regular expression containing possessive quantifiers (e.g., `++` or `*+`) into JavaScript. The V8 engine does not support them and will throw an immediate `SyntaxError`. You must refactor them into atomic groups or emulate them using lookaheads."
-  - "When migrating data pipelines from Python to JavaScript, audit your unicode properties. Python's `re` module handles unicode matching natively by default in Python 3. JavaScript requires explicitly appending the `/u` flag, otherwise `\w` will completely ignore accented characters and Kanji."
+  - "When migrating data pipelines from Python to JavaScript, audit your unicode properties. Python's `re` module handles unicode matching natively by default in Python 3. JavaScript requires explicitly appending the `/u` flag, otherwise `\\w` will completely ignore accented characters and Kanji."
   - "If you are debugging a Catastrophic Backtracking loop, remember that PHP (PCRE2) has strict, configurable recursion limits (`pcre.recursion_limit`) that will gracefully abort the match. JavaScript (V8) has no explicit step limiters—a bad regex will physically freeze the user's browser tab until the OS intervenes."
 faqs:
   - q: "Why does my regex work in PHP but throw a syntax error in Node.js?"
-    a: "Node.js runs on the V8 engine (ECMA-262 specification), which lacks support for several advanced features found in PHP's PCRE2 engine, such as possessive quantifiers, atomic grouping, and the `\X` grapheme cluster shorthand."
+    a: "Node.js runs on the V8 engine (ECMA-262 specification), which lacks support for several advanced features found in PHP's PCRE2 engine, such as possessive quantifiers, atomic grouping, and the `\\X` grapheme cluster shorthand."
   - q: "What is the difference between 're.match()' and 're.search()' in Python?"
     a: "This is a classic Python trap. `re.match()` is structurally anchored to the beginning of the string—it will only find a match if it starts at index 0. `re.search()` scans the entire string. Confusing these two methods frequently causes validation bypass vulnerabilities."
   - q: "Why are raw strings (r'...') strictly necessary in Python regex?"
-    a: "Python interprets standard string backslashes as literal escape sequences (e.g., `\n` is interpreted as a newline). Prefixing the string with `r` (raw string) instructs the Python interpreter to ignore the backslashes, passing them directly to the underlying `re` engine for evaluation."
+    a: "Python interprets standard string backslashes as literal escape sequences (e.g., `\\n` is interpreted as a newline). Prefixing the string with `r` (raw string) instructs the Python interpreter to ignore the backslashes, passing them directly to the underlying `re` engine for evaluation."
 steps:
   - name: "Identify the Target Runtime Engine"
     text: "Before writing a pattern, determine if it will execute in the browser (V8/ECMA-262), a data pipeline (Python 're'), or a legacy microservice (PHP PCRE2)."

@@ -12,7 +12,7 @@ image: "/blog/regex-patterns.jpg"
 imageAlt: "Code editor showing secure regular expression patterns highlighted for V8 execution"
 expertTips:
   - "Never attempt to parse raw HTML using a regular expression. The HTML standard allows for deeply nested, recursive structures that regex engines (which are based on finite state machines) cannot safely evaluate. Always use a dedicated DOM parser (like Cheerio in Node.js) to extract HTML node data."
-  - "When validating an email address, do not use an overly complex RFC-compliant regex spanning 200 characters. It will inevitably block a valid edge-case user and create massive CPU overhead. Use a simple structure check (`^[^@]+@[^@]+\.[^@]+$`) and validate the actual mailbox by sending a confirmation link."
+  - "When validating an email address, do not use an overly complex RFC-compliant regex spanning 200 characters. It will inevitably block a valid edge-case user and create massive CPU overhead. Use a simple structure check (`^[^@]+@[^@]+\\.[^@]+$`) and validate the actual mailbox by sending a confirmation link."
   - "Catastrophic Backtracking is the number one cause of Regex Denial of Service (ReDoS) attacks. It occurs when you nest variable quantifiers (e.g., `(a+)+`). Always keep your greedy quantifiers flat and explicitly bound them with string anchors (`^` and `$`)."
 faqs:
   - q: "What is the difference between DFA and NFA regular expression engines?"

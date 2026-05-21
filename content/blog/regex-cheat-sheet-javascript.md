@@ -18,7 +18,7 @@ faqs:
   - q: "What is Catastrophic Backtracking?"
     a: "It is a fatal execution flaw where a regex engine gets stuck in an exponentially expanding loop of guess-and-check operations. It occurs when a pattern has overlapping greedy quantifiers (e.g., `.*.*`), and forces the CPU to evaluate millions of false paths when a match fails."
   - q: "What is the difference between Literal Syntax and Constructor Syntax?"
-    a: "Literal syntax (`/pattern/`) is compiled securely once when the script first loads. The Constructor syntax (`new RegExp(str)`) compiles at runtime, allowing you to inject dynamic variables. However, Constructor syntax requires you to double-escape backslashes (`\\d` instead of `\d`)."
+    a: "Literal syntax (`/pattern/`) is compiled securely once when the script first loads. The Constructor syntax (`new RegExp(str)`) compiles at runtime, allowing you to inject dynamic variables. However, Constructor syntax requires you to double-escape backslashes (`\\d` instead of `\\d`)."
   - q: "How do Lookahead Assertions work?"
     a: "Lookaheads (`(?=...)`) allow you to verify that a specific pattern follows your current position without physically consuming those characters. This is mandatory for complex password validation rules where you need to check for a number anywhere in a string without moving the regex cursor."
 steps:

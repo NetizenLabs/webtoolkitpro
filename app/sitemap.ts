@@ -15,12 +15,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  const blogUrls = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  const blogUrls = posts.map((post) => {
+    const d = new Date(post.date)
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: isNaN(d.getTime()) ? new Date() : d,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }
+  })
 
   const toolUrls = tools.map((tool) => ({
     url: `${baseUrl}/tools/${tool.slug}`,

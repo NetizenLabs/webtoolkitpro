@@ -22,7 +22,7 @@ faqs:
   - q: "What is the mechanical difference between robots.txt and llms.txt?"
     a: "`robots.txt` is an access firewall that tells bots what paths they are forbidden to crawl. `llms.txt` is an informational directory that helps AI models understand the semantic context and topical structure of the pages they are permitted to crawl."
   - q: "How do I whitelist llms.txt in my WordPress .htaccess file?"
-    a: "To prevent security plugins from blocking the AI scraper, add an Apache rule inside your `.htaccess` file: `<FilesMatch \"^(robots|llms)\\.txt$\"> Allow from all </FilesMatch>`."
+    a: "To prevent security plugins from blocking the AI scraper, add an Apache rule inside your `.htaccess` file: `<FilesMatch \"^(robots|llms)\\\\.txt$\"> Allow from all </FilesMatch>`."
 steps:
   - name: "Compile the Markdown Blueprint"
     text: "Draft a high-density Markdown file summarizing your WordPress site's purpose, taxonomy, and core public URLs."
