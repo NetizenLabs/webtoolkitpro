@@ -111,6 +111,18 @@ const nextConfig = {
         destination: 'https://wtkpro.site/:path*',
         permanent: true,
       },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'wtkpro-hub.vercel.app' }],
+        destination: 'https://wtkpro.site/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'webtoolkit-pro.vercel.app' }],
+        destination: 'https://wtkpro.site/:path*',
+        permanent: true,
+      },
     ]
   },
   // Ensure long-term caching for static assets and security hardening
