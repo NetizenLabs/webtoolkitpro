@@ -242,13 +242,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               'priceCurrency': 'USD',
               'availability': 'https://schema.org/InStock'
             },
-            'aggregateRating': {
-              '@type': 'AggregateRating',
-              'ratingValue': '4.9',
-              'reviewCount': '2500',
-              'bestRating': '5',
-              'worstRating': '1'
-            },
             'description': 'A collection of 50+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators. Built for privacy and performance.'
           }),
         }}

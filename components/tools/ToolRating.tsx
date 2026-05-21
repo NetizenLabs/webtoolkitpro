@@ -29,8 +29,7 @@ export default function ToolRating({ toolName, slug }: ToolRatingProps) {
     <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-4 text-sm" aria-label={`Rating for ${toolName}`}>
       <div className="flex items-center gap-1" onMouseLeave={() => setHoveredStar(null)}>
         {[1, 2, 3, 4, 5].map((star) => {
-          const isFilled = hoveredStar !== null ? star <= hoveredStar : star <= 5;
-          const isPartial = hoveredStar === null && star === 5; // To visually represent 4.9
+          const isFilled = hoveredStar !== null ? star <= hoveredStar : (hasVoted ? star <= 5 : false);
 
           return (
             <button
@@ -43,8 +42,7 @@ export default function ToolRating({ toolName, slug }: ToolRatingProps) {
             >
               <Star 
                 className={`w-5 h-5 ${
-                  isFilled && !isPartial ? 'fill-amber-400 text-amber-400' : 
-                  isPartial ? 'fill-amber-400/80 text-amber-400' :
+                  isFilled ? 'fill-amber-400 text-amber-400' : 
                   'fill-transparent text-gray-300 dark:text-gray-600'
                 }`} 
               />
@@ -53,9 +51,9 @@ export default function ToolRating({ toolName, slug }: ToolRatingProps) {
         })}
       </div>
       <div className="flex items-center gap-2">
-        <span className="font-bold text-gray-900 dark:text-white">4.9</span>
+        <span className="font-bold text-gray-900 dark:text-white">{hasVoted ? '5.0' : '0.0'}</span>
         <span className="text-gray-500 dark:text-[#8A9BBE]">
-          ({hasVoted ? '151' : '150'} Reviews)
+          ({hasVoted ? '1' : '0'} Reviews)
         </span>
         {hasVoted && (
           <span className="text-green-600 dark:text-green-400 text-xs font-medium ml-2 transition-opacity duration-300">

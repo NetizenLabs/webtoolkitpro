@@ -101,13 +101,6 @@ export function generateSoftwareSchema(tool: ToolConfig) {
       'priceCurrency': 'USD',
       'availability': 'https://schema.org/InStock'
     },
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '150',
-      'bestRating': '5',
-      'worstRating': '1'
-    },
     'publisher': {
       '@type': 'Organization',
       'name': 'WebToolkit Pro',
