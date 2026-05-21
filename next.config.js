@@ -19,6 +19,47 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Deleted newsjacking posts — redirect to blog index to prevent 404s
+      {
+        source: '/blog/iran-conflict-2026-cybersecurity',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/iran-conflict-2026-cybersecurity/',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/lirr-strike-2026-remote-dev-tools',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/lirr-strike-2026-remote-dev-tools/',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/trump-xi-summit-2026-tech-impact',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/trump-xi-summit-2026-tech-impact/',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/supreme-court-2026-privacy-impact',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blog/supreme-court-2026-privacy-impact/',
+        destination: '/blog/',
+        permanent: true,
+      },
       {
         source: '/tools/category/:category',
         destination: '/tools/hub/:category/',

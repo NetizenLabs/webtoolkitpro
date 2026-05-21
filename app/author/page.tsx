@@ -190,12 +190,6 @@ export default function AuthorPage() {
               tag: 'Performance',
               color: 'text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 border-orange-100 dark:border-orange-800',
             },
-            {
-              title: 'The 2026 Trump-Xi Summit: Geopolitics, Supply Chains & Cloud Tools for Developers',
-              href: 'https://dev.to/abusufyan909/the-2026-trump-xi-summit-geopolitics-supply-chains-cloud-tools-for-developers-2oa',
-              tag: 'Tech & Geopolitics',
-              color: 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800',
-            },
           ].map((article) => (
             <a
               key={article.href}
@@ -231,7 +225,7 @@ export default function AuthorPage() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: 'DEV Community', sub: '4 Articles', href: 'https://dev.to/abusufyan909', icon: Terminal, color: 'text-[#0094FF]' },
+            { label: 'DEV Community', sub: '3 Articles', href: 'https://dev.to/abusufyan909', icon: Terminal, color: 'text-[#0094FF]' },
             { label: 'GitHub', sub: 'abusufyan-netizen', href: 'https://github.com/abusufyan-netizen', icon: Code2, color: 'text-gray-700 dark:text-white' },
             { label: 'CoderLegion', sub: '684 Points · 2 Badges', href: 'https://coderlegion.com/user/abusuyfan', icon: Award, color: 'text-[#00D4B4]' },
             { label: 'Product Hunt', sub: 'WTKPro Listed', href: 'https://www.producthunt.com/products/webtoolkit-pro', icon: Zap, color: 'text-[#DA552F]' },
