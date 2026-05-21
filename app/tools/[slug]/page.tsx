@@ -11,6 +11,7 @@ import RelatedToolsSidebar from '@/components/tools/RelatedToolsSidebar'
 import RelatedToolsWidget from '@/components/tools/RelatedToolsWidget'
 import { RELATED_TOOLS_MAP } from '@/lib/related-tools-map'
 import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
+import ToolRating from '@/components/tools/ToolRating'
 import AdSlot from '@/components/ads/AdSlot'
 import AIOContextButton from '@/components/tools/AIOContextButton'
 import { CATEGORY_MAP } from '@/lib/categories'
@@ -147,6 +148,7 @@ export default function ToolPage({ params }: ToolPageProps) {
                 <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all inline-flex">
                   {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
                 </Link>
+                <ToolRating toolName={tool.name} slug={tool.slug} />
               </div>
             </div>
 
