@@ -5,8 +5,17 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
+  compress: true,
+  poweredByHeader: false,
   images: {
-    unoptimized: true,
+    // Enable Next.js built-in image optimizer for WebP/AVIF conversion
+    // This is the single biggest LCP win — reduces image size 60-80% on mobile
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 2592000, // 30 days
+    deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async redirects() {
     return [
@@ -102,11 +111,22 @@ const nextConfig = {
         headers: securityHeaders,
       },
       {
-        source: '/:path*((?!robots\\.txt|sitemap\\.xml).+\\.(?:webp|png|jpg|ico|svg|json|txt|xml))',
+        // Static assets: 30-day cache with stale-while-revalidate
+        source: '/:path*((?!robots\\.txt|sitemap\\.xml).+\\.(?:webp|avif|png|jpg|jpeg|ico|svg|woff2|woff|ttf))',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=3600',
+            value: 'public, max-age=2592000, stale-while-revalidate=86400, immutable',
+          },
+        ],
+      },
+      {
+        // JS/CSS bundles: long cache (Next.js hashes filenames)
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

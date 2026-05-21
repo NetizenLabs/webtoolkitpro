@@ -49,7 +49,6 @@ https://wtkpro.site/blog/how-to-debug-regex/
 https://wtkpro.site/blog/how-to-fix-common-json-errors/
 https://wtkpro.site/blog/htaccess-cheat-sheet-wordpress/
 https://wtkpro.site/blog/htaccess-vs-wordpress-redirect-plugins/
-https://wtkpro.site/blog/iran-conflict-2026-cybersecurity/
 https://wtkpro.site/blog/json-formatting-best-practices/
 https://wtkpro.site/blog/json-ld-evolution-2026/
 https://wtkpro.site/blog/json-ld-schema-tutorial/
@@ -60,7 +59,6 @@ https://wtkpro.site/blog/jwt-security-best-practices/
 https://wtkpro.site/blog/jwt-security-guide/
 https://wtkpro.site/blog/jwt-vs-paseto-vs-session-tokens/
 https://wtkpro.site/blog/linear-vs-radial-vs-conic-gradients/
-https://wtkpro.site/blog/lirr-strike-2026-remote-dev-tools/
 https://wtkpro.site/blog/llm-latency-ux-impact/
 https://wtkpro.site/blog/llms-txt-generator-guide/
 https://wtkpro.site/blog/llms-txt-vs-robots-txt/
@@ -87,10 +85,8 @@ https://wtkpro.site/blog/server-first-rendering-2026/
 https://wtkpro.site/blog/server-first-vs-client-rendering-2026/
 https://wtkpro.site/blog/serverless-computing-future/
 https://wtkpro.site/blog/slug-generator-vs-manual-entry/
-https://wtkpro.site/blog/supreme-court-2026-privacy-impact/
 https://wtkpro.site/blog/test-htaccess-redirects/
 https://wtkpro.site/blog/top-10-free-developer-tools-2026/
-https://wtkpro.site/blog/trump-xi-summit-2026-tech-impact/
 https://wtkpro.site/blog/typescript-best-practices-2026/
 https://wtkpro.site/blog/ui-ux-design-trends/
 https://wtkpro.site/blog/url-slug-seo-best-practices/

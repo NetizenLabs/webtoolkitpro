@@ -11,7 +11,18 @@ import { Analytics } from '@vercel/analytics/react'
 // @ts-ignore
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { getLatestTool } from '@/lib/tools'
-import NewContentNotification from '@/components/ui/NewContentNotification'
+import dynamic from 'next/dynamic'
+import { cache } from 'react'
+
+// Lazy-load non-critical UI so it doesn't block the initial render / LCP
+const NewContentNotification = dynamic(
+  () => import('@/components/ui/NewContentNotification'),
+  { ssr: false }
+)
+
+// cache() memoizes getLatestTool per request so calling it in layout
+// doesn't re-parse the tools catalog multiple times per render tree
+const getLatestToolCached = cache(getLatestTool)
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -123,7 +134,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const latestTool = getLatestTool()
+  const latestTool = getLatestToolCached()
   const latestItem = latestTool ? {
     name: latestTool.name,
     slug: latestTool.slug,
@@ -134,16 +145,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <head>
+        {/* Preconnect to critical origins before any render */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        {/* DNS prefetch for non-critical third parties (not font origins — preconnect covers those) */}
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        {/* Preload LCP-critical Inter font subset — eliminates invisible-text flash */}
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
         <script

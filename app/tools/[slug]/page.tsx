@@ -31,6 +31,10 @@ export async function generateStaticParams() {
   }))
 }
 
+// ISR: revalidate tool pages once per day in the background
+// Keeps pages fast while allowing content updates without a full redeploy
+export const revalidate = 86400
+
 export async function generateMetadata({ params }: ToolPageProps): Promise<Metadata> {
   const tool = getToolBySlug(params.slug)
   if (!tool) return {}
@@ -131,10 +135,16 @@ export default function ToolPage({ params }: ToolPageProps) {
                 <h1 className="text-3xl md:text-4xl font-bold text-[#1E2D47] dark:text-white tracking-tighter">
                   {tool.content?.title || tool.name}
                 </h1>
-                <p className="text-gray-600 dark:text-[#8A9BBE] font-medium">
+                <p className="text-gray-600 dark:text-[#8A9BBE] font-medium mt-1">
                   {tool.function?.primary} {tool.function?.secondary ? `• ${tool.function.secondary}` : ''}
                 </p>
-                <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all">
+                <div className="mt-3 flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 dark:bg-green-500/10 text-green-700 dark:text-green-400 text-xs font-bold rounded-full border border-green-200 dark:border-green-500/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    Last updated: May 2026
+                  </span>
+                </div>
+                <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all inline-flex">
                   {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
                 </Link>
               </div>

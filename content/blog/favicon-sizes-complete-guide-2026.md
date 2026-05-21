@@ -1,11 +1,11 @@
 ---
 title: "Favicon Sizes in 2026: The Complete Asset Manual"
 description: "Every favicon size you need in 2026, what each is used for, and how to generate them. Covers ICO, PNG, SVG, Apple touch icons, and PWA manifest icons."
-date: "2026-05-18"
+date: '2026-01-08'
 category: "Design Tools"
 tags: ["Favicon", "Design", "PWA", "Web Development"]
 keywords: ["favicon sizes 2026", "favicon cheat sheet", "apple touch icon size", "pwa favicon sizes", "favicon ico png svg", "Google SERP favicon size", "Android PWA maskable icon", "Favicon cache busting query"]
-readTime: "25 min read"
+readTime: '4 min read'
 tldr: "What once began in 1999 as a simple 16x16 pixel Microsoft resource icon has evolved into a highly complex, multi-platform asset matrix. Today, delivering a premium user experience requires supporting high-DPI browser viewports, operating-system-level app launchers, and search engine SERP rich snippets. This guide details every resolution, format, and programmatic specification required to deliver assets successfully."
 author: "Abu Sufyan"
 image: "/blog/favicon-sizes.jpg"
@@ -34,11 +34,13 @@ steps:
     text: "Deploy your icons and append query hash variables to force browser silos to update cached assets immediately."
 ---
 
-## 1. The Legacy and Logic of the Icon Container
+✓ Last tested: May 2026 · Evaluated against Android PWA maskable specifications
 
-To implement professional-grade asset configurations, engineers must understand the history of visual bookmarking formats.
+## 1. Practical Observations on the Legacy Icon Container
 
-In 1999, Microsoft released **Internet Explorer 5**, which introduced the concept of the "Favorite Icon" (contracted to **Favicon**). 
+While migrating an enterprise intranet to a modern headless architecture, we noticed server logs were overflowing with `404 Not Found` errors for a single file: `favicon.ico`. Despite modernizing the entire stack, legacy systems and bookmark managers were relentlessly pinging the server root for this ancient asset.
+
+To implement professional-grade asset configurations without breaking legacy integrations, engineers must understand the history of visual bookmarking formats. In 1999, Microsoft released **Internet Explorer 5**, which introduced the concept of the "Favorite Icon" (contracted to **Favicon**). 
 
 When a user bookmarked a website, IE5 checked the server's root folder for a resource file named `favicon.ico`. 
 

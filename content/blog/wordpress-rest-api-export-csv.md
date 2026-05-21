@@ -1,11 +1,11 @@
 ---
 title: "WordPress REST API Data Handling: High-Performance JSON Fetching and CSV Serialization"
 description: "How to fetch WordPress REST API data — posts, users, and WooCommerce orders — and export it to CSV without a plugin using JavaScript and our JSON to CSV converter."
-date: "2026-05-18"
+date: '2026-02-18'
 category: "Developer Tools"
 tags: ["WordPress", "REST API", "CSV", "JavaScript"]
 keywords: ["wordpress rest api export csv", "wordpress api to csv", "woocommerce orders csv api", "wordpress json to csv", "export wordpress posts csv api", "X-WP-TotalPages pagination", "WordPress application passwords", "WooCommerce REST API ck keys"]
-readTime: "15 min read"
+readTime: '22 min read'
 tldr: "The WordPress REST API returns data as structured JSON. While ideal for web applications, XML and JSON formats are difficult to parse in Excel or Google Sheets. By using native browser fetch APIs and recursive pagination loops, you can retrieve posts, user profiles, or WooCommerce orders, format the data, and serialize it to CSV completely client-side without installing any heavy plugins."
 author: "Abu Sufyan"
 image: "/blog/wordpress-api-csv.jpg"

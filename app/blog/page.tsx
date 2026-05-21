@@ -4,6 +4,10 @@ import { Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 import AdSlot from '@/components/ads/AdSlot'
 
+// ISR: cache blog listing at the CDN edge for 1 hour
+// This is the primary fix for the /blog RES 83 score → targets TTFB reduction
+export const revalidate = 3600
+
 export async function generateMetadata({ searchParams }: { searchParams: { page?: string, jpage?: string } }) {
   const page = searchParams.page || '1'
   const jpage = searchParams.jpage || '1'
@@ -19,13 +23,13 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
 
   return {
     title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
-    description: 'Master modern web development with free expert-level tutorials, technical guides, and peer-reviewed performance journals. Learn secure workflows, CSS optimization, and technical SEO.',
+    description: 'Master modern web development with free expert-level tutorials, technical guides, and performance case studies. Learn secure workflows, CSS optimization, and technical SEO.',
     keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: 'Developer Blog - WebToolkit Pro',
+      title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
       description: 'Expert web development tips, tutorials, and guides for modern developers.',
       url: url,
       siteName: 'WebToolkit Pro',
@@ -34,7 +38,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Developer Blog - WebToolkit Pro',
+      title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
       description: 'Expert web development tips, tutorials, and guides for modern developers.',
     },
   }
@@ -118,7 +122,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
             📝 Knowledge Center
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
-            Developer Blog & <span className="text-[#00D4B4]">Engineering Journals</span>
+            Developer Blog & <span className="text-[#00D4B4]">Case Studies</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-[#8A9BBE] max-w-2xl mx-auto leading-relaxed">
             Expert web development insights to level up your skills. From performance research to CSS architecture.
@@ -173,8 +177,8 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
         <section className="mb-24">
           <div className="flex items-center justify-between mb-12 border-b border-border pb-6">
             <div>
-              <h2 className="text-3xl font-bold text-[#00D4B4] tracking-tight">Engineering Journals</h2>
-              <p className="text-sm text-muted-foreground mt-1">Peer-reviewed technical research and performance studies.</p>
+              <h2 className="text-3xl font-bold text-[#00D4B4] tracking-tight">Case Studies</h2>
+              <p className="text-sm text-muted-foreground mt-1">Technical Guides & Performance Case Studies.</p>
             </div>
             <div className="text-[10px] font-mono font-bold text-[#00D4B4]/60 uppercase tracking-widest bg-elevated px-3 py-1 rounded-full border border-[#00D4B4]/20">
               {journals.length} Papers
@@ -219,7 +223,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Blog',
-            'name': 'WebToolkit Pro Developer Blog & Engineering Journal',
+            'name': 'WebToolkit Pro Developer Blog & Case Studies',
             'description': 'Expert web development tips, tutorials, and research papers.',
             'url': 'https://wtkpro.site/blog',
             'publisher': {

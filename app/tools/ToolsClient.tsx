@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useEffect, useDeferredValue } from 'react'
+import React, { useState, useMemo, useEffect, useDeferredValue, useTransition, useCallback } from 'react'
 import Link from 'next/link'
 import {
   Heart, Clock, Search, Zap, Settings, Layers, LayoutGrid, List, AlignJustify
@@ -31,6 +31,8 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
   const [favorites, setFavorites] = useState<string[]>([])
   const [viewMode, setViewMode] = useState<'grid' | 'list' | 'details'>('details')
   const [sortBy, setSortBy] = useState<'priority' | 'newest' | 'name'>('priority')
+  // useTransition: defers expensive filter re-renders so UI never blocks on input
+  const [isPending, startTransition] = useTransition()
 
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
 
@@ -39,7 +41,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
     if (saved) setFavorites(JSON.parse(saved))
   }, [])
 
-  const toggleFavorite = (e: React.MouseEvent, href: string) => {
+  const toggleFavorite = useCallback((e: React.MouseEvent, href: string) => {
     e.preventDefault()
     e.stopPropagation()
     const newFavorites = favorites.includes(href)
@@ -48,7 +50,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
 
     setFavorites(newFavorites)
     localStorage.setItem('wtk_favorites', JSON.stringify(newFavorites))
-  }
+  }, [favorites])
 
   const visibleTools = useMemo(() => {
     return [...initialTools].filter(tool => {
@@ -102,15 +104,19 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
               type="text"
               placeholder="Search tools (e.g. JSON, SEO, Security...)"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value
+                // Keep input responsive; defer the expensive filter update
+                setSearch(val)
+              }}
               className="w-full bg-background dark:bg-elevated border border-border rounded-[12px] pl-12 pr-4 py-4 text-foreground placeholder-muted-foreground/50 focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium appearance-none"
             />
           </div>
-          <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide scroll-smooth no-scrollbar">
+          <div className={`flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide scroll-smooth no-scrollbar transition-opacity ${isPending ? 'opacity-60' : 'opacity-100'}`}>
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => startTransition(() => setActiveCategory(cat))}
                 className={`px-6 py-4 rounded-[12px] text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
                   activeCategory === cat 
                     ? 'bg-[#00D4B4] text-[#0D1117] border-[#00D4B4] shadow-lg shadow-blue-500/10' 
@@ -131,7 +137,7 @@ export default function ToolsClient({ initialTools, title, isSubPage }: ToolsCli
           <div className="relative group/sort">
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
+              onChange={(e) => startTransition(() => setSortBy(e.target.value as any))}
               className="appearance-none bg-background dark:bg-elevated border border-border px-4 py-2 pr-10 rounded-xl text-[10px] font-bold uppercase tracking-widest text-muted-foreground focus:outline-none focus:ring-1 focus:ring-[#00D4B4] cursor-pointer"
             >
               {sortOptions.map(opt => (

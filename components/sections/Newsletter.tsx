@@ -70,7 +70,7 @@ export default function Newsletter() {
             </h2>
 
             <p className="text-[#8A9BBE] text-base mb-8 leading-relaxed font-medium">
-              Join <span className="text-white font-bold">500+ developers</span> who get our handcrafted weekly digest — new tools, real experiments, and technical guides you can actually use.
+              Join developers who get our handcrafted weekly digest — new tools, real experiments, and technical guides you can actually use.
             </p>
 
             {/* Benefits list */}
@@ -87,20 +87,8 @@ export default function Newsletter() {
 
             {/* Social proof line */}
             <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {['MR', 'PK', 'JT', 'AS'].map((initials, i) => (
-                  <div
-                    key={initials}
-                    className={`w-7 h-7 rounded-full border-2 border-[#0D2040] flex items-center justify-center text-[9px] font-black text-white ${
-                      ['bg-[#00D4B4]', 'bg-[#0094FF]', 'bg-purple-500', 'bg-emerald-500'][i]
-                    }`}
-                  >
-                    {initials}
-                  </div>
-                ))}
-              </div>
               <span className="text-[11px] text-[#8A9BBE] font-medium">
-                <span className="text-white font-bold">500+</span> subscribers · growing weekly
+                <span className="text-white font-bold">Trusted by developers</span> · growing weekly
               </span>
             </div>
           </div>

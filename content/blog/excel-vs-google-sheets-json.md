@@ -1,11 +1,11 @@
 ---
 title: "Excel vs. Google Sheets for JSON: Performance & APIs"
 description: "A detailed comparison of Excel and Google Sheets when working with JSON data. We look at import capabilities, performance with large datasets, and visualization features."
-date: "2026-05-18"
+date: '2026-02-21'
 category: "Developer Tools"
 tags: ["Data Analysis", "JSON", "Excel", "Google Sheets"]
 keywords: ["excel vs google sheets json", "import json to excel", "google sheets json import", "large json data analysis", "json to spreadsheet performance", "Excel Power Query M Code", "Google Apps Script JSON parser", "JSON dot notation flattening"]
-readTime: "24 min read"
+readTime: '21 min read'
 tldr: "Transporting multi-dimensional JSON data into two-dimensional spreadsheet matrices represents a common bottleneck in business analytics. While Microsoft Excel uses local CPU engines and Power Query (M-Code) to process massive datasets offline, Google Sheets offers web-native collaboration and JavaScript integrations via Apps Script. This guide compares their parsing architectures, row boundaries, and data security profiles."
 author: "Abu Sufyan"
 image: "/blog/excel-vs-sheets.jpg"

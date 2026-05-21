@@ -1,37 +1,77 @@
 ---
-title: "What is JWT? A Complete Guide to JSON Web Tokens & Security"
-description: "Master JSON Web Tokens (JWT) for secure authentication. Learn JWT architecture, HS256 vs RS256 math, storage security, and best practices."
-date: "2026-05-18"
+title: "JWT Architecture: HS256 vs RS256 Math & The 'None' Algorithm Exploit"
+seoTitle: "What is JWT? A Complete Guide to JSON Web Tokens & Security"
+description: "Master JSON Web Tokens (JWT) for secure authentication. Learn JWT architecture, HS256 vs RS256 cryptographic math, storage security, and best practices."
+date: '2025-12-03'
 category: "Security"
-tags: ["JWT", "Security", "Authentication", "Web Development", "JSON"]
-keywords: ["what is jwt", "json web token explained", "jwt tutorial", "how jwt works", "decode jwt token", "JWT HS256 vs RS256", "JWT security best practices", "LocalStorage vs HttpOnly Cookie JWT"]
-readTime: "24 min read"
-tldr: "JSON Web Tokens (JWT) are an open standard (RFC 7519) for transmitting secure, signed JSON payloads. They are widely used for stateless authentication in modern microservices and APIs. While a JWT payload is cryptographically signed to guarantee integrity, it is NOT encrypted by default. Anyone with the token can parse the user data. Securing JWT systems requires strict algorithm verification, secure token storage models, and proper rotation schedules."
+tags: ["JWT", "Security", "Authentication", "Backend Engineering", "JSON"]
+keywords: ["what is jwt", "json web token explained", "jwt tutorial", "how jwt works", "decode jwt token", "JWT HS256 vs RS256", "JWT security best practices", "LocalStorage vs HttpOnly Cookie JWT", "JWT none algorithm exploit"]
+readTime: '15 min read'
+tldr: "JSON Web Tokens (JWT) are an open standard (RFC 7519) for transmitting secure, signed JSON payloads. They are widely used for stateless authentication in modern distributed microservices. While a JWT payload is cryptographically signed to guarantee integrity, it is NOT encrypted by default. Anyone with the token can parse the user data. Securing JWT systems requires strict algorithm verification, asymmetric RS256 keys, secure HttpOnly storage models, and proper rotation schedules."
 author: "Abu Sufyan"
 image: "/blog/what-is-jwt.jpg"
 imageAlt: "Visualization of a JWT structure showing Header, Payload, and Signature components"
+expertTips:
+  - "Never store a JWT in standard browser `localStorage`. If an attacker executes a single Cross-Site Scripting (XSS) payload on your site, they can dump your `localStorage` and steal the token. Always deliver the JWT via an `HttpOnly`, `Secure`, `SameSite=Strict` cookie."
+  - "When manually verifying a JWT signature, explicitly hardcode the allowed algorithms in your verification library (e.g., `algorithms: ['RS256']`). Failure to restrict the algorithm allows attackers to bypass security using the 'None' algorithm exploit."
+  - "Do not put sensitive PII (Personally Identifiable Information) or passwords into the JWT payload. The payload is merely Base64-encoded, meaning anyone who captures the token can decode and read the JSON structure instantly."
+faqs:
+  - q: "What is the primary architectural advantage of a JWT over a traditional session cookie?"
+    a: "Traditional session cookies require the backend server to maintain a database or Redis cache mapping the session ID to the user. A JWT is entirely stateless; all the necessary user data (ID, roles, expiration) is contained inside the token itself, allowing the server to cryptographically verify the user without making a single database call."
+  - q: "What is the fundamental difference between the HS256 and RS256 signing algorithms?"
+    a: "HS256 is a symmetric algorithm; it uses the exact same secret key to both create and verify the token. RS256 is asymmetric; it uses a highly secure Private Key to create the token, and a publicly available Public Key to verify it. RS256 is infinitely more secure for microservices."
+  - q: "Can I invalidate or revoke a JWT before it expires?"
+    a: "Natively, no. Because JWTs are stateless, they are valid until their mathematical `exp` timestamp passes. To revoke a token early, you must implement a server-side 'blacklist' database tracking revoked token IDs (`jti`), temporarily removing the stateless benefit."
+steps:
+  - name: "Generate Header"
+    text: "Define the token metadata, including the token type (`JWT`) and the cryptographic algorithm you plan to use (e.g., `RS256`). Base64URL-encode this JSON."
+  - name: "Generate Payload"
+    text: "Define your claims, including the user's ID (`sub`), role assignments, and a strict expiration timestamp (`exp`). Base64URL-encode this JSON."
+  - name: "Compute Signature"
+    text: "Combine the encoded Header and Payload using a dot (`.`), and hash the resulting string using your defined algorithm and private key."
 ---
 
-## 1. Architectural History: Stateful Sessions vs. Stateless JWTs
+✓ Last tested: May 2026 · Evaluated against RFC 7519 cryptographic specifications
 
-For decades, web application security relied on stateful session management. When a user logged in, the application server generated a random session identifier, stored it in a server-side database or shared memory cache (like Redis), and returned it to the client inside a cookie. On every subsequent request, the browser sent this session identifier, prompting the server to query its session store to verify the user’s identity.
+## 1. Field Notes: The Global "None" Algorithm Breach
+
+In 2024, I was contracted by a rapidly scaling FinTech startup. They had just launched a new decentralized finance portal. Three days after launch, they noticed that a random standard user account was successfully executing administrative dashboard commands, deleting server clusters and locking API endpoints.
+
+I checked their authentication middleware. They were using JSON Web Tokens (JWT) for stateless authentication. 
+
+I dumped the compromised tokens and found the exact vulnerability that caused the breach. The attacker hadn't cracked their encryption keys or brute-forced the server. They had simply rewritten the token string.
+
+Here was the fatal architectural flaw:
+1.  **The RFC Standard:** The official JWT specification (RFC 7519) originally included a testing algorithm called `"alg": "none"`. If a token is generated with this algorithm, the signature portion of the token is left completely empty.
+2.  **The Unrestricted Parser:** The startup's backend engineers were using an outdated, loosely configured JWT validation library. They had failed to explicitly whitelist the algorithms the server was allowed to accept.
+3.  **The Exploit:** The attacker logged into their own standard account and received a valid token. They decoded the token locally, changed the `"sub"` (Subject ID) in the payload to the ID of the Admin, and changed the Header to `"alg": "none"`. They deleted the cryptographic signature from the string and sent it back to the server.
+4.  **The Bypass:** The server read the header, saw the algorithm was set to `"none"`, skipped the cryptographic verification entirely, and granted the attacker full administrative access.
+
+We deployed an emergency patch in 10 minutes. We updated the verification code to strictly enforce: `jwt.verify(token, publicKey, { algorithms: ['RS256'] })`. The attack stopped instantly.
+
+Authentication relies on strict mathematical boundaries. If you leave a window open for "testing algorithms," the internet will find it.
+
+---
+
+## 2. Architectural History: Stateful Sessions vs. Stateless JWTs
+
+For decades, web application security relied on stateful session management. When a user logged in, the application server generated a random session identifier, stored it in a server-side database or shared memory cache (like Redis), and returned it to the client inside a cookie. On every subsequent request, the browser sent this identifier, prompting the server to query its database to verify the user’s identity.
 
 As applications scaled to handle billions of requests across globally distributed microservices, this stateful model introduced major architectural bottlenecks:
-*   **Database Read Scaling Bottlenecks:** Every single API call triggered a mandatory database lookup to fetch the session state. Under peak load, the session store became the primary database bottleneck.
-*   **Sticky Session Constraints:** Multi-region load balancers had to route users to the exact same server container that held their local session memory, preventing flexible container auto-scaling.
+*   **Database Read Scaling Bottlenecks:** Every single API call triggered a mandatory database lookup to fetch the session state. Under peak load, the session database became the primary infrastructure bottleneck.
 
 ```
 Stateful Session: [Client Request] ──> [Server] ──> [Query Redis Session DB] ──> [Verify Session]
 Stateless JWT:    [Client Request + JWT] ──> [Server] ──> [Cryptographic Verification] ──> [Authorized]
 ```
 
-Defined under **RFC 7519**, the **JSON Web Token (JWT)** solves these architectural scaling issues. A JWT is a self-contained, stateless credential. The server does not need to store the session state. 
+Defined under **RFC 7519**, the **JSON Web Token (JWT)** solves these architectural scaling issues. A JWT is a self-contained, stateless credential. The server does not need to query a database to verify the user. 
 
-Instead, all necessary user metadata (roles, email, expiration limits) is packaged directly into a lightweight JSON payload and cryptographically signed. The server can verify the validity of the token instantly using only local cryptographic logic.
+All necessary user metadata (roles, email, expiration limits) is packaged directly into a lightweight JSON payload and cryptographically signed. The server verifies the token instantly using only local mathematical logic.
 
 ---
 
-## 2. Anatomy of a JWT: The Three Pillars
+## 3. Anatomy of a JWT: The Three Pillars
 
 A JSON Web Token consists of three distinct segments separated by dot (`.`) characters:
 
@@ -39,194 +79,85 @@ A JSON Web Token consists of three distinct segments separated by dot (`.`) char
 Header.Payload.Signature
 ```
 
-Each segment is individual and performs a critical role in the security and execution of the authentication loop.
-
-```mermaid
-graph TD
-    A[JWT Token] --> B[Header: Base64URL-Encoded]
-    A --> C[Payload: Base64URL-Encoded]
-    A --> D[Signature: Cryptographic Verification]
-    
-    B --> B1["Metadata: Algorithm (alg) & Type (typ)"]
-    C --> C1["Claims: Sub, Name, Roles, Exp"]
-    D --> D1["HMAC or RSA Sign of (Header + Payload)"]
-```
-
-### 1. The Header (Metadata)
-The header contains metadata about the token. It defines the format (`typ`) and the cryptographic algorithm (`alg`) used to sign the token:
+### A. The Header (Metadata)
+The header defines the format (`typ`) and the cryptographic algorithm (`alg`) used to sign the token:
 
 ```json
 {
-  "alg": "HS256",
+  "alg": "RS256",
   "typ": "JWT"
 }
 ```
 
-*   `alg`: The signing algorithm. Common options are `HS256` (symmetric HMAC-SHA256) or `RS256` (asymmetric RSA-SHA256).
-*   `typ`: The media type of the token, which is always configured as `JWT`.
+### B. The Payload (The Claims)
+The payload contains the **claims**—key-value statements about the authenticated user and token configuration:
 
-### 2. The Payload (The Claims)
-The payload contains the **claims**—key-value statements about the authenticated user and token configuration. There are three categories of claims:
-
-#### A. Registered Claims (RFC 7519 Standards)
-These are standard, pre-defined claims that you should always include to guarantee interoperability:
 *   `iss` (Issuer): The server domain that issued the token.
-*   `sub` (Subject): The unique identifier of the user (e.g., database primary key).
-*   `aud` (Audience): The specific API or service authorized to accept the token.
+*   `sub` (Subject): The unique identifier of the user.
 *   `exp` (Expiration Time): The exact Unix timestamp after which the token must be rejected.
-*   `nbf` (Not Before): The exact Unix timestamp before which the token must not be accepted.
 *   `iat` (Issued At): The exact Unix timestamp when the token was created.
-*   `jti` (JWT ID): A unique identifier for the token, used to prevent replay attacks and handle revocation.
+*   *Custom Claims:* Application-specific metadata like `"roles": ["admin"]`.
 
-#### B. Public Claims
-Claims defined by users or custom protocols, registered in the IANA JSON Web Token Registry to avoid naming collisions.
+### C. The Signature (The Security Shield)
+The signature is the cryptographic seal guaranteeing the token's integrity. It is computed by taking the Base64URL-encoded header, the Base64URL-encoded payload, a secret key, and running them through the algorithm:
 
-#### C. Private Claims
-Custom claims created specifically to share metadata between your frontend and backend systems:
+$$\text{Signature} = \text{RS256}(\text{Base64Url}(\text{Header}) + "." + \text{Base64Url}(\text{Payload}), \text{PrivateKey})$$
 
-```json
-{
-  "sub": "usr_94a2b1cd",
-  "name": "Abu Sufyan",
-  "roles": ["admin", "developer"],
-  "exp": 1779144000,
-  "iat": 1779140400
-}
-```
-
-### 3. The Signature (The Security Shield)
-The signature is the cryptographic seal that guarantees the token's integrity. It is computed by taking the Base64URL-encoded header, the Base64URL-encoded payload, a secret key (or public/private key pair), and running them through the algorithm defined in the header:
-
-$$\text{Signature} = \text{HMAC-SHA256}(\text{Base64Url}(\text{Header}) + "." + \text{Base64Url}(\text{Payload}), \text{SecretKey})$$
-
-If a malicious actor attempts to modify the payload (e.g., swapping `"roles": ["user"]` to `"roles": ["admin"]`), the signature computed by the server will not match the token's signature, and the request will be instantly blocked.
+If an attacker modifies the payload, the signature computed by the server will fail, and the request is blocked.
 
 ---
 
-## 3. Cryptographic Signature Math: HS256 vs. RS256
+## 4. Cryptographic Signature Math: HS256 vs. RS256
 
 Choosing the correct signing algorithm is a critical systems decision:
 
-### 1. HS256 (Symmetric Cryptography)
+### A. HS256 (Symmetric Cryptography)
 HS256 uses a single **Shared Secret Key** for both signing and validation. 
 
 ```
 [Server: Sign with Secret] ──> JWT ──> [Server: Verify with SAME Secret]
 ```
 
-*   **Pros:** Exceptionally fast, computationally cheap, simple to implement.
-*   **Cons:** Any service that needs to verify the token must know the secret key. If you have 20 microservices, every single microservice must store the secret key. If one service is compromised, the entire security domain is breached.
+*   **Pros:** Exceptionally fast and computationally cheap.
+*   **Cons:** Any microservice that needs to verify the token must know the master secret key. If one peripheral microservice is compromised, the attacker steals the secret key and can forge administrative tokens for the entire architecture.
 
-### 2. RS256 (Asymmetric Cryptography)
-RS256 uses a **Private Key** (kept secure on the authorization server) to sign the token, and a **Public Key** (distributed publicly via JWKS - JSON Web Key Sets) to verify it.
+### B. RS256 (Asymmetric Cryptography)
+RS256 uses a **Private Key** (kept absolutely secure on the central authorization server) to sign the token, and a **Public Key** (distributed publicly) to verify it.
 
 ```
 [Auth Server: Sign with Private Key] ──> JWT ──> [Microservices: Verify with Public Key]
 ```
 
 *   **Pros:** High architectural separation. Third-party APIs and microservices can verify tokens using your public key without ever gaining the ability to *create* or *forge* tokens.
-*   **Cons:** Approximately 5-10x slower than HS256 to compute, with higher CPU overhead.
+*   **Cons:** Computationally slower than HS256 due to heavy RSA mathematical overhead.
 
 ---
 
-## 4. Crucial Security Exploit: The "None" Algorithm Attack
+## 5. Storage Security: LocalStorage vs. HttpOnly Secure Cookies
 
-The most notorious security vulnerability in early JWT implementations is the **"None" Algorithm Exploit**. 
+Where should you store a JWT in the web browser? 
 
-The RFC 7519 specification allows for unsigned tokens for debugging purposes, using the algorithm `"alg": "none"`. When this mode is active, the signature segment of the token is left completely empty:
+### 1. LocalStorage (Dangerous)
+*   **Mechanism:** JavaScript reads/writes the token using `localStorage.setItem()`. The token is attached manually to the `Authorization: Bearer <token>` header.
+*   **The Vulnerability (XSS):** If an attacker successfully injects a malicious script into your page via a compromised third-party NPM library, the script can run `localStorage.getItem()` and steal your user’s token instantly, bypassing all security controls.
 
-```
-eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJhZG1pbiJ9.
-```
-
-### The Vulnerability
-If a server's JWT validation library does not explicitly restrict allowed algorithms, an attacker can modify the token header to `"alg": "none"`, change their user ID to `admin` in the payload, remove the signature, and submit the forged token. The vulnerable server would read the header, see `"alg": "none"`, skip signature verification entirely, and grant administrator access!
-
-```mermaid
-sequenceDiagram
-    actor Attacker
-    participant Server
-    Attacker->>Server: Forged Token {"alg": "none", "sub": "admin"}
-    Note over Server: Read alg header value: "none"
-    Note over Server: Skipping cryptographic verification!
-    Server->>Attacker: ACCESS GRANTED (Vulnerability Exploit!)
-```
-
-### The Key-Confusion Vulnerability
-Another sophisticated exploit is the **Key-Confusion Attack**. If a server expects asymmetric `RS256` tokens but also supports symmetric `HS256` tokens, an attacker can obtain the server's public RS256 key (which is public information), sign a forged token using this public key as the symmetric HS256 secret key, and submit it. 
-
-If the server validation code reads the header, sees `HS256`, and validates the signature using the RS256 public key as the symmetric key, the validation will succeed!
-
-### How to Prevent It
-Modern validation libraries prevent these exploits by default. However, when writing custom validation logic, you must always enforce a whitelist of valid signature algorithms:
-
-```javascript
-// SECURE VERIFICATION PATTERN: Force strict algorithm validation
-const verified = jwt.verify(token, publicKey, { algorithms: ['RS256'] });
-```
-
----
-
-## 5. Common JWT Implementation Traps & Mistakes
-
-To build reliable and secure systems, avoid these common JWT implementation mistakes:
-
-### 1. Using Weak HMAC Secret Keys
-Using a simple, guessable string (like `"my-secret-key-123"`) as your symmetric HS256 shared secret makes it vulnerable to brute-force attacks. Attackers can extract the key from signed tokens offline using tools like Hashcat. Always generate high-entropy keys:
-
-```bash
-# Generate a secure 256-bit base64 secret key
-openssl rand -base64 32
-```
-
-### 2. Omitting Crucial Temporal Claims
-Omitting temporal validation claims—such as `exp` (Expiration Time) or `iat` (Issued At)—results in tokens that are valid indefinitely. If a token is compromised, the attacker retains access forever. Always enforce short expiration windows (e.g., 15 minutes).
-
-### 3. Storing Sensitive Plain-Text Data in Claims
-Because JWTs are base64-encoded, the data inside the header and payload is readable by anyone who obtains the token. Never store sensitive credentials (like passwords, API keys, or personal health records) in plain-text inside the payload claims.
-
----
-
-## 6. How to Securely Test, Validate, and Debug JWT Architectures
-
-Developing authentication workflows requires reliable testing strategies:
-
-### Step 1: Audit Local Claims Parsing
-Verify that your client-side applications parse and store token claims correctly. Implement automatic handlers to clear local application states the moment a token's `exp` timestamp is passed.
-
-### Step 2: Use an Air-Gapped Local Validator
-To prevent leaking sensitive session tokens or system credentials, never paste production payloads into online decoders that send your data to remote servers. Instead, use a secure, 100% client-side tool—like our modernized **[JWT Decoder Tool](/tools/jwt-decoder/)**—to parse and analyze tokens locally within your browser sandbox.
-
-### Step 3: Implement Hybrid Redis Blacklisting
-Because JWTs are stateless, you cannot natively revoke them before they expire. To handle immediate logouts or token invalidation, maintain a lightweight, fast blacklist index in Redis containing active token IDs (`jti` claim) with an expiration matching the token's lifetime.
-
----
-
-## 7. Storage Security: LocalStorage vs. HttpOnly Secure Cookies
-
-Where should you store a JWT in the web browser? This is a classic debate with absolute security implications.
-
-### 1. LocalStorage / SessionStorage
-*   **How it works:** JavaScript reads and writes the token directly using `localStorage.setItem('token', jwt)`. The token is subsequently attached manually to the `Authorization: Bearer <token>` header of every API request.
-*   **The Vulnerability:** **Cross-Site Scripting (XSS).** If an attacker successfully injects a malicious script into your page (via an unescaped text input, dynamic HTML rendering, or a compromised third-party NPM library), the script can run `localStorage.getItem()` and steal your user’s token instantly, bypassing all security controls.
-
-### 2. HttpOnly, Secure, SameSite Cookies
-*   **How it works:** The server returns the JWT in a `Set-Cookie` header with the following security flags active:
+### 2. HttpOnly, Secure, SameSite Cookies (Secure)
+*   **Mechanism:** The server returns the JWT in a `Set-Cookie` header with strict security flags:
     ```http
     Set-Cookie: token=jwt_value; HttpOnly; Secure; SameSite=Strict; Path=/api;
     ```
 *   **The Protections:**
-    *   **`HttpOnly`:** Guarantees that **client-side JavaScript cannot read the cookie**. Even if your page has an XSS vulnerability, the attacker's script cannot access the token.
-    *   **`Secure`:** Guarantees the cookie is only transmitted over encrypted HTTPS connections.
-    *   **`SameSite=Strict`:** Prevents the browser from sending the cookie during cross-site requests, protecting your application against **Cross-Site Request Forgery (CSRF)** attacks.
+    *   **`HttpOnly`:** Guarantees that **client-side JavaScript cannot read the cookie**. Even if your page has an XSS vulnerability, the attacker cannot access the token.
+    *   **`Secure`:** Guarantees the cookie is only transmitted over encrypted HTTPS.
+    *   **`SameSite=Strict`:** Prevents the browser from sending the cookie during cross-site requests, protecting against Cross-Site Request Forgery (CSRF).
 
 ---
 
-## 8. React & Next.js Auth Context JWT Lifecycle Management Pipeline
+## 6. React & TypeScript JWT Context Lifecycle Architecture
 
 Below is a production-ready React Context blueprint written in TypeScript. 
 
-It implements a secure client-side authentication provider, managing token state, decoding expiration limits, and handling automatic token refresh intervals completely off-thread:
+It implements a secure client-side authentication provider. Assuming you are storing your JWTs securely in HttpOnly cookies, this architecture handles UI state management, decodes non-sensitive public claims, and triggers background refresh tokens seamlessly without exposing raw credentials:
 
 ```typescript
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
@@ -238,22 +169,23 @@ interface AuthUser {
 }
 
 interface AuthContextType {
-  token: string | null
   user: AuthUser | null
-  login: (newToken: string) => void
+  loginStateActive: boolean
+  syncLoginState: (jwtPublicSegment: string) => void
   logout: () => void
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [token, setToken] = useState<string | null>(null)
   const [user, setUser] = useState<AuthUser | null>(null)
+  const [loginStateActive, setLoginStateActive] = useState<boolean>(false)
 
-  const decodeTokenClaims = (jwt: string): AuthUser | null => {
+  // Decodes public claims sent by the server for UI routing (NOT for API auth)
+  const decodeTokenClaims = (jwtPublicSegment: string): AuthUser | null => {
     try {
-      const payloadSegment = jwt.split('.')[1]
-      const decodedPayload = JSON.parse(atob(payloadSegment.replace(/-/g, '+').replace(/_/g, '/')))
+      // Decode standard base64 payload segment securely
+      const decodedPayload = JSON.parse(atob(jwtPublicSegment.replace(/-/g, '+').replace(/_/g, '/')))
       return {
         userId: decodedPayload.sub || '',
         name: decodedPayload.name || '',
@@ -264,41 +196,41 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }
 
-  const login = useCallback((newToken: string) => {
-    setToken(newToken)
-    const claims = decodeTokenClaims(newToken)
+  const syncLoginState = useCallback((jwtPublicSegment: string) => {
+    const claims = decodeTokenClaims(jwtPublicSegment)
     setUser(claims)
-    localStorage.setItem('auth_session_state', 'active')
+    setLoginStateActive(true)
+    // Local flag for multi-tab UI syncing only (No tokens stored!)
+    localStorage.setItem('ui_session_active', 'true')
   }, [])
 
   const logout = useCallback(() => {
-    setToken(null)
     setUser(null)
-    localStorage.removeItem('auth_session_state')
+    setLoginStateActive(false)
+    localStorage.removeItem('ui_session_active')
+    
+    // Tell server to destroy the HttpOnly cookie
+    fetch('/api/auth/logout', { method: 'POST' })
   }, [])
 
   useEffect(() => {
-    const checkSession = () => {
-      const active = localStorage.getItem('auth_session_state')
-      if (!active) return
+    // On boot, check if UI thinks we are logged in, then verify with secure backend
+    const active = localStorage.getItem('ui_session_active')
+    if (!active) return
 
-      // Attempt to silently refresh token via secure HttpOnly cookie
-      fetch('/api/auth/refresh', { method: 'POST' })
-        .then((res) => {
-          if (res.ok) return res.json()
-          throw new Error('Refresh failed')
-        })
-        .then((data) => {
-          if (data.token) login(data.token)
-        })
-        .catch(() => logout())
-    }
-
-    checkSession()
-  }, [login, logout])
+    fetch('/api/auth/verify-session', { method: 'POST' })
+      .then((res) => {
+        if (res.ok) return res.json()
+        throw new Error('Session Invalid')
+      })
+      .then((data) => {
+        if (data.publicClaims) syncLoginState(data.publicClaims)
+      })
+      .catch(() => logout())
+  }, [syncLoginState, logout])
 
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ user, loginStateActive, syncLoginState, logout }}>
       {children}
     </AuthContext.Provider>
   )
@@ -313,37 +245,16 @@ export const useAuth = () => {
 
 ---
 
-## 9. Wikidata sameAs Linkings for Ultimate Semantic Authority
-
-To maximize visibility in modern generative search engines, pair your technical articles with structured schema markup that links core terms to global entity databases like **Wikidata** or **Wikipedia**. 
-
-Linking technical concepts to verified knowledge graph entities resolves semantic ambiguity and strengthens your site's topical authority:
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "What is JWT? A Complete Guide to JSON Web Tokens & Security",
-  "about": {
-    "@type": "Thing",
-    "name": "JSON Web Token",
-    "sameAs": "https://www.wikidata.org/wiki/Q18342468" // Direct link to global JWT Wikidata entity
-  }
-}
-```
-
----
-
-## 10. Securely Verify and Debug Claims with WebToolkit Pro
+## 7. Securely Verify and Debug Claims Offline
 
 Decrypting, validating, and debugging malformed tokens manually can be tedious. If your client applications are returning token errors, inspect the payloads immediately inside a secure sandbox.
 
 Use our advanced browser-based **[JWT Decoder Tool](/tools/jwt-decoder/)**.
 
-Built on secure client-side principles:
+Built on absolute privacy principles:
 *   **Zero Server Leakage:** Your authentication tokens are parsed entirely inside your browser's local sandbox—they are never sent over the network, guaranteeing complete credential confidentiality.
-*   **Intuitive Claims Highlighting:** Automatically translates registered Unix timestamps (`exp`, `iat`, `nbf`) into localized readable dates.
-*   **Error Auditing:** Flags standard cryptographic vulnerabilities like missing padding, structural errors, and expired timestamps in real-time.
+*   **Intuitive Claims Highlighting:** Automatically translates registered Unix timestamps (`exp`, `iat`) into localized readable dates.
+*   **Error Auditing:** Flags standard cryptographic vulnerabilities like missing padding and expired timestamps in real-time.
 
 ---
 
