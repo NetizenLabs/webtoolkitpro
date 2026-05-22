@@ -211,4 +211,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   'critical-css-gen': dynamic(() => import('../components/tools/instances/CssMinifier'), { loading: () => <ToolSkeleton />, ssr: false }),
   'css-keyframes': dynamic(() => import('../components/tools/instances/CssGradientGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'css-color-extractor': dynamic(() => import('../components/tools/instances/ColorPicker'), { loading: () => <ToolSkeleton />, ssr: false }),
+  
+  // Batch 6: AI & LLM Engineering
+  'json-to-jsonl': dynamic(() => import('../components/tools/instances/JsonToJsonl'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'prompt-token-calculator': dynamic(() => import('../components/tools/instances/TokenCalculator'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

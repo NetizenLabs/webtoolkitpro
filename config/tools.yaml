@@ -10180,3 +10180,103 @@ tools:
           answer: No. CanIUse data matrices are compiled locally in the tool database, ensuring completely fast and private lookups.
         - question: Should I avoid features without 100% support?
           answer: Not necessarily. You can use modern features with graceful degradation fallback sheets or automated autoprefix systems to maintain layout stability.
+  - name: JSON to JSONL Converter
+    slug: json-to-jsonl
+    category: Developer Tools
+    icon: FileJson
+    subcategory: ai-engineering
+    tags:
+      - ai
+      - json
+      - jsonl
+      - dataset
+      - fine-tuning
+    priority: 15
+    releaseDate: '2026-05-22'
+    function:
+      primary: Convert standard JSON arrays to JSON Lines format (JSONL)
+      secondary: Validate formatting for AI model fine-tuning (OpenAI, Anthropic)
+    technical:
+      input_formats:
+        - json
+      output_formats:
+        - jsonl
+      processing: client-side
+    meta:
+      title: JSON to JSONL Converter — AI Fine-Tuning Dataset Formatter
+      description: Convert standard JSON arrays into valid JSON Lines (JSONL) format required for fine-tuning OpenAI, Anthropic, and open-source AI models.
+    content:
+      title: JSON to JSONL Converter for AI Fine-Tuning
+      description: Convert standard JSON arrays into valid JSON Lines (JSONL) format required for fine-tuning OpenAI, Anthropic, and open-source AI models.
+      keywords:
+        - json to jsonl
+        - convert json to jsonl
+        - jsonl converter
+        - openai fine tuning format
+        - json to json lines
+      tldr: Quickly transform standard JSON array payloads into the line-separated JSONL format needed for LLM fine-tuning.
+      entity_definition: JSON to JSONL Converter is an AI engineering utility that reformats standard structured JSON arrays into JSON Lines (JSONL). In JSONL, each line is a valid standalone JSON object. This is the mandatory format for almost all large language model (LLM) fine-tuning APIs and massive dataset streaming, as it allows machines to process millions of records sequentially without loading a massive JSON array into memory.
+      how_it_works: The converter parses your standard JSON array, validates that each index is a true object, and reconstructs the data by stringifying each object on a separated newline.
+      use_cases:
+        - Formatting datasets for OpenAI GPT-4 fine-tuning
+        - Preparing data for HuggingFace Transformers
+        - Managing massive log files in BigQuery or ElasticSearch
+      features:
+        - 100% client-side dataset processing (Secure & Private)
+        - Strict validation of JSON objects
+        - One-click copy or direct .jsonl file download
+      faq:
+        - question: What is the difference between JSON and JSONL?
+          answer: Standard JSON wraps objects in an array structure `[{}, {}]`. JSONL (JSON Lines) removes the array brackets and commas, placing each distinct JSON object on its own line.
+        - question: Why do AI models require JSONL?
+          answer: AI fine-tuning datasets can be gigabytes in size. JSONL allows parsers to stream the file line-by-line without loading the entire structure into RAM, preventing memory crashes.
+  - name: LLM Prompt Token Calculator
+    slug: prompt-token-calculator
+    category: Developer Tools
+    icon: Brain
+    subcategory: ai-engineering
+    tags:
+      - ai
+      - prompt
+      - tokens
+      - gpt4
+      - calculator
+    priority: 15
+    releaseDate: '2026-05-22'
+    function:
+      primary: Calculate exact token counts and estimated costs for LLM prompts
+      secondary: Encode strings using official tiktoken encodings locally
+    technical:
+      input_formats:
+        - text
+      output_formats:
+        - number
+      processing: client-side
+    meta:
+      title: LLM Token Calculator & Cost Estimator (Tiktoken)
+      description: Calculate exact token counts and API costs for your large language model prompts before sending them to OpenAI or Anthropic. 100% secure client-side processing.
+    content:
+      title: Prompt Token Calculator & API Cost Estimator
+      description: Calculate exact token counts and API costs for your large language model prompts before sending them to OpenAI or Anthropic. 100% secure client-side processing.
+      keywords:
+        - token calculator
+        - count tokens online
+        - gpt 4 token counter
+        - tiktoken calculator
+        - prompt cost estimator
+      tldr: Paste massive prompts to see exactly how many tokens they consume and what they will cost on major LLM APIs.
+      entity_definition: The Prompt Token Calculator is a client-side AI engineering utility that utilizes Byte Pair Encoding (BPE) to calculate the exact number of tokens a text string will consume when processed by a Large Language Model (LLM). Tokens are the fundamental units of text that AI models process, and API providers charge based on token volume. This tool empowers developers to audit prompt sizes and optimize API costs before executing live API calls.
+      how_it_works: The tool uses the official `js-tiktoken` library, operating the `cl100k_base` encoding standard used by models like GPT-4 and GPT-3.5 directly inside your browser.
+      use_cases:
+        - Estimating the cost of massive RAG (Retrieval-Augmented Generation) payloads
+        - Ensuring a prompt fits within a model's strict context window limit
+        - Auditing token bloat in system prompts
+      features:
+        - Exact token counting using official BPE standards
+        - Real-time estimated cost calculators for top models
+        - 100% client-side processing (your prompts never leave your browser)
+      faq:
+        - question: Is my prompt data sent to a server?
+          answer: No. The token encoding library runs entirely within your browser's JavaScript engine. Your proprietary prompts are completely secure.
+        - question: How many words is one token?
+          answer: As a general rule of thumb, 1 token is roughly equivalent to 4 characters or 0.75 words of standard English text.
