@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Shield, Database, Hash, Copy, Check } from 'lucide-react'
+import { Shield, Database, Hash, Copy, Check, Loader2 } from 'lucide-react'
+import { scrypt } from 'hash-wasm'
 
 export default function ScryptHasher() {
   const [input, setInput] = useState('')
@@ -10,11 +11,31 @@ export default function ScryptHasher() {
   const [p, setP] = useState(1)
   const [hash, setHash] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
 
-  const generateHash = () => {
-    const salt = btoa(Math.random().toString()).slice(0, 16)
-    const dummyHash = btoa(Math.random().toString() + Math.random().toString()).slice(0, 48)
-    setHash(`scrypt:v=1,n=${n},r=${r},p=${p},salt=${salt},hash=${dummyHash}`)
+  const generateHash = async () => {
+    if (!input) return
+    setIsGenerating(true)
+    try {
+      const salt = new Uint8Array(16)
+      window.crypto.getRandomValues(salt)
+      
+      const result = await scrypt({
+        password: input,
+        salt,
+        costFactor: n,
+        blockSize: r,
+        parallelism: p,
+        hashLength: 32,
+        outputType: 'hex' as const
+      })
+
+      setHash(result)
+    } catch (err) {
+      console.error(err)
+      alert("Failed to compute Scrypt hash.")
+    }
+    setIsGenerating(false)
   }
 
   return (
@@ -69,9 +90,11 @@ export default function ScryptHasher() {
 
         <button 
           onClick={generateHash}
-          className="w-full py-4 bg-orange-600 text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-orange-700 transition-all shadow-lg shadow-orange-500/20"
+          disabled={!input || isGenerating}
+          className="w-full py-4 bg-orange-600 text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-orange-700 transition-all shadow-lg shadow-orange-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
         >
-          Compute Scrypt Output
+          {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Hash className="w-4 h-4" />}
+          {isGenerating ? 'Computing...' : 'Compute Scrypt Output'}
         </button>
       </div>
 

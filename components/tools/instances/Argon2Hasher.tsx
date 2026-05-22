@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Shield, Settings, Hash, Copy, Check } from 'lucide-react'
+import { Shield, Settings, Hash, Copy, Check, Loader2 } from 'lucide-react'
+import { argon2id, argon2i, argon2d } from 'hash-wasm'
 
 export default function Argon2Hasher() {
   const [input, setInput] = useState('')
@@ -11,11 +12,36 @@ export default function Argon2Hasher() {
   const [parallelism, setParallelism] = useState(4)
   const [hash, setHash] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
 
-  const generateHash = () => {
-    const salt = btoa(Math.random().toString()).slice(0, 16)
-    const dummyHash = btoa(Math.random().toString() + Math.random().toString()).slice(0, 32)
-    setHash(`$${type}$v=19$m=${memory},t=${iterations},p=${parallelism}$${salt}$${dummyHash}`)
+  const generateHash = async () => {
+    if (!input) return
+    setIsGenerating(true)
+    try {
+      const salt = new Uint8Array(16)
+      window.crypto.getRandomValues(salt)
+      
+      const config = {
+        password: input,
+        salt,
+        parallelism,
+        iterations,
+        memorySize: memory,
+        hashLength: 32,
+        outputType: 'encoded' as const
+      }
+
+      let result = ''
+      if (type === 'argon2id') result = await argon2id(config)
+      else if (type === 'argon2i') result = await argon2i(config)
+      else if (type === 'argon2d') result = await argon2d(config)
+
+      setHash(result)
+    } catch (err) {
+      console.error(err)
+      alert("Failed to compute Argon2 hash.")
+    }
+    setIsGenerating(false)
   }
 
   return (
@@ -73,9 +99,11 @@ export default function Argon2Hasher() {
 
         <button 
           onClick={generateHash}
-          className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
+          disabled={!input || isGenerating}
+          className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
         >
-          Generate PHC String
+          {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Hash className="w-4 h-4" />}
+          {isGenerating ? 'Computing...' : 'Generate PHC String'}
         </button>
       </div>
 

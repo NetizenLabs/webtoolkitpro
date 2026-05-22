@@ -23,9 +23,9 @@ export default function PingTest() {
         try {
           await fetch(target, { mode: 'no-cors', cache: 'no-store' })
           const ms = Math.round(performance.now() - start)
-          setHistory((prev) => [{ time: Date.now(), status: 'ok', ms }, ...prev].slice(0, 50))
+          setHistory((prev) => [{ time: Date.now(), status: 'ok' as const, ms }, ...prev].slice(0, 50))
         } catch (e) {
-          setHistory((prev) => [{ time: Date.now(), status: 'error', ms: 0 }, ...prev].slice(0, 50))
+          setHistory((prev) => [{ time: Date.now(), status: 'error' as const, ms: 0 }, ...prev].slice(0, 50))
         }
       }
       
