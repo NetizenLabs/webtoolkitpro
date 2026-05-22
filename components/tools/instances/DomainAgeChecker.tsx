@@ -16,7 +16,7 @@ export default function DomainAgeChecker() {
     try {
       // Remove any http/https protocols if pasted
       const cleanDomain = domain.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
-      const response = await fetch(`https://networkcalc.com/api/dns/whois/${encodeURIComponent(cleanDomain)}`);
+      const response = await fetch(`/api/whois?domain=${encodeURIComponent(cleanDomain)}`);
       const data = await response.json();
       
       if (data.status === 'OK' && data.whois && data.whois.registry_created_date) {
