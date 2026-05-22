@@ -735,16 +735,19 @@ tools:
         - Validation-ready code following Google's Search Console standards
         - Instant integration with our [JSON Formatter](/tools/json-formatter) for final checks
       faq:
-        - question: What is JSON-LD and why is it better than Microdata?
-          answer: JSON-LD is a JavaScript-based format that is easier to manage and less intrusive than embedding Microdata directly into HTML tags. It is Google's officially recommended format for structured data.
-        - question: Where should I place the generated code?
-          answer: Google recommends placing the JSON-LD script inside the <head> or at the bottom of the <body> section of your HTML document.
-        - question: What are 'Rich Results'?
-          answer: Rich results are enhanced search results (like rating stars, images, or FAQ boxes) that have a significantly higher click-through rate than standard text links.
-        - question: How does Schema help with AI Search (GEO)?
-          answer: AI search engines use schema to build 'Entity Relationships.' By providing clear JSON-LD, you make it easier for AI models to understand exactly what your page offers and cite it as a source.
-        - question: Should I add Schema to every page?
-          answer: Yes, but ensure the schema is relevant to the content. At a minimum, every page should have WebPage schema, and specific pages should have more detailed types like Article or SoftwareApplication.
+        - question: What is JSON-LD and why is it the standard for Schema markup?
+          answer: >
+            JSON-LD (JavaScript Object Notation for Linked Data) is a lightweight, standardized data format used to encode structured data on web pages. It is officially endorsed by Google, Microsoft, and the W3C as the preferred method for implementing Schema.org markup.
+            Historically, webmasters used Microdata or RDFa, which required wrapping HTML elements with cumbersome inline attributes. JSON-LD solves this by allowing you to inject a clean, independent `<script type="application/ld+json">` block directly into your page's `<head>`. This separates your structured data from your visual HTML, making it significantly easier to generate, maintain, and audit without breaking your website's layout.
+        - question: How does a JSON-LD generator improve SEO and Rich Snippets?
+          answer: >
+            Search engine crawlers are incredibly smart, but they still struggle to infer the exact context of unstructured text. A JSON-LD schema generator explicitly defines the entities on your page. 
+            For example, if you write a blog post, JSON-LD tells Google exactly who the author is, the date it was published, and the publisher's logo. If you sell a product, it explicitly lists the price, currency, and aggregate review ratings. 
+            Providing this high-fidelity data allows Google to display "Rich Snippets" (like review stars, FAQ accordions, and recipe carousels) directly in the search results, which drastically increases your organic Click-Through Rate (CTR). Furthermore, in the era of Generative AI, structured data is crucial for Generative Engine Optimization (GEO), helping models like ChatGPT and Perplexity confidently cite your content.
+        - question: Where should I place the generated JSON-LD code?
+          answer: >
+            Google's guidelines state that the generated `<script type="application/ld+json">` block can be safely placed in either the `<head>` or the `<body>` of your HTML document. 
+            However, best practice is to inject it into the `<head>` to ensure it is parsed immediately when the crawler loads the page, avoiding any issues with asynchronous JavaScript rendering or deferred body loading.
         - question: Does this tool support the 'sameAs' property?
           answer: Yes, you can link your entities to Wikidata or official Wikipedia pages to establish definitive authority in the global knowledge graph.
         - question: How do I test if my schema is working?
@@ -1913,12 +1916,19 @@ tools:
         - One-click copy of the full diff
         - 100% client-side processing
       faq:
-        - question: What algorithm does this use?
-          answer: It uses the Longest Common Subsequence (LCS) algorithm, the same foundation as Unix diff and Git.
-        - question: Can I diff code files?
-          answer: Yes. Paste code from any language and the diff will compare it line by line.
-        - question: Is my code sent to a server?
-          answer: No. All comparison happens locally in your browser. No data is transmitted.
+        - question: What is the Unified Diff format and how does it work?
+          answer: >
+            The Unified Diff format is the industry-standard method for representing changes between two text files. It is the default output format for Git (`git diff`) and the GNU `diff` utility. 
+            Instead of showing the entire text of both files side-by-side, a unified diff outputs a single, consolidated block of text. It uses a three-line context window around each change to help developers understand where the modification occurred.
+            Lines starting with a minus sign (`-`) in red represent text that was deleted from the original file, while lines starting with a plus sign (`+`) in green represent text that was added to the new file. Unchanged lines have no prefix and serve as contextual anchors. Our online diff checker visualizes this unified format, making it incredibly easy to review pull requests, audit code, or track document revisions.
+        - question: What algorithm does this code difference tool use?
+          answer: >
+            Under the hood, our online diff checker uses the Longest Common Subsequence (LCS) algorithm combined with Myers' diff algorithm. This is the exact same mathematical foundation used by Git. 
+            The algorithm works by finding the longest sequence of characters or lines that appear in both the original and modified text in the same order. By identifying this common backbone, it can accurately isolate the exact insertions and deletions. This makes it highly efficient for comparing massive codebases, JSON files, or large plain-text documents line-by-line.
+        - question: Is it safe to compare sensitive code online?
+          answer: >
+            Yes, it is 100% safe. Unlike many free diff viewers online that upload your text to their servers for processing, our code difference tool is fully client-side. 
+            The LCS algorithm runs entirely within your browser's JavaScript engine. Your proprietary code, API keys, and sensitive documents never leave your local machine, ensuring enterprise-grade data privacy during your code reviews.
       technical_specs:
         - label: Algorithm
           value: LCS (Longest Common Subsequence)
@@ -6267,10 +6277,18 @@ tools:
         - Cache-Control and Expires header generation
         - Optimized for SEO and performance
       faq:
-        - question: What is an .htaccess file?
-          answer: 'It is a configuration file used on web servers running the Apache Web Server software to control the directory it '
-        - question: Where do I upload the .htaccess?
-          answer: In the root directory of your website via FTP or your file manager.
+        - question: What is an Apache .htaccess file and how does it work?
+          answer: >
+            An `.htaccess` (Hypertext Access) file is a powerful, directory-level configuration file used exclusively by the Apache Web Server. It allows developers and webmasters to alter server configuration dynamically without needing root access to the main `httpd.conf` server file.
+            When Apache serves a directory, it looks for an `.htaccess` file and executes its directives in real-time. This allows you to implement critical functionality like forcing HTTPS connections, setting up 301 SEO redirects, password-protecting specific folders, and leveraging browser caching via Cache-Control headers. Because the syntax is notoriously strict, using an online htaccess generator ensures your directives are perfectly formatted and free of syntax errors that would cause a 500 Internal Server Error.
+        - question: How do I test Apache Rewrite Rules?
+          answer: >
+            Apache uses a module called `mod_rewrite` to manipulate URLs on the fly. Writing `RewriteRule` and `RewriteCond` directives requires complex Regular Expressions (Regex) that can easily create infinite redirect loops or break your site's routing.
+            Our Apache Rewrite Rule Tester allows you to safely generate and validate these complex URL routing protocols before pushing them to production. Whether you are redirecting old blog posts to new slugs, stripping the 'www' prefix from your domain, or routing all requests to a front-controller like `index.php` (common in WordPress and Laravel), our tester ensures the regex captures the correct URL groups and outputs the intended destination path.
+        - question: Where should I upload my generated .htaccess file?
+          answer: >
+            To apply the rules globally across your entire website, you must upload the `.htaccess` file directly to the root directory of your server (often named `public_html`, `htdocs`, or `www`). 
+            If you only want the rules to apply to a specific sub-folder (like an `/admin/` directory), you can place a secondary `.htaccess` file inside that specific folder. The rules in the sub-folder will override the rules in the root folder.
   - name: IPv4 Subnet Calculator
     slug: subnet-calculator
     category: Developer Tools
