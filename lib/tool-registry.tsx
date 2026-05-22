@@ -215,6 +215,7 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   // Batch 6: AI & LLM Engineering
   'json-to-jsonl': dynamic(() => import('../components/tools/instances/JsonToJsonl'), { loading: () => <ToolSkeleton />, ssr: false }),
   'prompt-token-calculator': dynamic(() => import('../components/tools/instances/TokenCalculator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'rag-optimizer': dynamic(() => import('../components/tools/instances/RagOptimizer'), { loading: () => <ToolSkeleton />, ssr: false }),
 
   // Batch 7: Modern ORM & Database
   'json-to-prisma': dynamic(() => import('../components/tools/instances/JsonToPrisma'), { loading: () => <ToolSkeleton />, ssr: false }),

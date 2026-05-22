@@ -10230,6 +10230,58 @@ tools:
           answer: Standard JSON wraps objects in an array structure `[{}, {}]`. JSONL (JSON Lines) removes the array brackets and commas, placing each distinct JSON object on its own line.
         - question: Why do AI models require JSONL?
           answer: AI fine-tuning datasets can be gigabytes in size. JSONL allows parsers to stream the file line-by-line without loading the entire structure into RAM, preventing memory crashes.
+  - name: RAG Context Optimizer (Text Minifier)
+    slug: rag-optimizer
+    category: Developer Tools
+    icon: Cpu
+    subcategory: ai-engineering
+    tags:
+      - ai
+      - rag
+      - text
+      - minifier
+      - tokens
+    priority: 16
+    releaseDate: '2026-05-22'
+    function:
+      primary: Strip unnecessary characters from raw text to save LLM context window tokens
+      secondary: Calculate token and cost savings instantly
+    technical:
+      input_formats:
+        - text
+        - html
+        - markdown
+      output_formats:
+        - text
+      processing: client-side
+    meta:
+      title: RAG Context Optimizer — Strip Tokens & Save API Costs
+      description: Minify raw text and HTML for Retrieval-Augmented Generation (RAG) pipelines. Strip whitespace, newlines, and Markdown to save LLM token costs.
+    content:
+      title: RAG Context Optimizer
+      description: Minify raw text and HTML for Retrieval-Augmented Generation (RAG) pipelines. Strip whitespace, newlines, and Markdown to save LLM token costs.
+      keywords:
+        - rag context optimizer
+        - minify text for llm
+        - save tokens chatgpt
+        - strip html to text
+        - ai prompt minifier
+      tldr: Drastically reduce your API costs by stripping unnecessary characters from retrieved RAG documents before feeding them to an LLM.
+      entity_definition: The RAG Context Optimizer is an AI engineering utility designed to compress large blocks of retrieved textual data. When building Retrieval-Augmented Generation (RAG) applications, feeding raw HTML or poorly formatted text into an LLM's context window wastes expensive tokens. This tool uses aggressive client-side regex minification to collapse whitespace, strip HTML/Markdown tags, and calculate the exact token and cost savings.
+      how_it_works: Simply paste your raw retrieved document. The Monaco Editor processes the text through optional regex filters (Whitespace, Line Breaks, HTML, Markdown). It simultaneously runs the official `js-tiktoken` BPE tokenizer on both the input and output to visually display the exact tokens and dollars saved per query.
+      use_cases:
+        - Compressing scraped web pages (HTML) before inserting into a vector database
+        - Minifying massive codebase files to fit within a strict 8k token limit
+        - Formatting noisy PDF OCR text for cheaper API inference
+      features:
+        - 100% client-side processing for total data privacy
+        - Real-time token and cost savings calculations
+        - Professional Monaco Editor for handling massive text blocks
+      faq:
+        - question: Does stripping whitespace ruin the LLM's understanding?
+          answer: Surprisingly, no. Modern LLMs like GPT-4 and Claude 3 are incredibly resilient to minified text and missing punctuation. Compressing whitespace allows you to fit significantly more actual data into the same context window.
+        - question: Is my proprietary context data sent to a server?
+          answer: Absolutely not. The Monaco Editor, regex processing, and `js-tiktoken` tokenizer run entirely within your browser's local sandbox.
   - name: LLM Prompt Token Calculator
     slug: prompt-token-calculator
     category: Developer Tools

@@ -12,6 +12,7 @@
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "@types/jszip": "^3.4.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
