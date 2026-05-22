@@ -1,31 +1,29 @@
 'use client'
-
 import React, { useState } from 'react'
-import { Terminal, Copy, Trash2, Check, Zap, AlertTriangle, ShieldCheck, Activity } from 'lucide-react'
+import { Terminal, Zap, AlertTriangle, Activity } from 'lucide-react'
 
 export default function PortScanner() {
-  const [target, setTarget] = useState('127.0.0.1')
+  const [target, setTarget] = useState('')
   const [loading, setLoading] = useState(false)
   const [results, setResults] = useState<any[]>([])
+  const [error, setError] = useState('')
 
-  const scanPorts = () => {
+  const scanPorts = async () => {
+    if (!target) return
     setLoading(true)
     setResults([])
+    setError('')
     
-    // Simulating port scan for common services
-    const commonPorts = [
-      { port: 80, service: 'HTTP', status: 'Closed' },
-      { port: 443, service: 'HTTPS', status: 'Closed' },
-      { port: 21, service: 'FTP', status: 'Closed' },
-      { port: 22, service: 'SSH', status: 'Closed' },
-      { port: 25, service: 'SMTP', status: 'Closed' },
-      { port: 3306, service: 'MySQL', status: 'Closed' }
-    ]
-
-    setTimeout(() => {
-      setResults(commonPorts)
+    try {
+      const res = await fetch(`/api/port-scan?target=${encodeURIComponent(target)}`)
+      const data = await res.json()
+      if (data.error) throw new Error(data.error)
+      setResults(data.results)
+    } catch (e: any) {
+      setError(e.message || 'Scan failed')
+    } finally {
       setLoading(false)
-    }, 2000)
+    }
   }
 
   return (
@@ -36,18 +34,20 @@ export default function PortScanner() {
             type="text"
             value={target}
             onChange={(e) => setTarget(e.target.value)}
-            placeholder="127.0.0.1 or example.com"
+            placeholder="example.com or 127.0.0.1"
             className="flex-grow px-8 py-6 rounded-3xl bg-gray-50 dark:bg-slate-950 border border-transparent focus:ring-2 focus:ring-red-500 outline-none dark:text-white font-mono text-lg shadow-inner transition-all"
           />
           <button 
             onClick={scanPorts}
             disabled={loading}
-            className="px-12 py-6 bg-red-600 text-white font-black rounded-3xl shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-xs"
+            className="px-12 py-6 bg-red-600 text-white font-black rounded-3xl shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-xs disabled:opacity-50"
           >
             {loading ? <Activity className="w-5 h-5 animate-spin" /> : <Zap className="w-5 h-5" />}
             {loading ? 'Scanning...' : 'Scan Target'}
           </button>
         </div>
+
+        {error && <div className="text-red-500 font-bold mb-4">{error}</div>}
 
         {results.length > 0 && (
           <div className="space-y-4 animate-in fade-in slide-in-from-top-4 duration-500">
@@ -59,7 +59,7 @@ export default function PortScanner() {
                     <span className="text-xs font-mono text-red-400 font-bold">Port {r.port}</span>
                     <p className="text-[10px] text-gray-500 font-bold uppercase">{r.service}</p>
                   </div>
-                  <span className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-[10px] font-black uppercase tracking-widest border border-gray-700">
+                  <span className={`px-3 py-1 text-[10px] font-black uppercase tracking-widest border rounded-full ${r.status === 'Open' ? 'bg-green-500/10 text-green-500 border-green-500/20' : 'bg-gray-800 text-gray-400 border-gray-700'}`}>
                     {r.status}
                   </span>
                 </div>
@@ -74,7 +74,7 @@ export default function PortScanner() {
         <div>
           <h5 className="text-lg font-bold text-red-900 dark:text-red-400 mb-2 tracking-tight">Security Notice</h5>
           <p className="text-sm text-red-800/70 dark:text-red-500/70 leading-relaxed font-medium">
-            Port scanning is performed as a **Local Connectivity Simulation**. In-browser scanning is restricted by CORS and browser security policies. For deep infrastructure auditing, please utilize command-line utilities like <span className="font-bold">nmap</span>.
+            This tool performs a real TCP connection attempt from our server to the target IP address. Scanning external servers may trigger firewall alerts on the target infrastructure.
           </p>
         </div>
       </div>

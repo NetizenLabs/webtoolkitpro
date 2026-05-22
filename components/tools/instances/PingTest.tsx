@@ -1,25 +1,46 @@
 'use client'
-
 import React, { useState, useEffect } from 'react'
 import { Activity, Search, Trash2, Zap, Server, Globe } from 'lucide-react'
 
 export default function PingTest() {
   const [host, setHost] = useState('')
   const [isPinging, setIsPinging] = useState(false)
-  const [history, setHistory] = useState<{ time: number; status: 'ok' | 'timeout'; ms: number }[]>([])
+  const [history, setHistory] = useState<{ time: number; status: 'ok' | 'timeout' | 'error'; ms: number }[]>([])
 
   useEffect(() => {
     let interval: any
+    let active = true
     if (isPinging) {
-      interval = setInterval(() => {
-        const ms = Math.floor(Math.random() * 50) + 15
-        setHistory((prev: typeof history) => [{ time: Date.now(), status: 'ok' as const, ms }, ...prev].slice(0, 50))
-      }, 1000)
+      if (!host) {
+        setIsPinging(false)
+        return
+      }
+      const target = host.startsWith('http') ? host : `https://${host}`
+      
+      const ping = async () => {
+        if (!active) return
+        const start = performance.now()
+        try {
+          await fetch(target, { mode: 'no-cors', cache: 'no-store' })
+          const ms = Math.round(performance.now() - start)
+          setHistory((prev) => [{ time: Date.now(), status: 'ok', ms }, ...prev].slice(0, 50))
+        } catch (e) {
+          setHistory((prev) => [{ time: Date.now(), status: 'error', ms: 0 }, ...prev].slice(0, 50))
+        }
+      }
+      
+      ping()
+      interval = setInterval(ping, 2000)
     }
-    return () => clearInterval(interval)
-  }, [isPinging])
+    return () => {
+      active = false
+      clearInterval(interval)
+    }
+  }, [isPinging, host])
 
-  const avgPing = history.length > 0 ? Math.round(history.reduce((a, b) => a + b.ms, 0) / history.length) : 0
+  const validHistory = history.filter(h => h.status === 'ok')
+  const avgPing = validHistory.length > 0 ? Math.round(validHistory.reduce((a, b) => a + b.ms, 0) / validHistory.length) : 0
+  const packetLoss = history.length > 0 ? ((history.filter(h => h.status !== 'ok').length / history.length) * 100).toFixed(1) : '0.0'
 
   return (
     <div className="space-y-8">
@@ -28,7 +49,7 @@ export default function PingTest() {
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
             <Activity className="w-5 h-5" />
           </div>
-          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white">Live Network Ping (ICMP Simulation)</h3>
+          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white">HTTP Latency Tester</h3>
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
@@ -36,8 +57,9 @@ export default function PingTest() {
             type="text"
             value={host}
             onChange={(e) => setHost(e.target.value)}
-            placeholder="google.com or 8.8.8.8"
-            className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none font-mono"
+            disabled={isPinging}
+            placeholder="google.com"
+            className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none font-mono disabled:opacity-50"
           />
           <button 
             onClick={() => setIsPinging(!isPinging)}
@@ -51,8 +73,8 @@ export default function PingTest() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { label: 'Average Latency', value: `${avgPing}ms`, icon: Zap, color: 'text-blue-500' },
-          { label: 'Packets Sent', value: history.length, icon: Server, color: 'text-gray-400' },
-          { label: 'Packet Loss', value: '0.0%', icon: Globe, color: 'text-green-500' },
+          { label: 'Requests Sent', value: history.length, icon: Server, color: 'text-gray-400' },
+          { label: 'Request Loss', value: `${packetLoss}%`, icon: Globe, color: 'text-green-500' },
         ].map((stat, i) => (
           <div key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-2xl p-6 shadow-sm">
             <div className="flex items-center gap-2 mb-2">
@@ -73,12 +95,14 @@ export default function PingTest() {
         </div>
         <div className="h-64 bg-gray-50 dark:bg-[#0B1120] rounded-2xl p-6 font-mono text-[10px] overflow-auto space-y-1">
           {history.length > 0 ? history.map((h, i) => (
-            <div key={i} className="flex items-center gap-4 text-blue-600 dark:text-[#00D4B4]">
+            <div key={i} className={`flex items-center gap-4 ${h.status === 'ok' ? 'text-blue-600 dark:text-[#00D4B4]' : 'text-red-500'}`}>
               <span className="text-gray-400 w-16">[{new Date(h.time).toLocaleTimeString([], { hour12: false })}]</span>
-              <span className="font-bold">64 bytes from {host || 'local'}: icmp_seq={history.length - i} ttl=57 time={h.ms}ms</span>
+              <span className="font-bold">
+                {h.status === 'ok' ? `HTTP Request to ${host}: seq=${history.length - i} time=${h.ms}ms` : `Request to ${host} failed or timed out`}
+              </span>
             </div>
           )) : (
-            <div className="text-gray-400 italic">Waiting for ping sequence...</div>
+            <div className="text-gray-400 italic">Waiting for request sequence...</div>
           )}
         </div>
       </div>
