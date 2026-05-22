@@ -11,18 +11,48 @@ export default function DomainAgeChecker() {
   const checkDomain = async () => {
     if (!domain) return
     setLoading(true)
+    setResult(null)
     
-    // Simulating API call - in production this would fetch from a WHOIS API
-    setTimeout(() => {
-      setResult({
-        domain,
-        created: '2015-05-20',
-        age: '8 Years, 11 Months, 25 Days',
-        expiry: '2025-05-20',
-        registrar: 'GoDaddy.com, LLC'
-      })
+    try {
+      // Remove any http/https protocols if pasted
+      const cleanDomain = domain.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
+      const response = await fetch(`https://networkcalc.com/api/dns/whois/${encodeURIComponent(cleanDomain)}`);
+      const data = await response.json();
+      
+      if (data.status === 'OK' && data.whois && data.whois.registry_created_date) {
+        const createdDate = new Date(data.whois.registry_created_date);
+        const expiryDate = new Date(data.whois.registry_expiration_date);
+        const now = new Date();
+        
+        let years = now.getFullYear() - createdDate.getFullYear();
+        let months = now.getMonth() - createdDate.getMonth();
+        let days = now.getDate() - createdDate.getDate();
+        
+        if (days < 0) {
+          months--;
+          days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+        }
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+        
+        setResult({
+          domain: cleanDomain,
+          created: createdDate.toISOString().split('T')[0],
+          age: `${years} Years, ${months} Months, ${days} Days`,
+          expiry: data.whois.registry_expiration_date ? expiryDate.toISOString().split('T')[0] : 'Unknown',
+          registrar: data.whois.registrar || 'Unknown'
+        })
+      } else {
+        alert('Could not retrieve WHOIS data for this domain.');
+      }
+    } catch (e) {
+      console.error(e);
+      alert('Error fetching domain data.');
+    } finally {
       setLoading(false)
-    }, 1500)
+    }
   }
 
   return (
