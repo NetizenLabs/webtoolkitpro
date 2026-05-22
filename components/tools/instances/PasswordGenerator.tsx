@@ -18,8 +18,17 @@ export default function PasswordGenerator() {
     if (includeSymbols) charset += '!@#$%^&*()_+~`|}{[]:;?><,./-='
 
     let newPassword = ''
-    for (let i = 0; i < length; i++) {
-      newPassword += charset.charAt(Math.floor(Math.random() * charset.length))
+    if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
+      const randomValues = new Uint32Array(length)
+      window.crypto.getRandomValues(randomValues)
+      for (let i = 0; i < length; i++) {
+        newPassword += charset[randomValues[i] % charset.length]
+      }
+    } else {
+      // Fallback
+      for (let i = 0; i < length; i++) {
+        newPassword += charset.charAt(Math.floor(Math.random() * charset.length))
+      }
     }
     setPassword(newPassword)
   }, [length, includeUppercase, includeNumbers, includeSymbols])
