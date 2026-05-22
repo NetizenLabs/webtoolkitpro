@@ -223,4 +223,5 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   // Batch 8: Cloud-Native & DevOps
   'k8s-yaml-validator': dynamic(() => import('../components/tools/instances/K8sYamlValidator'), { loading: () => <ToolSkeleton />, ssr: false }),
   'aws-iam-generator': dynamic(() => import('../components/tools/instances/AwsIamGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'cron-to-k8s': dynamic(() => import('../components/tools/instances/CronToK8s'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

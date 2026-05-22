@@ -10481,3 +10481,53 @@ tools:
           answer: Yes. The generated JSON uses the standard AWS Policy format (`Version: 2012-10-17`), which is fully compatible with IAM Users, Roles, and inline S3 Bucket Policies.
         - question: How do I specify multiple actions?
           answer: Simply type them as a comma-separated list (e.g., `s3:GetObject, s3:ListBucket`). The generator will automatically format them into a valid JSON array.
+  - name: Cron to Kubernetes CronJob
+    slug: cron-to-k8s
+    category: Developer Tools
+    icon: Calendar
+    subcategory: cloud-native
+    tags:
+      - kubernetes
+      - k8s
+      - cron
+      - devops
+      - yaml
+    priority: 16
+    releaseDate: '2026-05-22'
+    function:
+      primary: Convert Linux cron expressions to K8s CronJob manifests
+      secondary: Generate production-ready batch/v1 YAML wrappers
+    technical:
+      input_formats:
+        - none
+      output_formats:
+        - yaml
+      processing: client-side
+    meta:
+      title: Cron to Kubernetes CronJob Converter — DevOps YAML Generator
+      description: Quickly convert standard Linux cron expressions into production-ready Kubernetes batch/v1 CronJob YAML manifests. Perfect for DevOps engineers.
+    content:
+      title: Cron to Kubernetes CronJob Generator
+      description: Quickly convert standard Linux cron expressions into production-ready Kubernetes batch/v1 CronJob YAML manifests. Perfect for DevOps engineers.
+      keywords:
+        - cron to k8s
+        - kubernetes cronjob generator
+        - linux cron to k8s yaml
+        - generate cronjob yaml
+        - k8s batch v1 cronjob
+      tldr: Take a Linux cron expression and automatically wrap it in a complete Kubernetes CronJob YAML manifest.
+      entity_definition: The Cron to Kubernetes CronJob converter is a DevOps utility that bridges the gap between traditional Linux scheduling and cloud-native orchestration. It translates standard 5-field cron strings into the `schedule` directive of a Kubernetes `batch/v1` API object, wrapping it in the necessary structural boilerplate (`JobTemplate`, `PodTemplate`, container specs) required to execute scheduled tasks within a K8s cluster.
+      how_it_works: Enter your standard cron string, desired job name, container image, and execution command. The tool validates the cron expression and dynamically interpolates your parameters into a strictly formatted, syntactically correct YAML manifest.
+      use_cases:
+        - Migrating legacy Linux crontabs to a managed Kubernetes cluster
+        - Generating boilerplate YAML for scheduled database backups
+        - Standardizing cron execution environments across CI/CD pipelines
+      features:
+        - Validates 5-field K8s-compliant cron expressions
+        - Outputs modern `batch/v1` API structures
+        - Automatically configures anti-pattern safeguards (restartPolicy, limits)
+      faq:
+        - question: Does Kubernetes support the 6-field cron expression?
+          answer: No. Unlike some Linux distributions or Node.js libraries that support a 6th field for 'seconds', Kubernetes strictly requires the standard 5-field format (`Minute Hour DayOfMonth Month DayOfWeek`).
+        - question: What restart policy is generated?
+          answer: The generated manifest defaults to `restartPolicy: OnFailure`, which is the best practice for CronJobs to ensure transient failures are retried without infinitely looping crashed pods.
