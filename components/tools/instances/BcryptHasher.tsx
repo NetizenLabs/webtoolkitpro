@@ -1,21 +1,29 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Shield, Lock, Hash, Copy, Check, RefreshCcw } from 'lucide-react'
+import { Shield, Lock, Hash, Copy, Check, RefreshCcw, Loader2 } from 'lucide-react'
+import bcrypt from 'bcryptjs'
 
 export default function BcryptHasher() {
   const [password, setPassword] = useState('')
   const [rounds, setRounds] = useState(10)
   const [hash, setHash] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
 
   const generateHash = () => {
-    // In a real app, you'd use bcryptjs. 
-    // For this client-side utility, we provide a high-fidelity simulation 
-    // of the bcrypt format: $2a$[cost]$[22-char-salt][31-char-hash]
-    const salt = Array.from({length: 22}, () => 'abcdefghijklmnopqrstuvwxyz0123456789./'[Math.floor(Math.random() * 38)]).join('')
-    const dummyHash = Array.from({length: 31}, () => 'abcdefghijklmnopqrstuvwxyz0123456789./'[Math.floor(Math.random() * 38)]).join('')
-    setHash(`$2b$${rounds < 10 ? '0' + rounds : rounds}$${salt}${dummyHash}`)
+    if (!password) return
+    setIsGenerating(true)
+    setTimeout(() => {
+      try {
+        const salt = bcrypt.genSaltSync(rounds)
+        const resultingHash = bcrypt.hashSync(password, salt)
+        setHash(resultingHash)
+      } catch (err) {
+        console.error(err)
+      }
+      setIsGenerating(false)
+    }, 100) // Small timeout to allow UI to show loader
   }
 
   return (
@@ -59,9 +67,11 @@ export default function BcryptHasher() {
 
           <button 
             onClick={generateHash}
-            className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
+            disabled={!password || isGenerating}
+            className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 disabled:opacity-50"
           >
-            <Hash className="w-4 h-4" /> Generate Bcrypt Hash
+            {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Hash className="w-4 h-4" />} 
+            {isGenerating ? 'Hashing...' : 'Generate Bcrypt Hash'}
           </button>
         </div>
       </div>

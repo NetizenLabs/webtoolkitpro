@@ -17,6 +17,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "axios": "^1.16.0",
+    "bcryptjs": "^3.0.3",
     "canvas-confetti": "^1.9.4",
     "gray-matter": "^4.0.3",
     "html-to-image": "^1.11.13",
@@ -43,6 +44,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.35",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/bcryptjs": "^2.4.6",
     "@types/canvas-confetti": "^1.9.0",
     "@types/js-beautify": "^1.14.3",
     "@types/js-yaml": "^4.0.9",
