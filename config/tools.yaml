@@ -2183,6 +2183,23 @@ tools:
       faq:
         - question: What sizes are included?
           answer: It generates 16x16, 32x32, 180x180 (Apple), 192x192, and 512x512 PNGs.
+        - question: What are the optimal dimensions for a website favicon?
+          answer: >
+            For modern web development, creating a single 16x16 .ico file is no longer sufficient. To ensure your brand looks sharp across all devices, operating systems, and browsers, you need a responsive set of icons.
+            The optimal dimensions include a 16x16 and 32x32 PNG for standard desktop browsers, which handle tabs and bookmark bars perfectly. 
+            For iOS devices like iPhones and iPads, Apple requires a 180x180 PNG known as the Apple Touch Icon. Without this exact size, iOS will simply take a screenshot of your website for the home screen, which looks unprofessional.
+            For Android and Progressive Web Apps (PWAs), the standard requires 192x192 and 512x512 PNGs. These sizes are declared in the site's manifest.json file and ensure your icon scales perfectly when users "Install" your web app to their home screens, or when the icon is displayed in splash screens and app switchers.
+        - question: Should I use PNG, ICO, or SVG for my favicon?
+          answer: >
+            Historically, .ico files were mandatory because older versions of Internet Explorer did not support other formats. Today, all modern browsers natively support PNG files for favicons, which provide vastly superior compression, support full alpha transparency, and do not require specialized image editing software to create. 
+            Many modern frameworks are moving toward SVG (Scalable Vector Graphics) for favicons because a single small file can scale to infinite resolution. However, SVG support is not yet universal across legacy environments. 
+            The safest, most widely supported best practice for 2026 is to use PNGs for your main manifest and Apple Touch icons, alongside a fallback .ico file mapped to the root directory for older crawlers and legacy browsers. Our tool automatically outputs the optimal PNG formats to ensure maximum compatibility.
+        - question: How do I correctly implement Apple Touch Icons?
+          answer: >
+            Apple Touch Icons are crucial for mobile branding on iOS. When a user bookmarks your site or adds it to their iOS Home Screen, Apple Safari looks for a specific meta tag pointing to a 180x180 pixel image.
+            The image must be perfectly square and should not have transparent backgrounds, as iOS will automatically fill transparent areas with black. 
+            To implement it, you must include the `<link rel="apple-touch-icon" href="/apple-touch-icon.png">` tag in the `<head>` of your HTML document. 
+            Our Real Favicon Generator automates this entirely, producing the exact 180x180 dimension and providing you with the exact HTML snippet to copy and paste into your project.
       technical_specs:
         - label: Format
           value: PNG
@@ -5184,10 +5201,25 @@ tools:
         - Sitemap location validation
         - Crawl-delay syntax checking
       faq:
-        - question: Does robots.txt stop all bots?
-          answer: No. While reputable bots like Googlebot follow it, malicious scrapers often ignore it.
-        - question: Can robots.txt remove a page from search results?
-          answer: No. It only stops crawling. To remove a page, use a 'noindex' meta tag.
+        - question: What exactly is a robots.txt file and how does it work?
+          answer: >
+            A robots.txt file is a simple text file placed in the root directory of your website (e.g., yoursite.com/robots.txt) that acts as the primary gatekeeper for search engine crawlers. It relies on the Robots Exclusion Protocol (REP), an internet standard that instructs automated web crawlers and scraping bots on which areas of your website they are allowed or forbidden to visit.
+            When Googlebot or Bingbot arrives at your domain, the very first thing it requests is the robots.txt file. By analyzing the 'User-agent', 'Allow', and 'Disallow' directives within the file, the bot understands your crawling budget and restrictions. 
+            For example, you can explicitly prevent Google from crawling your /admin/ dashboard, your internal /api/ routes, or user-specific /profile/ pages. Proper robots.txt management is absolutely critical for technical SEO because it preserves your "crawl budget"—ensuring that search engines spend their time indexing your valuable content pages rather than getting stuck crawling endless utility scripts or duplicate parameter URLs.
+        - question: Does robots.txt stop all bots and keep my site secure?
+          answer: >
+            No. This is a very common misconception. While reputable and ethical crawlers like Googlebot, Bingbot, and DuckDuckBot strictly respect the directives in your robots.txt file, malicious scrapers, spam bots, and vulnerability scanners will often completely ignore it. 
+            You should never use robots.txt as a security measure to hide sensitive files, passwords, or vulnerable endpoints. In fact, listing a secret URL in a Disallow directive acts as a map for hackers, telling them exactly where your hidden files are located. Always use server-side authentication (like passwords or JWTs) to secure private areas.
+        - question: Will blocking a page in robots.txt remove it from Google search results?
+          answer: >
+            No. The robots.txt file only stops the act of *crawling*. It does not stop *indexing*. 
+            If another website links to your blocked page, Google can still index the URL and display it in search results without ever crawling its contents. The search snippet will usually say something like "Information for this page is unavailable." 
+            To permanently remove a page from Google's index, you must allow the page to be crawled, but add a `<meta name="robots" content="noindex">` tag to the page's HTML, or use an `X-Robots-Tag: noindex` HTTP header.
+        - question: How do I test and validate my robots.txt rules?
+          answer: >
+            Testing your robots.txt file is essential before deploying it to production, as a single typo (like Disallow: /) can instantly de-index your entire website. 
+            Our Robots.txt Validator mimics the exact parsing logic used by Googlebot. By pasting your directives into the tool, it will instantly scan for syntax errors, check for missing colons, and validate wildcard asterisks (*). 
+            It also analyzes logic conflicts, such as when an 'Allow' rule and a 'Disallow' rule target overlapping directories, ensuring that your XML Sitemaps and core pages remain perfectly accessible to search engines while your private endpoints remain untouched.
   - name: Domain Authority Simulation
     slug: authority-simulation
     category: SEO Tools
