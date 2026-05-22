@@ -26,22 +26,19 @@ export default function QuestionExplorer() {
     if (!keyword) return
     setLoading(true)
     
-    // Simulate AI "Reddit Scanning" delay
-    await new Promise(resolve => setTimeout(resolve, 1500))
-
-    const baseQuestions = [
-      { text: `What is the actual cost of ${keyword} in 2026?`, intent: 'Budget', relevance: 98 },
-      { text: `Does ${keyword} really work for beginners?`, intent: 'Trust', relevance: 95 },
-      { text: `Best ${keyword} alternatives that don't cost a fortune?`, intent: 'Comparison', relevance: 92 },
-      { text: `How to set up ${keyword} without breaking anything?`, intent: 'Technical', relevance: 88 },
-      { text: `Is ${keyword} worth the investment for a small business?`, intent: 'Validation', relevance: 85 },
-      { text: `Common mistakes when starting with ${keyword}?`, intent: 'Technical', relevance: 82 },
-      { text: `Who are the most trusted ${keyword} providers?`, intent: 'Trust', relevance: 79 },
-      { text: `Hidden fees you should know about ${keyword}?`, intent: 'Budget', relevance: 76 }
-    ]
-
-    setQuestions(baseQuestions)
-    setLoading(false)
+    try {
+      const res = await fetch(`/api/question-explorer?keyword=${encodeURIComponent(keyword)}`)
+      const data = await res.json()
+      if (data.questions) {
+        setQuestions(data.questions)
+      } else {
+        setQuestions([])
+      }
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleCopy = (text: string, index: number) => {
