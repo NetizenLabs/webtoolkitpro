@@ -10280,3 +10280,103 @@ tools:
           answer: No. The token encoding library runs entirely within your browser's JavaScript engine. Your proprietary prompts are completely secure.
         - question: How many words is one token?
           answer: As a general rule of thumb, 1 token is roughly equivalent to 4 characters or 0.75 words of standard English text.
+  - name: JSON to Prisma Schema Generator
+    slug: json-to-prisma
+    category: Developer Tools
+    icon: Database
+    subcategory: orm-generators
+    tags:
+      - prisma
+      - orm
+      - typescript
+      - database
+      - nextjs
+    priority: 14
+    releaseDate: '2026-05-22'
+    function:
+      primary: Generate valid Prisma ORM models from standard JSON payloads
+      secondary: Automatically infer datatypes, IDs, and timestamps
+    technical:
+      input_formats:
+        - json
+      output_formats:
+        - prisma
+      processing: client-side
+    meta:
+      title: JSON to Prisma Schema Generator — Instant ORM Models
+      description: Instantly generate valid Prisma ORM models from JSON payloads. Perfect for Next.js, Node.js, and TypeScript developers migrating backend data architectures.
+    content:
+      title: JSON to Prisma Schema Generator
+      description: Instantly generate valid Prisma ORM models from JSON payloads. Perfect for Next.js, Node.js, and TypeScript developers migrating backend data architectures.
+      keywords:
+        - json to prisma
+        - prisma schema generator
+        - prisma model builder
+        - generate prisma schema from json
+        - nextjs database schema
+      tldr: Paste a JSON API response and immediately get a correctly typed Prisma database model.
+      entity_definition: The JSON to Prisma Schema Generator is a backend engineering tool that parses unstructured JSON objects and converts them into strictly typed Data Definition Language (DDL) models for Prisma ORM. It accelerates the scaffolding of Node.js and TypeScript backends by automating the boilerplate required to map raw JSON fields into corresponding SQL or NoSQL database types.
+      how_it_works: The generator recursively traverses your JSON object, infers the primitive types (identifying dates vs standard strings, ints vs floats), and maps them directly to Prisma's strongly-typed scalar types. It automatically tags common fields (like 'id' or 'email') with appropriate Prisma directives (`@id`, `@unique`).
+      use_cases:
+        - Scaffolding a new Next.js API using an existing JSON data structure
+        - Migrating legacy unstructured data into a typed PostgreSQL database
+        - Generating boilerplate models during hackathons and rapid prototyping
+      features:
+        - Automatic type inference (detects DateTimes, Arrays, JSON objects)
+        - Smart directive assignment (`@id`, `@unique`, `@default(now())`)
+        - 100% client-side schema generation
+      faq:
+        - question: Does this support nested JSON objects?
+          answer: Yes. It maps nested objects and arrays of objects to Prisma's built-in `Json` scalar type, which is perfectly supported by PostgreSQL and MySQL backends.
+        - question: How does it handle IDs?
+          answer: If it detects an `id` field that is a number, it assigns `@id @default(autoincrement())`. If it is a string, it assigns `@id @default(uuid())`.
+  - name: JSON to Pydantic Model (V2)
+    slug: json-to-pydantic
+    category: Developer Tools
+    icon: Hash
+    subcategory: ai-engineering
+    tags:
+      - pydantic
+      - python
+      - ai
+      - fastapi
+      - validation
+    priority: 14
+    releaseDate: '2026-05-22'
+    function:
+      primary: Generate strict Pydantic V2 BaseModels from JSON
+      secondary: Automate Python type hinting for API integrations
+    technical:
+      input_formats:
+        - json
+      output_formats:
+        - python
+      processing: client-side
+    meta:
+      title: JSON to Pydantic Model Generator (V2) — Python & FastAPI
+      description: Convert JSON payloads into strict Python Pydantic V2 BaseModels instantly. Automate your FastAPI schema generation and AI engineering data validation.
+    content:
+      title: JSON to Pydantic Model Generator
+      description: Convert JSON payloads into strict Python Pydantic V2 BaseModels instantly. Automate your FastAPI schema generation and AI engineering data validation.
+      keywords:
+        - json to pydantic
+        - pydantic model generator
+        - fastapi schema from json
+        - generate python types
+        - pydantic v2 code generator
+      tldr: Paste JSON and instantly receive a perfectly typed Python class using Pydantic V2 BaseModels.
+      entity_definition: The JSON to Pydantic Model generator is a code translation utility heavily utilized by Python backend engineers and AI developers. It transforms untyped JSON data structures into rigorous `pydantic.BaseModel` classes. This is critical for modern Python development (especially within the FastAPI ecosystem and LLM tool-calling architectures), as it enforces strict data validation, serialization, and IDE auto-completion.
+      how_it_works: It parses your JSON, identifies the underlying data structures, and maps them to Python's typing library (`List`, `Dict`, `Optional`) and Pydantic field definitions, assembling a complete, production-ready class file.
+      use_cases:
+        - Building FastAPI request/response schemas rapidly
+        - Defining strict output structures for LLM tool-calling (OpenAI Functions)
+        - Validating massive datasets in data science pipelines
+      features:
+        - Supports Python's `typing` module for deep type hints
+        - Recognizes ISO-8601 strings and maps to `datetime` objects
+        - Handles nulls gracefully by mapping to `Optional[Any] = None`
+      faq:
+        - question: Does this generate code for Pydantic V1 or V2?
+          answer: This tool generates syntax optimized for modern Pydantic V2, which is the current standard for FastAPI and standard Python AI libraries.
+        - question: How are nested arrays handled?
+          answer: The tool evaluates the first item in the array to infer the type, generating strict definitions like `List[int]` or `List[str]` rather than generic `List[Any]` whenever possible.
