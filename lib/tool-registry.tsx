@@ -219,4 +219,8 @@ export const TOOL_COMPONENTS: Record<string, React.ComponentType> = {
   // Batch 7: Modern ORM & Database
   'json-to-prisma': dynamic(() => import('../components/tools/instances/JsonToPrisma'), { loading: () => <ToolSkeleton />, ssr: false }),
   'json-to-pydantic': dynamic(() => import('../components/tools/instances/JsonToPydantic'), { loading: () => <ToolSkeleton />, ssr: false }),
+
+  // Batch 8: Cloud-Native & DevOps
+  'k8s-yaml-validator': dynamic(() => import('../components/tools/instances/K8sYamlValidator'), { loading: () => <ToolSkeleton />, ssr: false }),
+  'aws-iam-generator': dynamic(() => import('../components/tools/instances/AwsIamGenerator'), { loading: () => <ToolSkeleton />, ssr: false }),
 }

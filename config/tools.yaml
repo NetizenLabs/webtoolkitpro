@@ -10380,3 +10380,104 @@ tools:
           answer: This tool generates syntax optimized for modern Pydantic V2, which is the current standard for FastAPI and standard Python AI libraries.
         - question: How are nested arrays handled?
           answer: The tool evaluates the first item in the array to infer the type, generating strict definitions like `List[int]` or `List[str]` rather than generic `List[Any]` whenever possible.
+  - name: Kubernetes YAML Validator
+    slug: k8s-yaml-validator
+    category: Developer Tools
+    icon: ShieldCheck
+    subcategory: cloud-native
+    tags:
+      - kubernetes
+      - k8s
+      - yaml
+      - devops
+      - linter
+    priority: 16
+    releaseDate: '2026-05-22'
+    function:
+      primary: Lint and validate Kubernetes YAML manifests instantly
+      secondary: Detect deprecated API versions and missing resource limits
+    technical:
+      input_formats:
+        - yaml
+      output_formats:
+        - text
+      processing: client-side
+    meta:
+      title: Kubernetes (K8s) YAML Validator & Linter — Online DevOps Tool
+      description: Securely lint and validate your Kubernetes deployment, service, and ingress YAML files online. Detects deprecated apiVersions and missing resource limits.
+    content:
+      title: Kubernetes YAML Validator & Linter
+      description: Securely lint and validate your Kubernetes deployment, service, and ingress YAML files online. Detects deprecated apiVersions and missing resource limits.
+      keywords:
+        - kubernetes yaml validator
+        - k8s linter online
+        - validate kubernetes deployment
+        - check k8s manifest
+        - kubernetes yaml checker
+      tldr: Paste your K8s manifests to instantly detect syntax errors, missing mandatory fields, and deprecated APIs.
+      entity_definition: The Kubernetes YAML Validator is a DevOps utility designed to analyze and lint Kubernetes manifest files before they are applied to a cluster via `kubectl`. It parses the YAML structure and validates it against standard Kubernetes resource constraints, ensuring mandatory fields like `apiVersion`, `kind`, and `metadata.name` are present. By catching structural errors and deprecations locally, platform engineers avoid deployment failures and maintain strict cluster hygiene.
+      how_it_works: Utilizing a strict YAML parsing engine (`js-yaml`), the tool separates multi-document manifests (separated by `---`) and analyzes each object individually. It checks for structural integrity and applies heuristic rules (like enforcing resource limits) purely in the browser.
+      use_cases:
+        - Validating complex Helm chart outputs before deployment
+        - Auditing legacy manifests for deprecated APIs (e.g. migrating from `extensions/v1beta1` to `apps/v1`)
+        - Ensuring Pods have proper CPU/Memory requests and limits defined
+      features:
+        - Supports multi-document YAML stream parsing
+        - Instant detection of deprecated `apiVersion` strings
+        - Highlights missing resource limits (anti-pattern detection)
+        - 100% client-side validation for zero-trust enterprise security
+      faq:
+        - question: Are my cluster configurations sent to a server?
+          answer: No. Enterprise security is our top priority. The validation logic runs entirely within your browser's local sandbox, meaning your private cluster configurations and secrets are never transmitted.
+        - question: Why is it warning me about missing resource limits?
+          answer: Deploying pods without strict CPU and memory `requests` and `limits` is a Kubernetes anti-pattern. It can lead to noisy neighbor problems or node exhaustion, which is why our linter flags it as a warning.
+  - name: AWS IAM Policy Generator
+    slug: aws-iam-generator
+    category: Developer Tools
+    icon: Shield
+    subcategory: cloud-native
+    tags:
+      - aws
+      - iam
+      - security
+      - cloud
+      - json
+    priority: 16
+    releaseDate: '2026-05-22'
+    function:
+      primary: Visually build strict AWS IAM JSON policies
+      secondary: Enforce least-privilege access control
+    technical:
+      input_formats:
+        - none
+      output_formats:
+        - json
+      processing: client-side
+    meta:
+      title: AWS IAM Policy Generator — Visual JSON Builder
+      description: Generate perfectly formatted AWS IAM JSON policies with our visual builder. Ensure least-privilege security for S3, EC2, DynamoDB, and Lambda.
+    content:
+      title: AWS IAM Policy Generator
+      description: Generate perfectly formatted AWS IAM JSON policies with our visual builder. Ensure least-privilege security for S3, EC2, DynamoDB, and Lambda.
+      keywords:
+        - aws iam policy generator
+        - create iam json policy
+        - visual iam builder
+        - aws permissions generator
+        - least privilege aws
+      tldr: Use a visual interface to rapidly assemble complex, error-free AWS IAM JSON policies.
+      entity_definition: The AWS IAM Policy Generator is a cloud security instrument that abstracts the complex syntax of Amazon Web Services (AWS) Identity and Access Management (IAM) JSON policies. By providing a GUI-driven builder, it allows Cloud Architects and DevOps engineers to construct precise `Allow` and `Deny` statements tied to specific `Actions` (like `s3:GetObject`) and `Resources` (ARNs), thereby enforcing the principle of least privilege without manually debugging JSON syntax errors.
+      how_it_works: Users dynamically add Statement blocks, configuring the Effect, comma-separated Actions, and specific Resource ARNs. The tool instantly serializes this configuration into a valid, rigorously formatted IAM JSON policy payload ready to be pasted into the AWS Console or Terraform.
+      use_cases:
+        - Building precise S3 bucket read/write policies for application roles
+        - Generating Terraform `aws_iam_policy` document blocks
+        - Auditing and restructuring overly permissive (wildcard) access rules
+      features:
+        - Visual block builder (no manual JSON typing required)
+        - Instant serialization of multi-statement policies
+        - Automatic normalization of single vs array strings
+      faq:
+        - question: Can I use this for AWS S3 bucket policies?
+          answer: Yes. The generated JSON uses the standard AWS Policy format (`Version: 2012-10-17`), which is fully compatible with IAM Users, Roles, and inline S3 Bucket Policies.
+        - question: How do I specify multiple actions?
+          answer: Simply type them as a comma-separated list (e.g., `s3:GetObject, s3:ListBucket`). The generator will automatically format them into a valid JSON array.
