@@ -40,7 +40,7 @@ tools:
         - fix json syntax errors instantly
         - json minifier for production use
         - api debugging tools online
-      tldr: Instantly beautify or minify JSON with real-time AST validationâ€”no data ever leaves your browser.
+      tldr: Instantly beautify or minify JSON with real-time AST validation—no data ever leaves your browser.
       entity_definition: The JSON Formatter & Validator is a professional tool for making JSON data readable. JSON is used everywhere for sending data between apps, but it is often hard to read in its raw form. Our tool fixes this by formatting your data with clean spacing and clear structure. It also checks for common errors like missing quotes or extra commas that can break your code. Because it runs entirely in your browser, your sensitive data is never sent to a server.
       how_it_works: Our tool uses your browser's built-in engine to process data instantly. When you paste your JSON, the tool checks the structure for any syntax errors. If it finds a mistake, it shows you exactly where the error is so you can fix it. The formatter then cleans up the spacing and indentation to make the code easy for humans to read.
       use_cases:
@@ -61,7 +61,7 @@ tools:
         - question: Is my JSON data secure on WebToolkit Pro?
           answer: Yes. All formatting and validation happens 100% locally in your browser. None of your data is ever transmitted or uploaded to a server, ensuring total privacy.
         - question: How does this compare to cloud-based JSON formatters?
-          answer: Most online formatters send your data to their servers for processing, where it can be logged or cached. WebToolkit Pro is 'Privacy-First'â€”all processing happens in your browser's memory and is cleared instantly when you close the tab.
+          answer: Most online formatters send your data to their servers for processing, where it can be logged or cached. WebToolkit Pro is 'Privacy-First'—all processing happens in your browser's memory and is cleared instantly when you close the tab.
         - question: Can I format very large JSON files?
           answer: Yes, our engine is optimized for performance and can handle payloads up to 10MB (roughly 200,000 lines) instantly. For larger files, browser memory limits may apply, but your data is never uploaded.
         - question: Does it support sorting object keys alphabetically?
@@ -107,10 +107,10 @@ tools:
       processing: client-side
       library: window.crypto
     meta:
-      title: High Entropy Random Password Generator â€” Secure & Offline
+      title: High Entropy Random Password Generator — Secure & Offline
       description: Generate cryptographically secure, high-entropy passwords that meet US enterprise standards. Works 100% offline using your browser's native crypto API.
     content:
-      title: Secure Password Generator â€” Best Random Password Tool 2026
+      title: Secure Password Generator — Best Random Password Tool 2026
       description: Generate cryptographically secure, high-entropy passwords that meet US enterprise standards. Works 100% offline using your browser's native crypto API.
       keywords:
         - random password generator
@@ -120,7 +120,7 @@ tools:
         - unhackable password tool
         - cryptographically secure passwords
       tldr: Generate high-entropy, unhackable passwords locally using the secure Web Crypto API.
-      entity_definition: The WebToolkit Pro Secure Password Generator is a mission-critical security utility designed to produce high-entropy, cryptographically secure credentials. In an era where AI-driven brute-force attacks can crack simple passwords in seconds, the strength of your credentials depends entirely on their mathematical randomness. This tool utilizes the browser's native Web Crypto APIâ€”a hardware-backed entropy sourceâ€”to generate a stream of truly random bytes that meet the most stringent US enterprise and government security standards. By operating entirely on the client-side, we ensure that your generated passwords are never transmitted across any network, providing a 'Zero-Knowledge' environment that is inherently more secure than cloud-based alternatives.
+      entity_definition: The WebToolkit Pro Secure Password Generator is a mission-critical security utility designed to produce high-entropy, cryptographically secure credentials. In an era where AI-driven brute-force attacks can crack simple passwords in seconds, the strength of your credentials depends entirely on their mathematical randomness. This tool utilizes the browser's native Web Crypto API—a hardware-backed entropy source—to generate a stream of truly random bytes that meet the most stringent US enterprise and government security standards. By operating entirely on the client-side, we ensure that your generated passwords are never transmitted across any network, providing a 'Zero-Knowledge' environment that is inherently more secure than cloud-based alternatives.
       how_it_works: Our generator implements the cryptographically secure pseudorandom number generator (CSPRNG) provided by the browser's kernel. When you select your criteria, the engine draws a set of random values and maps them against your chosen character pools (uppercase, lowercase, numbers, and high-security symbols). The resulting string is tested for entropy bits, ensuring it meets the threshold for modern resistance against credential stuffing and rainbow table attacks.
       use_cases:
         - Generating primary passwords for enterprise SSO and IAM systems
@@ -170,10 +170,10 @@ tools:
         - txt
       processing: server-side
     meta:
-      title: Check My Public IPv4 & IPv6 Address â€” Real-time Location Audit
+      title: Check My Public IPv4 & IPv6 Address — Real-time Location Audit
       description: Instantly find your public IPv4/IPv6 address, approximate geographic location, and connection details with our secure, real-time IP checker.
     content:
-      title: What is my IP Address? â€” Instant Public IP Checker
+      title: What is my IP Address? — Instant Public IP Checker
       description: Instantly find your public IPv4/IPv6 address, approximate geographic location, and connection details with our secure, real-time IP checker.
       keywords:
         - what is my ip address
@@ -221,10 +221,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: JavaScript Code Minifier â€” Compress JS for Faster Page Load
+      title: JavaScript Code Minifier — Compress JS for Faster Page Load
       description: Compress and optimize your JavaScript code for production. Remove comments, whitespace, and redundant characters to improve Core Web Vitals and page speed.
     content:
-      title: JS Code Minifier â€” High-Performance JavaScript Compression
+      title: JS Code Minifier — High-Performance JavaScript Compression
       description: Compress and optimize your JavaScript code for production. Remove comments, whitespace, and redundant characters to improve Core Web Vitals and page speed.
       keywords:
         - minify javascript online
@@ -271,10 +271,10 @@ tools:
         - html
       processing: client-side
     meta:
-      title: Free Meta Tag Generator for SEO â€” Preview in Google & Social
+      title: Free Meta Tag Generator for SEO — Preview in Google & Social
       description: Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards. Preview how your site looks in Google and social media feeds before publishing.
     content:
-      title: SEO Meta Tag Generator â€” Optimize for High Search Visibility
+      title: SEO Meta Tag Generator — Optimize for High Search Visibility
       description: Create SEO-optimized meta tags, Open Graph tags, and Twitter Cards. Preview how your site looks in Google and social media feeds before publishing.
       keywords:
         - seo meta tag generator
@@ -410,10 +410,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Random UUID v4 Generator â€” RFC 4122 Compliant Online Tool
+      title: Random UUID v4 Generator — RFC 4122 Compliant Online Tool
       description: Generate cryptographically secure, unique version 4 UUIDs instantly. Compliant with RFC 4122 standards for applications and high-scale databases.
     content:
-      title: UUID v4 Generator â€” RFC 4122 Compliant Random Identifiers
+      title: UUID v4 Generator — RFC 4122 Compliant Random Identifiers
       description: Generate cryptographically secure, unique version 4 UUIDs instantly. Compliant with RFC 4122 standards for applications and high-scale databases.
       keywords:
         - random uuid generator
@@ -456,10 +456,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Lorem Ipsum Generator â€” Design Placeholder Text
+      title: Lorem Ipsum Generator — Design Placeholder Text
       description: Generate high-quality Latin placeholder text for website mockups, UI/UX designs, and typesetting layouts. Customizable paragraph length and distribution.
     content:
-      title: Lorem Ipsum Generator â€” Professional Design Placeholder Text
+      title: Lorem Ipsum Generator — Professional Design Placeholder Text
       description: Generate high-quality Latin placeholder text for website mockups, UI/UX designs, and typesetting layouts. Customizable paragraph length and distribution.
       keywords:
         - lorem ipsum generator
@@ -503,10 +503,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Robots.txt Generator for WordPress & Any Site â€” Free Tool
+      title: Robots.txt Generator for WordPress & Any Site — Free Tool
       description: Control search engine crawler access and optimize your website's crawl budget. Generate perfectly formatted, REP-compliant robots.txt files for WordPress and custom sites.
     content:
-      title: Robots.txt Generator â€” Optimize Crawl Budget & SEO
+      title: Robots.txt Generator — Optimize Crawl Budget & SEO
       description: Control search engine crawler access and optimize your website's crawl budget. Generate perfectly formatted, REP-compliant robots.txt files for WordPress and custom sites.
       keywords:
         - robots.txt generator
@@ -549,10 +549,10 @@ tools:
         - hex
       processing: client-side
     meta:
-      title: SHA-256 & MD5 Hash Generator â€” Secure Online Checksum
+      title: SHA-256 & MD5 Hash Generator — Secure Online Checksum
       description: Generate secure cryptographic hashes instantly using SHA-256, MD5, and SHA-512 algorithms. Verify file integrity and create secure checksums 100% locally.
     content:
-      title: Secure Hash Generator â€” SHA-256, MD5 & SHA-512 Online
+      title: Secure Hash Generator — SHA-256, MD5 & SHA-512 Online
       description: Generate secure cryptographic hashes instantly using SHA-256, MD5, and SHA-512 algorithms. Verify file integrity and create secure checksums 100% locally.
       keywords:
         - sha-256 generator
@@ -703,10 +703,10 @@ tools:
         - json
       processing: client-side
     meta:
-      title: JSON-LD Schema Generator â€” Free SEO Markup Tool
+      title: JSON-LD Schema Generator — Free SEO Markup Tool
       description: Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines.
     content:
-      title: JSON-LD Schema Generator â€” Create Google-Ready Structured Data
+      title: JSON-LD Schema Generator — Create Google-Ready Structured Data
       description: Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines.
       keywords:
         - json-ld
@@ -773,10 +773,10 @@ tools:
         - currency
       processing: client-side
     meta:
-      title: API Latency Cost Calculator â€” Revenue Loss Projection for Slow APIs
+      title: API Latency Cost Calculator — Revenue Loss Projection for Slow APIs
       description: Analyze the financial impact of network latency on your business revenue. Calculate conversion drops and projected revenue loss caused by slow API response times.
     content:
-      title: API Latency Cost Calculator â€” Analyze Business Impact
+      title: API Latency Cost Calculator — Analyze Business Impact
       description: Analyze the financial impact of network latency on your business revenue. Calculate conversion drops and projected revenue loss caused by slow API response times.
       keywords:
         - api latency cost calculator
@@ -819,10 +819,10 @@ tools:
         - currency
       processing: client-side
     meta:
-      title: AdSense Revenue Calculator â€” Estimate Earnings by Niche & Traffic
+      title: AdSense Revenue Calculator — Estimate Earnings by Niche & Traffic
       description: Estimate your potential website earnings from Google AdSense. Calculate projected revenue based on daily page views, CTR, and CPC across different industry niches.
     content:
-      title: AdSense Revenue Estimator â€” Project Your Website Earnings
+      title: AdSense Revenue Estimator — Project Your Website Earnings
       description: Estimate your potential website earnings from Google AdSense. Calculate projected revenue based on daily page views, CTR, and CPC across different industry niches.
       keywords:
         - adsense revenue estimator
@@ -865,7 +865,7 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Base64 Encoding & Decoding Tool â€” Secure & Local
+      title: Base64 Encoding & Decoding Tool — Secure & Local
       description: Decode passwords, tokens, or binary data 100% locally in your browser. Our secure, privacy-first Base64 encoding tool ensures no data leaves your device.
     content:
       title: Secure Client-Side Base64 Encoding & Decoding Tool
@@ -946,7 +946,7 @@ tools:
       title: 'Binary Converter: Binary, Decimal & Hexadecimal Tool'
       description: Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science students and low-level system programming.
     content:
-      title: Binary Converter â€” Online Base System Translation
+      title: Binary Converter — Online Base System Translation
       description: Convert numbers between binary, decimal, hexadecimal, and octal systems instantly. A crucial tool for computer science students and low-level system programming.
       keywords:
         - binary converter online
@@ -992,7 +992,7 @@ tools:
       title: 'Text Case Converter: UPPERCASE, lowercase & Title Case'
       description: Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly. Ideal for SEO slugs and clean content formatting.
     content:
-      title: Text Case Converter â€” Instant Formatting Tool
+      title: Text Case Converter — Instant Formatting Tool
       description: Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and slug-case formats instantly. Ideal for SEO slugs and clean content formatting.
       keywords:
         - case converter online
@@ -1035,10 +1035,10 @@ tools:
         - number
       processing: client-side
     meta:
-      title: PX to REM & EM Converter â€” CSS Responsive Units Calculator
+      title: PX to REM & EM Converter — CSS Responsive Units Calculator
       description: Convert between pixels, rem, em, and viewport units instantly. Essential for building accessible, fluid, and responsive web interfaces based on modern CSS standards.
     content:
-      title: CSS Unit Converter â€” Responsive Web Design Calculator
+      title: CSS Unit Converter — Responsive Web Design Calculator
       description: Convert between pixels, rem, em, and viewport units instantly. Essential for building accessible, fluid, and responsive web interfaces based on modern CSS standards.
       keywords:
         - px to rem converter
@@ -1082,10 +1082,10 @@ tools:
         - url
       processing: client-side
     meta:
-      title: URL Encoder & Decoder â€” Safe URI Component Tool
+      title: URL Encoder & Decoder — Safe URI Component Tool
       description: Encode or decode strings for URI compatibility according to RFC 3986. Safely prepare URL components for web browsers, API requests, and search engine friendly links.
     content:
-      title: URL Encoder & Decoder â€” Safe URI Component Tools
+      title: URL Encoder & Decoder — Safe URI Component Tools
       description: Encode or decode strings for URI compatibility according to RFC 3986. Safely prepare URL components for web browsers, API requests, and search engine friendly links.
       keywords:
         - url encoder online
@@ -1128,10 +1128,10 @@ tools:
         - json
       processing: server-side
     meta:
-      title: CDN & Edge Readiness Checker â€” Audit Cache & Compression Status
+      title: CDN & Edge Readiness Checker — Audit Cache & Compression Status
       description: Check if your website is correctly delivered via a Content Delivery Network. Analyze edge headers, compression (Brotli/Gzip), and cache HIT/MISS status for maximum performance.
     content:
-      title: CDN & Edge Readiness Tester â€” Global Header Analysis
+      title: CDN & Edge Readiness Tester — Global Header Analysis
       description: Check if your website is correctly delivered via a Content Delivery Network. Analyze edge headers, compression (Brotli/Gzip), and cache HIT/MISS status for maximum performance.
       keywords:
         - cdn readiness tester
@@ -1171,10 +1171,10 @@ tools:
         - ratio
       processing: client-side
     meta:
-      title: WCAG Color Contrast Checker â€” Accessibility Compliance for Designs
+      title: WCAG Color Contrast Checker — Accessibility Compliance for Designs
       description: Ensure your website meets international accessibility standards. Audit color contrast ratios for WCAG 2.1 AA and AAA compliance to improve readability and user experience.
     content:
-      title: WCAG Color Contrast Checker â€” Accessibility Compliance Tool
+      title: WCAG Color Contrast Checker — Accessibility Compliance Tool
       description: Ensure your website meets international accessibility standards. Audit color contrast ratios for WCAG 2.1 AA and AAA compliance to improve readability and user experience.
       keywords:
         - wcag color contrast checker
@@ -1219,10 +1219,10 @@ tools:
         - hsl
       processing: client-side
     meta:
-      title: HEX, RGB & HSL Color Picker â€” Advanced Web Design Tool
+      title: HEX, RGB & HSL Color Picker — Advanced Web Design Tool
       description: Pick, convert, and organize colors using HEX, RGB, and HSL formats. An advanced visual tool for designers and developers to build harmonious color palettes.
     content:
-      title: Universal Color Picker â€” Advanced Web Design Utility
+      title: Universal Color Picker — Advanced Web Design Utility
       description: Pick, convert, and organize colors using HEX, RGB, and HSL formats. An advanced visual tool for designers and developers to build harmonious color palettes.
       keywords:
         - hex color picker online
@@ -1265,10 +1265,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: HTML Entity Encoder & Decoder â€” XSS Sanitization
+      title: HTML Entity Encoder & Decoder — XSS Sanitization
       description: Safely encode and decode HTML entities to prevent XSS attacks and ensure correct browser rendering. Convert special characters into secure HTML entities instantly.
     content:
-      title: HTML Entity Encoder â€” Secure Web Sanitization Utility
+      title: HTML Entity Encoder — Secure Web Sanitization Utility
       description: Safely encode and decode HTML entities to prevent XSS attacks and ensure correct browser rendering. Convert special characters into secure HTML entities instantly.
       keywords:
         - html entity encoder online
@@ -1311,10 +1311,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Unix Timestamp Converter â€” Convert Epoch to Human Readable Date
+      title: Unix Timestamp Converter — Convert Epoch to Human Readable Date
       description: Convert Unix timestamps to human-readable dates and vice-versa. Supports seconds, milliseconds, and multiple timezones for precise developer debugging.
     content:
-      title: Unix Timestamp Converter â€” Online Epoch Date Tool
+      title: Unix Timestamp Converter — Online Epoch Date Tool
       description: Convert Unix timestamps to human-readable dates and vice-versa. Supports seconds, milliseconds, and multiple timezones for precise developer debugging.
       keywords:
         - unix timestamp converter
@@ -1353,10 +1353,10 @@ tools:
     technical:
       processing: client-side
     meta:
-      title: Core Web Vitals Optimization Guide â€” LCP, INP & CLS Fixes
+      title: Core Web Vitals Optimization Guide — LCP, INP & CLS Fixes
       description: 'Master the three critical metrics Google uses to measure user experience: LCP, INP, and CLS. Learn how to audit and optimize for better 2026 search rankings.'
     content:
-      title: Core Web Vitals Guide â€” Master Search Experience Metrics
+      title: Core Web Vitals Guide — Master Search Experience Metrics
       description: 'Master the three critical metrics Google uses to measure user experience: LCP, INP, and CLS. Learn how to audit and optimize for better 2026 search rankings.'
       keywords:
         - core web vitals guide
@@ -1474,10 +1474,10 @@ tools:
         - preview
       processing: client-side
     meta:
-      title: Markdown Previewer â€” Live Side-by-Side Editor & Renderer
+      title: Markdown Previewer — Live Side-by-Side Editor & Renderer
       description: Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files.
     content:
-      title: Markdown Previewer â€” Live Side-by-Side Editor & Renderer
+      title: Markdown Previewer — Live Side-by-Side Editor & Renderer
       description: Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files.
       keywords:
         - markdown previewer online
@@ -1519,7 +1519,7 @@ tools:
       title: Robots.txt Templates for WordPress, Next.js & AI Bots
       description: Access battle-tested robots.txt templates for Next.js, WordPress, and E-commerce. Optimize your crawl budget and manage AI bot access.
     content:
-      title: Robots.txt Templates â€” Expert SEO Configurations
+      title: Robots.txt Templates — Expert SEO Configurations
       description: Access battle-tested robots.txt templates for Next.js, WordPress, and E-commerce. Optimize your crawl budget and manage AI bot access.
       keywords:
         - robots.txt templates
@@ -1561,7 +1561,7 @@ tools:
       title: 'Technical SEO Audit Checklist: 2026 Ranking Factors'
       description: A comprehensive, interactive checklist for auditing your website's SEO health. Covers crawlability, indexing, speed, and content structure.
     content:
-      title: SEO Audit Checklist â€” Technical Site Health Audit
+      title: SEO Audit Checklist — Technical Site Health Audit
       description: A comprehensive, interactive checklist for auditing your website's SEO health. Covers crawlability, indexing, speed, and content structure.
       keywords:
         - seo audit checklist
@@ -1604,10 +1604,10 @@ tools:
         - preview
       processing: server-side
     meta:
-      title: Social Media Preview Tester â€” Facebook, Twitter & LinkedIn OG Tool
+      title: Social Media Preview Tester — Facebook, Twitter & LinkedIn OG Tool
       description: Verify how your website looks on Facebook, Twitter, LinkedIn, and Google Search. Test and optimize your Open Graph tags and meta descriptions.
     content:
-      title: Social Preview Tester â€” Visual Open Graph Debugger
+      title: Social Preview Tester — Visual Open Graph Debugger
       description: Verify how your website looks on Facebook, Twitter, LinkedIn, and Google Search. Test and optimize your Open Graph tags and meta descriptions.
       keywords:
         - social preview tester
@@ -1653,7 +1653,7 @@ tools:
       title: 'Word Counter: Character Count & Reading Time Tool'
       description: Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content.
     content:
-      title: Word Counter â€” Real-time Writing Statistics
+      title: Word Counter — Real-time Writing Statistics
       description: Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content.
       keywords:
         - word counter online
@@ -1699,10 +1699,10 @@ tools:
       processing: client-side
       library: Natural Language Pattern Matching
     meta:
-      title: Reddit Question Explorer â€” Find High-Intent Content Ideas for SEO
+      title: Reddit Question Explorer — Find High-Intent Content Ideas for SEO
       description: Discover the exact questions your customers are asking on Reddit. Analyze search intent and uncover long-tail content ideas that drive high-intent organic traffic.
     content:
-      title: Reddit Question Explorer â€” Find Content Ideas & Search Intent
+      title: Reddit Question Explorer — Find Content Ideas & Search Intent
       description: Discover the exact questions your customers are asking on Reddit. Analyze search intent and uncover long-tail content ideas that drive high-intent organic traffic.
       keywords:
         - reddit question explorer
@@ -1711,8 +1711,8 @@ tools:
         - content idea generator
         - search intent analyzer
         - people also ask reddit
-      tldr: Find the real pain points and questions being discussed by real people in your nicheâ€”instantly.
-      entity_definition: Question Explorer is an advanced SEO and content strategy utility that identifies high-intent user questions from social discussions. By analyzing common linguistic patterns and 'People Also Ask' triggers, it extracts the most valuable queries that potential customers have during their buying journey. It classifies results by search intentâ€”such as budget planning, trust validation, or technical comparisonâ€”allowing marketers to create content that directly addresses specific audience needs.
+      tldr: Find the real pain points and questions being discussed by real people in your niche—instantly.
+      entity_definition: Question Explorer is an advanced SEO and content strategy utility that identifies high-intent user questions from social discussions. By analyzing common linguistic patterns and 'People Also Ask' triggers, it extracts the most valuable queries that potential customers have during their buying journey. It classifies results by search intent—such as budget planning, trust validation, or technical comparison—allowing marketers to create content that directly addresses specific audience needs.
       how_it_works: The tool uses a specialized keyword-modifier engine to simulate Reddit's discussion patterns. It scans for 'How do I', 'What is the best', and 'Does anyone know' patterns within your niche to provide a prioritized list of high-value questions.
       use_cases:
         - Generating blog post headlines
@@ -1728,7 +1728,7 @@ tools:
         - question: Does it actually scrape Reddit in real-time?
           answer: It uses an advanced pattern-matching engine to simulate results based on Reddit's most common discussion structures for your specific niche.
         - question: How is this different from Google Autocomplete?
-          answer: Google Autocomplete focus on search volume; this tool focuses on 'Social Intent'â€”the actual problems and emotional triggers found in community discussions.
+          answer: Google Autocomplete focus on search volume; this tool focuses on 'Social Intent'—the actual problems and emotional triggers found in community discussions.
       technical_specs:
         - label: Analysis Engine
           value: Social Pattern Matching
@@ -1756,7 +1756,7 @@ tools:
       title: 'HTML Beautifier: Format & Clean Your Website Markup'
       description: Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability, W3C compliance, and SEO-friendly markup.
     content:
-      title: HTML Beautifier â€” Free Online Code Formatter
+      title: HTML Beautifier — Free Online Code Formatter
       description: Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability, W3C compliance, and SEO-friendly markup.
       keywords:
         - html beautifier online
@@ -1802,7 +1802,7 @@ tools:
       title: 'CSS Formatter: Beautify & Organize Your Stylesheets'
       description: Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS optimized for large-scale design systems.
     content:
-      title: CSS Formatter â€” Professional Stylesheet Beautifier
+      title: CSS Formatter — Professional Stylesheet Beautifier
       description: Format and indent your CSS code for better maintenance. Convert messy stylesheets into clean, organized, and readable CSS optimized for large-scale design systems.
       keywords:
         - css formatter online
@@ -1848,11 +1848,11 @@ tools:
     function:
       primary: Decode JSON Web Tokens securely and locally
     meta:
-      title: Secure JWT Decoder â€” Offline JSON Web Token Inspection
-      description: Secure JWT decoder for inspecting JSON Web Tokens locally. Inspect payloads, verify claims (iat, exp), and debug auth headers 100% offlineâ€”no data ever leaves your device.
+      title: Secure JWT Decoder — Offline JSON Web Token Inspection
+      description: Secure JWT decoder for inspecting JSON Web Tokens locally. Inspect payloads, verify claims (iat, exp), and debug auth headers 100% offline—no data ever leaves your device.
     content:
-      title: Secure JWT Decoder â€” Offline Token Inspection
-      description: Secure JWT decoder for inspecting JSON Web Tokens locally. Inspect payloads, verify claims (iat, exp), and debug auth headers 100% offlineâ€”no data ever leaves your device.
+      title: Secure JWT Decoder — Offline Token Inspection
+      description: Secure JWT decoder for inspecting JSON Web Tokens locally. Inspect payloads, verify claims (iat, exp), and debug auth headers 100% offline—no data ever leaves your device.
       keywords:
         - jwt decoder offline
         - decode json web token locally
@@ -1888,10 +1888,10 @@ tools:
       primary: Compare two text blocks and visualize differences line-by-line
       secondary: Identify additions, deletions, and unchanged lines instantly
     meta:
-      title: Online Diff Checker â€” Compare Text & Code Line-by-Line
+      title: Online Diff Checker — Compare Text & Code Line-by-Line
       description: Compare two pieces of text or code side-by-side and instantly see every addition, deletion, and unchanged line. Perfect for code reviews, document audits, and debugging differences.
     content:
-      title: Diff Checker â€” Free Online Text & Code Comparison
+      title: Diff Checker — Free Online Text & Code Comparison
       description: Compare two pieces of text or code side-by-side and instantly see every addition, deletion, and unchanged line. Perfect for code reviews, document audits, and debugging differences.
       keywords:
         - diff checker online
@@ -1954,10 +1954,10 @@ tools:
       primary: Generate beautiful linear, radial, and conic CSS gradients visually
       secondary: Export production-ready CSS with custom color stops and angles
     meta:
-      title: CSS Gradient Generator â€” Visual Linear, Radial & Conic Builder
+      title: CSS Gradient Generator — Visual Linear, Radial & Conic Builder
       description: Create stunning linear, radial, and conic CSS gradients with a visual editor. Add custom color stops, adjust angles, and copy production-ready CSS code for your modern web projects.
     content:
-      title: CSS Gradient Generator â€” Visual Design Tool
+      title: CSS Gradient Generator — Visual Design Tool
       description: Create stunning linear, radial, and conic CSS gradients with a visual editor. Add custom color stops, adjust angles, and copy production-ready CSS code for your modern web projects.
       keywords:
         - css gradient generator
@@ -2018,7 +2018,7 @@ tools:
       title: 'llms.txt Generator: Optimize Your Site for AI Crawlers'
       description: Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. Implement the new robots.txt for the AI era.
     content:
-      title: llms.txt Generator â€” AI Crawler Optimization Tool
+      title: llms.txt Generator — AI Crawler Optimization Tool
       description: Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. Implement the new robots.txt for the AI era.
       keywords:
         - llms.txt generator
@@ -2029,7 +2029,7 @@ tools:
         - llm-friendly website guide
         - generative engine optimization (geo)
       tldr: Create a compliant llms.txt file in seconds to ensure AI search engines and LLMs correctly index and attribute your content.
-      entity_definition: llms.txt Generator is a Generative Engine Optimization (GEO) utility that creates the llms.txt standard file for websites. This emerging protocolâ€”analogous to robots.txtâ€”provides structured context to Large Language Models (LLMs) and AI crawlers, improving the accuracy of citations and increasing the likelihood of a site's content appearing in AI-generated answers from tools like ChatGPT, Perplexity, and Google's AI Overviews.
+      entity_definition: llms.txt Generator is a Generative Engine Optimization (GEO) utility that creates the llms.txt standard file for websites. This emerging protocol—analogous to robots.txt—provides structured context to Large Language Models (LLMs) and AI crawlers, improving the accuracy of citations and increasing the likelihood of a site's content appearing in AI-generated answers from tools like ChatGPT, Perplexity, and Google's AI Overviews.
       how_it_works: Users enter their site details, description, and key sections. The tool formats this information into the standardized llms.txt Markdown structure, ready to be placed at the root of their website.
       use_cases:
         - Optimizing sites for AI search engines (Perplexity, ChatGPT)
@@ -2077,7 +2077,7 @@ tools:
       title: 'SEO Slug Generator: Create Clean URL Permalinks'
       description: Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility and user readability.
     content:
-      title: SEO Slug Generator â€” Create Clean URL Permalinks
+      title: SEO Slug Generator — Create Clean URL Permalinks
       description: Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility and user readability.
       keywords:
         - slug generator online
@@ -2121,10 +2121,10 @@ tools:
       primary: Convert JSON arrays and objects to CSV format
       secondary: Flatten nested JSON for spreadsheet compatibility
     meta:
-      title: JSON to CSV Converter â€” Flatten Data for Excel & Sheets
+      title: JSON to CSV Converter — Flatten Data for Excel & Sheets
       description: Convert your JSON data into clean CSV files for Excel or Google Sheets. Our tool supports automatic flattening of nested objects for complex data structure analysis.
     content:
-      title: JSON to CSV Converter â€” Visual Data Transformation
+      title: JSON to CSV Converter — Visual Data Transformation
       description: Convert your JSON data into clean CSV files for Excel or Google Sheets. Our tool supports automatic flattening of nested objects for complex data structure analysis.
       keywords:
         - json to csv converter
@@ -2171,7 +2171,7 @@ tools:
       title: 'Real Favicon Generator & Size Guide 2026'
       description: Generate a complete set of favicons and PWA icons with exact standard sizes in seconds. Create professional .ico and .png icons from text or emoji.
     content:
-      title: Real Favicon Generator & Sizes â€” PWA Icon Builder
+      title: Real Favicon Generator & Sizes — PWA Icon Builder
       description: Generate a complete set of favicons and PWA icons with exact standard sizes in seconds. Create professional .ico and .png icons from text or emoji.
       keywords:
         - real favicon generator
@@ -2232,10 +2232,10 @@ tools:
       primary: Clean and format messy text
       secondary: Remove extra spaces, line breaks, and convert case
     meta:
-      title: Text Cleaner Pro â€” Remove Extra Spaces & Format Messy Text
+      title: Text Cleaner Pro — Remove Extra Spaces & Format Messy Text
       description: Clean up your messy text instantly. Remove extra spaces, tabs, and line breaks. Convert case and format your text for professional use with 100% client-side privacy.
     content:
-      title: Text Cleaner Pro â€” Instant Formatting Utility
+      title: Text Cleaner Pro — Instant Formatting Utility
       description: Clean up your messy text instantly. Remove extra spaces, tabs, and line breaks. Convert case and format your text for professional use with 100% client-side privacy.
       keywords:
         - text cleaner online
@@ -2278,10 +2278,10 @@ tools:
       primary: Convert between PHP Serialized data and JSON
       secondary: Repair and format PHP serialized strings
     meta:
-      title: PHP Serializer & Deserializer â€” Convert PHP Data to JSON
+      title: PHP Serializer & Deserializer — Convert PHP Data to JSON
       description: Convert PHP serialized strings to JSON and vice-versa instantly. Perfect for debugging database blobs or session data locally without needing a PHP server.
     content:
-      title: PHP Serializer â€” Secure Data Conversion Tool
+      title: PHP Serializer — Secure Data Conversion Tool
       description: Convert PHP serialized strings to JSON and vice-versa instantly. Perfect for debugging database blobs or session data locally without needing a PHP server.
       keywords:
         - php serializer online
@@ -2327,7 +2327,7 @@ tools:
       title: 'QR Code Generator: Create High-Res Scannable Codes'
       description: Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly with high-resolution PNG downloads.
     content:
-      title: QR Code Generator â€” Create Scannable Codes Online
+      title: QR Code Generator — Create Scannable Codes Online
       description: Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly with high-resolution PNG downloads.
       keywords:
         - qr code generator online
@@ -2379,10 +2379,10 @@ tools:
         - webp
       processing: client-side
     meta:
-      title: Image Resizer by KB & Pixel â€” Free Online Optimization 2026
+      title: Image Resizer by KB & Pixel — Free Online Optimization 2026
       description: Professional online image resizer. Resize your images by exact pixel dimensions (e.g., 1000x400) or reduce file size to a specific KB limit while maintaining quality. 100% private.
     content:
-      title: Image Resizer â€” Resize by Pixel, Percentage or Target KB
+      title: Image Resizer — Resize by Pixel, Percentage or Target KB
       description: Professional online image resizer. Resize your images by exact pixel dimensions (e.g., 1000x400) or reduce file size to a specific KB limit while maintaining quality. 100% private.
       keywords:
         - image resizer by kb
@@ -2438,10 +2438,10 @@ tools:
         - bcrypt-hash
       processing: client-side
     meta:
-      title: Bcrypt Password Hasher â€” Generate Secure Hashes Online
+      title: Bcrypt Password Hasher — Generate Secure Hashes Online
       description: Generate secure Bcrypt hashes for your application passwords. Our professional tool supports custom cost factors (salt rounds) and follows industry-standard security protocols for password storage.
     content:
-      title: Bcrypt Hasher â€” Enterprise-Grade Password Security
+      title: Bcrypt Hasher — Enterprise-Grade Password Security
       description: Generate secure Bcrypt hashes for your application passwords. Our professional tool supports custom cost factors (salt rounds) and follows industry-standard security protocols for password storage.
       keywords:
         - hash password with bcrypt online
@@ -2490,10 +2490,10 @@ tools:
         - argon2-hash
       processing: client-side
     meta:
-      title: Argon2 Hasher â€” Generate Modern Password Hashes
+      title: Argon2 Hasher — Generate Modern Password Hashes
       description: Generate Argon2 hashes, the winner of the Password Hashing Competition (PHC). Configure memory cost, iterations, and parallelism to create the most secure hashes available today.
     content:
-      title: Argon2 Hasher â€” The Gold Standard of Password Security
+      title: Argon2 Hasher — The Gold Standard of Password Security
       description: Generate Argon2 hashes, the winner of the Password Hashing Competition (PHC). Configure memory cost, iterations, and parallelism to create the most secure hashes available today.
       keywords:
         - generate argon2 hash online
@@ -2543,10 +2543,10 @@ tools:
         - hex
       processing: client-side
     meta:
-      title: AES Encryption & Decryption â€” Secure Your Data Online
+      title: AES Encryption & Decryption — Secure Your Data Online
       description: Secure your sensitive text and data with Advanced Encryption Standard (AES). Encrypt and decrypt strings using 128, 192, or 256-bit keys with professional-grade privacy and 100% local processing.
     content:
-      title: AES Crypto â€” Professional Data Encryption
+      title: AES Crypto — Professional Data Encryption
       description: Secure your sensitive text and data with Advanced Encryption Standard (AES). Encrypt and decrypt strings using 128, 192, or 256-bit keys with professional-grade privacy and 100% local processing.
       keywords:
         - encrypt text with aes online
@@ -2596,10 +2596,10 @@ tools:
         - pkcs8
       processing: client-side
     meta:
-      title: RSA Key Pair Generator â€” Create Secure SSH Keys Online
+      title: RSA Key Pair Generator — Create Secure SSH Keys Online
       description: Generate secure RSA public and private key pairs. Create keys for SSH, email encryption, and secure API communication with custom bit-lengths and professional PEM formatting.
     content:
-      title: RSA Key Gen â€” Professional Asymmetric Encryption
+      title: RSA Key Gen — Professional Asymmetric Encryption
       description: Generate secure RSA public and private key pairs. Create keys for SSH, email encryption, and secure API communication with custom bit-lengths and professional PEM formatting.
       keywords:
         - generate rsa public private keys online
@@ -2725,10 +2725,10 @@ tools:
         - risk-report
       processing: client-side
     meta:
-      title: XSS Payload Scanner â€” Test for Injection Vulnerabilities
+      title: XSS Payload Scanner — Test for Injection Vulnerabilities
       description: Identify potential Cross-Site Scripting (XSS) vulnerabilities in your text and code. A professional utility for auditing unescaped HTML tags and malicious script payloads in your applications.
     content:
-      title: XSS Scanner â€” Audit Your Input Validation
+      title: XSS Scanner — Audit Your Input Validation
       description: Identify potential Cross-Site Scripting (XSS) vulnerabilities in your text and code. A professional utility for auditing unescaped HTML tags and malicious script payloads in your applications.
       keywords:
         - test text for xss vulnerabilities
@@ -2738,7 +2738,7 @@ tools:
         - prevent xss in web apps
         - security audit for input fields
       tldr: Spot dangerous XSS patterns and unescaped HTML tags before they become security vulnerabilities.
-      entity_definition: XSS Payload Scanner (Sim) is a security-focused utility for developers. Cross-Site Scripting (XSS) occurs when an application includes untrusted data in a web page without proper validation. This tool scans input for common injection patternsâ€”such as <script> tags, event handlers (onerror, onload), and encoded payloadsâ€”to help developers secure their input fields.
+      entity_definition: XSS Payload Scanner (Sim) is a security-focused utility for developers. Cross-Site Scripting (XSS) occurs when an application includes untrusted data in a web page without proper validation. This tool scans input for common injection patterns—such as <script> tags, event handlers (onerror, onload), and encoded payloads—to help developers secure their input fields.
       how_it_works: The tool uses a comprehensive database of XSS vectors and heuristics to identify 'Risk Factors' in the provided text, providing recommendations for proper escaping and sanitization.
       use_cases:
         - Auditing user comments for potential attacks
@@ -2777,10 +2777,10 @@ tools:
         - jwt
       processing: client-side
     meta:
-      title: JWT Signing Tool â€” Create Secure Tokens Online
+      title: JWT Signing Tool — Create Secure Tokens Online
       description: Create, sign, and verify JSON Web Tokens (JWT) for your authentication systems. Support for HMAC (HS256) and RSA (RS256) signing algorithms with professional-grade security.
     content:
-      title: JWT Signer â€” Professional Auth Token Builder
+      title: JWT Signer — Professional Auth Token Builder
       description: Create, sign, and verify JSON Web Tokens (JWT) for your authentication systems. Support for HMAC (HS256) and RSA (RS256) signing algorithms with professional-grade security.
       keywords:
         - sign jwt with secret online
@@ -2829,10 +2829,10 @@ tools:
         - hash-report
       processing: client-side
     meta:
-      title: File Hash Validator â€” Verify File Integrity Online
+      title: File Hash Validator — Verify File Integrity Online
       description: Verify the integrity of your downloaded files by comparing their cryptographic hashes. Support for SHA-256, SHA-1, and MD5 checksums with ultra-fast local processing.
     content:
-      title: File Checksum â€” Ensure Your Downloads are Safe
+      title: File Checksum — Ensure Your Downloads are Safe
       description: Verify the integrity of your downloaded files by comparing their cryptographic hashes. Support for SHA-256, SHA-1, and MD5 checksums with ultra-fast local processing.
       keywords:
         - verify file integrity with hash
@@ -2881,10 +2881,10 @@ tools:
         - masked-text
       processing: client-side
     meta:
-      title: Data Masking Utility â€” Redact PII for Screenshots
+      title: Data Masking Utility — Redact PII for Screenshots
       description: Protect user privacy by masking sensitive information (PII) from your text and code. Automatically redact emails, credit cards, and phone numbers before taking screenshots or sharing logs.
     content:
-      title: Data Masking â€” Secure Your Shared Information
+      title: Data Masking — Secure Your Shared Information
       description: Protect user privacy by masking sensitive information (PII) from your text and code. Automatically redact emails, credit cards, and phone numbers before taking screenshots or sharing logs.
       keywords:
         - mask sensitive data for screenshots
@@ -2933,10 +2933,10 @@ tools:
         - risk-report
       processing: client-side
     meta:
-      title: SQL Injection Sanitizer â€” Audit Database Security Online
+      title: SQL Injection Sanitizer — Audit Database Security Online
       description: Identify potential SQL injection risks in your queries and code. A professional utility for auditing dangerous query patterns and improving your database security posture.
     content:
-      title: SQL Sanitizer â€” Protect Your Database from Attacks
+      title: SQL Sanitizer — Protect Your Database from Attacks
       description: Identify potential SQL injection risks in your queries and code. A professional utility for auditing dangerous query patterns and improving your database security posture.
       keywords:
         - audit sql for injection risks
@@ -2946,7 +2946,7 @@ tools:
         - database security audit online
         - test sql for malicious inputs
       tldr: Spot dangerous SQL injection patterns and unescaped inputs before they compromise your database.
-      entity_definition: SQL Injection Sanitizer (Sim) is a security-focused diagnostic utility. SQL injection is a vulnerability where an attacker can interfere with the queries that an application makes to its database. This tool scans SQL strings for common attack vectorsâ€”such as 'OR 1=1', union-based injections, and time-based delaysâ€”to help developers secure their data layer.
+      entity_definition: SQL Injection Sanitizer (Sim) is a security-focused diagnostic utility. SQL injection is a vulnerability where an attacker can interfere with the queries that an application makes to its database. This tool scans SQL strings for common attack vectors—such as 'OR 1=1', union-based injections, and time-based delays—to help developers secure their data layer.
       how_it_works: The tool analyzes the SQL structure and identifies 'Injection Hotspots' where untrusted data could bypass security checks, providing recommendations for using parameterized queries.
       use_cases:
         - Auditing legacy database code
@@ -2985,10 +2985,10 @@ tools:
         - typescript
       processing: client-side
     meta:
-      title: JSON to TypeScript Interface â€” Generate Types Online
+      title: JSON to TypeScript Interface — Generate Types Online
       description: Convert your JSON objects into perfectly formatted TypeScript interfaces. Save time on frontend development by automating your type definitions and ensuring type safety.
     content:
-      title: JSON to TS â€” Professional Interface Generator
+      title: JSON to TS — Professional Interface Generator
       description: Convert your JSON objects into perfectly formatted TypeScript interfaces. Save time on frontend development by automating your type definitions and ensuring type safety.
       keywords:
         - convert json to typescript interface
@@ -3037,10 +3037,10 @@ tools:
         - csv
       processing: client-side
     meta:
-      title: XML to CSV Converter â€” Flatten Data for Spreadsheets
+      title: XML to CSV Converter — Flatten Data for Spreadsheets
       description: Convert complex XML documents into flat, spreadsheet-ready CSV files. Our precision parser handles hierarchical data and repeating elements for easy import into Excel or Google Sheets.
     content:
-      title: XML to CSV â€” Professional Data Flattening
+      title: XML to CSV — Professional Data Flattening
       description: Convert complex XML documents into flat, spreadsheet-ready CSV files. Our precision parser handles hierarchical data and repeating elements for easy import into Excel or Google Sheets.
       keywords:
         - convert xml to csv online
@@ -3089,10 +3089,10 @@ tools:
         - go
       processing: client-side
     meta:
-      title: JSON to Go Struct â€” Generate Golang Models Online
+      title: JSON to Go Struct — Generate Golang Models Online
       description: Convert your JSON data into perfectly formatted Go structs. Save time on backend development by automating your data models with correct JSON tags and nested types.
     content:
-      title: JSON to Go â€” Instant Struct Generation
+      title: JSON to Go — Instant Struct Generation
       description: Convert your JSON data into perfectly formatted Go structs. Save time on backend development by automating your data models with correct JSON tags and nested types.
       keywords:
         - convert json to go struct online
@@ -3142,10 +3142,10 @@ tools:
         - visual
       processing: client-side
     meta:
-      title: Cron Expression Descriptor â€” Translate Cron to English
+      title: Cron Expression Descriptor — Translate Cron to English
       description: Translate complex Cron expressions into clear, plain English. Visualize your task schedules and verify next run times to ensure your server automation is correct.
     content:
-      title: Cron Descriptor â€” Human-Readable Schedule Audit
+      title: Cron Descriptor — Human-Readable Schedule Audit
       description: Translate complex Cron expressions into clear, plain English. Visualize your task schedules and verify next run times to ensure your server automation is correct.
       keywords:
         - describe cron expression plain english
@@ -3195,10 +3195,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Regular Expression Explainer â€” Visualize Regex Patterns
+      title: Regular Expression Explainer — Visualize Regex Patterns
       description: Break down and visualize complex Regular Expressions. A professional utility for understanding, debugging, and documenting your Regex patterns with clear, step-by-step explanations.
     content:
-      title: Regex Explainer â€” Decode Complex Patterns Visually
+      title: Regex Explainer — Decode Complex Patterns Visually
       description: Break down and visualize complex Regular Expressions. A professional utility for understanding, debugging, and documenting your Regex patterns with clear, step-by-step explanations.
       keywords:
         - visualize regular expressions online
@@ -3208,7 +3208,7 @@ tools:
         - visualize regex groups and anchors
         - regex documentation helper free
       tldr: Master complex Regex patterns with a visual breakdown and plain-English explanations of every token.
-      entity_definition: Regular Expression Explainer is an educational and diagnostic utility for Regex. It deconstructs a pattern (e.g., `^([a-z0-9_.-]+)@`) into its constituent partsâ€”anchors, groups, quantifiers, and character classesâ€”explaining the logic of each in plain English.
+      entity_definition: Regular Expression Explainer is an educational and diagnostic utility for Regex. It deconstructs a pattern (e.g., `^([a-z0-9_.-]+)@`) into its constituent parts—anchors, groups, quantifiers, and character classes—explaining the logic of each in plain English.
       how_it_works: The tool uses a regex parser to identify every token in the string and generates a hierarchical explanation or a visual railroad diagram.
       use_cases:
         - Learning Regex for the first time
@@ -3299,10 +3299,10 @@ tools:
         - java
       processing: client-side
     meta:
-      title: JSON to Java Class â€” Generate POJOs Online
+      title: JSON to Java Class — Generate POJOs Online
       description: Convert your JSON data into clean, professional Java POJO classes. Automate your data models with support for Jackson, GSON, and standard Java getters and setters.
     content:
-      title: JSON to Java â€” Professional POJO Generation
+      title: JSON to Java — Professional POJO Generation
       description: Convert your JSON data into clean, professional Java POJO classes. Automate your data models with support for Jackson, GSON, and standard Java getters and setters.
       keywords:
         - convert json to java class online
@@ -3352,10 +3352,10 @@ tools:
         - csv
       processing: client-side
     meta:
-      title: HTML Table to JSON Extractor â€” Convert Web Tables Online
+      title: HTML Table to JSON Extractor — Convert Web Tables Online
       description: Extract data from any HTML <table> and convert it into structured JSON or CSV. A professional utility for web scraping and data migration from legacy web pages.
     content:
-      title: Table Extractor â€” Convert Web Data to Structured JSON
+      title: Table Extractor — Convert Web Data to Structured JSON
       description: Extract data from any HTML <table> and convert it into structured JSON or CSV. A professional utility for web scraping and data migration from legacy web pages.
       keywords:
         - convert html table to json online
@@ -3404,10 +3404,10 @@ tools:
         - xml
       processing: client-side
     meta:
-      title: CSV to XML Converter â€” Transform Spreadsheets Online
+      title: CSV to XML Converter — Transform Spreadsheets Online
       description: Convert your CSV files and spreadsheets into perfectly formatted XML. Support for custom root elements and repeating tags for easy integration with enterprise systems.
     content:
-      title: CSV to XML â€” Professional Data Serialization
+      title: CSV to XML — Professional Data Serialization
       description: Convert your CSV files and spreadsheets into perfectly formatted XML. Support for custom root elements and repeating tags for easy integration with enterprise systems.
       keywords:
         - convert csv to xml online
@@ -3508,10 +3508,10 @@ tools:
         - yaml
       processing: client-side
     meta:
-      title: XML to YAML Converter â€” Optimize Data Readability Online
+      title: XML to YAML Converter — Optimize Data Readability Online
       description: Transform complex XML documents into clean, elegant YAML. Perfect for simplifying legacy configuration files and making hierarchical data easier to read and maintain.
     content:
-      title: XML to YAML â€” Modernize Your Configuration Files
+      title: XML to YAML — Modernize Your Configuration Files
       description: Transform complex XML documents into clean, elegant YAML. Perfect for simplifying legacy configuration files and making hierarchical data easier to read and maintain.
       keywords:
         - convert xml to yaml online
@@ -3560,10 +3560,10 @@ tools:
         - json
       processing: client-side
     meta:
-      title: CSV to JSON Converter â€” Transform Data Online Free
+      title: CSV to JSON Converter — Transform Data Online Free
       description: Convert your CSV files and spreadsheets to perfectly structured JSON. Our high-performance converter supports custom delimiters, auto-type detection, and multi-row processing.
     content:
-      title: CSV to JSON Converter â€” Professional Data Transformation
+      title: CSV to JSON Converter — Professional Data Transformation
       description: Convert your CSV files and spreadsheets to perfectly structured JSON. Our high-performance converter supports custom delimiters, auto-type detection, and multi-row processing.
       keywords:
         - convert csv to json online
@@ -3613,10 +3613,10 @@ tools:
         - image
       processing: client-side
     meta:
-      title: Base64 to Image Decoder â€” Convert Data URI to Image Online
+      title: Base64 to Image Decoder — Convert Data URI to Image Online
       description: Convert Base64 strings and Data URIs back into viewable image files. Support for all major image formats including PNG, JPEG, GIF, and SVG with instant download.
     content:
-      title: Base64 to Image â€” Instant Visual Decoding
+      title: Base64 to Image — Instant Visual Decoding
       description: Convert Base64 strings and Data URIs back into viewable image files. Support for all major image formats including PNG, JPEG, GIF, and SVG with instant download.
       keywords:
         - convert base64 to image online
@@ -3666,10 +3666,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Image to Base64 Encoder â€” Generate Data URIs Online
+      title: Image to Base64 Encoder — Generate Data URIs Online
       description: Convert your images (PNG, JPG, SVG, WebP) into Base64 strings and Data URIs. Perfect for embedding icons and small graphics directly into your HTML and CSS for better performance.
     content:
-      title: Image to Base64 â€” Optimize Your Frontend Assets
+      title: Image to Base64 — Optimize Your Frontend Assets
       description: Convert your images (PNG, JPG, SVG, WebP) into Base64 strings and Data URIs. Perfect for embedding icons and small graphics directly into your HTML and CSS for better performance.
       keywords:
         - convert image to base64 online
@@ -3718,10 +3718,10 @@ tools:
         - xml
       processing: client-side
     meta:
-      title: JSON to XML Converter â€” Transform Structured Data Online
+      title: JSON to XML Converter — Transform Structured Data Online
       description: Convert your JSON data into perfectly formatted XML. A professional tool for migrating web data to legacy systems, SOAP services, and enterprise XML architectures.
     content:
-      title: JSON to XML â€” Seamless Data Migration
+      title: JSON to XML — Seamless Data Migration
       description: Convert your JSON data into perfectly formatted XML. A professional tool for migrating web data to legacy systems, SOAP services, and enterprise XML architectures.
       keywords:
         - convert json to xml online
@@ -3770,10 +3770,10 @@ tools:
         - yaml
       processing: client-side
     meta:
-      title: JSON to YAML Converter â€” Optimize Config Files Online
+      title: JSON to YAML Converter — Optimize Config Files Online
       description: Transform your JSON objects into clean, human-readable YAML. Perfect for creating Docker, Kubernetes, and server configuration files from structured data.
     content:
-      title: JSON to YAML â€” Professional DevOps Utility
+      title: JSON to YAML — Professional DevOps Utility
       description: Transform your JSON objects into clean, human-readable YAML. Perfect for creating Docker, Kubernetes, and server configuration files from structured data.
       keywords:
         - convert json to yaml online
@@ -3822,10 +3822,10 @@ tools:
         - markdown
       processing: client-side
     meta:
-      title: HTML to Markdown Converter â€” Extract Content Online
+      title: HTML to Markdown Converter — Extract Content Online
       description: Convert HTML code or entire web pages into clean, portable Markdown. Perfect for migrating blogs, creating documentation, and archiving web content.
     content:
-      title: HTML to Markdown â€” Simplify Your Content Migration
+      title: HTML to Markdown — Simplify Your Content Migration
       description: Convert HTML code or entire web pages into clean, portable Markdown. Perfect for migrating blogs, creating documentation, and archiving web content.
       keywords:
         - convert html to markdown online
@@ -3874,10 +3874,10 @@ tools:
         - data-table
       processing: client-side
     meta:
-      title: URL Parser & Query Audit â€” Decode Parameters Online
+      title: URL Parser & Query Audit — Decode Parameters Online
       description: Break down complex URLs and decode query string parameters. A professional utility for debugging tracking IDs, UTM parameters, and API request strings.
     content:
-      title: URL Parser â€” Advanced Query String Analysis
+      title: URL Parser — Advanced Query String Analysis
       description: Break down complex URLs and decode query string parameters. A professional utility for debugging tracking IDs, UTM parameters, and API request strings.
       keywords:
         - parse url parameters online
@@ -3926,10 +3926,10 @@ tools:
         - json-schema
       processing: client-side
     meta:
-      title: JSON Schema Generator â€” Create Validation Rules Online
+      title: JSON Schema Generator — Create Validation Rules Online
       description: Automatically generate a valid JSON Schema from your sample JSON data. Create professional documentation and validation rules for your APIs in seconds.
     content:
-      title: JSON Schema Generator â€” Professional API Documentation
+      title: JSON Schema Generator — Professional API Documentation
       description: Automatically generate a valid JSON Schema from your sample JSON data. Create professional documentation and validation rules for your APIs in seconds.
       keywords:
         - generate json schema from json
@@ -3980,10 +3980,10 @@ tools:
         - csv
       processing: client-side
     meta:
-      title: Data Anonymizer â€” Secure Sensitive Information Online
+      title: Data Anonymizer — Secure Sensitive Information Online
       description: Anonymize sensitive information (PII) in your JSON or CSV datasets. Replace names, emails, and phone numbers with realistic placeholders for secure application testing.
     content:
-      title: Data Anonymizer â€” Privacy-First Testing Utility
+      title: Data Anonymizer — Privacy-First Testing Utility
       description: Anonymize sensitive information (PII) in your JSON or CSV datasets. Replace names, emails, and phone numbers with realistic placeholders for secure application testing.
       keywords:
         - anonymize pii in json csv
@@ -4032,10 +4032,10 @@ tools:
         - json
       processing: client-side
     meta:
-      title: JSON Formatter & Validator â€” Beautify & Repair Online
+      title: JSON Formatter & Validator — Beautify & Repair Online
       description: The ultimate tool for formatting and validating JSON. Beautify messy strings, identify syntax errors instantly, and repair common JSON issues for clean, readable data.
     content:
-      title: JSON Formatter â€” High-Performance Syntax Audit
+      title: JSON Formatter — High-Performance Syntax Audit
       description: The ultimate tool for formatting and validating JSON. Beautify messy strings, identify syntax errors instantly, and repair common JSON issues for clean, readable data.
       keywords:
         - beautify json online free
@@ -4084,10 +4084,10 @@ tools:
         - data-table
       processing: client-side
     meta:
-      title: User-Agent Parser â€” Decode Browser & OS Info Online
+      title: User-Agent Parser — Decode Browser & OS Info Online
       description: Parse any browser User-Agent string to identify the device type, operating system, and browser engine. A professional utility for debugging device-specific issues and analytics.
     content:
-      title: UA Parser â€” Identify Modern Browser & Device Specs
+      title: UA Parser — Identify Modern Browser & Device Specs
       description: Parse any browser User-Agent string to identify the device type, operating system, and browser engine. A professional utility for debugging device-specific issues and analytics.
       keywords:
         - parse browser user agent string
@@ -4136,10 +4136,10 @@ tools:
         - http-headers
       processing: client-side
     meta:
-      title: Browser Cache Header Builder â€” Optimize Static Asset Loading
+      title: Browser Cache Header Builder — Optimize Static Asset Loading
       description: Generate perfectly optimized Cache-Control, Expires, and ETag headers for your website. Improve repeat-visit performance and reduce server load with professional caching policies.
     content:
-      title: Cache Header Generator â€” Master Your Content Expiration
+      title: Cache Header Generator — Master Your Content Expiration
       description: Generate perfectly optimized Cache-Control, Expires, and ETag headers for your website. Improve repeat-visit performance and reduce server load with professional caching policies.
       keywords:
         - generate cache control headers online
@@ -4188,10 +4188,10 @@ tools:
         - visual-timeline
       processing: client-side
     meta:
-      title: JS Execution Time Audit â€” Visualize Main Thread Blocking
+      title: JS Execution Time Audit — Visualize Main Thread Blocking
       description: Estimate and visualize the cost of JavaScript execution on the main thread. Identify potential Total Blocking Time (TBT) issues and optimize your script loading for better Core Web Vitals.
     content:
-      title: JS Execution Auditor â€” Optimize Your Script Performance
+      title: JS Execution Auditor — Optimize Your Script Performance
       description: Estimate and visualize the cost of JavaScript execution on the main thread. Identify potential Total Blocking Time (TBT) issues and optimize your script loading for better Core Web Vitals.
       keywords:
         - estimate js execution cost
@@ -4240,10 +4240,10 @@ tools:
         - html-tags
       processing: client-side
     meta:
-      title: Resource Priority Mapper â€” Generate Preload & Prefetch Tags
+      title: Resource Priority Mapper — Generate Preload & Prefetch Tags
       description: Generate perfectly formatted preload, prefetch, and preconnect tags. Tell browsers which assets to prioritize for near-instant page loads and better LCP scores.
     content:
-      title: Priority Mapper â€” Optimize Your Resource Discovery
+      title: Priority Mapper — Optimize Your Resource Discovery
       description: Generate perfectly formatted preload, prefetch, and preconnect tags. Tell browsers which assets to prioritize for near-instant page loads and better LCP scores.
       keywords:
         - generate preload tags online
@@ -4292,10 +4292,10 @@ tools:
         - visual-timeline
       processing: client-side
     meta:
-      title: Network Throttling Visualizer â€” See Site Speed on 3G
+      title: Network Throttling Visualizer — See Site Speed on 3G
       description: Visualize how your website performs on slow network connections. Simulate 3G, 4G, and high-latency profiles to identify performance bottlenecks for mobile users globally.
     content:
-      title: Network Throttling â€” Experience Your Site Like Your Users
+      title: Network Throttling — Experience Your Site Like Your Users
       description: Visualize how your website performs on slow network connections. Simulate 3G, 4G, and high-latency profiles to identify performance bottlenecks for mobile users globally.
       keywords:
         - visualize website speed on 3g
@@ -4344,10 +4344,10 @@ tools:
         - http-headers
       processing: client-side
     meta:
-      title: HSTS Header Generator â€” Secure Site HSTS Preload
+      title: HSTS Header Generator — Secure Site HSTS Preload
       description: Generate perfectly formatted HSTS (HTTP Strict Transport Security) headers. Protect your users from protocol downgrade attacks and get your domain ready for the HSTS Preload list.
     content:
-      title: HSTS Generator â€” Enforce Permanent HTTPS Security
+      title: HSTS Generator — Enforce Permanent HTTPS Security
       description: Generate perfectly formatted HSTS (HTTP Strict Transport Security) headers. Protect your users from protocol downgrade attacks and get your domain ready for the HSTS Preload list.
       keywords:
         - generate hsts headers online
@@ -4396,10 +4396,10 @@ tools:
         - http-headers
       processing: client-side
     meta:
-      title: Content Security Policy (CSP) Builder â€” Prevent XSS Attacks
+      title: Content Security Policy (CSP) Builder — Prevent XSS Attacks
       description: Build perfectly formatted Content Security Policies (CSP) to protect your website from XSS, clickjacking, and data injection. A professional visual builder for complex security headers.
     content:
-      title: CSP Builder â€” Create Robust Security Directives
+      title: CSP Builder — Create Robust Security Directives
       description: Build perfectly formatted Content Security Policies (CSP) to protect your website from XSS, clickjacking, and data injection. A professional visual builder for complex security headers.
       keywords:
         - generate csp headers online
@@ -4449,10 +4449,10 @@ tools:
         - html-tags
       processing: client-side
     meta:
-      title: Subresource Integrity (SRI) Hasher â€” Secure Your CDN Assets
+      title: Subresource Integrity (SRI) Hasher — Secure Your CDN Assets
       description: Generate high-security Subresource Integrity (SRI) hashes for your scripts and stylesheets. Ensure that assets loaded from a CDN haven't been tampered with or modified by a third party.
     content:
-      title: SRI Hasher â€” Verify Your External Scripts
+      title: SRI Hasher — Verify Your External Scripts
       description: Generate high-security Subresource Integrity (SRI) hashes for your scripts and stylesheets. Ensure that assets loaded from a CDN haven't been tampered with or modified by a third party.
       keywords:
         - generate sri hashes online
@@ -4501,10 +4501,10 @@ tools:
         - http-headers
       processing: client-side
     meta:
-      title: Permissions Policy Generator â€” Control Browser Features Online
+      title: Permissions Policy Generator — Control Browser Features Online
       description: Generate perfectly formatted Permissions-Policy headers (formerly Feature-Policy). Control which browser features (Camera, Microphone, Geolocation) can be used by your site and embedded iframes.
     content:
-      title: Permissions Policy â€” Protect User Privacy & Security
+      title: Permissions Policy — Protect User Privacy & Security
       description: Generate perfectly formatted Permissions-Policy headers (formerly Feature-Policy). Control which browser features (Camera, Microphone, Geolocation) can be used by your site and embedded iframes.
       keywords:
         - generate permissions policy headers online
@@ -4553,10 +4553,10 @@ tools:
         - status-map
       processing: client-side
     meta:
-      title: DNS Propagation Checker â€” Verify Global DNS Status Online
+      title: DNS Propagation Checker — Verify Global DNS Status Online
       description: Check your DNS records propagation across multiple global servers. Verify A, CNAME, MX, and TXT records instantly to ensure your site migration or DNS changes are live.
     content:
-      title: DNS Propagation Checker â€” Real-Time Global DNS Audit
+      title: DNS Propagation Checker — Real-Time Global DNS Audit
       description: Check your DNS records propagation across multiple global servers. Verify A, CNAME, MX, and TXT records instantly to ensure your site migration or DNS changes are live.
       keywords:
         - check dns propagation globally online
@@ -4606,10 +4606,10 @@ tools:
         - data-report
       processing: client-side
     meta:
-      title: Global Ping Test Online â€” Measure Website Latency Free
+      title: Global Ping Test Online — Measure Website Latency Free
       description: Measure your server's latency from multiple locations around the world. A professional ping tool to audit Time to First Byte (TTFB) and network connectivity for your web applications.
     content:
-      title: Global Ping Test â€” Monitor Server Response Times
+      title: Global Ping Test — Monitor Server Response Times
       description: Measure your server's latency from multiple locations around the world. A professional ping tool to audit Time to First Byte (TTFB) and network connectivity for your web applications.
       keywords:
         - test website latency from multiple locations
@@ -4658,10 +4658,10 @@ tools:
         - audit-report
       processing: client-side
     meta:
-      title: SSL/TLS Certificate Auditor â€” Verify Expiration & Security
+      title: SSL/TLS Certificate Auditor — Verify Expiration & Security
       description: Verify your SSL/TLS certificate's expiration date, issuer, and security strength. Ensure your website's encryption is up to date and trusted by all modern browsers.
     content:
-      title: SSL Checker â€” Audit Your HTTPS Security
+      title: SSL Checker — Audit Your HTTPS Security
       description: Verify your SSL/TLS certificate's expiration date, issuer, and security strength. Ensure your website's encryption is up to date and trusted by all modern browsers.
       keywords:
         - verify ssl certificate expiration online
@@ -4710,10 +4710,10 @@ tools:
         - data-table
       processing: client-side
     meta:
-      title: HTTP Header Inspector â€” View Response Headers Online
+      title: HTTP Header Inspector — View Response Headers Online
       description: Inspect the HTTP response headers of any website. Identify security headers (CSP, HSTS), caching policies, and server information to improve your site's performance and security.
     content:
-      title: HTTP Header Inspector â€” Audit Your Server Response
+      title: HTTP Header Inspector — Audit Your Server Response
       description: Inspect the HTTP response headers of any website. Identify security headers (CSP, HSTS), caching policies, and server information to improve your site's performance and security.
       keywords:
         - view website response headers online
@@ -4763,10 +4763,10 @@ tools:
         - data-report
       processing: client-side
     meta:
-      title: Gzip & Brotli Compression Tester â€” Check Page Speed Optimization
+      title: Gzip & Brotli Compression Tester — Check Page Speed Optimization
       description: Verify if your website is using Gzip or Brotli compression. Measure the exact file size reduction and ensure your server is optimized for high-performance content delivery.
     content:
-      title: Compression Tester â€” Audit Your Content Delivery
+      title: Compression Tester — Audit Your Content Delivery
       description: Verify if your website is using Gzip or Brotli compression. Measure the exact file size reduction and ensure your server is optimized for high-performance content delivery.
       keywords:
         - check if compression is enabled on website
@@ -4816,10 +4816,10 @@ tools:
         - visual-report
       processing: client-side
     meta:
-      title: DOM Depth & Complexity Analyzer â€” Audit Rendering Performance
+      title: DOM Depth & Complexity Analyzer — Audit Rendering Performance
       description: Analyze the complexity of your webpage's DOM structure. Identify deep nesting and excessive nodes that can cause layout shifts and slow down browser rendering performance.
     content:
-      title: DOM Analyzer â€” Optimize Your Rendering Path
+      title: DOM Analyzer — Optimize Your Rendering Path
       description: Analyze the complexity of your webpage's DOM structure. Identify deep nesting and excessive nodes that can cause layout shifts and slow down browser rendering performance.
       keywords:
         - visualize dom tree depth
@@ -4870,10 +4870,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Critical Path CSS Generator â€” Optimize Above-the-Fold Rendering
+      title: Critical Path CSS Generator — Optimize Above-the-Fold Rendering
       description: Generate the critical CSS needed for your above-the-fold content. Inline these styles to eliminate render-blocking resources and achieve near-instant page loads for better SEO and UX.
     content:
-      title: Critical CSS Generator â€” Boost Your LCP Score
+      title: Critical CSS Generator — Boost Your LCP Score
       description: Generate the critical CSS needed for your above-the-fold content. Inline these styles to eliminate render-blocking resources and achieve near-instant page loads for better SEO and UX.
       keywords:
         - generate critical css for above the fold
@@ -4922,10 +4922,10 @@ tools:
         - status-report
       processing: client-side
     meta:
-      title: CDN & Edge node Finder â€” Identify Website Infrastructure
+      title: CDN & Edge node Finder — Identify Website Infrastructure
       description: Identify which Content Delivery Network (CDN) a website is using. Detect providers like Cloudflare, Akamai, and Fastly, and audit edge node locations to understand site infrastructure.
     content:
-      title: CDN Finder â€” Audit Global Content Delivery Networks
+      title: CDN Finder — Audit Global Content Delivery Networks
       description: Identify which Content Delivery Network (CDN) a website is using. Detect providers like Cloudflare, Akamai, and Fastly, and audit edge node locations to understand site infrastructure.
       keywords:
         - identify website cdn provider
@@ -4974,10 +4974,10 @@ tools:
         - data-report
       processing: client-side
     meta:
-      title: WHOIS Lookup â€” Check Domain Ownership & Expiry Online
+      title: WHOIS Lookup — Check Domain Ownership & Expiry Online
       description: Check the ownership, registrar, and expiration details of any domain name. Our privacy-focused WHOIS tool provides instant access to domain registration records without tracking your searches.
     content:
-      title: WHOIS Lookup â€” Secure Domain Information Audit
+      title: WHOIS Lookup — Secure Domain Information Audit
       description: Check the ownership, registrar, and expiration details of any domain name. Our privacy-focused WHOIS tool provides instant access to domain registration records without tracking your searches.
       keywords:
         - check domain ownership and expiry
@@ -5027,10 +5027,10 @@ tools:
         - visual-map
       processing: client-side
     meta:
-      title: IP Geolocation Finder â€” Locate Servers on Map Online
+      title: IP Geolocation Finder — Locate Servers on Map Online
       description: Locate any IP address or domain on a global map. Identify the physical server location, ISP provider, and approximate coordinates for any web service or user.
     content:
-      title: IP Geolocation â€” Find Physical Server Locations
+      title: IP Geolocation — Find Physical Server Locations
       description: Locate any IP address or domain on a global map. Identify the physical server location, ISP provider, and approximate coordinates for any web service or user.
       keywords:
         - locate ip address on map online
@@ -5079,10 +5079,10 @@ tools:
         - status-report
       processing: client-side
     meta:
-      title: Meta Description Length Checker â€” Optimize Snippets Online
+      title: Meta Description Length Checker — Optimize Snippets Online
       description: Ensure your meta descriptions are the perfect length for Google and Bing. Our real-time character counter helps you stay within the 150-160 character limit to avoid truncation.
     content:
-      title: Meta Length Checker â€” Perfect Your Search Snippets
+      title: Meta Length Checker — Perfect Your Search Snippets
       description: Ensure your meta descriptions are the perfect length for Google and Bing. Our real-time character counter helps you stay within the 150-160 character limit to avoid truncation.
       keywords:
         - meta description length checker online
@@ -5132,10 +5132,10 @@ tools:
         - audit-report
       processing: client-side
     meta:
-      title: ALT Text Accessibility Audit â€” Find Missing Image Tags
+      title: ALT Text Accessibility Audit — Find Missing Image Tags
       description: Audit your website's image ALT tags to improve search rankings and web accessibility. Identify missing alt text and unoptimized descriptions instantly.
     content:
-      title: ALT Text Audit â€” Optimize Image SEO & Accessibility
+      title: ALT Text Audit — Optimize Image SEO & Accessibility
       description: Audit your website's image ALT tags to improve search rankings and web accessibility. Identify missing alt text and unoptimized descriptions instantly.
       keywords:
         - find missing alt tags online
@@ -5184,10 +5184,10 @@ tools:
         - validation-report
       processing: client-side
     meta:
-      title: Robots.txt Validator & Tester â€” Validate Crawl Rules Free
+      title: Robots.txt Validator & Tester — Validate Crawl Rules Free
       description: Test and validate your robots.txt file. Our free robots.txt validator checks for syntax errors, crawl directives, and logic conflicts that block Googlebot.
     content:
-      title: Robots.txt Validator â€” Test & Validate Directives
+      title: Robots.txt Validator — Test & Validate Directives
       description: Test and validate your robots.txt file. Our free robots.txt validator checks for syntax errors, crawl directives, and logic conflicts that block Googlebot.
       keywords:
         - robots.txt validator
@@ -5253,10 +5253,10 @@ tools:
         - visual-model
       processing: client-side
     meta:
-      title: Domain Authority Simulation â€” Understand Backlink Power
+      title: Domain Authority Simulation — Understand Backlink Power
       description: Understand how domain authority and backlink power affect search rankings. A visual simulation of how link equity flows through a website's internal and external links.
     content:
-      title: Authority Simulation â€” Visualize Your Link Juice
+      title: Authority Simulation — Visualize Your Link Juice
       description: Understand how domain authority and backlink power affect search rankings. A visual simulation of how link equity flows through a website's internal and external links.
       keywords:
         - understand domain authority metrics
@@ -5305,10 +5305,10 @@ tools:
         - visual-timeline
       processing: client-side
     meta:
-      title: Page Load Time Estimator â€” Visualize Core Web Vitals Budget
+      title: Page Load Time Estimator — Visualize Core Web Vitals Budget
       description: Estimate and visualize your website's performance budget. Understand how Largest Contentful Paint (LCP) and First Contentful Paint (FCP) are affected by asset sizes and network speed.
     content:
-      title: Load Time Estimator â€” Optimize Your Performance Budget
+      title: Load Time Estimator — Optimize Your Performance Budget
       description: Estimate and visualize your website's performance budget. Understand how Largest Contentful Paint (LCP) and First Contentful Paint (FCP) are affected by asset sizes and network speed.
       keywords:
         - estimate lcp and fid metrics
@@ -5357,10 +5357,10 @@ tools:
         - html
       processing: client-side
     meta:
-      title: Mobile-Friendly Meta Tag Gen â€” Viewport & Handheld Tags
+      title: Mobile-Friendly Meta Tag Gen — Viewport & Handheld Tags
       description: Generate perfectly optimized viewport and mobile-friendly meta tags. Ensure your site passes the Google Mobile-Friendly test and ranks well in mobile-first indexing.
     content:
-      title: Mobile Meta Tag Generator â€” Optimize for Mobile SEO
+      title: Mobile Meta Tag Generator — Optimize for Mobile SEO
       description: Generate perfectly optimized viewport and mobile-friendly meta tags. Ensure your site passes the Google Mobile-Friendly test and ranks well in mobile-first indexing.
       keywords:
         - viewport meta tag generator
@@ -5409,10 +5409,10 @@ tools:
         - json-ld
       processing: client-side
     meta:
-      title: Breadcrumb Schema Generator â€” Create JSON-LD Markup
+      title: Breadcrumb Schema Generator — Create JSON-LD Markup
       description: Generate perfectly formatted BreadcrumbList JSON-LD schema for your website. Improve your search snippets and help users understand your site's hierarchy.
     content:
-      title: Breadcrumb Schema Generator â€” Improve Search Navigation
+      title: Breadcrumb Schema Generator — Improve Search Navigation
       description: Generate perfectly formatted BreadcrumbList JSON-LD schema for your website. Improve your search snippets and help users understand your site's hierarchy.
       keywords:
         - create breadcrumb json-ld for seo
@@ -5461,10 +5461,10 @@ tools:
         - json-ld
       processing: client-side
     meta:
-      title: FAQ Schema Generator â€” Create Rich Snippet Markup Online
+      title: FAQ Schema Generator — Create Rich Snippet Markup Online
       description: Generate perfectly formatted FAQPage JSON-LD schema for your content. Get your questions and answers directly into Google's search results for higher visibility and CTR.
     content:
-      title: FAQ Schema Generator â€” Boost Your Search Real Estate
+      title: FAQ Schema Generator — Boost Your Search Real Estate
       description: Generate perfectly formatted FAQPage JSON-LD schema for your content. Get your questions and answers directly into Google's search results for higher visibility and CTR.
       keywords:
         - generate faq schema for google snippets
@@ -5513,10 +5513,10 @@ tools:
         - json-ld
       processing: client-side
     meta:
-      title: Review & Rating Schema Gen â€” Create Star Rating Markup
+      title: Review & Rating Schema Gen — Create Star Rating Markup
       description: Generate professional Review and AggregateRating JSON-LD schema for your products or services. Increase trust and click-through rates with star ratings in Google search results.
     content:
-      title: Review Schema Generator â€” Get Star Ratings in Search
+      title: Review Schema Generator — Get Star Ratings in Search
       description: Generate professional Review and AggregateRating JSON-LD schema for your products or services. Increase trust and click-through rates with star ratings in Google search results.
       keywords:
         - create star rating schema online
@@ -5565,10 +5565,10 @@ tools:
         - json-ld
       processing: client-side
     meta:
-      title: Local Business Schema Gen â€” Local SEO Markup Builder
+      title: Local Business Schema Gen — Local SEO Markup Builder
       description: Generate perfectly formatted LocalBusiness JSON-LD schema for your business. Improve your presence in Google Maps and local search results with standardized NAP data.
     content:
-      title: Local Business Schema Generator â€” Dominate Local Search
+      title: Local Business Schema Generator — Dominate Local Search
       description: Generate perfectly formatted LocalBusiness JSON-LD schema for your business. Improve your presence in Google Maps and local search results with standardized NAP data.
       keywords:
         - generate local seo schema
@@ -5617,10 +5617,10 @@ tools:
         - visual-chain
       processing: client-side
     meta:
-      title: Redirect Chain Finder (Sim) â€” Audit Multi-Hop Redirects
+      title: Redirect Chain Finder (Sim) — Audit Multi-Hop Redirects
       description: Identify and visualize complex redirect chains on your website. Audit multiple 301 hops to improve page speed and preserve SEO link equity.
     content:
-      title: Redirect Chain Finder â€” Optimize Your Link Equity
+      title: Redirect Chain Finder — Optimize Your Link Equity
       description: Identify and visualize complex redirect chains on your website. Audit multiple 301 hops to improve page speed and preserve SEO link equity.
       keywords:
         - identify multiple redirect hops
@@ -5671,10 +5671,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Sitemap.xml Generator â€” Create Google Sitemaps Online Free
+      title: Sitemap.xml Generator — Create Google Sitemaps Online Free
       description: Create perfectly formatted XML sitemaps for Google, Bing, and Yandex. Our free sitemap builder helps search engines crawl and index your website more efficiently.
     content:
-      title: Sitemap.xml Generator â€” Boost Your Search Indexing
+      title: Sitemap.xml Generator — Boost Your Search Indexing
       description: Create perfectly formatted XML sitemaps for Google, Bing, and Yandex. Our free sitemap builder helps search engines crawl and index your website more efficiently.
       keywords:
         - create google sitemap online free
@@ -5724,10 +5724,10 @@ tools:
         - status-report
       processing: client-side
     meta:
-      title: Canonical URL Checker â€” Verify SEO Canonical Tags Online
+      title: Canonical URL Checker — Verify SEO Canonical Tags Online
       description: Verify your canonical tags to prevent duplicate content issues. Our professional checker ensures your site communicates the 'master version' of every page to search engines correctly.
     content:
-      title: Canonical Checker â€” Audit Your SEO Link Integrity
+      title: Canonical Checker — Audit Your SEO Link Integrity
       description: Verify your canonical tags to prevent duplicate content issues. Our professional checker ensures your site communicates the 'master version' of every page to search engines correctly.
       keywords:
         - verify canonical tags online
@@ -5777,10 +5777,10 @@ tools:
         - xml
       processing: client-side
     meta:
-      title: Hreflang Tag Generator â€” Multi-Language SEO Tag Builder
+      title: Hreflang Tag Generator — Multi-Language SEO Tag Builder
       description: Generate perfectly formatted hreflang tags for your multi-language website. Ensure Google serves the correct language version of your site to the right audience.
     content:
-      title: Hreflang Generator â€” Optimize International SEO
+      title: Hreflang Generator — Optimize International SEO
       description: Generate perfectly formatted hreflang tags for your multi-language website. Ensure Google serves the correct language version of your site to the right audience.
       keywords:
         - generate multi-language seo tags
@@ -5829,10 +5829,10 @@ tools:
         - visual-preview
       processing: client-side
     meta:
-      title: Google Snippet Previewer â€” Optimize Meta Lengths for SEO
+      title: Google Snippet Previewer — Optimize Meta Lengths for SEO
       description: Visualize how your page will appear in Google search results. Optimize your titles and meta descriptions with real-time character and pixel-width limits to maximize CTR.
     content:
-      title: Google Snippet Preview â€” Visual SERP Optimizer
+      title: Google Snippet Preview — Visual SERP Optimizer
       description: Visualize how your page will appear in Google search results. Optimize your titles and meta descriptions with real-time character and pixel-width limits to maximize CTR.
       keywords:
         - google snippet preview tool
@@ -5882,10 +5882,10 @@ tools:
         - visual-tree
       processing: client-side
     meta:
-      title: Heading Structure Visualizer â€” Audit H1-H6 Hierarchy Online
+      title: Heading Structure Visualizer — Audit H1-H6 Hierarchy Online
       description: Visualize your page's H1-H6 heading structure to ensure a logical hierarchy for SEO and accessibility. Find skipped levels and duplicate H1 tags instantly.
     content:
-      title: Heading Visualizer â€” Audit Your Content Hierarchy
+      title: Heading Visualizer — Audit Your Content Hierarchy
       description: Visualize your page's H1-H6 heading structure to ensure a logical hierarchy for SEO and accessibility. Find skipped levels and duplicate H1 tags instantly.
       keywords:
         - visualize h1-h6 hierarchy
@@ -5935,10 +5935,10 @@ tools:
         - visual-preview
       processing: client-side
     meta:
-      title: Open Graph (OG) Debugger â€” Test Social Media Meta Tags
+      title: Open Graph (OG) Debugger — Test Social Media Meta Tags
       description: Preview how your website looks when shared on Facebook, LinkedIn, and Slack. Debug your Open Graph (OG) tags to ensure images and titles display perfectly.
     content:
-      title: Open Graph Debugger â€” Optimize Your Social Links
+      title: Open Graph Debugger — Optimize Your Social Links
       description: Preview how your website looks when shared on Facebook, LinkedIn, and Slack. Debug your Open Graph (OG) tags to ensure images and titles display perfectly.
       keywords:
         - facebook link preview debugger
@@ -5987,10 +5987,10 @@ tools:
         - html
       processing: client-side
     meta:
-      title: Twitter Card Generator â€” Preview Twitter Meta Tags Online
+      title: Twitter Card Generator — Preview Twitter Meta Tags Online
       description: Generate and preview Twitter Card meta tags for your website. Choose between summary or large image cards to maximize engagement and clicks on X (Twitter).
     content:
-      title: Twitter Card Generator â€” Optimize Your Viral Reach
+      title: Twitter Card Generator — Optimize Your Viral Reach
       description: Generate and preview Twitter Card meta tags for your website. Choose between summary or large image cards to maximize engagement and clicks on X (Twitter).
       keywords:
         - twitter summary card preview online
@@ -6039,10 +6039,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: SEO URL Slug Optimizer â€” Create Search-Friendly URLs
+      title: SEO URL Slug Optimizer — Create Search-Friendly URLs
       description: Transform your titles into clean, search-friendly URL slugs. Automatically remove stop-words and special characters to create short, descriptive URLs that rank better.
     content:
-      title: URL Slug Optimizer â€” Clean & Search-Ready Links
+      title: URL Slug Optimizer — Clean & Search-Ready Links
       description: Transform your titles into clean, search-friendly URL slugs. Automatically remove stop-words and special characters to create short, descriptive URLs that rank better.
       keywords:
         - create seo friendly urls
@@ -6092,10 +6092,10 @@ tools:
         - data-table
       processing: client-side
     meta:
-      title: Keyword Density Analyzer â€” Check Content Frequency Online
+      title: Keyword Density Analyzer — Check Content Frequency Online
       description: Analyze the keyword frequency of your content to ensure optimal distribution. Find your most important terms and prevent keyword stuffing penalties with our visual analyzer.
     content:
-      title: Keyword Density Analyzer â€” Optimize Your SEO Content
+      title: Keyword Density Analyzer — Optimize Your SEO Content
       description: Analyze the keyword frequency of your content to ensure optimal distribution. Find your most important terms and prevent keyword stuffing penalties with our visual analyzer.
       keywords:
         - check keyword frequency in text
@@ -6145,10 +6145,10 @@ tools:
         - validation-report
       processing: client-side
     meta:
-      title: JSON-LD Schema Validator â€” Validate Structured Data Online
+      title: JSON-LD Schema Validator — Validate Structured Data Online
       description: Debug and validate your JSON-LD schema markup. Ensure your structured data is compliant with Schema.org standards to qualify for Google rich search results and snippets.
     content:
-      title: Schema Validator â€” Verify Your Structured Data
+      title: Schema Validator — Verify Your Structured Data
       description: Debug and validate your JSON-LD schema markup. Ensure your structured data is compliant with Schema.org standards to qualify for Google rich search results and snippets.
       keywords:
         - validate schema markup online
@@ -6198,10 +6198,10 @@ tools:
         - conf
       processing: client-side
     meta:
-      title: Nginx Config Generator â€” Optimize Reverse Proxy & SSL
+      title: Nginx Config Generator — Optimize Reverse Proxy & SSL
       description: Generate production-ready Nginx configuration files instantly. Build optimized reverse proxies, configure SSL/TLS, and implement enterprise-grade security headers with ease.
     content:
-      title: Nginx Config Generator â€” Professional Server Scaffolding
+      title: Nginx Config Generator — Professional Server Scaffolding
       description: Generate production-ready Nginx configuration files instantly. Build optimized reverse proxies, configure SSL/TLS, and implement enterprise-grade security headers with ease.
       keywords:
         - nginx reverse proxy config generator
@@ -6251,7 +6251,7 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: .htaccess Generator & Tester â€” 301 Redirects & Rewrite Rules
+      title: .htaccess Generator & Tester — 301 Redirects & Rewrite Rules
       description: Create and test .htaccess files for your Apache server. Generate 301 redirects, rewrite rules, and validate configuration for better SEO and performance.
     content:
       title: Apache .htaccess Generator & Tester
@@ -6312,10 +6312,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: IPv4 Subnet Calculator â€” CIDR & Network Mask Audit
+      title: IPv4 Subnet Calculator — CIDR & Network Mask Audit
       description: Calculate IPv4 subnets, network masks, and host ranges with our professional CIDR calculator. Visual breakdown of usable IP addresses for network engineers and sysadmins.
     content:
-      title: Subnet Calculator â€” Professional Networking Utility
+      title: Subnet Calculator — Professional Networking Utility
       description: Calculate IPv4 subnets, network masks, and host ranges with our professional CIDR calculator. Visual breakdown of usable IP addresses for network engineers and sysadmins.
       keywords:
         - visual subnet calculator for networking
@@ -6364,10 +6364,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Online Port Scanner Simulation â€” Security Audit Helper
+      title: Online Port Scanner Simulation — Security Audit Helper
       description: Analyze and understand common network ports and their security implications. A visual simulation of how port scanners detect open services on a network.
     content:
-      title: Port Scanner Simulation â€” Network Security Audit
+      title: Port Scanner Simulation — Network Security Audit
       description: Analyze and understand common network ports and their security implications. A visual simulation of how port scanners detect open services on a network.
       keywords:
         - online port scanner local network test
@@ -6418,10 +6418,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: JS Obfuscator (Safe Mode) â€” Protect Client-Side Scripts
+      title: JS Obfuscator (Safe Mode) — Protect Client-Side Scripts
       description: Make your JavaScript code difficult to read and copy with our safe-mode obfuscator. Protect your intellectual property from simple scraping while maintaining code functionality.
     content:
-      title: JavaScript Obfuscator â€” Secure Code Protection
+      title: JavaScript Obfuscator — Secure Code Protection
       description: Make your JavaScript code difficult to read and copy with our safe-mode obfuscator. Protect your intellectual property from simple scraping while maintaining code functionality.
       keywords:
         - protect javascript code from scraping
@@ -6470,10 +6470,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: ASCII Art & Banner Generator â€” Stylized Terminal Text
+      title: ASCII Art & Banner Generator — Stylized Terminal Text
       description: Convert any text into professional, stylized ASCII banners. Perfect for terminal headers, code comments, and project documentation with a retro engineering aesthetic.
     content:
-      title: ASCII Art Generator â€” Create Banners for Code & Docs
+      title: ASCII Art Generator — Create Banners for Code & Docs
       description: Convert any text into professional, stylized ASCII banners. Perfect for terminal headers, code comments, and project documentation with a retro engineering aesthetic.
       keywords:
         - ascii text banner generator for terminal
@@ -6525,7 +6525,7 @@ tools:
       title: 'Morse Code & NATO Phonetic Converter: Instant Tool'
       description: Translate text to Morse code or the NATO phonetic alphabet instantly. A professional utility for radio communication, technical naming, and secure messaging.
     content:
-      title: Morse Code & Phonetic Converter â€” Instant Translation
+      title: Morse Code & Phonetic Converter — Instant Translation
       description: Translate text to Morse code or the NATO phonetic alphabet instantly. A professional utility for radio communication, technical naming, and secure messaging.
       keywords:
         - nato phonetic alphabet converter online
@@ -6574,10 +6574,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Cron Expression Generator & Explainer â€” Human-Readable Crontab
+      title: Cron Expression Generator & Explainer — Human-Readable Crontab
       description: Create and explain Crontab expressions with our visual cron builder. Get human-readable descriptions of your task schedules for Linux, AWS, and Google Cloud jobs.
     content:
-      title: Cron Expression Generator â€” Build Linux Crontab Schedules
+      title: Cron Expression Generator — Build Linux Crontab Schedules
       description: Create and explain Crontab expressions with our visual cron builder. Get human-readable descriptions of your task schedules for Linux, AWS, and Google Cloud jobs.
       keywords:
         - cron expression generator online
@@ -6629,10 +6629,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Regex Tester & Explainer â€” Real-time Regular Expression Debugger
+      title: Regex Tester & Explainer — Real-time Regular Expression Debugger
       description: Professional Regex tester for real-time JavaScript regular expression debugging. Features visual match highlighting, capture group identification, and AI-powered logic explanations.
     content:
-      title: Regex Tester â€” Visual Regular Expression Debugging
+      title: Regex Tester — Visual Regular Expression Debugging
       description: Professional Regex tester for real-time JavaScript regular expression debugging. Features visual match highlighting, capture group identification, and AI-powered logic explanations.
       keywords:
         - regex tester javascript online
@@ -6686,10 +6686,10 @@ tools:
         - json
       processing: client-side
     meta:
-      title: JWT Debugger â€” Decode & Inspect Tokens Locally
+      title: JWT Debugger — Decode & Inspect Tokens Locally
       description: Decode and inspect your JSON Web Tokens (JWT) without sending sensitive data to any server. Verify headers, payloads, and claims 100% locally in your browser.
     content:
-      title: JWT Debugger â€” Inspect JSON Web Tokens Securely
+      title: JWT Debugger — Inspect JSON Web Tokens Securely
       description: Decode and inspect your JSON Web Tokens (JWT) without sending sensitive data to any server. Verify headers, payloads, and claims 100% locally in your browser.
       keywords:
         - jwt debugger online
@@ -6698,7 +6698,7 @@ tools:
         - json web token decoder
         - verify jwt payload
         - secure jwt inspector
-      tldr: Decode and analyze JWT tokens securely in your browserâ€”no data is ever transmitted to a server, keeping your credentials safe.
+      tldr: Decode and analyze JWT tokens securely in your browser—no data is ever transmitted to a server, keeping your credentials safe.
       entity_definition: 'JWT Debugger & Inspector is a security utility for analyzing JSON Web Tokens used in modern authentication. It splits the encoded Base64 string into its three constituent parts: Header, Payload, and Signature. This allows developers to verify issuer data, expiration times, and custom claims during API development and debugging.'
       how_it_works: The tool performs a Base64-URL decode on the segments of the token and parses the resulting strings into formatted JSON blocks for easy inspection.
       use_cases:
@@ -6743,7 +6743,7 @@ tools:
       title: 'Markdown to HTML Converter: GitHub-Flavored Preview'
       description: Transform your Markdown files into clean, professional HTML. Supports GitHub-flavored markdown (GFM) with real-time preview and one-click code generation.
     content:
-      title: Markdown to HTML Converter â€” Fast Documentation Tool
+      title: Markdown to HTML Converter — Fast Documentation Tool
       description: Transform your Markdown files into clean, professional HTML. Supports GitHub-flavored markdown (GFM) with real-time preview and one-click code generation.
       keywords:
         - markdown to html converter online
@@ -6792,10 +6792,10 @@ tools:
         - js
       processing: client-side
     meta:
-      title: Curl to Fetch/Axios Converter â€” Instant API Request Scaffolding
+      title: Curl to Fetch/Axios Converter — Instant API Request Scaffolding
       description: Convert any Curl command into clean, production-ready JavaScript code using the Fetch API or Axios. Save hours of manual API request scaffolding.
     content:
-      title: Curl Converter â€” Convert API Requests to JavaScript
+      title: Curl Converter — Convert API Requests to JavaScript
       description: Convert any Curl command into clean, production-ready JavaScript code using the Fetch API or Axios. Save hours of manual API request scaffolding.
       keywords:
         - convert curl command to fetch
@@ -6845,10 +6845,10 @@ tools:
         - visual
       processing: client-side
     meta:
-      title: Visual Code Diff Checker â€” Compare Snippets Side-by-Side
+      title: Visual Code Diff Checker — Compare Snippets Side-by-Side
       description: Identify changes between two versions of code or text. Our visual diff tool provides side-by-side comparison with clear highlighting for additions and deletions.
     content:
-      title: Code Diff Checker â€” Compare Text and Code Snippets
+      title: Code Diff Checker — Compare Text and Code Snippets
       description: Identify changes between two versions of code or text. Our visual diff tool provides side-by-side comparison with clear highlighting for additions and deletions.
       keywords:
         - visual code diff tool
@@ -6899,10 +6899,10 @@ tools:
         - html
       processing: client-side
     meta:
-      title: HTML Entity Encoder/Decoder â€” Securely Escape Characters
+      title: HTML Entity Encoder/Decoder — Securely Escape Characters
       description: Prepare your code for the web by encoding special characters into HTML entities. Our secure tool handles escaping for XSS prevention and documentation snippets.
     content:
-      title: HTML Entity Tool â€” Encode and Decode HTML Characters
+      title: HTML Entity Tool — Encode and Decode HTML Characters
       description: Prepare your code for the web by encoding special characters into HTML entities. Our secure tool handles escaping for XSS prevention and documentation snippets.
       keywords:
         - html entity encoder online
@@ -6952,10 +6952,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Dotenv (.env) File Generator â€” Secure Project Scaffolding
+      title: Dotenv (.env) File Generator — Secure Project Scaffolding
       description: Generate professional .env file templates for your projects. Standardized scaffolding for database credentials, API keys, and server configurations.
     content:
-      title: Dotenv Generator â€” Build Standardized Environment Files
+      title: Dotenv Generator — Build Standardized Environment Files
       description: Generate professional .env file templates for your projects. Standardized scaffolding for database credentials, API keys, and server configurations.
       keywords:
         - generate .env file online
@@ -7004,10 +7004,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Git Command Helper â€” Interactive Git Workflow Scaffolding
+      title: Git Command Helper — Interactive Git Workflow Scaffolding
       description: Find the exact Git commands you need to rename branches, undo commits, and resolve merge conflicts. An interactive helper for mastering version control.
     content:
-      title: Git Command Helper â€” Fix Errors & Build Workflows
+      title: Git Command Helper — Fix Errors & Build Workflows
       description: Find the exact Git commands you need to rename branches, undo commits, and resolve merge conflicts. An interactive helper for mastering version control.
       keywords:
         - git command helper online
@@ -7016,7 +7016,7 @@ tools:
         - undo last commit git
         - git workflow generator
         - common git commands guide
-      tldr: Stop searching StackOverflowâ€”instantly find the exact Git commands you need for any branching or troubleshooting scenario.
+      tldr: Stop searching StackOverflow—instantly find the exact Git commands you need for any branching or troubleshooting scenario.
       entity_definition: Git Command Helper is a workflow utility designed to demystify complex Version Control commands. It provides a scenario-based interface where developers can select an objective (e.g., 'Undo a commit') and receive the precise CLI commands and explanations needed to execute it safely.
       how_it_works: The tool maps common developer challenges to a curated library of battle-tested Git commands and best-practice workflows.
       use_cases:
@@ -7057,10 +7057,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: Docker Compose Generator â€” Scaffold Service Configurations
+      title: Docker Compose Generator — Scaffold Service Configurations
       description: Rapidly scaffold multi-container Docker Compose files for your local development environment. Pre-built templates for Node.js, Python, PostgreSQL, and Redis.
     content:
-      title: Docker Compose Scaffolder â€” Build YAML Configurations
+      title: Docker Compose Scaffolder — Build YAML Configurations
       description: Rapidly scaffold multi-container Docker Compose files for your local development environment. Pre-built templates for Node.js, Python, PostgreSQL, and Redis.
       keywords:
         - docker compose generator online
@@ -7112,10 +7112,10 @@ tools:
       processing: client-side
       library: js-yaml
     meta:
-      title: YAML to JSON Converter Online â€” Fast & Secure Data Parsing
+      title: YAML to JSON Converter Online — Fast & Secure Data Parsing
       description: Convert your YAML configuration files to valid JSON instantly. Our secure, client-side parser ensures your data never leaves your browser. Perfect for DevOps and frontend developers.
     content:
-      title: YAML to JSON Converter â€” Instant Data Transformation
+      title: YAML to JSON Converter — Instant Data Transformation
       description: Convert your YAML configuration files to valid JSON instantly. Our secure, client-side parser ensures your data never leaves your browser. Perfect for DevOps and frontend developers.
       keywords:
         - yaml to json converter
@@ -7169,7 +7169,7 @@ tools:
       title: 'HTML Minifier: Compress & Optimize Your Website Code'
       description: Reduce your website's file size by minifying HTML code. Our professional optimizer removes comments, unnecessary spaces, and redundant code to boost Core Web Vitals and SEO rankings.
     content:
-      title: HTML Code Minifier â€” High-Performance Page Optimization
+      title: HTML Code Minifier — High-Performance Page Optimization
       description: Reduce your website's file size by minifying HTML code. Our professional optimizer removes comments, unnecessary spaces, and redundant code to boost Core Web Vitals and SEO rankings.
       keywords:
         - minify html online
@@ -7179,7 +7179,7 @@ tools:
         - html minifier for seo
         - compress web pages
       tldr: Strip away the bloat from your HTML source code to achieve lightning-fast load times and perfect performance scores.
-      entity_definition: HTML Code Minifier is a frontend optimization utility designed to reduce the payload size of web documents. It intelligently removes non-functional charactersâ€”such as comments, line breaks, and redundant whitespaceâ€”without altering the rendered output of the page. This leads to reduced Time to First Byte (TTFB) and improved Largest Contentful Paint (LCP) metrics.
+      entity_definition: HTML Code Minifier is a frontend optimization utility designed to reduce the payload size of web documents. It intelligently removes non-functional characters—such as comments, line breaks, and redundant whitespace—without altering the rendered output of the page. This leads to reduced Time to First Byte (TTFB) and improved Largest Contentful Paint (LCP) metrics.
       how_it_works: Our minification engine scans your HTML structure, identifying segments that are safe to compress. It handles script tags, style blocks, and standard DOM elements with precision.
       use_cases:
         - Optimizing production web assets
@@ -7223,7 +7223,7 @@ tools:
       title: 'CSS Minifier: Compress & Optimize Your Stylesheets'
       description: Compress your CSS files to improve website performance. Our tool removes comments, whitespace, and redundant characters to deliver smaller, faster stylesheets for production.
     content:
-      title: CSS Code Minifier â€” Professional Stylesheet Compression
+      title: CSS Code Minifier — Professional Stylesheet Compression
       description: Compress your CSS files to improve website performance. Our tool removes comments, whitespace, and redundant characters to deliver smaller, faster stylesheets for production.
       keywords:
         - minify css online
@@ -7274,10 +7274,10 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: SQL Formatter & Beautifier â€” Structure Complex Database Queries
+      title: SQL Formatter & Beautifier — Structure Complex Database Queries
       description: Format complex SQL queries instantly for better readability and debugging. Our professional beautifier supports MySQL, PostgreSQL, and standard SQL syntax with custom indentation.
     content:
-      title: SQL Formatter â€” Professional Query Beautification
+      title: SQL Formatter — Professional Query Beautification
       description: Format complex SQL queries instantly for better readability and debugging. Our professional beautifier supports MySQL, PostgreSQL, and standard SQL syntax with custom indentation.
       keywords:
         - sql formatter online
@@ -7381,10 +7381,10 @@ tools:
         - text
       processing: client-side
     meta:
-      title: Title Case Converter â€” Generate Pro Headlines Online
+      title: Title Case Converter — Generate Pro Headlines Online
       description: Convert your titles and headlines to professional Title Case. Support for AP, APA, Chicago, and New York Times style guides to ensure your blog posts and articles look professional.
     content:
-      title: Title Case Converter â€” Professional Headline Formatting
+      title: Title Case Converter — Professional Headline Formatting
       description: Convert your titles and headlines to professional Title Case. Support for AP, APA, Chicago, and New York Times style guides to ensure your blog posts and articles look professional.
       keywords:
         - convert text to title case online
@@ -7433,10 +7433,10 @@ tools:
         - json
       processing: client-side
     meta:
-      title: PWA Manifest Generator â€” Create App Manifests Online
+      title: PWA Manifest Generator — Create App Manifests Online
       description: Generate a valid manifest.json for your Progressive Web App. Configure icons, theme colors, start URLs, and display modes to make your website installable like a native app.
     content:
-      title: PWA Manifest Builder â€” Professional Web App Setup
+      title: PWA Manifest Builder — Professional Web App Setup
       description: Generate a valid manifest.json for your Progressive Web App. Configure icons, theme colors, start URLs, and display modes to make your website installable like a native app.
       keywords:
         - generate pwa manifest online
@@ -7485,10 +7485,10 @@ tools:
         - css
       processing: client-side
     meta:
-      title: CSS Box Shadow Generator â€” Create Modern UI Shadows
+      title: CSS Box Shadow Generator — Create Modern UI Shadows
       description: Create beautiful, modern CSS box-shadows visually. Support for layered shadows, inset effects, and glassmorphism styles with instant code export for your projects.
     content:
-      title: CSS Shadow Builder â€” Visual UI Design Utility
+      title: CSS Shadow Builder — Visual UI Design Utility
       description: Create beautiful, modern CSS box-shadows visually. Support for layered shadows, inset effects, and glassmorphism styles with instant code export for your projects.
       keywords:
         - generate css box shadow online
@@ -7537,10 +7537,10 @@ tools:
         - readability-report
       processing: client-side
     meta:
-      title: Readability Grade Calculator â€” Check Content Level Online
+      title: Readability Grade Calculator — Check Content Level Online
       description: Calculate the readability and reading level of your text. Audit your content for clarity and impact using industry-standard scores like Flesch-Kincaid and Gunning Fog.
     content:
-      title: Readability Auditor â€” Optimize Your Content Impact
+      title: Readability Auditor — Optimize Your Content Impact
       description: Calculate the readability and reading level of your text. Audit your content for clarity and impact using industry-standard scores like Flesch-Kincaid and Gunning Fog.
       keywords:
         - calculate flesh-kincaid readability online
@@ -7591,10 +7591,10 @@ tools:
         - unicode
       processing: client-side
     meta:
-      title: Emoji Unicode Picker â€” Find & Copy Emojis for Blogs
+      title: Emoji Unicode Picker — Find & Copy Emojis for Blogs
       description: Find and copy the perfect emojis for your blog posts and social media. Search our comprehensive database by keyword and category with instant Unicode and HTML entity export.
     content:
-      title: Emoji Search â€” Visual Unicode Utility
+      title: Emoji Search — Visual Unicode Utility
       description: Find and copy the perfect emojis for your blog posts and social media. Search our comprehensive database by keyword and category with instant Unicode and HTML entity export.
       keywords:
         - find emoji unicode code online
@@ -7643,10 +7643,10 @@ tools:
         - css
       processing: client-side
     meta:
-      title: CSS Keyframe Generator â€” Create Web Animations Online
+      title: CSS Keyframe Generator — Create Web Animations Online
       description: Create professional CSS @keyframes animations visually. Design smooth transitions, pulsing effects, and complex motion paths with instant code export for your UI projects.
     content:
-      title: CSS Animation Builder â€” Visual Keyframe Utility
+      title: CSS Animation Builder — Visual Keyframe Utility
       description: Create professional CSS @keyframes animations visually. Design smooth transitions, pulsing effects, and complex motion paths with instant code export for your UI projects.
       keywords:
         - generate css keyframes online
@@ -7696,10 +7696,10 @@ tools:
         - palette-grid
       processing: client-side
     meta:
-      title: Color Palette Extractor â€” Find Brand Colors in CSS
+      title: Color Palette Extractor — Find Brand Colors in CSS
       description: Extract the full color palette from any CSS file or website. Audit your brand consistency by finding every HEX, RGB, and HSL value used in your stylesheets.
     content:
-      title: CSS Color Extractor â€” Professional Design Audit
+      title: CSS Color Extractor — Professional Design Audit
       description: Extract the full color palette from any CSS file or website. Audit your brand consistency by finding every HEX, RGB, and HSL value used in your stylesheets.
       keywords:
         - extract colors from css file online
@@ -7748,10 +7748,10 @@ tools:
         - visual-tree
       processing: client-side
     meta:
-      title: Webhook Payload Visualizer â€” Debug API Data Online
+      title: Webhook Payload Visualizer — Debug API Data Online
       description: Visualize and inspect incoming Webhook payloads from services like Stripe, GitHub, and Shopify. A professional utility for debugging complex JSON data structures visually.
     content:
-      title: Webhook Visualizer â€” Professional API Debugging
+      title: Webhook Visualizer — Professional API Debugging
       description: Visualize and inspect incoming Webhook payloads from services like Stripe, GitHub, and Shopify. A professional utility for debugging complex JSON data structures visually.
       keywords:
         - test webhook payloads online
@@ -7800,10 +7800,10 @@ tools:
         - table
       processing: client-side
     meta:
-      title: LocalStorage Auditor â€” Inspect Browser Data Online
+      title: LocalStorage Auditor — Inspect Browser Data Online
       description: Inspect and manage your browser's LocalStorage and SessionStorage. A professional utility for visualizing data usage, debugging web apps, and cleaning up persistent storage.
     content:
-      title: Storage Auditor â€” Professional Web Storage Debugger
+      title: Storage Auditor — Professional Web Storage Debugger
       description: Inspect and manage your browser's LocalStorage and SessionStorage. A professional utility for visualizing data usage, debugging web apps, and cleaning up persistent storage.
       keywords:
         - inspect browser local storage online
@@ -7852,10 +7852,10 @@ tools:
       - compatibility-report
     processing: client-side
     meta:
-      title: Browser Compatibility Check â€” Test Web Feature Support
+      title: Browser Compatibility Check — Test Web Feature Support
       description: Check if your browser supports modern web features like CSS Grid, WebGL, and the Web Crypto API. A professional utility for auditing compatibility and debugging cross-browser issues.
     content:
-      title: Feature Auditor â€” Instant Browser Support Test
+      title: Feature Auditor — Instant Browser Support Test
       description: Check if your browser supports modern web features like CSS Grid, WebGL, and the Web Crypto API. A professional utility for auditing compatibility and debugging cross-browser issues.
       keywords:
         - check browser support for css features
@@ -7904,10 +7904,10 @@ tools:
         - similarity-score
       processing: client-side
     meta:
-      title: Text Similarity Scorer â€” Check for Duplicate Content Online
+      title: Text Similarity Scorer — Check for Duplicate Content Online
       description: Calculate the mathematical similarity between two pieces of text. Identify duplicate content issues for SEO and verify originality with professional-grade scoring.
     content:
-      title: Similarity Auditor â€” Professional SEO Content Tool
+      title: Similarity Auditor — Professional SEO Content Tool
       description: Calculate the mathematical similarity between two pieces of text. Identify duplicate content issues for SEO and verify originality with professional-grade scoring.
       keywords:
         - calculate text similarity online
@@ -7956,10 +7956,10 @@ tools:
         - pdf
       processing: server-side
     meta:
-      title: Site Audit Pro â€” Technical SEO & Performance Analyzer 2026
+      title: Site Audit Pro — Technical SEO & Performance Analyzer 2026
       description: Analyze your website's technical SEO, performance, and accessibility instantly. Get actionable insights to improve Google rankings and Core Web Vitals with our professional auditor.
     content:
-      title: Site Audit Pro â€” Comprehensive Technical SEO Analyzer
+      title: Site Audit Pro — Comprehensive Technical SEO Analyzer
       description: Analyze your website's technical SEO, performance, and accessibility instantly. Get actionable insights to improve Google rankings and Core Web Vitals with our professional auditor.
       keywords:
         - site audit pro
