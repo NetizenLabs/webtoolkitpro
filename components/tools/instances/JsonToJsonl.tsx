@@ -116,7 +116,7 @@ export default function JsonToJsonl() {
               {isValidSchema ? (
                 <><CheckCircle className="w-5 h-5 text-green-600" /> OpenAI Fine-Tuning Schema Detected (Valid)</>
               ) : (
-                <><AlertCircle className="w-5 h-5 text-yellow-600" /> Warning: Standard JSONL generated, but it does not match OpenAI's {"{messages: [{role, content}]}"} conversational format.</>
+                <><AlertCircle className="w-5 h-5 text-yellow-600" /> Warning: Standard JSONL generated, but it does not match OpenAI&apos;s {"{messages: [{role, content}]}"} conversational format.</>
               )}
             </div>
           )}

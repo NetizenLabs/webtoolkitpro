@@ -6,6 +6,15 @@ import Editor from '@monaco-editor/react';
 import { Brain, DollarSign, Calculator, Info } from 'lucide-react';
 import PrivacyBanner from '../PrivacyBanner';
 
+// Which tokenizer to use based on the model
+const tiktokenModelMap: Record<string, TiktokenModel> = {
+  'gpt-4': 'gpt-4',
+  'gpt-4o': 'gpt-4o',
+  'gpt-3.5-turbo': 'gpt-3.5-turbo',
+  'claude-3.5-sonnet': 'gpt-4o', // approximate using cl100k_base
+  'gemini-1.5-pro': 'gpt-4o'     // approximate using cl100k_base
+};
+
 export default function TokenCalculator() {
   const [input, setInput] = useState('// Enter a massive enterprise prompt or codebase to calculate tokens...\n\nfunction example() {\n  console.log("Strictly client-side token calculation.");\n}');
   
@@ -24,15 +33,6 @@ export default function TokenCalculator() {
       default: return 5.00;
     }
   }, [model]);
-
-  // Which tokenizer to use based on the model
-  const tiktokenModelMap: Record<string, TiktokenModel> = {
-    'gpt-4': 'gpt-4',
-    'gpt-4o': 'gpt-4o',
-    'gpt-3.5-turbo': 'gpt-3.5-turbo',
-    'claude-3.5-sonnet': 'gpt-4o', // approximate using cl100k_base
-    'gemini-1.5-pro': 'gpt-4o'     // approximate using cl100k_base
-  };
 
   useEffect(() => {
     try {

@@ -10530,7 +10530,7 @@ tools:
         - Automatic normalization of single vs array strings
       faq:
         - question: Can I use this for AWS S3 bucket policies?
-          answer: Yes. The generated JSON uses the standard AWS Policy format (`Version: 2012-10-17`), which is fully compatible with IAM Users, Roles, and inline S3 Bucket Policies.
+          answer: "Yes. The generated JSON uses the standard AWS Policy format (`Version: 2012-10-17`), which is fully compatible with IAM Users, Roles, and inline S3 Bucket Policies."
         - question: How do I specify multiple actions?
           answer: Simply type them as a comma-separated list (e.g., `s3:GetObject, s3:ListBucket`). The generator will automatically format them into a valid JSON array.
   - name: Cron to Kubernetes CronJob
@@ -10582,4 +10582,4 @@ tools:
         - question: Does Kubernetes support the 6-field cron expression?
           answer: No. Unlike some Linux distributions or Node.js libraries that support a 6th field for 'seconds', Kubernetes strictly requires the standard 5-field format (`Minute Hour DayOfMonth Month DayOfWeek`).
         - question: What restart policy is generated?
-          answer: The generated manifest defaults to `restartPolicy: OnFailure`, which is the best practice for CronJobs to ensure transient failures are retried without infinitely looping crashed pods.
+          answer: "The generated manifest defaults to `restartPolicy: OnFailure`, which is the best practice for CronJobs to ensure transient failures are retried without infinitely looping crashed pods."
