@@ -13,8 +13,10 @@ export default function NanoidGen() {
     const alphabet = 'usealphabet-2164830957qwertzuiopasdfghjklyxcvbnmWERTZUIOPASDFGHJKLYXCVBNM'
     const newIds = Array.from({ length: count }).map(() => {
       let id = ''
+      const randomValues = new Uint8Array(size)
+      window.crypto.getRandomValues(randomValues)
       for (let i = 0; i < size; i++) {
-        id += alphabet[Math.floor(Math.random() * alphabet.length)]
+        id += alphabet[randomValues[i] % alphabet.length]
       }
       return id
     })

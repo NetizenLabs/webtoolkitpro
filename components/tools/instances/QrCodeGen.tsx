@@ -1,24 +1,32 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { QrCode, Download, RefreshCcw, Copy, Check } from 'lucide-react'
+import QRCode from 'qrcode'
 
 export default function QrCodeGen() {
   const [text, setText] = useState('https://webtoolkit.pro')
   const [size, setSize] = useState(250)
-  const [qrUrl, setQrUrl] = useState(`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://webtoolkit.pro`)
+  const [qrUrl, setQrUrl] = useState('')
 
-  const generate = () => {
-    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}`)
+  const generate = async () => {
+    try {
+      const url = await QRCode.toDataURL(text || 'https://webtoolkit.pro', { width: size, margin: 2 })
+      setQrUrl(url)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
-  const download = async () => {
-    const response = await fetch(qrUrl)
-    const blob = await response.blob()
-    const url = window.URL.createObjectURL(blob)
+  useEffect(() => {
+    generate()
+  }, [])
+
+  const download = () => {
+    if (!qrUrl) return
     const link = document.createElement('a')
-    link.href = url
+    link.href = qrUrl
     link.download = 'qrcode.png'
     link.click()
   }

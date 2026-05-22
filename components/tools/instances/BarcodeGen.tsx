@@ -1,23 +1,39 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Barcode, Download, RefreshCcw } from 'lucide-react'
+import JsBarcode from 'jsbarcode'
 
 export default function BarcodeGen() {
   const [text, setText] = useState('1234567890')
-  const [type, setType] = useState('code128')
-  const [url, setUrl] = useState(`https://bwipjs-api.metafloor.com/?bcid=code128&text=1234567890&scale=3&rotate=N&includetext`)
+  const [type, setType] = useState('CODE128')
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const generate = () => {
-    setUrl(`https://bwipjs-api.metafloor.com/?bcid=${type}&text=${encodeURIComponent(text)}&scale=3&rotate=N&includetext`)
+    if (!canvasRef.current || !text) return
+    try {
+      JsBarcode(canvasRef.current, text, {
+        format: type,
+        displayValue: true,
+        background: '#ffffff',
+        lineColor: '#000000',
+        margin: 10
+      })
+    } catch (e) {
+      console.error('Invalid barcode data')
+    }
   }
 
-  const download = async () => {
-    const response = await fetch(url)
-    const blob = await response.blob()
+  useEffect(() => {
+    generate()
+  }, []) // Initial generation
+
+  const download = () => {
+    if (!canvasRef.current) return
+    const url = canvasRef.current.toDataURL('image/png')
     const link = document.createElement('a')
-    link.href = window.URL.createObjectURL(blob)
+    link.href = url
     link.download = `barcode-${type}.png`
     link.click()
   }
@@ -50,10 +66,10 @@ export default function BarcodeGen() {
                 onChange={(e) => setType(e.target.value)}
                 className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-xs font-bold outline-none appearance-none"
               >
-                <option value="code128">Code 128</option>
-                <option value="ean13">EAN-13</option>
-                <option value="upca">UPC-A</option>
-                <option value="code39">Code 39</option>
+                <option value="CODE128">Code 128</option>
+                <option value="EAN13">EAN-13</option>
+                <option value="UPC">UPC</option>
+                <option value="CODE39">Code 39</option>
               </select>
             </div>
             <button 
@@ -66,7 +82,7 @@ export default function BarcodeGen() {
 
           <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-[#0B1120] rounded-3xl p-8 border border-gray-100 dark:border-[#1E2D47]">
             <div className="bg-white p-4 rounded-xl shadow-xl mb-6">
-              <Image src={url} alt="Barcode" className="max-w-full h-auto" width={300} height={100} unoptimized />
+              <canvas ref={canvasRef} className="max-w-full h-auto" />
             </div>
             <button 
               onClick={download}
