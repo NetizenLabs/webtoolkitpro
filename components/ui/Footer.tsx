@@ -97,34 +97,34 @@ export default function Footer() {
               <li><a href="https://devhubindex.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">DEVHUB INDEX</a></li>
               <li><a href="https://www.severancecalculator.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Severance Calculator</a></li>
               <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Abu Sufyan Portfolio</a></li>
-              <li><Link href="/author/" className="hover:text-[#00D4B4] transition-colors">Engineering Leadership</Link></li>
-              <li><Link href="/about/" className="hover:text-[#00D4B4] transition-colors">Our Philosophy</Link></li>
-              <li><Link href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors">Partner Program</Link></li>
-              <li><Link href="/contact/" className="hover:text-[#00D4B4] transition-colors">Direct Support</Link></li>
-              <li><Link href="/brand/" className="hover:text-[#00D4B4] transition-colors">Brand Assets</Link></li>
+              <li><a href="/author/" className="hover:text-[#00D4B4] transition-colors">Engineering Leadership</a></li>
+              <li><a href="/about/" className="hover:text-[#00D4B4] transition-colors">Our Philosophy</a></li>
+              <li><a href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors">Partner Program</a></li>
+              <li><a href="/contact/" className="hover:text-[#00D4B4] transition-colors">Direct Support</a></li>
+              <li><a href="/brand/" className="hover:text-[#00D4B4] transition-colors">Brand Assets</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-foreground font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-border pb-2">Topical Hubs</h3>
             <ul className="space-y-2 text-[11px] font-medium">
-              <li><Link href="/tools/hub/developer-tools/" className="hover:text-[#00D4B4] transition-colors">Developer Suite</Link></li>
-              <li><Link href="/tools/hub/seo-tools/" className="hover:text-[#00D4B4] transition-colors">SEO Performance</Link></li>
-              <li><Link href="/tools/hub/network-performance/" className="hover:text-[#00D4B4] transition-colors">Edge & Network</Link></li>
-              <li><Link href="/tools/hub/generators/" className="hover:text-[#00D4B4] transition-colors">Security Generators</Link></li>
-              <li><Link href="/tools/hub/revenue-analytics/" className="hover:text-[#00D4B4] transition-colors">Ad Revenue Calc</Link></li>
-              <li><Link href="/tools/hub/content-utilities/" className="hover:text-[#00D4B4] transition-colors">Content Optimization</Link></li>
+              <li><a href="/tools/hub/developer-tools/" className="hover:text-[#00D4B4] transition-colors">Developer Suite</a></li>
+              <li><a href="/tools/hub/seo-tools/" className="hover:text-[#00D4B4] transition-colors">SEO Performance</a></li>
+              <li><a href="/tools/hub/network-performance/" className="hover:text-[#00D4B4] transition-colors">Edge & Network</a></li>
+              <li><a href="/tools/hub/generators/" className="hover:text-[#00D4B4] transition-colors">Security Generators</a></li>
+              <li><a href="/tools/hub/revenue-analytics/" className="hover:text-[#00D4B4] transition-colors">Ad Revenue Calc</a></li>
+              <li><a href="/tools/hub/content-utilities/" className="hover:text-[#00D4B4] transition-colors">Content Optimization</a></li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border gap-6">
           <div className="flex items-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] font-mono">
-            <Link href="/privacy/" className="hover:text-[#00D4B4] transition-colors">Privacy</Link>
-            <Link href="/terms/" className="hover:text-[#00D4B4] transition-colors">Terms</Link>
-            <Link href="/disclaimer/" className="hover:text-[#00D4B4] transition-colors">Disclaimer</Link>
-            <Link href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">XML Sitemap</Link>
-            <Link href="/feed.xml" className="hover:text-[#00D4B4] transition-colors">RSS Feed</Link>
+            <a href="/privacy/" className="hover:text-[#00D4B4] transition-colors">Privacy</a>
+            <a href="/terms/" className="hover:text-[#00D4B4] transition-colors">Terms</a>
+            <a href="/disclaimer/" className="hover:text-[#00D4B4] transition-colors">Disclaimer</a>
+            <a href="/sitemap.xml" className="hover:text-[#00D4B4] transition-colors">XML Sitemap</a>
+            <a href="/feed.xml" className="hover:text-[#00D4B4] transition-colors">RSS Feed</a>
             <span className="text-muted-foreground/50">v1.0.8</span>
           </div>
 
@@ -147,7 +147,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground">
-            © {new Date().getFullYear()} WebToolkit Pro • Premium <Link href="/" className="text-foreground hover:text-[#00D4B4] transition-colors">Web Toolkit Online</Link> • Built by <Link href="/author/" className="text-foreground hover:text-[#00D4B4] transition-colors">Abu Sufyan</Link>
+            © {new Date().getFullYear()} WebToolkit Pro • Premium <a href="/" className="text-foreground hover:text-[#00D4B4] transition-colors">Web Toolkit Online</a> • Built by <a href="/author/" className="text-foreground hover:text-[#00D4B4] transition-colors">Abu Sufyan</a>
           </p>
         </div>
       </div>

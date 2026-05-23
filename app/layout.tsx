@@ -244,15 +244,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             }),
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js');
-              }
-            `,
-          }}
-        />
       </head>
       <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
       <div className="min-h-screen flex flex-col">
