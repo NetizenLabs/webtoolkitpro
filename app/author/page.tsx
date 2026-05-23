@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import Image from 'next/image'
 import { Github, Twitter, Mail, Linkedin, ExternalLink, Zap, Shield, Globe, Code2, ArrowRight, Award, Flame, UserCheck, BookOpen, ChevronRight, CheckCircle, FileText, Terminal } from 'lucide-react'
 import LinkedInBadge from '@/components/ui/LinkedInBadge'

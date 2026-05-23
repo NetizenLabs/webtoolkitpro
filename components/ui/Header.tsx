@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import Image from 'next/image'
 import { Menu, X, Box, ChevronRight } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'

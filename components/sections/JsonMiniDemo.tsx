@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useCallback } from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { FileJson, ArrowRight, Clipboard, Check, Sparkles } from 'lucide-react'
 
 const SAMPLE_INPUT = `{"name":"Abu Sufyan","role":"Lead Architect","tools":150,"private":true,"stack":["Next.js","TypeScript","Edge"]}`

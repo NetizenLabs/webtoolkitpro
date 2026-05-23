@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { Zap, ArrowRight, Boxes } from 'lucide-react'
 import { ToolConfig } from '@/types/tool'
 

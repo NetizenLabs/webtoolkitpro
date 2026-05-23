@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { Metadata } from 'next'
 import { Home, AlertCircle } from 'lucide-react'
 

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { Github, Twitter, Mail, Terminal, Rocket } from 'lucide-react'
 import Logo from './Logo'
 

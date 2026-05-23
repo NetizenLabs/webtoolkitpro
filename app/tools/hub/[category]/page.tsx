@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { getToolsByCategory, getCategories } from '@/lib/tools'
 import { ArrowRight, Zap, Star, Shield, Code2 } from 'lucide-react'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'

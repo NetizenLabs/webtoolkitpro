@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
+import Link from '@/components/ui/NativeLink';
 import { Star, Clock } from 'lucide-react';
 import { usePersonalization } from '@/hooks/usePersonalization';
 import DynamicIcon from '@/components/ui/DynamicIcon';

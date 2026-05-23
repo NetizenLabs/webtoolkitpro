@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { ArrowRight, Sparkles, Zap } from 'lucide-react'
 import DynamicIcon, { ICON_MAP } from '@/components/ui/DynamicIcon'
 

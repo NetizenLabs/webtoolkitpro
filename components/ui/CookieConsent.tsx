@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { Shield } from 'lucide-react'
 
 export default function CookieConsent() {

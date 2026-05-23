@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { Metadata } from 'next'

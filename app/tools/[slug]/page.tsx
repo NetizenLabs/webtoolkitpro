@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget, generateSoftwareSchema, generateFAQSchema } from '@/lib/tools'
 import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
 import { TOOL_COMPONENTS } from '@/lib/tool-registry'

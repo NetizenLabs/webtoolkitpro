@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useMemo, useEffect, useDeferredValue, useTransition, useCallback } from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import {
   Heart, Clock, Search, Zap, Settings, Layers, LayoutGrid, List, AlignJustify
 } from 'lucide-react'

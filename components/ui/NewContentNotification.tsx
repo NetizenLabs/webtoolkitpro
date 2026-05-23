@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { Sparkles, X, ArrowRight, Zap } from 'lucide-react'
 
 interface NewContentNotificationProps {

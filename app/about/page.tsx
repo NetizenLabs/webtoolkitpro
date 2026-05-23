@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { 
   Users, Zap, Shield, Heart, Code2, Globe2, Coffee, Sparkles, 
   ArrowRight, ShieldCheck, Milestone, Star, Terminal 

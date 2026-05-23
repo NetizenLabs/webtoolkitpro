@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { 
   Bot, BarChart3, Globe, Search, ArrowUpRight, 
   Sparkles, ShieldCheck, Zap, Layers, Share2,

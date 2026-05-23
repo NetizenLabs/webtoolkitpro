@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { BookOpen, ArrowRight, Zap } from 'lucide-react'
 import { BlogPost } from '@/lib/blog'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from '@/components/ui/NativeLink';
 import { Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 import AdSlot from '@/components/ads/AdSlot'
