@@ -9,6 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        'emil-out': 'cubic-bezier(0.23, 1, 0.32, 1)',
+        'emil-in-out': 'cubic-bezier(0.77, 0, 0.175, 1)',
+      },
+      transitionDuration: {
+        '160': '160ms',
+        '250': '250ms',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -22,12 +30,12 @@ module.exports = {
         elevated: 'var(--elevated)',
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
+        'fade-in': 'fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1)',
       },
       keyframes: {
         fadeIn: {
-          'from': { opacity: '0', transform: 'translateY(10px)' },
-          'to': { opacity: '1', transform: 'translateY(0)' },
+          'from': { opacity: '0', transform: 'translateY(10px) scale(0.95)' },
+          'to': { opacity: '1', transform: 'translateY(0) scale(1)' },
         }
       }
     },

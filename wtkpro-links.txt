@@ -6,6 +6,7 @@ https://wtkpro.site/blog/
 https://wtkpro.site/blog/20-must-know-regex-patterns/
 https://wtkpro.site/blog/301-vs-302-vs-307-redirects/
 https://wtkpro.site/blog/3ms-ttfb-performance-study/
+https://wtkpro.site/blog/_template/
 https://wtkpro.site/blog/add-favicon-wordpress-2026/
 https://wtkpro.site/blog/ai-coding-tools-2026/
 https://wtkpro.site/blog/ai-cybersecurity-trends/
@@ -117,6 +118,7 @@ https://wtkpro.site/tools/ascii-art/
 https://wtkpro.site/tools/aspect-ratio-calc/
 https://wtkpro.site/tools/authority-simulation/
 https://wtkpro.site/tools/authority-simulator/
+https://wtkpro.site/tools/aws-iam-generator/
 https://wtkpro.site/tools/barcode-gen/
 https://wtkpro.site/tools/base64-encoder/
 https://wtkpro.site/tools/base64-to-image/
@@ -155,6 +157,7 @@ https://wtkpro.site/tools/credit-card-validator/
 https://wtkpro.site/tools/critical-css-gen/
 https://wtkpro.site/tools/cron-descriptor/
 https://wtkpro.site/tools/cron-generator/
+https://wtkpro.site/tools/cron-to-k8s/
 https://wtkpro.site/tools/csp-builder/
 https://wtkpro.site/tools/css-color-extractor/
 https://wtkpro.site/tools/css-formatter/
@@ -219,12 +222,16 @@ https://wtkpro.site/tools/json-schema-gen/
 https://wtkpro.site/tools/json-to-csv/
 https://wtkpro.site/tools/json-to-go/
 https://wtkpro.site/tools/json-to-java/
+https://wtkpro.site/tools/json-to-jsonl/
+https://wtkpro.site/tools/json-to-prisma/
+https://wtkpro.site/tools/json-to-pydantic/
 https://wtkpro.site/tools/json-to-ts/
 https://wtkpro.site/tools/json-to-xml/
 https://wtkpro.site/tools/json-to-yaml/
 https://wtkpro.site/tools/jwt-debugger/
 https://wtkpro.site/tools/jwt-decoder/
 https://wtkpro.site/tools/jwt-signer/
+https://wtkpro.site/tools/k8s-yaml-validator/
 https://wtkpro.site/tools/keyword-density/
 https://wtkpro.site/tools/line-counter/
 https://wtkpro.site/tools/llms-txt-generator/
@@ -251,11 +258,13 @@ https://wtkpro.site/tools/permissions-policy/
 https://wtkpro.site/tools/php-serializer/
 https://wtkpro.site/tools/ping-test/
 https://wtkpro.site/tools/port-scanner/
+https://wtkpro.site/tools/prompt-token-calculator/
 https://wtkpro.site/tools/pwa-manifest/
 https://wtkpro.site/tools/px-to-rem/
 https://wtkpro.site/tools/qr-code-gen/
 https://wtkpro.site/tools/qr-code-generator/
 https://wtkpro.site/tools/question-explorer/
+https://wtkpro.site/tools/rag-optimizer/
 https://wtkpro.site/tools/random-user-gen/
 https://wtkpro.site/tools/readability-checker/
 https://wtkpro.site/tools/redirect-chain-finder/
