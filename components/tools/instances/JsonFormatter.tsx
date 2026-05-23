@@ -16,14 +16,17 @@ import {
   AlertCircle
 } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
+import { useWebWorker } from '@/hooks/useWebWorker'
+import { usePersistentState } from '@/hooks/usePersonalization'
+import PipelineAction from '@/components/tools/PipelineAction'
 
 export default function JsonFormatter() {
-  const [input, setInput] = useState('')
+  const [input, setInput] = usePersistentState('json_formatter', '')
   const [output, setOutput] = useState('')
-  const [error, setError] = useState('')
+  const [localError, setLocalError] = useState('')
   const [copied, setCopied] = useState(false)
   const [indentSize, setIndentSize] = useState(2)
-  const [isProcessing, setIsProcessing] = useState(false)
+  const [localIsProcessing, setLocalIsProcessing] = useState(false)
   const [perfTime, setPerfTime] = useState<number | null>(null)
   
   // File details
@@ -32,93 +35,42 @@ export default function JsonFormatter() {
   
   const fileInputRef = useRef<HTMLInputElement>(null)
 
+  // Web Worker hook for heavy processing
+  const { result, error: workerError, isProcessing, postMessage } = useWebWorker<{code: string; indent: number}, {result: string}>(() => new Worker(new URL('../../../workers/json.worker.ts', import.meta.url)))
+
+  // Sync worker result
+  useEffect(() => {
+    if (result) {
+      setOutput(result.result)
+      if (perfTimeStart.current) {
+        setPerfTime(Math.round(performance.now() - perfTimeStart.current))
+      }
+      triggerQuickSuccess()
+    }
+  }, [result])
+
+  const perfTimeStart = useRef<number | null>(null)
+
   // Clear all states
   const clearAll = () => {
     setInput('')
     setOutput('')
-    setError('')
+    setLocalError('')
     setPerfTime(null)
     setFileName('')
     setFileSize(null)
     if (fileInputRef.current) fileInputRef.current.value = ''
   }
 
-  // Format JSON using an off-thread inline Web Worker for premium performance on large files
+  // Format JSON using the external Web Worker for premium performance
   const executeFormat = (type: 'pretty' | 'minify') => {
     if (!input.trim()) return
-    setIsProcessing(true)
-    setError('')
+    setLocalError('')
     
-    const startTime = performance.now()
+    perfTimeStart.current = performance.now()
     const spacing = type === 'pretty' ? indentSize : 0
 
-    // Dynamic Inline Web Worker code
-    const workerBlobCode = `
-      self.onmessage = function(e) {
-        const { jsonString, spacing } = e.data;
-        try {
-          const parsed = JSON.parse(jsonString);
-          const formatted = JSON.stringify(parsed, null, spacing || undefined);
-          self.postMessage({ success: true, result: formatted });
-        } catch (err) {
-          self.postMessage({ success: false, error: err.message });
-        }
-      }
-    `
-    
-    try {
-      const blob = new Blob([workerBlobCode], { type: 'application/javascript' })
-      const workerUrl = URL.createObjectURL(blob)
-      const worker = new Worker(workerUrl)
-
-      worker.postMessage({ jsonString: input, spacing })
-
-      worker.onmessage = (e) => {
-        const { success, result, error } = e.data
-        const endTime = performance.now()
-        
-        if (success) {
-          setOutput(result)
-          setPerfTime(Math.round(endTime - startTime))
-          triggerQuickSuccess()
-        } else {
-          setError(error || 'Syntax Error: Invalid JSON structure.')
-          setOutput('')
-        }
-        
-        setIsProcessing(false)
-        worker.terminate()
-        URL.revokeObjectURL(workerUrl)
-      }
-
-      worker.onerror = (err) => {
-        setError('Worker execution error. Main thread fallback active.')
-        // Fallback to main thread
-        try {
-          const parsed = JSON.parse(input)
-          setOutput(JSON.stringify(parsed, null, spacing || undefined))
-          setPerfTime(Math.round(performance.now() - startTime))
-          triggerQuickSuccess()
-        } catch (fallbackErr: any) {
-          setError(fallbackErr.message)
-        }
-        setIsProcessing(false)
-        worker.terminate()
-        URL.revokeObjectURL(workerUrl)
-      }
-
-    } catch (e: any) {
-      // Direct main thread fallback if worker blob creation is disabled by security policies
-      try {
-        const parsed = JSON.parse(input)
-        setOutput(JSON.stringify(parsed, null, spacing || undefined))
-        setPerfTime(Math.round(performance.now() - startTime))
-        triggerQuickSuccess()
-      } catch (fallbackErr: any) {
-        setError(fallbackErr.message)
-      }
-      setIsProcessing(false)
-    }
+    postMessage({ code: input, indent: spacing })
   }
 
   // Handle Drag and Drop
@@ -144,18 +96,18 @@ export default function JsonFormatter() {
   const processJsonFile = (file: File) => {
     setFileName(file.name)
     setFileSize(file.size)
-    setIsProcessing(true)
+    setLocalIsProcessing(true)
 
     const reader = new FileReader()
     reader.onload = (e) => {
       const content = e.target?.result as string
       setInput(content)
-      setIsProcessing(false)
+      setLocalIsProcessing(false)
       triggerQuickSuccess()
     }
     reader.onerror = () => {
-      setError('Failed to read files. Please ensure valid file permissions.')
-      setIsProcessing(false)
+      setLocalError('Failed to read files. Please ensure valid file permissions.')
+      setLocalIsProcessing(false)
     }
     reader.readAsText(file)
   }
@@ -304,29 +256,35 @@ export default function JsonFormatter() {
                   <Download className="w-3.5 h-3.5" />
                   <span>Download</span>
                 </button>
+                <PipelineAction 
+                  data={output} 
+                  sourceName="JSON Formatter" 
+                  targetName="Base64" 
+                  targetPath="/tools/base64-encoder" 
+                />
               </div>
             )}
           </div>
           <div className="relative flex-grow flex flex-col">
             <textarea
               readOnly
-              value={output || error}
+              value={output || workerError || localError}
               placeholder={
-                isProcessing 
+                (isProcessing || localIsProcessing)
                   ? 'Processing formatting asynchronously off-thread...' 
-                  : error 
-                    ? `JSON Parsing Error:\n${error}` 
+                  : (workerError || localError) 
+                    ? `JSON Parsing Error:\n${workerError || localError}` 
                     : 'Your beautified or minified JSON will automatically render here...'
               }
               className={`w-full h-80 lg:h-96 p-6 font-mono text-xs border rounded-3xl outline-none resize-none shadow-inner transition-all ${
-                error 
+                (workerError || localError) 
                   ? 'bg-red-50/50 dark:bg-red-950/10 border-red-200 dark:border-red-900/30 text-red-500' 
                   : 'bg-gray-50 dark:bg-slate-950 border-gray-100 dark:border-slate-800 text-gray-800 dark:text-slate-200'
               }`}
             />
 
             {/* Micro-loader */}
-            {isProcessing && (
+            {(isProcessing || localIsProcessing) && (
               <div className="absolute inset-0 bg-white/60 dark:bg-slate-950/60 backdrop-blur-sm rounded-3xl flex items-center justify-center">
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>

@@ -18,8 +18,12 @@ import {
   Settings
 } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
+import { usePipeline } from '@/contexts/PipelineContext'
+import PipelineAction from '@/components/tools/PipelineAction'
 
 export default function Base64Encoder() {
+  const { consumePipedData } = usePipeline()
+
   // Input/Output states
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
@@ -40,6 +44,15 @@ export default function Base64Encoder() {
   // UI state
   const [copied, setCopied] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // Consume pipeline data on mount
+  useEffect(() => {
+    const pipedData = consumePipedData()
+    if (pipedData) {
+      setInput(pipedData)
+      setMode('encode')
+    }
+  }, [consumePipedData])
 
   // Robust UTF-8 Helper Functions
   const utf8EncodeToBase64 = (str: string, urlSafe: boolean = false, noPadding: boolean = false): string => {
@@ -506,6 +519,14 @@ export default function Base64Encoder() {
                     <Download className="w-3.5 h-3.5" />
                     <span>Download</span>
                   </button>
+                  {mode === 'decode' && (
+                    <PipelineAction 
+                      data={output} 
+                      sourceName="Base64" 
+                      targetName="JSON Formatter" 
+                      targetPath="/tools/json-formatter" 
+                    />
+                  )}
                 </>
               )}
             </div>

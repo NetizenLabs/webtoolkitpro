@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { Metadata } from 'next'
 import { getTools } from '@/lib/tools'
 import ToolSearch from '@/components/tools/ToolSearch'
+import PersonalizationDashboard from '@/components/tools/PersonalizationDashboard'
 import { CATEGORY_MAP, CATEGORY_PILLARS } from '@/lib/categories'
 
 export const metadata: Metadata = {
@@ -104,6 +105,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PersonalizationDashboard allTools={searchTools} />
 
       {/* Responsive Category Grid */}
       <section className="py-12 bg-gray-50 dark:bg-[#0B1120] border-y border-gray-100 dark:border-slate-800 transition-colors duration-300">

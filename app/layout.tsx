@@ -13,6 +13,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { getLatestTool } from '@/lib/tools'
 import dynamic from 'next/dynamic'
 import { cache } from 'react'
+import { PipelineProvider } from '@/contexts/PipelineContext'
 
 // Lazy-load non-critical UI so it doesn't block the initial render / LCP
 const NewContentNotification = dynamic(
@@ -110,7 +111,7 @@ export const metadata: Metadata = {
     'content-language': 'en-US',
     'HandheldFriendly': 'True',
     'MobileOptimized': '320',
-    'apple-mobile-web-app-capable': 'yes',
+    'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'apple-mobile-web-app-title': 'WebToolkit Pro',
     'theme-color': '#0D1117',
@@ -157,14 +158,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        {/* Preload LCP-critical Inter font subset — eliminates invisible-text flash */}
-        <link
-          rel="preload"
-          href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
         <script
@@ -183,11 +176,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
       <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <CookieConsent />
-        <NewContentNotification latestItem={latestItem} />
+        <PipelineProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <CookieConsent />
+          <NewContentNotification latestItem={latestItem} />
+        </PipelineProvider>
       </div>
       
       {/* Global SEO & Trust Signals */}

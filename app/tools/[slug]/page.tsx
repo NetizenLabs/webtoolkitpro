@@ -18,6 +18,7 @@ import { CATEGORY_MAP } from '@/lib/categories'
 import DynamicIcon from '@/components/ui/DynamicIcon'
 import { getRelatedPostsForTool } from '@/lib/blog'
 import FurtherReading from '@/components/sections/FurtherReading'
+import ToolPersonalizationClient from '@/components/tools/ToolPersonalizationClient'
 
 interface ToolPageProps {
   params: {
@@ -125,30 +126,36 @@ export default function ToolPage({ params }: ToolPageProps) {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Main Content Area */}
           <div className="flex-grow max-w-5xl">
-            <div className="flex items-center gap-6 mb-12">
-              <div 
-                className="w-16 h-16 rounded-[12px] flex items-center justify-center shrink-0 shadow-xl shadow-blue-500/10"
-                style={{ background: 'linear-gradient(135deg, #00D4B4 0%, #0094FF 100%)' }}
-              >
-                <DynamicIcon name={tool.icon || 'Zap'} className="w-8 h-8 text-[#0B1120]" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-[#1E2D47] dark:text-white tracking-tighter">
-                  {tool.content?.title || tool.name}
-                </h1>
-                <p className="text-gray-600 dark:text-[#8A9BBE] font-medium mt-1">
-                  {tool.function?.primary} {tool.function?.secondary ? `• ${tool.function.secondary}` : ''}
-                </p>
-                <div className="mt-3 flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 dark:bg-green-500/10 text-green-700 dark:text-green-400 text-xs font-bold rounded-full border border-green-200 dark:border-green-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Last updated: May 2026
-                  </span>
+            <div className="flex items-start justify-between w-full mb-12">
+              <div className="flex items-center gap-6">
+                <div 
+                  className="w-16 h-16 rounded-[12px] flex items-center justify-center shrink-0 shadow-xl shadow-blue-500/10"
+                  style={{ background: 'linear-gradient(135deg, #00D4B4 0%, #0094FF 100%)' }}
+                >
+                  <DynamicIcon name={tool.icon || 'Zap'} className="w-8 h-8 text-[#0B1120]" strokeWidth={1.5} />
                 </div>
-                <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all inline-flex">
-                  {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
-                </Link>
-                <ToolRating toolName={tool.name} slug={tool.slug} />
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold text-[#1E2D47] dark:text-white tracking-tighter">
+                    {tool.content?.title || tool.name}
+                  </h1>
+                  <p className="text-gray-600 dark:text-[#8A9BBE] font-medium mt-1">
+                    {tool.function?.primary} {tool.function?.secondary ? `• ${tool.function.secondary}` : ''}
+                  </p>
+                  <div className="mt-3 flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 dark:bg-green-500/10 text-green-700 dark:text-green-400 text-xs font-bold rounded-full border border-green-200 dark:border-green-500/20">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                      Last updated: May 2026
+                    </span>
+                  </div>
+                  <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all inline-flex">
+                    {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
+                  </Link>
+                  <ToolRating toolName={tool.name} slug={tool.slug} />
+                </div>
+              </div>
+              
+              <div className="hidden sm:block">
+                <ToolPersonalizationClient slug={tool.slug} name={tool.name} />
               </div>
             </div>
 
