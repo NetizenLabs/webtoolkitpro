@@ -45,7 +45,10 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   let title = tool.meta?.title || `${tool.name} | Professional Online ${tool.category}`
   
   if ((title.length + brandSuffix.length) > 58) {
-    title = title.slice(0, 58 - brandSuffix.length - 3).trim() + '...'
+    const maxLength = 58 - brandSuffix.length - 3
+    const truncated = title.slice(0, maxLength)
+    // Trim to last full word
+    title = truncated.slice(0, truncated.lastIndexOf(' ')).trim() + '...'
   }
   title += brandSuffix
 
@@ -161,7 +164,7 @@ export default function ToolPage({ params }: ToolPageProps) {
 
             {/* Tool UI Container - Moved to TOP for better UX */}
             <div 
-              className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-12 transition-colors duration-300"
+              className="min-h-[400px] bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-12 transition-colors duration-300"
               data-agent-container="interactive-tool"
               aria-label={`Interactive ${tool.name} Utility UI`}
             >
@@ -276,7 +279,7 @@ export default function ToolPage({ params }: ToolPageProps) {
             />
             <RelatedToolsSidebar relatedTools={relatedTools} />
             <div className="p-8 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[12px] text-[#0B1120] shadow-xl shadow-blue-500/10">
-              <h3 className="font-bold mb-3 text-sm uppercase tracking-wider">Privacy First</h3>
+              <h2 className="font-bold mb-3 text-sm uppercase tracking-wider">Privacy First</h2>
               <p className="text-sm font-medium leading-relaxed">
                 All processing happens locally in your browser. Your data never leaves your device.
               </p>

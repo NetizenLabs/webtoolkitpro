@@ -69,7 +69,7 @@ export default function Home() {
       {/* Directory Hero */}
       <section className="relative overflow-hidden bg-background py-16 lg:py-24 transition-colors duration-300">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -126,7 +126,7 @@ export default function Home() {
                   <div className="w-12 h-12 bg-blue-50 dark:bg-[#1E2D47] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#00D4B4]/10 transition-colors">
                     <Icon className="w-6 h-6 text-blue-600 dark:text-[#8A9BBE] group-hover:text-[#00D4B4] transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h2>
                   <p className="text-sm text-gray-500 dark:text-[#5B719E] line-clamp-2 flex-grow">
                     {data?.description || `Explore our collection of ${title.toLowerCase()}.`}
                   </p>
@@ -185,10 +185,10 @@ export default function Home() {
               <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
                 Engineering Excellence
               </div>
-              <h3 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
+              <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
                 Engineered for the <br/>
                 <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Modern Web Ecosystem</span>
-              </h3>
+              </h2>
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
