@@ -158,8 +158,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-      </head>
-      <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
         <script
           id="theme-initializer"
           dangerouslySetInnerHTML={{
@@ -175,6 +173,79 @@ export default function RootLayout({ children }: RootLayoutProps) {
             `,
           }}
         />
+        {/* Global SEO & Trust Signals */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              'name': 'WebToolkit Pro',
+              'url': 'https://wtkpro.site',
+              'logo': {
+                '@type': 'ImageObject',
+                'url': 'https://wtkpro.site/logo-optimized.webp',
+                'width': '512',
+                'height': '512'
+              },
+              'sameAs': [
+                'https://github.com/WebToolkit-Pro',
+                'https://twitter.com/WebToolKitPro',
+                'https://producthunt.com/products/webtoolkit-pro',
+                'https://severancecalculator.xyz',
+                'https://tradeconvert.pro',
+                'https://abusufyan.xyz'
+              ],
+              'description': 'The global standard for secure, client-side developer utilities and technical engineering journals.',
+              'contactPoint': {
+                '@type': 'ContactPoint',
+                'email': 'hello@wtkpro.site',
+                'contactType': 'customer support'
+              }
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'SoftwareApplication',
+              'name': 'WebToolkit Pro Suite',
+              'operatingSystem': 'Any modern web browser',
+              'applicationCategory': 'DeveloperApplication',
+              'url': 'https://wtkpro.site',
+              'author': {
+                '@type': 'Organization',
+                'name': 'WebToolkit Pro'
+              },
+              'offers': {
+                '@type': 'Offer',
+                'price': '0',
+                'priceCurrency': 'USD',
+                'availability': 'https://schema.org/InStock'
+              },
+              'description': 'A collection of 50+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators. Built for privacy and performance.'
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              'url': 'https://wtkpro.site',
+              'potentialAction': {
+                '@type': 'SearchAction',
+                'target': 'https://wtkpro.site/tools?q={search_term_string}',
+                'query-input': 'required name=search_term_string'
+              }
+            }),
+          }}
+        />
+      </head>
+      <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
       <div className="min-h-screen flex flex-col">
         <PipelineProvider>
           <Header />
@@ -184,82 +255,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <NewContentNotification latestItem={latestItem} />
         </PipelineProvider>
       </div>
-      
-      {/* Global SEO & Trust Signals */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            'name': 'WebToolkit Pro',
-            'url': 'https://wtkpro.site',
-            'logo': {
-              '@type': 'ImageObject',
-              'url': 'https://wtkpro.site/logo-optimized.webp',
-              'width': '512',
-              'height': '512'
-            },
-            'sameAs': [
-              'https://github.com/WebToolkit-Pro',
-              'https://twitter.com/WebToolKitPro',
-              'https://producthunt.com/products/webtoolkit-pro',
-              'https://severancecalculator.xyz',
-              'https://tradeconvert.pro',
-              'https://abusufyan.xyz'
-            ],
-            'description': 'The global standard for secure, client-side developer utilities and technical engineering journals.',
-            'contactPoint': {
-              '@type': 'ContactPoint',
-              'email': 'hello@wtkpro.site',
-              'contactType': 'customer support'
-            }
-          }),
-        }}
-      />
-      
-      {/* AIO: SoftwareApplication Schema for AI Tools */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            'name': 'WebToolkit Pro Suite',
-            'operatingSystem': 'Any modern web browser',
-            'applicationCategory': 'DeveloperApplication',
-            'url': 'https://wtkpro.site',
-            'author': {
-              '@type': 'Organization',
-              'name': 'WebToolkit Pro'
-            },
-            'offers': {
-              '@type': 'Offer',
-              'price': '0',
-              'priceCurrency': 'USD',
-              'availability': 'https://schema.org/InStock'
-            },
-            'description': 'A collection of 50+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators. Built for privacy and performance.'
-          }),
-        }}
-      />
-
-      {/* AIO: WebSite SearchAction for AI Discovery */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            'url': 'https://wtkpro.site',
-            'potentialAction': {
-              '@type': 'SearchAction',
-              'target': 'https://wtkpro.site/tools?q={search_term_string}',
-              'query-input': 'required name=search_term_string'
-            }
-          }),
-        }}
-      />
       
       <Script id="google-consent-default" strategy="afterInteractive">
         {`
