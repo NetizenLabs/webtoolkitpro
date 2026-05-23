@@ -152,8 +152,29 @@ export default function ToolPage({ params }: ToolPageProps) {
               </div>
             </div>
 
+            {/* Tool UI Container - Moved to TOP for better UX */}
+            <div 
+              className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-12 transition-colors duration-300"
+              data-agent-container="interactive-tool"
+              aria-label={`Interactive ${tool.name} Utility UI`}
+            >
+              {ToolComponent ? <ToolComponent /> : (
+                <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
+                  Tool interface coming soon...
+                </div>
+              )}
+            </div>
+
+            {/* Entity Definition Block */}
+            <div className="mb-8 p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
+              <p className="text-lg text-gray-900 dark:text-[#F0F6FF] leading-relaxed font-medium relative z-10">
+                {tool.content?.description || `Professional ${tool.name} utility for modern web development.`}
+              </p>
+            </div>
+
             {/* E-E-A-T Editorial Byline & Verification Block */}
-            <div className="flex flex-wrap items-center gap-4 mb-6 pb-6 border-b border-gray-100 dark:border-[#1E2D47] text-xs sm:text-sm text-gray-500 dark:text-[#8A9BBE]">
+            <div className="flex flex-wrap items-center gap-4 mb-12 pb-6 border-b border-gray-100 dark:border-[#1E2D47] text-xs sm:text-sm text-gray-500 dark:text-[#8A9BBE]">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-gray-900 dark:text-white">Written by</span>
                 <Link href="/about" className="text-blue-500 hover:text-blue-600 dark:text-[#00D4B4] dark:hover:text-[#00FFD4] font-medium transition-colors">
@@ -172,27 +193,6 @@ export default function ToolPage({ params }: ToolPageProps) {
                 <span className="text-gray-300 dark:text-gray-700">•</span>
                 <span className="text-gray-400 dark:text-[#5B719E]">Last Updated: May 2026</span>
               </div>
-            </div>
-
-            {/* Entity Definition Block */}
-            <div className="mb-12 p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
-              <p className="text-lg text-gray-900 dark:text-[#F0F6FF] leading-relaxed font-medium relative z-10">
-                {tool.content?.description || `Professional ${tool.name} utility for modern web development.`}
-              </p>
-            </div>
-
-            {/* Tool UI Container */}
-            <div 
-              className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] p-4 md:p-8 shadow-2xl mb-20 transition-colors duration-300"
-              data-agent-container="interactive-tool"
-              aria-label={`Interactive ${tool.name} Utility UI`}
-            >
-              {ToolComponent ? <ToolComponent /> : (
-                <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
-                  Tool interface coming soon...
-                </div>
-              )}
             </div>
 
             <AdSlot />
