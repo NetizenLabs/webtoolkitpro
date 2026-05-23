@@ -27,16 +27,7 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   const tools = getTools()
   return (
-    <Suspense fallback={
-      <div className="dynamic-padding max-w-[1400px] mx-auto min-h-screen animate-pulse">
-        <div className="h-12 bg-muted/30 rounded-xl w-64 mx-auto mt-12 mb-8" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div key={i} className="h-48 bg-muted/20 rounded-2xl border border-border" />
-          ))}
-        </div>
-      </div>
-    }>
+    <Suspense>
       <ToolsClient initialTools={tools} />
     </Suspense>
   )
