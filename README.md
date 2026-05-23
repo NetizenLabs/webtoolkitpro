@@ -19,18 +19,26 @@ Our platform isn't just a blog; it's a knowledge hub. We've overhauled all **tec
 - **Entity Mapping**: Advanced JSON-LD structures for SGE (Search Generative Experience) and Perplexity readability.
 
 ## 🌟 Professional Tool Registry (150+ Utilities)
-We've migrated to a **Dynamic Tool Registry** system that ensures maximum performance for every utility:
+We run on a **Dynamic Tool Registry** system that ensures maximum performance for every utility:
 *   💎 **[JSON Formatter](https://wtkpro.site/tools/json-formatter/)** - Zero-knowledge client-side data cleaning.
 *   🔒 **[Password Lab](https://wtkpro.site/tools/password-generator/)** - Cryptographically secure credential generation.
 *   📡 **[Redirect Checker](https://wtkpro.site/tools/redirect-checker/)** - Enterprise-grade header and hop analysis.
 *   ⚡ **[JS Minifier](https://wtkpro.site/tools/js-minifier/)** - Lightning-fast code optimization.
 *   🔍 **[Question Explorer](https://wtkpro.site/tools/question-explorer/)** - Real-time intent and niche research tool.
 
-## 🛠️ Technical Architecture
-*   **Next.js 14 App Router**: Utilizing Server Components for lightning-fast TTFB.
-*   **Dynamic [Slug] Routing**: Optimized bundle sizes via `next/dynamic` and code-splitting.
-*   **Privacy-by-Design**: All sensitive data processing (passwords, JSON, hashes) happens **100% Client-Side** via Web Workers.
-*   **Global Performance**: Fast interaction times through localized Edge processing.
+## 🛠️ Technical Architecture & Innovations
+
+### 1. Edge-WAF Compatible Routing (Global SPA Bypass)
+Modern Edge Web Application Firewalls (like Cloudflare's Bot Fight Mode) often flag and silently block background Next.js `.rsc` payload fetches as DDoS attacks. To guarantee 100% uptime for all users regardless of IP reputation or aggressive adblockers (like Brave Shields), we implemented a **Global SPA Bypass**. By overriding `next/link` with native HTML `<a>` tags globally, we force standard top-level document navigations. This ensures any WAF challenges ("Verifying you are human") are presented cleanly to the user rather than silently breaking the router.
+
+### 2. Privacy-by-Design
+All sensitive data processing—such as password generation, JSON formatting, JWT decoding, and Hash Generation—happens **100% Client-Side** using browser Web Workers. Your data never touches a server.
+
+### 3. Vercel + Cloudflare Synergy
+The application is fully statically exported and hosted on Vercel's global edge network, proxying through Cloudflare for advanced threat protection and caching. We enforce strict `Cache-Control: no-transform` headers to prevent aggressive Edge optimizations (like Rocket Loader) from breaking React 18 hydration.
+
+### 4. SEO Migration Funnel
+We previously hosted on Netlify (`webtoolkit-pro.netlify.app`). To preserve our hard-earned Domain Authority (DA) and Domain Rating (DR), we utilize an invisible "Ghost Funnel" on Netlify using a `_redirects` configuration. This issues a `301 Moved Permanently` redirect for all legacy traffic, seamlessly funneling users and Googlebot to our new primary domain at `wtkpro.site`.
 
 ## 📖 Key Research & Documentation
 *   [**Performance Study**](https://wtkpro.site/blog/3ms-ttfb-performance-study/) - Why millisecond performance is the primary revenue driver.
