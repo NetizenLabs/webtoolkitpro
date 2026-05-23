@@ -6,6 +6,8 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import gfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
 const INTERNAL_LINKS = [
   { keyword: 'JSON Formatter', url: '/tools/json-formatter/' },
@@ -205,11 +207,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
 
-  // Use unified to convert markdown to HTML string
   const processedContent = await unified()
     .use(remarkParse)
     .use(gfm)
+    .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content)
   const rawHtml = processedContent.toString()
