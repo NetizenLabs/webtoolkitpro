@@ -116,12 +116,12 @@ export default function Base64Encoder() {
     }
   }
 
-  // Handle live conversion
   useEffect(() => {
     if (liveMode) {
       handleConvert()
     }
-  }, [input, mode, isUrlSafe, stripPadding, liveMode, handleConvert])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [input, mode, isUrlSafe, stripPadding, liveMode])
 
   // Clear all states
   const handleClear = () => {

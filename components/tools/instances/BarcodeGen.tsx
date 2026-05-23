@@ -27,6 +27,7 @@ export default function BarcodeGen() {
 
   useEffect(() => {
     generate()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) // Initial generation
 
   const download = () => {

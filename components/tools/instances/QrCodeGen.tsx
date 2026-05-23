@@ -21,6 +21,7 @@ export default function QrCodeGen() {
 
   useEffect(() => {
     generate()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const download = () => {
