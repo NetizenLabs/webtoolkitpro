@@ -33,6 +33,14 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
       description: 'Expert web development tips, tutorials, and guides for modern developers.',
       url: url,
       siteName: 'WebToolkit Pro',
+      images: [
+        {
+          url: 'https://wtkpro.site/blog-og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'WebToolkit Pro Developer Blog',
+        },
+      ],
       type: 'website',
       locale: 'en_US',
     },
@@ -40,6 +48,8 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
       card: 'summary_large_image',
       title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
       description: 'Expert web development tips, tutorials, and guides for modern developers.',
+      site: '@WebToolkitPro',
+      images: ['https://wtkpro.site/blog-og-image.png'],
     },
   }
 }
