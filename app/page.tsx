@@ -9,7 +9,7 @@ import PersonalizationDashboard from '@/components/tools/PersonalizationDashboar
 import { CATEGORY_MAP, CATEGORY_PILLARS } from '@/lib/categories'
 
 export const metadata: Metadata = {
-  title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+  title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
   description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
   keywords: ['wtkpro', 'WebToolkit', 'WebToolkit Pro', 'web toolkit', 'web toolkits', 'developer tools', 'json formatter', 'client-side tools'],
   alternates: {
@@ -67,13 +67,13 @@ export default function Home() {
   return (
     <>
       {/* Directory Hero */}
-      <section className="relative overflow-hidden bg-transparent py-16 lg:py-24 transition-colors duration-300">
+      <section className="relative bg-transparent py-16 lg:py-24 transition-colors duration-300">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-elevated border border-border rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 bg-elevated border border-border rounded-full px-5 py-2 mb-8 text-sm font-mono text-[#00D4B4] uppercase tracking-widest">
             <Shield className="w-4 h-4 shrink-0" />
             Zero-Server Security Model
           </div>
@@ -93,7 +93,7 @@ export default function Home() {
             <ToolSearch tools={searchTools} />
           </div>
           
-          <div className="flex items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+          <div className="flex items-center justify-center gap-6 text-sm font-bold uppercase tracking-widest text-muted-foreground">
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#00D4B4]" />
               100% Private
@@ -130,7 +130,7 @@ export default function Home() {
                   <p className="text-sm text-gray-500 dark:text-[#5B719E] line-clamp-2 flex-grow">
                     {data?.description || `Explore our collection of ${title.toLowerCase()}.`}
                   </p>
-                  <div className="mt-4 text-[#00D4B4] font-bold text-xs uppercase tracking-widest flex items-center gap-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                  <div className="mt-4 text-[#00D4B4] font-bold text-sm uppercase tracking-widest flex items-center gap-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
                     Explore <ArrowRight className="w-4 h-4" />
                   </div>
                 </Link>
@@ -159,7 +159,7 @@ export default function Home() {
                   <tool.icon className="w-7 h-7 text-[#0B1120]" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{tool.name}</h3>
-                <span className="text-xs font-mono text-[#00D4B4] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+                <span className="text-sm font-mono text-[#00D4B4] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
                   Try it free <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                 </span>
               </Link>
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-xs">
+            <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-sm">
               View All 150+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -182,7 +182,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
-              <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
+              <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-black uppercase tracking-[0.2em] rounded-full">
                 Engineering Excellence
               </div>
               <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
@@ -205,11 +205,11 @@ export default function Home() {
               <div className="pt-6 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-slate-900">
                 <div>
                   <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">150+</div>
-                  <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
+                  <div className="text-sm uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
                 </div>
                 <div>
                   <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">Instant</div>
-                  <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Execution</div>
+                  <div className="text-sm uppercase tracking-widest text-gray-400 font-bold">Execution</div>
                 </div>
               </div>
             </div>
@@ -224,7 +224,7 @@ export default function Home() {
                 <div key={feature.label} className="p-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[2.5rem] border border-white/40 dark:border-slate-800/50 hover:shadow-2xl transition-all group">
                   <feature.icon className={`w-10 h-10 ${feature.color} mb-6 group-hover:scale-110 transition-transform`} />
                   <div className="font-bold text-gray-900 dark:text-white text-lg mb-2 tracking-tight">{feature.label}</div>
-                  <div className="text-[10px] text-gray-400 dark:text-slate-500 font-black uppercase tracking-widest">{feature.desc}</div>
+                  <div className="text-sm text-gray-400 dark:text-slate-500 font-black uppercase tracking-widest">{feature.desc}</div>
                 </div>
               ))}
             </div>

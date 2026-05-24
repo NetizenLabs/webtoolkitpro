@@ -97,7 +97,7 @@ export default function ToolSearch({ tools }: ToolSearchProps) {
       {isOpen && query && (
         <div 
           ref={dropdownRef}
-          className="absolute top-full mt-2 w-full bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-xl shadow-2xl overflow-hidden"
+          className="absolute top-full mt-2 w-full bg-white/95 dark:bg-[#0D1526]/95 backdrop-blur-xl border border-gray-100 dark:border-[#1E2D47]/50 rounded-xl shadow-2xl overflow-hidden"
         >
           {filteredTools.length > 0 ? (
             <ul className="max-h-96 overflow-y-auto py-2">

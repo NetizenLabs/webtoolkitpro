@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wtkpro.site/',
   },
-  title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+  title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
   description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+    title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
     description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
     url: 'https://wtkpro.site/',
     siteName: 'WebToolkit Pro',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
+    title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
     description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
     images: ['https://wtkpro.site/og-image.png?v=4'],
     creator: '@WebToolKitPro',
