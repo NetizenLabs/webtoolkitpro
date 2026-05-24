@@ -271,8 +271,7 @@ export default function AboutPage() {
                 {[
                   'Cloudflare Web Analytics only — privacy-first, cookieless',
                   'All tool code is inspectable via browser DevTools',
-                  'Open roadmap — community-driven feature requests',
-                  'Published on Product Hunt, DEV.to, CoderLegion publicly',
+                  'Published on Product Hunt and DEV.to publicly',
                   'Full legal pages: Privacy Policy, Terms, Disclaimer',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-600 dark:text-[#8A9BBE] font-medium">
@@ -361,9 +360,6 @@ export default function AboutPage() {
             <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-4 font-medium">
               Architected by <a href="https://abusufyan.xyz" aria-label="Visit Abu Sufyan's personal profile (opens in a new tab)" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] transition-colors font-bold outline-none focus-visible:underline">Abu Sufyan</a> at Netizen Labs, WebToolkit Pro follows strict standards of engineering excellence.
             </p>
-            <p className="text-xs text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-6 font-medium">
-              {"Track Abu Sufyan's latest publications, Myers algorithm breakdowns, and badges on CoderLegion (Points: 684 | Badges: 2)."}
-            </p>
             <div className="flex flex-wrap gap-4">
               <Link 
                 href="/author/" 
@@ -372,15 +368,6 @@ export default function AboutPage() {
               >
                 Author Profile <Users className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a 
-                href="https://coderlegion.com/user/abusuyfan" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Visit Abu Sufyan's CoderLegion Profile (opens in a new tab)"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#00D4B4] uppercase tracking-widest hover:underline outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-              >
-                CoderLegion <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </a>
             </div>
           </article>
         </div>

@@ -74,19 +74,19 @@ export default function Home() {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-elevated border border-border rounded-full px-5 py-2 mb-8 text-xs font-mono text-[#00D4B4] uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 shrink-0" />
-            The Ultimate Developer Directory
+            <Shield className="w-4 h-4 shrink-0" />
+            Zero-Server Security Model
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
-            Find the Right Tool,<br />
+            100% Private, Client-Side<br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
-              Instantly.
+              Developer Tools.
             </span>
           </h1>
 
           <p className="text-[var(--font-size-lg)] text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Search through 150+ client-side developer utilities. No sign-ups, no tracking.
+            Secure, instant-execution utilities that never send your data to a server. No tracking, no sign-ups, just pure performance.
           </p>
 
           <div className="mb-12">

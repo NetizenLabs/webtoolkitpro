@@ -40,7 +40,7 @@ export default function AuthorPage() {
           Abu <span className="text-[#00D4B4]">Sufyan</span>
         </h1>
         <p className="text-sm font-mono font-bold text-[#00D4B4] uppercase tracking-[0.3em] mb-6">
-          Lead Architect &amp; System Designer
+          Lead Systems Architect
         </p>
 
         {/* Skills / Expertise Tag Cloud */}
@@ -227,7 +227,6 @@ export default function AuthorPage() {
           {[
             { label: 'DEV Community', sub: '3 Articles', href: 'https://dev.to/abusufyan909', icon: Terminal, color: 'text-[#0094FF]' },
             { label: 'GitHub', sub: 'abusufyan-netizen', href: 'https://github.com/abusufyan-netizen', icon: Code2, color: 'text-gray-700 dark:text-white' },
-            { label: 'CoderLegion', sub: '684 Points · 2 Badges', href: 'https://coderlegion.com/user/abusuyfan', icon: Award, color: 'text-[#00D4B4]' },
             { label: 'Product Hunt', sub: 'WTKPro Listed', href: 'https://www.producthunt.com/products/webtoolkit-pro', icon: Zap, color: 'text-[#DA552F]' },
           ].map((item) => (
             <a
@@ -245,92 +244,7 @@ export default function AuthorPage() {
         </div>
       </div>
 
-      {/* CoderLegion Integration Section */}
-      <div className="p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[24px] border border-gray-100 dark:border-[#1E2D47] relative overflow-hidden group shadow-lg mb-20">
-        {/* Ambient background glows */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 dark:bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3" />
-        
-        <div className="relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-7">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="inline-block px-2.5 py-0.5 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-[8px] font-bold font-mono uppercase tracking-widest rounded border border-indigo-100 dark:border-indigo-500/20">
-                  Featured Node
-                </span>
-                <span className="text-[8px] text-gray-400 dark:text-[#8A9BBE]/60 font-mono font-bold uppercase tracking-widest">
-                  CoderLegion Developer Profile
-                </span>
-              </div>
-              
-              <h3 className="text-xl font-extrabold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-                <Award className="w-5 h-5 text-indigo-600 dark:text-[#00D4B4]" /> CoderLegion Spotlight
-              </h3>
-              <p className="text-xs text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-6 font-medium">
-                Follow my continuous learning updates, algorithmic solutions, and technical deep-dives on CoderLegion.
-              </p>
 
-              <div className="flex flex-wrap gap-2.5 mb-6">
-                <div className="bg-white dark:bg-[#0A1120] border border-gray-100 dark:border-[#1E2D47] px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-sm hover:border-[#00D4B4]/30 transition-colors">
-                  <Flame className="w-4 h-4 text-orange-500" />
-                  <div className="text-[10px] font-mono">
-                    <span className="text-gray-400 dark:text-[#8A9BBE] font-bold">Points:</span> <strong className="text-gray-900 dark:text-white">684</strong>
-                  </div>
-                </div>
-                <div className="bg-white dark:bg-[#0A1120] border border-gray-100 dark:border-[#1E2D47] px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-sm hover:border-[#00D4B4]/30 transition-colors">
-                  <Award className="w-4 h-4 text-[#00D4B4]" />
-                  <div className="text-[10px] font-mono">
-                    <span className="text-gray-400 dark:text-[#8A9BBE] font-bold">Badges:</span> <strong className="text-gray-900 dark:text-white">2</strong>
-                  </div>
-                </div>
-                <div className="bg-white dark:bg-[#0A1120] border border-gray-100 dark:border-[#1E2D47] px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-sm hover:border-[#00D4B4]/30 transition-colors">
-                  <UserCheck className="w-4 h-4 text-blue-500" />
-                  <div className="text-[10px] font-mono">
-                    <span className="text-gray-400 dark:text-[#8A9BBE] font-bold">Followers:</span> <strong className="text-gray-900 dark:text-white">1</strong>
-                  </div>
-                </div>
-                <div className="bg-white dark:bg-[#0A1120] border border-gray-100 dark:border-[#1E2D47] px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-sm hover:border-[#00D4B4]/30 transition-colors">
-                  <BookOpen className="w-4 h-4 text-purple-500" />
-                  <div className="text-[10px] font-mono">
-                    <span className="text-gray-400 dark:text-[#8A9BBE] font-bold">Posts:</span> <strong className="text-gray-900 dark:text-white">4</strong>
-                  </div>
-                </div>
-              </div>
-
-              <a 
-                href="https://coderlegion.com/user/abusuyfan" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[10px] font-bold text-indigo-600 dark:text-[#00D4B4] hover:text-indigo-700 dark:hover:text-[#0094FF] uppercase tracking-widest font-mono transition-colors group/link"
-              >
-                View My Full Profile <ChevronRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
-              </a>
-            </div>
-
-            <div className="md:col-span-5 flex flex-col justify-between p-5 bg-white dark:bg-[#0A1120] border border-gray-100 dark:border-[#1E2D47] rounded-[16px] shadow-sm hover:border-[#00D4B4]/30 transition-all">
-              <div>
-                <div className="text-[8px] font-bold text-gray-400 dark:text-[#8A9BBE]/60 uppercase tracking-widest mb-2 font-mono flex items-center gap-1.5">
-                  <BookOpen className="w-3 h-3 text-[#0094FF]" /> Latest Publication
-                </div>
-                <h4 className="text-sm font-extrabold text-gray-900 dark:text-white leading-snug mb-3">
-                  How Diff Algorithms Work: Myers Algorithm Explained Simply
-                </h4>
-                <p className="text-[11px] text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-4 font-medium">
-                  An intuitive, visual explanation of Myers greedy diff algorithm, showing how modern source control computes edits in O(ND) time.
-                </p>
-              </div>
-
-              <a 
-                href="https://coderlegion.com/18153/how-diff-algorithms-work-myers-algorithm-explained-simply" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white dark:bg-white dark:text-[#0B1120] rounded-[10px] font-extrabold text-[9px] uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-md"
-              >
-                Read Article <ChevronRight className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Technical Research Section */}
       <div className="mb-20">
