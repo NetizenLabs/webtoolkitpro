@@ -1,5 +1,5 @@
 import React from 'react'
-import { ShieldCheck, Twitter, Mail, Terminal, Rocket, ChevronRight, Zap, Award, Flame, UserCheck, BookOpen } from 'lucide-react'
+import { ShieldCheck, Twitter, Mail, Terminal, Rocket, ChevronRight, Zap, Award, Flame, UserCheck, BookOpen, Clock } from 'lucide-react'
 import Link from '@/components/ui/NativeLink';
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
