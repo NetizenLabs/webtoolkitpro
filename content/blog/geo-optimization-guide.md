@@ -2,7 +2,7 @@
 title: "Generative Engine Optimization (GEO) Guide for Next.js 2026"
 seoTitle: "Generative Engine Optimization (GEO) Guide for Next.js 2026"
 description: "Unlocking AI Search Traffic: Learn how to optimize Next.js for Generative Engine Optimization (GEO) and secure citations in ChatGPT, Perplexity & Google Gemini."
-date: '2026-03-11'
+date: '2026-05-16'
 category: "SEO"
 tags: ["SEO", "AI", "Next.js", "GEO"]
 keywords: ["Generative Engine Optimization", "GEO vs SEO", "Next.js AI search optimization", "SearchGPT SEO strategy", "Perplexity AI citations", "SGE optimization guide", "RAG systems", "vector search optimization", "GEO citation audit widget"]
@@ -535,4 +535,4 @@ To guarantee parsing integrity across major AI RAG pipelines, this text payload 
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

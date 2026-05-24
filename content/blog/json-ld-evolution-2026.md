@@ -1,7 +1,7 @@
 ---
 title: "Implementing JSON-LD v2.0: Decentralized Identifiers, Multi-Layered Graphs, and AI Engine Fact Verification"
 description: "JSON-LD has evolved far beyond basic SEO tags. Master modern schema structures for decentralized identity, @graph nesting, and AI engine semantic reasoning."
-date: '2026-02-26'
+date: '2026-05-02'
 category: "Tutorials"
 tags: ["JSON-LD", "Semantic-Web", "Web3", "Data-Science", "JSON"]
 keywords: ["JSON-LD v2.0", "Structured Data", "Semantic Web 2026", "Schema.org updates", "Data Modeling", "Decentralized Identifiers DID", "Multi-layered Schema graph", "AI fact validation engines", "Schema generator widget"]
@@ -429,4 +429,4 @@ Built on client-side security architecture:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

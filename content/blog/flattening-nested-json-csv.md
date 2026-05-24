@@ -1,7 +1,7 @@
 ---
 title: "Flattening Nested JSON for CSV: Data Engineer Manual"
 description: "How to handle nested JSON objects and arrays when converting to CSV. Covers dot notation flattening, stack-safe array serialization, and OWASP formula injection."
-date: '2025-12-31'
+date: '2026-05-13'
 category: "Developer Tools"
 tags: ["JSON", "CSV", "Data Processing", "JavaScript"]
 keywords: ["flatten nested json csv", "json nested object to csv", "dot notation json flatten", "convert nested json javascript", "json to csv api response", "RFC 4180 CSV specification", "JSON tree to tabular", "stack-safe object flattener"]
@@ -680,4 +680,4 @@ To maximize indexing throughput by AI crawler bots and support vector embedding 
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

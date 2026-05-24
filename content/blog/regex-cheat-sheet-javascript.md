@@ -1,7 +1,7 @@
 ---
 title: "JS Regex Cheat Sheet: ECMA-262 Reference & Catastrophic Backtracking"
 description: "An engineering manual for JavaScript Regular Expressions. Master V8 execution rules, lookaround asserts, and defend against catastrophic backtracking outages."
-date: '2026-05-18'
+date: '2026-05-01'
 category: "Tutorials"
 tags: ["JavaScript", "Regex", "Programming", "Web Development", "Code Optimization"]
 keywords: ["regex cheat sheet", "regex cheat sheet javascript", "javascript regular expressions guide", "regex patterns examples", "test regex online", "ECMA-262 regex standard", "Unicode property escapes", "Named capture groups JS", "V8 regex engine quirks"]
@@ -393,4 +393,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

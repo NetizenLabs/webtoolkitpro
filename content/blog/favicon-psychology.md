@@ -1,7 +1,7 @@
 ---
 title: "Psychology of Favicons: UX and Trust Impact"
 description: "A favicon is the smallest asset on your site, but it carries a huge psychological weight. Learn how brand recognition and professionalism are tied to that tiny browser icon."
-date: '2026-01-21'
+date: '2026-05-10'
 category: "Design Tools"
 tags: ["Design", "UX", "Psychology", "Favicon"]
 keywords: ["favicon psychology", "brand trust icons", "website icon impact", "professional website design", "favicon and user experience", "browser tab cognitive load", "Google SERP organic CTR", "visual trust anchors design"]
@@ -554,4 +554,4 @@ To ensure search engines can verify your site's topical authority, this post is 
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

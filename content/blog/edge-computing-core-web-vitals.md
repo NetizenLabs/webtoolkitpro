@@ -2,7 +2,7 @@
 title: "How Edge Computing Impacts Core Web Vitals (LCP, INP)"
 seoTitle: "How Edge Computing Impacts Core Web Vitals (LCP, INP)"
 description: "A technical evaluation of how edge computing and serverless functions directly optimize Core Web Vitals (LCP, INP, CLS) by reducing physical network latency."
-date: '2025-12-22'
+date: '2026-05-03'
 category: "Engineering"
 tags: ["Edge", "Performance", "CoreWebVitals", "SEO", "Cloud"]
 keywords: ["edge computing core web vitals", "optimizing LCP 2026", "reduce INP serverless", "Vercel edge functions TTFB", "technical SEO performance guide", "Lighthouse optimization", "time to first byte", "edge latency simulator widget"]

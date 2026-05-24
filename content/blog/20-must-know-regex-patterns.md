@@ -2,7 +2,7 @@
 title: "20 Must-Know Regex Patterns for Modern Web Developers: The Definitive 2026 Manual"
 seoTitle: "20 Essential Regex Patterns: The Complete Web Dev Manual (2026)"
 description: "Stop writing complex string parsing logic from scratch. Master these 20 essential regular expression patterns for secure validation, cleanup, and extraction."
-date: '2026-03-22'
+date: '2026-05-01'
 category: "Tutorials"
 tags: ["Regex", "JavaScript", "Programming", "Code Snippets", "Web Dev"]
 keywords: ["regex patterns examples", "regex for email validation", "regex for phone number", "regex url validation", "common regex patterns", "regular expression tutorial", "ReDoS security", "backtracking performance"]

@@ -2,7 +2,7 @@
 title: "JSON-LD Schema Guide 2026: E-E-A-T, Wikidata & Dynamic SEO"
 seoTitle: "JSON-LD Schema Guide 2026: E-E-A-T, Wikidata & Dynamic SEO"
 description: "An engineering manual for structured data. Learn how to nest JSON-LD architectures, map Wikidata semantic entities, and bypass AI Search crawler syntax failures."
-date: '2026-02-04'
+date: '2026-05-09'
 category: "Engineering"
 tags: ["SEO", "Meta-Tags", "Schema", "AI Search", "Data Architecture"]
 keywords: ["JSON-LD schema guide 2026", "SEO meta tag generator 2026", "JSON-LD schema for SEO", "AI search visibility", "Open Graph generator", "structured data guide", "E-E-A-T schema parameters", "Wikidata entity linking", "SoftwareApplication schema rules", "FAQPage JSON-LD structures", "JSON-LD validator linter widget"]
@@ -401,4 +401,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

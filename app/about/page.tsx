@@ -64,7 +64,8 @@ export default function AboutPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': ['AboutPage', 'Organization'],
-            'name': 'WebToolkit Pro',
+            'name': 'Netizen Labs',
+            'alternateName': 'WebToolkit Pro',
             'url': 'https://wtkpro.site/about/',
             'logo': 'https://wtkpro.site/logo.png',
             'description': 'A premium ecosystem of accessible, secure, high-performance developer utilities designed for the modern engineering workflow.',
@@ -121,6 +122,9 @@ export default function AboutPage() {
             </div>
             <h2 id="mission-heading" className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Our Mission & Security Promise</h2>
           </div>
+          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
+            WebToolkit Pro is developed and maintained by <strong className="text-gray-900 dark:text-white">Netizen Labs</strong>, a specialized engineering collective based in Lahore, Punjab. We focus on building high-performance, privacy-first technical utilities for the global developer ecosystem.
+          </p>
           <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
             Most online utilities require you to copy-paste sensitive credentials, server logs, or corporate datasets directly onto cloud servers. This exposes your enterprise pipeline to hidden vulnerabilities and security compliance violations.
           </p>
@@ -355,7 +359,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Engineering Leadership</h3>
             <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-4 font-medium">
-              Founded and architected by <a href="https://abusufyan.xyz" aria-label="Visit Abu Sufyan's personal profile (opens in a new tab)" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] transition-colors font-bold outline-none focus-visible:underline">Abu Sufyan</a>, WebToolkit Pro follows strict standards of engineering excellence.
+              Architected by <a href="https://abusufyan.xyz" aria-label="Visit Abu Sufyan's personal profile (opens in a new tab)" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-[#00D4B4] transition-colors font-bold outline-none focus-visible:underline">Abu Sufyan</a> at Netizen Labs, WebToolkit Pro follows strict standards of engineering excellence.
             </p>
             <p className="text-xs text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-6 font-medium">
               {"Track Abu Sufyan's latest publications, Myers algorithm breakdowns, and badges on CoderLegion (Points: 684 | Badges: 2)."}

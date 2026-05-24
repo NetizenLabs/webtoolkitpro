@@ -1,7 +1,7 @@
 ---
 title: "AI SEO: Optimizing for SGE, Gemini, and Perplexity (2026)"
 description: "As AI-driven search engines replace traditional result pages, your schema strategy must evolve. Learn how to optimize JSON-LD for generative AI context."
-date: '2026-05-16'
+date: '2026-05-09'
 category: "SEO"
 tags: ["AI-SEO", "JSON-LD", "Search-Engine-Optimization", "Schema"]
 keywords: ["AI search optimization", "SGE", "Perplexity SEO", "Generative AI schema", "Structured Data 2026", "Vector database embeddings", "Wikidata entity matching", "Crawl budget optimizations", "Semantic Q&A structures", "AI content density auditor"]

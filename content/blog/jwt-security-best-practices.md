@@ -1,7 +1,7 @@
 ---
 title: "JWT Security Best Practices: Zero-Trust Architecture and Cryptographic Pinning"
 description: "Protect your Node.js applications with enterprise-grade JWT security. Learn algorithm pinning, JWKS asymmetric verification, and secure cookie storage."
-date: '2026-05-05'
+date: '2026-05-07'
 category: "Security"
 tags: ["JWT", "Security", "Authentication", "Best Practices"]
 keywords: ["jwt security best practices 2026", "securing json web tokens", "jwt secret management", "token rotation strategy", "prevent jwt attacks", "RS256 vs HS256 cryptography", "Secure HttpOnly Cookie storage", "Redis JWT denylist"]
@@ -453,4 +453,4 @@ Engineered on strict zero-trust principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

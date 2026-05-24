@@ -2,7 +2,7 @@
 title: "JSON Serialization Architecture: RFC 8259, V8 Fast-Paths, & The 500MB Node Crash"
 seoTitle: "What is JSON: Complete Guide to RFC 8259 & V8 Serialization"
 description: "Master the JSON standard (RFC 8259). Learn the internal V8 fast-path mechanics, structural constraints, and how to prevent memory crashes on large payloads."
-date: '2026-05-06'
+date: '2026-05-23'
 category: "Engineering"
 tags: ["JSON", "Web Development", "API", "Data Structures", "Performance", "System Architecture"]
 keywords: ["what is json", "json explained", "json serialization architecture", "how json works", "javascript object notation", "RFC 8259 specification", "ECMA-404 standard", "JSON vs JS object", "V8 fast path JSON.parse", "JSON stream parsing memory"]
@@ -554,4 +554,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

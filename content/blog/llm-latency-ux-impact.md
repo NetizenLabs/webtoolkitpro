@@ -1,7 +1,7 @@
 ---
 title: "Impact of LLM Latency on User Retention: TTFT, Speculative Decoding, and Streaming UX Architectures"
 description: "A data-driven engineering study on how milliseconds of delay in AI-generated responses lead to massive drops in user engagement and conversion rates."
-date: '2026-05-18'
+date: '2026-05-11'
 category: "Research"
 tags: ["AI", "UX", "Performance", "Data-Science", "User-Experience"]
 keywords: ["LLM Latency", "AI UX", "Conversion rate optimization", "Inference speed", "User retention study", "Time to First Token (TTFT) metrics", "Server-Sent Events (SSE) streaming", "Speculative decoding model speed"]
@@ -364,4 +364,4 @@ Engineered on privacy-first protocols:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

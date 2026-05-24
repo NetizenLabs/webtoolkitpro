@@ -1,7 +1,7 @@
 ---
 title: "Fix JSON Syntax Errors: The Advanced Diagnostic & Repair Manual"
 description: "Struggling with JSON parser errors? Learn how to identify trailing commas, unquoted keys, strip UTF-8 BOM bytes, and write auto-repair scripts."
-date: '2026-04-13'
+date: '2026-05-21'
 category: "Tutorials"
 tags: ["JSON", "Debugging", "Web Development", "Programming Tips", "Error Handling"]
 keywords: ["json syntax error", "unexpected token json", "fix json errors", "validate json online", "json parse error", "SyntaxError JSON position", "BOM stripper JavaScript", "JSON automatic repair script"]
@@ -559,4 +559,4 @@ Built on absolute engineering privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "Securing JSON APIs: AJV Schema Validation, JWT Security, and BOLA Mitigation"
 description: "An elite engineering guide to hardening JSON REST APIs. Learn how to defeat Mass Assignment attacks using strict JSON schemas, prevent BOLA vulnerabilities, and implement asymmetric JWT architectures."
-date: '2026-02-04'
+date: '2026-05-07'
 category: "Engineering"
 tags: ["API Security", "JSON", "Backend Architecture", "Node.js", "Authentication"]
 keywords: ["Secure JSON API", "API Security Best Practices 2026", "JSON Schema Validation", "JWT Security Guide RS256", "Protecting API Endpoints", "Data Privacy for Developers", "BOLA vulnerability fix", "Mass Assignment defense Node.js", "AJV validator middleware", "Express JSON Bomb mitigation"]
@@ -338,4 +338,4 @@ Built on elite privacy architectures:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

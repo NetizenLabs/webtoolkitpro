@@ -43,7 +43,6 @@ export const metadata: Metadata = {
   },
   title: 'Web Toolkit Pro - 150+ Free Premium Online Developer Tools',
   description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
-  keywords: ['wtk', 'wtkpro', 'Web Toolkit', 'Web Toolkit Online', 'WebToolkit Pro', 'developer platform', 'engineering utilities', 'secure web tools'],
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
   publisher: 'WebToolkit Pro',

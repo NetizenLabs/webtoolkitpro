@@ -1,7 +1,7 @@
 ---
 title: "JSON Formatting Best Practices: The Advanced Systems Manual"
 description: "An engineering masterclass on JSON architecture. Learn how to structure payloads, prevent V8 engine crashes, fix BigInt precision loss, and stream datasets."
-date: '2026-04-09'
+date: '2026-05-01'
 category: "Tutorials"
 tags: ["JSON", "API development", "web development", "data formatting", "REST API"]
 keywords: ["JSON formatting best practices", "format JSON online", "JSON validator", "API development tips", "JSON beautifier", "clean API design", "IEEE 754 JSON precision", "JSON BigInt serialization error"]
@@ -355,4 +355,4 @@ Built on absolute engineering privacy protocols:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

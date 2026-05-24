@@ -1,7 +1,7 @@
 ---
 title: "How Diff Algorithms Work: Myers O(ND) Algorithm Explained Natively in Code"
 description: "An engineering breakdown of the Myers diff algorithm — the graph theory engine behind git diff, GitHub code review, and high-performance diff checkers."
-date: '2026-05-04'
+date: '2026-05-18'
 category: "Developer Tools"
 tags: ["Algorithms", "Git", "Diff", "Computer Science"]
 keywords: ["myers diff algorithm", "how git diff works", "diff algorithm explained", "LCS algorithm", "git diff algorithm", "edit graph k-line", "V8 diff engine", "Patience diff vs Myers"]
@@ -649,4 +649,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "Linear vs. Radial vs. Conic Gradients: CSS Geometry and GPU Render Pipelines"
 description: "An engineering deep-dive into CSS gradients. Master coordinate mathematics, avoid scrolling jank with GPU offloading, and build conic spinners."
-date: '2026-04-12'
+date: '2026-05-10'
 category: "Design Tools"
 tags: ["CSS", "Gradients", "Frontend", "Performance"]
 keywords: ["linear vs radial gradient css", "conic gradient css", "css gradient types", "css gradient tutorial 2026", "stripe gradient css", "trigonometric gradient math", "conic gradient loading spinner", "GPU accelerated CSS gradients", "scrolling jank CSS"]
@@ -342,4 +342,4 @@ Engineered for precision:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

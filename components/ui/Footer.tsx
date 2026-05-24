@@ -7,7 +7,7 @@ import Logo from './Logo'
 
 export default function Footer() {
   return (
-    <footer className="bg-white/50 dark:bg-[#0D1117]/50 backdrop-blur-xl text-muted-foreground pt-20 pb-8 border-t border-border/50 relative z-10">
+    <footer className="bg-white/20 dark:bg-[#0D1117]/20 backdrop-blur-2xl text-muted-foreground pt-20 pb-8 border-t border-white/20 dark:border-white/10 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           <div className="col-span-2 md:col-span-1">

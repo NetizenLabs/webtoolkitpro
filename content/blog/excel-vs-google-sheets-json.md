@@ -1,7 +1,7 @@
 ---
 title: "Excel vs. Google Sheets for JSON: Performance & APIs"
 description: "A detailed comparison of Excel and Google Sheets when working with JSON data. We look at import capabilities, performance with large datasets, and visualization features."
-date: '2026-02-21'
+date: '2026-05-08'
 category: "Developer Tools"
 tags: ["Data Analysis", "JSON", "Excel", "Google Sheets"]
 keywords: ["excel vs google sheets json", "import json to excel", "google sheets json import", "large json data analysis", "json to spreadsheet performance", "Excel Power Query M Code", "Google Apps Script JSON parser", "JSON dot notation flattening"]
@@ -639,4 +639,4 @@ To align this guide with modern search crawlers and semantic entities, this post
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "Next.js vs. Vite 2026: Turbopack SSR vs. esbuild SPAs Architectural Comparison"
 description: "An engineering guide to React build tools. Compare Vite's esbuild Hot Module Replacement against Next.js's Turbopack Server-Side Rendering capabilities."
-date: '2026-05-18'
+date: '2026-05-17'
 category: "Tutorials"
 tags: ["NextJS", "Vite", "React", "BuildTools"]
 keywords: ["Next.js vs Vite 2026", "Best React Framework", "Vite performance guide", "Next.js SEO benefits", "Modern build tools for developers", "Turbopack vs esbuild", "Webpack replacement Rollup", "framework simulator widget", "migrating vite vs next js", "benchmark next.js vite setup", "architectural differences next vs vite", "when to use nextjs vite", "tutorial for vite nextjs", "build tools next js vite"]
@@ -299,4 +299,4 @@ Built on absolute privacy principles:
 ---
 
 ### About the Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "GEO: Why AI Crawlers Need Structured Data (The Future of SEO)"
 description: "Generative Engine Optimization (GEO) is the successor to SEO. Learn why AI crawlers depend on structured data like llms.txt and JSON-LD to understand and cite your site."
-date: '2026-05-17'
+date: '2026-05-14'
 category: "SEO Tools"
 tags: ["SEO", "GEO", "AI", "Structured Data", "llms.txt"]
 keywords: ["generative engine optimization", "GEO vs SEO 2026", "ai crawler optimization", "llms.txt seo impact", "structured data for ai", "RAG index parsing", "Wikidata entity linking", "NextJS dynamic routing llms.txt", "GEO score calculator widget"]
@@ -489,4 +489,4 @@ To maximize indexing throughput by AI crawler bots and support global vector emb
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

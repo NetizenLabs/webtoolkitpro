@@ -1,7 +1,7 @@
 ---
 title: "llms.txt vs. robots.txt: Crawl Access Controls vs. AI Semantic Context Directories"
 description: "A definitive engineering comparison of llms.txt and robots.txt. Learn how to manage web crawlers and optimize your domain for AI search agents."
-date: '2026-05-18'
+date: '2026-05-13'
 category: "SEO Tools"
 tags: ["llms.txt", "robots.txt", "SEO", "GEO", "AI"]
 keywords: ["llms.txt vs robots.txt", "robots txt vs llms txt difference", "ai crawler vs googlebot", "llms txt explained", "do i need llms.txt", "RFC 9309 robots standard", "AI user agent blocks", "RAG index mapping", "Robots.txt parser simulator"]
@@ -305,4 +305,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

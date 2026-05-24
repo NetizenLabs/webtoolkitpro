@@ -1,7 +1,7 @@
 ---
 title: "Evaluating CSS Gradient Generators: The sRGB vs. OKLCH Dilemma"
 description: "A technical evaluation of 10 CSS gradient generators based on color interpolation quality, OKLCH support, Figma export, and Tailwind class generation."
-date: '2026-03-26'
+date: '2026-05-21'
 category: "Design Tools"
 tags: ["CSS", "Gradients", "Design Tools", "Frontend"]
 keywords: ["css gradient generator comparison", "best css gradient tool 2026", "oklch gradient", "css gradient online", "figma gradient export", "sRGB muddy middle gradient", "OKLCH color space math", "Figma to CSS gradient conversion"]

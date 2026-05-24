@@ -1,7 +1,7 @@
 ---
 title: "Modern CSS Architecture for Enterprise: Component Scoping, Cascade Layers (@layer), and Tailwind Tokenization"
 description: "An engineering manual for scaling CSS architectures. Discover how to eliminate global scope pollution using CSS Modules, Tailwind, and Cascade Layers."
-date: '2026-05-18'
+date: '2026-05-16'
 category: "CSS"
 tags: ["CSS", "Frontend", "Architecture", "DesignSystems"]
 keywords: ["Modern CSS Architecture", "Scalable CSS Guide", "Tailwind CSS vs CSS Modules", "Enterprise Frontend Development", "Maintaining large CSS codebases", "CSS Cascade Layers", "Design System tokens", "Webpack CSS Modules scoping", "Responsive CSS clamp calculator"]
@@ -275,4 +275,4 @@ Built on absolute privacy protocols:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

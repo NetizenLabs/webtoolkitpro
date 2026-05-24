@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to llms.txt: Standardizing Architectures for AI Agents and RAG Crawlers"
 description: "Master the llms.txt routing standard. Learn how to construct compliant machine-readable site maps to optimize your domain for Generative Engine Optimization (GEO)."
-date: '2026-05-20'
+date: '2026-05-12'
 category: "SEO Tools"
 tags: ["llms.txt", "GEO", "AI", "Guide"]
 keywords: ["llms.txt generator guide", "how to use llms.txt tool", "official llms.txt documentation", "generate llms.txt online", "ai optimization tool guide", "Generative Engine Optimization GEO", "robots.txt for AI agents", "RAG search optimization"]
@@ -350,4 +350,4 @@ Built on secure client-side principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

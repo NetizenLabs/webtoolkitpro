@@ -2,7 +2,7 @@
 title: "Base64 Encoding Architecture: Binary Data, API Bloat, and the V8 Engine Crash"
 seoTitle: "What is Base64 Encoding? The Ultimate Developer's Guide"
 description: "Everything you need to know about Base64 encoding. Learn the binary mechanics, ASCII padding math, and severe performance impacts on data transport."
-date: '2026-04-29'
+date: '2026-05-22'
 category: "Engineering"
 tags: ["Base64", "Web Dev", "Data Encoding", "Binary Data", "Performance"]
 keywords: ["what is base64 encoding", "base64 explained", "when to use base64", "base64 vs encryption", "base64 encoding process", "secure base64 decode client side", "atob and btoa utf8", "url safe base64"]
@@ -407,4 +407,4 @@ It processes all transformations locally inside your browser's V8 sandbox, guara
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

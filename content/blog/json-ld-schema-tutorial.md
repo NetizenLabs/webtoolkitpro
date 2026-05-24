@@ -1,7 +1,7 @@
 ---
 title: "JSON-LD Schema Guide 2026: E-E-A-T, Semantic Wikidata Mapping & Dynamic SEO"
 description: "Master JSON-LD structured data architecture. Learn nested entity contracts, Next.js dynamic integration, and semantic Wikidata graph mapping to dominate rich snippets."
-date: '2026-02-23'
+date: '2026-05-03'
 category: "Tutorials"
 tags: ["SEO", "JSON-LD", "Structured Data", "Google Search", "Web Development"]
 keywords: ["json-ld tutorial", "schema markup guide", "how to add schema markup", "structured data examples", "json-ld generator online", "Product schema reviews", "FAQPage schema nested", "Next.js JSON-LD injector"]
@@ -261,7 +261,7 @@ Using Wikidata URIs resolves ambiguity. If your organization page references "Au
   "@type": "LocalBusiness",
   "name": "WebToolkit Pro Enterprise HQ",
   "sameAs": [
-    "https://www.wikidata.org/wiki/Q21684" // Explicit sameAs mapping to Austin, TX Q-node
+    "https://www.wikidata.org/wiki/Q21684" // Explicit sameAs mapping to Lahore, Punjab Q-node
   ]
 }
 ```
@@ -330,4 +330,4 @@ Engineered on absolute security isolation principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

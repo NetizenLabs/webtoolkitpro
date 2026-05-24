@@ -1,7 +1,7 @@
 ---
 title: "Automated Web Testing: Why I Replaced Cypress with Playwright"
 description: "Learn how to implement a robust automated testing strategy using Playwright and understand the architectural limitations of Cypress."
-date: '2025-12-01'
+date: '2026-05-13'
 category: "Tutorials"
 tags: ["Testing", "QA", "Enterprise", "WebDev"]
 keywords: ["Automated Web Testing Guide", "Playwright vs Cypress 2026", "End-to-End Testing Best Practices", "Enterprise QA Strategy", "Automating React Testing", "Shift-Left testing model", "Chrome DevTools Protocol CDP", "Visual Regression testing Percy", "Local Unit Test Simulator"]

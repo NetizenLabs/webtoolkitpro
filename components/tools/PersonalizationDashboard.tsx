@@ -24,7 +24,7 @@ export default function PersonalizationDashboard({ allTools }: DashboardProps) {
   const recentTools = recents.map(slug => allTools.find(t => t.slug === slug)).filter(Boolean);
 
   return (
-    <section className="py-8 bg-white dark:bg-[#0D1526] border-y border-gray-100 dark:border-[#1E2D47]">
+    <section className="py-8 bg-transparent border-y border-gray-100/50 dark:border-[#1E2D47]/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8">
           
@@ -35,7 +35,7 @@ export default function PersonalizationDashboard({ allTools }: DashboardProps) {
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {favTools.map((t: any) => (
-                  <Link key={`fav-${t.slug}`} href={`/tools/${t.slug}/`} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-[#1E2D47] rounded-xl hover:bg-[#00D4B4]/10 transition-colors group">
+                  <Link key={`fav-${t.slug}`} href={`/tools/${t.slug}/`} className="flex items-center gap-3 p-3 bg-white/40 dark:bg-[#1E2D47]/40 backdrop-blur-md rounded-xl hover:bg-[#00D4B4]/10 transition-colors group">
                     <DynamicIcon name={t.icon || 'Zap'} className="w-4 h-4 text-gray-500 dark:text-[#8A9BBE] group-hover:text-[#00D4B4]" />
                     <span className="text-sm font-medium text-gray-700 dark:text-[#F0F6FF] group-hover:text-[#00D4B4] truncate">{t.name}</span>
                   </Link>
@@ -51,7 +51,7 @@ export default function PersonalizationDashboard({ allTools }: DashboardProps) {
               </h3>
               <div className="flex flex-wrap gap-3">
                 {recentTools.map((t: any) => (
-                  <Link key={`rec-${t.slug}`} href={`/tools/${t.slug}/`} className="px-4 py-2 bg-white dark:bg-[#0B1120] border border-gray-200 dark:border-[#2A3F63] rounded-full text-xs font-medium text-gray-600 dark:text-[#8A9BBE] hover:border-[#00D4B4] hover:text-[#00D4B4] transition-colors flex items-center gap-2">
+                  <Link key={`rec-${t.slug}`} href={`/tools/${t.slug}/`} className="px-4 py-2 bg-white/40 dark:bg-[#0B1120]/40 backdrop-blur-md border border-white/20 dark:border-[#2A3F63]/50 rounded-full text-xs font-medium text-gray-600 dark:text-[#8A9BBE] hover:border-[#00D4B4] hover:text-[#00D4B4] transition-colors flex items-center gap-2">
                     <DynamicIcon name={t.icon || 'Zap'} className="w-3 h-3" />
                     {t.name}
                   </Link>

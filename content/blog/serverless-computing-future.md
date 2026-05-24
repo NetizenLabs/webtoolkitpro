@@ -2,7 +2,7 @@
 title: "The Future of Serverless Computing: Edge-Native V8 Isolates & Stateful Clouds"
 seoTitle: "Serverless Computing Future 2026: Edge V8 Isolates & Stateful"
 description: "Explore the evolution of serverless architecture, from edge functions to stateful serverless, and how it's transforming modern web development."
-date: '2026-04-17'
+date: '2026-05-12'
 category: "Engineering"
 tags: ["Serverless", "Cloud Architecture", "Edge Compute", "V8 Isolates", "Distributed Systems"]
 keywords: ["Serverless Computing Future 2026", "Scaling Enterprise Web Apps", "Edge Computing benefits", "Stateful Serverless guide", "Cloud infrastructure trends", "V8 Isolates execution", "Serverless Cold Starts bypass", "Durable Objects state tracking", "Edge latency calculations"]
@@ -281,4 +281,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

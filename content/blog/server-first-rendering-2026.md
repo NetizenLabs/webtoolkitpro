@@ -2,7 +2,7 @@
 title: "Server-First Rendering & Meta-Frameworks: Why Next.js is Now the Default"
 seoTitle: "Server-First Rendering & Meta-Frameworks Guide 2026"
 description: "An engineering post-mortem on the death of the Single Page Application. Learn why React Server Components and Next.js App Router dominate the 2026 AI crawler landscape."
-date: '2026-02-28'
+date: '2026-05-10'
 category: "Engineering"
 tags: ["ServerFirst", "NextJS", "React Architecture", "SEO", "Performance Engineering"]
 keywords: ["server first rendering 2026", "Next.js App Router default", "React Server Components architecture", "SEO advantages of SSR", "Generative Engine Optimization Next.js", "Largest Contentful Paint hydration", "SPA bundle optimization", "hydration simulator widget"]
@@ -372,4 +372,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

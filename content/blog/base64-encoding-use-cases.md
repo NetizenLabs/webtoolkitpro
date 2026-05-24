@@ -1,7 +1,7 @@
 ---
 title: "Base64 Encoding: The 33% File Bloat Trap"
 description: "Master Base64 binary-to-text encoding. Understand bit shifting algorithms, padding mechanics, performance traps, and why you shouldn't inline large images in CSS."
-date: '2026-01-21'
+date: '2026-05-14'
 category: "Tutorials"
 tags: ["Base64", "encoding", "web development", "data transfer", "API development"]
 keywords: ["Base64 encoding explained", "Base64 encoder decoder", "what is Base64", "Base64 image encoding", "Base64 API authentication", "data URI Base64"]

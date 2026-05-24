@@ -1,7 +1,7 @@
 ---
 title: "Privacy First: The Architecture of Zero-Knowledge Client-Side Web Utilities"
 description: "An engineering manual for Zero-Knowledge architectures. Learn how to secure user data by moving processing to the client via Web Workers and WASM."
-date: '2026-05-18'
+date: '2026-05-21'
 category: "Security"
 tags: ["Privacy", "Client-Side", "Security", "Web-Development", "Cryptography"]
 keywords: ["Zero-knowledge tools", "Client-side processing", "Web privacy 2026", "Data security", "Privacy-by-design", "Web Workers sandbox", "WASM client computation", "GDPR data boundaries", "React worker hook", "Web Crypto API simulation"]
@@ -297,4 +297,4 @@ Built on absolute privacy principles:
 ---
 
 ### About the Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

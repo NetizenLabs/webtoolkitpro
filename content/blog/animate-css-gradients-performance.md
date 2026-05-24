@@ -1,7 +1,7 @@
 ---
 title: "How to Animate CSS Gradients Without Destroying Performance"
 description: "Animating gradients in CSS has a trap: background-size works but background itself doesn't GPU-accelerate. Here's the correct approach using @property."
-date: '2025-12-16'
+date: '2026-05-11'
 category: "Design Tools"
 keywords: ["animate css gradient", "css gradient animation performance", "css @property gradient", "background-position animation", "will-change gradient", "browser rendering compositor pipeline", "CSS Houdini API animations", "GPU acceleration CSS transitions", "CSS Houdini color interpolation"]
 readTime: '10 min read'

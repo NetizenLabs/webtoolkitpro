@@ -2,7 +2,7 @@
 title: "CSS Gradients in WordPress: A theme.json & Gutenberg Guide"
 seoTitle: "CSS Gradients for WordPress: Add Without Plugins"
 description: "A technical guide to adding custom CSS gradients to WordPress using Gutenberg, theme.json, and custom CSS without relying on heavy plugins."
-date: '2026-05-12'
+date: '2026-05-22'
 category: "Design Tools"
 tags: ["WordPress", "CSS", "Gradients", "Tutorial"]
 keywords: ["css gradient wordpress", "wordpress gradient background", "theme.json gradient", "gutenberg gradient block", "wordpress custom css gradient", "Gutenberg serialize styles", "WordPress CSS Custom Properties", "theme.json v3 colors"]

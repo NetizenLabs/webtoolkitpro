@@ -1,7 +1,7 @@
 ---
 title: "WordPress Redirect Plugins vs. .htaccess: A Systems Latency Study"
 description: "Should you manage path redirects via .htaccess or a plugin GUI? A technical performance breakdown covering Apache execution speed, TTFB latency, and MySQL lockups."
-date: '2026-02-21'
+date: '2026-05-23'
 category: "SEO Tools"
 tags: ["WordPress", "htaccess", "Redirects", "Performance"]
 keywords: ["htaccess vs wordpress redirect plugin", "yoast redirect vs htaccess", "redirection plugin vs htaccess", "wordpress redirect performance", "server level redirect wordpress", "Apache RewriteRule performance", "WooCommerce redirect database load", "WordPress redirect plugins CPU usage", "Redirect latency estimator widget"]
@@ -450,4 +450,4 @@ Built on strict engineering privacy models:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

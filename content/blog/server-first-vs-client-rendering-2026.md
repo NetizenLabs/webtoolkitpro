@@ -2,7 +2,7 @@
 title: "Server-First Rendering vs Client-Side: Performance Guide for 2026"
 seoTitle: "Server-First vs Client-Side Rendering 2026 Guide"
 description: "Server-first architectures dominate 2026. Compare rendering strategies and optimize with meta-frameworks like Next.js."
-date: '2026-01-08'
+date: '2026-05-11'
 category: "Engineering"
 tags: ["Next.js", "Performance", "Rendering", "Web Architecture", "Edge Compute"]
 keywords: ["server-first rendering 2026", "Next.js performance", "client-side vs server-side", "web performance guide", "LCP optimization", "First Contentful Paint FCP", "Largest Contentful Paint LCP", "Time to First Byte TTFB", "Partial Prerendering PPR", "Web render waterfall simulator"]
@@ -364,4 +364,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

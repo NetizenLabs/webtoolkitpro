@@ -1,7 +1,7 @@
 ---
 title: "Deploying llms.txt on WordPress: Avoid Database Bottlenecks and Optimize for AI Crawlers"
 description: "An engineering tutorial for deploying an llms.txt file on WordPress architectures. Learn why static deployment beats dynamic plugins for AI SEO."
-date: '2026-05-18'
+date: '2026-05-14'
 category: "SEO Tools"
 tags: ["llms.txt", "WordPress", "GEO", "AI SEO", "Performance"]
 keywords: ["llms.txt wordpress", "wordpress llms txt guide", "add llms.txt wordpress", "wordpress ai optimization", "llms txt plugin wordpress", "WordPress SEO AI discovery", "llms-full.txt directory schema", "Apache whitelist llms.txt"]
@@ -253,4 +253,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "Mastering JWT Authentication: Distributed JWKS Verifications, Key ID Injections, and Stateful Denylists"
 description: "Learn how to implement JSON Web Tokens (JWT) securely. Avoid algorithmic key confusion attacks, block kid injections, and scale verification with JWKS."
-date: '2026-05-10'
+date: '2026-05-08'
 category: "Security"
 tags: ["Authentication", "JWT", "Security", "WebDev"]
 keywords: ["JWT Authentication Guide", "Secure JWT implementation", "JSON Web Token security", "Web App Auth Best Practices", "Stateless Authentication 2026", "JWKS distributed validation", "Key ID (kid) injection attack", "Key Confusion attack RS256"]
@@ -431,4 +431,4 @@ Built on absolute zero-trust privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

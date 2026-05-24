@@ -1,7 +1,7 @@
 ---
 title: "10 Regex Patterns Every Developer Should Memorize (With a Live V8 Sandbox)"
 description: "An engineering manual covering the 10 most critical regular expression patterns used in production environments. Test execution safety live in the browser sandbox."
-date: '2026-01-01'
+date: '2026-05-03'
 category: "Engineering"
 tags: ["Regex", "JavaScript", "Security", "Backend Architecture", "Validation"]
 keywords: ["regex patterns developers", "common regex examples", "email regex pattern", "URL regex", "regex cheat sheet 2026", "catastrophic backtracking", "E.164 phone validation", "positive lookaheads password", "NFA backtracking safe"]
@@ -372,4 +372,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

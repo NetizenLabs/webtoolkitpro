@@ -2,7 +2,7 @@
 title: "The Unified Diff Format: Parsing Engines, Mathematical Invariants, & Patch Architecture"
 seoTitle: "What is a Unified Diff? The Technical Specifications Manual"
 description: "Everything you need to know about the Unified Diff format. Learn how to read those plus and minus signs, what mathematical 'hunks' are, and why this format is the industry standard."
-date: '2025-12-30'
+date: '2026-05-03'
 category: "Engineering"
 tags: ["Diff", "Git", "Code Review", "Parsing", "Algorithms", "System Architecture"]
 keywords: ["unified diff format explained", "how to read a diff", "diff hunk header", "git diff output format", "unified diff vs context diff", "POSIX trailing newline diff", "Git patch engine matching", "dynamic diff parser JS", "hunk invariant failure"]
@@ -667,4 +667,4 @@ Built on secure client-side principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

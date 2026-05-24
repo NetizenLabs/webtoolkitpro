@@ -1,7 +1,7 @@
 ---
 title: "How to Debug Regex: Engine Mechanics & Backtracking Traps"
 description: "Your regex isn't matching and you don't know why. An engineering manual on DFA vs NFA engines, avoiding catastrophic backtracking loops, and executing V8 traces."
-date: '2026-02-08'
+date: '2026-05-20'
 category: "Developer Tools"
 tags: ["Regex", "Debugging", "Tutorial", "Developer Tools"]
 keywords: ["regex not matching", "debug regex", "regex greedy vs lazy", "regex lookahead", "regex anchor problem", "catastrophic backtracking regex", "DFA vs NFA regex engine", "sticky flag regex"]
@@ -520,4 +520,4 @@ Built on absolute engineering privacy constraints:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

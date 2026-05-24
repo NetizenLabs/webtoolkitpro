@@ -2,7 +2,7 @@
 title: "TypeScript Enterprise Architecture 2026: Nominal Typing, Results & Schemas"
 seoTitle: "TypeScript Best Practices 2026: Enterprise Architecture Guide"
 description: "Why TypeScript is the 2026 standard for professional web dev. Master advanced patterns like Branded types, the Result pattern, and runtime schema validation."
-date: '2025-12-22'
+date: '2026-05-16'
 category: "Engineering"
 tags: ["TypeScript", "Architecture", "Best-Practices", "Error Handling", "React"]
 keywords: ["TypeScript best practices 2026", "full-stack TypeScript", "advanced TypeScript patterns", "type safety", "developer productivity", "Branded types TypeScript", "Rust Result pattern TS", "Valibot runtime schema validation", "nominal vs structural typing TS"]
@@ -379,4 +379,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "Favicon Sizes in 2026: The Complete Asset Manual"
 description: "Every favicon size you need in 2026, what each is used for, and how to generate them. Covers ICO, PNG, SVG, Apple touch icons, and PWA manifest icons."
-date: '2026-01-08'
+date: '2026-05-11'
 category: "Design Tools"
 tags: ["Favicon", "Design", "PWA", "Web Development"]
 keywords: ["favicon sizes 2026", "favicon cheat sheet", "apple touch icon size", "pwa favicon sizes", "favicon ico png svg", "Google SERP favicon size", "Android PWA maskable icon", "Favicon cache busting query"]
@@ -690,4 +690,4 @@ To ensure crawler compatibility and AI-first topical validation, the semantic sc
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

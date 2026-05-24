@@ -1,7 +1,7 @@
 ---
 title: "JWT vs. PASETO vs. Session Tokens: Authentication Architectures and Zero-Day Defense"
 description: "An engineering breakdown comparing JWT, PASETO, and traditional session tokens. Understand the tradeoffs in statelessness, Algorithm Agility exploits, and V8 Edge performance."
-date: '2026-04-12'
+date: '2026-05-09'
 category: "Security"
 tags: ["JWT", "PASETO", "Authentication", "Security", "Sessions"]
 keywords: ["jwt vs paseto", "paseto vs jwt 2026", "session token vs jwt", "modern authentication tokens", "paseto authentication", "JWT none algorithm exploit", "Key confusion attack", "secure HttpOnly cookies", "Next.js edge middleware jwt"]
@@ -257,4 +257,4 @@ Engineered on strict privacy protocols:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

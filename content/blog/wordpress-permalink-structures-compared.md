@@ -2,7 +2,7 @@
 title: "WordPress Permalink Architectures: Edge Caching, SQL Overhead, & 301 Migration Disasters"
 seoTitle: "WordPress Permalink Structures Compared: Performance Benchmarks & SEO Routing"
 description: "A technical comparison of WordPress permalink structures. Learn which routes improve SEO, reduce SQL table join overhead, and maximize CDN edge caching."
-date: '2026-03-12'
+date: '2026-05-05'
 category: "Engineering"
 tags: ["WordPress", "SEO", "Permalinks", "Server Architecture", "Database", "Caching"]
 keywords: ["wordpress permalink structure seo", "best wordpress permalink setting", "postname vs category permalink", "wordpress url structure crawl", "wordpress seo permalink 2026", "Apache rewrite map WordPress", "Database query lookup permalinks", "date based slug redirects", "WP_Rewrite sql lookup", "CDN edge cache wordpress permalinks"]
@@ -577,4 +577,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

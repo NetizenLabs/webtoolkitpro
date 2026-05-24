@@ -2,7 +2,7 @@
 title: "JWT Architecture: HS256 vs RS256 Math & The 'None' Algorithm Exploit"
 seoTitle: "What is JWT? A Complete Guide to JSON Web Tokens & Security"
 description: "Master JSON Web Tokens (JWT) for secure authentication. Learn JWT architecture, HS256 vs RS256 cryptographic math, storage security, and best practices."
-date: '2025-12-03'
+date: '2026-05-01'
 category: "Security"
 tags: ["JWT", "Security", "Authentication", "Backend Engineering", "JSON"]
 keywords: ["what is jwt", "json web token explained", "jwt tutorial", "how jwt works", "decode jwt token", "JWT HS256 vs RS256", "JWT security best practices", "LocalStorage vs HttpOnly Cookie JWT", "JWT none algorithm exploit"]
@@ -260,4 +260,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "The Complete Meta Tags Guide: SEO, Social & AI Directives"
 description: "An engineering manual for modern metadata. Master Open Graph protocols, Twitter Cards, and AI crawler directives to ensure perfect Generative Engine Optimization (GEO)."
-date: '2026-03-30'
+date: '2026-05-08'
 category: "Engineering"
 tags: ["SEO", "Meta Tags", "Web Architecture", "Digital Marketing", "AI Search"]
 keywords: ["meta tags for seo", "og meta tags guide", "complete meta tag list", "social media meta tags", "ai search optimization", "Open Graph protocol specifications", "Twitter Card schema tags", "NextJS dynamic metadata injection", "Canonical URL relative path error"]
@@ -248,4 +248,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

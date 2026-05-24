@@ -2,7 +2,7 @@
 title: "URL Slug Optimization 2026: Linux Case-Sensitivity, CTR Truncation & The 404 Incident"
 seoTitle: "URL Slug SEO Best Practices 2026: Structure & Routing Guide"
 description: "A deep engineering guide to URL slug optimization. Master hyphens vs underscores, avoid Linux case-sensitive indexing traps, and optimize for CTR."
-date: '2026-02-11'
+date: '2026-05-18'
 category: "Engineering"
 tags: ["SEO", "Routing", "URL Configuration", "Linux Server Administration", "Architecture"]
 keywords: ["url slug seo 2026", "slug best practices seo", "hyphens vs underscores url", "url slug length seo", "seo friendly url structure", "URL canonical normalization", "Linux case-sensitive URL redirects", "Search Engine CTR truncation", "SEO URL slug generator", "Nginx routing URL case sensitivity"]
@@ -312,4 +312,4 @@ Use our highly advanced **[URL Slug Generator Tool](/tools/slug-generator/)**.
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

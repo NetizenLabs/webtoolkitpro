@@ -1,7 +1,7 @@
 ---
 title: "How Secure is My Password? Entropy & GPU Cracking Guide"
 description: "Is your password strong enough to survive a brute-force attack? Learn what makes a password truly secure in 2026 and how hackers use GPU arrays to crack credentials in seconds."
-date: '2026-05-03'
+date: '2026-05-19'
 category: "Security"
 tags: ["Security", "Passwords", "Cybersecurity", "Data Privacy", "Entropy"]
 keywords: ["how secure is my password", "password strength checker", "what makes a strong password", "brute force attack prevention", "secure password generator", "Shannon Entropy formula", "RTX 4090 hash rate cracking", "Argon2id hashing complexity"]
@@ -535,4 +535,4 @@ To ensure search crawlers can index and parse this infrastructure manual nativel
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

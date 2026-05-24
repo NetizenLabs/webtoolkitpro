@@ -2,7 +2,7 @@
 title: "Web Accessibility (A11y) Engineering Manual: ADA Compliance, WCAG 2.2, & The React Modal Trap"
 seoTitle: "Web Accessibility (A11y) Engineering Guidelines 2026: WCAG 2.2"
 description: "Master web accessibility (A11y) to comply with US legal requirements like the ADA while improving your site's SEO and user experience for all."
-date: '2026-01-26'
+date: '2026-05-20'
 category: "Engineering"
 tags: ["Accessibility", "A11y", "SEO", "Enterprise", "Frontend Architecture"]
 keywords: ["Web Accessibility Best Practices 2026", "ADA Compliance for Websites", "Improving A11y for SEO", "WCAG 2.2 Guidelines", "Designing for All Users", "WCAG 4.5 contrast ratio", "Semantic HTML elements", "ARIA live regions", "Accessibility audits lighthouse", "React focus trap"]
@@ -393,4 +393,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

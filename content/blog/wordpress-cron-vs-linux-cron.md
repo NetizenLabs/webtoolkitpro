@@ -2,7 +2,7 @@
 title: "WordPress Cron vs. Linux Cron: The wp_options Bloat Crisis & System Architecture"
 seoTitle: "WordPress Cron vs. Linux Cron: The Ultimate Systems Performance Guide"
 description: "WP-Cron is not a real cron job. Learn its architectural limitations, the wp_options bloat crisis, and how to replace it with a real Linux cron for server scaling."
-date: '2026-01-22'
+date: '2026-05-04'
 category: "Engineering"
 tags: ["WordPress", "Cron", "Server Architecture", "Performance", "Database", "Backend Engineering"]
 keywords: ["wordpress cron vs linux cron", "wp-cron limitations", "disable wp-cron", "wordpress real cron", "wp-cron not firing", "WP-CLI cron events", "wp_options database bloat", "Systemd timers for WordPress"]
@@ -218,4 +218,4 @@ Built on client-side principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

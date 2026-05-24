@@ -1,7 +1,7 @@
 ---
 title: "301 vs 302 vs 307 Redirects: HTTP & SEO Engineering Guide"
 description: "The definitive developer manual to HTTP redirects. Understand the SEO PageRank, TCP network, and method-preservation differences between 301, 302, 307, and 308 redirects — with production configs."
-date: '2026-01-17'
+date: '2026-05-02'
 category: "SEO Tools"
 tags: ["SEO", "HTTP", "Redirects", "htaccess"]
 keywords: ["301 vs 302 redirect seo", "307 redirect vs 301", "http redirect types explained", "301 redirect seo", "htaccess redirect guide", "Next.js redirects configuration", "Nginx rewrite rules"]

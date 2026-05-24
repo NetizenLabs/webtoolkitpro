@@ -1,7 +1,7 @@
 ---
 title: "PWA Development Guide: Service Worker Lifecycles, Cache Strategies, and Offline Logic"
 description: "An engineering manual for Progressive Web Apps (PWAs). Master Service Worker proxy lifecycles and Cache-First strategies to deliver offline Next.js architectures."
-date: '2026-05-18'
+date: '2026-05-23'
 category: "Tutorials"
 tags: ["PWA", "Mobile", "NextJS", "Performance"]
 keywords: ["PWA Development 2026", "Next.js PWA Guide", "Building Progressive Web Apps", "Offline Support for Web", "Mobile First Development US", "Service Worker lifecycle activate", "Cache-First network strategy", "Web App Manifest installable"]
@@ -468,4 +468,4 @@ Built on absolute privacy principles:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

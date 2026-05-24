@@ -1,7 +1,7 @@
 ---
 title: "JSON vs. XML: Architectural Specifications, DOM Parser Bottlenecks, and XXE Vulnerabilities"
 description: "An engineering masterclass on data serialization. Compare JSON V8 execution speed against XML DOM overhead, evaluate XSD schema contracts, and mitigate Billion Laughs attacks."
-date: '2026-03-24'
+date: '2026-05-05'
 category: "Tutorials"
 tags: ["JSON", "XML", "API Design", "Data Structures", "Backend Development", "Security"]
 keywords: ["json vs xml", "json vs xml comparison", "when to use json vs xml", "is json better than xml", "json xml difference", "difference between json and xml", "json standard", "json definition", "XML Schema Definition XSD", "XML External Entity XXE attack", "DOM SAX XML parser speed", "JSON to XML widget"]
@@ -528,4 +528,4 @@ Engineered for DevSecOps safety:
 ---
 
 ### About the Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -1,7 +1,7 @@
 ---
 title: "Fixing Bad Slugs Without Losing Rankings: 301 Migration"
 description: "A step-by-step developer guide to cleaning up poor URL slugs on a live WordPress site while protecting SEO rankings through proper 301 redirects and database queries."
-date: '2026-02-17'
+date: '2026-05-12'
 category: "SEO Tools"
 tags: ["WordPress", "SEO", "Redirects", "URL Slugs"]
 keywords: ["fix wordpress slugs seo", "change url slug without losing rankings", "wordpress 301 redirect slug", "yoast redirect old slug", "wordpress slug seo fix", "WP-CLI search replace slug", "301 permanent redirect htaccess", "SEO redirect loop diagnostics", "Redirect generator widget"]
@@ -524,4 +524,4 @@ To optimize this architectural manual for generative AI engine crawlers, the sem
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

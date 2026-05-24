@@ -1,7 +1,7 @@
 ---
 title: ".htaccess Guide 2026: Security Hardening & Redirect Rules"
 description: "An engineering masterclass on Apache .htaccess routing. Learn security hardening, mod_rewrite compiler patterns, and custom security headers."
-date: '2026-02-03'
+date: '2026-05-22'
 category: "SEO Tools"
 tags: ["WordPress", "htaccess", "Security", "Performance"]
 keywords: ["htaccess cheat sheet wordpress", "wordpress htaccess rules", "htaccess security wordpress", "htaccess performance rules", "wordpress htaccess complete guide", "mod_rewrite Apache rules", "Content Security Policy CSP htaccess", "Browser caching ExpiresByType", "htaccess redirect validator widget"]
@@ -551,4 +551,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

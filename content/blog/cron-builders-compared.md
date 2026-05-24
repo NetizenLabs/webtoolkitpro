@@ -1,7 +1,7 @@
 ---
 title: "Cron Expression Dialects: Kubernetes, AWS, and Jenkins"
 description: "A practical comparison of cron expression tools and dialects for developers. Learn how Kubernetes, AWS EventBridge, and Jenkins handle cron syntax."
-date: '2026-04-05'
+date: '2026-05-17'
 category: "Developer Tools"
 tags: ["Cron", "DevOps", "Scheduling", "Backend"]
 keywords: ["cron expression builder online", "crontab guru vs cronitor", "best cron generator 2026", "visual cron builder", "cron expression tool", "Kubernetes CronJob schedule YAML", "Jenkins Hash H scheduling", "AWS EventBridge scheduler comparison"]

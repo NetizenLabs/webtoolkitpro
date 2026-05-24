@@ -1,7 +1,7 @@
 ---
 title: "Decode JWT Without a Library: Native JS Web API Guide"
 description: "Learn how to parse and decode JSON Web Tokens (JWT) using native JavaScript APIs. Understand Base64URL mechanics and bypass atob Unicode crashes."
-date: '2026-02-28'
+date: '2026-05-01'
 category: "Security"
 tags: ["JWT", "JavaScript", "Security", "Authentication"]
 keywords: ["decode jwt javascript", "atob jwt decode", "jwt without library", "parse jwt payload", "jwt base64 decode", "Base64URL padding specifications", "atob UTF-8 conversion", "JWT decoding vs verification"]

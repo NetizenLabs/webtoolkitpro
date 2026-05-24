@@ -1,7 +1,7 @@
 ---
 title: "Regex in JavaScript vs Python vs PHP: Deep-Dive Engine & Syntax Differences"
 description: "An engineering manual detailing how regular expressions execute across different language environments. Learn the critical syntax differences between ECMA-262, Python's re module, and PHP's PCRE2."
-date: '2026-04-07'
+date: '2026-05-02'
 category: "Engineering"
 tags: ["Regex", "JavaScript", "Python", "PHP", "Backend Architecture"]
 keywords: ["regex javascript vs python", "regex syntax differences", "PCRE vs JavaScript regex", "python re module", "php preg_match", "PCRE2 engine PHP", "NFA backtracking limits", "possessive quantifiers PHP", "V8 regex Irregexp"]
@@ -322,4 +322,4 @@ Built for enterprise security:
 ---
 
 ### About The Author
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).

@@ -2,7 +2,7 @@
 title: "The llms.txt Architecture: Semantic AI Indexing & The RAG Hallucination Crisis"
 seoTitle: "What Is llms.txt: The Specifications Guide to AI-Crawler Files"
 description: "llms.txt is the new standard for helping AI models understand your website. Learn what it contains, why it matters for GEO, and how to create one."
-date: '2026-02-15'
+date: '2026-05-02'
 category: "Engineering"
 tags: ["llms.txt", "GEO", "AI", "SEO", "Architecture", "RAG"]
 keywords: ["what is llms.txt", "llms txt explained", "llms.txt guide 2026", "ai crawler optimization", "generative engine optimization llms", "llms-full.txt sister format", "Jeremy Howard fast.ai specification", "RAG markdown crawler context", "llms txt validator linter", "AI hallucination seo"]
@@ -393,4 +393,4 @@ Built on absolute privacy principles:
 
 ### About The Author
 
-**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Austin, TX. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
+**Abu Sufyan** is an enterprise systems engineer, web performance architect, and developer tooling designer based in Lahore, Punjab. He specializes in V8 execution benchmarking, React hook design, and semantic SEO architectures. You can review his open-source work on [Github](https://github.com/abusufyan-netizen) or check his personal portfolio website at [abusufyan.xyz](https://abusufyan.xyz).
