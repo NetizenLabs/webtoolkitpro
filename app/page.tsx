@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <>
       {/* Directory Hero */}
-      <section className="relative overflow-hidden bg-background py-16 lg:py-24 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-transparent py-16 lg:py-24 transition-colors duration-300">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-[400px] bg-gradient-to-b from-teal-500/10 to-blue-500/5 blur-[100px] rounded-full" />
         </div>
@@ -109,7 +109,7 @@ export default function Home() {
       <PersonalizationDashboard allTools={searchTools} />
 
       {/* Responsive Category Grid */}
-      <section className="py-12 bg-gray-50 dark:bg-[#0B1120] border-y border-gray-100 dark:border-slate-800 transition-colors duration-300">
+      <section className="py-12 bg-transparent border-y border-gray-100/50 dark:border-slate-800/50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {Object.keys(CATEGORY_MAP).map((slug) => {
@@ -121,7 +121,7 @@ export default function Home() {
                 <Link
                   key={slug}
                   href={`/tools/hub/${slug}/`}
-                  className="bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] hover:border-[#00D4B4]/50 rounded-[16px] p-6 group transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
+                  className="bg-white/70 dark:bg-[#0D1526]/70 backdrop-blur-xl border border-white/40 dark:border-[#1E2D47]/50 hover:border-[#00D4B4]/50 rounded-[16px] p-6 group transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
                 >
                   <div className="w-12 h-12 bg-blue-50 dark:bg-[#1E2D47] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#00D4B4]/10 transition-colors">
                     <Icon className="w-6 h-6 text-blue-600 dark:text-[#8A9BBE] group-hover:text-[#00D4B4] transition-colors" />
@@ -141,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* Featured Tools */}
-      <section className="py-[var(--space-lg)] bg-white dark:bg-slate-950">
+      <section className="py-[var(--space-lg)] bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white mb-4">Popular Utilities</h2>
@@ -178,7 +178,7 @@ export default function Home() {
       <SocialProof />
 
       {/* Semantic SEO Text moved to bottom */}
-      <section className="py-[var(--space-xl)] bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800">
+      <section className="py-[var(--space-xl)] bg-transparent border-t border-gray-100/50 dark:border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
@@ -221,7 +221,7 @@ export default function Home() {
                 { label: 'No Tracking', desc: 'Zero data retention', icon: Shield, color: 'text-purple-600' },
                 { label: 'Cloud Native', desc: 'Edge delivery network', icon: Server, color: 'text-amber-600' },
               ].map((feature) => (
-                <div key={feature.label} className="p-8 bg-gray-50 dark:bg-slate-900/50 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 hover:shadow-2xl transition-all group">
+                <div key={feature.label} className="p-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[2.5rem] border border-white/40 dark:border-slate-800/50 hover:shadow-2xl transition-all group">
                   <feature.icon className={`w-10 h-10 ${feature.color} mb-6 group-hover:scale-110 transition-transform`} />
                   <div className="font-bold text-gray-900 dark:text-white text-lg mb-2 tracking-tight">{feature.label}</div>
                   <div className="text-[10px] text-gray-400 dark:text-slate-500 font-black uppercase tracking-widest">{feature.desc}</div>
