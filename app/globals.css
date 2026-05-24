@@ -72,6 +72,30 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Subtle faded vector background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/world-map-bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.dark body::before {
+  opacity: 0.06;
 }
 
 /* Smooth Interactive Elements */
