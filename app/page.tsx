@@ -15,9 +15,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wtkpro.site/',
   },
+  other: {
+    'article:published_time': '2025-01-01T00:00:00Z',
+    'article:modified_time': new Date().toISOString(),
+    'article:author': 'Abu Sufyan',
+    'author': 'Abu Sufyan',
+  }
 }
 
-export const revalidate = 3600
+
 
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
@@ -192,13 +198,16 @@ export default function Home() {
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
-                  At WebToolkit Pro, we believe that a professional web toolkit should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built for maximum security and local-first processing.
+                  At WebToolkit Pro, we believe that a professional web toolkit should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built specifically for modern software engineers who demand maximum security and local-first processing. 
                 </p>
                 <p>
-                  From advanced SEO utilities to our secure UUID generators, every tool is optimized for performance, delivering instant execution.
+                  Unlike legacy toolkits that send your sensitive data to remote servers for processing, WebToolkit Pro leverages WebAssembly, Web Workers, and modern browser APIs to execute everything directly on your local machine. This guarantees zero latency and ensures that your API keys, JSON payloads, and source code are never compromised.
                 </p>
                 <p>
-                  Beyond utilities, we serve as a technical research hub, publishing deep-dive studies into web performance and modern search standards to help you master the future of the web.
+                  From advanced technical SEO utilities that help you dominate search rankings, to secure UUID generators and cryptographic hashing tools, every single utility in our directory is optimized for high-performance and strict RFC compliance. We have engineered these tools to handle massive payloads—whether you are formatting a 50MB JSON file or transcoding thousands of Base64 images.
+                </p>
+                <p>
+                  Beyond utilities, we serve as a dedicated technical research hub. We regularly publish deep-dive case studies into enterprise web performance, Core Web Vitals optimization, and modern generative search standards. Our mission is to provide you with both the tools to build the future of the web, and the knowledge required to master it.
                 </p>
               </div>
 

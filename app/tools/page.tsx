@@ -3,9 +3,7 @@ import type { Metadata } from 'next'
 import ToolsClient from './ToolsClient'
 import { getTools } from '@/lib/tools'
 
-// ISR: cache this page at the edge for 1 hour
-// Repeat visitors get ~50ms TTFB instead of a fresh server render
-export const revalidate = 3600
+
 
 export const metadata: Metadata = {
   title: 'Developer Tools Directory | WebToolkit Pro',
