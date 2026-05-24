@@ -22,14 +22,14 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
   }
 
   return {
-    title: 'Web Dev Tutorials, SEO Guides & Case Studies | WebToolkit Pro',
+    title: 'Web Dev Tutorials, SEO Guides & Cases | WebToolkit Pro',
     description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
     keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: 'Web Dev Tutorials, SEO Guides & Case Studies | WebToolkit Pro',
+      title: 'Web Dev Tutorials, SEO Guides & Cases | WebToolkit Pro',
       description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
       url: url,
       siteName: 'WebToolkit Pro',
@@ -46,7 +46,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Web Dev Tutorials, SEO Guides & Case Studies | WebToolkit Pro',
+      title: 'Web Dev Tutorials, SEO Guides & Cases | WebToolkit Pro',
       description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
       site: '@WebToolkitPro',
       images: ['https://wtkpro.site/blog-og-image.png'],
@@ -86,7 +86,7 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
         <Link
           key={page}
           href={page === 1 ? '/blog' : `/blog?${paramName}=${page}`}
-          className={`w-10 h-10 flex items-center justify-center rounded-lg border font-bold font-mono text-xs transition-all ${
+          className={`w-10 h-10 flex items-center justify-center rounded-lg border font-bold font-mono text-sm transition-all ${
             page === currentPage 
               ? 'bg-[#00D4B4] border-[#00D4B4] text-[#0D1117]' 
               : 'bg-card border-border text-muted-foreground hover:border-[#00D4B4]/50'
@@ -128,7 +128,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
       <div className="dynamic-padding max-w-7xl mx-auto min-h-screen">
         {/* Hero Section */}
         <div className="text-center mb-16 pt-12">
-          <span className="inline-block px-4 py-1.5 bg-[#00D4B4]/10 text-[#00D4B4] text-[10px] font-bold font-mono uppercase tracking-[0.2em] rounded-full mb-4 border border-[#00D4B4]/20">
+          <span className="inline-block px-4 py-1.5 bg-[#00D4B4]/10 text-[#00D4B4] text-sm font-bold font-mono uppercase tracking-[0.2em] rounded-full mb-4 border border-[#00D4B4]/20">
             📝 Knowledge Center
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
@@ -146,7 +146,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
               <h2 className="text-3xl font-bold text-foreground tracking-tight">Technical Blogs</h2>
               <p className="text-sm text-muted-foreground mt-1">Tutorials, news, and deep dives for daily development.</p>
             </div>
-            <div className="text-[10px] font-mono font-bold text-muted-foreground uppercase tracking-widest bg-muted dark:bg-elevated px-3 py-1 rounded-full border border-border">
+            <div className="text-sm font-mono font-bold text-muted-foreground uppercase tracking-widest bg-muted dark:bg-elevated px-3 py-1 rounded-full border border-border">
               {blogs.length} Articles
             </div>
           </div>
@@ -157,20 +157,20 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
                 <article className="bg-card rounded-[24px] border border-border p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
-                    <span className={`text-[10px] font-bold px-3 py-1 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-background text-muted-foreground border-border'}`}>
+                    <span className={`text-sm font-bold px-3 py-1 rounded-full border uppercase tracking-widest font-mono ${categoryColors[post.category] || 'bg-background text-muted-foreground border-border'}`}>
                       {post.category}
                     </span>
-                    <span className="text-[10px] font-mono font-bold text-muted-foreground/60 uppercase tracking-widest">
+                    <span className="text-sm font-mono font-bold text-muted-foreground/60 uppercase tracking-widest">
                       {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10">{post.description}</p>
                   <div className="flex items-center justify-between pt-6 border-t border-border/30 relative z-10">
-                    <span className="text-[10px] font-bold text-[#00D4B4] flex items-center gap-2 uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
+                    <span className="text-sm font-bold text-[#00D4B4] flex items-center gap-2 uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
                       Read Entry <Zap className="w-3 h-3 fill-current" />
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground/50 font-mono">{post.readTime}</span>
+                    <span className="text-sm uppercase font-bold tracking-widest text-muted-foreground/50 font-mono">{post.readTime}</span>
                   </div>
                 </article>
               </Link>
@@ -190,7 +190,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
               <h2 className="text-3xl font-bold text-[#00D4B4] tracking-tight">Case Studies</h2>
               <p className="text-sm text-muted-foreground mt-1">Technical Guides & Performance Case Studies.</p>
             </div>
-            <div className="text-[10px] font-mono font-bold text-[#00D4B4]/60 uppercase tracking-widest bg-elevated px-3 py-1 rounded-full border border-[#00D4B4]/20">
+            <div className="text-sm font-mono font-bold text-[#00D4B4]/60 uppercase tracking-widest bg-elevated px-3 py-1 rounded-full border border-[#00D4B4]/20">
               {journals.length} Papers
             </div>
           </div>
@@ -201,18 +201,18 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
                 <article className="bg-card rounded-[24px] border border-border p-8 hover:border-[#00D4B4]/30 transition-all duration-300 h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00D4B4]/10 to-[#0094FF]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="flex items-center justify-between mb-6 relative z-10">
-                    <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#00D4B4]/10 text-[#00D4B4] border border-[#00D4B4]/20 uppercase tracking-widest font-mono">
+                    <span className="text-sm font-bold px-3 py-1 rounded-full bg-[#00D4B4]/10 text-[#00D4B4] border border-[#00D4B4]/20 uppercase tracking-widest font-mono">
                       {post.category}
                     </span>
-                    <span className="text-[10px] font-mono font-bold text-muted-foreground/50 uppercase tracking-widest">
+                    <span className="text-sm font-mono font-bold text-muted-foreground/50 uppercase tracking-widest">
                       STUDY NO. {post.slug.slice(0, 4).toUpperCase()}
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-[#00D4B4] transition-colors leading-tight relative z-10">{post.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-8 flex-grow line-clamp-3 relative z-10 font-medium italic">&quot;{post.description}&quot;</p>
                   <div className="flex items-center justify-between pt-6 border-t border-border/30 relative z-10">
-                    <span className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-widest">View Full Paper</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground/50 font-mono">{post.readTime}</span>
+                    <span className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest">View Full Paper</span>
+                    <span className="text-sm uppercase font-bold tracking-widest text-muted-foreground/50 font-mono">{post.readTime}</span>
                   </div>
                 </article>
               </Link>

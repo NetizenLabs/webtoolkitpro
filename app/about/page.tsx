@@ -6,11 +6,17 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'About WebToolkit Pro: Technical Story, Accessibility & Mission',
-  description: 'Discover the technical architecture, security mission, and founding vision behind WebToolkit Pro. A secure, accessible, high-performance ecosystem for modern web developers.',
+  title: 'About WebToolkit Pro: Technical Story & Mission',
+  description: 'Discover the technical architecture and founding vision behind WebToolkit Pro. A secure, high-performance ecosystem for modern web developers.',
   alternates: {
     canonical: 'https://wtkpro.site/about/',
   },
+  other: {
+    'article:published_time': '2025-12-01T00:00:00Z',
+    'article:modified_time': new Date().toISOString(),
+    'article:author': 'Abu Sufyan',
+    'author': 'Abu Sufyan',
+  }
 }
 
 export default function AboutPage() {
@@ -84,7 +90,7 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <header className="text-center mb-20 pt-16">
-        <span className="inline-block px-4 py-1.5 bg-blue-100/80 dark:bg-[#00D4B4]/10 text-blue-700 dark:text-[#00D4B4] text-[10px] font-bold font-mono uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-200 dark:border-[#00D4B4]/20">
+        <span className="inline-block px-4 py-1.5 bg-blue-100/80 dark:bg-[#00D4B4]/10 text-blue-700 dark:text-[#00D4B4] text-sm font-bold font-mono uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-200 dark:border-[#00D4B4]/20">
           🛠️ Platform Technical Architecture
         </span>
         <h1 className="text-4xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tighter leading-[1.05]">
@@ -107,7 +113,7 @@ export default function AboutPage() {
           <div key={idx} className="bg-card border border-border p-6 rounded-2xl text-center shadow-sm relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent dark:from-[#00D4B4]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="text-3xl md:text-4xl font-extrabold text-blue-600 dark:text-[#00D4B4] tracking-tight mb-1 relative z-10">{item.metric}</div>
-            <div className="text-[10px] font-mono font-bold text-muted-foreground uppercase tracking-widest relative z-10">{item.label}</div>
+            <div className="text-sm font-mono font-bold text-muted-foreground uppercase tracking-widest relative z-10">{item.label}</div>
           </div>
         ))}
       </section>
@@ -128,8 +134,11 @@ export default function AboutPage() {
           <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
             Most online utilities require you to copy-paste sensitive credentials, server logs, or corporate datasets directly onto cloud servers. This exposes your enterprise pipeline to hidden vulnerabilities and security compliance violations.
           </p>
-          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed font-medium">
+          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
             WebToolkit Pro solves this forever. By building advanced AST parsers, formatting engines, and regex evaluators directly on browser threads, we completely isolate your workflows. Your inputs never cross the network interface—guaranteeing compliance with strict ISO/IEC and SOC-2 guidelines.
+          </p>
+          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed font-medium">
+            Furthermore, we firmly believe that great engineering tools should not be gated behind expensive subscriptions. That is why our entire suite of over 150 utilities is offered 100% free of charge. Whether you are validating massive JSON payloads, generating secure UUIDs, formatting XML structures, or testing regular expressions against a 10MB log file, WebToolkit Pro ensures you have the robust, locally-executing utilities required to get the job done instantly without worrying about latency or subscription limits. We've optimized every line of code to utilize modern browser capabilities—like Web Workers and WebAssembly—to ensure that our tools outperform traditional server-rendered applications in both speed and reliability.
           </p>
         </div>
       </section>
@@ -160,7 +169,7 @@ export default function AboutPage() {
           {timelineMilestones.map((milestone, idx) => (
             <div key={idx} className="relative group">
               <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-4 border-background bg-blue-600 dark:bg-[#00D4B4] group-hover:scale-125 transition-transform" aria-hidden="true" />
-              <div className="text-xs font-mono font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest mb-1">{milestone.year}</div>
+              <div className="text-sm font-mono font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest mb-1">{milestone.year}</div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{milestone.title}</h3>
               <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed font-medium">{milestone.desc}</p>
             </div>
@@ -224,7 +233,7 @@ export default function AboutPage() {
                 <h3 className="font-bold text-gray-900 dark:text-white text-sm">{b.tool}</h3>
                 <span className="text-lg font-black text-blue-600 dark:text-[#00D4B4] tabular-nums">{b.metric}</span>
               </div>
-              <p className="text-[11px] text-muted-foreground font-medium mb-4">{b.detail}</p>
+              <p className="text-sm text-muted-foreground font-medium mb-4">{b.detail}</p>
               {/* Performance bar */}
               <div className="w-full h-1.5 bg-gray-100 dark:bg-[#1E2D47] rounded-full overflow-hidden">
                 <div
@@ -235,7 +244,7 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-        <p className="text-center mt-6 text-[10px] text-muted-foreground font-mono uppercase tracking-widest">
+        <p className="text-center mt-6 text-sm text-muted-foreground font-mono uppercase tracking-widest">
           Tested on Chrome 126 · M2 MacBook Air · All processing 100% client-side
         </p>
       </section>
@@ -308,7 +317,7 @@ export default function AboutPage() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Explore DevHub Index Node (opens in a new tab)"
-              className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
             >
               Explore Node <Globe2 className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -327,7 +336,7 @@ export default function AboutPage() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Launch TradeConvert.pro (opens in a new tab)"
-              className="inline-flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              className="inline-flex items-center gap-2 text-sm font-bold text-amber-600 dark:text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
             >
               Launch Site <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -346,7 +355,7 @@ export default function AboutPage() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="View Severance Calculator Toolkit (opens in a new tab)"
-              className="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 dark:text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              className="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 dark:text-[#00D4B4] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
             >
               View Toolkit <Shield className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -364,7 +373,7 @@ export default function AboutPage() {
               <Link 
                 href="/author/" 
                 aria-label="Read Author Profile of Abu Sufyan"
-                className="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-[#0094FF] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-[#0094FF] uppercase tracking-widest hover:gap-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
               >
                 Author Profile <Users className="w-4 h-4" aria-hidden="true" />
               </Link>
