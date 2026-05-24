@@ -96,6 +96,7 @@ body::before {
 
 .dark body::before {
   opacity: 0.04; /* Adjusted for dark mode contrast */
+  filter: invert(1);
 }
 
 /* Smooth Interactive Elements */
