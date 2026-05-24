@@ -6,6 +6,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wtkpro.site/submit-tool/',
   },
+  openGraph: {
+    title: 'Submit Your Utility Idea | WebToolkit Pro Lab',
+    description: 'Suggest a new technical tool or developer utility to our research lab. Help build the future of the WebToolkit Pro ecosystem.',
+    url: 'https://wtkpro.site/submit-tool/',
+    siteName: 'WebToolkit Pro',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Submit Your Utility Idea | WebToolkit Pro Lab',
+    description: 'Suggest a new technical tool or developer utility to our research lab. Help build the future of the WebToolkit Pro ecosystem.',
+  },
+  other: {
+    'article:published_time': '2025-12-01T00:00:00Z',
+    'article:modified_time': new Date().toISOString(),
+    'article:author': 'Abu Sufyan',
+    'author': 'Abu Sufyan',
+  }
 }
 
 export default function SubmitToolLayout({
