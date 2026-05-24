@@ -7,7 +7,7 @@ import Logo from './Logo'
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-muted-foreground pt-20 pb-8 border-t border-border">
+    <footer className="bg-white/50 dark:bg-[#0D1117]/50 backdrop-blur-xl text-muted-foreground pt-20 pb-8 border-t border-border/50 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           <div className="col-span-2 md:col-span-1">
@@ -129,19 +129,19 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer nofollow" aria-label="GitHub Repository" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://github.com/WebToolkit-Pro" target="_blank" rel="noopener noreferrer nofollow" aria-label="GitHub Repository" className="p-2.5 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Github className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter Profile" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="https://twitter.com/WebToolKitPro" target="_blank" rel="noopener noreferrer nofollow" aria-label="Twitter Profile" className="p-2.5 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Twitter className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to" aria-label="Dev.to Blog">
+            <a href="https://dev.to/webtoolkitpro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Follow on Dev.to" aria-label="Dev.to Blog">
               <Terminal className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt" aria-label="Product Hunt Page">
+            <a href="https://www.producthunt.com/posts/webtoolkit-pro" target="_blank" rel="noopener noreferrer nofollow" className="p-2.5 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all" title="Find us on Product Hunt" aria-label="Product Hunt Page">
               <Rocket className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="mailto:hello@wtkpro.site" aria-label="Email Support" className="p-2.5 bg-elevated border border-border rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
+            <a href="mailto:hello@wtkpro.site" aria-label="Email Support" className="p-2.5 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-[10px] text-muted-foreground hover:text-[#00D4B4] hover:border-[#00D4B4]/50 transition-all">
               <Mail className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>
