@@ -167,7 +167,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/tools/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-sm">
+            <Link href="/tools/" prefetch={false} className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-sm">
               View All 150+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
