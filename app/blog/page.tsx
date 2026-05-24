@@ -22,15 +22,15 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
   }
 
   return {
-    title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
-    description: 'Master modern web development with free expert-level tutorials, technical guides, and performance case studies. Learn secure workflows, CSS optimization, and technical SEO.',
+    title: 'Web Dev Tutorials, SEO Guides & Case Studies | WebToolkit Pro',
+    description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
     keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
-      description: 'Expert web development tips, tutorials, and guides for modern developers.',
+      title: 'Web Dev Tutorials, SEO Guides & Case Studies | WebToolkit Pro',
+      description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
       url: url,
       siteName: 'WebToolkit Pro',
       images: [
@@ -46,8 +46,8 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Web Dev Cheatsheets, SEO Guides & Performance Journals | WebToolkit Pro',
-      description: 'Expert web development tips, tutorials, and guides for modern developers.',
+      title: 'Web Dev Tutorials, SEO Guides & Case Studies | WebToolkit Pro',
+      description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
       site: '@WebToolkitPro',
       images: ['https://wtkpro.site/blog-og-image.png'],
     },
