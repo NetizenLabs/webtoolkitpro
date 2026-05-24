@@ -12,11 +12,20 @@ export const metadata: Metadata = {
     url: 'https://wtkpro.site/submit-tool/',
     siteName: 'WebToolkit Pro',
     type: 'website',
+    images: [
+      {
+        url: 'https://wtkpro.site/submit-tool-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Submit Your Utility Idea to WebToolkit Pro',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Submit Your Utility Idea | WebToolkit Pro Lab',
     description: 'Suggest a new technical tool or developer utility to our research lab. Help build the future of the WebToolkit Pro ecosystem.',
+    images: ['https://wtkpro.site/submit-tool-og.png'],
   },
   other: {
     'article:published_time': '2025-12-01T00:00:00Z',
