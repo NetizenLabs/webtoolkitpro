@@ -1,40 +1,35 @@
-# WebToolkit Pro - Robots Configuration
-# Optimized for Search Engines and AI Crawlers (AIO)
-
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
-
-# Explicitly Allow AI Crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
+Disallow: /cdn-cgi/
+Disallow: /private/
+Disallow: /*?
 
 User-agent: PerplexityBot
+Allow: /blog/
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?
+
+User-agent: Perplexity-User
 Allow: /
 
-User-agent: Google-Extended
+User-agent: GPTBot
+Allow: /blog/
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?
 
-User-agent: Googlebot-Extended
+User-agent: ClaudeBot
+Allow: /blog/
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?
 
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# Host and Sitemap
-Host: https://wtkpro.site
 Sitemap: https://wtkpro.site/sitemap.xml
-
-# AI Content Directories
-Allow: /llms.txt
-Allow: /llms-full.txt
+Host: https://wtkpro.site
+Content-Signal: ai-train=no, search=yes, ai-input=no

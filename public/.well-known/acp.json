@@ -1,0 +1,11 @@
+{
+  "protocol": {
+    "name": "acp",
+    "version": "1.0"
+  },
+  "api_base_url": "https://wtkpro.site/api",
+  "transports": ["http"],
+  "capabilities": {
+    "services": ["developer_tools"]
+  }
+}

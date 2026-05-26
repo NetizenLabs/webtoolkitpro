@@ -161,6 +161,14 @@ const nextConfig = {
         key: 'Cache-Control',
         value: 'no-transform',
       },
+      {
+        key: 'X-402-Facilitator',
+        value: 'https://stripe.com',
+      },
+      {
+        key: 'X-402-Wallet',
+        value: 'acct_1032D82eB69zArt5',
+      },
     ]
 
     return [
