@@ -165,6 +165,16 @@ const nextConfig = {
 
     return [
       {
+        source: '/',
+        headers: [
+          ...securityHeaders,
+          {
+            key: 'Link',
+            value: '</llms.txt>; rel="describedby"'
+          }
+        ]
+      },
+      {
         source: '/:path*',
         headers: securityHeaders,
       },
