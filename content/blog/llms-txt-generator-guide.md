@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to llms.txt: Standardizing Architectures for AI Agents and RAG Crawlers"
 description: "Master the llms.txt routing standard. Learn how to construct compliant machine-readable site maps to optimize your domain for Generative Engine Optimization (GEO)."
-date: '2026-05-12'
+date: '2026-04-01'
 category: "SEO Tools"
 tags: ["llms.txt", "GEO", "AI", "Guide"]
 keywords: ["llms.txt generator guide", "how to use llms.txt tool", "official llms.txt documentation", "generate llms.txt online", "ai optimization tool guide", "Generative Engine Optimization GEO", "robots.txt for AI agents", "RAG search optimization"]

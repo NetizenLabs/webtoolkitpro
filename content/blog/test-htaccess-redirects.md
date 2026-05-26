@@ -2,7 +2,7 @@
 title: "How to Test .htaccess Redirects Safely: A DevOps Engineering Guide"
 seoTitle: "How to Test .htaccess Redirects Safely: DevOps Guide 2026"
 description: "Editing .htaccess is high-risk. One typo can cause a 500 Internal Server Error. Learn the safe way to test redirects using staging environments, curl, and online validators."
-date: '2026-05-14'
+date: '2026-05-25'
 category: "Engineering"
 tags: ["htaccess", "Apache", "Redirects", "DevOps", "Web Server Architecture"]
 keywords: ["test htaccess redirects", "htaccess tester online", "debug htaccess 500 error", "apache redirect testing", "safe htaccess editing", "Apache mod_rewrite syntax", "cURL trace HTTP redirects", "Docker testing Apache htaccess", "htaccess infinite redirect loop"]

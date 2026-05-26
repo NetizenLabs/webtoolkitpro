@@ -1,7 +1,7 @@
 ---
 title: "llms.txt vs. robots.txt: Crawl Access Controls vs. AI Semantic Context Directories"
 description: "A definitive engineering comparison of llms.txt and robots.txt. Learn how to manage web crawlers and optimize your domain for AI search agents."
-date: '2026-05-13'
+date: '2026-03-18'
 category: "SEO Tools"
 tags: ["llms.txt", "robots.txt", "SEO", "GEO", "AI"]
 keywords: ["llms.txt vs robots.txt", "robots txt vs llms txt difference", "ai crawler vs googlebot", "llms txt explained", "do i need llms.txt", "RFC 9309 robots standard", "AI user agent blocks", "RAG index mapping", "Robots.txt parser simulator"]

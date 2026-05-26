@@ -1,7 +1,7 @@
 ---
 title: "Regex Tester Tools Compared: Security Audits, Engine Sandbox Profiles, and Client-Side Performance"
 description: "An engineering audit of the top regex testing tools in 2026. We benchmark regex101, RegExr, and explore why client-side V8 sandboxing is critical for HIPAA compliance."
-date: '2026-05-04'
+date: '2026-01-22'
 category: "Engineering"
 tags: ["Regex", "Security", "JavaScript", "Developer Tools", "HIPAA Compliance"]
 keywords: ["regex tester online", "regex101 vs regexr", "best regex tool 2026", "online regular expression tester", "regex debugger", "HIPAA compliant regex tester", "client side regex compiler", "backtracking debugger", "free regex tools", "regex101 tester alternatives"]

@@ -1,7 +1,7 @@
 ---
 title: "Best Online Diff Checker Tools: The Engineering & Privacy Guide"
 description: "A privacy-focused comparison of the top online diff tools in 2026. We examine which tools process code server-side vs client-side and which support syntax highlighting."
-date: '2026-05-15'
+date: '2026-02-07'
 category: "Developer Tools"
 tags: ["Diff", "Code Review", "Developer Tools", "Privacy"]
 keywords: ["best diff checker 2026", "diffchecker vs text compare", "online diff tool comparison", "client side diff checker", "code comparison tool", "Myers Diff Algorithm explained", "Longest Common Subsequence math", "privacy-safe text compare"]

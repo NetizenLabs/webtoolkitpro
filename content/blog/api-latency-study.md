@@ -1,7 +1,7 @@
 ---
 title: "API Latency Study: The True Cost of 100ms in 2026"
 description: "Original research on how millisecond-level API latency impacts e-commerce conversion rates and user retention in the US market."
-date: '2026-05-12'
+date: '2026-05-15'
 category: "Research"
 tags: ["API", "Performance", "Revenue", "Research"]
 keywords: ["API Latency Study 2026", "Impact of Speed on Revenue", "Web Performance Research US", "100ms latency cost", "Enterprise API Performance", "Time to First Byte (TTFB) analysis", "HTTP/3 QUIC connection pool", "DNS Prefetching AOT"]

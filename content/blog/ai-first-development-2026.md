@@ -2,7 +2,7 @@
 title: "AI-First Development in 2026: Cursor, Claude, and GitHub Copilot Setup"
 seoTitle: "AI-First Development 2026: Cursor, Claude, Copilot Setup"
 description: "Master AI-first development in 2026 with Cursor, Claude, and Copilot. Practical workflows, prompt engineering tips, and how to combine them with client-side tools for maximum speed."
-date: '2026-05-07'
+date: '2026-01-23'
 category: "Tutorials"
 tags: ["AI", "Cursor", "Claude", "GithubCopilot", "WebDev"]
 keywords: ["AI first development 2026", "Cursor and Claude workflow", "GitHub Copilot setup", "AI prompt engineering for developers", "LLM coding assistant best practices", "codebase indexing", "agentic workflows"]

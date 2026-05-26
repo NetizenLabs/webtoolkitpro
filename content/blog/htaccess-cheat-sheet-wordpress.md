@@ -1,7 +1,7 @@
 ---
 title: ".htaccess Guide 2026: Security Hardening & Redirect Rules"
 description: "An engineering masterclass on Apache .htaccess routing. Learn security hardening, mod_rewrite compiler patterns, and custom security headers."
-date: '2026-05-22'
+date: '2026-01-23'
 category: "SEO Tools"
 tags: ["WordPress", "htaccess", "Security", "Performance"]
 keywords: ["htaccess cheat sheet wordpress", "wordpress htaccess rules", "htaccess security wordpress", "htaccess performance rules", "wordpress htaccess complete guide", "mod_rewrite Apache rules", "Content Security Policy CSP htaccess", "Browser caching ExpiresByType", "htaccess redirect validator widget"]

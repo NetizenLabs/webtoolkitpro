@@ -1,7 +1,7 @@
 ---
 title: "20 Practical Cron Expression Examples for SysAdmins"
 description: "Master cron syntax with 20 production-ready cron expression examples for database backups, log rotation, queue management, and server automation."
-date: '2026-05-18'
+date: '2026-03-22'
 category: "Developer Tools"
 tags: ["Cron", "Backend", "DevOps", "Automation", "SysAdmin"]
 keywords: ["cron expression examples", "cron job examples", "database backup cron", "laravel queue cron", "github actions schedule", "crontab syntax format", "cron schedule interval", "crontab examples linux", "real world cron examples", "simple cron example format"]

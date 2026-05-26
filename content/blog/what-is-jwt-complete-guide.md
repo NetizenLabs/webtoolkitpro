@@ -2,7 +2,7 @@
 title: "JWT Architecture: HS256 vs RS256 Math & The 'None' Algorithm Exploit"
 seoTitle: "What is JWT? A Complete Guide to JSON Web Tokens & Security"
 description: "Master JSON Web Tokens (JWT) for secure authentication. Learn JWT architecture, HS256 vs RS256 cryptographic math, storage security, and best practices."
-date: '2026-05-01'
+date: '2026-01-14'
 category: "Security"
 tags: ["JWT", "Security", "Authentication", "Backend Engineering", "JSON"]
 keywords: ["what is jwt", "json web token explained", "jwt tutorial", "how jwt works", "decode jwt token", "JWT HS256 vs RS256", "JWT security best practices", "LocalStorage vs HttpOnly Cookie JWT", "JWT none algorithm exploit"]

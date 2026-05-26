@@ -1,7 +1,7 @@
 ---
 title: "Edge Computing Architecture: V8 Isolates and CAP Theorem"
 description: "Discover how Edge Computing is revolutionizing the web. Learn how to deploy code closer to your US users to achieve sub-50ms latency."
-date: '2026-05-04'
+date: '2026-01-18'
 category: "Tutorials"
 tags: ["Edge", "Cloud", "Performance", "WebDev"]
 keywords: ["Edge Computing Guide 2026", "Benefits of Edge Functions", "Reducing Latency for US Users", "Cloudflare Workers vs AWS Lambda@Edge", "Modern Web Infrastructure", "V8 Isolates vs VM Containers", "CAP Theorem edge database", "CRDT eventual consistency"]

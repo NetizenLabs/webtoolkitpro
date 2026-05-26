@@ -1,7 +1,7 @@
 ---
 title: "Add Favicon to WordPress 2026 — Exact Code to Fix Blurry Icons"
 description: "The complete guide to adding a favicon to WordPress using the Site Editor, classic Customizer, and functions.php — plus how to add it to every page size correctly."
-date: '2026-05-04'
+date: '2026-01-08'
 category: "Design Tools"
 tags: ["WordPress", "Favicon", "Design", "Tutorial"]
 keywords: ["add favicon wordpress 2026", "wordpress site icon", "wordpress favicon customizer", "functions.php favicon", "wordpress favicon not showing", "Multi-resolution ICO files", "Scalable SVG favicons", "PWA webmanifest icons", "Apple Touch Icon sizes", "Favicon HTML tags generator"]

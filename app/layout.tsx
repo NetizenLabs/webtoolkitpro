@@ -105,8 +105,7 @@ export const metadata: Metadata = {
   },
   other: {
     'google-adsense-account': 'ca-pub-4234692080899883',
-    'geo.region': 'US',
-    'geo.placename': 'United States',
+    'ahrefs-site-verification': '4a8aee7293cd1e309320e8b15dcc3bcfb7dbedbfa614e03f0bdece030b77b102',
     'content-language': 'en-US',
     'HandheldFriendly': 'True',
     'MobileOptimized': '320',

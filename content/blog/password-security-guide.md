@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to Password Security: Cryptographic Entropy, Password Managers, and Hash Engineering"
 description: "An engineering manual for password security. Master cryptographic entropy, Argon2id hashing, and how to defend against automated credential stuffing."
-date: '2026-05-19'
+date: '2026-03-29'
 category: "Security"
 tags: ["password security", "cybersecurity", "online safety", "password generator", "data protection"]
 keywords: ["password security guide 2026", "strong password generator", "cybersecurity best practices", "password manager", "how to create strong passwords", "online security tips", "password entropy bits", "Argon2id hashing settings", "bcrypt salting database"]

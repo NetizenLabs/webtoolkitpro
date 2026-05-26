@@ -1,7 +1,7 @@
 ---
 title: "Fix JSON Syntax Errors: The Advanced Diagnostic & Repair Manual"
 description: "Struggling with JSON parser errors? Learn how to identify trailing commas, unquoted keys, strip UTF-8 BOM bytes, and write auto-repair scripts."
-date: '2026-05-21'
+date: '2026-03-04'
 category: "Tutorials"
 tags: ["JSON", "Debugging", "Web Development", "Programming Tips", "Error Handling"]
 keywords: ["json syntax error", "unexpected token json", "fix json errors", "validate json online", "json parse error", "SyntaxError JSON position", "BOM stripper JavaScript", "JSON automatic repair script"]

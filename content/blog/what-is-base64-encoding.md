@@ -2,7 +2,7 @@
 title: "Base64 Encoding Architecture: Binary Data, API Bloat, and the V8 Engine Crash"
 seoTitle: "What is Base64 Encoding? The Ultimate Developer's Guide"
 description: "Everything you need to know about Base64 encoding. Learn the binary mechanics, ASCII padding math, and severe performance impacts on data transport."
-date: '2026-05-22'
+date: '2026-04-08'
 category: "Engineering"
 tags: ["Base64", "Web Dev", "Data Encoding", "Binary Data", "Performance"]
 keywords: ["what is base64 encoding", "base64 explained", "when to use base64", "base64 vs encryption", "base64 encoding process", "secure base64 decode client side", "atob and btoa utf8", "url safe base64"]

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: 'https://wtkpro.site/',
   },
   other: {
-    'article:published_time': '2025-01-01T00:00:00Z',
+    'article:published_time': '2026-05-06T00:00:00Z',
     'article:modified_time': new Date().toISOString(),
     'article:author': 'Abu Sufyan',
     'author': 'Abu Sufyan',

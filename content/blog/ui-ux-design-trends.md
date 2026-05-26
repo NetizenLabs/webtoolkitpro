@@ -2,7 +2,7 @@
 title: "Modern UI/UX Engineering: Depth Realism, Micro-Interactions, and Responsive Constraints"
 seoTitle: "Modern UI/UX Design Trends 2026: Engineering Constraints"
 description: "Stay ahead of the curve with our guide on modern UI/UX trends. From glassmorphism to accessibility constraints, learn how to design for the US market."
-date: '2026-05-17'
+date: '2026-01-02'
 category: "CSS"
 tags: ["UI", "UX", "Design", "Frontend Engineering", "Accessibility"]
 keywords: ["UI/UX Design Trends 2026", "Modern Web Design Guide", "User Experience Best Practices US", "Glassmorphism and Minimalism", "Designing for US Market", "Depth Realism visual design", "Responsive Container Queries", "WCAG 2.2 accessibility design", "HSL color palette sandbox", "CSS backdrop filter blur"]

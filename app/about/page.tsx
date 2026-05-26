@@ -12,7 +12,7 @@ export const metadata = {
     canonical: 'https://wtkpro.site/about/',
   },
   other: {
-    'article:published_time': '2025-12-01T00:00:00Z',
+    'article:published_time': '2026-05-06T00:00:00Z',
     'article:modified_time': new Date().toISOString(),
     'article:author': 'Abu Sufyan',
     'author': 'Abu Sufyan',

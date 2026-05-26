@@ -1,7 +1,7 @@
 ---
 title: "Impact of LLM Latency on User Retention: TTFT, Speculative Decoding, and Streaming UX Architectures"
 description: "A data-driven engineering study on how milliseconds of delay in AI-generated responses lead to massive drops in user engagement and conversion rates."
-date: '2026-05-11'
+date: '2026-04-04'
 category: "Research"
 tags: ["AI", "UX", "Performance", "Data-Science", "User-Experience"]
 keywords: ["LLM Latency", "AI UX", "Conversion rate optimization", "Inference speed", "User retention study", "Time to First Token (TTFT) metrics", "Server-Sent Events (SSE) streaming", "Speculative decoding model speed"]

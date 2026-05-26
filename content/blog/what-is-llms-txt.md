@@ -2,7 +2,7 @@
 title: "The llms.txt Architecture: Semantic AI Indexing & The RAG Hallucination Crisis"
 seoTitle: "What Is llms.txt: The Specifications Guide to AI-Crawler Files"
 description: "llms.txt is the new standard for helping AI models understand your website. Learn what it contains, why it matters for GEO, and how to create one."
-date: '2026-05-02'
+date: '2026-04-23'
 category: "Engineering"
 tags: ["llms.txt", "GEO", "AI", "SEO", "Architecture", "RAG"]
 keywords: ["what is llms.txt", "llms txt explained", "llms.txt guide 2026", "ai crawler optimization", "generative engine optimization llms", "llms-full.txt sister format", "Jeremy Howard fast.ai specification", "RAG markdown crawler context", "llms txt validator linter", "AI hallucination seo"]

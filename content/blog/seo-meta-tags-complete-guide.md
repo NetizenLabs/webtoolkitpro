@@ -1,7 +1,7 @@
 ---
 title: "The Complete Meta Tags Guide: SEO, Social & AI Directives"
 description: "An engineering manual for modern metadata. Master Open Graph protocols, Twitter Cards, and AI crawler directives to ensure perfect Generative Engine Optimization (GEO)."
-date: '2026-05-08'
+date: '2026-03-10'
 category: "Engineering"
 tags: ["SEO", "Meta Tags", "Web Architecture", "Digital Marketing", "AI Search"]
 keywords: ["meta tags for seo", "og meta tags guide", "complete meta tag list", "social media meta tags", "ai search optimization", "Open Graph protocol specifications", "Twitter Card schema tags", "NextJS dynamic metadata injection", "Canonical URL relative path error"]

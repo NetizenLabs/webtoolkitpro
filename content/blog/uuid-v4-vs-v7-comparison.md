@@ -2,7 +2,7 @@
 title: "UUID v4 vs v7 in PostgreSQL: B-Tree Fragmentation and Write Latency Metrics"
 seoTitle: "UUID v4 vs v7: Why Every Developer Should Switch in 2026"
 description: "Is UUID v4 dead? Discover why UUID v7 is the new standard for database primary keys, how it solves index fragmentation, and when to make the switch."
-date: '2026-05-19'
+date: '2026-03-04'
 category: "Engineering"
 tags: ["Database Architecture", "PostgreSQL", "Backend Engineering", "Performance", "System Design"]
 keywords: ["uuid v4 vs v7", "uuid v7 explained", "why use uuid v7", "uuid v7 online generator", "database primary key uuid", "RFC 9562 UUID standards", "PostgreSQL UUID v7 performance", "B-Tree index fragmentation UUID", "database write latency uuid", "database page splits"]

@@ -1,7 +1,7 @@
 ---
 title: "Mastering JWT Authentication: Distributed JWKS Verifications, Key ID Injections, and Stateful Denylists"
 description: "Learn how to implement JSON Web Tokens (JWT) securely. Avoid algorithmic key confusion attacks, block kid injections, and scale verification with JWKS."
-date: '2026-05-08'
+date: '2026-04-26'
 category: "Security"
 tags: ["Authentication", "JWT", "Security", "WebDev"]
 keywords: ["JWT Authentication Guide", "Secure JWT implementation", "JSON Web Token security", "Web App Auth Best Practices", "Stateless Authentication 2026", "JWKS distributed validation", "Key ID (kid) injection attack", "Key Confusion attack RS256"]

@@ -1,7 +1,7 @@
 ---
 title: "Modern CSS Architecture for Enterprise: Component Scoping, Cascade Layers (@layer), and Tailwind Tokenization"
 description: "An engineering manual for scaling CSS architectures. Discover how to eliminate global scope pollution using CSS Modules, Tailwind, and Cascade Layers."
-date: '2026-05-16'
+date: '2026-01-28'
 category: "CSS"
 tags: ["CSS", "Frontend", "Architecture", "DesignSystems"]
 keywords: ["Modern CSS Architecture", "Scalable CSS Guide", "Tailwind CSS vs CSS Modules", "Enterprise Frontend Development", "Maintaining large CSS codebases", "CSS Cascade Layers", "Design System tokens", "Webpack CSS Modules scoping", "Responsive CSS clamp calculator"]

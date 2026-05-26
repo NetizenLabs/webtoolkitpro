@@ -1,7 +1,7 @@
 ---
 title: "Securing JSON APIs: AJV Schema Validation, JWT Security, and BOLA Mitigation"
 description: "An elite engineering guide to hardening JSON REST APIs. Learn how to defeat Mass Assignment attacks using strict JSON schemas, prevent BOLA vulnerabilities, and implement asymmetric JWT architectures."
-date: '2026-05-07'
+date: '2026-05-02'
 category: "Engineering"
 tags: ["API Security", "JSON", "Backend Architecture", "Node.js", "Authentication"]
 keywords: ["Secure JSON API", "API Security Best Practices 2026", "JSON Schema Validation", "JWT Security Guide RS256", "Protecting API Endpoints", "Data Privacy for Developers", "BOLA vulnerability fix", "Mass Assignment defense Node.js", "AJV validator middleware", "Express JSON Bomb mitigation"]

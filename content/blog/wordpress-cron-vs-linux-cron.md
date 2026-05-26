@@ -2,7 +2,7 @@
 title: "WordPress Cron vs. Linux Cron: The wp_options Bloat Crisis & System Architecture"
 seoTitle: "WordPress Cron vs. Linux Cron: The Ultimate Systems Performance Guide"
 description: "WP-Cron is not a real cron job. Learn its architectural limitations, the wp_options bloat crisis, and how to replace it with a real Linux cron for server scaling."
-date: '2026-05-04'
+date: '2026-03-27'
 category: "Engineering"
 tags: ["WordPress", "Cron", "Server Architecture", "Performance", "Database", "Backend Engineering"]
 keywords: ["wordpress cron vs linux cron", "wp-cron limitations", "disable wp-cron", "wordpress real cron", "wp-cron not firing", "WP-CLI cron events", "wp_options database bloat", "Systemd timers for WordPress"]

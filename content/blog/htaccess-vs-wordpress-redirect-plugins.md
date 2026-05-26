@@ -1,7 +1,7 @@
 ---
 title: "WordPress Redirect Plugins vs. .htaccess: A Systems Latency Study"
 description: "Should you manage path redirects via .htaccess or a plugin GUI? A technical performance breakdown covering Apache execution speed, TTFB latency, and MySQL lockups."
-date: '2026-05-23'
+date: '2026-04-14'
 category: "SEO Tools"
 tags: ["WordPress", "htaccess", "Redirects", "Performance"]
 keywords: ["htaccess vs wordpress redirect plugin", "yoast redirect vs htaccess", "redirection plugin vs htaccess", "wordpress redirect performance", "server level redirect wordpress", "Apache RewriteRule performance", "WooCommerce redirect database load", "WordPress redirect plugins CPU usage", "Redirect latency estimator widget"]

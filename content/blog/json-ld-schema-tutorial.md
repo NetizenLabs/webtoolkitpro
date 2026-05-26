@@ -1,7 +1,7 @@
 ---
 title: "JSON-LD Schema Guide 2026: E-E-A-T, Semantic Wikidata Mapping & Dynamic SEO"
 description: "Master JSON-LD structured data architecture. Learn nested entity contracts, Next.js dynamic integration, and semantic Wikidata graph mapping to dominate rich snippets."
-date: '2026-05-03'
+date: '2026-02-22'
 category: "Tutorials"
 tags: ["SEO", "JSON-LD", "Structured Data", "Google Search", "Web Development"]
 keywords: ["json-ld tutorial", "schema markup guide", "how to add schema markup", "structured data examples", "json-ld generator online", "Product schema reviews", "FAQPage schema nested", "Next.js JSON-LD injector"]

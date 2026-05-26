@@ -1,7 +1,7 @@
 ---
 title: "JSON vs. XML: Architectural Specifications, DOM Parser Bottlenecks, and XXE Vulnerabilities"
 description: "An engineering masterclass on data serialization. Compare JSON V8 execution speed against XML DOM overhead, evaluate XSD schema contracts, and mitigate Billion Laughs attacks."
-date: '2026-05-05'
+date: '2026-03-17'
 category: "Tutorials"
 tags: ["JSON", "XML", "API Design", "Data Structures", "Backend Development", "Security"]
 keywords: ["json vs xml", "json vs xml comparison", "when to use json vs xml", "is json better than xml", "json xml difference", "difference between json and xml", "json standard", "json definition", "XML Schema Definition XSD", "XML External Entity XXE attack", "DOM SAX XML parser speed", "JSON to XML widget"]

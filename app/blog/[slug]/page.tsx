@@ -85,8 +85,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     other: {
-      'geo.region': 'US',
-      'geo.placename': 'United States',
       'content-language': 'en-US',
       'article:published_time': post.date,
       'article:author': post.author,

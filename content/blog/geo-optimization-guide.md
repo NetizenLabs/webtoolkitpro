@@ -2,7 +2,7 @@
 title: "Generative Engine Optimization (GEO) Guide for Next.js 2026"
 seoTitle: "Generative Engine Optimization (GEO) Guide for Next.js 2026"
 description: "Unlocking AI Search Traffic: Learn how to optimize Next.js for Generative Engine Optimization (GEO) and secure citations in ChatGPT, Perplexity & Google Gemini."
-date: '2026-05-16'
+date: '2026-01-23'
 category: "SEO"
 tags: ["SEO", "AI", "Next.js", "GEO"]
 keywords: ["Generative Engine Optimization", "GEO vs SEO", "Next.js AI search optimization", "SearchGPT SEO strategy", "Perplexity AI citations", "SGE optimization guide", "RAG systems", "vector search optimization", "GEO citation audit widget"]

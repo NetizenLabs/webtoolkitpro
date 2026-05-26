@@ -1,7 +1,7 @@
 ---
 title: "Advanced Diff Auditing for WordPress: Malware Detection and Version Control"
 description: "How to use diff checkers to spot rogue file changes, detect WordPress malware, compare plugin versions, and audit database export differences."
-date: '2026-05-02'
+date: '2026-01-13'
 category: "Developer Tools"
 tags: ["WordPress", "Security", "Diff", "Tutorial"]
 keywords: ["wordpress file diff", "compare wordpress plugin files", "detect wordpress malware diff", "wordpress theme changes", "diff wordpress database", "WP-CLI verify checksums", "wp_posts database revisions", "WordPress backdoor audit"]

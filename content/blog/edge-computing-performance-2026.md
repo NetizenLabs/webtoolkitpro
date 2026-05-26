@@ -2,7 +2,7 @@
 title: "Edge Performance Engineering: Core Web Vitals 2026, Dynamic HTML Stream Injections, and Micro-Caching Strategies"
 seoTitle: "Edge Computing 2026: Deploy Apps with Sub-50ms Latency"
 description: "How edge computing is transforming web performance in 2026. Practical guide for developers using Next.js, Vercel, and Cloudflare with privacy-first tools."
-date: '2026-05-05'
+date: '2026-01-25'
 category: "Engineering"
 tags: ["Edge-Computing", "Next.js", "Performance", "Cloudflare"]
 keywords: ["edge computing 2026", "low latency web apps", "sub-50ms latency", "Next.js Edge", "Vercel Edge Functions", "Core Web Vitals INP", "Dynamic HTML stream injection", "stale-while-revalidate SWR", "Edge performance simulator widget"]

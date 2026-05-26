@@ -1,7 +1,7 @@
 ---
 title: "Optimizing Core Web Vitals for Enterprise Next.js Applications"
 description: "An engineering manual for achieving a perfect Lighthouse score. Optimize LCP, CLS, and INP on massive Next.js architectures."
-date: '2026-05-20'
+date: '2026-04-03'
 category: "Tutorials"
 tags: ["Performance", "NextJS", "SEO", "WebVitals"]
 keywords: ["Core Web Vitals Optimization", "Next.js Performance", "LCP optimization", "Cumulative Layout Shift fix", "Interaction to Next Paint", "Web Performance Guide 2026", "performance auditor widget"]

@@ -2,7 +2,7 @@
 title: "Server-First Rendering vs Client-Side: Performance Guide for 2026"
 seoTitle: "Server-First vs Client-Side Rendering 2026 Guide"
 description: "Server-first architectures dominate 2026. Compare rendering strategies and optimize with meta-frameworks like Next.js."
-date: '2026-05-11'
+date: '2026-01-26'
 category: "Engineering"
 tags: ["Next.js", "Performance", "Rendering", "Web Architecture", "Edge Compute"]
 keywords: ["server-first rendering 2026", "Next.js performance", "client-side vs server-side", "web performance guide", "LCP optimization", "First Contentful Paint FCP", "Largest Contentful Paint LCP", "Time to First Byte TTFB", "Partial Prerendering PPR", "Web render waterfall simulator"]

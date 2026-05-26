@@ -1,7 +1,7 @@
 ---
 title: "Scalable Database Design: Indexing, Sharding, and Distributed Storage Architecture"
 description: "An engineering manual for scaling database architectures. Learn how to survive massive read/write volumes using Hash Sharding, Redis Cache-Aside patterns, and PostgreSQL replicas."
-date: '2026-05-05'
+date: '2026-02-25'
 category: "Engineering"
 tags: ["Database", "Architecture", "Scalability", "Backend Engineering", "Performance"]
 keywords: ["Scalable Database Design 2026", "SQL vs NoSQL for Enterprise", "Database Sharding Guide", "High Traffic Data Architecture", "PostgreSQL vs MongoDB Performance", "B-Tree indexing models", "Read replica distributed", "Redis cache-aside patterns", "Horizontal data sharding"]

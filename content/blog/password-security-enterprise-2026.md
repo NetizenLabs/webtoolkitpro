@@ -1,7 +1,7 @@
 ---
 title: "Enterprise Password Security 2026: Cryptographic Randomness, Argon2id Hashing, and Zero-Knowledge Architectures"
 description: "An engineering manual for authentication security. Master the Web Crypto API, bypass Bcrypt truncation limits, and secure databases with Argon2id."
-date: '2026-05-18'
+date: '2026-02-13'
 category: "Security"
 tags: ["Passwords", "Security", "Encryption", "Enterprise", "Engineering"]
 keywords: ["secure password generator 2026", "high entropy passwords", "enterprise password security", "cryptographic randomness", "secure credentials", "Xoroshiro128 predictability", "Web Crypto API entropy", "Argon2id memory hardness", "Bcrypt 72 byte truncation limit"]

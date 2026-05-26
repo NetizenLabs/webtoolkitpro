@@ -1,7 +1,7 @@
 ---
 title: "How Secure is My Password? Entropy & GPU Cracking Guide"
 description: "Is your password strong enough to survive a brute-force attack? Learn what makes a password truly secure in 2026 and how hackers use GPU arrays to crack credentials in seconds."
-date: '2026-05-19'
+date: '2026-02-09'
 category: "Security"
 tags: ["Security", "Passwords", "Cybersecurity", "Data Privacy", "Entropy"]
 keywords: ["how secure is my password", "password strength checker", "what makes a strong password", "brute force attack prevention", "secure password generator", "Shannon Entropy formula", "RTX 4090 hash rate cracking", "Argon2id hashing complexity"]

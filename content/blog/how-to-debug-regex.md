@@ -1,7 +1,7 @@
 ---
 title: "How to Debug Regex: Engine Mechanics & Backtracking Traps"
 description: "Your regex isn't matching and you don't know why. An engineering manual on DFA vs NFA engines, avoiding catastrophic backtracking loops, and executing V8 traces."
-date: '2026-05-20'
+date: '2026-04-23'
 category: "Developer Tools"
 tags: ["Regex", "Debugging", "Tutorial", "Developer Tools"]
 keywords: ["regex not matching", "debug regex", "regex greedy vs lazy", "regex lookahead", "regex anchor problem", "catastrophic backtracking regex", "DFA vs NFA regex engine", "sticky flag regex"]

@@ -1,7 +1,7 @@
 ---
 title: "Achieving a 3ms TTFB: Edge Caching & Core Web Vitals (2026)"
 description: "A technical deep dive into our global Edge infrastructure, CDN strategy, and ISR optimization that resulted in a near-instant 3ms Time to First Byte."
-date: '2026-05-03'
+date: '2026-04-24'
 category: "Research"
 tags: ["Performance", "Edge-Computing", "Vercel", "Nextjs", "Infrastructure"]
 keywords: ["TTFB optimization", "Edge Caching", "Vercel Edge", "Next.js Performance", "3ms TTFB", "CDN performance architecture", "Brotli compression ratios", "TLS 1.3 handshake latency"]

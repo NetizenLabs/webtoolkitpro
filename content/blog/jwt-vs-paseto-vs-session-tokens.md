@@ -1,7 +1,7 @@
 ---
 title: "JWT vs. PASETO vs. Session Tokens: Authentication Architectures and Zero-Day Defense"
 description: "An engineering breakdown comparing JWT, PASETO, and traditional session tokens. Understand the tradeoffs in statelessness, Algorithm Agility exploits, and V8 Edge performance."
-date: '2026-05-09'
+date: '2026-02-11'
 category: "Security"
 tags: ["JWT", "PASETO", "Authentication", "Security", "Sessions"]
 keywords: ["jwt vs paseto", "paseto vs jwt 2026", "session token vs jwt", "modern authentication tokens", "paseto authentication", "JWT none algorithm exploit", "Key confusion attack", "secure HttpOnly cookies", "Next.js edge middleware jwt"]

@@ -1,7 +1,7 @@
 ---
 title: "PWA Development Guide: Service Worker Lifecycles, Cache Strategies, and Offline Logic"
 description: "An engineering manual for Progressive Web Apps (PWAs). Master Service Worker proxy lifecycles and Cache-First strategies to deliver offline Next.js architectures."
-date: '2026-05-23'
+date: '2026-01-28'
 category: "Tutorials"
 tags: ["PWA", "Mobile", "NextJS", "Performance"]
 keywords: ["PWA Development 2026", "Next.js PWA Guide", "Building Progressive Web Apps", "Offline Support for Web", "Mobile First Development US", "Service Worker lifecycle activate", "Cache-First network strategy", "Web App Manifest installable"]

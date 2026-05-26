@@ -2,7 +2,7 @@
 title: "The Unified Diff Format: Parsing Engines, Mathematical Invariants, & Patch Architecture"
 seoTitle: "What is a Unified Diff? The Technical Specifications Manual"
 description: "Everything you need to know about the Unified Diff format. Learn how to read those plus and minus signs, what mathematical 'hunks' are, and why this format is the industry standard."
-date: '2026-05-03'
+date: '2026-03-04'
 category: "Engineering"
 tags: ["Diff", "Git", "Code Review", "Parsing", "Algorithms", "System Architecture"]
 keywords: ["unified diff format explained", "how to read a diff", "diff hunk header", "git diff output format", "unified diff vs context diff", "POSIX trailing newline diff", "Git patch engine matching", "dynamic diff parser JS", "hunk invariant failure"]

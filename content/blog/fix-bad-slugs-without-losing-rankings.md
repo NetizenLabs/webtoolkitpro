@@ -1,7 +1,7 @@
 ---
 title: "Fixing Bad Slugs Without Losing Rankings: 301 Migration"
 description: "A step-by-step developer guide to cleaning up poor URL slugs on a live WordPress site while protecting SEO rankings through proper 301 redirects and database queries."
-date: '2026-05-12'
+date: '2026-03-11'
 category: "SEO Tools"
 tags: ["WordPress", "SEO", "Redirects", "URL Slugs"]
 keywords: ["fix wordpress slugs seo", "change url slug without losing rankings", "wordpress 301 redirect slug", "yoast redirect old slug", "wordpress slug seo fix", "WP-CLI search replace slug", "301 permanent redirect htaccess", "SEO redirect loop diagnostics", "Redirect generator widget"]

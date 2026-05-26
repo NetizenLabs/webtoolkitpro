@@ -2,7 +2,7 @@
 title: "TypeScript Enterprise Architecture 2026: Nominal Typing, Results & Schemas"
 seoTitle: "TypeScript Best Practices 2026: Enterprise Architecture Guide"
 description: "Why TypeScript is the 2026 standard for professional web dev. Master advanced patterns like Branded types, the Result pattern, and runtime schema validation."
-date: '2026-05-16'
+date: '2026-02-08'
 category: "Engineering"
 tags: ["TypeScript", "Architecture", "Best-Practices", "Error Handling", "React"]
 keywords: ["TypeScript best practices 2026", "full-stack TypeScript", "advanced TypeScript patterns", "type safety", "developer productivity", "Branded types TypeScript", "Rust Result pattern TS", "Valibot runtime schema validation", "nominal vs structural typing TS"]

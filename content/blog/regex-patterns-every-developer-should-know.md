@@ -1,7 +1,7 @@
 ---
 title: "10 Regex Patterns Every Developer Should Memorize (With a Live V8 Sandbox)"
 description: "An engineering manual covering the 10 most critical regular expression patterns used in production environments. Test execution safety live in the browser sandbox."
-date: '2026-05-03'
+date: '2026-01-11'
 category: "Engineering"
 tags: ["Regex", "JavaScript", "Security", "Backend Architecture", "Validation"]
 keywords: ["regex patterns developers", "common regex examples", "email regex pattern", "URL regex", "regex cheat sheet 2026", "catastrophic backtracking", "E.164 phone validation", "positive lookaheads password", "NFA backtracking safe"]

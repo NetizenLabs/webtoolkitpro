@@ -1,7 +1,7 @@
 ---
 title: "Mastering Generative Engine Optimization (GEO) for Next.js in 2026"
 description: "An engineering guide to GEO for Next.js: Optimize React layouts and structured data for AI search engines like ChatGPT and Perplexity using strict JSON-LD and semantic rendering."
-date: '2026-05-15'
+date: '2026-01-28'
 category: "SEO"
 tags: ["GEO", "Next.js", "AI-SEO", "Structured-Data"]
 keywords: ["GEO Next.js 2026", "Generative Engine Optimization guide", "Perplexity optimization", "ChatGPT SEO", "AI search visibility", "Fact-to-Word Ratio FWR", "Source verifiability", "Wikidata entity hooks", "GEO metric simulator widget"]

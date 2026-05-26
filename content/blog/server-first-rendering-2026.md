@@ -2,7 +2,7 @@
 title: "Server-First Rendering & Meta-Frameworks: Why Next.js is Now the Default"
 seoTitle: "Server-First Rendering & Meta-Frameworks Guide 2026"
 description: "An engineering post-mortem on the death of the Single Page Application. Learn why React Server Components and Next.js App Router dominate the 2026 AI crawler landscape."
-date: '2026-05-10'
+date: '2026-03-13'
 category: "Engineering"
 tags: ["ServerFirst", "NextJS", "React Architecture", "SEO", "Performance Engineering"]
 keywords: ["server first rendering 2026", "Next.js App Router default", "React Server Components architecture", "SEO advantages of SSR", "Generative Engine Optimization Next.js", "Largest Contentful Paint hydration", "SPA bundle optimization", "hydration simulator widget"]

@@ -1,7 +1,7 @@
 ---
 title: "JSON Formatting Best Practices: The Advanced Systems Manual"
 description: "An engineering masterclass on JSON architecture. Learn how to structure payloads, prevent V8 engine crashes, fix BigInt precision loss, and stream datasets."
-date: '2026-05-01'
+date: '2026-01-25'
 category: "Tutorials"
 tags: ["JSON", "API development", "web development", "data formatting", "REST API"]
 keywords: ["JSON formatting best practices", "format JSON online", "JSON validator", "API development tips", "JSON beautifier", "clean API design", "IEEE 754 JSON precision", "JSON BigInt serialization error"]

@@ -2,7 +2,7 @@
 title: "Slug Generator vs. Manual Entry: Eliminating URL Encoding Glitches"
 seoTitle: "URL Slug Generator vs. Manual Entry: SEO Engineering Guide"
 description: "Is it better to write URL slugs manually or use an automated generator? We analyze the SEO impact of Unicode normalization, percent-encoding, and database collisions."
-date: '2026-05-13'
+date: '2026-02-24'
 category: "Engineering"
 tags: ["SEO", "Web Architecture", "Content Strategy", "Express Middleware", "PostgreSQL"]
 keywords: ["slug generator vs manual", "automated slug creation", "seo slug consistency", "url optimization errors", "wordpress slug best practices", "percent-encoding URL glitches", "duplicate slug collisions", "slug validation middleware", "Unicode NFD normalization"]

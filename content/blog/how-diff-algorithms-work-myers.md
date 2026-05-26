@@ -1,7 +1,7 @@
 ---
 title: "How Diff Algorithms Work: Myers O(ND) Algorithm Explained Natively in Code"
 description: "An engineering breakdown of the Myers diff algorithm — the graph theory engine behind git diff, GitHub code review, and high-performance diff checkers."
-date: '2026-05-18'
+date: '2026-03-03'
 category: "Developer Tools"
 tags: ["Algorithms", "Git", "Diff", "Computer Science"]
 keywords: ["myers diff algorithm", "how git diff works", "diff algorithm explained", "LCS algorithm", "git diff algorithm", "edit graph k-line", "V8 diff engine", "Patience diff vs Myers"]

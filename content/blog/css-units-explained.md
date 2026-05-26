@@ -1,7 +1,7 @@
 ---
 title: "A Technical Guide to CSS Units: Accessibility, viewports, and clamp()"
 description: "A comprehensive guide to CSS units. Learn when to use px, rem, em, vh, vw, and other CSS units for responsive, accessible web designs."
-date: '2026-05-23'
+date: '2026-01-27'
 category: "CSS"
 tags: ["CSS", "responsive design", "web development", "frontend", "CSS units"]
 keywords: ["CSS units explained", "px vs rem vs em", "CSS unit converter", "responsive CSS units", "when to use rem vs px", "viewport units CSS", "Dynamic Viewport Height dvh", "Fluid typography CSS clamp"]

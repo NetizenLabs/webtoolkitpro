@@ -1,7 +1,7 @@
 ---
 title: "Linear vs. Radial vs. Conic Gradients: CSS Geometry and GPU Render Pipelines"
 description: "An engineering deep-dive into CSS gradients. Master coordinate mathematics, avoid scrolling jank with GPU offloading, and build conic spinners."
-date: '2026-05-10'
+date: '2026-05-05'
 category: "Design Tools"
 tags: ["CSS", "Gradients", "Frontend", "Performance"]
 keywords: ["linear vs radial gradient css", "conic gradient css", "css gradient types", "css gradient tutorial 2026", "stripe gradient css", "trigonometric gradient math", "conic gradient loading spinner", "GPU accelerated CSS gradients", "scrolling jank CSS"]

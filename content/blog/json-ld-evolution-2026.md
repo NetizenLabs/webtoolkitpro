@@ -1,7 +1,7 @@
 ---
 title: "Implementing JSON-LD v2.0: Decentralized Identifiers, Multi-Layered Graphs, and AI Engine Fact Verification"
 description: "JSON-LD has evolved far beyond basic SEO tags. Master modern schema structures for decentralized identity, @graph nesting, and AI engine semantic reasoning."
-date: '2026-05-02'
+date: '2026-04-22'
 category: "Tutorials"
 tags: ["JSON-LD", "Semantic-Web", "Web3", "Data-Science", "JSON"]
 keywords: ["JSON-LD v2.0", "Structured Data", "Semantic Web 2026", "Schema.org updates", "Data Modeling", "Decentralized Identifiers DID", "Multi-layered Schema graph", "AI fact validation engines", "Schema generator widget"]

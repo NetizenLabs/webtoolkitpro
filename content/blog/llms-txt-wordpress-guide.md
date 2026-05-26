@@ -1,7 +1,7 @@
 ---
 title: "Deploying llms.txt on WordPress: Avoid Database Bottlenecks and Optimize for AI Crawlers"
 description: "An engineering tutorial for deploying an llms.txt file on WordPress architectures. Learn why static deployment beats dynamic plugins for AI SEO."
-date: '2026-05-14'
+date: '2026-03-27'
 category: "SEO Tools"
 tags: ["llms.txt", "WordPress", "GEO", "AI SEO", "Performance"]
 keywords: ["llms.txt wordpress", "wordpress llms txt guide", "add llms.txt wordpress", "wordpress ai optimization", "llms txt plugin wordpress", "WordPress SEO AI discovery", "llms-full.txt directory schema", "Apache whitelist llms.txt"]
