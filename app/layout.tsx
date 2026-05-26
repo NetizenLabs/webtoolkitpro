@@ -14,6 +14,8 @@ import { getLatestTool } from '@/lib/tools'
 import dynamic from 'next/dynamic'
 import { cache } from 'react'
 import { PipelineProvider } from '@/contexts/PipelineContext'
+import CommandBar from '@/components/ui/CommandBar'
+import { getTools } from '@/lib/tools'
 
 // Lazy-load non-critical UI so it doesn't block the initial render / LCP
 const NewContentNotification = dynamic(
@@ -141,6 +143,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
     date: latestTool.releaseDate || ''
   } : null
 
+  // Map minimal tools for the client-side CommandBar to prevent huge hydration payload
+  const allTools = getTools().map(t => ({
+    slug: t.slug,
+    name: t.name,
+    category: t.category,
+    icon: t.icon || 'Zap',
+    description: t.content?.description || t.function?.primary || '',
+    tags: t.tags
+  }))
+
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <head>
@@ -264,6 +276,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <CommandBar tools={allTools} />
           <CookieConsent />
           <NewContentNotification latestItem={latestItem} />
         </PipelineProvider>
