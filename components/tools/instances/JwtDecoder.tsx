@@ -2,8 +2,11 @@
 
 import React, { useState, useEffect } from 'react'
 import { ShieldCheck, Copy, Check, Trash2, AlertCircle, Clock, Zap, AlertTriangle, Info } from 'lucide-react'
+import { usePipeline } from '@/contexts/PipelineContext'
+import PipelineAction from '@/components/tools/PipelineAction'
 
 export default function JwtDecoder() {
+  const { consumePipedData } = usePipeline()
   const [token, setToken] = useState('')
   const [header, setHeader] = useState('')
   const [payload, setPayload] = useState('')
@@ -77,6 +80,14 @@ export default function JwtDecoder() {
     decodeJwt()
   }, [decodeJwt])
 
+  // Consume pipeline data on mount
+  useEffect(() => {
+    const pipedData = consumePipedData()
+    if (pipedData) {
+      setToken(pipedData)
+    }
+  }, [consumePipedData])
+
   const handleCopy = (type: 'header' | 'payload') => {
     const text = type === 'header' ? header : payload
     navigator.clipboard.writeText(text)
@@ -141,13 +152,21 @@ export default function JwtDecoder() {
           <div className="flex items-center justify-between">
             <label className="text-[10px] font-bold text-[#0094FF] uppercase tracking-widest">Payload (Data & Claims)</label>
             {payload && (
-              <button 
-                onClick={() => handleCopy('payload')}
-                className="text-xs font-bold text-[#0094FF] flex items-center gap-1.5 px-3 py-1.5 bg-[#0094FF]/5 rounded-lg transition-all border border-[#0094FF]/10"
-              >
-                {copied.payload ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied.payload ? 'Copied' : 'Copy'}
-              </button>
+              <div className="flex items-center gap-2">
+                <PipelineAction 
+                  data={payload} 
+                  sourceName="JWT Decoder" 
+                  targetName="JSON Formatter" 
+                  targetPath="/tools/json-formatter" 
+                />
+                <button 
+                  onClick={() => handleCopy('payload')}
+                  className="text-xs font-bold text-[#0094FF] flex items-center gap-1.5 px-3 py-1.5 bg-[#0094FF]/5 rounded-lg transition-all border border-[#0094FF]/10"
+                >
+                  {copied.payload ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copied.payload ? 'Copied' : 'Copy'}
+                </button>
+              </div>
             )}
           </div>
           <pre className="w-full h-[250px] p-6 font-mono text-xs bg-[#0B1120] border border-[#1E2D47] rounded-3xl overflow-auto text-[#0094FF] shadow-inner">

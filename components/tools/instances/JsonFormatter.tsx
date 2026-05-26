@@ -21,8 +21,10 @@ import { triggerQuickSuccess } from '@/lib/effects'
 import { useWebWorker } from '@/hooks/useWebWorker'
 import { usePersistentState } from '@/hooks/usePersonalization'
 import PipelineAction from '@/components/tools/PipelineAction'
+import { usePipeline } from '@/contexts/PipelineContext'
 
 export default function JsonFormatter() {
+  const { consumePipedData } = usePipeline()
   const [input, setInput] = usePersistentState('json_formatter', '')
   const [output, setOutput] = useState('')
   const [localError, setLocalError] = useState('')
@@ -98,6 +100,15 @@ export default function JsonFormatter() {
       }
     }
   }, [result])
+
+  // Consume pipeline data on mount
+  useEffect(() => {
+    const pipedData = consumePipedData()
+    if (pipedData) {
+      setInput(pipedData)
+      // trigger processing automatically by simulating a button click, or just let user click
+    }
+  }, [consumePipedData, setInput])
 
   const perfTimeStart = useRef<number | null>(null)
 
