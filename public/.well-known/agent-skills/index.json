@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agentskills.io/v0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "jwt-decoder",
+      "type": "tool",
+      "description": "Decode and analyze JSON Web Tokens securely locally.",
+      "url": "https://wtkpro.site/tools/jwt-decoder",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "json-formatter",
+      "type": "tool",
+      "description": "Format and validate JSON payloads locally.",
+      "url": "https://wtkpro.site/tools/json-formatter",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

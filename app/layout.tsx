@@ -16,6 +16,7 @@ import { cache } from 'react'
 import { PipelineProvider } from '@/contexts/PipelineContext'
 import CommandBar from '@/components/ui/CommandBar'
 import { getTools } from '@/lib/tools'
+import WebMCPProvider from '@/components/tools/WebMCPProvider'
 
 // Lazy-load non-critical UI so it doesn't block the initial render / LCP
 const NewContentNotification = dynamic(
@@ -279,6 +280,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <CommandBar tools={allTools} />
           <CookieConsent />
           <NewContentNotification latestItem={latestItem} />
+          <WebMCPProvider />
         </PipelineProvider>
       </div>
       
