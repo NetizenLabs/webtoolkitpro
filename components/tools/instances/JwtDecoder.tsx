@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { ShieldCheck, Copy, Check, Trash2, AlertCircle, Clock } from 'lucide-react'
+import { ShieldCheck, Copy, Check, Trash2, AlertCircle, Clock, Zap, AlertTriangle, Info } from 'lucide-react'
 
 export default function JwtDecoder() {
   const [token, setToken] = useState('')
@@ -9,6 +9,7 @@ export default function JwtDecoder() {
   const [payload, setPayload] = useState('')
   const [error, setError] = useState('')
   const [copied, setCopied] = useState<{ header: boolean; payload: boolean }>({ header: false, payload: false })
+  const [insights, setInsights] = useState<{ type: 'danger' | 'warning' | 'info', message: string }[]>([])
 
   const decodeJwt = React.useCallback(() => {
     if (!token.trim()) {
@@ -30,10 +31,45 @@ export default function JwtDecoder() {
       setHeader(JSON.stringify(decodedHeader, null, 2))
       setPayload(JSON.stringify(decodedPayload, null, 2))
       setError('')
+      
+      // Run AI Explainer Static Analysis
+      const newInsights = []
+      
+      // Header Analysis
+      if (decodedHeader.alg === 'none') {
+        newInsights.push({ type: 'danger', message: 'CRITICAL: Algorithm is set to "none". This token is extremely insecure.' })
+      } else if (decodedHeader.alg?.startsWith('HS')) {
+        newInsights.push({ type: 'info', message: `Uses symmetric encryption (${decodedHeader.alg}). Ensure your secret key is strong and kept completely private.` })
+      } else if (decodedHeader.alg?.startsWith('RS')) {
+        newInsights.push({ type: 'info', message: `Uses asymmetric encryption (${decodedHeader.alg}). The public key can be safely shared for verification.` })
+      }
+
+      // Payload Analysis
+      const now = Math.floor(Date.now() / 1000)
+      if (!decodedPayload.exp) {
+        newInsights.push({ type: 'warning', message: 'Missing "exp" claim. This token never expires, which is a major security risk if compromised.' })
+      } else if (decodedPayload.exp < now) {
+        newInsights.push({ type: 'danger', message: 'Token is expired according to the "exp" claim.' })
+      } else {
+        const daysLeft = Math.floor((decodedPayload.exp - now) / 86400)
+        newInsights.push({ type: 'info', message: `Token expires in approximately ${daysLeft} days.` })
+      }
+
+      if (!decodedPayload.iss) {
+        newInsights.push({ type: 'warning', message: 'Missing "iss" (Issuer) claim. The receiver cannot verify who created this token.' })
+      }
+      
+      if (!decodedPayload.aud) {
+        newInsights.push({ type: 'warning', message: 'Missing "aud" (Audience) claim. The receiver cannot verify if this token was intended for them.' })
+      }
+
+      setInsights(newInsights)
+
     } catch (err: any) {
       setError(err.message)
       setHeader('')
       setPayload('')
+      setInsights([])
     }
   }, [token])
 
@@ -120,13 +156,35 @@ export default function JwtDecoder() {
         </div>
       </div>
 
-      {/* Claims Inspector */}
-      {payload && (
-        <div className="bg-[#0D1526] border border-[#1E2D47] p-8 rounded-3xl">
-          <h4 className="text-[10px] font-bold text-[#00D4B4] uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-            <Clock className="w-4 h-4" /> Claims Inspector
+      {/* AI Explainer Engine (Local Static Analysis) */}
+      {payload && insights.length > 0 && (
+        <div className="bg-[#0D1526] border border-[#1E2D47] p-8 rounded-3xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/3" />
+          
+          <h4 className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-2 relative z-10">
+            <Zap className="w-4 h-4" /> AI Explainer Analysis
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div className="space-y-3 relative z-10">
+            {insights.map((insight, idx) => (
+              <div 
+                key={idx} 
+                className={`flex items-start gap-3 p-4 rounded-xl border ${
+                  insight.type === 'danger' ? 'bg-red-500/10 border-red-500/20 text-red-400' :
+                  insight.type === 'warning' ? 'bg-amber-500/10 border-amber-500/20 text-amber-400' :
+                  'bg-blue-500/10 border-blue-500/20 text-blue-400'
+                }`}
+              >
+                {insight.type === 'danger' ? <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" /> :
+                 insight.type === 'warning' ? <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" /> :
+                 <Info className="w-5 h-5 shrink-0 mt-0.5" />}
+                <p className="text-sm font-medium leading-relaxed">{insight.message}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Legacy Claims Inspector Data */}
+          <div className="mt-8 pt-8 border-t border-[#1E2D47] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             {JSON.parse(payload).iat && (
               <div className="p-4 bg-[#0B1120] border border-[#1E2D47] rounded-xl">
                 <span className="text-[10px] text-gray-500 block mb-1">Issued At (iat)</span>
