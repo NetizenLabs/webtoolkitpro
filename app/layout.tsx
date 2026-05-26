@@ -41,9 +41,6 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
-  alternates: {
-    canonical: 'https://wtkpro.site/',
-  },
   title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
   description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Fast online utilities for JSON formatting, XML beautification, and technical SEO.',
   authors: [{ name: 'WebToolkit Pro' }],
