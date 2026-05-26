@@ -20,6 +20,24 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // 404 Cleanup from Google Search Console (May 2026)
+      { source: '/blog/new-slug', destination: '/blog/', permanent: true },
+      { source: '/new-slug', destination: '/', permanent: true },
+      { source: '/tools/contrast-checker', destination: '/tools/', permanent: true },
+      { source: '/Seo-Slug', destination: '/', permanent: true },
+      { source: '/login', destination: '/', permanent: true },
+      { source: '/old-slug', destination: '/', permanent: true },
+      { source: '/old-service-page', destination: '/', permanent: true },
+      { source: '/index.html', destination: '/', permanent: true },
+      { source: '/deals/\\$1;', destination: '/', permanent: true },
+      { source: '/old-docs/:slug', destination: '/', permanent: true },
+      { source: '/services/modern-endpoint', destination: '/', permanent: true },
+      { source: '/scripts/backup.sh', destination: '/', permanent: true },
+      { source: '/blocked-error', destination: '/', permanent: true },
+      { source: '/offline.html', destination: '/', permanent: true },
+      { source: '/\\$1', destination: '/', permanent: true },
+      { source: '/seo-slug', destination: '/', permanent: true },
+      
       // Deleted newsjacking posts — redirect to blog index to prevent 404s
       {
         source: '/blog/iran-conflict-2026-cybersecurity',
