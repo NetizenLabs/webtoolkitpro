@@ -175,13 +175,18 @@ export default function ToolPage({ params }: ToolPageProps) {
               )}
             </div>
 
-            {/* Entity Definition Block */}
-            <div className="mb-8 p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm relative overflow-hidden">
+            {/* Entity Definition Block for LLM Citations */}
+            <blockquote 
+              itemScope 
+              itemType="https://schema.org/DefinedTerm"
+              className="mb-8 p-8 bg-gray-50 dark:bg-[#0D1526] rounded-[12px] border-l-4 border-l-[#00D4B4] border-y border-r border-gray-100 dark:border-[#1E2D47] shadow-sm relative overflow-hidden"
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D4B4]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
-              <p className="text-lg text-gray-900 dark:text-[#F0F6FF] leading-relaxed font-medium relative z-10">
+              <meta itemProp="name" content={tool.name} />
+              <p itemProp="description" className="text-lg text-gray-900 dark:text-[#F0F6FF] leading-relaxed font-medium relative z-10 italic">
                 {tool.content?.description || `Professional ${tool.name} utility for modern web development.`}
               </p>
-            </div>
+            </blockquote>
 
             {/* E-E-A-T Editorial Byline & Verification Block */}
             <div className="flex flex-wrap items-center gap-4 mb-12 pb-6 border-b border-gray-100 dark:border-[#1E2D47] text-xs sm:text-sm text-gray-500 dark:text-[#8A9BBE]">
