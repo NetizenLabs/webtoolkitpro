@@ -13,7 +13,9 @@ import {
   Zap, 
   Clock, 
   ShieldCheck,
-  AlertCircle
+  AlertCircle,
+  AlertTriangle,
+  Info
 } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
 import { useWebWorker } from '@/hooks/useWebWorker'
@@ -33,6 +35,9 @@ export default function JsonFormatter() {
   const [fileName, setFileName] = useState('')
   const [fileSize, setFileSize] = useState<number | null>(null)
   
+  // AI Explainer State
+  const [insights, setInsights] = useState<{ type: 'danger' | 'warning' | 'info', message: string }[]>([])
+
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   // Web Worker hook for heavy processing
@@ -46,6 +51,51 @@ export default function JsonFormatter() {
         setPerfTime(Math.round(performance.now() - perfTimeStart.current))
       }
       triggerQuickSuccess()
+      
+      // Run AI Explainer on successfully parsed JSON
+      try {
+        const parsed = JSON.parse(result.result)
+        const newInsights = []
+        
+        // Check for sensitive keys
+        const strJson = result.result.toLowerCase()
+        const sensitiveKeywords = ['password', 'secret', 'token', 'apikey', 'api_key', 'private_key', 'auth']
+        const foundSensitives = sensitiveKeywords.filter(k => strJson.includes(`"${k}"`))
+        
+        if (foundSensitives.length > 0) {
+          newInsights.push({ 
+            type: 'danger', 
+            message: `CRITICAL: Found sensitive keys (${foundSensitives.join(', ')}). Ensure you do not share this payload publicly.` 
+          })
+        }
+
+        // Structural Insights
+        if (Array.isArray(parsed)) {
+          newInsights.push({ type: 'info', message: `Root is an Array containing ${parsed.length} items.` })
+        } else if (typeof parsed === 'object' && parsed !== null) {
+          const keys = Object.keys(parsed)
+          newInsights.push({ type: 'info', message: `Root is an Object containing ${keys.length} top-level keys.` })
+        }
+        
+        // Depth check heuristic
+        let depth = 0
+        const checkDepth = (obj: any, currentDepth: number) => {
+          if (currentDepth > depth) depth = currentDepth
+          if (currentDepth > 20) return // short circuit to avoid massive recursion
+          if (typeof obj === 'object' && obj !== null) {
+            Object.values(obj).forEach(val => checkDepth(val, currentDepth + 1))
+          }
+        }
+        checkDepth(parsed, 1)
+        
+        if (depth > 10) {
+          newInsights.push({ type: 'warning', message: `High complexity detected (Nesting Depth: ${depth}). This may impact parsing performance in some environments.` })
+        }
+        
+        setInsights(newInsights)
+      } catch (e) {
+        setInsights([])
+      }
     }
   }, [result])
 
@@ -59,6 +109,7 @@ export default function JsonFormatter() {
     setPerfTime(null)
     setFileName('')
     setFileSize(null)
+    setInsights([])
     if (fileInputRef.current) fileInputRef.current.value = ''
   }
 
@@ -296,6 +347,35 @@ export default function JsonFormatter() {
         </div>
 
       </div>
+
+      {/* AI Explainer Engine (Local Static Analysis) */}
+      {insights.length > 0 && (
+        <div className="bg-[#0D1526] border border-[#1E2D47] p-8 rounded-[2rem] relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/3" />
+          
+          <h4 className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-2 relative z-10">
+            <Zap className="w-4 h-4" /> AI Explainer Analysis
+          </h4>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
+            {insights.map((insight, idx) => (
+              <div 
+                key={idx} 
+                className={`flex items-start gap-3 p-4 rounded-xl border ${
+                  insight.type === 'danger' ? 'bg-red-500/10 border-red-500/20 text-red-400' :
+                  insight.type === 'warning' ? 'bg-amber-500/10 border-amber-500/20 text-amber-400' :
+                  'bg-blue-500/10 border-blue-500/20 text-blue-400'
+                }`}
+              >
+                {insight.type === 'danger' ? <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" /> :
+                 insight.type === 'warning' ? <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" /> :
+                 <Info className="w-5 h-5 shrink-0 mt-0.5" />}
+                <p className="text-sm font-medium leading-relaxed">{insight.message}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Spacing and Operations Controls */}
       <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-100 dark:border-slate-800 shadow-xl shadow-blue-900/5">
