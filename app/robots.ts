@@ -6,11 +6,32 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/cdn-cgi/'],
+        disallow: [
+          '/api/', 
+          '/admin/', 
+          '/cdn-cgi/', 
+          '/private/',
+          '/*?' // Block query parameters to prevent crawler traps
+        ],
       },
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Googlebot-Extended', 'OAI-SearchBot', 'CCBot'],
+        userAgent: 'PerplexityBot',
+        allow: ['/blog/', '/'],
+        disallow: ['/admin/', '/private/', '/*?'],
+      },
+      {
+        userAgent: 'Perplexity-User',
         allow: '/',
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: ['/blog/', '/'],
+        disallow: ['/admin/', '/private/', '/*?'],
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: ['/blog/', '/'],
+        disallow: ['/admin/', '/private/', '/*?'],
       }
     ],
     sitemap: 'https://wtkpro.site/sitemap.xml',
