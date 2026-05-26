@@ -35,5 +35,6 @@ export default function robots(): MetadataRoute.Robots {
       }
     ],
     sitemap: 'https://wtkpro.site/sitemap.xml',
+    host: 'https://wtkpro.site\nContent-Signal: ai-train=no, search=yes, ai-input=no',
   }
 }
