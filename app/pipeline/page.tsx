@@ -4,6 +4,9 @@ import { Workflow, Sparkles, Box, ArrowRight } from 'lucide-react';
 export const metadata = {
   title: 'Visual Pipeline Builder (Coming Soon) | WebToolkit Pro',
   description: 'Chain multiple developer tools together into powerful automated workflows.',
+  alternates: {
+    canonical: 'https://wtkpro.site/pipeline/',
+  },
 };
 
 export default function PipelineStubPage() {
