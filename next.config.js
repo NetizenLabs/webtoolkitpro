@@ -20,6 +20,28 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Tools Consolidation Redirects
+      { source: '/tools/csv-to-xml', destination: '/tools/data-converter', permanent: true },
+      { source: '/tools/json-formatter', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-formatter-pro', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-to-ts', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-to-go', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-to-java', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-to-pydantic', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-to-prisma', destination: '/tools/json-toolkit', permanent: true },
+      { source: '/tools/json-to-yaml', destination: '/tools/json-data-converter', permanent: true },
+      { source: '/tools/json-to-jsonl', destination: '/tools/json-data-converter', permanent: true },
+      { source: '/tools/uuid-generator', destination: '/tools/uuid-generator', permanent: true },
+      { source: '/tools/uuid-v4-gen', destination: '/tools/uuid-generator', permanent: true },
+      { source: '/tools/uuid-v7-generator', destination: '/tools/uuid-generator', permanent: true },
+      { source: '/tools/password-generator', destination: '/tools/password-suite', permanent: true },
+      { source: '/tools/password-auditor', destination: '/tools/password-suite', permanent: true },
+      { source: '/tools/password-tester', destination: '/tools/password-suite', permanent: true },
+      { source: '/tools/xml-to-csv', destination: '/tools/data-converter', permanent: true },
+      { source: '/tools/json-to-csv', destination: '/tools/data-converter', permanent: true },
+      { source: '/tools/csv-to-json', destination: '/tools/data-converter', permanent: true },
+      { source: '/tools/xml-to-json', destination: '/tools/data-converter', permanent: true },
+      { source: '/tools/json-to-xml', destination: '/tools/data-converter', permanent: true },
       // 404 Cleanup from Google Search Console (May 2026)
       { source: '/blog/new-slug', destination: '/blog/', permanent: true },
       { source: '/new-slug', destination: '/', permanent: true },

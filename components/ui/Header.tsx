@@ -57,17 +57,7 @@ export default function Header() {
             <div className="h-6 w-px bg-border hidden xl:block opacity-50" />
             
             <div className="flex items-center gap-6 xl:gap-8">
-              {/* Cmd+K Search Button */}
-              <button 
-                onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))}
-                className="hidden lg:flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 rounded-lg transition-colors group"
-              >
-                <Search className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
-                <span className="font-medium mr-2">Search Tools...</span>
-                <kbd className="hidden xl:inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-border bg-background text-[10px] font-mono font-bold uppercase tracking-widest opacity-70">
-                  <Command className="w-3 h-3" /> K
-                </kbd>
-              </button>
+
 
               <a 
                 href="/submit-tool/" 
