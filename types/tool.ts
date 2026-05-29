@@ -51,6 +51,7 @@ export interface ToolConfig {
   
   meta?: {
     title?: string; // HTML Title override
+    description?: string; // HTML Meta Description
     keywords?: string[];
   };
 
