@@ -48,6 +48,8 @@ Before diving into the code, here are my raw, specific findings from spending tw
 
 ## Step 1: The Stale-While-Revalidate Cache Header
 
+> **Quick Answer:** To achieve sub-10ms response times globally, servers cannot wait for dynamic backend computations. Implementing the Stale-While-Revalidate (SWR) caching strategy instructs edge nodes to instantly deliver cached content from RAM to the user, while triggering a silent, non-blocking background process to rebuild the page with fresh data.
+
 To serve a page in 3ms, the Edge Node must never wait for backend computations, database queries, or serverless cold starts. The content must reside directly in the edge node's local Random Access Memory (RAM).
 
 We achieved this by forcing aggressive Incremental Static Regeneration (ISR) using `stale-while-revalidate` (SWR):
@@ -62,6 +64,8 @@ Cache-Control: public, max-age=0, s-maxage=31536000, stale-while-revalidate=8640
 *   **`stale-while-revalidate=86400` (24 Hours):** When a user requests a page older than 24 hours, the Edge node still returns the stale cached page instantly (3ms TTFB). Simultaneously, it triggers a non-blocking background function to regenerate the page and update the RAM.
 
 ## Step 2: Tuning Brotli Compression Dictionaries
+
+> **Quick Answer:** Brotli compression outperforms Gzip because it uses a pre-compiled dictionary of 13,000 common HTML/CSS syntax words. However, using maximum compression (Level 11) for dynamic edge responses will spike CPU loads and destroy TTFB. You must optimize your architecture to use Level 11 for static build assets, and Level 4 for real-time edge streaming.
 
 Once the Edge node retrieves the HTML from RAM, it must compress it before transmitting it over the TCP wire.
 

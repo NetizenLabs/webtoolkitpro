@@ -44,12 +44,16 @@ After testing these redirects across Nginx, Apache, and Next.js, here are my spe
 
 ## What Are 301 and 302 Redirects?
 
+> **Quick Answer:** A 301 redirect is a permanent instruction that transfers almost 100% of SEO PageRank to a new URL, while a 302 is a temporary signal that preserves the original URL's indexing. Crucially, both allow older browsers to erroneously convert `POST` requests into `GET` requests, often destroying submitted API payloads.
+
 A **301 Moved Permanently** redirect tells search engines and browsers that a resource has moved forever. It passes ~100% of SEO PageRank.
 A **302 Found** redirect tells engines the move is temporary, preventing them from updating their indexes.
 
 However, both allow the browser to mutate the HTTP method to GET.
 
 ## The HTTP/1.1 Solution: 307 and 308
+
+> **Quick Answer:** HTTP 307 (Temporary) and 308 (Permanent) were introduced specifically to prevent browsers from changing the HTTP method during a redirect. Unlike 301 and 302 codes, the 307 and 308 standards legally guarantee that a `POST` request remains a `POST` request, keeping your application payloads fully intact across domains.
 
 To resolve method-mutating chaos, the **HTTP/1.1 specification (RFC 9110)** split redirection protocols into strict functional branches:
 

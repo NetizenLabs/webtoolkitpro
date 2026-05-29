@@ -77,6 +77,8 @@ The success of JSON is driven by its architectural simplicity. Because it maps d
 
 ## 3. Under the Hood: V8 Fast Parser Path Optimization
 
+> **Quick Answer:** Native JavaScript engines process JSON up to 1.7x faster than compiling raw JavaScript object literals. They achieve this by routing `JSON.parse()` through a dedicated C++ fast-path scanner that completely bypasses the costly Abstract Syntax Tree (AST) creation phase, directly allocating property shapes onto the memory heap.
+
 To understand why JSON parsing is highly performant for standard payloads, developers must examine the **V8 Engine Fast-Path Parser**:
 
 ```
@@ -94,6 +96,8 @@ By avoiding compilation phases, native engines process JSON serialization up to 
 ---
 
 ## 4. Syntax Rules and Structural Constraints
+
+> **Quick Answer:** To ensure lightning-fast parsing via the V8 C++ fast-path, JSON enforces strict structural constraints that raw JavaScript objects ignore. In JSON, every key must be wrapped in straight double quotes, and trailing commas after the final array or object item are strictly forbidden to prevent lexical ambiguity.
 
 To guarantee this fast-path compilation across different operating systems and languages, the JSON specification enforces strict formatting rules.
 

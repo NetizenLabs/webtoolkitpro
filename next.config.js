@@ -124,6 +124,9 @@ const nextConfig = {
         destination: '/tools/yaml-to-json/',
         permanent: true,
       },
+      // SEO Audit 2026: Merged Thin Content Redirects
+
+
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.wtkpro.site' }],

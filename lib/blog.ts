@@ -257,19 +257,19 @@ export function getAllSlugs(): string[] {
     .map((f) => f.replace(/\.md$/, ''))
 }
 
-export function getRelatedPostsForTool(toolTags: string[], toolCategory: string, limit: number = 3): BlogPost[] {
+export function getRelatedPostsForTool(toolTags: string[], toolCategory: string, limit: number = 2): BlogPost[] {
   const allPosts = getAllPosts()
   
   const related = allPosts.map(post => {
     let score = 0
     
-    // Check for tag overlap
+    // Check for tag overlap (Highest Priority for Topical Clustering)
     const tagOverlap = post.tags.filter(tag => toolTags.includes(tag)).length
-    score += tagOverlap * 5
+    score += tagOverlap * 10
 
     // Check for category similarity
     if (post.category.toLowerCase() === toolCategory.toLowerCase()) {
-      score += 10
+      score += 5
     }
 
     // Check for keyword overlap in title
@@ -280,7 +280,7 @@ export function getRelatedPostsForTool(toolTags: string[], toolCategory: string,
 
     return { post, score }
   })
-  .filter(item => item.score > 0)
+  .filter(item => item.score >= 10) // STRICT REQUIREMENT: Must share at least 1 exact tag
   .sort((a, b) => b.score - a.score)
   .slice(0, limit)
   .map(item => item.post)

@@ -21,16 +21,20 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
     url += `?${params.join('&')}`
   }
 
+  const pageSuffix = page !== '1' ? ` - Page ${page}` : '';
+  const title = `Web Dev Tutorials, SEO Guides & Cases${pageSuffix} | WebToolkit Pro`;
+  const description = `Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.${pageSuffix ? ' ' + pageSuffix.trim() : ''}`;
+
   return {
-    title: 'Web Dev Tutorials, SEO Guides & Cases | WebToolkit Pro',
-    description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
+    title: title,
+    description: description,
     keywords: 'web development blog, developer tutorials, coding tips, programming guides, web development best practices',
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: 'Web Dev Tutorials, SEO Guides & Cases | WebToolkit Pro',
-      description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
+      title: title,
+      description: description,
       url: url,
       siteName: 'WebToolkit Pro',
       images: [
@@ -46,8 +50,8 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Web Dev Tutorials, SEO Guides & Cases | WebToolkit Pro',
-      description: 'Master modern web development with free expert tutorials, technical guides, and performance case studies. Learn secure workflows, CSS, and technical SEO.',
+      title: title,
+      description: description,
       site: '@WebToolkitPro',
       images: ['https://wtkpro.site/blog-og-image.png'],
     },

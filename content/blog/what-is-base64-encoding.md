@@ -59,6 +59,8 @@ The app's Time to Interactive (TTI) dropped from "Crashing" to 800 milliseconds.
 
 ## 2. The Origin of Base64: Solving the Legacy Text Bottleneck
 
+> **Quick Answer:** Base64 was invented to safely transmit binary data across legacy 7-bit ASCII networks like email and early HTTP. By restricting the payload to 64 safe, printable characters, it prevents network routers and firewalls from misinterpreting binary bytes as fatal control characters, guaranteeing intact file delivery.
+
 In the early days of networked computing, systems were designed to handle simple, human-readable text. Standard protocols like SMTP (Simple Mail Transfer Protocol) for email and HTTP for web traffic were built under strict **7-bit ASCII constraints**. These systems only recognized 128 fundamental characters, representing letters, numbers, and basic punctuation marks.
 
 However, as computer systems evolved, developers needed to transmit complex binary data—including images, compressed ZIP archives, audio files, and cryptographic keys—across these text-only networks.
@@ -111,6 +113,8 @@ Therefore, the string `"Cat"` encodes perfectly to **`QyF0`**.
 ---
 
 ## 4. The Math of Padding: What is the `=` Sign?
+
+> **Quick Answer:** The `=` sign in Base64 is a structural padding character. Because Base64 processes data in strict 24-bit (3-byte) blocks, if an input file ends with only one or two bytes, the encoder uses the `=` sign to fill the empty bits, ensuring the decoder can properly align the final block.
 
 What happens if your input data does not divide perfectly into 3-byte chunks? If you are encoding a string with only 1 byte (8 bits), the encoder still requires 6-bit units.
 

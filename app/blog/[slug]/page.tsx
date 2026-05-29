@@ -320,23 +320,27 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0094FF]/5 blur-3xl rounded-full -translate-x-1/3 translate-y-1/3" />
             
             <div className="relative z-10">
-              {/* Header block with Author bio */}
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-[#00D4B4] to-[#0094FF] p-[2px] shadow-lg">
-                    <div className="w-full h-full rounded-full bg-background flex items-center justify-center font-bold text-foreground text-lg">
-                      AS
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#00D4B4] to-[#0094FF] p-[2px] shadow-lg shrink-0">
+                    <div className="w-full h-full rounded-full bg-background flex items-center justify-center font-bold text-foreground text-xl">
+                      {post.author.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-extrabold text-foreground tracking-tight">Abu Sufyan</h3>
-                    <p className="text-xs text-muted-foreground font-mono font-bold uppercase tracking-wider">
-                      Lead Systems Architect
+                    <h3 className="text-xl font-extrabold text-foreground tracking-tight mb-1">{post.author}</h3>
+                    <p className="text-xs text-[#00D4B4] font-mono font-bold uppercase tracking-wider mb-2">
+                      {post.author === 'Abu Sufyan' ? 'Lead Systems Architect & Performance Engineer' : 'Contributing Author'}
                     </p>
+                    {post.author === 'Abu Sufyan' && (
+                      <p className="text-sm text-muted-foreground/90 leading-relaxed max-w-md">
+                        Abu Sufyan specializes in V8 execution benchmarking, React architecture, and enterprise-grade technical SEO.
+                      </p>
+                    )}
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
                   <a href="mailto:contact@wtkpro.site" className="text-[10px] font-mono font-bold text-[#00D4B4] hover:underline uppercase tracking-widest flex items-center gap-2">
                     <Mail className="w-3.5 h-3.5" /> contact@wtkpro.site
                   </a>

@@ -55,6 +55,8 @@ Authentication relies on strict mathematical boundaries. If you leave a window o
 
 ## 2. Architectural History: Stateful Sessions vs. Stateless JWTs
 
+> **Quick Answer:** Unlike traditional session cookies that force backend servers to query a database on every API call, a JWT is entirely stateless. All necessary user data, roles, and expiration limits are cryptographically sealed inside the token payload itself. This allows microservices to verify a user's identity instantly using local mathematics, eliminating database scaling bottlenecks.
+
 For decades, web application security relied on stateful session management. When a user logged in, the application server generated a random session identifier, stored it in a server-side database or shared memory cache (like Redis), and returned it to the client inside a cookie. On every subsequent request, the browser sent this identifier, prompting the server to query its database to verify the user’s identity.
 
 As applications scaled to handle billions of requests across globally distributed microservices, this stateful model introduced major architectural bottlenecks:
@@ -108,6 +110,8 @@ If an attacker modifies the payload, the signature computed by the server will f
 ---
 
 ## 4. Cryptographic Signature Math: HS256 vs. RS256
+
+> **Quick Answer:** HS256 is a symmetric algorithm that uses the exact same secret key to generate and verify a token, making it vulnerable if any single microservice is compromised. RS256 is an asymmetric standard where the auth server signs the token with a secure Private Key, allowing peripheral APIs to safely verify the token using a mathematically linked Public Key.
 
 Choosing the correct signing algorithm is a critical systems decision:
 

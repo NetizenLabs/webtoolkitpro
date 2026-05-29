@@ -36,6 +36,8 @@ steps:
 
 ## 1. Practical Engineering Observations on Entropy
 
+> **Quick Answer:** Traditional password complexity rules (like requiring symbols or uppercase letters) fail against modern hacking arrays. True password security relies entirely on Shannon Entropy—a mathematical measurement of length and character pool size. Expanding a password's length increases its cryptographic search space exponentially, making a long, simple passphrase mathematically stronger than a short, complex one.
+
 We recently audited a legacy database that a client accidentally leaked to an unsecured S3 bucket. The client's CTO insisted their password policies were "bank-grade" because they forced users to include a capital letter, a number, and a symbol. 
 
 I watched our security intern crack 80% of their database hashes in under three minutes using a single NVIDIA RTX 4090. 
@@ -123,6 +125,8 @@ These are sequences of keys that trace geometric paths across standard QWERTY ke
 ---
 
 ## 4. The Physics Limits of Brute Force Cracking
+
+> **Quick Answer:** Brute-force hacking is ultimately constrained by Landauer's Principle in thermodynamics, which dictates the minimum physical energy required to modify memory bits. Crunching enough states to brute-force a pure 128-bit entropy password would require more electrical energy than boiling Earth's oceans, making it physically impossible regardless of computing advancements.
 
 True password strength isn't just an IT policy; it is heavily bound by the fundamental laws of **Thermodynamics**.
 
