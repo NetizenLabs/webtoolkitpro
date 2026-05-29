@@ -1,32 +1,56 @@
 import { getAllPosts } from '@/lib/blog'
+import { getTools } from '@/lib/tools'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET() {
   const posts = getAllPosts()
+  const tools = getTools()
   const domain = 'https://wtkpro.site'
+
+  const feedItems = [
+    ...posts.map((post) => ({
+      title: post.title,
+      link: `${domain}/blog/${post.slug}/`,
+      description: post.description,
+      date: new Date(post.date),
+      guid: `${domain}/blog/${post.slug}/`,
+      category: post.category,
+    })),
+    ...tools.map((tool) => ({
+      title: tool.meta?.title || tool.name,
+      link: `${domain}/tools/${tool.slug}/`,
+      description: tool.meta?.description || tool.content?.description || '',
+      date: new Date(tool.releaseDate || '2026-05-01'),
+      guid: `${domain}/tools/${tool.slug}/`,
+      category: tool.category,
+    })),
+  ].sort((a, b) => {
+    const aTime = isNaN(a.date.getTime()) ? 0 : a.date.getTime()
+    const bTime = isNaN(b.date.getTime()) ? 0 : b.date.getTime()
+    return bTime - aTime
+  })
 
   const feed = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>WebToolkit Pro - Developer Blog</title>
-  <link>${domain}/blog/</link>
-  <description>Expert web development tips, tutorials, and guides for modern developers.</description>
+  <title>WebToolkit Pro - Tools &amp; Developer Blog</title>
+  <link>${domain}/</link>
+  <description>Free online developer utilities, web tools, tips, tutorials, and guides.</description>
   <language>en-us</language>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
   <atom:link href="${domain}/feed.xml" rel="self" type="application/rss+xml" />
-  ${posts
-    .map((post) => {
-      const d = new Date(post.date)
-      const pubDate = isNaN(d.getTime()) ? new Date().toUTCString() : d.toUTCString()
+  ${feedItems
+    .map((item) => {
+      const pubDate = isNaN(item.date.getTime()) ? new Date().toUTCString() : item.date.toUTCString()
       return `
     <item>
-      <title><![CDATA[${post.title}]]></title>
-      <link>${domain}/blog/${post.slug}/</link>
-      <description><![CDATA[${post.description}]]></description>
+      <title><![CDATA[${item.title}]]></title>
+      <link>${item.link}</link>
+      <description><![CDATA[${item.description}]]></description>
       <pubDate>${pubDate}</pubDate>
-      <guid>${domain}/blog/${post.slug}/</guid>
-      <category>${post.category}</category>
+      <guid>${item.guid}</guid>
+      <category><![CDATA[${item.category}]]></category>
     </item>`
     })
     .join('')}

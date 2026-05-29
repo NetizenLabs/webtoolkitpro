@@ -8,12 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const tools = getTools()
   const posts = getAllPosts()
   
-  const categoryUrls = Object.keys(CATEGORY_MAP).map((slug) => ({
-    url: `${baseUrl}/tools/category/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }))
+
 
   const blogUrls = posts.map((post) => {
     const d = new Date(post.date)
