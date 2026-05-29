@@ -42,7 +42,7 @@ function jsonToXml(obj: any, rootName: string = 'root'): string {
   return xml;
 }
 
-export default function DataConverter() {
+export default function CsvJsonXmlConverter() {
   const [input, setInput] = useState<string>('[\n  {\n    "id": "1",\n    "name": "WebToolkit"\n  },\n  {\n    "id": "2",\n    "name": "Pro"\n  }\n]');
   const [output, setOutput] = useState<string>('');
   

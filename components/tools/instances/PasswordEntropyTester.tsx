@@ -35,7 +35,7 @@ function calculateEntropy(password: string): { score: number, crackTime: string,
   return { score, crackTime, color, feedback };
 }
 
-export default function PasswordSuite() {
+export default function PasswordEntropyTester() {
   const [activeTab, setActiveTab] = useState<'generate' | 'audit'>('generate');
   
   // Generator State

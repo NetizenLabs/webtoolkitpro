@@ -19,7 +19,7 @@ function generateUuidV7(): string {
   return `${timestampHex.slice(0,8)}-${timestampHex.slice(8,12)}-${hex.slice(0,4)}-${hex.slice(4,8)}-${hex.slice(8)}`;
 }
 
-export default function UuidGenerator() {
+export default function BulkUuidGenerator() {
   const [mode, setMode] = useState<'v4' | 'v7'>('v4');
   const [quantity, setQuantity] = useState<number>(5);
   const [output, setOutput] = useState<string>('');

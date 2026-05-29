@@ -2,11 +2,11 @@ import dynamic from 'next/dynamic'
 import React, { ComponentType } from 'react'
 
 export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
-  'json-toolkit': dynamic(() => import('../components/tools/instances/JsonToolkit'), { ssr: false }),
-  'json-data-converter': dynamic(() => import('../components/tools/instances/JsonDataConverter'), { ssr: false }),
-  'uuid-generator': dynamic(() => import('../components/tools/instances/UuidGenerator'), { ssr: false }),
-  'password-suite': dynamic(() => import('../components/tools/instances/PasswordSuite'), { ssr: false }),
-  'data-converter': dynamic(() => import('../components/tools/instances/DataConverter'), { ssr: false }),
+  'json-to-code-generator': dynamic(() => import('../components/tools/instances/JsonToCodeGenerator'), { ssr: false }),
+  'json-yaml-jsonl-converter': dynamic(() => import('../components/tools/instances/JsonYamlJsonlConverter'), { ssr: false }),
+  'bulk-uuid-v4-v7-generator': dynamic(() => import('../components/tools/instances/BulkUuidGenerator'), { ssr: false }),
+  'password-entropy-tester': dynamic(() => import('../components/tools/instances/PasswordEntropyTester'), { ssr: false }),
+  'csv-json-xml-converter': dynamic(() => import('../components/tools/instances/CsvJsonXmlConverter'), { ssr: false }),
 
   // Batch 1: Core Utilities
   'what-is-my-ip': dynamic(() => import('../components/tools/instances/WhatIsMyIP'), { ssr: false }),
