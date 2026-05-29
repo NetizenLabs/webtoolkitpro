@@ -213,30 +213,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             }),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'SoftwareApplication',
-              'name': 'WebToolkit Pro Suite',
-              'operatingSystem': 'Any modern web browser',
-              'applicationCategory': 'DeveloperApplication',
-              'url': 'https://wtkpro.site',
-              'author': {
-                '@type': 'Organization',
-                'name': 'WebToolkit Pro'
-              },
-              'offers': {
-                '@type': 'Offer',
-                'price': '0',
-                'priceCurrency': 'USD',
-                'availability': 'https://schema.org/InStock'
-              },
-              'description': 'A collection of 50+ free, secure, and ultra-fast web development utilities including JSON formatters, SEO auditing tools, and security generators. Built for privacy and performance.'
-            }),
-          }}
-        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

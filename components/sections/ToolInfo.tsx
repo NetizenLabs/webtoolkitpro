@@ -46,15 +46,15 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
       </section>
 
       {/* FAQ Section */}
-      <section itemScope itemType="https://schema.org/FAQPage">
+      <section>
         <SectionHeading number="03" title={`Common Questions About ${title}`} className="mb-12" as="h3" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
           {faqs.map((faq, i) => (
-            <article key={i} itemScope itemProp="mainEntity" itemType="https://schema.org/Question" className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[24px] hover:border-blue-500/20 dark:hover:border-[#00D4B4]/20 transition-all shadow-sm">
-              <h3 itemProp="name" className="font-bold text-gray-900 dark:text-white text-lg mb-4 tracking-tight">{faq.q}</h3>
-              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                <p itemProp="text" className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">{faq.a}</p>
+            <article key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[24px] hover:border-blue-500/20 dark:hover:border-[#00D4B4]/20 transition-all shadow-sm">
+              <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-4 tracking-tight">{faq.q}</h3>
+              <div>
+                <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">{faq.a}</p>
               </div>
             </article>
           ))}
