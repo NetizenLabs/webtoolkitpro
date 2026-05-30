@@ -553,7 +553,7 @@ tools:
     priority: 10
     releaseDate: '2026-05-29'
     function:
-      primary: Universal Universal Data Converter
+      primary: Universal Data Converter
     technical:
       processing: client-side
     meta:

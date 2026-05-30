@@ -17,7 +17,7 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
   return (
     <div className="mt-24 space-y-24">
       {/* Description & Features */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className={`grid grid-cols-1 ${features && features.length > 0 ? 'lg:grid-cols-2' : ''} gap-16`}>
         <div>
           <SectionHeading number="01" title={`Why Use our ${title}?`} className="mb-8" />
           <p className="text-lg text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-8">
@@ -32,17 +32,19 @@ export default function ToolInfo({ title, description, features, faqs, howItWork
           </div>
         </div>
 
-        <div>
-          <SectionHeading number="02" title={`Key Features of ${title}`} className="mb-8" as="h3" />
-          <div className="grid grid-cols-1 gap-4">
-            {features.map((feature, i) => (
-              <div key={i} className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] group hover:border-blue-500/30 dark:hover:border-[#00D4B4]/30 transition-all">
-                <CheckCircle2 className="w-5 h-5 text-blue-500 dark:text-[#00D4B4] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-sm text-gray-900 dark:text-[#F0F6FF] font-medium">{feature}</span>
-              </div>
-            ))}
+        {features && features.length > 0 && (
+          <div>
+            <SectionHeading number="02" title={`Key Features of ${title}`} className="mb-8" as="h3" />
+            <div className="grid grid-cols-1 gap-4">
+              {features.map((feature, i) => (
+                <div key={i} className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] group hover:border-blue-500/30 dark:hover:border-[#00D4B4]/30 transition-all">
+                  <CheckCircle2 className="w-5 h-5 text-blue-500 dark:text-[#00D4B4] shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <span className="text-sm text-gray-900 dark:text-[#F0F6FF] font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </section>
 
       {/* FAQ Section */}
