@@ -1,68 +1,64 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
-import { TOOL_COMPONENTS } from '@/lib/tool-registry';
+import React, { useState, useEffect } from 'react';
+import { TOOL_FILES } from '../../lib/tool-registry';
+import { Loader2 } from 'lucide-react';
 
 interface ToolRendererProps {
   slug: string;
 }
 
-class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: Error | null}> {
-  constructor(props: {children: React.ReactNode}) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error };
-  }
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="p-12 text-left bg-red-50 dark:bg-red-950/20 rounded-[12px] border border-red-200 dark:border-red-900/50 text-red-600 dark:text-red-400 overflow-auto">
-          <h3 className="font-bold mb-2">Component Error</h3>
-          <pre className="text-xs">{this.state.error?.message}</pre>
-          <pre className="text-xs mt-2">{this.state.error?.stack}</pre>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
-
 export default function ToolRenderer({ slug }: ToolRendererProps) {
-  const [mounted, setMounted] = useState(false);
+  const [ToolComponent, setToolComponent] = useState<React.ComponentType<any> | null>(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    let isMounted = true;
+    const filename = TOOL_FILES[slug];
+    
+    if (!filename) {
+      if (isMounted) setError(new Error(`Tool not found: ${slug}`));
+      return;
+    }
 
-  if (!mounted) {
+    // Reset component when slug changes
+    setToolComponent(null);
+    setError(null);
+
+    import(`../tools/instances/${filename}`)
+      .then((mod) => {
+        if (isMounted) {
+          setToolComponent(() => mod.default);
+        }
+      })
+      .catch((err) => {
+        if (isMounted) {
+          console.error("Failed to load tool chunk:", err);
+          setError(err);
+        }
+      });
+
+    return () => { isMounted = false; };
+  }, [slug]);
+
+  if (error) {
     return (
-      <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
-        Initializing component...
+      <div className="p-12 text-left bg-red-50 dark:bg-red-950/20 rounded-[12px] border border-red-200 dark:border-red-900/50 text-red-600 dark:text-red-400 overflow-auto">
+        <h3 className="font-bold mb-2">Failed to Load Component</h3>
+        <pre className="text-xs">{error.message}</pre>
+        <p className="text-sm mt-4">Please try refreshing the page or checking your network connection.</p>
       </div>
     );
   }
-
-  const ToolComponent = TOOL_COMPONENTS[slug];
 
   if (!ToolComponent) {
     return (
-      <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
-        Tool interface coming soon...
+      <div className="p-12 flex flex-col items-center justify-center gap-4 bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
+        <Loader2 className="w-8 h-8 animate-spin text-violet-500" />
+        <span className="font-semibold tracking-wide uppercase text-xs">Loading {slug}...</span>
       </div>
     );
   }
 
-  return (
-    <ErrorBoundary>
-      <Suspense fallback={
-        <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
-          Fetching component...
-        </div>
-      }>
-        <ToolComponent />
-      </Suspense>
-    </ErrorBoundary>
-  );
+  return <ToolComponent />;
 }
