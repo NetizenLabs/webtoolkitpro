@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import yaml from 'js-yaml'
 import { ToolConfig } from '@/types/tool'
-import { TOOL_COMPONENTS } from './tool-registry'
 
 const CONFIG_PATH = path.join(process.cwd(), 'config', 'tools.yaml')
 
@@ -16,10 +15,12 @@ export function getTools(): ToolConfig[] {
     const data = yaml.load(fileContents) as { tools: ToolConfig[] }
     const rawTools = data.tools || []
     
+    const registryContent = fs.readFileSync(path.join(process.cwd(), 'lib', 'tool-registry.tsx'), 'utf8')
+    
     // Inject implementation status automatically
     cachedTools = rawTools.map(tool => ({
       ...tool,
-      isComingSoon: !TOOL_COMPONENTS[tool.slug]
+      isComingSoon: !registryContent.includes(`'${tool.slug}':`)
     }))
     
     return cachedTools
