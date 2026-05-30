@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import Link from '@/components/ui/NativeLink';
 import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget, generateSoftwareSchema, generateFAQSchema } from '@/lib/tools'
 import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
-import { TOOL_COMPONENTS } from '@/lib/tool-registry'
+import ToolRenderer from '@/components/tools/ToolRenderer'
 import ToolInfo from '@/components/sections/ToolInfo'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import RelatedToolsSidebar from '@/components/tools/RelatedToolsSidebar'
@@ -101,7 +101,7 @@ export default function ToolPage({ params }: ToolPageProps) {
   const tool = getToolBySlug(params.slug)
   if (!tool) notFound()
 
-  const ToolComponent = TOOL_COMPONENTS[tool.slug]
+
   const relatedTools = getRelatedTools(tool)
   const softwareSchema = generateSoftwareSchema(tool)
   const faqSchema = generateFAQSchema(tool)
@@ -168,11 +168,7 @@ export default function ToolPage({ params }: ToolPageProps) {
               data-agent-container="interactive-tool"
               aria-label={`Interactive ${tool.name} Utility UI`}
             >
-              {ToolComponent ? <ToolComponent /> : (
-                <div className="p-12 text-center bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
-                  Tool interface coming soon...
-                </div>
-              )}
+              <ToolRenderer slug={tool.slug} />
             </div>
 
             {/* Entity Definition Block for LLM Citations */}

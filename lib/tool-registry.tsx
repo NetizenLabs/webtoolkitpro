@@ -1,8 +1,13 @@
+'use client'
+
 import dynamic from 'next/dynamic'
 import React, { ComponentType } from 'react'
 
 export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
-  'json-to-code-generator': dynamic(() => import('../components/tools/instances/JsonToCodeGenerator'), { ssr: false }),
+  'json-to-code-generator': dynamic(() => import('../components/tools/instances/JsonToCodeGenerator'), { 
+    ssr: false,
+    loading: () => <div className="p-8 text-center text-white">Loading component...</div>
+  }),
   'json-yaml-jsonl-converter': dynamic(() => import('../components/tools/instances/JsonYamlJsonlConverter'), { ssr: false }),
   'bulk-uuid-v4-v7-generator': dynamic(() => import('../components/tools/instances/BulkUuidGenerator'), { ssr: false }),
   'password-entropy-tester': dynamic(() => import('../components/tools/instances/PasswordEntropyTester'), { ssr: false }),
