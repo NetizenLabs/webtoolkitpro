@@ -8,6 +8,12 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'password-entropy-tester': dynamic(() => import('../components/tools/instances/PasswordEntropyTester'), { ssr: false }),
   'csv-json-xml-converter': dynamic(() => import('../components/tools/instances/CsvJsonXmlConverter'), { ssr: false }),
 
+  
+  // Wave 2 Consolidated Masters
+  'schema-markup-generator': dynamic(() => import('../components/tools/instances/SchemaMarkupGenerator'), { ssr: false }),
+  'sql-toolkit': dynamic(() => import('../components/tools/instances/SqlToolkit'), { ssr: false }),
+  'markdown-html-converter': dynamic(() => import('../components/tools/instances/MarkdownHtmlConverter'), { ssr: false }),
+
   // Batch 1: Core Utilities
   'what-is-my-ip': dynamic(() => import('../components/tools/instances/WhatIsMyIP'), { ssr: false }),
   'js-minifier': dynamic(() => import('../components/tools/instances/JsMinifier'), { ssr: false }),
@@ -19,7 +25,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   // Batch 2: SEO & Validation
   'sitemap-validator': dynamic(() => import('../components/tools/instances/SitemapValidator'), { ssr: false }),
   'redirect-checker': dynamic(() => import('../components/tools/instances/RedirectChecker'), { ssr: false }),
-  'schema-generator': dynamic(() => import('../components/tools/instances/SchemaGenerator'), { ssr: false }),
   'api-latency-calculator': dynamic(() => import('../components/tools/instances/ApiLatencyCalculator'), { ssr: false }),
   'adsense-calculator': dynamic(() => import('../components/tools/instances/AdSenseCalculator'), { ssr: false }),
   'base64-encoder': dynamic(() => import('../components/tools/instances/Base64Encoder'), { ssr: false }),
@@ -36,9 +41,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'html-encoder': dynamic(() => import('../components/tools/instances/HtmlEncoder'), { ssr: false }),
   'timestamp-converter': dynamic(() => import('../components/tools/instances/TimestampConverter'), { ssr: false }),
   'core-web-vitals-guide': dynamic(() => import('../components/tools/instances/CoreWebVitalsGuide'), { ssr: false }),
-  'markdown-converter': dynamic(() => import('../components/tools/instances/MarkdownConverter'), { ssr: false }),
-  'markdown-to-html': dynamic(() => import('../components/tools/instances/MarkdownToHtml'), { ssr: false }),
-  'markdown-previewer': dynamic(() => import('../components/tools/instances/MarkdownPreviewer'), { ssr: false }),
   'robots-txt-templates': dynamic(() => import('../components/tools/instances/RobotsTemplates'), { ssr: false }),
   'seo-audit-checklist': dynamic(() => import('../components/tools/instances/SeoAuditChecklist'), { ssr: false }),
   
@@ -47,7 +49,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'question-explorer': dynamic(() => import('../components/tools/instances/QuestionExplorer'), { ssr: false }),
   'html-beautifier': dynamic(() => import('../components/tools/instances/HtmlBeautifier'), { ssr: false }),
   'css-formatter': dynamic(() => import('../components/tools/instances/CssFormatter'), { ssr: false }),
-  'sql-formatter': dynamic(() => import('../components/tools/instances/SqlFormatter'), { ssr: false }),
   'regex-tester': dynamic(() => import('../components/tools/instances/RegexTester'), { ssr: false }),
   'regex-explainer': dynamic(() => import('../components/tools/instances/RegexExplainer'), { ssr: false }),
   'jwt-decoder': dynamic(() => import('../components/tools/instances/JwtDecoder'), { ssr: false }),
@@ -70,8 +71,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
 
   // Batch 5: Security & Data
   'xss-scanner': dynamic(() => import('../components/tools/instances/XssScanner'), { ssr: false }),
-  'sql-injection-sanitizer': dynamic(() => import('../components/tools/instances/SqlSanitizer'), { ssr: false }),
-  'sql-sanitizer': dynamic(() => import('../components/tools/instances/SqlSanitizer'), { ssr: false }),
   'yaml-to-json': dynamic(() => import('../components/tools/instances/YamlToJson'), { ssr: false }),
   'aes-encryption': dynamic(() => import('../components/tools/instances/AesEncryption'), { ssr: false }),
   'sri-hasher': dynamic(() => import('../components/tools/instances/SriHasher'), { ssr: false }),
@@ -108,7 +107,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'curl-converter': dynamic(() => import('../components/tools/instances/CurlConverter'), { ssr: false }),
   'json-schema-gen': dynamic(() => import('../components/tools/instances/JsonSchemaGen'), { ssr: false }),
   'data-anonymizer': dynamic(() => import('../components/tools/instances/DataAnonymizer'), { ssr: false }),
-  'sql-minifier': dynamic(() => import('../components/tools/instances/SqlMinifier'), { ssr: false }),
   'dom-analyzer': dynamic(() => import('../components/tools/instances/DomAnalyzer'), { ssr: false }),
   'html-table-to-json': dynamic(() => import('../components/tools/instances/HtmlTableToJson'), { ssr: false }),
   'cron-descriptor': dynamic(() => import('../components/tools/instances/CronDescriptor'), { ssr: false }),
@@ -137,7 +135,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'credit-card-validator': dynamic(() => import('../components/tools/instances/CreditCardValidator'), { ssr: false }),
   'iban-validator': dynamic(() => import('../components/tools/instances/IbanValidator'), { ssr: false }),
   'nanoid-gen': dynamic(() => import('../components/tools/instances/NanoidGen'), { ssr: false }),
-  'qr-code-gen': dynamic(() => import('../components/tools/instances/QrCodeGen'), { ssr: false }),
   'barcode-gen': dynamic(() => import('../components/tools/instances/BarcodeGen'), { ssr: false }),
   'svg-optimizer': dynamic(() => import('../components/tools/instances/SvgOptimizer'), { ssr: false }),
   'domain-age-checker': dynamic(() => import('../components/tools/instances/DomainAgeChecker'), { ssr: false }),
@@ -148,7 +145,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'argon2-hasher': dynamic(() => import('../components/tools/instances/Argon2Hasher'), { ssr: false }),
   'scrypt-hasher': dynamic(() => import('../components/tools/instances/ScryptHasher'), { ssr: false }),
   'hmac-generator': dynamic(() => import('../components/tools/instances/HmacGenerator'), { ssr: false }),
-  'sql-injection-tester': dynamic(() => import('../components/tools/instances/SqlInjectionTester'), { ssr: false }),
   'dns-propagation': dynamic(() => import('../components/tools/instances/DnsPropagation'), { ssr: false }),
   'ssl-checker': dynamic(() => import('../components/tools/instances/SslChecker'), { ssr: false }),
   'ping-test': dynamic(() => import('../components/tools/instances/PingTest'), { ssr: false }),
@@ -158,8 +154,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'site-audit-pro': dynamic(() => import('../components/tools/instances/SiteAuditPro'), { ssr: false }),
   'sitemap-generator': dynamic(() => import('../components/tools/instances/SitemapGenerator'), { ssr: false }),
   'robots-validator': dynamic(() => import('../components/tools/instances/RobotsValidator'), { ssr: false }),
-  'schema-validator-pro': dynamic(() => import('../components/tools/instances/SchemaValidatorPro'), { ssr: false }),
-  'schema-validator': dynamic(() => import('../components/tools/instances/SchemaValidatorPro'), { ssr: false }),
   'load-time-estimator': dynamic(() => import('../components/tools/instances/LoadTimeEstimator'), { ssr: false }),
   'responsive-checker-pro': dynamic(() => import('../components/tools/instances/ResponsiveCheckerPro'), { ssr: false }),
   'color-blind-simulator': dynamic(() => import('../components/tools/instances/ColorBlindSimulator'), { ssr: false }),
@@ -170,11 +164,6 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
   'alt-text-audit': dynamic(() => import('../components/tools/instances/AltTextAuditor'), { ssr: false }),
   'authority-simulator': dynamic(() => import('../components/tools/instances/AuthoritySimulator'), { ssr: false }),
   'authority-simulation': dynamic(() => import('../components/tools/instances/AuthoritySimulator'), { ssr: false }),
-  'breadcrumb-schema-gen': dynamic(() => import('../components/tools/instances/BreadcrumbSchemaGen'), { ssr: false }),
-  'breadcrumb-schema': dynamic(() => import('../components/tools/instances/BreadcrumbSchemaGen'), { ssr: false }),
-  'faq-schema': dynamic(() => import('../components/tools/instances/SchemaGenerator'), { ssr: false }),
-  'local-business-schema': dynamic(() => import('../components/tools/instances/SchemaGenerator'), { ssr: false }),
-  'review-schema': dynamic(() => import('../components/tools/instances/SchemaGenerator'), { ssr: false }),
   'browser-compat-checker': dynamic(() => import('../components/tools/instances/BrowserCompatChecker'), { ssr: false }),
   'browser-compat': dynamic(() => import('../components/tools/instances/BrowserCompatChecker'), { ssr: false }),
   'canonical-checker': dynamic(() => import('../components/tools/instances/CanonicalChecker'), { ssr: false }),

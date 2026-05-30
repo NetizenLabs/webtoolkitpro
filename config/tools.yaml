@@ -31,7 +31,7 @@ tools:
           answer: You can instantly generate TypeScript interfaces, Go structs, Java classes, Python Pydantic models, and Prisma schemas.
         - question: Can it fix malformed JSON?
           answer: Yes, the toolkit includes an intelligent formatter that can repair missing quotes, trailing commas, and other common JSON syntax errors.
-      keywords: &ref_0
+      keywords:
         - convert json to typescript interface
         - json to pydantic model generator
         - json to go struct online
@@ -39,7 +39,11 @@ tools:
     seo:
       title: JSON to TypeScript, Go & Pydantic Code Generator
       description: Instantly convert JSON into TypeScript interfaces, Go structs, Pydantic models, and Prisma schemas directly in your browser. Free local code generation.
-      keywords: *ref_0
+      keywords:
+        - convert json to typescript interface
+        - json to pydantic model generator
+        - json to go struct online
+        - free json code generator
   - name: Free Local JSON to YAML & JSONL Converter
     slug: json-yaml-jsonl-converter
     category: Developer Tools
@@ -68,14 +72,17 @@ tools:
           answer: JSON Lines (JSONL) is widely used for processing large streams of data, log files, and preparing datasets for training Large Language Models (LLMs) because each line is a valid JSON object.
         - question: Does this support nested JSON arrays?
           answer: Yes, the converter recursively parses nested objects and arrays to properly represent them in YAML or flatten them for tabular formats.
-      keywords: &ref_1
+      keywords:
         - json to yaml converter offline
         - convert json to jsonl format
         - json lines converter tool
     seo:
       title: Free Local JSON to YAML & JSONL Converter
       description: Securely convert JSON arrays and objects to YAML and JSON Lines (JSONL) format offline in your browser.
-      keywords: *ref_1
+      keywords:
+        - json to yaml converter offline
+        - convert json to jsonl format
+        - json lines converter tool
   - name: Bulk UUID v4 & v7 Generator
     slug: bulk-uuid-v4-v7-generator
     category: Generators
@@ -104,14 +111,17 @@ tools:
           answer: UUID v4 is entirely random, making it great for general use. UUID v7 includes a Unix timestamp, meaning the IDs are chronologically sortable—which is vastly superior for database indexing and performance.
         - question: Are these UUIDs cryptographically secure?
           answer: Yes. We utilize the native Web Crypto API to ensure the generated strings have high entropy and cannot be predicted.
-      keywords: &ref_2
+      keywords:
         - bulk uuid v4 generator online
         - uuid v7 timestamp generator
         - secure guid creator offline
     seo:
       title: Bulk UUID v4 & v7 Generator Online
       description: Generate thousands of random UUID v4 and time-based UUID v7 identifiers securely in your browser.
-      keywords: *ref_2
+      keywords:
+        - bulk uuid v4 generator online
+        - uuid v7 timestamp generator
+        - secure guid creator offline
   - name: Offline Password Entropy & Strength Tester
     slug: password-entropy-tester
     category: Generators
@@ -142,14 +152,17 @@ tools:
           answer: We use the industry-standard zxcvbn algorithm, which analyzes entropy, dictionary words, common patterns, and substitution techniques to estimate how long an offline brute-force attack would take.
         - question: What makes a password strong?
           answer: Length is more important than complexity. A 16-character passphrase of random words is significantly harder to crack than an 8-character password with symbols.
-      keywords: &ref_3
+      keywords:
         - offline password strength tester
         - calculate password entropy crack time
         - secure local password generator without server
     seo:
       title: Offline Password Entropy & Strength Tester
       description: Test your password strength, calculate entropy crack times, and generate secure local passwords without sending data to a server.
-      keywords: *ref_3
+      keywords:
+        - offline password strength tester
+        - calculate password entropy crack time
+        - secure local password generator without server
   - name: Browser-Based CSV, JSON & XML Converter
     slug: csv-json-xml-converter
     category: Developer Tools
@@ -177,14 +190,17 @@ tools:
           answer: Yes, the converter is optimized to handle large datasets in the browser, though files over 50MB may cause browser slowdown depending on your hardware.
         - question: Does XML to JSON preserve attributes?
           answer: Yes, XML attributes are preserved and typically mapped to JSON keys prefixed with an "@" symbol to maintain data integrity.
-      keywords: &ref_4
+      keywords:
         - csv to xml converter without server
         - json to csv flatten tool
         - xml to json javascript converter
     seo:
       title: Browser-Based CSV, JSON & XML Converter
       description: Bidirectionally convert between CSV spreadsheets, JSON files, and XML documents instantly without server uploads.
-      keywords: *ref_4
+      keywords:
+        - csv to xml converter without server
+        - json to csv flatten tool
+        - xml to json javascript converter
   - name: What is my IP Address?
     slug: what-is-my-ip
     category: Network & Performance
@@ -772,91 +788,6 @@ tools:
         answer: Redirect chains (A -> B -> C -> D) force browsers to make multiple HTTP requests before loading a page, devastating your site speed. Furthermore, Googlebot may stop following the chain after 4-5 hops, resulting in the final destination never being crawled or indexed.
       - question: How do I fix a redirect loop?
         answer: A redirect loop occurs when URL A redirects to URL B, and URL B redirects back to URL A. To fix it, you must audit your server configuration (e.g., .htaccess or Nginx config) or CMS routing rules and break the infinite cycle by pointing both to a final, non-redirecting destination.
-  - name: JSON-LD Schema Generator
-    slug: schema-generator
-    category: SEO Tools
-    icon: Code
-    tags:
-      - seo
-      - schema
-      - json-ld
-      - structured-data
-      - rich-snippets
-    priority: 10
-    releaseDate: '2026-05-01'
-    function:
-      primary: Create Google-ready structured data in JSON-LD format
-    technical:
-      input_formats:
-        - txt
-      output_formats:
-        - json
-      processing: client-side
-    meta:
-      title: JSON-LD Schema Generator — Free SEO Markup Tool
-      description: Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines.
-    content:
-      title: JSON-LD Schema Generator — Create Google-Ready Structured Data
-      description: Generate structured data for your website using the recommended JSON-LD format. Improve search visibility, rich snippets, and SEO rankings for Google and AI search engines.
-      tldr: Generate valid JSON-LD structured data for your website to unlock Google Rich Snippets and improve AI-search visibility.
-      keywords:
-        - json-ld
-        - json ld schema
-        - json-ld schema generator
-        - ld json schema generator
-        - jsonld generator
-        - schema json ld
-        - json ld builder
-        - ld json schema
-        - schema json-ld
-        - json-ld code
-      entity_definition: The WebToolkit Pro JSON-LD Schema Generator is a specialized technical SEO utility for building 'Linked Data' structures. In 2026, structured data has become the most critical component for achieving visibility in AI-driven search engines (Google SGE, Perplexity). This tool simplifies the complex process of writing Schema.org compliant scripts, allowing you to define entities like Organizations, Products, FAQs, and SoftwareApplications in a format that AI models can perfectly parse. By providing high-fidelity JSON-LD, you ensure that your site is eligible for 'Rich Results' (stars, prices, FAQs) and is cited as a primary source in generative AI summaries. Our generator is 100% client-side, ensuring your internal data models remain private.
-      how_it_works: The generator uses a schema-mapped interface that follows the official Schema.org vocabulary. As you fill out the fields, the tool dynamically constructs a valid JSON-LD <script> block. It automatically includes mandatory fields like '@context' and '@type' while providing optional fields for deep-entity linking (such as 'sameAs' for Wikidata connections).
-      use_cases:
-        - Earning Rich Snippets in Google Search Results (e.g., FAQ accordions)
-        - Establishing brand authority through 'Organization' and 'Person' schema
-        - Improving indexing for Generative Engine Optimization (GEO)
-        - Defining technical specifications for software and API tools
-        - Automating the creation of breadcrumb trails for improved site navigation
-      features:
-        - Support for 10+ major Schema.org types (Organization, Product, FAQ, etc.)
-        - Real-time valid JSON-LD script generation
-        - Deep-entity linking support (Wikidata / sameAs)
-        - Minified or Beautified output options
-        - Validation-ready code following Google's Search Console standards
-        - Instant integration with our [JSON Formatter](/tools/json-formatter) for final checks
-      faq:
-        - question: What is JSON-LD and why is it the standard for Schema markup?
-          answer: |
-            JSON-LD (JavaScript Object Notation for Linked Data) is a lightweight, standardized data format used to encode structured data on web pages. It is officially endorsed by Google, Microsoft, and the W3C as the preferred method for implementing Schema.org markup. Historically, webmasters used Microdata or RDFa, which required wrapping HTML elements with cumbersome inline attributes. JSON-LD solves this by allowing you to inject a clean, independent `<script type="application/ld+json">` block directly into your page's `<head>`. This separates your structured data from your visual HTML, making it significantly easier to generate, maintain, and audit without breaking your website's layout.
-        - question: How does a JSON-LD generator improve SEO and Rich Snippets?
-          answer: |
-            Search engine crawlers are incredibly smart, but they still struggle to infer the exact context of unstructured text. A JSON-LD schema generator explicitly defines the entities on your page.  For example, if you write a blog post, JSON-LD tells Google exactly who the author is, the date it was published, and the publisher's logo. If you sell a product, it explicitly lists the price, currency, and aggregate review ratings.  Providing this high-fidelity data allows Google to display "Rich Snippets" (like review stars, FAQ accordions, and recipe carousels) directly in the search results, which drastically increases your organic Click-Through Rate (CTR). Furthermore, in the era of Generative AI, structured data is crucial for Generative Engine Optimization (GEO), helping models like ChatGPT and Perplexity confidently cite your content.
-        - question: Where should I place the generated JSON-LD code?
-          answer: |
-            Google's guidelines state that the generated `<script type="application/ld+json">` block can be safely placed in either the `<head>` or the `<body>` of your HTML document.  However, best practice is to inject it into the `<head>` to ensure it is parsed immediately when the crawler loads the page, avoiding any issues with asynchronous JavaScript rendering or deferred body loading.
-        - question: Does this tool support the 'sameAs' property?
-          answer: Yes, you can link your entities to Wikidata or official Wikipedia pages to establish definitive authority in the global knowledge graph.
-        - question: How do I test if my schema is working?
-          answer: Use Google's 'Rich Results Test' or the official 'Schema Markup Validator' to ensure your code is error-free before publishing.
-    seo:
-      title: Schema Markup Generator — JSON-LD Structured Data
-      description: Generate valid JSON-LD Schema markup for Organizations, Local Businesses, and Websites. Enhance your Google search results with rich snippets.
-      keywords:
-        - schema markup generator
-        - json-ld generator
-        - organization schema
-        - rich snippets generator
-        - schema org builder
-      tldr: Generate structured JSON-LD schema markup to unlock Google Rich Snippets in search results.
-      entity_definition: The Schema Markup Generator is an advanced SEO tool that produces JSON-Linked Data (JSON-LD) scripts based on the standardized vocabulary defined by Schema.org. Traditional HTML tells a browser how to display information, but Schema markup tells a search engine exactly what that information means (e.g., distinguishing a string as a "Company Name" versus an "Author"). Injecting this structured data into the `<head>` of a webpage is the primary mechanism for unlocking enhanced Google Search Features, known as Rich Snippets.
-    faqs:
-      - question: What is JSON-LD and why is it preferred?
-        answer: JSON-LD (JavaScript Object Notation for Linked Data) is a method of encoding Linked Data using JSON. Google explicitly recommends JSON-LD over older methods (like Microdata) because it is a single block of script that doesn't interfere with your visible HTML layout.
-      - question: Will Schema markup guarantee a Rich Snippet?
-        answer: No. While providing perfectly valid Schema markup makes your site eligible for Rich Snippets (like star ratings, organization logos, or event dates), Google's algorithm makes the final decision on whether to display them based on site authority.
-      - question: How do I test my generated Schema?
-        answer: Once you copy the JSON-LD script from this tool and place it in your HTML, you should validate it using Google's official "Rich Results Test" tool to ensure there are no syntax errors or missing required properties.
   - name: API Latency Cost Calculator
     slug: api-latency-calculator
     category: Network & Performance
@@ -1811,169 +1742,6 @@ tools:
         answer: Cumulative Layout Shift usually happens when images load without explicit width and height attributes, causing the text to jump around. Always define dimensions for media and ads.
       - question: What replaced First Input Delay (FID)?
         answer: Interaction to Next Paint (INP) officially replaced FID in March 2024. INP is a much stricter metric that measures the latency of *all* user interactions on a page, not just the first one.
-  - name: Markdown to HTML Converter
-    slug: markdown-converter
-    category: Developer Tools
-    icon: FileCode
-    tags:
-      - markdown
-      - html
-      - converter
-      - content
-      - utility
-    priority: 10
-    releaseDate: '2026-05-01'
-    function:
-      primary: Convert Markdown text to semantic HTML code
-    technical:
-      input_formats:
-        - md
-      output_formats:
-        - html
-      processing: client-side
-    meta:
-      title: Free Markdown to HTML Converter Online — Secure & Fast
-      description: Convert your Markdown syntax into clean, valid, and semantic HTML instantly. Ideal for technical documentation, developers, and content writers. Features real-time split-screen preview and offline local processing.
-    content:
-      title: Free Markdown to HTML Converter Online — Clean Semantic Markup
-      description: Convert Markdown text to clean, semantic HTML instantly. Perfect for technical writers, content editors, and frontend developers.
-      keywords:
-        - markdown to html converter
-        - convert md to html online
-        - clean semantic html parser
-        - markdown compiler web
-        - gfm tables to html
-        - technical documentation converter
-        - markdown visual preview
-      tldr: Instantly compile lightweight Markdown syntax into structured, standard HTML5 with full GFM and codeblock preview support offline.
-      entity_definition: The Markdown to HTML Converter is a high-fidelity markup utility designed to convert lightweight Markdown syntax into structured Hypertext Markup Language (HTML) in real-time. Markdown is highly popular for its human-readable syntax, but browsers require HTML to render web content. Our engine parses headings, blockquotes, code fences, inline emphasis, tables, and lists, outputting perfectly formatted, semantic HTML that aligns with the latest W3C and web standards. The compiler preserves all standard nesting and formatting while stripping malicious script payloads to ensure secure rendering. By executing the conversion entirely inside your browser, the tool protects your unpublished draft articles, document designs, and codebase files from external visibility.
-      how_it_works: Our parser scans the input string line-by-line using optimized regular expression rules and a highly compliant markdown lexer. It converts block-level elements (headings, paragraphs, blockquotes, tables, lists) and inline elements (bold, italics, links, images, code spans) into their respective HTML5 semantic tags (e.g. <h1>, <p>, <blockquote>, <ul>). It then updates the live split-screen preview pane and compiles the raw HTML output container instantly.
-      use_cases:
-        - Converting technical documentation and README.md files into web pages instantly.
-        - Preparing blog articles and rich-text content for publication in CMS systems that accept HTML.
-        - Formatting complex tables, lists, and code blocks without writing verbose HTML manually.
-        - Sanitizing and validating markdown text structure before production deployment.
-        - Creating HTML newsletters, emails, and notes quickly from standard markdown files.
-      features:
-        - Real-time double-pane live preview showing rendered HTML as you type.
-        - Strict compliance with CommonMark and Github Flavored Markdown (GFM) standards.
-        - Automated generation of clean, semantic HTML5 markup without junk classes or tags.
-        - One-click copy actions for both raw HTML code and formatted visual preview.
-        - Complete offline functionality powered by local client-side processing.
-        - Built-in code syntax highlighting support for code block previews.
-        - Highly responsive and clean dark-mode UI optimized for technical writers.
-      faq:
-        - question: Is the generated HTML search-engine friendly (SEO)?
-          answer: 'Yes, absolutely. The converter parses your markdown headers (#, ##, ###) into semantic HTML5 headings (h1, h2, h3), lists into ul/ol, and paragraphs into standard p tags. This semantic structure is highly readable by search engines and accessibility screen readers, helping optimize your content for Google Search and AI Overviews.'
-        - question: Does this tool support Github Flavored Markdown (GFM)?
-          answer: Yes. The engine fully supports GFM elements including strikethrough, task lists, code block language formatting, and standard tables, making it highly compatible with files written for Github repositories.
-        - question: Can I use this tool offline?
-          answer: Yes. The converter loads all processing scripts on the first visit. Once loaded, all parsing logic runs locally in your browser's compiler thread. You can disconnect from the internet and continue using the tool indefinitely with zero loss in speed or functionality.
-        - question: Are my unpublished drafts secure when pasted here?
-          answer: Absolutely. Unlike online converters that send your drafts to a backend API to compile, WebToolkit Pro operates strictly client-side. Your text never leaves your device, keeping your proprietary articles, designs, and notes safe from server logs or third-party tracking.
-        - question: Does the converter support custom HTML tags inline?
-          answer: Yes, standard Markdown specifications allow inline HTML tags. Our parser will safely pass-through valid, standard HTML elements, allowing you to combine Markdown convenience with precise HTML customizations.
-      technical_specs:
-        - label: Parser Engine
-          value: CommonMark Lexer V3.0
-        - label: HTML Standard
-          value: Semantic HTML5 (W3C Standard)
-        - label: Tables / Tasks Support
-          value: Full GFM Compliance
-        - label: Preview Latency
-          value: 0ms (Real-Time Parsing)
-        - label: Asset Compilation
-          value: Client-Side (100% Offline)
-        - label: Draft Security
-          value: Zero Server Transmission
-    seo:
-      title: Markdown to HTML Converter — Render Markdown Code Online
-      description: Convert Markdown syntax to clean, valid HTML instantly. Supports headings, bold text, lists, and inline code formatting for developers and writers.
-      keywords:
-        - markdown to html
-        - markdown converter online
-        - md to html generator
-        - render markdown code
-        - markdown formatter
-      tldr: Instantly compile and render raw Markdown syntax into valid, production-ready HTML.
-      entity_definition: 'Markdown is a lightweight markup language created by John Gruber that allows writers to format text using plain-text syntax (like asterisks for bolding). The WebToolkit Pro Markdown to HTML Converter operates as a real-time parsing engine. It utilizes advanced Regular Expressions (Regex) to scan the raw Markdown input, identify formatting tokens (e.g., # for H1, ** for strong tags), and programmatically translate them into structurally valid, semantically correct HTML5 markup. This is an essential utility for technical writers migrating documentation into CMS platforms that require strict HTML.'
-    faqs:
-      - question: Why use Markdown instead of HTML?
-        answer: Markdown is vastly superior for human readability and writing speed. Writing <strong>Bold Text</strong> in HTML requires opening and closing tags, whereas Markdown simply requires **Bold Text**. It allows authors to focus on content flow rather than structural code.
-      - question: Is Markdown universally standard?
-        answer: While the original Markdown spec is standard, several "flavors" exist (like GitHub Flavored Markdown) which introduce extended features such as tables, task lists, and fenced code blocks. This tool supports core Markdown formatting syntax.
-      - question: Can I inject JavaScript into the Markdown?
-        answer: For security reasons, this client-side converter aggressively sanitizes the output by isolating structural tags (like H1 and lists). It will not execute `<script>` tags, making it safe for generating content for web publishing.
-  - name: Markdown Previewer
-    slug: markdown-previewer
-    category: Design Tools
-    icon: Layout
-    tags:
-      - markdown
-      - preview
-      - editor
-      - documentation
-      - utility
-    priority: 10
-    releaseDate: '2026-05-01'
-    function:
-      primary: Live side-by-side Markdown editing and previewing
-    technical:
-      input_formats:
-        - md
-      output_formats:
-        - preview
-      processing: client-side
-    meta:
-      title: Markdown Previewer — Live Side-by-Side Editor & Renderer
-      description: Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files.
-    content:
-      title: Markdown Previewer — Live Side-by-Side Editor & Renderer
-      description: Write and preview Markdown in real-time. Generate clean HTML for your technical documentation and README files.
-      keywords:
-        - markdown previewer online
-        - live markdown editor
-        - github flavored markdown preview
-        - md renderer browser
-        - write markdown with preview
-        - visualize markdown text
-      entity_definition: The Markdown Previewer is an immersive, live-rendering text editor built specifically for developer documentation. Markdown is the industry standard for writing READMEs, technical documentation, and static site content because it allows formatting without writing heavy HTML. However, complex tables or nested lists can be difficult to visualize in raw text. This tool provides a professional split-view interface where developers can write raw Markdown and instantly see the perfectly formatted HTML output.
-      how_it_works: The editor is powered by a high-performance, client-side Markdown parsing engine (such as marked.js). The engine binds directly to the keystroke events of the raw text input. As you type, the tool instantly tokenizes the text and renders the corresponding HTML into an isolated, beautifully styled 'prose' container on the right side of the screen, providing zero-latency visual feedback.
-      use_cases:
-        - Drafting complex `README.md` files for open-source GitHub repositories before pushing commits.
-        - Writing technical blog posts or documentation for static site generators like Astro or Nextra.
-        - Testing complex Markdown table formatting without needing to configure a local development environment.
-        - Learning standard Markdown syntax through interactive, immediate visual reinforcement.
-      features:
-        - Real-time, zero-latency rendering of standard and GitHub-flavored Markdown.
-        - Beautiful, GitHub-inspired typography and syntax highlighting for code blocks.
-        - Scroll-sync functionality to keep the editor and preview pane perfectly aligned.
-        - 100% offline functionality ensures your drafts remain private and secure.
-      faq:
-        - question: What is GitHub Flavored Markdown (GFM)?
-          answer: GFM is a strict superset of standard Markdown adopted by GitHub. It adds critical functionality for developers, such as task lists (checkboxes), strikethroughs, automatic URL linking, and advanced table formatting. Our previewer supports these extensions out of the box.
-        - question: Can I use HTML tags inside the Markdown?
-          answer: Yes. Standard Markdown protocol allows for raw HTML to be embedded directly into the document. If you need a specific layout (like centering an image or changing text color) that Markdown doesn't natively support, you can simply write the HTML tags, and the previewer will render them securely.
-        - question: Does this support syntax highlighting for code blocks?
-          answer: Absolutely. If you use 'fenced code blocks' (three backticks) and specify a language identifier (like ` ```javascript `), the previewer will automatically apply beautiful, IDE-style syntax highlighting to the code snippet.
-    seo:
-      title: Live Markdown Previewer — Real-Time Visual Editor
-      description: Write Markdown code and view the fully formatted visual output in real-time. The best offline Markdown editor and live preview tool for developers.
-      keywords:
-        - live markdown previewer
-        - markdown editor online
-        - real time markdown reader
-        - markdown visualizer
-        - test markdown code
-      tldr: Write Markdown in an isolated editor and visualize the formatted output in real-time.
-      entity_definition: The Live Markdown Previewer is a dual-pane text editor designed for Developer Experience (DX). While Markdown is readable in plain text, complex documents containing blockquotes, nested lists, and inline code can become difficult to visualize. This tool binds a real-time parsing algorithm to the keystroke event of the input textarea. As you type, the engine instantly compiles the Markdown tokens and renders them into the DOM as styled HTML elements in the adjacent visual pane. Because processing happens entirely client-side, it operates with zero network latency.
-    faqs:
-      - question: Do I need to install anything to use this previewer?
-        answer: No. The WebToolkit Pro Markdown Previewer runs entirely within your browser's local JavaScript engine. No server requests are made during typing, ensuring total privacy and instantaneous rendering speeds.
-      - question: How do I create a blockquote in Markdown?
-        answer: To create a blockquote, simply start the line with a greater-than sign (>) followed by a space. The previewer will instantly render this as an indented, stylized quote block.
-      - question: Can I copy the HTML output?
-        answer: Yes! The tool includes a dedicated "Copy HTML" function that captures the underlying DOM structure of your formatted preview, allowing you to easily paste it into email clients or Content Management Systems.
   - name: Robots.txt Templates
     slug: robots-txt-templates
     category: SEO Tools
@@ -3089,79 +2857,6 @@ tools:
         answer: Unserializing untrusted user input in PHP can lead to severe Object Injection vulnerabilities. However, using this tool is completely safe because it converts the data into static JSON rather than executing it as code.
       - question: What do the letters in PHP serialization mean?
         answer: The letters indicate the data type. `a` stands for Array, `s` for String, `i` for Integer, and `b` for Boolean. The number following it indicates length or count.
-  - name: QR Code Generator
-    slug: qr-code-generator
-    category: Generators
-    icon: QrCode
-    subcategory: marketing-tools
-    tags:
-      - qr
-      - generator
-      - code
-      - barcode
-      - scan
-    priority: 15
-    releaseDate: '2026-05-13'
-    function:
-      primary: Generate high-quality QR codes
-      secondary: Create scanable codes for URLs and text
-    meta:
-      title: 'QR Code Generator: Create High-Res Scannable Codes'
-      description: Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly with high-resolution PNG downloads.
-    content:
-      title: QR Code Generator — Create Scannable Codes Online
-      description: Create high-quality, professional QR codes for free. Generate scanable codes for URLs, contact info, or text instantly with high-resolution PNG downloads.
-      keywords:
-        - qr code generator online
-        - create high-res qr codes
-        - scannable code builder
-        - qr code for wifi
-        - custom qr code with text
-        - vector qr code generator
-        - free qr code maker
-      tldr: Instantly create high-resolution, perfectly scannable QR codes for your URLs, WiFi networks, and digital business cards.
-      entity_definition: A QR Code Generator is a digital encoding utility that converts human-readable text into a machine-readable 2D matrix barcode. Whether you are directing foot traffic to a restaurant menu, sharing a complex WiFi password, or linking to a marketing landing page, QR codes bridge the physical and digital worlds. Unlike generic generators that output blurry images, our tool utilizes a specialized canvas matrix algorithm to render crisp, high-resolution QR codes that scan instantly on any iPhone or Android camera.
-      how_it_works: When you type a URL or text into the input field, our client-side JavaScript engine instantly mathematically encodes the string using standard Reed-Solomon error correction. It maps this data into a visual grid of black and white modules and draws it directly onto an HTML5 Canvas, allowing you to download it as a high-fidelity image.
-      use_cases:
-        - Generating touch-free digital restaurant menus.
-        - Embedding URLs onto printed business cards or marketing flyers.
-        - Creating instant WiFi login codes for cafe or office guests.
-        - Linking directly to app store downloads from physical billboards.
-      features:
-        - Ultra-fast real-time rendering as you type.
-        - Built-in Error Correction allowing codes to be scanned even if partially covered or damaged.
-        - High-resolution PNG exports guaranteed not to blur during professional printing.
-        - 100% offline local processing to guarantee maximum data privacy.
-      faq:
-        - question: Do these QR codes ever expire or stop working?
-          answer: No. These are 'Static' QR codes, meaning the actual URL or text is permanently hardcoded into the visual black-and-white squares. There is no middleman redirection service. As long as the destination URL remains active, the QR code will scan flawlessly forever.
-        - question: Why is the downloaded image better than just taking a screenshot?
-          answer: Taking a screenshot on your computer often results in compression artifacts and blurry edges, which confuses smartphone cameras and leads to failed scans. Our download button extracts the raw, uncompressed mathematical vector data from the canvas, ensuring pixel-perfect sharpness.
-        - question: Are my destination URLs being tracked or saved by this tool?
-          answer: Absolutely not. Because our generator relies entirely on client-side processing, the text or links you input are never transmitted over the internet or saved in any database.
-      technical_specs:
-        - label: Engine
-          value: qrcode.js
-        - label: Output
-          value: PNG / Canvas
-    seo:
-      title: QR Code Generator — Create Custom QR Codes
-      description: Generate high-resolution, custom QR codes for URLs, text, WiFi passwords, and vCards. Download in PNG or SVG formats for print and digital marketing.
-      keywords:
-        - qr code generator
-        - create custom qr code
-        - generate wifi qr code
-        - qr code maker png
-        - high resolution qr code
-      tldr: Generate high-resolution, scannable QR codes for URLs, WiFi networks, and digital business cards.
-      entity_definition: The QR Code Generator is a digital encoding utility. A Quick Response (QR) code is a two-dimensional matrix barcode that stores data—such as URLs, text, or VCard contact info—as a grid of black and white squares. This tool utilizes matrix encoding algorithms to instantly translate alphanumeric input into a strictly formatted visual grid that is instantly readable by smartphone cameras, outputting scalable vector (SVG) or raster (PNG) image files.
-    faqs:
-      - question: Do QR codes expire?
-        answer: No. The QR codes generated by this tool are "Static." The data is hardcoded directly into the squares of the image. As long as the URL or text you encoded remains valid, the QR code will work forever.
-      - question: What is error correction?
-        answer: QR codes have built-in redundancy (Error Correction). This means that even if a portion of the QR code is damaged, dirty, or covered up by a logo, the scanner can still mathematically reconstruct the missing data.
-      - question: Why should I download as SVG?
-        answer: SVG (Scalable Vector Graphics) is a mathematical image format. Unlike a PNG, an SVG can be scaled up to the size of a massive billboard without ever losing quality or becoming pixelated.
   - name: Professional Image Resizer
     slug: image-resizer
     category: Design Tools
@@ -3808,76 +3503,6 @@ tools:
         answer: This tool performs a non-destructive string replacement. It outputs a new block of text with the data redacted. It does not alter your original source file.
       - question: Is my text processed securely?
         answer: Yes. The regex scanning and masking occurs 100% locally in your browser. Your sensitive logs are never transmitted to our servers.
-  - name: SQL Injection Sanitizer (Sim)
-    slug: sql-sanitizer
-    category: Developer Tools
-    icon: Database
-    subcategory: security-audit
-    tags:
-      - security
-      - sql
-      - injection
-      - audit
-      - database
-    priority: 7
-    releaseDate: '2026-05-15'
-    function:
-      primary: Audit SQL for potential injection risks
-      secondary: Identify unescaped inputs and dangerous query patterns
-    technical:
-      input_formats:
-        - sql
-      output_formats:
-        - risk-report
-      processing: client-side
-    meta:
-      title: SQL Injection Sanitizer — Audit Database Security Online
-      description: Identify potential SQL injection risks in your queries and code. A professional utility for auditing dangerous query patterns and improving your database security posture.
-    content:
-      title: SQL Sanitizer — Protect Your Database from Attacks
-      description: Identify potential SQL injection risks in your queries and code. A professional utility for auditing dangerous query patterns and improving your database security posture.
-      keywords:
-        - audit sql for injection risks
-        - secure query builder helper
-        - sql injection detector online
-        - prevent sql injection in web apps
-        - database security audit online
-        - test sql for malicious inputs
-      tldr: Spot dangerous SQL injection patterns and unescaped inputs before they compromise your database.
-      entity_definition: SQL Injection Sanitizer (Sim) is a security-focused diagnostic utility. SQL injection is a vulnerability where an attacker can interfere with the queries that an application makes to its database. This tool scans SQL strings for common attack vectors—such as 'OR 1=1', union-based injections, and time-based delays—to help developers secure their data layer.
-      how_it_works: The tool analyzes the SQL structure and identifies 'Injection Hotspots' where untrusted data could bypass security checks, providing recommendations for using parameterized queries.
-      use_cases:
-        - Auditing legacy database code
-        - Testing application query-building logic
-        - Educational demonstrations of SQL injection vectors
-      features:
-        - Identification of common injection patterns
-        - Detection of comment-based bypasses
-        - Risk-level categorization
-        - Parameterized query recommendations
-      faq:
-        - question: How do I prevent SQL injection?
-          answer: Always use prepared statements (parameterized queries) provided by your database driver instead of concatenating strings.
-        - question: Does this tool work for all databases?
-          answer: It focuses on standard SQL patterns common to MySQL, PostgreSQL, and SQL Server.
-    seo:
-      title: SQL Sanitizer — Escape Queries and Prevent SQLi
-      description: Sanitize raw SQL queries by escaping quotes and removing malicious characters. Protect against SQL injection attacks with this educational security tool.
-      keywords:
-        - sql sanitizer
-        - escape sql query
-        - prevent sql injection
-        - clean sql string
-        - database query sanitizer
-      tldr: Clean raw SQL strings by escaping dangerous characters and truncations.
-      entity_definition: The SQL Sanitizer is an educational security utility designed to demonstrate database defense mechanisms. SQL Injection occurs when untrusted user input alters a query's logic. This tool simulates a basic sanitization pipeline by executing string replacements—such as escaping single quotes (`'` to `''`) and stripping comment truncations (`--` or `;`)—to neutralize the payload and lock the query's intended logic.
-    faqs:
-      - question: Can I use this in production?
-        answer: No. While string escaping provides basic protection, the modern, industry-standard way to prevent SQL injection in production is to use Prepared Statements (Parameterized Queries) or an ORM.
-      - question: Why do we escape single quotes?
-        answer: In SQL, single quotes define the beginning and end of a string. If an attacker inputs a quote, they can "break out" of the string and execute their own commands. Escaping it neutralizes the threat.
-      - question: Why remove semicolons?
-        answer: A semicolon allows attackers to append entirely new, destructive queries (like `DROP TABLE users`) after the original query finishes executing. This is known as a Stacked Query attack.
   - name: Cron Expression Descriptor
     slug: cron-descriptor
     category: Developer Tools
@@ -4020,79 +3645,6 @@ tools:
         answer: The `+` is a quantifier that tells the regex engine to match the preceding character (or group) "one or more times".
       - question: Why is Regex so difficult to read?
         answer: Because nearly every symbol has a dual meaning. For instance, a dot (`.`) matches any character, but if it is escaped (`\.`), it literally matches a period.
-  - name: SQL Query Minifier
-    slug: sql-minifier
-    category: Developer Tools
-    icon: Database
-    subcategory: parsing-utilities
-    tags:
-      - sql
-      - database
-      - minifier
-      - performance
-      - dev
-    priority: 7
-    releaseDate: '2026-05-15'
-    function:
-      primary: Compress and minify SQL queries
-      secondary: Remove comments and extra whitespace for production code
-    technical:
-      input_formats:
-        - sql
-      output_formats:
-        - sql
-      processing: client-side
-    meta:
-      title: SQL Minifier Online — Minify SQL Database Queries
-      description: Minify SQL database queries instantly with our secure online SQL minifier. Strip comments, spaces, and formatting to optimize queries 100% client-side.
-    content:
-      title: SQL Minifier — Compress & Optimize Database Queries
-      description: Minify SQL database queries instantly with our secure online SQL minifier. Strip comments, spaces, and formatting to optimize queries 100% client-side.
-      keywords:
-        - minify sql
-        - sql minifier
-        - compress sql code online
-        - sql query minifier free
-        - remove sql comments
-        - optimize sql database query
-      tldr: Compress complex, multi-line SQL queries into a clean, single-line executable string by safely removing comments and whitespace.
-      entity_definition: The SQL Minifier is an essential database utility designed to prepare readable SQL queries for application integration. When Database Administrators construct complex JOIN operations or nested subqueries, they rely on heavy indentation and inline comments (`--` or `/* */`) to maintain readability. However, when these queries must be hardcoded into Python, Node.js, or PHP applications, massive multi-line strings can cause syntax issues, bloat memory payloads, and trigger linter warnings. This tool safely strips out all non-functional characters, collapsing the query into a single continuous line optimized for code injection.
-      how_it_works: Our client-side SQL parser leverages intelligent regular expressions to identify and strip out single-line (`--`) and multi-line (`/* */`) comments. It then collapses all line breaks and consecutive spaces into a single space, while ensuring that the literal strings inside your `SELECT` or `WHERE` clauses (wrapped in quotes) remain completely untouched.
-      use_cases:
-        - Converting complex, beautifully formatted PostgreSQL scripts into single-line strings for ORM raw query execution.
-        - Reducing the memory footprint and network payload size of database migration scripts.
-        - Cleaning up raw SQL dumps exported from tools like phpMyAdmin or DBeaver before importing them via command line.
-        - Sanitizing SQL logs for easier storage in logging systems like Datadog or Splunk.
-      features:
-        - Safely collapses multi-line SQL into a single, highly dense executable string.
-        - Intelligent comment removal that ignores double-dashes inside literal string quotes.
-        - Universal dialect support (works flawlessly with MySQL, PostgreSQL, SQLite, and SQL Server).
-        - 100% private processing executed entirely within your browser's RAM.
-      faq:
-        - question: Does minifying SQL actually make the database run faster?
-          answer: Not necessarily. Minification slightly reduces the amount of data sent over the network to the database server, which can marginally speed up the initial parsing phase. However, the actual execution speed of the query (how fast it retrieves rows) depends entirely on your indexes and query structure, not whitespace.
-        - question: Is it safe to minify queries with complex nested JOINs?
-          answer: Yes. The minifier strictly removes comments and collapses whitespace. It preserves all functional characters, keywords, parenthesis, and literal strings, ensuring your query logic remains 100% identical.
-        - question: What happens to the strings inside my `WHERE` clauses?
-          answer: Our parser is context-aware. If you have a query like `WHERE name = 'John  -- Doe'`, the tool recognizes the single quotes and will not touch the internal double-spaces or the double-dashes. Your literal data is perfectly protected.
-    seo:
-      title: SQL Minifier — Optimize Database Queries Online
-      description: Minify SQL database queries instantly. Strip comments, line breaks, and unnecessary spaces to prepare clean SQL statements for application code injection.
-      keywords:
-        - sql minifier
-        - compress sql query
-        - sql optimizer online
-        - minify sql code
-        - format sql to one line
-      tldr: Compress complex, multi-line SQL queries into a clean, single-line executable string.
-      entity_definition: The SQL Minifier is a database utility designed to prepare readable SQL queries for application integration. When Database Administrators construct complex JOIN operations or nested subqueries, they rely on heavy indentation and inline comments (`--` or `/* */`). However, when these queries are hardcoded into Python, Node.js, or PHP applications, multi-line strings can cause syntax issues and bloated string payloads. This tool safely strips out all comments and collapses the query into a single, continuous line without breaking operator logic.
-    faqs:
-      - question: Does minifying SQL make the database execute it faster?
-        answer: No. The actual execution speed of the query on the database engine (like PostgreSQL or MySQL) is determined by its query planner and indexes. Minification only reduces the byte size of the string sent over the network to the database server.
-      - question: Are single-line comments safely removed?
-        answer: Yes. Single-line comments (starting with `--`) are notoriously dangerous when converting SQL to a single line, as they will accidentally comment out the rest of the query. Our tool safely identifies and deletes them before collapsing the lines.
-      - question: Does this tool work for NoSQL databases?
-        answer: No, this minifier is strictly calibrated for standard relational SQL syntax (MySQL, PostgreSQL, SQL Server). NoSQL databases typically use JSON or BSON formats, which should be compressed using our JSON Minifier instead.
   - name: HTML Table to JSON Extractor
     slug: html-table-to-json
     category: Developer Tools
@@ -6428,76 +5980,6 @@ tools:
         answer: Android Chrome does not natively support the exact same meta tag as Apple. Instead, Android relies on Web App Manifests or custom JavaScript implementations to display equivalent "Add to Home Screen" or app install prompts.
       - question: What is the "app-argument" parameter?
         answer: The `app-argument` provides a specific URL or deep-link context. If the user already has your app installed, clicking the banner will open the app and pass this argument, allowing you to route them directly to the specific product or page they were viewing on the web.
-  - name: Breadcrumb Schema Generator
-    slug: breadcrumb-schema
-    category: SEO Tools
-    icon: ChevronRight
-    subcategory: technical-seo
-    tags:
-      - schema
-      - breadcrumb
-      - seo
-      - json-ld
-      - structured-data
-    priority: 8
-    releaseDate: '2026-05-15'
-    function:
-      primary: Create BreadcrumbList JSON-LD for SEO
-      secondary: Build hierarchical navigation markup for Google snippets
-    technical:
-      input_formats:
-        - none
-      output_formats:
-        - json-ld
-      processing: client-side
-    meta:
-      title: Breadcrumb Schema Generator — Create JSON-LD Markup
-      description: Generate perfectly formatted BreadcrumbList JSON-LD schema for your website. Improve your search snippets and help users understand your site's hierarchy.
-    content:
-      title: Breadcrumb Schema Generator — Improve Search Navigation
-      description: Generate perfectly formatted BreadcrumbList JSON-LD schema for your website. Improve your search snippets and help users understand your site's hierarchy.
-      keywords:
-        - create breadcrumb json-ld for seo
-        - breadcrumb markup builder
-        - generate breadcrumb schema online
-        - structured data for navigation
-        - breadcrumb snippet generator
-        - seo breadcrumb helper
-      tldr: Improve your search engine appearance and site navigation with perfectly structured BreadcrumbList schema.
-      entity_definition: Breadcrumb Schema Generator is a technical SEO utility that creates structured data for page navigation. By defining the hierarchy of a page within a site (e.g., Home > Category > Product), it allows Google to display a clean breadcrumb trail in search results instead of a messy URL string.
-      how_it_works: Users input the names and URLs of their breadcrumb levels, and the tool generates a valid JSON-LD block that follows the Schema.org BreadcrumbList specification.
-      use_cases:
-        - Optimizing e-commerce category pages
-        - Improving search snippet layout for blogs
-        - Enhancing site navigation clarity for crawlers
-      features:
-        - Support for multiple hierarchy levels
-        - Automatic JSON-LD syntax formatting
-        - Real-time visual breadcrumb preview
-        - One-click copy to clipboard
-      faq:
-        - question: Do breadcrumbs help SEO?
-          answer: Yes. They improve internal linking and help Google understand the relationship between different parts of your site.
-        - question: Can I have two different breadcrumbs on one page?
-          answer: It is recommended to have one primary path to avoid confusing both users and search engines.
-    seo:
-      title: Breadcrumb Schema Generator — JSON-LD SEO Output
-      description: Generate standard JSON-LD BreadcrumbList schema markup. Help Google understand your site structure and display rich breadcrumb navigation in search results.
-      keywords:
-        - breadcrumb schema generator
-        - json-ld breadcrumb list
-        - seo breadcrumb markup
-        - generate rich snippets
-        - google breadcrumb schema
-      tldr: Generate structured JSON-LD BreadcrumbList markup to secure rich snippets in Google.
-      entity_definition: The Breadcrumb Schema Generator is a structured data utility. A breadcrumb trail indicates a page's position in the site hierarchy. By embedding `BreadcrumbList` JSON-LD schema into your HTML, you explicitly feed this hierarchy to search engine crawlers. This tool allows SEOs to input URL paths and automatically outputs the strict, error-free JSON-LD code required by Google to display rich, clickable breadcrumb navigation directly in the SERP.
-    faqs:
-      - question: What is JSON-LD?
-        answer: JavaScript Object Notation for Linked Data (JSON-LD) is a lightweight Linked Data format. It is Google's officially recommended method for embedding structured data markup on web pages.
-      - question: Do breadcrumbs improve SEO?
-        answer: Yes. They drastically improve the crawler's understanding of your site architecture and internal linking. Rich breadcrumbs in the SERP also take up more visual real estate, improving Click-Through Rates (CTR).
-      - question: Where should I put the JSON-LD code?
-        answer: You should place the generated `<script type="application/ld+json">` block within the `<head>` section of your HTML document, though placing it right before the closing `</body>` tag is also valid.
   - name: FAQ Schema Generator
     slug: faq-schema
     category: SEO Tools
@@ -7415,77 +6897,6 @@ tools:
         answer: To provide accurate insights, the analyzer automatically filters out extremely short words (typically 3 letters or fewer) that provide no semantic value to search engines, ensuring your analysis focuses purely on topical keywords.
       - question: Why is analyzing keyword frequency important?
         answer: Search engines use Term Frequency-Inverse Document Frequency (TF-IDF) algorithms to determine what a page is actually about. Analyzing your text ensures your core topic is statistically prominent without looking unnatural.
-  - name: JSON-LD Schema Validator
-    slug: schema-validator
-    category: SEO Tools
-    icon: Code
-    subcategory: technical-seo
-    tags:
-      - schema
-      - json-ld
-      - validator
-      - structured-data
-      - google
-    priority: 9
-    releaseDate: '2026-05-15'
-    function:
-      primary: Validate and debug JSON-LD structured data
-      secondary: Verify Schema.org compliance for rich search snippets
-    technical:
-      input_formats:
-        - json
-        - txt
-      output_formats:
-        - validation-report
-      processing: client-side
-    meta:
-      title: JSON-LD Schema Validator — Validate Structured Data Online
-      description: Debug and validate your JSON-LD schema markup. Ensure your structured data is compliant with Schema.org standards to qualify for Google rich search results and snippets.
-    content:
-      title: Schema Validator — Verify Your Structured Data
-      description: Debug and validate your JSON-LD schema markup. Ensure your structured data is compliant with Schema.org standards to qualify for Google rich search results and snippets.
-      keywords:
-        - validate schema markup online
-        - json-ld syntax checker
-        - test structured data for google
-        - schema.org validator free
-        - debug rich snippets online
-        - check website schema markup
-      tldr: Ensure your structured data is perfect for search engines with our real-time JSON-LD schema validator.
-      entity_definition: JSON-LD Schema Validator is a technical SEO utility for auditing structured data. It parses JSON-LD blocks to identify syntax errors, missing required properties (like 'name' or 'image'), and structural inconsistencies that could prevent a page from appearing with 'Rich Results' (stars, prices, FAQs) in Google Search.
-      how_it_works: The tool utilizes a strict JSON parser and a schema-mapping engine to cross-reference your markup against the official Schema.org vocabularies.
-      use_cases:
-        - Debugging rich results eligibility
-        - Validating automated schema generation from a CMS
-        - 'Fixing ''Parsing error: Missing } or ]'' in Search Console'
-      features:
-        - Real-time syntax and structural validation
-        - Detection of missing recommended properties
-        - Support for Article, Product, FAQ, and more
-        - Clean error reporting with line numbers
-      faq:
-        - question: Why is structured data important?
-          answer: It helps search engines understand the context of your content, which can lead to enhanced display features like star ratings.
-        - question: Does this tool support Microdata?
-          answer: Currently, we focus on JSON-LD, as it is the format officially recommended by Google for structured data.
-    seo:
-      title: JSON Schema Validator — Validate JSON Data
-      description: Validate your JSON data against a strict JSON Schema (Draft 04/06/07). Instantly identify structural errors, missing properties, and type mismatches.
-      keywords:
-        - json schema validator
-        - validate json against schema
-        - json draft 07 validator
-        - test json schema
-        - json data validation tool
-      tldr: Validate a JSON payload against a strict JSON Schema definition to find structural errors.
-      entity_definition: The JSON Schema Validator is a data integrity utility. While JSON is the standard format for API data transfer, it lacks inherent structural rules. JSON Schema (e.g., Draft-07) is a vocabulary that enforces strict rules on a JSON object (like requiring specific keys, or enforcing that an `age` field must be an integer). This tool takes both a JSON payload and a JSON Schema, algorithmically evaluating the payload to flag exact line-number errors for any type mismatches or missing required properties.
-    faqs:
-      - question: What is a required property?
-        answer: In a JSON Schema, the `required` array explicitly lists the keys that MUST be present in the JSON object. If the payload omits one of these keys, the validator throws a strict error.
-      - question: Can I validate complex nested objects?
-        answer: Yes. JSON Schema supports deeply nested validation. You can define specific schemas for objects inside arrays, ensuring every element in a list strictly conforms to your data model.
-      - question: What is the difference between JSON Linting and Schema Validation?
-        answer: Linting (or parsing) only checks if the JSON has correct syntax (like missing commas or quotes). Schema validation checks if the *data itself* is logically correct (e.g., an email field actually contains an `@` symbol).
   - name: Nginx Configuration Generator
     slug: nginx-generator
     category: Developer Tools
@@ -8205,78 +7616,6 @@ tools:
         answer: No, standard JWTs are encoded, not encrypted. Anyone who intercepts a JWT can easily Base64-decode the payload and read the data (like user IDs). This is why you should never store passwords or sensitive data in a JWT payload.
       - question: What is the signature for?
         answer: The cryptographic signature ensures the token hasn't been tampered with. If a hacker alters the payload to give themselves "admin" privileges, the signature will become invalid, and the server will reject the token.
-  - name: Markdown to HTML Converter
-    slug: markdown-to-html
-    category: Developer Tools
-    icon: FileCode
-    subcategory: data-conversion
-    tags:
-      - markdown
-      - html
-      - converter
-      - documentation
-      - github-flavored
-    priority: 7
-    releaseDate: '2026-05-15'
-    function:
-      primary: Convert Markdown to production-ready HTML
-      secondary: GitHub-flavored markdown support with live preview
-    technical:
-      input_formats:
-        - md
-        - txt
-      output_formats:
-        - html
-        - txt
-      processing: client-side
-    meta:
-      title: 'Markdown to HTML Converter: GitHub-Flavored Preview'
-      description: Transform your Markdown files into clean, professional HTML. Supports GitHub-flavored markdown (GFM) with real-time preview and one-click code generation.
-    content:
-      title: Markdown to HTML Converter — Fast Documentation Tool
-      description: Transform your Markdown files into clean, professional HTML. Supports GitHub-flavored markdown (GFM) with real-time preview and one-click code generation.
-      keywords:
-        - markdown to html converter online
-        - md to html with preview
-        - convert gfm to html
-        - markdown documentation builder
-        - github flavored markdown editor
-        - online markdown renderer
-      tldr: Convert Markdown to clean HTML with real-time preview and full support for GitHub-flavored syntax.
-      entity_definition: Markdown to HTML Converter is a content utility that translates lightweight markup into standard web elements. It supports tables, task lists, and syntax highlighting, making it an essential tool for developers preparing README files, blog posts, or technical documentation for web publication.
-      how_it_works: Our engine uses a high-performance markdown parser that maps GFM syntax to semantic HTML5 tags, ensuring accessibility and structural integrity.
-      use_cases:
-        - Preparing GitHub READMEs for web publication
-        - Converting notes into blog post drafts
-        - Rapid prototyping of documentation pages
-      features:
-        - Side-by-side live preview
-        - GitHub-Flavored Markdown (GFM) support
-        - Minified or formatted HTML output
-        - Drag-and-drop file support
-      faq:
-        - question: What flavor of Markdown is supported?
-          answer: We support CommonMark and the widely used GitHub-Flavored Markdown (GFM).
-        - question: Can I use custom CSS for the preview?
-          answer: The preview uses our premium brand design system for a clean, professional look.
-    seo:
-      title: Markdown to HTML Converter — Fast Markdown Parser
-      description: Convert Markdown text to valid HTML instantly. A secure client-side Markdown parser for web developers, copywriters, and content creators.
-      keywords:
-        - markdown to html
-        - md to html converter
-        - convert md to html
-        - markdown parser online
-        - markdown renderer
-      tldr: Parse lightweight Markdown text and render it into fully valid HTML structural code.
-      entity_definition: The Markdown to HTML Converter is a text parsing utility that translates lightweight Markdown syntax into raw HyperText Markup Language (HTML). Markdown was explicitly designed to be easy for humans to write, utilizing symbols like `#` for headings and `**` for bold text. However, web browsers only understand HTML. This tool bridges that gap by executing a regex parsing engine that captures Markdown symbols and wraps the content in the corresponding HTML DOM nodes (like `<h1>` or `<strong>`), preparing it for web deployment.
-    faqs:
-      - question: Does this converter output a full HTML page?
-        answer: No. The converter outputs "HTML fragments," meaning it only translates the specific text nodes you provide. It does not wrap the output in `<html>`, `<head>`, or `<body>` tags, assuming you will inject the code directly into an existing layout.
-      - question: Can I see a live preview of the HTML?
-        answer: Yes! The tool features a real-time rendering engine. As you type your Markdown on the left, you can instantly see both the raw HTML output and the visually rendered content simultaneously.
-      - question: Does it support GitHub Flavored Markdown (GFM)?
-        answer: This utility supports the core standard Markdown syntax (headings, bold, italics, quotes, lists, links, inline code). Complex GFM features like task lists or advanced nested tables may require manual HTML tweaking.
   - name: Curl to Fetch/Axios Converter
     slug: curl-converter
     category: Developer Tools
@@ -8925,78 +8264,6 @@ tools:
         answer: 'No. In CSS syntax, the semicolon acts as a separator between multiple rules. The very last rule inside a bracket block (e.g., `color: red}`) does not mathematically require a semicolon. Removing them safely saves bytes across thousands of classes.'
       - question: Should I minify CSS during development or production?
         answer: You should strictly keep your CSS unminified (formatted) during development so it remains readable for humans. You should only run your CSS through a minifier as the final step before deploying to a production server.
-  - name: SQL Formatter & Beautifier
-    slug: sql-formatter
-    category: Developer Tools
-    icon: Database
-    subcategory: data-formatting
-    tags:
-      - sql
-      - formatter
-      - beautifier
-      - database
-      - query-optimizer
-    priority: 8
-    releaseDate: '2026-05-15'
-    function:
-      primary: Beautify and structure SQL queries
-      secondary: Support for MySQL, PostgreSQL, and SQL Server dialects
-    technical:
-      input_formats:
-        - sql
-        - txt
-      output_formats:
-        - sql
-        - txt
-      processing: client-side
-    meta:
-      title: SQL Formatter & Beautifier — Structure Complex Database Queries
-      description: Format complex SQL queries instantly for better readability and debugging. Our professional beautifier supports MySQL, PostgreSQL, and standard SQL syntax with custom indentation.
-    content:
-      title: SQL Formatter — Professional Query Beautification
-      description: Format complex SQL queries instantly for better readability and debugging. Our professional beautifier supports MySQL, PostgreSQL, and standard SQL syntax with custom indentation.
-      keywords:
-        - sql formatter online
-        - beautify sql queries
-        - sql query beautifier
-        - format mysql code
-        - postgresql formatter
-        - database query cleaner
-      tldr: Turn messy, unreadable SQL queries into structured, professional code blocks for better debugging and collaboration.
-      entity_definition: SQL Formatter & Beautifier is a database utility designed to improve the readability of Structured Query Language. It intelligently indents keywords, aligns clauses (like SELECT, FROM, JOIN), and manages subqueries to make complex database logic easily understandable for humans.
-      how_it_works: Our parser identifies SQL keywords and structural markers, applying a consistent indentation and line-breaking strategy based on standard database engineering practices.
-      use_cases:
-        - Debugging complex nested JOINs
-        - Formatting SQL for documentation and reports
-        - Standardizing query style across engineering teams
-      features:
-        - Dialect-aware formatting (MySQL, Postgres, etc.)
-        - Customizable indentation levels
-        - Keyword capitalization toggling
-        - Instant code block generation
-      faq:
-        - question: Does this store my database queries?
-          answer: No. All formatting happens locally in your browser. Your sensitive database logic remains private.
-        - question: Can it handle subqueries?
-          answer: Yes, our formatter is designed to handle deeply nested subqueries and complex CTEs.
-    seo:
-      title: SQL Formatter & Beautifier — Format SQL Queries
-      description: Format, beautify, and minify complex SQL queries instantly. Supports MySQL, PostgreSQL, and SQL Server dialects for improved readability and debugging.
-      keywords:
-        - sql formatter
-        - sql beautifier online
-        - format postgresql query
-        - minify sql statement
-        - clean up sql code
-      tldr: Instantly format and beautify messy, complex SQL queries for easier debugging.
-      entity_definition: The SQL Formatter & Beautifier is a database development utility. Structured Query Language (SQL) is often written quickly in a single line, resulting in massive, unreadable blocks of code. This tool parses raw SQL strings and applies opinionated formatting rules—indenting JOIN clauses, capitalizing keywords (SELECT, WHERE), and aligning aliases—transforming illegible queries into highly readable, maintainable code for MySQL, PostgreSQL, and SQL Server dialects.
-    faqs:
-      - question: Does formatting change how the query runs?
-        answer: No. SQL engines ignore whitespace, line breaks, and tabs. Formatting purely benefits human readability and makes complex `JOIN` and `GROUP BY` logic easier to debug.
-      - question: Why capitalize SQL keywords?
-        answer: Capitalizing reserved keywords (like `SELECT` or `INNER JOIN`) is an industry-standard best practice. It visually separates the structural commands from your custom table and column names.
-      - question: Can I minify SQL?
-        answer: Yes. Minifying SQL strips all unnecessary whitespace and comments, compressing the query into a single line. This is occasionally useful when passing queries as strings inside application code.
   - name: XML Formatter & Beautifier
     slug: xml-formatter
     category: Developer Tools
@@ -10742,71 +10009,6 @@ tools:
         answer: No. This tool only performs a mathematical checksum (the Luhn algorithm) to verify that the string of numbers is formatted correctly. It does not connect to any banking APIs.
       - question: How does it know the card brand?
         answer: Credit cards begin with specific Issuer Identification Numbers (IIN). For example, numbers starting with 4 are Visa, while 51-55 are Mastercard.
-  - name: SQL Injection Sanitizer
-    slug: sql-injection-sanitizer
-    category: Developer Tools
-    icon: ShieldAlert
-    tags:
-      - security
-      - sql
-      - backend
-      - defense
-    priority: 12
-    releaseDate: '2026-05-15'
-    function:
-      primary: Sanitize strings to prevent SQL injection attacks
-    technical:
-      input_formats:
-        - text
-      output_formats:
-        - text
-      processing: client-side
-    content:
-      title: SQL Injection Sanitizer — Secure Your Queries
-      description: Escape dangerous characters and normalize strings to prevent common SQL injection vulnerabilities in your database queries.
-      entity_definition: |
-        The SQL Injection Sanitizer is a critical educational and defensive utility for backend developers and database administrators. SQL Injection (SQLi) remains one of the most dangerous web vulnerabilities, occurring when an attacker manipulates a frontend input field to alter the backend database query. This tool demonstrates how raw, dangerous strings (containing rogue quotes, semicolons, or boolean payloads) must be scrubbed, escaped, and sanitized before they ever reach a database engine like MySQL or PostgreSQL.
-      how_it_works: |
-        Operating securely within your browser, the engine parses your raw input string and applies aggressive escaping algorithms. It identifies syntax-breaking characters (like single quotes `'`) and escapes them (e.g., converting to `''` or `\'` depending on the dialect). It strips out dangerous SQL command terminators (like `;`) and neutralizes comment syntax (`--` or `/*`) to render malicious payloads completely inert.
-      use_cases:
-        - Sanitizing massive blocks of raw, user-generated text before manually importing them into a database via SQL scripts.
-        - Training junior backend developers on the specific characters and patterns used in standard SQL Injection attacks.
-        - Cleaning up dirty CSV exports that contain unescaped quotes, which would otherwise break `INSERT` statements.
-        - Generating safe string literals for legacy PHP or Node.js applications that cannot use Prepared Statements.
-      features:
-        - Automatic escaping of single quotes, double quotes, and backslashes.
-        - Detection and neutralization of SQL comment syntax and command terminators.
-        - Real-time visual highlighting of dangerous characters within the raw input.
-        - 100% client-side processing ensuring your database architecture remains confidential.
-      faq:
-        - question: Is escaping quotes enough to stop SQL Injection?
-          answer: No. While escaping quotes is a necessary baseline defense, the industry standard for preventing SQL injection is strictly using 'Parameterized Queries' or 'Prepared Statements' at the application layer (e.g., using PDO in PHP or standard drivers in Node/Python). Sanitization should be used as a secondary defense-in-depth measure.
-        - question: What is an `OR 1=1` attack?
-          answer: It is a classic SQL injection payload. If an attacker inputs `' OR 1=1 --` into a password field, it breaks out of the intended query logic. Because `1=1` is always mathematically true, it forces the database to return all records, bypassing the login check entirely.
-        - question: What does 'dropping a table' mean?
-          answer: The SQL command `DROP TABLE` permanently deletes an entire database table and all of its data. If a hacker successfully injects this command (e.g., `'; DROP TABLE users; --`), it can instantly destroy an application's data.
-    meta:
-      title: SQL Injection Sanitizer — Secure Your Queries
-      description: Escape dangerous characters and normalize strings to prevent common SQL injection vulnerabilities in your database queries.
-    seo:
-      title: SQL Injection Sanitizer — Protect Database Queries
-      description: Sanitize user input and prevent SQL injection attacks. Safely escape single quotes, semicolons, and boolean logic to secure your database architecture.
-      keywords:
-        - sql injection sanitizer
-        - prevent sql injection
-        - sanitize sql input
-        - escape sql quotes
-        - database security tool
-        - prevent drop table
-      tldr: Sanitize strings and escape dangerous characters to prevent SQL injection attacks.
-      entity_definition: The SQL Injection Sanitizer is a database security utility. SQL Injection (SQLi) is a critical vulnerability where an attacker manipulates user input (like a login field) to alter the backend database query, potentially stealing data or dropping entire tables. This tool applies aggressive string sanitization algorithms—escaping single quotes, stripping semicolons, and neutralizing malicious boolean payloads (like `OR 1=1`)—demonstrating how developers must scrub raw input before passing it to the database engine.
-    faqs:
-      - question: What is OR 1=1?
-        answer: It is a classic SQL injection payload. If an attacker inputs `' OR 1=1 --` into a password field, it modifies the backend query to evaluate as 'True,' bypassing the login check entirely.
-      - question: Is escaping quotes enough?
-        answer: No. While escaping quotes (`'` to `''`) is a baseline defense, the industry standard for preventing SQL injection is strictly using "Parameterized Queries" or "Prepared Statements" at the application layer.
-      - question: What does dropping a table mean?
-        answer: The SQL command `DROP TABLE` permanently deletes an entire database table and all of its data. If a hacker successfully injects this command, it can instantly destroy a company's application.
   - name: IBAN Validator
     slug: iban-validator
     category: Developer Tools
@@ -11899,77 +11101,6 @@ tools:
         answer: Yes, the tool features a one-click button to copy the entire user profile as a cleanly formatted JSON object, perfect for pasting directly into your code.
       - question: Where do the avatars come from?
         answer: The tool programmatically generates unique avatar URLs, allowing you to instantly visualize profile pictures in your UI mockups.
-  - name: Professional QR Code Generator
-    slug: qr-code-gen
-    category: Generators
-    icon: QrCode
-    subcategory: graphics
-    tags:
-      - qr
-      - barcode
-      - generator
-      - marketing
-      - vectors
-    priority: 5
-    releaseDate: '2026-05-15'
-    function:
-      primary: Generate custom styled QR codes instantly
-      secondary: Create scan links, contact cards, and Wi-Fi access tags
-    technical:
-      input_formats:
-        - txt
-        - url
-      output_formats:
-        - png
-        - svg
-      processing: client-side
-    meta:
-      title: Professional QR Code Generator — Create Custom QR Codes
-      description: Generate beautiful, custom QR codes for URLs, text, Wi-Fi networks, and contact cards. Adjust sizing and export as PNG or vector SVG.
-    content:
-      title: Professional QR Code Generator — Create Custom QR Codes
-      description: Generate beautiful, custom QR codes for URLs, text, Wi-Fi networks, and contact cards. Adjust sizing and export as PNG or vector SVG.
-      keywords:
-        - qr code generator
-        - create custom qr code
-        - free qr code maker
-        - vector qr code generator
-        - wifi qr code generator
-      tldr: Generate custom styled, high-resolution QR codes for websites, text, and Wi-Fi networks in seconds.
-      entity_definition: Professional QR Code Generator is a digital branding utility that encodes alphanumeric data strings into 2D Quick Response (QR) matrix barcodes. It supports multiple encoding formats (Wi-Fi access, plain text, URLs, vCards) and customizable error correction levels for high-quality printing.
-      how_it_works: The generator encodes the input string into a standard Reed-Solomon error-corrected binary matrix, drawing high-contrast pixel modules on an HTML5 canvas for instant export.
-      use_cases:
-        - Generating scan-to-visit links for flyers and business cards
-        - Creating scan-to-connect Wi-Fi badges for offices and coffee shops
-        - Encoding contact information (vCard) for quick scanning
-      features:
-        - Supports URLs, plain text, Wi-Fi networks, and SMS
-        - Custom sizing adjustments
-        - High-quality PNG and vector SVG export
-        - Adjustable error correction levels (L, M, Q, H)
-      faq:
-        - question: Do these QR codes ever expire?
-          answer: No. These are static QR codes. They encode the actual text/URL directly into the pattern and will work forever as long as the destination URL remains active.
-        - question: Are my scanned inputs private?
-          answer: Yes. The QR matrices are rendered locally inside your browser cache. No content is ever sent to our servers.
-    seo:
-      title: QR Code Generator — 100% Private & Client-Side
-      description: Generate high-quality QR codes for URLs, text, and data entirely in your browser. Download the QR code as a PNG without any tracking or server uploads.
-      keywords:
-        - qr code generator
-        - create qr code
-        - client side qr code
-        - generate qr code free
-        - private qr code
-      tldr: Generate high-resolution QR codes privately in your browser without any API calls.
-      entity_definition: The QR Code (Quick Response Code) Generator is a client-side graphical encoding utility. A QR Code is a two-dimensional matrix barcode capable of storing massive amounts of alphanumeric data (like long URLs or contact info). This tool utilizes a local JavaScript library to mathematically encode your text and draw the resulting matrix onto an HTML5 Canvas, ensuring complete privacy as your data is never sent to a remote API.
-    faqs:
-      - question: Do these QR codes expire?
-        answer: No! Because these are static QR codes containing the raw data (not redirect links), they will work forever. We do not use link shorteners or trackers.
-      - question: Is my data sent to a server?
-        answer: No. Our tool was specifically engineered to use client-side rendering. The QR code is generated entirely by your browser, making it safe for highly sensitive internal URLs or passwords.
-      - question: Can I download the QR code?
-        answer: Yes. Once generated, you can instantly download the QR code as a high-quality PNG image suitable for printing or digital distribution.
   - name: Online Barcode Generator
     slug: barcode-gen
     category: Generators
@@ -12386,75 +11517,6 @@ tools:
         answer: Yes. The tool utilizes the `window.crypto.subtle` API built directly into modern web browsers. The cryptographic signing happens entirely on your local machine; your secret key is never transmitted.
       - question: Which hashing algorithm should I use?
         answer: HMAC-SHA256 is the current industry standard and is widely used for JWTs and API webhooks. SHA-512 offers even higher security for extreme use-cases, while SHA-1 is considered legacy and should be avoided for new systems.
-  - name: SQL Injection Payload Tester
-    slug: sql-injection-tester
-    category: Developer Tools
-    icon: ShieldAlert
-    subcategory: security-auditing
-    tags:
-      - sqli
-      - payloads
-      - penetration-testing
-      - xss
-      - sanitizer
-    priority: 5
-    releaseDate: '2026-05-15'
-    function:
-      primary: Test input fields against SQL injection payload lists
-      secondary: Identify application vulnerability vectors locally
-    technical:
-      input_formats:
-        - txt
-      output_formats:
-        - txt
-      processing: client-side
-    meta:
-      title: SQL Injection Payload Tester — Security Auditing Tool
-      description: Audit your form fields and APIs. Test raw parameters against standard SQL Injection payloads (Auth bypass, Boolean, Union-based) locally and privately.
-    content:
-      title: SQL Injection Payload Tester — Security Auditing Tool
-      description: Audit your form fields and APIs. Test raw parameters against standard SQL Injection payloads (Auth bypass, Boolean, Union-based) locally and privately.
-      keywords:
-        - sql injection tester
-        - sqli payload generator
-        - penetration testing online
-        - test inputs sql vulnerability
-        - web security validator
-      tldr: Generate and test database injection payloads to audit your web applications against SQL injection vulnerabilities.
-      entity_definition: SQL Injection Payload Tester is a defensive security utility that helps developers audit application input layers. By generating a checklist of common SQL injection strings (e.g., auth bypass, error-inducing tags, sleep delays), it enables engineers to ensure their SQL queries are correctly parameterized and secure.
-      how_it_works: The tool provides categorized payload lists (auth bypass, union queries, DBMS-specific scripts) that can be instantly copied or parsed to run tests against local forms and API routes.
-      use_cases:
-        - Auditing form validations during pre-production cycles
-        - Populating test inputs in security automation scripts
-        - Academic understanding of database security and syntax vulnerabilities
-      features:
-        - Comprehensive payload catalog categorized by vector type
-        - Supports payloads for MySQL, PostgreSQL, Oracle, and MSSQL
-        - Secure client-side UI with zero data transmission
-        - Quick copy arrays for testing automation
-      faq:
-        - question: Can this hack other websites?
-          answer: No. The utility is purely a payload reference list that runs locally. It does not perform active network penetration sweeps against external web targets.
-        - question: How do I prevent SQL injection completely?
-          answer: Always use parameterized queries and prepared statements (like PDO in PHP or node-postgres params) instead of concatenating user strings directly into SQL code.
-    seo:
-      title: SQL Injection Tester — Scan Queries for Vulnerabilities
-      description: Audit SQL queries for injection vulnerabilities. Detect dangerous patterns like Tautologies (1=1), Union-based attacks, and stacked queries directly in your browser.
-      keywords:
-        - sql injection tester
-        - sqli scanner
-        - check sql injection
-        - database vulnerability scanner
-        - sql security audit
-      tldr: Audit raw SQL syntax for common SQL Injection (SQLi) attack patterns.
-      entity_definition: The SQL Injection Tester is a database security utility. SQL Injection (SQLi) is a critical vulnerability where attackers manipulate input fields to alter backend database queries. This tool performs static analysis on raw SQL strings, using heuristic pattern matching to detect common attack vectors—such as Tautologies (`OR 1=1`), UNION-based exfiltration, and comment obfuscation—allowing developers to identify insecure query structures before deployment.
-    faqs:
-      - question: What is a SQL Injection attack?
-        answer: It is a cyberattack where malicious SQL statements are inserted into entry fields (like a login form) to trick the database into executing unauthorized commands, such as dumping user tables or bypassing passwords.
-      - question: What is a Tautology attack?
-        answer: A tautology is a statement that is always true, like `OR 1=1`. Attackers append this to a query (e.g., `WHERE username = "" OR 1=1`) to force the database to return all records, bypassing authentication.
-      - question: How do I fix SQL injection vulnerabilities?
-        answer: Never concatenate raw strings into SQL queries. Always use Parameterized Queries (Prepared Statements) or an ORM (like Prisma or TypeORM) to ensure user input is treated as data, not executable code.
   - name: HTTP Request & Response Headers Inspector
     slug: http-headers-inspector
     category: Network & Performance
@@ -12524,76 +11586,6 @@ tools:
         answer: Headers like `Strict-Transport-Security` (HSTS) and `X-Frame-Options` actively instruct the browser to block malicious actions, such as preventing your site from being embedded in a hacker's invisible iframe (Clickjacking).
       - question: How do I spot a 301 Redirect?
         answer: If the server responds with a `301 Moved Permanently` status code, the headers will include a `Location` key, which explicitly tells the browser the new URL it must navigate to.
-  - name: JSON-LD Schema Validator Pro
-    slug: schema-validator-pro
-    category: SEO Tools
-    icon: CheckCircle
-    subcategory: search
-    tags:
-      - schema
-      - json-ld
-      - validator
-      - google-rich
-      - seo
-    priority: 5
-    releaseDate: '2026-05-15'
-    function:
-      primary: Validate and syntax-check JSON-LD schema blocks
-      secondary: Verify schema templates before deploying to production
-    technical:
-      input_formats:
-        - json
-        - html
-      output_formats:
-        - json
-      processing: client-side
-    meta:
-      title: JSON-LD Schema Validator Pro — Structured Data Auditing
-      description: Ensure your structured data is compliant. Validate and format JSON-LD schema markup for Google Rich Snippets with 100% client-side security.
-    content:
-      title: JSON-LD Schema Validator Pro — Structured Data Auditing
-      description: Ensure your structured data is compliant. Validate and format JSON-LD schema markup for Google Rich Snippets with 100% client-side security.
-      keywords:
-        - schema validator online
-        - json-ld syntax checker
-        - google structured data validator
-        - schema markup debugger
-        - technical seo schema auditor
-      tldr: Parse, lint, and syntax-validate JSON-LD schema code to ensure compliance with Google Rich Results.
-      entity_definition: JSON-LD Schema Validator Pro is a technical SEO utility designed to audit schema markup formatting. By parsing JSON-LD scripts and checking for syntax integrity, nesting errors, and missing bracket markers, it helps webmasters prepare schema elements for error-free deployment.
-      how_it_works: The validator utilizes local JSON engines to verify structural integrity and highlights parsing syntax failures directly inside the code editor interface.
-      use_cases:
-        - Linting custom product schemas before pushing them to live sites
-        - Identifying parsing errors in nested FAQ or Breadcrumb blocks
-        - Checking generated schema outputs for syntax warnings
-      features:
-        - Syntax validation with clear line error highlighting
-        - Supports Article, FAQ, LocalBusiness, and SoftwareApplication schemas
-        - Automatic JSON indentation formatting
-        - 100% client-side validation
-      faq:
-        - question: Does this replace Google's Rich Results Test?
-          answer: It is a local syntax debugger. It ensures your JSON has no parsing errors, which is the necessary first step before Google can parse it for Rich Results.
-        - question: Can it check microdata or RDFa?
-          answer: No. This validator is optimized specifically for JSON-LD, which is Google's officially recommended format for structured data.
-    seo:
-      title: Schema Validator Pro — JSON-LD Structured Data
-      description: Validate your JSON-LD structured data for Google Rich Snippets. Instantly find syntax errors and missing schema properties for Articles, Products, and Reviews.
-      keywords:
-        - schema validator pro
-        - json-ld structured data test
-        - google rich snippet tester
-        - validate schema markup
-        - seo structured data checker
-      tldr: Validate your JSON-LD Schema markup to ensure it qualifies for Google Rich Snippets.
-      entity_definition: The Schema Validator Pro is a technical SEO utility. Search engines rely on Structured Data (specifically the JSON-LD format) to understand the context of a webpage, using it to generate "Rich Snippets" (like star ratings on recipes or prices on products) in the search results. This tool parses the JSON-LD payload against the official Schema.org vocabulary guidelines, flagging syntax errors, missing mandatory properties, and type mismatches before the code is deployed to production.
-    faqs:
-      - question: What is JSON-LD?
-        answer: JSON-LD (JavaScript Object Notation for Linked Data) is a lightweight data format used to embed structured data into a webpage. It is explicitly recommended by Google over older formats like Microdata or RDFa.
-      - question: What happens if my schema is invalid?
-        answer: If your schema contains errors or misses required properties (like missing the "price" on a Product schema), Google will completely ignore it, and your page will lose its Rich Snippet styling in the search results.
-      - question: Does valid schema guarantee rich snippets?
-        answer: No. Validating your schema simply makes you "eligible" for rich snippets. Google's algorithm still ultimately decides whether displaying the rich snippet is relevant to the user's specific search query.
   - name: Responsive Mobile Screen Checker Pro
     slug: responsive-checker-pro
     category: Design Tools
@@ -12871,75 +11863,6 @@ tools:
         answer: A logarithmic scale means the difficulty increases exponentially. To increase your DA from 10 to 20, you might only need 5 good backlinks. To increase from 80 to 90, you might need 5,000 extremely high-quality backlinks.
       - question: Do nofollow links increase authority?
         answer: Traditionally, no. A `rel="nofollow"` attribute explicitly tells search engines not to pass authority (link juice) to the target URL. However, a natural backlink profile should still contain a healthy mix of both follow and nofollow links.
-  - name: Breadcrumb JSON-LD Schema Generator
-    slug: breadcrumb-schema-gen
-    category: SEO Tools
-    icon: FolderTree
-    subcategory: search
-    tags:
-      - breadcrumb
-      - schema-generator
-      - json-ld
-      - google-snippets
-      - seo
-    priority: 5
-    releaseDate: '2026-05-15'
-    function:
-      primary: Generate perfectly structured BreadcrumbList schema blocks
-      secondary: Promote hierarchical site mapping inside Google search outputs
-    technical:
-      input_formats:
-        - txt
-      output_formats:
-        - json
-      processing: client-side
-    meta:
-      title: Breadcrumb JSON-LD Schema Generator — Rich Snippets Tool
-      description: Generate valid JSON-LD BreadcrumbList structured data for Google. Maximize search CTR by displaying clear navigation paths in search results.
-    content:
-      title: Breadcrumb JSON-LD Schema Generator — Rich Snippets Tool
-      description: Generate valid JSON-LD BreadcrumbList structured data for Google. Maximize search CTR by displaying clear navigation paths in search results.
-      keywords:
-        - breadcrumb schema generator
-        - json-ld breadcrumb maker
-        - google rich snippets breadcrumbs
-        - structured data navigation tool
-        - seo breadcrumb schema builder
-      tldr: Create compliant JSON-LD BreadcrumbList schema blocks to display hierarchical search paths inside Google results.
-      entity_definition: Breadcrumb JSON-LD Schema Generator is an SEO utility that programmatically structures hierarchical breadcrumb layers into standard Schema.org structures. This enables search engines to map your pages' positional paths in their index and display elegant navigation links in user search outputs, boosting CTR.
-      how_it_works: The builder takes your website levels, category paths, and target URLs, structures them into a standard nested JSON-LD BreadcrumbList block, and lints the code instantly for errors.
-      use_cases:
-        - Generating breadcrumb schemas for complex nested category hubs
-        - Optimizing standard product directories for search navigation
-        - Polishing rich snippet footprints in technical SEO campaigns
-      features:
-        - Allows unlimited hierarchical breadcrumb levels
-        - Automatic JSON-LD syntax formatting and error checking
-        - One-click copy and direct code block download options
-        - 100% compliant with standard schema.org guidelines
-      faq:
-        - question: Why are breadcrumbs important for SEO?
-          answer: Breadcrumbs tell search engines exactly how pages relate within your site hierarchy, helping spiders crawl more efficiently while displaying readable search snippet links to users.
-        - question: Does Google require schemas for breadcrumbs?
-          answer: Yes. To show structured breadcrumb links instead of a raw URL in Google search snippets, having BreadcrumbList schema markup is highly recommended.
-    seo:
-      title: Breadcrumb Schema Generator — JSON-LD Markup
-      description: Generate valid JSON-LD Breadcrumb schema markup instantly. Enhance your Google search results with navigational links and improve your site architecture.
-      keywords:
-        - breadcrumb schema generator
-        - json-ld breadcrumb markup
-        - seo breadcrumb tool
-        - generate schema for navigation
-        - google rich results breadcrumbs
-      tldr: Visually generate valid JSON-LD Breadcrumb markup to enhance your Google search listings.
-      entity_definition: The Breadcrumb Schema Generator is a technical SEO utility. Breadcrumbs are navigational links that indicate a page's position in the site hierarchy (e.g., Home > Electronics > TVs). By embedding this hierarchy in JSON-LD structured data, Google can display these navigational links directly in the search results, dramatically increasing click-through rates (CTR). This tool provides a visual UI to map these hierarchical URLs and outputs the exact `BreadcrumbList` schema required by Google.
-    faqs:
-      - question: Where do I put the JSON-LD code?
-        answer: The generated JSON-LD script should be placed inside the `<head>` or the `<body>` of your HTML document. Search engines will find it regardless of where it is injected.
-      - question: Do I need visible breadcrumbs on the page?
-        answer: Google strongly recommends that the structured data you provide mathematically matches what the user actually sees on the screen. If you have schema for breadcrumbs, you should ideally have visible breadcrumbs in your UI.
-      - question: Can I use Microdata instead of JSON-LD?
-        answer: You can, but it is not recommended. Google explicitly states that JSON-LD is their preferred format for structured data because it is much easier for their crawlers to parse than inline HTML Microdata.
   - name: CSS/JS Browser Compatibility Checker
     slug: browser-compat-checker
     category: Developer Tools
@@ -13354,3 +12277,163 @@ tools:
         answer: In Kubernetes, if a CronJob takes too long to run, the next scheduled instance might start before the first one finishes. The Concurrency Policy dictates whether K8s should "Allow" both to run simultaneously, "Forbid" the new one, or "Replace" the old one.
       - question: Does Kubernetes support seconds in Cron?
         answer: No. The official Kubernetes `CronJob` resource strictly adheres to the standard 5-field cron format (Minute, Hour, Day, Month, Day of Week). The minimum execution frequency is exactly 1 minute.
+  - name: Schema Markup Generator
+    slug: schema-markup-generator
+    category: SEO Tools
+    tags:
+      - schema
+      - json-ld
+      - seo
+      - structured data
+      - validator
+    icon: Database
+    releaseDate: '2026-05-30'
+    function:
+      primary: Generate and validate JSON-LD structured data.
+    technical:
+      input_formats:
+        - JSON
+        - Form
+      output_formats:
+        - JSON-LD
+      processing: client-side
+    meta:
+      title: Schema Markup & JSON-LD Generator | Free SEO Validator
+      description: Offline-first Schema Markup Generator. Easily build and validate JSON-LD structured data for Breadcrumbs, Organizations, and FAQs securely in your browser.
+    content:
+      description: A comprehensive suite for generating and validating JSON-LD structured data. Ensure your website communicates effectively with search engines using our robust Schema Markup Generator.
+      entity_definition: Schema markup (JSON-LD) is a standardized vocabulary used by search engines to understand the content of your pages. Our generator provides a streamlined interface for creating and validating Organization, Breadcrumb, and other critical entity schemas, ensuring compliance with schema.org specifications.
+      how_it_works: Select the schema type you wish to generate (e.g., Organization, Breadcrumb). Fill in the required fields, and our tool instantly generates the corresponding JSON-LD output. You can also paste existing schema into the Pro Validator to check for missing required properties or syntax errors.
+      use_cases:
+        - Generating Breadcrumb lists for e-commerce sites.
+        - Creating Organization schema for local businesses.
+        - Validating third-party JSON-LD snippets for errors.
+      features:
+        - Multi-entity support
+        - Live syntax validation
+        - Breadcrumb list builder
+        - Client-side processing for privacy
+      faq:
+        - question: What is JSON-LD?
+          answer: JSON-LD is a lightweight Linked Data format. It is the recommended format by Google for implementing schema markup.
+        - question: Does this tool validate against schema.org?
+          answer: Yes, our Pro Validator checks for required fields and proper syntax based on schema.org guidelines.
+  - name: QR Code Generator
+    slug: qr-code-generator
+    category: Generators
+    tags:
+      - qr
+      - barcode
+      - generator
+      - link
+    icon: QrCode
+    releaseDate: '2026-05-30'
+    function:
+      primary: Generate high-resolution QR codes from URLs or text.
+    technical:
+      input_formats:
+        - Text
+        - URL
+      output_formats:
+        - PNG
+      processing: client-side
+    meta:
+      title: Free QR Code Generator | High-Res PNG Download
+      description: Create high-resolution QR codes instantly. Fast, offline-first, secure, and privacy-friendly. Download as PNG directly from your browser.
+    content:
+      description: Generate high-quality, scan-ready QR codes for your URLs, text, or contact information securely in your browser.
+      entity_definition: A Quick Response (QR) code is a two-dimensional barcode capable of storing large amounts of data. Our client-side generator translates your input text or URLs into an optimized, high-resolution QR image suitable for print or digital distribution.
+      how_it_works: Simply type or paste your URL or text into the input field. The QR code is generated instantly in real-time. You can then copy the image to your clipboard or download it as a PNG file.
+      use_cases:
+        - Creating scannable links for marketing materials.
+        - Generating WiFi access codes.
+        - Sharing contact information quickly.
+      features:
+        - High-resolution output
+        - Instant rendering
+        - One-click copy and download
+        - Zero server tracking
+      faq:
+        - question: Are the QR codes permanent?
+          answer: Yes, the QR codes generated are static, meaning they will work forever as long as the underlying URL or text remains valid.
+        - question: Can I use these for commercial printing?
+          answer: Absolutely. The PNG downloads are high-resolution and suitable for commercial print applications.
+  - name: SQL Toolkit
+    slug: sql-toolkit
+    category: Developer Tools
+    tags:
+      - sql
+      - database
+      - formatter
+      - sanitizer
+      - security
+    icon: Terminal
+    releaseDate: '2026-05-30'
+    function:
+      primary: Format, minify, and sanitize SQL queries.
+    technical:
+      input_formats:
+        - SQL
+      output_formats:
+        - SQL
+      processing: client-side
+    meta:
+      title: SQL Formatter, Minifier & Injection Tester | SQL Toolkit
+      description: All-in-one offline SQL utility. Format messy queries, minify code, and test for SQL injection vulnerabilities securely in your browser.
+    content:
+      description: A robust utility belt for database administrators and backend developers to format, minify, and analyze SQL queries for potential injection vulnerabilities.
+      entity_definition: The SQL Toolkit combines syntax formatting with basic vulnerability scanning. It standardizes messy query strings for readability, compresses them for application deployment, and scans input against common SQL injection patterns (such as tautologies or destructive DML).
+      how_it_works: Paste your SQL query into the unified interface. Use the "Format" tab to beautifully indent the code, the "Minify" tab to compress it into a single line, or the "Injection Tester" tab to simulate scanning for malicious payloads.
+      use_cases:
+        - Formatting massive database dumps for readability.
+        - Minifying SQL strings for embedding in source code.
+        - Checking raw user input for obvious SQL injection attempts.
+      features:
+        - Multi-dialect formatting
+        - Query minification
+        - Basic injection vulnerability scanning
+        - 100% offline processing
+      faq:
+        - question: Does this replace parameterized queries?
+          answer: No! You should always use parameterized queries or prepared statements in production. This tool is purely for static analysis and formatting.
+        - question: Which SQL dialects are supported?
+          answer: The formatter uses generic SQL rules that work well with MySQL, PostgreSQL, and SQLite.
+  - name: Markdown HTML Converter
+    slug: markdown-html-converter
+    category: Content Utilities
+    tags:
+      - markdown
+      - html
+      - converter
+      - editor
+    icon: FileCode
+    releaseDate: '2026-05-30'
+    function:
+      primary: Convert Markdown to HTML with live preview.
+    technical:
+      input_formats:
+        - Markdown
+      output_formats:
+        - HTML
+      processing: client-side
+    meta:
+      title: Markdown to HTML Converter | Live Split-Pane Editor
+      description: Convert Markdown to HTML instantly. Features a live split-pane preview, raw HTML output, and offline-first processing for privacy.
+    content:
+      description: Write, preview, and convert Markdown syntax to clean HTML markup instantly with our side-by-side editor.
+      entity_definition: Markdown is a lightweight markup language that allows writers to format text using plain-text syntax. Our converter instantly parses Markdown structures (like headers, bold text, and lists) into fully compliant semantic HTML tags, complete with a real-time visual preview.
+      how_it_works: Type or paste your Markdown into the source pane. As you type, the tool instantly generates the corresponding raw HTML code and renders a visual preview in the bottom pane. You can copy the HTML output with a single click.
+      use_cases:
+        - Writing documentation for GitHub.
+        - Formatting blog posts for CMS platforms.
+        - Drafting formatted emails.
+      features:
+        - Split-pane live preview
+        - Instant HTML generation
+        - Syntax highlighting
+        - Zero-latency conversion
+      faq:
+        - question: Does this support GitHub Flavored Markdown?
+          answer: Yes, standard Markdown features like lists, blockquotes, and code blocks are fully supported.
+        - question: Is my text saved anywhere?
+          answer: No, all conversion happens entirely in your browser memory. We never store your writing.

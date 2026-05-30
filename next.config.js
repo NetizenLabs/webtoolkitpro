@@ -20,6 +20,25 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      
+      // Wave 2 Consolidation
+      { source: '/tools/schema-generator', destination: '/tools/schema-markup-generator/', permanent: true },
+      { source: '/tools/schema-validator', destination: '/tools/schema-markup-generator/', permanent: true },
+      { source: '/tools/schema-validator-pro', destination: '/tools/schema-markup-generator/', permanent: true },
+      { source: '/tools/breadcrumb-schema', destination: '/tools/schema-markup-generator/', permanent: true },
+      { source: '/tools/breadcrumb-schema-gen', destination: '/tools/schema-markup-generator/', permanent: true },
+      { source: '/tools/qr-code-gen', destination: '/tools/qr-code-generator/', permanent: true },
+      { source: '/tools/sql-formatter', destination: '/tools/sql-toolkit/', permanent: true },
+      { source: '/tools/sql-minifier', destination: '/tools/sql-toolkit/', permanent: true },
+      { source: '/tools/sql-injection-tester', destination: '/tools/sql-toolkit/', permanent: true },
+      { source: '/tools/sql-sanitizer', destination: '/tools/sql-toolkit/', permanent: true },
+      { source: '/tools/sql-injection-sanitizer', destination: '/tools/sql-toolkit/', permanent: true },
+      { source: '/tools/markdown-to-html', destination: '/tools/markdown-html-converter/', permanent: true },
+      { source: '/tools/markdown-converter', destination: '/tools/markdown-html-converter/', permanent: true },
+      { source: '/tools/markdown-previewer', destination: '/tools/markdown-html-converter/', permanent: true },
+      // Collapse known chain
+      { source: '/tools/json-to-markdown', destination: '/tools/markdown-html-converter/', permanent: true },
+      { source: '/tools/json-to-markdown/', destination: '/tools/markdown-html-converter/', permanent: true },
       // Tools Consolidation Redirects
       { source: '/tools/json-toolkit', destination: '/tools/json-to-code-generator', permanent: true },
       { source: '/tools/json-data-converter', destination: '/tools/json-yaml-jsonl-converter', permanent: true },
@@ -115,16 +134,8 @@ const nextConfig = {
         destination: '/tools/password-entropy-tester/',
         permanent: true,
       },
-      {
-        source: '/tools/json-to-markdown',
-        destination: '/tools/markdown-converter/',
-        permanent: true,
-      },
-      {
-        source: '/tools/json-to-markdown/',
-        destination: '/tools/markdown-converter/',
-        permanent: true,
-      },
+      
+      
       {
         source: '/tools/yaml-formatter',
         destination: '/tools/yaml-to-json/',

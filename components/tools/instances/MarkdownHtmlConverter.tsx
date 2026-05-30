@@ -3,8 +3,7 @@
 import React, { useState } from 'react'
 import { FileCode, Copy, Trash2, Check, ArrowRightLeft } from 'lucide-react'
 import { useEnterSubmit } from '@/hooks/useEnterSubmit'
-
-export default function MarkdownToHtml() {
+export default function MarkdownHtmlConverter() {
   const [md, setMd] = useState(`# Project Title\n\nThis is a **Markdown** to HTML converter.\n\n- Feature A\n- Feature B\n\n> "Simplicity is the soul of efficiency."`)
   const [copied, setCopied] = useState(false)
 
