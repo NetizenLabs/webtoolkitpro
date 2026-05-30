@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'WebToolkit Pro',
     short_name: 'WTK Pro',
-    description: '150+ Free Premium Online Developer Tools',
+    description: '190+ Free Premium Online Developer Tools',
     start_url: '/',
     display: 'standalone',
     background_color: '#0B1120',

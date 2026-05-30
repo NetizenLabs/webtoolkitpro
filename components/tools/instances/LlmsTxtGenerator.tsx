@@ -43,7 +43,7 @@ const PRESETS = {
 export default function LlmsTxtGenerator() {
   const [siteName, setSiteName] = useState('WebToolkit Pro')
   const [siteUrl, setSiteUrl] = useState('https://wtkpro.site')
-  const [description, setDescription] = useState('A premium collection of 150+ free developer tools for modern web engineering. All tools run client-side for maximum security and privacy.')
+  const [description, setDescription] = useState('A premium collection of 190+ free developer tools for modern web engineering. All tools run client-side for maximum security and privacy.')
   const [contact, setContact] = useState('ai@wtkpro.site')
   const [allowAI, setAllowAI] = useState(true)
   const [sections, setSections] = useState<Section[]>([

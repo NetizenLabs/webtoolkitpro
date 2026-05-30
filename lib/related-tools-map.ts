@@ -52,7 +52,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'Base64 Encoder', href: '/tools/base64-encoder/', desc: 'Encode binary data', icon: '🧩' },
     ],
     pills: [
-      { name: 'UUID v7 Generator', href: '/tools/uuid-v7-generator/' },
+      { name: 'Bulk UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/' },
       { name: 'URL Encoder', href: '/tools/url-encoder/' },
       { name: 'HTML Encoder', href: '/tools/html-encoder/' },
       { name: 'Binary Converter', href: '/tools/binary-converter/' },
@@ -67,7 +67,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'Base64 Encoder', href: '/tools/base64-encoder/', desc: 'Encode binary data', icon: '🧩' },
     ],
     pills: [
-      { name: 'UUID v7 Generator', href: '/tools/uuid-v7-generator/' },
+      { name: 'Bulk UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/' },
       { name: 'HTML Encoder', href: '/tools/html-encoder/' },
       { name: 'Binary Converter', href: '/tools/binary-converter/' },
       { name: 'Case Converter', href: '/tools/case-converter/' },
@@ -255,7 +255,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
     ]
   },
   'uuid-generator': {
-    featured: { name: 'UUID v7 Generator', href: '/tools/uuid-v7-generator/', desc: 'Next-gen time-sorted UUIDs', icon: '🆔', badge: 'New' },
+    featured: { name: 'Bulk UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/', desc: 'Next-gen time-sorted UUIDs', icon: '🆔', badge: 'New' },
     cards: [
       { name: 'Hash Generator', href: '/tools/hash-generator/', desc: 'MD5, SHA-256, SHA-512', icon: '🔐' },
       { name: 'Password Generator', href: '/tools/password-generator/', desc: 'Generate secure passwords', icon: '🎲' },
@@ -269,7 +269,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'JWT Decoder', href: '/tools/jwt-decoder/' },
     ]
   },
-  'uuid-v7-generator': {
+  'bulk-uuid-v4-v7-generator': {
     featured: { name: 'UUID Generator', href: '/tools/uuid-generator/', desc: 'Generate v4 UUIDs', icon: '🆔' },
     cards: [
       { name: 'Timestamp Converter', href: '/tools/timestamp-converter/', desc: 'Unix to human readable', icon: '⏱️' },
@@ -285,7 +285,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
     ]
   },
   'timestamp-converter': {
-    featured: { name: 'UUID v7 Generator', href: '/tools/uuid-v7-generator/', desc: 'Next-gen time-sorted UUIDs', icon: '🆔' },
+    featured: { name: 'Bulk UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/', desc: 'Next-gen time-sorted UUIDs', icon: '🆔' },
     cards: [
       { name: 'JSON Formatter', href: '/tools/json-formatter/', desc: 'Prettify and validate JSON', icon: '📋' },
       { name: 'Hash Generator', href: '/tools/hash-generator/', desc: 'MD5, SHA-256, SHA-512', icon: '🔐' },

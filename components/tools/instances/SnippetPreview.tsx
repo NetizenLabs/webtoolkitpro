@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Search, Globe, MoreVertical, ShieldCheck, Sparkles } from 'lucide-react'
 
 export default function SnippetPreview() {
-  const [title, setTitle] = useState('WebToolkit Pro - 150+ Premium Developer Tools')
+  const [title, setTitle] = useState('WebToolkit Pro - 190+ Premium Developer Tools')
   const [url, setUrl] = useState('https://wtkpro.site/tools/snippet-preview')
   const [description, setDescription] = useState('Access our free SERP snippet preview tool to see how your website appears in Google search results. Optimize your titles and meta descriptions for better CTR.')
 

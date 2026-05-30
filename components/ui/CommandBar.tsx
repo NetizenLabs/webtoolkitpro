@@ -110,7 +110,7 @@ export default function CommandBar({ tools }: CommandBarProps) {
           {search.trim() === '' ? (
             <div className="p-12 text-center text-gray-500 dark:text-[#8A9BBE]">
               <Command className="w-10 h-10 mx-auto mb-4 opacity-20" />
-              <p className="text-sm">Search across 150+ developer tools, formats, and generators.</p>
+              <p className="text-sm">Search across 190+ developer tools, formats, and generators.</p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
                 <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#1E2D47] rounded-md">Try: &quot;format json&quot;</span>
                 <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#1E2D47] rounded-md">Try: &quot;decode jwt&quot;</span>

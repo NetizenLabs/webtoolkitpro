@@ -71,7 +71,7 @@ export default function Footer() {
               <li><Link href="/tools/jwt-decoder/" className="hover:text-[#00D4B4] transition-colors">Offline JWT Decoder</Link></li>
               <li><Link href="/tools/hash-generator/" className="hover:text-[#00D4B4] transition-colors">Secure Hash Generator</Link></li>
               <li><Link href="/tools/base64-encoder/" className="hover:text-[#00D4B4] transition-colors">Base64 Encoder/Decoder</Link></li>
-              <li><Link href="/tools/uuid-v7-generator/" className="hover:text-[#00D4B4] transition-colors">UUID v7 Generator</Link></li>
+              <li><Link href="/tools/bulk-uuid-v4-v7-generator/" className="hover:text-[#00D4B4] transition-colors">Bulk UUID Generator</Link></li>
             </ul>
           </div>
 

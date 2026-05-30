@@ -14,7 +14,7 @@ interface StatItem {
 }
 
 const statItems: StatItem[] = [
-  { label: 'Tools Live', value: '150+', numericTarget: 150, suffix: '+', icon: Zap, color: 'text-[#00D4B4]', live: true },
+  { label: 'Tools Live', value: '190+', numericTarget: 190, suffix: '+', icon: Zap, color: 'text-[#00D4B4]', live: true },
   { label: 'Data Privacy', value: '100%', numericTarget: 100, suffix: '%', icon: Shield, color: 'text-blue-500' },
   { label: 'Avg Latency', value: '<1ms', icon: Clock, color: 'text-emerald-500', live: true },
   { label: 'Open Source', value: 'Verified', icon: Code, color: 'text-purple-500' },

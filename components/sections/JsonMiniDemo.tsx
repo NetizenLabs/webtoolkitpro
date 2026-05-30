@@ -112,7 +112,7 @@ export default function JsonMiniDemo() {
             Open Full JSON Formatter <ArrowRight className="w-4 h-4" />
           </Link>
           <p className="mt-4 text-[10px] text-gray-400 dark:text-[#4A6080] font-mono uppercase tracking-widest">
-            150+ tools available — no login, no tracking, no limits
+            190+ tools available — no login, no tracking, no limits
           </p>
         </div>
       </div>

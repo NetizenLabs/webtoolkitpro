@@ -275,7 +275,7 @@ export default function AuthorPage() {
       {/* Stats / Badges */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
         {[
-          { label: 'Core Tools', val: '150+', icon: Code2 },
+          { label: 'Core Tools', val: '190+', icon: Code2 },
           { label: 'Uptime', val: '99.99%', icon: Globe },
           { label: 'Privacy', val: '100%', icon: Shield },
           { label: 'Response', val: 'Instant', icon: Zap },

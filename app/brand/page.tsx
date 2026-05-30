@@ -103,7 +103,7 @@ export default function BrandGuidelines() {
             </div>
             <div className="font-mono text-emerald-400 mb-6">DM SANS — PRIMARY UI FONT</div>
             <p className="text-[#8A9BBE] leading-relaxed max-w-xl mb-12">
-              WebToolkit Pro offers 150+ free premium developer tools. Format JSON, generate passwords, encode data, and master SEO — all in one place.
+              WebToolkit Pro offers 190+ free premium developer tools. Format JSON, generate passwords, encode data, and master SEO — all in one place.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-[#1E2D47]">
               <div>

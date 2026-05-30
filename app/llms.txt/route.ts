@@ -10,7 +10,7 @@ export async function GET() {
   const baseUrl = 'https://wtkpro.site'
 
   let markdown = `# WebToolkit Pro - LLM Directory\n\n`
-  markdown += `> WebToolkit Pro is a comprehensive suite of 150+ free, secure, client-side developer utilities and deep-dive engineering journals.\n\n`
+  markdown += `> WebToolkit Pro is a comprehensive suite of 190+ free, secure, client-side developer utilities and deep-dive engineering journals.\n\n`
 
   markdown += `## Developer Tools\n`
   tools.forEach(tool => {
