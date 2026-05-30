@@ -80,5 +80,5 @@ SEO was about the search engine. GEO is about the searcher's intent as interpret
 ---
 
 ### About the Author
-*I am the engineering lead at [WebToolkit Pro](https://wtkpro.site), where we are building 150+ secure, client-side developer utilities designed for the 2026 performance standard.*
+*I am the engineering lead at [WebToolkit Pro](https://wtkpro.site), where we are building 130+ secure, client-side developer utilities designed for the 2026 performance standard.*
 

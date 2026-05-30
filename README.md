@@ -18,7 +18,7 @@ Our platform isn't just a blog; it's a knowledge hub. We've overhauled all **tec
 - **Intent-Led Headings**: Headers refactored into high-volume user questions to capture AI "Answer Boxes."
 - **Entity Mapping**: Advanced JSON-LD structures for SGE (Search Generative Experience) and Perplexity readability.
 
-## 🌟 Professional Tool Registry (150+ Utilities)
+## 🌟 Professional Tool Registry (130+ Utilities)
 We run on a **Dynamic Tool Registry** system that ensures maximum performance for every utility:
 *   💎 **[JSON Formatter](https://wtkpro.site/tools/json-formatter/)** - Zero-knowledge client-side data cleaning.
 *   🔒 **[Password Lab](https://wtkpro.site/tools/password-generator/)** - Cryptographically secure credential generation.

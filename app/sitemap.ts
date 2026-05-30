@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  const toolUrls = tools.map((tool) => ({
+  const toolUrls = tools.filter(t => !t.isComingSoon).map((tool) => ({
     url: `${baseUrl}/tools/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,

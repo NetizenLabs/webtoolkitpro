@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Type, Image as ImageIcon, Copy, ArrowRightLeft, Upload, Download } from 'lucide-react'
+import { Type, Image as ImageIcon, Copy, ArrowRightLeft, Upload } from 'lucide-react'
 
 export default function Base64EncoderDecoder() {
   const [activeTab, setActiveTab] = useState<'text' | 'image'>('text')
@@ -19,7 +19,6 @@ export default function Base64EncoderDecoder() {
     setTextInput(input)
     try {
       if (encode) {
-        // Safe utf-8 encode
         setTextOutput(btoa(unescape(encodeURIComponent(input))))
       } else {
         setTextOutput(decodeURIComponent(escape(atob(input))))
@@ -44,7 +43,6 @@ export default function Base64EncoderDecoder() {
 
   const handleBase64ImageInput = (value: string) => {
     setBase64Image(value)
-    // Basic validation to show preview
     if (value.startsWith('data:image')) {
       setImagePreview(value)
     } else {
@@ -54,7 +52,6 @@ export default function Base64EncoderDecoder() {
 
   return (
     <div className="space-y-6">
-      {/* Tabs */}
       <div className="flex border-b border-gray-100 dark:border-[#1E2D47]">
         <button
           onClick={() => setActiveTab('text')}
@@ -114,6 +111,7 @@ export default function Base64EncoderDecoder() {
             </div>
             <div className="flex-grow bg-gray-50 dark:bg-[#0B1120] rounded-2xl flex items-center justify-center overflow-hidden border border-dashed border-gray-200 dark:border-[#1E2D47]">
               {imagePreview ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
                 <img src={imagePreview} alt="Preview" className="max-w-full max-h-full object-contain p-4" />
               ) : (
                 <div className="text-gray-400 text-sm flex flex-col items-center">

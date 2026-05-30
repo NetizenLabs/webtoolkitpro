@@ -4,7 +4,7 @@ import React, { useState, useCallback } from 'react'
 import Link from '@/components/ui/NativeLink';
 import { FileJson, ArrowRight, Clipboard, Check, Sparkles } from 'lucide-react'
 
-const SAMPLE_INPUT = `{"name":"Abu Sufyan","role":"Lead Architect","tools":150,"private":true,"stack":["Next.js","TypeScript","Edge"]}`
+const SAMPLE_INPUT = `{"name":"Abu Sufyan","role":"Lead Architect","tools":135,"private":true,"stack":["Next.js","TypeScript","Edge"]}`
 
 function formatJSON(raw: string): { result: string; error: string | null } {
   try {
@@ -112,7 +112,7 @@ export default function JsonMiniDemo() {
             Open Full JSON Formatter <ArrowRight className="w-4 h-4" />
           </Link>
           <p className="mt-4 text-[10px] text-gray-400 dark:text-[#4A6080] font-mono uppercase tracking-widest">
-            190+ tools available — no login, no tracking, no limits
+            130+ tools available — no login, no tracking, no limits
           </p>
         </div>
       </div>

@@ -98,14 +98,14 @@ export default function AboutPage() {
           <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-[#00D4B4] dark:to-[#0094FF] bg-clip-text text-transparent">Future of Web Tools</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 dark:text-[#8A9BBE] max-w-3xl mx-auto leading-relaxed">
-          WebToolkit Pro is an enterprise-grade ecosystem of 190+ high-performance, accessible developer utilities optimized for the modern 2026 engineering workflow. 100% secure, browser-based, and zero-server dependent.
+          WebToolkit Pro is an enterprise-grade ecosystem of 130+ high-performance, accessible developer utilities optimized for the modern 2026 engineering workflow. 100% secure, browser-based, and zero-server dependent.
         </p>
       </header>
 
       {/* Overview Metric Cards */}
       <section aria-label="Key Performance Indicators" className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
         {[
-          { metric: '190+', label: 'Technical Tools' },
+          { metric: '130+', label: 'Technical Tools' },
           { metric: '0ms', label: 'Server Lag' },
           { metric: '100%', label: 'Data Privacy' },
           { metric: 'A11y', label: 'WCAG Compliant' }
@@ -138,7 +138,7 @@ export default function AboutPage() {
             WebToolkit Pro solves this forever. By building advanced AST parsers, formatting engines, and regex evaluators directly on browser threads, we completely isolate your workflows. Your inputs never cross the network interface—guaranteeing compliance with strict ISO/IEC and SOC-2 guidelines.
           </p>
           <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed font-medium">
-            Furthermore, we firmly believe that great engineering tools should not be gated behind expensive subscriptions. That is why our entire suite of over 150 utilities is offered 100% free of charge. Whether you are validating massive JSON payloads, generating secure UUIDs, formatting XML structures, or testing regular expressions against a 10MB log file, WebToolkit Pro ensures you have the robust, locally-executing utilities required to get the job done instantly without worrying about latency or subscription limits. We&apos;ve optimized every line of code to utilize modern browser capabilities—like Web Workers and WebAssembly—to ensure that our tools outperform traditional server-rendered applications in both speed and reliability.
+            Furthermore, we firmly believe that great engineering tools should not be gated behind expensive subscriptions. That is why our entire suite of over 130 utilities is offered 100% free of charge. Whether you are validating massive JSON payloads, generating secure UUIDs, formatting XML structures, or testing regular expressions against a 10MB log file, WebToolkit Pro ensures you have the robust, locally-executing utilities required to get the job done instantly without worrying about latency or subscription limits. We&apos;ve optimized every line of code to utilize modern browser capabilities—like Web Workers and WebAssembly—to ensure that our tools outperform traditional server-rendered applications in both speed and reliability.
           </p>
         </div>
       </section>
