@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { ArrowRightLeft, Copy, CheckCircle2, Binary, Hash, FileText, Hash as NumberIcon } from 'lucide-react'
+import { ArrowRightLeft, Copy, CheckCircle2, Binary, Hash, FileText, Calculator as NumberIcon } from 'lucide-react'
 
 export default function BinaryHexDecimalConverter() {
   const [inputs, setInputs] = useState({
