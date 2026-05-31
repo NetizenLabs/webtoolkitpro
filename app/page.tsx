@@ -85,9 +85,9 @@ export default function Home() {
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
-            100% Private, Client-Side<br />
+            Secure, Client-Side Developer<br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
-              Developer Tools.
+              Utilities for Engineers.
             </span>
           </h1>
 

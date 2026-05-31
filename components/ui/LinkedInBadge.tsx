@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { Linkedin, ExternalLink } from 'lucide-react'
 
 interface LinkedInBadgeProps {
   vanity: string
@@ -9,124 +10,47 @@ interface LinkedInBadgeProps {
 }
 
 export default function LinkedInBadge({ vanity, profileUrl, displayName = 'Abu Sufyan' }: LinkedInBadgeProps) {
-  const [mounted, setMounted] = useState(false)
-  const [isDark, setIsDark] = useState(false)
-  const [renderKey, setRenderKey] = useState(0)
-
-  useEffect(() => {
-    setMounted(true)
-
-    // Check initial dark mode state
-    const checkTheme = () => {
-      const isDarkMode = document.documentElement.classList.contains('dark')
-      setIsDark(isDarkMode)
-    }
-
-    checkTheme()
-
-    // Observe changes to the 'class' attribute of <html> to detect theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-          checkTheme()
-        }
-      })
-    })
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    })
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
-  // When theme changes (or component mounts), re-render the badge wrapper to force refresh
-  useEffect(() => {
-    if (!mounted) return
-    setRenderKey((prev) => prev + 1)
-  }, [isDark, mounted])
-
-  // Trigger the LinkedIn badge rendering logic after DOM update
-  useEffect(() => {
-    if (!mounted) return
-
-    const loadLinkedInScript = () => {
-      // Check if script is already present
-      const existingScript = document.querySelector('script[src*="platform.linkedin.com/badges/js/profile.js"]')
-
-      if (!existingScript) {
-        const script = document.createElement('script')
-        script.src = 'https://platform.linkedin.com/badges/js/profile.js'
-        script.async = true
-        script.defer = true
-        script.type = 'text/javascript'
-        script.onload = () => {
-          if (typeof window !== 'undefined' && (window as any).LIRenderAll) {
-            (window as any).LIRenderAll()
-          }
-        }
-        document.body.appendChild(script)
-      } else {
-        // If script exists, trigger render
-        if (typeof window !== 'undefined' && (window as any).LIRenderAll) {
-          (window as any).LIRenderAll()
-        } else {
-          // In case the script is loading, wait and retry
-          const interval = setInterval(() => {
-            if ((window as any).LIRenderAll) {
-              (window as any).LIRenderAll()
-              clearInterval(interval)
-            }
-          }, 100)
-          setTimeout(() => clearInterval(interval), 3000)
-        }
-      }
-    }
-
-    // Small delay to ensure the DOM is updated with the new key and classes before LIRenderAll is called
-    const timer = setTimeout(() => {
-      loadLinkedInScript()
-    }, 150)
-
-    return () => clearTimeout(timer)
-  }, [renderKey, mounted])
-
-  if (!mounted) {
-    return (
-      <div className="w-full h-[310px] rounded-[12px] bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] animate-pulse flex flex-col items-center justify-center p-6 text-center">
-        <div className="w-10 h-10 bg-gray-200 dark:bg-[#1E2D47] rounded-full mb-3" />
-        <div className="h-4 w-3/4 bg-gray-200 dark:bg-[#1E2D47] rounded mb-2" />
-        <div className="h-3 w-1/2 bg-gray-200 dark:bg-[#1E2D47] rounded" />
-      </div>
-    )
-  }
-
   return (
-    <div
-      key={renderKey}
-      className="w-full bg-white dark:bg-[#0D1526] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] shadow-sm hover:border-[#00D4B4]/40 hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col items-center justify-center p-4 min-h-[310px]"
+    <a
+      href={`${profileUrl}?trk=wtkpro-author`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block w-full bg-white dark:bg-[#0D1526] rounded-[16px] border border-gray-100 dark:border-[#1E2D47] shadow-sm hover:border-[#0094FF]/40 hover:shadow-md transition-all duration-300 overflow-hidden relative"
     >
-      <div
-        className="badge-base LI-profile-badge max-w-full"
-        data-locale="en_US"
-        data-size="medium"
-        data-theme={isDark ? 'dark' : 'light'}
-        data-type="VERTICAL"
-        data-vanity={vanity}
-        data-version="v1"
-      >
-        <a
-          className="badge-base__link LI-simple-link text-xs font-bold text-blue-600 dark:text-[#00D4B4] hover:underline"
-          href={`${profileUrl}?trk=profile-badge`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {displayName}
-        </a>
+      {/* Background Banner */}
+      <div className="h-20 w-full bg-gradient-to-r from-[#0077B5] to-[#0094FF] relative">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
       </div>
-    </div>
+      
+      {/* Profile Section */}
+      <div className="px-6 pb-6 relative">
+        {/* Avatar Placeholder / Icon */}
+        <div className="w-16 h-16 rounded-full bg-white dark:bg-[#0D1526] p-1.5 absolute -top-8 left-6 border border-gray-100 dark:border-[#1E2D47] shadow-sm">
+          <div className="w-full h-full bg-[#0077B5]/10 rounded-full flex items-center justify-center text-[#0077B5]">
+            <Linkedin className="w-6 h-6" fill="currentColor" />
+          </div>
+        </div>
+        
+        {/* External Link Icon */}
+        <div className="absolute top-4 right-4">
+          <ExternalLink className="w-4 h-4 text-gray-300 dark:text-[#4A6080] group-hover:text-[#0094FF] transition-colors" />
+        </div>
+
+        {/* Text Content */}
+        <div className="pt-10">
+          <h4 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-[#0094FF] transition-colors leading-tight">
+            {displayName}
+          </h4>
+          <p className="text-xs text-gray-500 dark:text-[#8A9BBE] mt-1 mb-4 font-medium">
+            View full professional profile and connect on LinkedIn.
+          </p>
+          
+          {/* View Profile Button */}
+          <div className="w-full py-2.5 bg-[#0077B5]/5 hover:bg-[#0077B5]/10 text-[#0077B5] dark:text-[#0094FF] text-xs font-bold text-center rounded-lg transition-colors border border-[#0077B5]/10">
+            View Profile
+          </div>
+        </div>
+      </div>
+    </a>
   )
 }
