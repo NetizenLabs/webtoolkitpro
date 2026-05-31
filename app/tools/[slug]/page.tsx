@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from '@/components/ui/NativeLink';
 import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget } from '@/lib/tools'
-import { generateSoftwareSchema, generateFAQSchema } from '@/lib/seo/schema'
+import { generateSoftwareSchema } from '@/lib/seo/schema'
 import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
 import ToolRenderer from '@/components/tools/ToolRenderer'
 import ToolInfo from '@/components/sections/ToolInfo'
@@ -105,7 +105,6 @@ export default function ToolPage({ params }: ToolPageProps) {
 
   const relatedTools = getRelatedTools(tool)
   const softwareSchema = generateSoftwareSchema(tool)
-  const faqSchema = generateFAQSchema(tool)
 
   const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
 
@@ -119,12 +118,6 @@ export default function ToolPage({ params }: ToolPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
 
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12">

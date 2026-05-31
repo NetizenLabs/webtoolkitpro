@@ -435,26 +435,6 @@ export default async function BlogPostPage({ params }: Props) {
         }}
       />
 
-      {/* JSON-LD FAQPage */}
-      {post.faqs && post.faqs.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              'mainEntity': post.faqs.map((faq) => ({
-                '@type': 'Question',
-                'name': faq.q,
-                'acceptedAnswer': {
-                  '@type': 'Answer',
-                  'text': faq.a,
-                },
-              })),
-            }),
-          }}
-        />
-      )}
 
       {/* JSON-LD Breadcrumb */}
       <script

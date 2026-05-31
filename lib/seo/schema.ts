@@ -113,30 +113,3 @@ export function generateSoftwareSchema(tool: ToolConfig) {
   }
 }
 
-export function generateFAQSchema(tool: ToolConfig) {
-  const faqs = tool.content?.faq && tool.content.faq.length > 0 
-    ? tool.content.faq 
-    : [
-        {
-          question: `Is the ${tool.name} free to use?`,
-          answer: `Yes, the ${tool.name} is 100% free to use. Like all tools on WebToolkit Pro, there are no subscriptions or hidden fees.`
-        },
-        {
-          question: `Is my data secure with the ${tool.name}?`,
-          answer: `Absolutely. All processing for the ${tool.name} happens entirely within your web browser. We never transmit your data to our servers, ensuring total privacy.`
-        }
-      ]
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    'mainEntity': faqs.map(item => ({
-      '@type': 'Question',
-      'name': item.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': item.answer
-      }
-    }))
-  }
-}
