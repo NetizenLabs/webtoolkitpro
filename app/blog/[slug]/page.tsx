@@ -2,7 +2,8 @@ import React from 'react'
 import { ShieldCheck, Twitter, Mail, Terminal, Rocket, ChevronRight, Zap, Award, Flame, UserCheck, BookOpen, Clock } from 'lucide-react'
 import Link from '@/components/ui/NativeLink';
 import { notFound } from 'next/navigation'
-import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/blog'
+import { getAllSlugs, getPostBySlug, getAllPosts, getRelatedToolsForPost } from '@/lib/blog'
+import RelatedToolsInline from '@/components/blog/RelatedToolsInline'
 import Image from 'next/image'
 import AdSlot from '@/components/ads/AdSlot'
 import type { Metadata } from 'next'
@@ -300,6 +301,10 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* Semantic Authority Loop: Related Tools Widget */}
+        <RelatedToolsInline tools={getRelatedToolsForPost(post.tags)} />
+
 
         {/* Footer Meta */}
         <div className="mt-20 pt-12 border-t border-border">

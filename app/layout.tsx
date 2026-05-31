@@ -17,6 +17,7 @@ import { PipelineProvider } from '@/contexts/PipelineContext'
 import CommandBar from '@/components/ui/CommandBar'
 import { getTools } from '@/lib/tools'
 import WebMCPProvider from '@/components/tools/WebMCPProvider'
+import { generateOrganizationSchema, generateWebSiteSchema } from '@/lib/seo/schema'
 
 // Lazy-load non-critical UI so it doesn't block the initial render / LCP
 const NewContentNotification = dynamic(
@@ -185,48 +186,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              'name': 'WebToolkit Pro',
-              'url': 'https://wtkpro.site',
-              'logo': {
-                '@type': 'ImageObject',
-                'url': 'https://wtkpro.site/logo-optimized.webp',
-                'width': '512',
-                'height': '512'
-              },
-              'sameAs': [
-                'https://github.com/WebToolkit-Pro',
-                'https://twitter.com/WebToolKitPro',
-                'https://producthunt.com/products/webtoolkit-pro',
-                'https://severancecalculator.xyz',
-                'https://tradeconvert.pro',
-                'https://abusufyan.xyz'
-              ],
-              'description': 'The global standard for secure, client-side developer utilities and technical engineering journals.',
-              'contactPoint': {
-                '@type': 'ContactPoint',
-                'email': 'hello@wtkpro.site',
-                'contactType': 'customer support'
-              }
-            }),
+            __html: JSON.stringify(generateOrganizationSchema()),
           }}
         />
 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              'url': 'https://wtkpro.site',
-              'potentialAction': {
-                '@type': 'SearchAction',
-                'target': 'https://wtkpro.site/tools?q={search_term_string}',
-                'query-input': 'required name=search_term_string'
-              }
-            }),
+            __html: JSON.stringify(generateWebSiteSchema()),
           }}
         />
         <script

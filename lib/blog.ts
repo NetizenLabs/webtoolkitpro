@@ -10,14 +10,35 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 const INTERNAL_LINKS = [
+  // Developer Tools
   { keyword: 'JSON Formatter', url: '/tools/json-formatter/' },
   { keyword: 'format JSON', url: '/tools/json-formatter/' },
-  { keyword: 'What is my IP', url: '/tools/what-is-my-ip/' },
-  { keyword: 'Redirect Checker', url: '/tools/redirect-checker/' },
+  { keyword: 'validate JSON', url: '/tools/json-formatter/' },
   { keyword: 'Password Generator', url: '/tools/password-generator/' },
   { keyword: 'secure passwords', url: '/tools/password-generator/' },
   { keyword: 'strong passwords', url: '/tools/password-generator/' },
-  { keyword: 'developer tools', url: '/tools/' },
+  { keyword: 'password entropy', url: '/tools/password-generator/' },
+  { keyword: 'RegEx Tester', url: '/tools/regex-tester/' },
+  { keyword: 'Regular Expressions', url: '/tools/regex-tester/' },
+  { keyword: 'RegEx patterns', url: '/tools/regex-tester/' },
+  { keyword: 'JWT Decoder', url: '/tools/jwt-decoder/' },
+  { keyword: 'JSON Web Tokens', url: '/tools/jwt-decoder/' },
+  { keyword: 'decode JWT', url: '/tools/jwt-decoder/' },
+  { keyword: 'Hash Generator', url: '/tools/hash-generator/' },
+  { keyword: 'Base64 encode', url: '/tools/base64-encoder/' },
+  { keyword: 'XML formatter', url: '/tools/xml-formatter/' },
+  
+  // SEO & Network
+  { keyword: 'Redirect Checker', url: '/tools/redirect-checker/' },
+  { keyword: 'What is my IP', url: '/tools/what-is-my-ip/' },
+  { keyword: 'XML Sitemap Validator', url: '/tools/sitemap-validator/' },
+  { keyword: 'Robots.txt Generator', url: '/tools/robots-txt-toolkit/' },
+  { keyword: 'Meta Tag Generator', url: '/tools/meta-tag-generator/' },
+  
+  // Broad Hubs
+  { keyword: 'developer tools', url: '/tools/hub/developer-tools/' },
+  
+  // Blogs & Architecture
   { keyword: 'Edge Computing', url: '/blog/edge-computing-guide/' },
   { keyword: 'Edge Functions', url: '/blog/edge-computing-guide/' },
   { keyword: 'JSON formatting', url: '/blog/json-formatting-best-practices/' },
@@ -26,23 +47,36 @@ const INTERNAL_LINKS = [
   { keyword: 'JS Frameworks', url: '/blog/enterprise-js-frameworks/' },
   { keyword: 'technical SEO', url: '/blog/ai-seo-optimization-2026/' },
   { keyword: 'structured data', url: '/blog/seo-meta-tags-complete-guide/' },
-  { keyword: 'RegEx Tester', url: '/tools/regex-tester/' },
-  { keyword: 'Regular Expressions', url: '/tools/regex-tester/' },
-  { keyword: 'JWT Decoder', url: '/tools/jwt-decoder/' },
-  { keyword: 'JSON Web Tokens', url: '/tools/jwt-decoder/' },
-  { keyword: 'DEVHUB INDEX', url: 'https://devhubindex.vercel.app' },
-  { keyword: 'Abu Sufyan', url: 'https://abusufyan.xyz' },
+  { keyword: 'meta tags', url: '/blog/seo-meta-tags-complete-guide/' },
   { keyword: 'Trust Network', url: '/blog/webtoolkit-pro-trust-network/' },
   { keyword: 'RFC 8259', url: '/blog/what-is-json-complete-guide/' },
   { keyword: 'JSON-LD', url: '/blog/json-ld-schema-tutorial/' },
-  { keyword: 'password entropy', url: '/blog/how-secure-is-my-password/' },
-  { keyword: 'RegEx patterns', url: '/blog/regex-cheat-sheet-javascript/' },
   { keyword: 'Edge Runtime', url: '/blog/edge-computing-performance-2026/' },
   { keyword: 'TTFB', url: '/blog/3ms-ttfb-performance-study/' },
-  { keyword: 'meta tags', url: '/blog/seo-meta-tags-complete-guide/' },
-  { keyword: 'XML formatter', url: '/tools/xml-formatter/' },
-  { keyword: 'Base64 encode', url: '/tools/base64-encoder/' },
+  
+  // External Authored
+  { keyword: 'DEVHUB INDEX', url: 'https://devhubindex.vercel.app' },
+  { keyword: 'Abu Sufyan', url: 'https://abusufyan.xyz' },
 ]
+
+export function getRelatedToolsForPost(postTags: string[], limit: number = 3) {
+  // Safe dynamic import to avoid circular dependencies if getTools is imported here directly
+  const { getTools } = require('./tools')
+  const allTools = getTools()
+  
+  const related = allTools.map((tool: any) => {
+    let score = 0
+    const tagOverlap = tool.tags.filter((tag: string) => postTags.includes(tag)).length
+    score += tagOverlap * 10
+    return { tool, score }
+  })
+  .filter((item: any) => item.score > 0)
+  .sort((a: any, b: any) => b.score - a.score)
+  .slice(0, limit)
+  .map((item: any) => item.tool)
+  
+  return related
+}
 
 function applySmartLinks(htmlString: string): string {
   let processedHtml = htmlString;

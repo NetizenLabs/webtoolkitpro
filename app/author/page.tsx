@@ -4,6 +4,7 @@ import Link from '@/components/ui/NativeLink';
 import Image from 'next/image'
 import { Github, Twitter, Mail, Linkedin, ExternalLink, Zap, Shield, Globe, Code2, ArrowRight, Award, Flame, UserCheck, BookOpen, ChevronRight, CheckCircle, FileText, Terminal } from 'lucide-react'
 import LinkedInBadge from '@/components/ui/LinkedInBadge'
+import { generatePersonSchema } from '@/lib/seo/schema'
 
 export const metadata = {
   title: 'Abu Sufyan - Lead Engineer & Author | WebToolkit Pro',
@@ -16,6 +17,10 @@ export const metadata = {
 export default function AuthorPage() {
   return (
     <div className="dynamic-padding max-w-4xl mx-auto min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
+      />
       {/* Header Section */}
       <div className="text-center mb-16 pt-12">
         {/* Placeholder Photo */}
