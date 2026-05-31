@@ -80,7 +80,7 @@ export default function Footer() {
             <ul className="space-y-2 text-[11px] font-medium">
               <li><Link href="/tools/meta-tag-generator/" className="hover:text-[#00D4B4] transition-colors">Meta Tag Generator</Link></li>
               <li><Link href="/tools/schema-generator/" className="hover:text-[#00D4B4] transition-colors">JSON-LD Schema Tool</Link></li>
-              <li><Link href="/tools/robots-generator/" className="hover:text-[#00D4B4] transition-colors">Robots.txt Generator</Link></li>
+              <li><Link href="/tools/robots-txt-toolkit/" className="hover:text-[#00D4B4] transition-colors">Robots.txt Generator</Link></li>
               <li><Link href="/tools/sitemap-validator/" className="hover:text-[#00D4B4] transition-colors">XML Sitemap Validator</Link></li>
               <li><Link href="/tools/redirect-checker/" className="hover:text-[#00D4B4] transition-colors">HTTP Redirect Checker</Link></li>
               <li><Link href="/tools/what-is-my-ip/" className="hover:text-[#00D4B4] transition-colors">IP Address & Geo Lookup</Link></li>
