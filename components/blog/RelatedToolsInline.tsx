@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '@/components/ui/NativeLink'
-import { ToolConfig } from '@/lib/tools'
+import { ToolConfig } from '@/types/tool'
 import DynamicIcon from '@/components/ui/DynamicIcon'
 import { ArrowRight, Wrench } from 'lucide-react'
 

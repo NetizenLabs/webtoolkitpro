@@ -14,6 +14,7 @@ https://wtkpro.site/blog/enterprise-web-security-guide/
 https://wtkpro.site/blog/favicon-sizes-complete-guide-2026/
 https://wtkpro.site/blog/how-secure-is-my-password/
 https://wtkpro.site/blog/htaccess-cheat-sheet-wordpress/
+https://wtkpro.site/blog/json-formatter-vs-jq/
 https://wtkpro.site/blog/modern-css-architecture/
 https://wtkpro.site/blog/performance-optimization-guide/
 https://wtkpro.site/blog/privacy-first-web-development/

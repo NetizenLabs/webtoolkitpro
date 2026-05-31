@@ -1,4 +1,4 @@
-import { ToolConfig } from '@/lib/tools'
+import { ToolConfig } from '@/types/tool'
 
 export const SITE_URL = 'https://wtkpro.site'
 export const AUTHOR_URL = 'https://abusufyan.xyz'
