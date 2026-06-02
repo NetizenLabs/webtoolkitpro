@@ -113,45 +113,55 @@ const nextConfig = {
       { source: '/tools/xml-to-json', destination: '/tools/csv-json-xml-converter', permanent: true },
       { source: '/tools/json-to-xml', destination: '/tools/csv-json-xml-converter', permanent: true },
       
-      // Deleted newsjacking posts — redirect to blog index to prevent 404s
+      // Deleted newsjacking posts — redirect to relevant master guides to prevent soft 404s
       {
         source: '/blog/iran-conflict-2026-cybersecurity',
-        destination: '/blog/',
+        destination: '/blog/enterprise-web-security-guide/',
         permanent: true,
       },
       {
         source: '/blog/iran-conflict-2026-cybersecurity/',
-        destination: '/blog/',
+        destination: '/blog/enterprise-web-security-guide/',
         permanent: true,
       },
       {
         source: '/blog/lirr-strike-2026-remote-dev-tools',
-        destination: '/blog/',
+        destination: '/blog/ai-first-development-2026/',
         permanent: true,
       },
       {
         source: '/blog/lirr-strike-2026-remote-dev-tools/',
-        destination: '/blog/',
+        destination: '/blog/ai-first-development-2026/',
         permanent: true,
       },
       {
         source: '/blog/trump-xi-summit-2026-tech-impact',
-        destination: '/blog/',
+        destination: '/blog/edge-computing-guide/',
         permanent: true,
       },
       {
         source: '/blog/trump-xi-summit-2026-tech-impact/',
-        destination: '/blog/',
+        destination: '/blog/edge-computing-guide/',
         permanent: true,
       },
       {
         source: '/blog/supreme-court-2026-privacy-impact',
-        destination: '/blog/',
+        destination: '/blog/privacy-first-web-development/',
         permanent: true,
       },
       {
         source: '/blog/supreme-court-2026-privacy-impact/',
-        destination: '/blog/',
+        destination: '/blog/privacy-first-web-development/',
+        permanent: true,
+      },
+      {
+        source: '/blog/best-diff-checker-tools-2026',
+        destination: '/blog/what-is-unified-diff/',
+        permanent: true,
+      },
+      {
+        source: '/blog/best-diff-checker-tools-2026/',
+        destination: '/blog/what-is-unified-diff/',
         permanent: true,
       },
       {
