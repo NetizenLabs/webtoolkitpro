@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 
 export type AuditLogEntry = {
   id: string;
@@ -44,7 +44,7 @@ export function AuditLoggerProvider({ children }: { children: React.ReactNode })
     }
   }, [logs]);
 
-  const logAudit = (entry: Omit<AuditLogEntry, 'id' | 'timestamp'>) => {
+  const logAudit = useCallback((entry: Omit<AuditLogEntry, 'id' | 'timestamp'>) => {
     const newLog: AuditLogEntry = {
       ...entry,
       id: crypto.randomUUID(),
@@ -52,14 +52,14 @@ export function AuditLoggerProvider({ children }: { children: React.ReactNode })
     };
     
     setLogs(prev => [newLog, ...prev].slice(0, 5000)); // Keep last 5000 logs
-  };
+  }, []);
 
-  const clearLogs = () => {
+  const clearLogs = useCallback(() => {
     setLogs([]);
     localStorage.removeItem('wtkpro_audit_logs');
-  };
+  }, []);
 
-  const exportLogs = () => {
+  const exportLogs = useCallback(() => {
     try {
       const json = JSON.stringify(logs, null, 2);
       const blob = new Blob([json], { type: 'application/json' });
@@ -87,7 +87,7 @@ export function AuditLoggerProvider({ children }: { children: React.ReactNode })
         details: 'Failed to generate export file.'
       });
     }
-  };
+  }, [logs, logAudit]);
 
   return (
     <AuditLoggerContext.Provider value={{ logs, logAudit, clearLogs, exportLogs }}>
