@@ -26,6 +26,7 @@ jobs:
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-24.04'
         run: |
+          cat /etc/os-release
           sudo apt-get update
           sudo apt-get install -y \
             libgtk-3-dev \
@@ -41,6 +42,12 @@ jobs:
             patchelf \
             pkg-config
 
+          echo "--- DEBUG: Locating .pc files ---"
+          find /usr -name "javascriptcoregtk*.pc" 2>/dev/null || true
+          find /usr -name "libsoup*.pc" 2>/dev/null || true
+          echo "--- DEBUG: Checking pkg-config paths ---"
+          pkg-config --variable pc_path pkg-config || true
+
       - name: install frontend dependencies
         run: npm install
 
@@ -49,7 +56,6 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
         with:
           tagName: app-v__VERSION__
           releaseName: 'WebToolkit Pro Enterprise v__VERSION__'
