@@ -2,23 +2,35 @@
 
 import React, { useState } from 'react'
 import { Shield, ArrowRight, Copy, Check } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function Rot13Cipher() {
   const [text, setText] = useState('')
   const [result, setResult] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const rot13 = () => {
-    const res = text.replace(/[a-zA-Z]/g, (char) => {
+    const processStr = (str: string) => str.replace(/[a-zA-Z]/g, (char) => {
       const code = char.charCodeAt(0)
       const base = code <= 90 ? 65 : 97
       return String.fromCharCode(((code - base + 13) % 26) + base)
     })
-    setResult(res)
+
+    if (isBulkMode) {
+      const lines = text.split('\n')
+      const resultLines = lines.map(line => processStr(line))
+      setResult(resultLines.join('\n'))
+    } else {
+      setResult(processStr(text))
+    }
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk ROT13 Cipher" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
@@ -50,7 +62,11 @@ export default function Rot13Cipher() {
               {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
             </button>
           </div>
-          <p className="text-sm font-medium text-gray-800 dark:text-[#F0F6FF] leading-relaxed break-all font-mono">{result}</p>
+          <textarea
+            readOnly
+            className="w-full h-32 p-6 font-medium text-sm bg-gray-50 dark:bg-[#0B1120] text-gray-800 dark:text-[#F0F6FF] border border-gray-100 dark:border-[#1E2D47] rounded-2xl outline-none resize-none break-all font-mono leading-relaxed"
+            value={result}
+          />
         </div>
       )}
     </div>
