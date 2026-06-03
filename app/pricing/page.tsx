@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { Shield, Zap, Lock, Terminal, Box, Globe, Download, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Plans — WebToolkit Pro Enterprise',
-  description: 'Choose between Personal Pro and Air-Gapped Enterprise. Zero cloud leakage, 150+ privacy-first developer tools running entirely in your browser sandbox.',
+  title: 'Pricing & Enterprise Licensing — WebToolkit Pro',
+  description: 'WebToolkit Pro is 100% free for individuals. For corporate data compliance and air-gapped security, explore our standalone Enterprise license.',
   alternates: {
     canonical: 'https://wtkpro.site/pricing/',
   },
@@ -13,30 +13,20 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "WebToolkit Pro Subscription Tiers",
-  "description": "150+ privacy-first developer tools. Formatters, converters, generators, and security utilities — zero cloud leakage.",
+  "name": "WebToolkit Pro Air-Gapped Enterprise",
+  "description": "Standalone desktop application of 150+ developer tools. Zero cloud leakage, compliance-ready logging, and bulk processing.",
   "brand": {
     "@type": "Brand",
     "name": "WebToolkit Pro"
   },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Personal Pro",
-      "price": "9.00",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://whop.com/webtoolkit-pro/personal-pro-09"
-    },
-    {
-      "@type": "Offer",
-      "name": "Air-Gapped Enterprise",
-      "price": "39.00",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://whop.com/webtoolkit-pro/air-gapped-enterprise"
-    }
-  ]
+  "offers": {
+    "@type": "Offer",
+    "name": "Air-Gapped Enterprise",
+    "price": "39.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://whop.com/joined/webtoolkit-pro/"
+  }
 };
 
 export default function PricingPage() {
@@ -58,10 +48,10 @@ export default function PricingPage() {
             <Shield className="w-4 h-4" /> Secure Sandbox Processing
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-foreground">
-            What Kind of Developer Tools Are These?
+            Free for Developers.<br /> Paid for Corporate Compliance.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Under the WebToolkit Pro and TradeConvert engines, our 150+ client-side utilities are broken down into four distinct, high-performance categories. Because they are built to run entirely inside the browser&apos;s local memory sandbox, they aren&apos;t just basic scripts; they are <strong className="text-foreground">deep parsing engines.</strong>
+            WebToolkit Pro is <strong className="text-foreground">100% free for individual developers</strong> and personal projects. However, if you are a corporate engineer, data analyst, or HR manager operating under strict data compliance policies, you need the Air-Gapped Enterprise license.
           </p>
         </div>
 
@@ -127,63 +117,18 @@ export default function PricingPage() {
         {/* Pricing Strategy / Tiers */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight text-foreground">
-            Simple, Transparent Pricing
+            The Enterprise License
           </h2>
           <p className="text-lg text-muted-foreground">
-            Whether you are a solo developer managing personal projects or a corporate engineer requiring strict air-gapped compliance, we have a tier for you.
+            For teams that cannot risk browser extensions or company network monitoring intercepting sensitive data. Download the entirely offline, compiled desktop application.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Tier 1: Personal Pro */}
-          <div className="card-premium p-10 rounded-3xl flex flex-col relative overflow-hidden border border-border">
-            <div className="mb-8">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-sm font-bold mb-6">
-                For Individuals
-              </div>
-              <h3 className="text-3xl font-black text-foreground mb-2">Personal Pro</h3>
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-5xl font-black text-foreground">$9</span>
-                <span className="text-muted-foreground font-medium">/ month</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Perfect for independent developers, remote freelancers, and digital marketers.
-              </p>
-            </div>
-            
-            <ul className="space-y-4 mb-10 flex-1">
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Unlimited concurrent local processing threads
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Access to beta generators and experimental tools
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Premium Whop Discord community access
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Request custom script additions
-              </li>
-            </ul>
-
-            <a 
-              href="https://whop.com/webtoolkit-pro/personal-pro-09"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-4 rounded-xl text-center font-bold bg-blue-50 hover:bg-blue-100 dark:bg-white/5 dark:hover:bg-white/10 text-foreground transition-all shadow-sm"
-            >
-              Get Personal Pro
-            </a>
-          </div>
-
-          {/* Tier 2: Air-Gapped Enterprise */}
+        <div className="max-w-2xl mx-auto">
+          {/* Tier 2: Air-Gapped Enterprise (Centered) */}
           <div className="card-premium p-10 rounded-3xl flex flex-col relative overflow-hidden border-2 border-[#00D4B4] shadow-2xl shadow-[#00D4B4]/10">
             <div className="absolute top-0 right-0 bg-[#00D4B4] text-[#0D1117] text-xs font-black uppercase tracking-widest py-1.5 px-4 rounded-bl-xl">
-              Most Secure
+              Commercial License
             </div>
             
             <div className="mb-8">
@@ -196,7 +141,7 @@ export default function PricingPage() {
                 <span className="text-muted-foreground font-medium">/ month</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                For corporate engineers, data analysts, and HR managers requiring absolute zero cloud-leakage.
+                The ultimate security guarantee. No cloud servers, no telemetry, just raw processing power on your local machine.
               </p>
             </div>
             
@@ -221,10 +166,14 @@ export default function PricingPage() {
                 <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
                 Full access to the Severance Calculator data scrubbing features
               </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
+                Access to premium Whop Discord channel & custom script requests
+              </li>
             </ul>
 
             <a 
-              href="https://whop.com/webtoolkit-pro/air-gapped-enterprise"
+              href="https://whop.com/joined/webtoolkit-pro/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-4 rounded-xl text-center font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
