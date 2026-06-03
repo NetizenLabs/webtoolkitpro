@@ -9,8 +9,9 @@ import AdSlot from '@/components/ads/AdSlot'
 export const revalidate = 3600
 
 export async function generateMetadata({ searchParams }: { searchParams: { page?: string, jpage?: string } }) {
-  const page = searchParams.page || '1'
-  const jpage = searchParams.jpage || '1'
+  const isTauri = process.env.TAURI_ENV === 'true'
+  const page = isTauri ? '1' : (searchParams?.page || '1')
+  const jpage = isTauri ? '1' : (searchParams?.jpage || '1')
   
   let url = 'https://wtkpro.site/blog/'
   const params = []
@@ -113,13 +114,14 @@ function Pagination({ currentPage, totalItems, limit, paramName }: { currentPage
 }
 
 export default function BlogPage({ searchParams }: { searchParams: { page?: string, jpage?: string } }) {
+  const isTauri = process.env.TAURI_ENV === 'true'
   const allPosts = getAllPosts()
   const blogs = allPosts.filter(p => p.type === 'blog')
   const journals = allPosts.filter(p => p.type === 'journal')
 
-  const blogPage = parseInt(searchParams.page || '1')
-  const journalPage = parseInt(searchParams.jpage || '1')
-  const limit = 30
+  const blogPage = isTauri ? 1 : parseInt(searchParams?.page || '1')
+  const journalPage = isTauri ? 1 : parseInt(searchParams?.jpage || '1')
+  const limit = isTauri ? 1000 : 30
 
   const blogStart = (blogPage - 1) * limit
   const currentBlogs = blogs.slice(blogStart, blogStart + limit)
