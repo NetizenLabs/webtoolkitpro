@@ -136,6 +136,7 @@ export default function DynamicIcon({ name, fallback = 'Zap', ...props }: Dynami
       case 'Hash': return <Hash {...props} />
       case 'HelpCircle': return <HelpCircle {...props} />
       case 'Hexagon': return <Hexagon {...props} />
+      // eslint-disable-next-line jsx-a11y/alt-text
       case 'Image': return <Image {...props} />
       case 'Key': return <Key {...props} />
       case 'Layers': return <Layers {...props} />

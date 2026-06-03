@@ -56,6 +56,7 @@ export default function JsonYamlJsonlConverter() {
   // Process initial state on mount
   React.useEffect(() => {
     processJson(input, mode);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
