@@ -3,21 +3,32 @@
 import React, { useState } from 'react'
 import { FileCode, Copy, Trash2, Check, ArrowRightLeft } from 'lucide-react'
 import { useEnterSubmit } from '@/hooks/useEnterSubmit'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
+
 export default function MarkdownHtmlConverter() {
   const [md, setMd] = useState(`# Project Title\n\nThis is a **Markdown** to HTML converter.\n\n- Feature A\n- Feature B\n\n> "Simplicity is the soul of efficiency."`)
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const toHtml = (text: string) => {
-    return text
-      .replace(/^### (.*$)/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
-      .replace(/^## (.*$)/gm, '<h2 class="text-xl font-bold mt-6 mb-3 border-b pb-2">$1</h2>')
-      .replace(/^# (.*$)/gm, '<h1 class="text-2xl font-black mt-8 mb-4 border-b-2 pb-2">$1</h1>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono text-sm text-sky-600">$1</code>')
-      .replace(/^> (.*$)/gm, '<blockquote class="border-l-4 border-sky-500 pl-4 my-4 italic">$1</blockquote>')
-      .replace(/^- (.*$)/gm, '<li class="ml-4 list-disc">$1</li>')
-      .replace(/\n/g, '<br/>')
+    const processMarkdown = (mdStr: string) => {
+      return mdStr
+        .replace(/^### (.*$)/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
+        .replace(/^## (.*$)/gm, '<h2 class="text-xl font-bold mt-6 mb-3 border-b pb-2">$1</h2>')
+        .replace(/^# (.*$)/gm, '<h1 class="text-2xl font-black mt-8 mb-4 border-b-2 pb-2">$1</h1>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono text-sm text-sky-600">$1</code>')
+        .replace(/^> (.*$)/gm, '<blockquote class="border-l-4 border-sky-500 pl-4 my-4 italic">$1</blockquote>')
+        .replace(/^- (.*$)/gm, '<li class="ml-4 list-disc">$1</li>')
+        .replace(/\n/g, '<br/>')
+    }
+    
+    if (isBulkMode) {
+      return text.split('\n').map(line => processMarkdown(line)).join('\n')
+    } else {
+      return processMarkdown(text)
+    }
   }
 
   const handleCopy = () => {
@@ -32,6 +43,9 @@ export default function MarkdownHtmlConverter() {
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk MD to HTML" />
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div className="flex items-center justify-between">

@@ -1,21 +1,40 @@
 'use client'
 import React, { useState } from 'react'
 import { Copy, Check, Trash2 } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function HtmlEncoder() {
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const handleEncode = () => {
-    setOutput(input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;'))
+    if (isBulkMode) {
+      const lines = input.split('\n');
+      const encodedLines = lines.map(line => 
+        line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
+      );
+      setOutput(encodedLines.join('\n'));
+    } else {
+      setOutput(input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;'))
+    }
   }
   
   const handleDecode = () => { 
     if (typeof document !== 'undefined') {
       const d = document.createElement('div')
-      d.innerHTML = input
-      setOutput(d.textContent || '') 
+      if (isBulkMode) {
+        const lines = input.split('\n');
+        const decodedLines = lines.map(line => {
+          d.innerHTML = line;
+          return d.textContent || '';
+        });
+        setOutput(decodedLines.join('\n'));
+      } else {
+        d.innerHTML = input
+        setOutput(d.textContent || '') 
+      }
     }
   }
 
@@ -27,7 +46,8 @@ export default function HtmlEncoder() {
 
   return (
     <div className="space-y-8">
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-between items-center mb-4">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk HTML Encoder" />
         <button onClick={() => { setInput(''); setOutput('') }} className="flex items-center gap-2 px-4 py-2 text-red-500 font-bold text-xs"><Trash2 className="w-4 h-4" /> Clear</button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

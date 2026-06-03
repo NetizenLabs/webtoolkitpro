@@ -2,15 +2,17 @@
 
 import React, { useState } from 'react'
 import { FileCode, FileText, ArrowRight, Copy, Check, RotateCcw } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function HtmlToMarkdown() {
   const [html, setHtml] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const convertToMarkdown = () => {
     // Simple regex-based converter for high-performance client-side use
-    let md = html
+    const processHtml = (h: string) => h
       .replace(/<h1[^>]*>(.*?)<\/h1>/gi, '# $1\n')
       .replace(/<h2[^>]*>(.*?)<\/h2>/gi, '## $1\n')
       .replace(/<h3[^>]*>(.*?)<\/h3>/gi, '### $1\n')
@@ -29,7 +31,13 @@ export default function HtmlToMarkdown() {
       .replace(/<[^>]*>/g, '') // Strip remaining tags
       .trim()
 
-    setMarkdown(md)
+    if (isBulkMode) {
+      const lines = html.split('\n');
+      const mdLines = lines.map(line => processHtml(line));
+      setMarkdown(mdLines.join('\n'));
+    } else {
+      setMarkdown(processHtml(html));
+    }
   }
 
   const copyResult = () => {
@@ -40,6 +48,9 @@ export default function HtmlToMarkdown() {
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk HTML to Markdown" />
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
           <div className="flex items-center gap-3 mb-6">

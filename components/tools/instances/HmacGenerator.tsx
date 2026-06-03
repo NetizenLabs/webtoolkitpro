@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Shield, Key, Hash, Copy, Check, Zap } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function HmacGenerator() {
   const [message, setMessage] = useState('')
@@ -9,13 +10,13 @@ export default function HmacGenerator() {
   const [algorithm, setAlgorithm] = useState('SHA-256')
   const [result, setResult] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const generateHMAC = async () => {
     if (!message || !key) return
 
     const encoder = new TextEncoder()
     const keyData = encoder.encode(key)
-    const messageData = encoder.encode(message)
 
     const cryptoKey = await window.crypto.subtle.importKey(
       'raw',
@@ -25,19 +26,30 @@ export default function HmacGenerator() {
       ['sign']
     )
 
-    const signature = await window.crypto.subtle.sign(
-      'HMAC',
-      cryptoKey,
-      messageData
-    )
-
-    const hashArray = Array.from(new Uint8Array(signature))
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
-    setResult(hashHex)
+    if (isBulkMode) {
+      const lines = message.split('\n')
+      const results = await Promise.all(lines.map(async (line) => {
+        if (!line) return ''
+        const messageData = encoder.encode(line)
+        const signature = await window.crypto.subtle.sign('HMAC', cryptoKey, messageData)
+        const hashArray = Array.from(new Uint8Array(signature))
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+      }))
+      setResult(results.join('\n'))
+    } else {
+      const messageData = encoder.encode(message)
+      const signature = await window.crypto.subtle.sign('HMAC', cryptoKey, messageData)
+      const hashArray = Array.from(new Uint8Array(signature))
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+      setResult(hashHex)
+    }
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk HMAC Generator" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
@@ -101,9 +113,11 @@ export default function HmacGenerator() {
               {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
             </button>
           </div>
-          <div className="p-6 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-gray-100 dark:border-[#1E2D47] text-xs font-mono text-blue-600 break-all leading-loose text-center">
-            {result}
-          </div>
+          <textarea 
+            readOnly
+            className="w-full h-32 p-6 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-gray-100 dark:border-[#1E2D47] text-xs font-mono text-blue-600 outline-none resize-none"
+            value={result}
+          />
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Activity, AlertTriangle, AlignLeft, ArrowRightLeft, ArrowUpCircle, BarChart, Barcode, Binary, BookOpen, Bot, Calendar, CaseSensitive, CheckCircle, ChevronRight, ClipboardList, Clock, Code, Code2, Compass, Copy, CreditCard, Database, DollarSign, Eraser, Eye, EyeOff, FileCode, FileJson, FileSearch, FileSignature, FileSpreadsheet, FileText, Fingerprint, FolderTree, GitCompare, Globe, Hash, HelpCircle, Hexagon, Image, Key, Layers, Layout, Link, Link2Off, List, ListOrdered, Lock, Map, MapPin, Maximize, Minimize, Monitor, Network, Palette, Play, QrCode, RefreshCw, Repeat, Ruler, Search, Server, Settings, Share2, Shield, ShieldAlert, ShieldCheck, Smartphone, Smile, Sparkles, Star, Table, Tablet, TrendingUp, Twitter, Type, Undo, UserCheck, UserX, Volume2, Webhook, WifiOff, Zap
+  Activity, AlertTriangle, AlignLeft, ArrowRightLeft, ArrowUpCircle, BarChart, Barcode, Binary, BookOpen, Bot, Calendar, CaseSensitive, CheckCircle, ChevronRight, Clipboard, ClipboardList, Clock, Code, Code2, Compass, Copy, CreditCard, Database, DollarSign, Eraser, Eye, EyeOff, FileCode, FileJson, FileSearch, FileSignature, FileSpreadsheet, FileText, Fingerprint, FolderTree, GitCompare, Globe, Hash, HelpCircle, Hexagon, Image, Key, Layers, Layout, Link, Link2Off, List, ListOrdered, Lock, Map, MapPin, Maximize, Minimize, Monitor, Network, Palette, Play, Puzzle, QrCode, RefreshCw, Repeat, Ruler, Search, Server, Settings, Share2, Shield, ShieldAlert, ShieldCheck, Smartphone, Smile, Sparkles, Star, Table, Tablet, TrendingUp, Twitter, Type, Undo, UserCheck, UserX, Volume2, Webhook, WifiOff, Zap
 } from 'lucide-react'
 
 interface DynamicIconProps extends React.ComponentProps<'svg'> {
@@ -23,6 +23,7 @@ export const ICON_MAP: Record<string, boolean> = {
   'CaseSensitive': true,
   'CheckCircle': true,
   'ChevronRight': true,
+  'Clipboard': true,
   'ClipboardList': true,
   'Clock': true,
   'Code': true,
@@ -65,6 +66,7 @@ export const ICON_MAP: Record<string, boolean> = {
   'Network': true,
   'Palette': true,
   'Play': true,
+  'Puzzle': true,
   'QrCode': true,
   'RefreshCw': true,
   'Repeat': true,
@@ -111,6 +113,7 @@ export default function DynamicIcon({ name, fallback = 'Zap', ...props }: Dynami
       case 'CaseSensitive': return <CaseSensitive {...props} />
       case 'CheckCircle': return <CheckCircle {...props} />
       case 'ChevronRight': return <ChevronRight {...props} />
+      case 'Clipboard': return <Clipboard {...props} />
       case 'ClipboardList': return <ClipboardList {...props} />
       case 'Clock': return <Clock {...props} />
       case 'Code': return <Code {...props} />
@@ -154,6 +157,7 @@ export default function DynamicIcon({ name, fallback = 'Zap', ...props }: Dynami
       case 'Network': return <Network {...props} />
       case 'Palette': return <Palette {...props} />
       case 'Play': return <Play {...props} />
+      case 'Puzzle': return <Puzzle {...props} />
       case 'QrCode': return <QrCode {...props} />
       case 'RefreshCw': return <RefreshCw {...props} />
       case 'Repeat': return <Repeat {...props} />
