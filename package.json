@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "publish-reddit": "node scripts/publish-reddit.mjs",
-    "analyze": "cross-env ANALYZE=true next build"
+    "analyze": "cross-env ANALYZE=true next build",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.35",
     "@tailwindcss/typography": "^0.5.10",
+    "@tauri-apps/cli": "^2.11.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/canvas-confetti": "^1.9.0",
     "@types/js-beautify": "^1.14.3",

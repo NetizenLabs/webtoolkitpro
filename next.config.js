@@ -4,7 +4,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 
 /** @type {import('next').NextConfig} */
+const isDesktop = process.env.TAURI_ENV === 'true';
+
 const nextConfig = {
+  output: isDesktop ? 'export' : undefined,
   trailingSlash: true,
   compress: true,
   poweredByHeader: false,
@@ -19,6 +22,7 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async redirects() {
+    if (isDesktop) return [];
     return [
       
       // Wave 2 Consolidation
@@ -269,6 +273,7 @@ const nextConfig = {
       },
     ]
 
+    if (isDesktop) return [];
     return [
       {
         source: '/',
