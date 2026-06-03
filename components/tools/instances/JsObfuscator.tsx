@@ -2,21 +2,41 @@
 
 import React, { useState } from 'react'
 import { ShieldAlert, Zap, Copy, Check, RotateCcw } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function JsObfuscator() {
   const [code, setCode] = useState('')
   const [obfuscated, setObfuscated] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const obfuscate = () => {
-    // Basic base64 + eval obfuscation for demonstration
-    const encoded = btoa(code)
-    const result = `eval(atob('${encoded}'));`
-    setObfuscated(result)
+    const processCode = (c: string) => {
+      try {
+        const encoded = btoa(c)
+        return `eval(atob('${encoded}'));`
+      } catch (e) {
+        return `// Error encoding: ${e}`
+      }
+    }
+
+    if (isBulkMode) {
+      const lines = code.split('\n')
+      const resultLines = lines.map(line => {
+        if (!line.trim()) return ''
+        return processCode(line)
+      })
+      setObfuscated(resultLines.join('\n'))
+    } else {
+      setObfuscated(processCode(code))
+    }
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk JS Obfuscator" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center text-red-600">
@@ -48,8 +68,8 @@ export default function JsObfuscator() {
               {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
             </button>
           </div>
-          <div className="p-6 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-gray-100 dark:border-[#1E2D47] break-all">
-            <code className="text-xs font-mono text-red-600 dark:text-red-400">{obfuscated}</code>
+          <div className="p-6 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-gray-100 dark:border-[#1E2D47] break-all h-64 overflow-auto">
+            <code className="text-xs font-mono text-red-600 dark:text-red-400 whitespace-pre-wrap">{obfuscated}</code>
           </div>
         </div>
       )}

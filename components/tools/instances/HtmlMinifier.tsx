@@ -2,23 +2,38 @@
 
 import React, { useState } from 'react'
 import { FileCode, Zap, Copy, Check, RotateCcw } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function HtmlMinifier() {
   const [html, setHtml] = useState('')
   const [minified, setMinified] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const minifyHtml = () => {
-    const res = html
-      .replace(/<!--[\s\S]*?-->/g, '') // Remove comments
-      .replace(/\s+/g, ' ') // Collapse whitespace
-      .replace(/>\s+</g, '><') // Remove spaces between tags
+    const processHtml = (h: string) => h
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .replace(/\s+/g, ' ')
+      .replace(/>\s+</g, '><')
       .trim()
-    setMinified(res)
+
+    if (isBulkMode) {
+      const lines = html.split('\n')
+      const resultLines = lines.map(line => {
+        if (!line.trim()) return ''
+        return processHtml(line)
+      })
+      setMinified(resultLines.join('\n'))
+    } else {
+      setMinified(processHtml(html))
+    }
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk HTML Minifier" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
