@@ -11,8 +11,9 @@
     "publish-reddit": "node scripts/publish-reddit.mjs",
     "analyze": "cross-env ANALYZE=true next build",
     "tauri": "tauri",
-    "dev:desktop": "cross-env TAURI_ENV=true npm run tauri dev",
-    "build:desktop": "cross-env TAURI_ENV=true npm run tauri build"
+    "dev:desktop": "npm run tauri dev",
+    "build:export": "cross-env TAURI_ENV=true next build",
+    "build:desktop": "npm run tauri build"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
