@@ -1,32 +1,48 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Shield, Zap, Lock, Terminal, Box, Globe, Download, CheckCircle2 } from 'lucide-react';
+import { Shield, Zap, Lock, Terminal, FileCode2, Download, CheckCircle2, ShieldCheck, FileKey, Scale } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Pricing & Enterprise Licensing — WebToolkit Pro',
-  description: 'WebToolkit Pro is 100% free for individuals. For corporate data compliance and air-gapped security, explore our standalone Enterprise license.',
+  description: 'WebToolkit Pro is free for individuals. For corporate data compliance, SOC 2 environments, and air-gapped security, explore our standalone Enterprise license.',
   alternates: {
     canonical: 'https://wtkpro.site/pricing/',
+  },
+  openGraph: {
+    title: 'Pricing & Enterprise Licensing — WebToolkit Pro',
+    description: 'Free for developers. Paid for corporate compliance. Get the Air-Gapped Enterprise Desktop App for zero cloud leakage and strict SOC 2 / HIPAA compliance.',
+    url: 'https://wtkpro.site/pricing/',
+    type: 'website',
   },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "WebToolkit Pro Air-Gapped Enterprise",
-  "description": "Standalone desktop application of 150+ developer tools. Zero cloud leakage, compliance-ready logging, and bulk processing.",
+  "name": "WebToolkit Pro Subscription Tiers",
+  "description": "Privacy-first developer tools with corporate compliance features including an air-gapped desktop application.",
   "brand": {
     "@type": "Brand",
     "name": "WebToolkit Pro"
   },
-  "offers": {
-    "@type": "Offer",
-    "name": "Air-Gapped Enterprise",
-    "price": "39.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "url": "https://whop.com/joined/webtoolkit-pro/"
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Team Pro",
+      "price": "19.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://wtkpro.site/pricing/#pro"
+    },
+    {
+      "@type": "Offer",
+      "name": "Air-Gapped Enterprise",
+      "price": "99.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://wtkpro.site/pricing/#enterprise"
+    }
+  ]
 };
 
 export default function PricingPage() {
@@ -45,142 +61,185 @@ export default function PricingPage() {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-[#00D4B4] text-xs font-bold uppercase tracking-widest mb-6">
-            <Shield className="w-4 h-4" /> Secure Sandbox Processing
+            <ShieldCheck className="w-4 h-4" /> Built for Regulated Environments
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-foreground">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight text-foreground">
             Free for Developers.<br /> Paid for Corporate Compliance.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            WebToolkit Pro is <strong className="text-foreground">100% free for individual developers</strong> and personal projects. However, if you are a corporate engineer, data analyst, or HR manager operating under strict data compliance policies, you need the Air-Gapped Enterprise license.
+            Individual engineers can use WebToolkit Pro&apos;s 150+ browser tools completely free. But if you operate in a <strong className="text-foreground">SOC 2, HIPAA, or GDPR</strong> regulated environment, you cannot risk production credentials touching a public website. That is what our Enterprise Desktop license is for.
           </p>
         </div>
 
-        {/* 4 Engines Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-24">
-          <div className="card-premium p-8 rounded-2xl">
-            <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-              <Box className="w-6 h-6 text-blue-500" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-foreground">1. Advanced Formatters & Visual Minifiers</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              These go far beyond basic &quot;code beautifiers.&quot; They parse code arrays into visual structure trees using the browser&apos;s local thread pool.
+        {/* Value Proposition / Fear & Compliance Selling */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
+          <div className="card-premium p-8 rounded-2xl border-l-4 border-l-rose-500">
+            <Lock className="w-8 h-8 text-rose-500 mb-4" />
+            <h3 className="text-lg font-bold mb-3 text-foreground">Zero Cloud Leakage</h3>
+            <p className="text-sm text-muted-foreground">
+              Browser extensions and online JSON formatters are notorious for leaking proprietary DB strings and JWT tokens. Our desktop app processes everything 100% locally. Your data never hits a server.
             </p>
-            <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-4">
-              <li><strong>Examples:</strong> Secure JSON/XML/YAML beautifiers, structural AST parsers, obfuscated JavaScript decoders, and multi-language minifiers.</li>
-              <li><strong>The Privacy Edge:</strong> 0% risk of cloud leakage when formatting proprietary DB configs or JWTs.</li>
-            </ul>
           </div>
 
-          <div className="card-premium p-8 rounded-2xl">
-            <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6">
-              <Zap className="w-6 h-6 text-purple-500" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-foreground">2. Context-Aware Converters & Data Shifters</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              The TradeConvert pipeline shines here. These tools translate data structures cleanly without dropping attributes or corrupting encodings.
+          <div className="card-premium p-8 rounded-2xl border-l-4 border-l-blue-500">
+            <FileKey className="w-8 h-8 text-blue-500 mb-4" />
+            <h3 className="text-lg font-bold mb-3 text-foreground">Automated Audit Trails</h3>
+            <p className="text-sm text-muted-foreground">
+              Pass your security audits effortlessly. The Enterprise edition automatically generates local, encrypted logs of all cryptographic and hashing activities, ready for compliance review.
             </p>
-            <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-4">
-              <li><strong>Examples:</strong> Big-data CSV-to-JSON transformers, SQL schema-to-Typebox converters, XML-to-TypeScript interfaces.</li>
-              <li><strong>The AI Edge:</strong> Convert legacy corporate data into clean JSON ready for LLM context windows or vector databases.</li>
-            </ul>
           </div>
 
-          <div className="card-premium p-8 rounded-2xl">
-            <div className="w-12 h-12 bg-[#00D4B4]/10 rounded-xl flex items-center justify-center mb-6">
-              <Globe className="w-6 h-6 text-[#00D4B4]" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-foreground">3. Entity-Linked & GEO Generators</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Tools designed to write complex data structures automatically, specifically optimized for search engines and generative AI crawlers.
+          <div className="card-premium p-8 rounded-2xl border-l-4 border-l-[#00D4B4]">
+            <Scale className="w-8 h-8 text-[#00D4B4] mb-4" />
+            <h3 className="text-lg font-bold mb-3 text-foreground">PII & HR Data Scrubbing</h3>
+            <p className="text-sm text-muted-foreground">
+              Includes full access to the Severance Calculator and CSV manipulation pipelines. HR and Ops teams can safely scrub and analyze proprietary payroll data entirely offline.
             </p>
-            <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-4">
-              <li><strong>Examples:</strong> Rich JSON-LD schema markup generators (Product, FAQ, WebApp), programmatic sitemap.xml builders.</li>
-              <li><strong>Security Headers:</strong> Advanced Content-Security-Policy builders.</li>
-            </ul>
-          </div>
-
-          <div className="card-premium p-8 rounded-2xl">
-            <div className="w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center mb-6">
-              <Lock className="w-6 h-6 text-rose-500" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-foreground">4. Client-Side Testing, Crypto & Audit</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Lightweight sandbox testing utilities that require heavy client-side computing power but absolute data isolation.
-            </p>
-            <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-4">
-              <li><strong>Examples:</strong> Regex testers, offline JWT decoders, client-side Bcrypt/Argon2 password hashers, RSA key-pair generators.</li>
-              <li><strong>Network:</strong> Local network packet text inspectors.</li>
-            </ul>
           </div>
         </div>
 
         {/* Pricing Strategy / Tiers */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight text-foreground">
-            The Enterprise License
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            For teams that cannot risk browser extensions or company network monitoring intercepting sensitive data. Download the entirely offline, compiled desktop application.
-          </p>
-        </div>
-
-        <div className="max-w-2xl mx-auto">
-          {/* Tier 2: Air-Gapped Enterprise (Centered) */}
-          <div className="card-premium p-10 rounded-3xl flex flex-col relative overflow-hidden border-2 border-[#00D4B4] shadow-2xl shadow-[#00D4B4]/10">
-            <div className="absolute top-0 right-0 bg-[#00D4B4] text-[#0D1117] text-xs font-black uppercase tracking-widest py-1.5 px-4 rounded-bl-xl">
-              Commercial License
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          
+          {/* Tier 1: Free Public Utility */}
+          <div className="card-premium p-8 rounded-3xl flex flex-col relative overflow-hidden border border-border">
+            <div className="mb-8">
+              <h3 className="text-2xl font-black text-foreground mb-2">Public Utility</h3>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="text-4xl font-black text-foreground">$0</span>
+                <span className="text-muted-foreground font-medium">/ forever</span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                For solo developers, students, and open-source contributors.
+              </p>
             </div>
             
+            <ul className="space-y-4 mb-10 flex-1">
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-gray-400 shrink-0" />
+                Access all 150+ browser tools
+              </li>
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-gray-400 shrink-0" />
+                Client-side execution
+              </li>
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-gray-400 shrink-0" />
+                Community support
+              </li>
+            </ul>
+
+            <a 
+              href="/tools/"
+              className="w-full py-3.5 rounded-xl text-center font-bold bg-white/5 hover:bg-white/10 text-foreground transition-all shadow-sm border border-white/10"
+            >
+              Start Formatting
+            </a>
+          </div>
+
+          {/* Tier 2: Team Pro */}
+          <div className="card-premium p-8 rounded-3xl flex flex-col relative overflow-hidden border border-blue-500/30 shadow-lg shadow-blue-500/5">
             <div className="mb-8">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-[#00D4B4]/10 text-[#00D4B4] text-sm font-bold mb-6">
-                For Teams & Corporations
+              <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold mb-4">
+                Most Popular for Startups
               </div>
-              <h3 className="text-3xl font-black text-foreground mb-2">Air-Gapped Enterprise</h3>
+              <h3 className="text-2xl font-black text-foreground mb-2">Team Pro</h3>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-5xl font-black text-foreground">$39</span>
+                <span className="text-4xl font-black text-foreground">$19</span>
                 <span className="text-muted-foreground font-medium">/ month</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                The ultimate security guarantee. No cloud servers, no telemetry, just raw processing power on your local machine.
+                For small engineering teams (up to 5 seats) needing reliability and priority support.
+              </p>
+            </div>
+            
+            <ul className="space-y-4 mb-10 flex-1">
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
+                Everything in Public Utility
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
+                Up to 5 team members
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
+                Priority email support (24h SLA)
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
+                Early access to new beta tools
+              </li>
+            </ul>
+
+            <a 
+              href="#"
+              className="w-full py-3.5 rounded-xl text-center font-bold bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-md"
+            >
+              Upgrade to Pro
+            </a>
+          </div>
+
+          {/* Tier 3: Air-Gapped Enterprise */}
+          <div className="card-premium p-8 rounded-3xl flex flex-col relative overflow-hidden border-2 border-[#00D4B4] shadow-2xl shadow-[#00D4B4]/20 scale-105 z-10 bg-background">
+            <div className="absolute top-0 left-0 w-full bg-[#00D4B4] text-[#0D1117] text-xs font-black uppercase tracking-widest py-1.5 text-center">
+              Commercial Compliance
+            </div>
+            
+            <div className="mb-8 mt-6">
+              <h3 className="text-2xl font-black text-foreground mb-2">Air-Gapped Enterprise</h3>
+              <div className="flex flex-col gap-1 mb-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-black text-foreground">$99</span>
+                  <span className="text-muted-foreground font-medium">/ month</span>
+                </div>
+                <div className="text-xs font-bold text-[#00D4B4] uppercase tracking-wider">
+                  Or $899 / year (Save ~25%)
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                For corporate engineers and compliance officers. Full offline capability.
               </p>
             </div>
             
             <ul className="space-y-4 mb-10 flex-1">
               <li className="flex items-start gap-3 text-sm text-foreground font-medium">
                 <Download className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                <strong>Standalone Compiled Desktop App</strong> (Tauri/Electron)
+                <strong>Standalone Compiled Desktop App</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <Shield className="w-5 h-5 text-[#00D4B4] shrink-0" />
+                Air-gapped offline processing (No internet required)
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <FileCode2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
+                Automated local compliance audit logs
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
+                <Terminal className="w-5 h-5 text-[#00D4B4] shrink-0" />
+                Bulk-file batch processing pipelines
               </li>
               <li className="flex items-start gap-3 text-sm text-foreground font-medium">
                 <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Works with a physically disconnected internet adapter
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Automated local log generation for compliance audits
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Bulk-file batch processing (e.g. 100x 10MB corporate files)
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Full access to the Severance Calculator data scrubbing features
-              </li>
-              <li className="flex items-start gap-3 text-sm text-foreground font-medium">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4B4] shrink-0" />
-                Access to premium Whop Discord channel & custom script requests
+                Compliance documentation & SOC 2 mapping
               </li>
             </ul>
 
             <a 
-              href="https://whop.com/joined/webtoolkit-pro/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="w-full py-4 rounded-xl text-center font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
             >
               Get Enterprise Access
             </a>
           </div>
+        </div>
+
+        {/* Whop Trust Signal */}
+        <div className="max-w-2xl mx-auto text-center border-t border-border pt-8">
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">Secure Payments Powered by Whop</strong><br />
+            All subscription payments are securely processed and managed by Whop.com. WebToolkit Pro never sees or stores your credit card data, and Whop has absolutely zero access to your offline Desktop App data. Your compliance boundaries are strictly maintained.
+          </p>
         </div>
 
       </div>
