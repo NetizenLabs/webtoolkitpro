@@ -12,7 +12,7 @@
     "analyze": "cross-env ANALYZE=true next build",
     "tauri": "tauri",
     "dev:desktop": "npm run tauri dev",
-    "build:export": "cross-env TAURI_ENV=true next build",
+    "build:export": "node scripts/tauri-build.mjs",
     "build:desktop": "npm run tauri build"
   },
   "dependencies": {
