@@ -99,6 +99,7 @@ export default function Footer() {
               <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Abu Sufyan Portfolio</a></li>
               <li><a href="/author/" className="hover:text-[#00D4B4] transition-colors">Engineering Leadership</a></li>
               <li><a href="/about/" className="hover:text-[#00D4B4] transition-colors">Our Philosophy</a></li>
+              <li><a href="/pricing/" className="hover:text-[#00D4B4] transition-colors font-bold text-[#0094FF]">Pricing Tiers</a></li>
               <li><a href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors">Partner Program</a></li>
               <li><a href="/contact/" className="hover:text-[#00D4B4] transition-colors">Direct Support</a></li>
               <li><a href="/brand/" className="hover:text-[#00D4B4] transition-colors">Brand Assets</a></li>
