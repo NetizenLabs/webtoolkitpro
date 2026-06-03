@@ -19,6 +19,7 @@ import { SubscriptionProvider } from '@/contexts/SubscriptionContext'
 import CommandBar from '@/components/ui/CommandBar'
 import { getTools } from '@/lib/tools'
 import WebMCPProvider from '@/components/tools/WebMCPProvider'
+import DesktopLicenseGuard from '@/components/auth/DesktopLicenseGuard'
 import { generateOrganizationSchema, generateWebSiteSchema } from '@/lib/seo/schema'
 
 // Lazy-load non-critical UI so it doesn't block the initial render / LCP
@@ -220,7 +221,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <AuditLoggerProvider>
             <PipelineProvider>
               <Header />
-              <main className="flex-grow">{children}</main>
+              <main className="flex-grow">
+                <DesktopLicenseGuard>{children}</DesktopLicenseGuard>
+              </main>
               <Footer />
               <CommandBar tools={allTools} />
               <CookieConsent />
