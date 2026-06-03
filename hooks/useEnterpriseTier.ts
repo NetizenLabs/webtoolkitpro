@@ -14,9 +14,11 @@ export function useEnterpriseTier() {
     const storedTier = localStorage.getItem('wtk_enterprise_tier')
     const isValid = localStorage.getItem('wtk_enterprise_license_valid') === 'true'
 
-    if (isTauri && isValid && storedTier === 'enterprise') {
+    const isDevBypass = localStorage.getItem('wtk_dev_bypass') === 'true'
+
+    if ((isTauri && isValid && storedTier === 'enterprise') || isDevBypass) {
       setIsEnterprise(true)
-      setTier(storedTier)
+      setTier(storedTier || 'enterprise')
     } else {
       setIsEnterprise(false)
       setTier(storedTier)

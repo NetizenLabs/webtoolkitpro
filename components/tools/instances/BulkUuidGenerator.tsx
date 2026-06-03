@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Copy, Hash, Check, RefreshCw, Settings2 } from 'lucide-react';
+import BulkModeToggle from '@/components/ui/BulkModeToggle';
 
 function generateUuidV7(): string {
   // UUID v7 generation based on current draft standard
@@ -23,11 +24,13 @@ export default function BulkUuidGenerator() {
   const [mode, setMode] = useState<'v4' | 'v7'>('v4');
   const [quantity, setQuantity] = useState<number>(5);
   const [output, setOutput] = useState<string>('');
+  const [output, setOutput] = useState<string>('');
   const [copied, setCopied] = useState(false);
+  const [isBulkMode, setIsBulkMode] = useState(false);
 
   const generate = useCallback(() => {
     let result = [];
-    const count = Math.min(Math.max(1, quantity), 1000); // cap between 1 and 1000
+    const count = Math.min(Math.max(1, quantity), isBulkMode ? 100000 : 1000); // cap based on bulk mode
     
     for (let i = 0; i < count; i++) {
       if (mode === 'v4') {
@@ -37,7 +40,7 @@ export default function BulkUuidGenerator() {
       }
     }
     setOutput(result.join('\n'));
-  }, [mode, quantity]);
+  }, [mode, quantity, isBulkMode]);
 
   useEffect(() => {
     generate();
@@ -50,9 +53,13 @@ export default function BulkUuidGenerator() {
   };
 
   return (
-    <div className="flex flex-col gap-6 w-full max-w-4xl mx-auto bg-background">
-      {/* Controls */}
-      <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl border border-border bg-card shadow-sm">
+    <div className="space-y-6">
+      <div className="flex justify-end px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk UUID Generator" />
+      </div>
+      <div className="flex flex-col gap-6 w-full max-w-4xl mx-auto bg-background">
+        {/* Controls */}
+        <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl border border-border bg-card shadow-sm">
         <div className="flex-1 flex flex-col gap-3">
           <div className="flex items-center gap-2 text-primary mb-2">
             <Settings2 className="w-5 h-5" />
@@ -79,11 +86,13 @@ export default function BulkUuidGenerator() {
             </div>
             
             <div className="w-full sm:w-32 space-y-2">
-              <label className="text-xs font-medium text-muted-foreground">Quantity</label>
+              <label className="text-xs font-medium text-muted-foreground flex justify-between">
+                Quantity {isBulkMode && <span className="text-primary font-bold text-[9px] uppercase">100k MAX</span>}
+              </label>
               <input
                 type="number"
                 min="1"
-                max="1000"
+                max={isBulkMode ? 100000 : 1000}
                 value={quantity}
                 onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
                 className="w-full px-3 py-2 rounded-lg bg-secondary text-secondary-foreground border-none text-sm font-medium focus:ring-2 focus:ring-primary outline-none"
@@ -125,6 +134,7 @@ export default function BulkUuidGenerator() {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 }
