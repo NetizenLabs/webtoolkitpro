@@ -1,9 +1,12 @@
 'use client'
 import React, { useState } from 'react'
-import { Terminal, Zap, AlertTriangle, Activity } from 'lucide-react'
+import { Terminal, Zap, AlertTriangle, Activity, Server, Shield } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function PortScanner() {
   const [target, setTarget] = useState('')
+  const [isBulkMode, setIsBulkMode] = useState(false)
+  const [bulkResults, setBulkResults] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [results, setResults] = useState<any[]>([])
   const [error, setError] = useState('')
@@ -11,32 +14,64 @@ export default function PortScanner() {
   const scanPorts = async () => {
     if (!target) return
     setLoading(true)
-    setResults([])
-    setError('')
     
-    try {
-      const res = await fetch(`/api/port-scan?target=${encodeURIComponent(target)}`)
-      const data = await res.json()
-      if (data.error) throw new Error(data.error)
-      setResults(data.results)
-    } catch (e: any) {
-      setError(e.message || 'Scan failed')
-    } finally {
-      setLoading(false)
+    if (isBulkMode) {
+      setBulkResults([])
+      const domains = target.split('\n').map(d => d.trim()).filter(Boolean)
+      const newResults = []
+      for (const d of domains) {
+        try {
+          const res = await fetch(`/api/port-scan?target=${encodeURIComponent(d)}`)
+          const data = await res.json()
+          if (data.error) {
+            newResults.push({ target: d, error: data.error })
+          } else {
+            newResults.push({ target: d, results: data.results })
+          }
+        } catch (e: any) {
+          newResults.push({ target: d, error: 'Scan failed' })
+        }
+        setBulkResults([...newResults])
+      }
+    } else {
+      setResults([])
+      setError('')
+      
+      try {
+        const res = await fetch(`/api/port-scan?target=${encodeURIComponent(target)}`)
+        const data = await res.json()
+        if (data.error) throw new Error(data.error)
+        setResults(data.results)
+      } catch (e: any) {
+        setError(e.message || 'Scan failed')
+      }
     }
+    setLoading(false)
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Port Scanner" />
+      </div>
       <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-[2.5rem] p-10 shadow-sm relative overflow-hidden group">
         <div className="flex flex-col sm:flex-row gap-4 mb-10 relative z-10">
-          <input 
-            type="text"
-            value={target}
-            onChange={(e) => setTarget(e.target.value)}
-            placeholder="example.com or 127.0.0.1"
-            className="flex-grow px-8 py-6 rounded-3xl bg-gray-50 dark:bg-slate-950 border border-transparent focus:ring-2 focus:ring-red-500 outline-none dark:text-white font-mono text-lg shadow-inner transition-all"
-          />
+          {isBulkMode ? (
+            <textarea 
+              value={target}
+              onChange={(e) => setTarget(e.target.value)}
+              placeholder="Paste a list of domains or IPs (one per line)..."
+              className="flex-grow h-32 px-8 py-6 rounded-3xl bg-gray-50 dark:bg-slate-950 border border-transparent focus:ring-2 focus:ring-red-500 outline-none dark:text-white font-mono text-lg shadow-inner transition-all whitespace-pre"
+            />
+          ) : (
+            <input 
+              type="text"
+              value={target}
+              onChange={(e) => setTarget(e.target.value)}
+              placeholder="example.com or 127.0.0.1"
+              className="flex-grow px-8 py-6 rounded-3xl bg-gray-50 dark:bg-slate-950 border border-transparent focus:ring-2 focus:ring-red-500 outline-none dark:text-white font-mono text-lg shadow-inner transition-all"
+            />
+          )}
           <button 
             onClick={scanPorts}
             disabled={loading}
@@ -47,9 +82,9 @@ export default function PortScanner() {
           </button>
         </div>
 
-        {error && <div className="text-red-500 font-bold mb-4">{error}</div>}
+        {!isBulkMode && error && <div className="text-red-500 font-bold mb-4">{error}</div>}
 
-        {results.length > 0 && (
+        {!isBulkMode && results.length > 0 && (
           <div className="space-y-4 animate-in fade-in slide-in-from-top-4 duration-500">
             <h5 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-2">Common Port Audit</h5>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -65,6 +100,30 @@ export default function PortScanner() {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {isBulkMode && bulkResults.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in duration-500 max-h-[600px] overflow-auto">
+            {bulkResults.map((res, i) => (
+              <div key={i} className="p-6 bg-[#0B1120] border border-[#1E2D47] rounded-3xl flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-white truncate" title={res.target}>{res.target}</span>
+                </div>
+                {res.error ? (
+                  <div className="text-xs text-red-500">{res.error}</div>
+                ) : (
+                  <div className="space-y-2 max-h-32 overflow-auto pr-2">
+                    {res.results?.map((r: any, j: number) => (
+                      <div key={j} className="flex justify-between items-center text-xs">
+                        <span className="text-gray-400 font-mono">Port {r.port}</span>
+                        <span className={`${r.status === 'Open' ? 'text-green-500 font-bold' : 'text-gray-600'}`}>{r.status}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         )}
       </div>

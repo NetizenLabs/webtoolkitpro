@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react'
 import { Link2, Unlink, Check, Search, Activity, Trash2, Globe } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function BrokenLinkChecker() {
   const [url, setUrl] = useState('')
+  const [isBulkMode, setIsBulkMode] = useState(false)
   const [results, setResults] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -14,14 +16,25 @@ export default function BrokenLinkChecker() {
     setResults([])
 
     setTimeout(() => {
-      setResults([
-        { url: `${url}/about`, status: 200, type: 'Internal', message: 'OK' },
-        { url: `${url}/contact`, status: 200, type: 'Internal', message: 'OK' },
-        { url: `https://twitter.com/example`, status: 200, type: 'External', message: 'OK' },
-        { url: `${url}/missing-page`, status: 404, type: 'Internal', message: 'Not Found' },
-        { url: `https://broken-legacy-site.com`, status: 503, type: 'External', message: 'Service Unavailable' },
-        { url: `${url}/old-post`, status: 301, type: 'Internal', message: 'Moved Permanently' },
-      ])
+      if (isBulkMode) {
+        const urls = url.split('\n').map(u => u.trim()).filter(Boolean)
+        const mockResults = urls.map(u => ({
+          url: u,
+          status: Math.random() > 0.8 ? (Math.random() > 0.5 ? 404 : 503) : 200,
+          type: 'External',
+          message: 'Simulated Status'
+        }))
+        setResults(mockResults)
+      } else {
+        setResults([
+          { url: `${url}/about`, status: 200, type: 'Internal', message: 'OK' },
+          { url: `${url}/contact`, status: 200, type: 'Internal', message: 'OK' },
+          { url: `https://twitter.com/example`, status: 200, type: 'External', message: 'OK' },
+          { url: `${url}/missing-page`, status: 404, type: 'Internal', message: 'Not Found' },
+          { url: `https://broken-legacy-site.com`, status: 503, type: 'External', message: 'Service Unavailable' },
+          { url: `${url}/old-post`, status: 301, type: 'Internal', message: 'Moved Permanently' },
+        ])
+      }
       setLoading(false)
     }, 2000)
   }
@@ -30,22 +43,34 @@ export default function BrokenLinkChecker() {
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Broken Link Checker" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
             <Link2 className="w-5 h-5" />
           </div>
-          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white">Broken Link Crawler</h3>
+          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white">Broken Link Checker</h3>
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
-          <input
-            type="text"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://example.com"
-            className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none"
-          />
+          {isBulkMode ? (
+            <textarea
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="Paste a list of URLs (one per line) to check..."
+              className="flex-1 h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm outline-none whitespace-pre"
+            />
+          ) : (
+            <input
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="https://example.com"
+              className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none"
+            />
+          )}
           <button 
             onClick={scanLinks}
             disabled={loading}

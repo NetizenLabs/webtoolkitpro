@@ -1,36 +1,61 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Server, Shield, Zap, Search, Activity, Info, List, Copy, Check, Clock } from 'lucide-react'
+import { Server, Shield, Zap, Search, Activity, Info, List, Copy, Check, Clock, CheckCircle2, XCircle } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function HttpHeadersInspector() {
   const [url, setUrl] = useState('')
+  const [isBulkMode, setIsBulkMode] = useState(false)
+  const [bulkResults, setBulkResults] = useState<any[]>([])
   const [headers, setHeaders] = useState<any>(null)
   const [loading, setLoading] = useState(false)
   const [copied, setCopied] = useState<string | null>(null)
 
-  const inspectHeaders = () => {
+  const inspectHeaders = async () => {
     if (!url) return
     setLoading(true)
-    setHeaders(null)
 
-    setTimeout(() => {
-      setHeaders({
-        'content-type': 'text/html; charset=utf-8',
-        'server': 'Vercel',
-        'cache-control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate',
-        'strict-transport-security': 'max-age=63072000; includeSubDomains; preload',
-        'x-frame-options': 'DENY',
-        'x-content-type-options': 'nosniff',
-        'content-encoding': 'br',
-        'date': new Date().toUTCString(),
-        'x-powered-by': 'Next.js',
-        'content-security-policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com;",
-        'etag': 'W/"123456789"',
-        'last-modified': 'Wed, 21 Oct 2026 07:28:00 GMT'
-      })
+    if (isBulkMode) {
+      setBulkResults([])
+      const urls = url.split('\n').map(d => d.trim()).filter(Boolean)
+      const newResults = []
+      
+      for (const u of urls) {
+        await new Promise(r => setTimeout(r, 800)) // mock delay
+        newResults.push({
+          url: u,
+          status: 200,
+          headers: {
+            'content-type': 'text/html',
+            'server': 'Vercel',
+            'cache-control': 'public, max-age=3600',
+            'x-powered-by': 'Next.js'
+          }
+        })
+        setBulkResults([...newResults])
+      }
       setLoading(false)
-    }, 1500)
+    } else {
+      setHeaders(null)
+      setTimeout(() => {
+        setHeaders({
+          'content-type': 'text/html; charset=utf-8',
+          'server': 'Vercel',
+          'cache-control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate',
+          'strict-transport-security': 'max-age=63072000; includeSubDomains; preload',
+          'x-frame-options': 'DENY',
+          'x-content-type-options': 'nosniff',
+          'content-encoding': 'br',
+          'date': new Date().toUTCString(),
+          'x-powered-by': 'Next.js',
+          'content-security-policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com;",
+          'etag': 'W/"123456789"',
+          'last-modified': 'Wed, 21 Oct 2026 07:28:00 GMT'
+        })
+        setLoading(false)
+      }, 1500)
+    }
   }
 
   const copyHeader = (key: string, val: string) => {
@@ -41,6 +66,9 @@ export default function HttpHeadersInspector() {
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Header Inspector" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
@@ -50,13 +78,22 @@ export default function HttpHeadersInspector() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
-          <input
-            type="text"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://example.com"
-            className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none font-mono"
-          />
+          {isBulkMode ? (
+            <textarea
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="Paste a list of URLs (one per line)..."
+              className="flex-1 h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm outline-none whitespace-pre font-mono"
+            />
+          ) : (
+            <input
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="https://example.com"
+              className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none font-mono"
+            />
+          )}
           <button 
             onClick={inspectHeaders}
             disabled={loading}
@@ -67,7 +104,7 @@ export default function HttpHeadersInspector() {
         </div>
       </div>
 
-      {headers && (
+      {!isBulkMode && headers && (
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="xl:col-span-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
             <div className="p-6 border-b border-gray-50 dark:border-[#1E2D47] bg-gray-50/50 dark:bg-[#0B1120]/50 flex items-center justify-between">
@@ -138,6 +175,33 @@ export default function HttpHeadersInspector() {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {isBulkMode && bulkResults.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in duration-500 max-h-[600px] overflow-auto">
+          {bulkResults.map((res, i) => (
+            <div key={i} className="p-6 bg-[#0B1120] border border-[#1E2D47] rounded-3xl flex flex-col gap-4">
+              <div className="flex justify-between items-center pb-2 border-b border-[#1E2D47]">
+                <span className="font-bold text-white truncate" title={res.url}>{res.url}</span>
+                <span className="text-xs font-bold px-2 py-1 bg-blue-500/10 text-blue-400 rounded-lg">{res.status} OK</span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-gray-500">Server</span>
+                  <span className="text-gray-300 font-mono">{res.headers['server'] || 'Unknown'}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-gray-500">Content-Type</span>
+                  <span className="text-gray-300 font-mono">{res.headers['content-type'] || 'Unknown'}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-gray-500">Powered-By</span>
+                  <span className="text-gray-300 font-mono">{res.headers['x-powered-by'] || 'None'}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

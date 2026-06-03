@@ -34,14 +34,12 @@ const nextConfig = {
       { source: '/tools/qr-code-gen', destination: '/tools/qr-code-generator/', permanent: true },
       { source: '/tools/sql-formatter', destination: '/tools/sql-toolkit/', permanent: true },
       { source: '/tools/sql-minifier', destination: '/tools/sql-toolkit/', permanent: true },
-      // Note: SQL Injection tools intentionally mapped here during Wave 2
       { source: '/tools/sql-injection-tester', destination: '/tools/sql-toolkit/', permanent: true },
       { source: '/tools/sql-sanitizer', destination: '/tools/sql-toolkit/', permanent: true },
       { source: '/tools/sql-injection-sanitizer', destination: '/tools/sql-toolkit/', permanent: true },
       { source: '/tools/markdown-to-html', destination: '/tools/markdown-html-converter/', permanent: true },
       { source: '/tools/markdown-converter', destination: '/tools/markdown-html-converter/', permanent: true },
       { source: '/tools/markdown-previewer', destination: '/tools/markdown-html-converter/', permanent: true },
-      // Collapse known chain
       { source: '/tools/json-to-markdown', destination: '/tools/markdown-html-converter/', permanent: true },
       { source: '/tools/json-to-markdown/', destination: '/tools/markdown-html-converter/', permanent: true },
       
@@ -88,13 +86,13 @@ const nextConfig = {
       { source: '/tools/authority-simulation', destination: '/tools/authority-simulator/', permanent: true },
       { source: '/tools/core-web-vitals-guide', destination: '/blog/core-web-vitals-guide/', permanent: true },
       { source: '/tools/seo-audit-checklist', destination: '/blog/seo-audit-checklist/', permanent: true },
+
       // Tools Consolidation Redirects
       { source: '/tools/json-toolkit', destination: '/tools/json-to-code-generator', permanent: true },
       { source: '/tools/json-data-converter', destination: '/tools/json-yaml-jsonl-converter', permanent: true },
       { source: '/tools/uuid-generator', destination: '/tools/bulk-uuid-v4-v7-generator', permanent: true },
       { source: '/tools/password-suite', destination: '/tools/password-entropy-tester', permanent: true },
       { source: '/tools/data-converter', destination: '/tools/csv-json-xml-converter', permanent: true },
-
       { source: '/tools/csv-to-xml', destination: '/tools/csv-json-xml-converter', permanent: true },
       { source: '/tools/json-formatter', destination: '/tools/json-to-code-generator', permanent: true },
       { source: '/tools/json-formatter-pro', destination: '/tools/json-to-code-generator', permanent: true },
@@ -105,7 +103,6 @@ const nextConfig = {
       { source: '/tools/json-to-prisma', destination: '/tools/json-to-code-generator', permanent: true },
       { source: '/tools/json-to-yaml', destination: '/tools/json-yaml-jsonl-converter', permanent: true },
       { source: '/tools/json-to-jsonl', destination: '/tools/json-yaml-jsonl-converter', permanent: true },
-      { source: '/tools/uuid-generator', destination: '/tools/bulk-uuid-v4-v7-generator', permanent: true },
       { source: '/tools/uuid-v4-gen', destination: '/tools/bulk-uuid-v4-v7-generator', permanent: true },
       { source: '/tools/uuid-v7-generator', destination: '/tools/bulk-uuid-v4-v7-generator', permanent: true },
       { source: '/tools/password-generator', destination: '/tools/password-entropy-tester', permanent: true },
@@ -116,13 +113,6 @@ const nextConfig = {
       { source: '/tools/csv-to-json', destination: '/tools/csv-json-xml-converter', permanent: true },
       { source: '/tools/xml-to-json', destination: '/tools/csv-json-xml-converter', permanent: true },
       { source: '/tools/json-to-xml', destination: '/tools/csv-json-xml-converter', permanent: true },
-      
-      // Deleted newsjacking posts — redirect to relevant master guides to prevent soft 404s
-      {
-        source: '/blog/iran-conflict-2026-cybersecurity',
-        destination: '/blog/enterprise-web-security-guide/',
-        permanent: true,
-      },
       {
         source: '/blog/iran-conflict-2026-cybersecurity/',
         destination: '/blog/enterprise-web-security-guide/',

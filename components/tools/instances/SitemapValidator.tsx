@@ -12,10 +12,11 @@ import {
   ShieldCheck, 
   FileText, 
   Terminal, 
-  Check, 
-  ExternalLink 
+  ExternalLink,
+  Check
 } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 interface SitemapMetric {
   label: string
@@ -26,6 +27,8 @@ interface SitemapMetric {
 
 export default function SitemapValidator() {
   const [url, setUrl] = useState('')
+  const [isBulkMode, setIsBulkMode] = useState(false)
+  const [bulkResults, setBulkResults] = useState<any[]>([])
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   
@@ -41,6 +44,40 @@ export default function SitemapValidator() {
     setMetrics([])
     setWarnings([])
     setSuccesses([])
+
+    if (isBulkMode) {
+      setBulkResults([])
+      const urls = url.split('\n').map(u => u.trim()).filter(Boolean)
+      const results = []
+      for (const u of urls) {
+        try {
+          const targetUrl = u.startsWith('http') ? u : `https://${u}`
+          const res = await fetch(`/api/validate-sitemap?url=${encodeURIComponent(targetUrl)}`)
+          const data = await res.json()
+          
+          if (data.error) {
+            results.push({ url: targetUrl, error: data.error })
+          } else {
+             let urlCount = 0
+             let isXml = false
+             data.results.forEach((item: string) => {
+               if (item.toLowerCase().includes('xml')) isXml = true
+               if (item.toLowerCase().includes('found')) {
+                 const match = item.match(/\d+/)
+                 if (match) urlCount = parseInt(match[0], 10)
+               }
+             })
+             results.push({ url: targetUrl, urls: urlCount, isXml, size: data.size })
+          }
+        } catch(e) {
+          results.push({ url: u, error: 'Failed to connect' })
+        }
+        setBulkResults([...results])
+      }
+      setStatus('success')
+      triggerQuickSuccess()
+      return
+    }
 
     try {
       const targetUrl = url.startsWith('http') ? url : `https://${url}`
@@ -184,21 +221,34 @@ export default function SitemapValidator() {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Sitemap Validation" />
+      </div>
       {/* Search and Input Area */}
       <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-gray-100 dark:border-slate-800 p-8 shadow-sm">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="relative flex-grow w-full">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Globe className="h-5 w-5 text-purple-500 animate-pulse" />
-            </div>
-            <input 
-              type="url"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              placeholder="Enter sitemap URL (e.g., https://example.com/sitemap.xml)"
-              className="block w-full pl-11 pr-4 py-4.5 bg-gray-50 dark:bg-slate-800/50 border border-transparent rounded-2xl focus:ring-2 focus:ring-purple-500 outline-none dark:text-white font-medium text-sm transition-all"
-            />
+            {!isBulkMode && (
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Globe className="h-5 w-5 text-purple-500 animate-pulse" />
+              </div>
+            )}
+            {isBulkMode ? (
+              <textarea 
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder="Paste a list of sitemap URLs (one per line)..."
+                className="block w-full h-32 px-6 py-4.5 bg-gray-50 dark:bg-slate-800/50 border border-transparent rounded-2xl focus:ring-2 focus:ring-purple-500 outline-none dark:text-white font-medium text-sm transition-all whitespace-pre"
+              />
+            ) : (
+              <input 
+                type="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder="Enter sitemap URL (e.g., https://example.com/sitemap.xml)"
+                className="block w-full pl-11 pr-4 py-4.5 bg-gray-50 dark:bg-slate-800/50 border border-transparent rounded-2xl focus:ring-2 focus:ring-purple-500 outline-none dark:text-white font-medium text-sm transition-all"
+              />
+            )}
           </div>
 
           <div className="flex gap-4 w-full md:w-auto shrink-0">
@@ -256,7 +306,7 @@ export default function SitemapValidator() {
       )}
 
       {/* Success dashboard */}
-      {status === 'success' && (
+      {status === 'success' && !isBulkMode && (
         <div className="space-y-8 animate-in fade-in duration-500">
           
           {/* Main Metrics grid */}
@@ -346,6 +396,29 @@ export default function SitemapValidator() {
             </div>
           </div>
 
+        </div>
+      )}
+
+      {isBulkMode && bulkResults.length > 0 && (
+        <div className="space-y-4 max-h-[600px] overflow-auto">
+          {bulkResults.map((res, i) => (
+            <div key={i} className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  {res.error ? <XCircle className="w-4 h-4 text-red-500 shrink-0" /> : <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />}
+                  <span className="text-sm font-bold text-gray-900 dark:text-white truncate">{res.url}</span>
+                </div>
+                {res.error && <p className="text-xs text-red-500 mt-1">{res.error}</p>}
+              </div>
+              {!res.error && (
+                <div className="flex flex-wrap gap-3 shrink-0">
+                  <span className="text-xs font-medium px-3 py-1.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 rounded-lg">URLs: {res.urls}</span>
+                  <span className={`text-xs font-medium px-3 py-1.5 rounded-lg ${res.isXml ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600' : 'bg-amber-50 dark:bg-amber-900/20 text-amber-600'}`}>{res.isXml ? 'XML Format' : 'Invalid Format'}</span>
+                  <span className="text-xs font-medium px-3 py-1.5 bg-gray-50 dark:bg-slate-800 text-gray-600 dark:text-gray-400 rounded-lg">Size: {res.size}</span>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       )}
 

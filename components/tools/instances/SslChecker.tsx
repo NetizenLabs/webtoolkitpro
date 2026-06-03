@@ -1,35 +1,57 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ShieldCheck, Calendar, Lock, Globe, Search, Activity, CheckCircle2, AlertCircle, Hash } from 'lucide-react'
+import { ShieldCheck, Calendar, Lock, Globe, Search, Activity, CheckCircle2, AlertCircle, Hash, XCircle } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function SslChecker() {
   const [domain, setDomain] = useState('')
+  const [isBulkMode, setIsBulkMode] = useState(false)
+  const [bulkResults, setBulkResults] = useState<any[]>([])
   const [status, setStatus] = useState<any>(null)
   const [loading, setLoading] = useState(false)
 
   const checkSsl = () => {
     if (!domain) return
     setLoading(true)
-    setStatus(null)
 
-    setTimeout(() => {
-      setStatus({
-        valid: true,
-        issuer: 'Let\'s Encrypt R3',
-        algorithm: 'RSA 2048-bit',
-        validFrom: 'Jan 10, 2026',
-        validTo: 'Apr 10, 2026',
-        daysLeft: 82,
-        serial: '03:4F:A1:9D:E2:B3:C4:D5',
-        protocols: ['TLS 1.2', 'TLS 1.3']
-      })
-      setLoading(false)
-    }, 1500)
+    if (isBulkMode) {
+      setBulkResults([])
+      setTimeout(() => {
+        const domains = domain.split('\n').map(d => d.trim()).filter(Boolean)
+        const mockResults = domains.map(d => ({
+          domain: d,
+          valid: true,
+          issuer: 'Let\'s Encrypt R3',
+          daysLeft: Math.floor(Math.random() * 300) + 10,
+          error: Math.random() > 0.8 ? 'Connection Refused' : null
+        }))
+        setBulkResults(mockResults)
+        setLoading(false)
+      }, 1500)
+    } else {
+      setStatus(null)
+      setTimeout(() => {
+        setStatus({
+          valid: true,
+          issuer: 'Let\'s Encrypt R3',
+          algorithm: 'RSA 2048-bit',
+          validFrom: 'Jan 10, 2026',
+          validTo: 'Apr 10, 2026',
+          daysLeft: 82,
+          serial: '03:4F:A1:9D:E2:B3:C4:D5',
+          protocols: ['TLS 1.2', 'TLS 1.3']
+        })
+        setLoading(false)
+      }, 1500)
+    }
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk SSL Checker" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600">
@@ -39,13 +61,22 @@ export default function SslChecker() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
-          <input
-            type="text"
-            value={domain}
-            onChange={(e) => setDomain(e.target.value)}
-            placeholder="example.com"
-            className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none"
-          />
+          {isBulkMode ? (
+            <textarea
+              value={domain}
+              onChange={(e) => setDomain(e.target.value)}
+              placeholder="Paste a list of domains (one per line)..."
+              className="flex-1 h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm outline-none whitespace-pre"
+            />
+          ) : (
+            <input
+              type="text"
+              value={domain}
+              onChange={(e) => setDomain(e.target.value)}
+              placeholder="example.com"
+              className="flex-1 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none"
+            />
+          )}
           <button 
             onClick={checkSsl}
             disabled={loading}
@@ -56,7 +87,7 @@ export default function SslChecker() {
         </div>
       </div>
 
-      {status && (
+      {!isBulkMode && status && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
             <div className="flex items-center gap-4 mb-8">
@@ -111,6 +142,33 @@ export default function SslChecker() {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {isBulkMode && bulkResults.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {bulkResults.map((res, i) => (
+            <div key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 shadow-sm flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-bold text-gray-900 dark:text-white truncate" title={res.domain}>{res.domain}</span>
+                {res.error ? <XCircle className="w-5 h-5 text-red-500 shrink-0" /> : <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />}
+              </div>
+              {res.error ? (
+                <div className="text-xs text-red-500 bg-red-50 dark:bg-red-900/10 p-3 rounded-xl">{res.error}</div>
+              ) : (
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-gray-500">Issuer</span>
+                    <span className="text-gray-900 dark:text-white">{res.issuer}</span>
+                  </div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-gray-500">Days Left</span>
+                    <span className={`font-bold ${res.daysLeft > 30 ? 'text-green-500' : 'text-amber-500'}`}>{res.daysLeft}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       )}
     </div>

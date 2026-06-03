@@ -108,7 +108,7 @@ export default function RegexTester() {
     
     result.push(testText.substring(lastIndex))
     return result
-  }, [testText, matches])
+  }, [testText, matches, isBulkMode, regex, flags])
 
   return (
     <div className="space-y-6">
