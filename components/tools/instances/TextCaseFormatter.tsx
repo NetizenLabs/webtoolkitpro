@@ -2,40 +2,45 @@
 
 import React, { useState } from 'react'
 import { Type, ArrowUpDown, AlignLeft, Scissors, Copy, Trash2, ArrowRightLeft } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function TextCaseFormatter() {
   const [text, setText] = useState('')
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const handleAction = (action: string) => {
-    let result = text
-    switch (action) {
-      case 'uppercase':
-        result = text.toUpperCase()
-        break
-      case 'lowercase':
-        result = text.toLowerCase()
-        break
-      case 'titlecase':
-        result = text.replace(
-          /\\w\\S*/g,
-          (txt) => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
-        )
-        break
-      case 'inversecase':
-        result = Array.from(text).map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()).join('')
-        break
-      case 'reverse':
-        result = Array.from(text).reverse().join('')
-        break
-      case 'remove-whitespace':
-        result = text.replace(/\\s+/g, '')
-        break
-      case 'remove-duplicates':
-        const lines = text.split('\\n')
-        result = Array.from(new Set(lines)).join('\\n')
-        break
+    if (!text) return
+    
+    if (action === 'remove-duplicates') {
+      const lines = text.split('\n')
+      setText(Array.from(new Set(lines)).join('\n'))
+      return
     }
-    setText(result)
+
+    const lines = isBulkMode ? text.split('\n') : [text]
+    const processedLines = lines.map(line => {
+      switch (action) {
+        case 'uppercase':
+          return line.toUpperCase()
+        case 'lowercase':
+          return line.toLowerCase()
+        case 'titlecase':
+          return line.replace(
+            /\w\S*/g,
+            (txt) => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
+          )
+        case 'inversecase':
+          return Array.from(line).map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()).join('')
+        case 'reverse':
+          return Array.from(line).reverse().join('')
+        case 'remove-whitespace':
+          return line.replace(/\s+/g, '')
+        default:
+          return line
+      }
+    })
+    
+    setText(processedLines.join(isBulkMode ? '\n' : ''))
   }
 
   const actions = [
@@ -50,19 +55,24 @@ export default function TextCaseFormatter() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap gap-3">
-        {actions.map((action) => {
-          const Icon = action.icon
-          return (
-            <button
-              key={action.id}
-              onClick={() => handleAction(action.id)}
-              className="flex items-center gap-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] px-4 py-2.5 rounded-xl hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 transition-colors text-sm font-medium text-gray-700 dark:text-gray-300 shadow-sm"
-            >
-              <Icon className="w-4 h-4 opacity-70" /> {action.label}
-            </button>
-          )
-        })}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-gray-100 dark:border-[#1E2D47] pb-4">
+        <div className="flex flex-wrap gap-2">
+          {actions.map((action) => {
+            const Icon = action.icon
+            return (
+              <button
+                key={action.id}
+                onClick={() => handleAction(action.id)}
+                className="flex items-center gap-2 bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] px-3 py-2 rounded-xl hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 transition-colors text-xs font-medium text-gray-700 dark:text-gray-300 shadow-sm"
+              >
+                <Icon className="w-3.5 h-3.5 opacity-70" /> {action.label}
+              </button>
+            )
+          })}
+        </div>
+        <div className="shrink-0">
+          <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Text Formatter" />
+        </div>
       </div>
 
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 shadow-sm flex flex-col h-[500px]">

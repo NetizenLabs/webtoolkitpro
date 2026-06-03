@@ -1,11 +1,13 @@
 'use client'
 import React, { useState } from 'react'
 import { Shield, Copy, Check } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function HashGenerator() {
   const [input, setInput] = useState('')
   const [hashes, setHashes] = useState<{[k:string]:string}>({})
   const [copied, setCopied] = useState<string|null>(null)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const md5 = (string: string) => {
     function md5cycle(x: any, k: any) {
@@ -140,16 +142,24 @@ export default function HashGenerator() {
 
   const generate = async () => {
     if (!input) return
-    const encoder = new TextEncoder()
-    const data = encoder.encode(input)
+    const lines = isBulkMode ? input.split('\n') : [input]
     const results: {[k:string]:string} = {}
     
     // Add MD5 (Legacy but popular)
-    results['MD5'] = md5(input)
+    results['MD5'] = lines.map(line => line.trim() ? md5(line) : '').join(isBulkMode ? '\n' : '')
 
     for (const algo of ['SHA-1', 'SHA-256', 'SHA-384', 'SHA-512']) {
-      const buf = await crypto.subtle.digest(algo, data)
-      results[algo] = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
+      const hashesForAlgo = []
+      for (const line of lines) {
+        if (!line.trim()) {
+          hashesForAlgo.push('')
+          continue
+        }
+        const data = new TextEncoder().encode(line)
+        const buf = await crypto.subtle.digest(algo, data)
+        hashesForAlgo.push(Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join(''))
+      }
+      results[algo] = hashesForAlgo.join(isBulkMode ? '\n' : '')
     }
     setHashes(results)
   }
@@ -161,12 +171,18 @@ export default function HashGenerator() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      <div className="flex justify-end mb-2 px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Hash Generator" />
+      </div>
       <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 shadow-sm">
+        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-2 mb-2 flex items-center gap-2">
+          Input Text {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">BULK</span>}
+        </label>
         <textarea 
           value={input} 
           onChange={(e) => setInput(e.target.value)} 
-          placeholder="Enter text to hash..." 
+          placeholder={isBulkMode ? "Enter multiple lines of text to hash..." : "Enter text to hash..."}
           className="w-full h-32 p-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-slate-500 outline-none resize-none mb-4 dark:text-white" 
         />
         <button onClick={generate} className="w-full py-4 bg-slate-800 dark:bg-slate-700 text-white rounded-2xl font-bold hover:bg-slate-900 transition-all shadow-lg mb-8">Generate Secure Hashes</button>
@@ -181,7 +197,7 @@ export default function HashGenerator() {
                     <span>{copied===algo ? 'Copied' : 'Copy Hash'}</span>
                   </button>
                 </div>
-                <div className="font-mono text-sm text-gray-600 dark:text-slate-300 break-all bg-white dark:bg-slate-900 p-3 rounded-xl border border-gray-100 dark:border-slate-800">{hash}</div>
+                <div className={`font-mono text-sm text-gray-600 dark:text-slate-300 break-all bg-white dark:bg-slate-900 p-3 rounded-xl border border-gray-100 dark:border-slate-800 ${isBulkMode ? 'whitespace-pre overflow-x-auto' : ''}`}>{hash}</div>
               </div>
             ))}
           </div>
