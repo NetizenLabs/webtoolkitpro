@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { ShieldCheck, Search, Activity, CheckCircle2, AlertCircle, Zap, Globe, FileText, Share2 } from 'lucide-react'
 import { useAuditLogger } from '@/contexts/AuditLoggerContext'
+import ProGate from '@/components/ui/ProGate'
 
 export default function SiteAuditPro() {
   const { logAudit } = useAuditLogger()
@@ -52,6 +53,7 @@ export default function SiteAuditPro() {
   }
 
   return (
+    <ProGate toolName="Site Audit Pro">
     <div className="space-y-8">
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
@@ -127,5 +129,6 @@ export default function SiteAuditPro() {
         </div>
       )}
     </div>
+    </ProGate>
   )
 }

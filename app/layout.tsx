@@ -15,6 +15,7 @@ import dynamic from 'next/dynamic'
 import { cache } from 'react'
 import { PipelineProvider } from '@/contexts/PipelineContext'
 import { AuditLoggerProvider } from '@/contexts/AuditLoggerContext'
+import { SubscriptionProvider } from '@/contexts/SubscriptionContext'
 import CommandBar from '@/components/ui/CommandBar'
 import { getTools } from '@/lib/tools'
 import WebMCPProvider from '@/components/tools/WebMCPProvider'
@@ -215,17 +216,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
       <div className="min-h-screen flex flex-col">
-        <AuditLoggerProvider>
-          <PipelineProvider>
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-            <CommandBar tools={allTools} />
-            <CookieConsent />
-            <NewContentNotification latestItem={latestItem} />
-            <WebMCPProvider />
-          </PipelineProvider>
-        </AuditLoggerProvider>
+        <SubscriptionProvider>
+          <AuditLoggerProvider>
+            <PipelineProvider>
+              <Header />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+              <CommandBar tools={allTools} />
+              <CookieConsent />
+              <NewContentNotification latestItem={latestItem} />
+              <WebMCPProvider />
+            </PipelineProvider>
+          </AuditLoggerProvider>
+        </SubscriptionProvider>
       </div>
       
       <Script id="google-consent-default" strategy="afterInteractive">
