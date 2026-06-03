@@ -206,7 +206,8 @@ export default function ColorConverter() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
+      </div>
       )}
     </div>
   )
