@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Copy, Shield, ShieldAlert, ShieldCheck, RefreshCw, KeyRound, Check } from 'lucide-react';
 import { useAuditLogger } from '@/contexts/AuditLoggerContext';
+import BulkModeToggle from '@/components/ui/BulkModeToggle';
 
 // Basic entropy calculation logic since zxcvbn isn't available
 function calculateEntropy(password: string): { score: number, crackTime: string, color: string, feedback: string } {
@@ -52,6 +53,7 @@ export default function PasswordEntropyTester() {
   const [auditPassword, setAuditPassword] = useState('');
   
   const [copied, setCopied] = useState(false);
+  const [isBulkMode, setIsBulkMode] = useState(false);
 
   const generatePasswordCore = useCallback(() => {
     const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -70,15 +72,21 @@ export default function PasswordEntropyTester() {
       return;
     }
     
-    let result = '';
-    const randomValues = new Uint32Array(length);
-    crypto.getRandomValues(randomValues);
+    const count = isBulkMode ? 10 : 1;
+    const results = [];
     
-    for (let i = 0; i < length; i++) {
-      result += pool[randomValues[i] % pool.length];
+    for (let c = 0; c < count; c++) {
+      let result = '';
+      const randomValues = new Uint32Array(length);
+      crypto.getRandomValues(randomValues);
+      
+      for (let i = 0; i < length; i++) {
+        result += pool[randomValues[i] % pool.length];
+      }
+      results.push(result);
     }
-    setGeneratedPassword(result);
-  }, [length, useUpper, useLower, useNumbers, useSymbols]);
+    setGeneratedPassword(results.join('\n'));
+  }, [length, useUpper, useLower, useNumbers, useSymbols, isBulkMode]);
 
   const handleGenerateClick = () => {
     generatePasswordCore();
@@ -101,9 +109,18 @@ export default function PasswordEntropyTester() {
   };
 
   const auditResult = calculateEntropy(activeTab === 'audit' ? auditPassword : generatedPassword);
+  const bulkAuditContent = activeTab === 'audit' ? auditPassword : generatedPassword;
+  const bulkDisplayResult = isBulkMode ? bulkAuditContent.split('\n').map(line => {
+    if (!line.trim()) return '';
+    const r = calculateEntropy(line);
+    return `${line}\n➜ Score: ${r.score}/4 | Crack Time: ${r.crackTime} | ${r.feedback}`;
+  }).join('\n\n') : bulkAuditContent;
 
   return (
     <div className="flex flex-col gap-6 w-full max-w-4xl mx-auto bg-background">
+      <div className="flex justify-end px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Password Tools" />
+      </div>
       
       {/* Tabs */}
       <div className="flex p-1 bg-muted/50 rounded-lg w-full sm:w-fit mx-auto border border-border">
@@ -183,12 +200,11 @@ export default function PasswordEntropyTester() {
               <p className="text-xs text-muted-foreground mb-4">Paste a password below. Processing is 100% local; your password never leaves this browser.</p>
               
               <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Type password to audit..."
+                <textarea
+                  placeholder={isBulkMode ? "Paste multiple passwords (one per line) to audit..." : "Type password to audit..."}
                   value={auditPassword}
                   onChange={(e) => setAuditPassword(e.target.value)}
-                  className="w-full px-4 py-4 rounded-lg bg-secondary text-secondary-foreground border-none text-sm font-mono focus:ring-2 focus:ring-primary outline-none"
+                  className={`w-full px-4 py-4 rounded-lg bg-secondary text-secondary-foreground border-none text-sm font-mono focus:ring-2 focus:ring-primary outline-none resize-none ${isBulkMode ? 'h-32 whitespace-pre' : 'h-16'}`}
                 />
               </div>
             </>
@@ -201,12 +217,12 @@ export default function PasswordEntropyTester() {
           <h3 className="font-semibold text-sm mb-2 text-muted-foreground">Resulting Password</h3>
           
           <div className="relative group">
-            <div className="w-full min-h-[80px] p-4 rounded-lg bg-muted/50 border border-border font-mono text-lg break-all flex items-center shadow-inner">
-              {activeTab === 'generate' ? generatedPassword : (auditPassword || 'Waiting for input...')}
+            <div className={`w-full min-h-[80px] p-4 rounded-lg bg-muted/50 border border-border font-mono text-sm break-all shadow-inner ${isBulkMode ? 'whitespace-pre overflow-x-auto max-h-96' : 'text-lg flex items-center'}`}>
+              {bulkDisplayResult || 'Waiting for input...'}
             </div>
             {(activeTab === 'generate' || auditPassword) && (
               <button
-                onClick={() => handleCopy(activeTab === 'generate' ? generatedPassword : auditPassword)}
+                onClick={() => handleCopy(bulkDisplayResult)}
                 className="absolute top-2 right-2 p-2 rounded-md bg-secondary text-secondary-foreground hover:bg-background shadow-sm transition-all"
               >
                 {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
@@ -214,6 +230,7 @@ export default function PasswordEntropyTester() {
             )}
           </div>
 
+          {!isBulkMode && (
           <div className="mt-6 space-y-4">
             <div className="flex justify-between items-end">
               <h4 className="text-sm font-semibold">Strength Analysis</h4>
@@ -242,6 +259,7 @@ export default function PasswordEntropyTester() {
               </div>
             </div>
           </div>
+          )}
         </div>
         
       </div>

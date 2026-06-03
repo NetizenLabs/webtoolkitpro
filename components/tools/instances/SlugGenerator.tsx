@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from 'react'
 import { Copy, Check, Trash2 } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 const STOP_WORDS = new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','is','was','are','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','it','its','this','that','these','those','not','no','so','if','as','up','out','about'])
 
@@ -53,8 +54,14 @@ export default function SlugGenerator() {
   const [removeStopWords, setRemoveStopWords] = useState(false)
   const [lowercase, setLowercase] = useState(true)
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
-  const slug = toSlug(input, { separator, maxLength, removeStopWords, lowercase })
+  const lines = isBulkMode ? input.split('\n') : [input]
+  const slugs = lines.map(line => {
+    if (!line.trim()) return ''
+    return toSlug(line, { separator, maxLength, removeStopWords, lowercase })
+  })
+  const slug = slugs.join(isBulkMode ? '\n' : '')
 
   const copy = () => {
     if (!slug) return
@@ -64,16 +71,21 @@ export default function SlugGenerator() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      <div className="flex justify-end px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Slug Generator" />
+      </div>
       {/* Input */}
       <div className="space-y-3">
-        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Title or Text</label>
+        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+          Title or Text {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">BULK</span>}
+        </label>
         <div className="relative">
           <textarea
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="How to Build a REST API in 2026..."
-            rows={3}
+            placeholder={isBulkMode ? "Enter multiple titles, one per line..." : "How to Build a REST API in 2026..."}
+            rows={4}
             className="w-full px-5 py-4 bg-[#0D1526] border border-[#1E2D47] rounded-2xl text-white text-sm focus:ring-2 focus:ring-[#00D4B4] outline-none resize-none transition-all placeholder:text-gray-600"
           />
           {input && (
@@ -148,10 +160,10 @@ export default function SlugGenerator() {
           <span className={`text-[10px] font-bold ${slug.length > maxLength * 0.9 ? 'text-yellow-400' : 'text-gray-600'}`}>{slug.length} chars</span>
         </div>
         <div className="relative flex items-center bg-[#0B1120] border border-[#1E2D47] rounded-2xl overflow-hidden group">
-          <span className="px-4 py-4 text-gray-600 font-mono text-sm shrink-0">/</span>
-          <span className={`flex-grow py-4 font-mono text-sm ${slug ? 'text-[#00D4B4]' : 'text-gray-600'}`}>
+          {!isBulkMode && <span className="px-4 py-4 text-gray-600 font-mono text-sm shrink-0">/</span>}
+          <div className={`flex-grow py-4 px-4 font-mono text-sm ${slug ? 'text-[#00D4B4]' : 'text-gray-600'} ${isBulkMode ? 'whitespace-pre overflow-x-auto max-h-64' : ''}`}>
             {slug || 'your-slug-will-appear-here'}
-          </span>
+          </div>
           <button onClick={copy} className="shrink-0 flex items-center gap-2 px-5 py-4 bg-[#00D4B4]/10 border-l border-[#1E2D47] text-[#00D4B4] text-xs font-bold hover:bg-[#00D4B4]/20 transition-all">
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             {copied ? 'Copied!' : 'Copy'}

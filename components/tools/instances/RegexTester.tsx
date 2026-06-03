@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react'
 import { Search, Info, Copy, Check, Trash2, AlertCircle } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function RegexTester() {
   const [regex, setRegex] = useState('')
@@ -10,6 +11,7 @@ export default function RegexTester() {
   const [matches, setMatches] = useState<any[]>([])
   const [error, setError] = useState('')
   const [copied, setCopied] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const supportedFlags = [
     { id: 'g', label: 'global', desc: 'Find all matches' },
@@ -70,6 +72,21 @@ export default function RegexTester() {
 
   const highlightedText = useMemo(() => {
     if (!testText) return 'Your matches will appear here...'
+    
+    if (isBulkMode) {
+      if (!regex) return 'Enter a regex to filter matching lines...'
+      const lines = testText.split('\n')
+      let re: RegExp
+      try { re = new RegExp(regex, flags) } catch { return 'Invalid Regex' }
+      const matchedLines = lines.filter(line => {
+        // Remove global flag for test to prevent stateful regex bugs
+        const reCopy = new RegExp(regex, flags.replace('g', ''))
+        return reCopy.test(line)
+      })
+      if (matchedLines.length === 0) return 'No lines matched.'
+      return `[Filtered ${matchedLines.length} matched lines]\n\n` + matchedLines.join('\n')
+    }
+
     if (matches.length === 0) return testText
 
     // Simple highlighting for demonstration
@@ -94,7 +111,10 @@ export default function RegexTester() {
   }, [testText, matches])
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      <div className="flex justify-end px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Line Filter" />
+      </div>
       {/* RegEx Pattern Input */}
       <div className="bg-[#0D1526] border border-[#1E2D47] rounded-3xl p-6 md:p-8">
         <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -144,7 +164,9 @@ export default function RegexTester() {
         {/* Test String */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">Test String</label>
+            <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest flex items-center gap-2">
+              Test String {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">BULK</span>}
+            </label>
             <button 
               onClick={() => setTestText('')}
               className="text-xs font-bold text-red-500 hover:text-red-600 flex items-center gap-1.5 px-3 py-1.5 bg-red-50 dark:bg-red-900/10 rounded-lg transition-all"
@@ -162,8 +184,10 @@ export default function RegexTester() {
 
         {/* Highlighted Results */}
         <div className="space-y-4">
-          <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">Match Result</label>
-          <div className="w-full h-[300px] p-6 font-mono text-sm bg-[#0B1120] border border-[#1E2D47] rounded-3xl shadow-2xl overflow-auto whitespace-pre-wrap dark:text-[#8A9BBE]">
+          <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">
+            {isBulkMode ? 'Filtered Lines' : 'Match Result'}
+          </label>
+          <div className={`w-full h-[300px] p-6 font-mono text-sm bg-[#0B1120] border border-[#1E2D47] rounded-3xl shadow-2xl overflow-auto dark:text-[#8A9BBE] ${isBulkMode ? 'whitespace-pre overflow-x-auto' : 'whitespace-pre-wrap'}`}>
             {highlightedText}
           </div>
         </div>

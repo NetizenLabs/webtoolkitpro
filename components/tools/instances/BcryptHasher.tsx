@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Shield, Lock, Hash, Copy, Check, RefreshCcw, Loader2 } from 'lucide-react'
 import bcrypt from 'bcryptjs'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function BcryptHasher() {
   const [password, setPassword] = useState('')
@@ -10,15 +11,20 @@ export default function BcryptHasher() {
   const [hash, setHash] = useState('')
   const [copied, setCopied] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [isBulkMode, setIsBulkMode] = useState(false)
 
   const generateHash = () => {
     if (!password) return
     setIsGenerating(true)
     setTimeout(() => {
       try {
-        const salt = bcrypt.genSaltSync(rounds)
-        const resultingHash = bcrypt.hashSync(password, salt)
-        setHash(resultingHash)
+        const lines = isBulkMode ? password.split('\n') : [password]
+        const results = lines.map(line => {
+          if (!line.trim()) return ''
+          const salt = bcrypt.genSaltSync(rounds)
+          return bcrypt.hashSync(line, salt)
+        })
+        setHash(results.join(isBulkMode ? '\n' : ''))
       } catch (err) {
         console.error(err)
       }
@@ -27,7 +33,10 @@ export default function BcryptHasher() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      <div className="flex justify-end px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Bcrypt Hasher" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-[#00D4B4]">
@@ -38,13 +47,14 @@ export default function BcryptHasher() {
 
         <div className="space-y-6">
           <div>
-            <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2 block ml-1">Password / Input String</label>
-            <input
-              type="text"
+            <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2 flex items-center gap-2 ml-1">
+              Password / Input String {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">BULK</span>}
+            </label>
+            <textarea
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter text to hash..."
-              className="w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none"
+              placeholder={isBulkMode ? "Enter strings to hash (one per line)..." : "Enter text to hash..."}
+              className={`w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-sm font-bold outline-none resize-none ${isBulkMode ? 'h-32' : 'h-16'}`}
             />
           </div>
 
@@ -84,7 +94,7 @@ export default function BcryptHasher() {
               {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
             </button>
           </div>
-          <div className="p-6 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-gray-100 dark:border-[#1E2D47] text-xs font-mono text-blue-600 break-all leading-loose">
+          <div className={`p-6 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-gray-100 dark:border-[#1E2D47] text-xs font-mono text-blue-600 break-all leading-loose ${isBulkMode ? 'whitespace-pre overflow-x-auto max-h-64' : ''}`}>
             {hash}
           </div>
           <div className="mt-4 grid grid-cols-3 gap-4">
