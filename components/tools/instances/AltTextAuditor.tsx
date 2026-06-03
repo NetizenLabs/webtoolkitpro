@@ -2,45 +2,57 @@
 
 import React, { useState } from 'react'
 import { ImageIcon, AlertCircle, CheckCircle2, Search, Trash2, Info, Eye } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function AltTextAuditor() {
   const [html, setHtml] = useState('')
-  const [results, setResults] = useState<{ src: string; alt: string; status: 'pass' | 'fail' | 'warn'; issue?: string }[]>([])
+  const [isBulkMode, setIsBulkMode] = useState(false)
+  const [results, setResults] = useState<{ snippetIdx?: number; src: string; alt: string; status: 'pass' | 'fail' | 'warn'; issue?: string }[]>([])
 
   const auditAltTags = () => {
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(html, 'text/html')
-    const images = Array.from(doc.querySelectorAll('img'))
-    
-    const auditResults = images.map(img => {
-      const src = img.getAttribute('src') || 'Unknown Source'
-      const alt = img.getAttribute('alt')
+    let snippets = isBulkMode ? html.split('---') : [html]
+    let allResults: any[] = []
+
+    snippets.forEach((snippet, idx) => {
+      if (!snippet.trim()) return
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(snippet, 'text/html')
+      const images = Array.from(doc.querySelectorAll('img'))
       
-      let status: 'pass' | 'fail' | 'warn' = 'pass'
-      let issue = ''
+      const auditResults = images.map(img => {
+        const src = img.getAttribute('src') || 'Unknown Source'
+        const alt = img.getAttribute('alt')
+        
+        let status: 'pass' | 'fail' | 'warn' = 'pass'
+        let issue = ''
 
-      if (alt === null) {
-        status = 'fail'
-        issue = 'Missing ALT attribute (CRITICAL)'
-      } else if (alt.trim() === '') {
-        status = 'warn'
-        issue = 'Empty ALT tag (Use only for decorative images)'
-      } else if (alt.length > 125) {
-        status = 'warn'
-        issue = 'Alt text too long (>125 chars)'
-      } else if (/^(image|img|picture|photo)/i.test(alt.trim())) {
-        status = 'warn'
-        issue = 'Redundant words like "image of" detected'
-      }
+        if (alt === null) {
+          status = 'fail'
+          issue = 'Missing ALT attribute (CRITICAL)'
+        } else if (alt.trim() === '') {
+          status = 'warn'
+          issue = 'Empty ALT tag (Use only for decorative images)'
+        } else if (alt.length > 125) {
+          status = 'warn'
+          issue = 'Alt text too long (>125 chars)'
+        } else if (/^(image|img|picture|photo)/i.test(alt.trim())) {
+          status = 'warn'
+          issue = 'Redundant words like "image of" detected'
+        }
 
-      return { src, alt: alt || '[None]', status, issue }
+        return { snippetIdx: isBulkMode ? idx + 1 : undefined, src, alt: alt || '[None]', status, issue }
+      })
+      allResults = [...allResults, ...auditResults]
     })
 
-    setResults(auditResults)
+    setResults(allResults)
   }
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-between items-center px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Alt Auditor" />
+      </div>
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
@@ -52,7 +64,7 @@ export default function AltTextAuditor() {
         <textarea
           value={html}
           onChange={(e) => setHtml(e.target.value)}
-          placeholder={`<div class="gallery">\n  <img src="banner.jpg" alt="Summer Sale 2025">\n  <img src="icon.png">\n</div>`}
+          placeholder={isBulkMode ? `<img src="1.jpg">\n---\n<img src="2.jpg">` : `<div class="gallery">\n  <img src="banner.jpg" alt="Summer Sale 2025">\n  <img src="icon.png">\n</div>`}
           className="w-full h-48 p-6 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-xs font-mono outline-none"
         />
 
@@ -86,6 +98,7 @@ export default function AltTextAuditor() {
                     <ImageIcon className="w-6 h-6 text-gray-400" />
                   </div>
                   <div className="flex-1 min-w-0 space-y-1">
+                    {res.snippetIdx && <div className="text-[9px] font-black uppercase text-blue-500 mb-1">Snippet #{res.snippetIdx}</div>}
                     <div className="text-[10px] font-mono text-blue-600 truncate">{res.src}</div>
                     <div className="text-xs font-bold text-gray-900 dark:text-white">ALT: <span className={res.status === 'fail' ? 'text-red-500 italic' : ''}>{res.alt}</span></div>
                     {res.issue && <div className={`text-[10px] font-black uppercase tracking-widest mt-2 ${res.status === 'fail' ? 'text-red-500' : 'text-yellow-600'}`}>{res.issue}</div>}
