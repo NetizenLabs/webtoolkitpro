@@ -168,7 +168,7 @@ export default function DesktopLicenseGuard({ children }: { children: React.Reac
         </form>
 
         <div className="mt-8 text-center text-xs text-slate-500">
-          <p>Don't have a license? Get one on <a href="https://whop.com/webtoolkit-pro/" target="_blank" rel="noreferrer" className="text-[#00D4B4] hover:underline">Whop.com</a></p>
+          <p>Don&apos;t have a license? Get one on <a href="https://whop.com/webtoolkit-pro/" target="_blank" rel="noreferrer" className="text-[#00D4B4] hover:underline">Whop.com</a></p>
         </div>
       </div>
     </div>
