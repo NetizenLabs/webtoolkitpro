@@ -1,7 +1,6 @@
 import { getAllPosts } from '@/lib/blog'
 import { getTools } from '@/lib/tools'
 
-export const dynamic = 'force-dynamic'
 
 export async function GET() {
   const posts = getAllPosts()
