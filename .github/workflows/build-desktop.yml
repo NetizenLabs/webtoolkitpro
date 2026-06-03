@@ -1,5 +1,4 @@
 name: 'Publish Desktop App'
-
 on:
   workflow_dispatch:
 
@@ -42,19 +41,30 @@ jobs:
             patchelf \
             pkg-config
 
-          # Verify pkg-config can find the libraries before proceeding
-          pkg-config --modversion libsoup-3.0
-          pkg-config --modversion javascriptcoregtk-4.1
-
       - name: install frontend dependencies
         run: npm install
 
-      - uses: tauri-apps/tauri-action@v0
+      - name: build (ubuntu)
+        if: matrix.platform == 'ubuntu-24.04'
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
+        with:
+          tagName: app-v__VERSION__
+          releaseName: 'WebToolkit Pro Enterprise v__VERSION__'
+          releaseBody: 'Download the installers below for your operating system.'
+          releaseDraft: true
+          prerelease: false
+
+      - name: build (macos/windows)
+        if: matrix.platform != 'ubuntu-24.04'
+        uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: app-v__VERSION__
           releaseName: 'WebToolkit Pro Enterprise v__VERSION__'
-          releaseBody: 'Download the installers below for your operating system.'
+          releaseBody: 'Download the installers below for your operating process.'
           releaseDraft: true
           prerelease: false
