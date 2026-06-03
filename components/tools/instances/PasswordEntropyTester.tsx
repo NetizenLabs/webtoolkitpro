@@ -53,7 +53,7 @@ export default function PasswordEntropyTester() {
   
   const [copied, setCopied] = useState(false);
 
-  const generatePassword = useCallback(() => {
+  const generatePasswordCore = useCallback(() => {
     const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const lower = 'abcdefghijklmnopqrstuvwxyz';
     const nums = '0123456789';
@@ -78,18 +78,21 @@ export default function PasswordEntropyTester() {
       result += pool[randomValues[i] % pool.length];
     }
     setGeneratedPassword(result);
-    
+  }, [length, useUpper, useLower, useNumbers, useSymbols]);
+
+  const handleGenerateClick = () => {
+    generatePasswordCore();
     logAudit({
       toolName: 'Password Entropy Tester',
       action: 'GENERATED_PASSWORD',
       status: 'SUCCESS',
       details: `Generated password of length ${length}`
     });
-  }, [length, useUpper, useLower, useNumbers, useSymbols, logAudit]);
+  };
 
   useEffect(() => {
-    generatePassword();
-  }, [generatePassword]);
+    generatePasswordCore();
+  }, [generatePasswordCore]);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -165,7 +168,7 @@ export default function PasswordEntropyTester() {
                 </div>
 
                 <button 
-                  onClick={generatePassword}
+                  onClick={handleGenerateClick}
                   className="w-full py-3 mt-4 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-sm"
                 >
                   <RefreshCw className="w-4 h-4" /> Generate New Password
