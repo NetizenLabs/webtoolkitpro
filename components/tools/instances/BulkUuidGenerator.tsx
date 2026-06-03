@@ -24,7 +24,6 @@ export default function BulkUuidGenerator() {
   const [mode, setMode] = useState<'v4' | 'v7'>('v4');
   const [quantity, setQuantity] = useState<number>(5);
   const [output, setOutput] = useState<string>('');
-  const [output, setOutput] = useState<string>('');
   const [copied, setCopied] = useState(false);
   const [isBulkMode, setIsBulkMode] = useState(false);
 
@@ -134,7 +133,6 @@ export default function BulkUuidGenerator() {
           />
         </div>
       </div>
-    </div>
     </div>
   );
 }

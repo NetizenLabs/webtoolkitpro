@@ -1,14 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
-import React, { useState } from 'react'
 import { Zap, RefreshCcw, Copy, Check } from 'lucide-react'
 import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function NanoidGen() {
   const [ids, setIds] = useState<string[]>([])
   const [size, setSize] = useState(21)
-  const [count, setCount] = useState(5)
   const [count, setCount] = useState(5)
   const [copied, setCopied] = useState(false)
   const [isBulkMode, setIsBulkMode] = useState(false)
