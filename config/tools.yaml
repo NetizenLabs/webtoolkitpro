@@ -10033,7 +10033,7 @@ tools:
       how_it_works: It uses a global React Context to intercept log events from sensitive tools and stores them locally (or directly to the filesystem in the Tauri air-gapped app) for SOC2 compliance exports.
       faq:
         - question: Does this log my actual passwords or data?
-          answer: No. It only logs metadata: the timestamp, the tool name, the action (e.g., 'GENERATED_PASSWORD'), and the status.
+          answer: "No. It only logs metadata: the timestamp, the tool name, the action (e.g., 'GENERATED_PASSWORD'), and the status."
     seo:
       title: Compliance Audit Logger
       description: Securely view and export all offline interactions with sensitive utilities. Zero PII is logged.
