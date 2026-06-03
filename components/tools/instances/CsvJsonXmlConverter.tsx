@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Editor from '@monaco-editor/react';
 import { Copy, Check, Repeat, FileJson, FileText, Code } from 'lucide-react';
+import BulkModeToggle from '@/components/ui/BulkModeToggle';
 
 // Basic CSV and XML parsers to avoid adding new npm dependencies just for UI
 function csvToJson(csv: string): any[] {
@@ -51,6 +52,7 @@ export default function CsvJsonXmlConverter() {
   
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [isBulkMode, setIsBulkMode] = useState(false);
 
   const processData = useCallback(() => {
     try {
@@ -64,18 +66,27 @@ export default function CsvJsonXmlConverter() {
       
       // 1. Parse Input
       if (inputFormat === 'json') {
-        parsedData = JSON.parse(input);
+        if (isBulkMode) {
+          // Parse JSON Lines
+          const lines = input.trim().split('\n').filter(l => l.trim());
+          parsedData = lines.map(line => JSON.parse(line));
+        } else {
+          parsedData = JSON.parse(input);
+        }
       } else if (inputFormat === 'csv') {
         parsedData = csvToJson(input);
       } else if (inputFormat === 'xml') {
-        // Basic parser just to ensure it doesn't crash. 
-        // Real XML to JSON requires complex DOM traversal.
         parsedData = { error: "Client-side XML parsing requires DOM elements." };
       }
 
       // 2. Format Output
       if (outputFormat === 'json') {
-        setOutput(JSON.stringify(parsedData, null, 2));
+        if (isBulkMode && Array.isArray(parsedData)) {
+          // Output JSON Lines
+          setOutput(parsedData.map(d => JSON.stringify(d)).join('\n'));
+        } else {
+          setOutput(JSON.stringify(parsedData, null, 2));
+        }
       } else if (outputFormat === 'csv') {
         if (!Array.isArray(parsedData)) {
           throw new Error('CSV output requires an array of objects.');
@@ -89,7 +100,7 @@ export default function CsvJsonXmlConverter() {
       setError(e.message);
       setOutput('Error: ' + e.message);
     }
-  }, [input, inputFormat, outputFormat]);
+  }, [input, inputFormat, outputFormat, isBulkMode]);
 
   useEffect(() => {
     processData();
@@ -102,12 +113,18 @@ export default function CsvJsonXmlConverter() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 w-full h-[800px] bg-background">
-      {/* Left Pane - Input */}
-      <div className="flex-1 flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 gap-3 border-b border-border bg-muted/30">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-xs font-semibold uppercase text-muted-foreground mr-2">Input:</span>
+    <div className="space-y-6">
+      <div className="flex justify-end px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Data Converter" />
+      </div>
+      <div className="flex flex-col lg:flex-row gap-6 w-full h-[800px] bg-background">
+        {/* Left Pane - Input */}
+        <div className="flex-1 flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 gap-3 border-b border-border bg-muted/30">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-xs font-semibold uppercase text-muted-foreground mr-2 flex items-center gap-2">
+                Input: {isBulkMode && inputFormat === 'json' && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">JSONL</span>}
+              </span>
             {(['json', 'csv', 'xml'] as const).map((m) => (
               <button
                 key={m}
@@ -143,11 +160,13 @@ export default function CsvJsonXmlConverter() {
         </div>
       </div>
 
-      {/* Right Pane - Output */}
-      <div className="flex-1 flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 gap-3 border-b border-border bg-muted/30">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-xs font-semibold uppercase text-muted-foreground mr-2">Output:</span>
+        {/* Right Pane - Output */}
+        <div className="flex-1 flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 gap-3 border-b border-border bg-muted/30">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-xs font-semibold uppercase text-muted-foreground mr-2 flex items-center gap-2">
+                Output: {isBulkMode && outputFormat === 'json' && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">JSONL</span>}
+              </span>
             {(['json', 'csv', 'xml'] as const).map((m) => (
               <button
                 key={m}
@@ -166,14 +185,15 @@ export default function CsvJsonXmlConverter() {
             {copied ? 'Copied!' : 'Copy Data'}
           </button>
         </div>
-        <div className="flex-1">
-          <Editor
-            height="100%"
-            language={outputFormat}
-            theme="vs-dark"
-            value={output}
-            options={{ readOnly: true, minimap: { enabled: false }, fontSize: 14, wordWrap: 'on' }}
-          />
+          <div className="flex-1">
+            <Editor
+              height="100%"
+              language={outputFormat}
+              theme="vs-dark"
+              value={output}
+              options={{ readOnly: true, minimap: { enabled: false }, fontSize: 14, wordWrap: 'on' }}
+            />
+          </div>
         </div>
       </div>
     </div>
