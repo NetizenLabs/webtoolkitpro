@@ -83,6 +83,7 @@ https://wtkpro.site/tools/code-diff/
 https://wtkpro.site/tools/color-blind-simulator/
 https://wtkpro.site/tools/color-contrast/
 https://wtkpro.site/tools/color-converter/
+https://wtkpro.site/tools/compliance-audit-logger/
 https://wtkpro.site/tools/compression-test/
 https://wtkpro.site/tools/contrast-checker/
 https://wtkpro.site/tools/credit-card-validator/

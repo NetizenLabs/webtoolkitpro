@@ -98,8 +98,8 @@ export default function BulkUuidGenerator() {
               />
             </div>
           </div>
+          </div>
         </div>
-      </div>
 
       {/* Output */}
       <div className="flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm h-[500px]">
@@ -133,6 +133,7 @@ export default function BulkUuidGenerator() {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 }
