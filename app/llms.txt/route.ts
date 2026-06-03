@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server'
 import { getTools } from '@/lib/tools'
 import { getAllPosts } from '@/lib/blog'
 
-export const dynamic = 'force-dynamic'
 
 export async function GET() {
   const tools = getTools()
