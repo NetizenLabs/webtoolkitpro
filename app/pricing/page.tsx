@@ -173,7 +173,9 @@ export default function PricingPage() {
             </ul>
 
             <a 
-              href="#"
+              href="https://whop.com/webtoolkit-pro/team-pro/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-3.5 rounded-xl text-center font-bold bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-md"
             >
               Upgrade to Pro
@@ -226,7 +228,9 @@ export default function PricingPage() {
             </ul>
 
             <a 
-              href="#"
+              href="https://whop.com/webtoolkit-pro/air-gapped-enterprise/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-4 rounded-xl text-center font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
             >
               Get Enterprise Access

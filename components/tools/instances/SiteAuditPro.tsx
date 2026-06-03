@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react'
 import { ShieldCheck, Search, Activity, CheckCircle2, AlertCircle, Zap, Globe, FileText, Share2 } from 'lucide-react'
+import { useAuditLogger } from '@/contexts/AuditLoggerContext'
 
 export default function SiteAuditPro() {
+  const { logAudit } = useAuditLogger()
   const [url, setUrl] = useState('')
   const [audit, setAudit] = useState<any>(null)
   const [loading, setLoading] = useState(false)
@@ -37,6 +39,14 @@ export default function SiteAuditPro() {
           ]}
         ]
       })
+      
+      logAudit({
+        toolName: 'Professional Site Auditor',
+        action: 'RAN_FULL_AUDIT',
+        status: 'SUCCESS',
+        details: `Audited URL: ${url}`
+      })
+      
       setLoading(false)
     }, 2000)
   }

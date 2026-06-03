@@ -10009,3 +10009,34 @@ tools:
           answer: Yes. Markdown is purely a structural and semantic format. When converting from HTML to Markdown, inline CSS styles and class attributes are intentionally stripped to produce clean text.
         - question: Can I convert an entire web page?
           answer: You can paste the entire <body> HTML of a webpage, and the engine will convert the headings, paragraphs, and lists into markdown while ignoring non-content elements like scripts.
+  - name: Compliance Audit Logger
+    slug: compliance-audit-logger
+    category: Enterprise & Security
+    icon: ShieldCheck
+    tags:
+      - audit
+      - compliance
+      - security
+      - soc2
+    priority: 1
+    releaseDate: '2026-06-03'
+    function:
+      primary: Securely view and export all offline interactions with sensitive utilities.
+    technical:
+      processing: client-side
+    meta:
+      title: Compliance Audit Logger | WebToolkit Pro Enterprise
+      description: Securely view and export all offline interactions with sensitive utilities. Zero PII is logged.
+    content:
+      title: Local Compliance Audit Log
+      description: The Local Compliance Audit Logger is a core component of WebToolkit Pro Enterprise. It tracks all sensitive operations (such as cryptographic hashing or data scrubbing) while strictly avoiding the logging of PII or actual data inputs.
+      how_it_works: It uses a global React Context to intercept log events from sensitive tools and stores them locally (or directly to the filesystem in the Tauri air-gapped app) for SOC2 compliance exports.
+      faq:
+        - question: Does this log my actual passwords or data?
+          answer: No. It only logs metadata: the timestamp, the tool name, the action (e.g., 'GENERATED_PASSWORD'), and the status.
+    seo:
+      title: Compliance Audit Logger
+      description: Securely view and export all offline interactions with sensitive utilities. Zero PII is logged.
+      keywords:
+        - audit logger
+        - compliance

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Copy, Shield, ShieldAlert, ShieldCheck, RefreshCw, KeyRound, Check } from 'lucide-react';
+import { useAuditLogger } from '@/contexts/AuditLoggerContext';
 
 // Basic entropy calculation logic since zxcvbn isn't available
 function calculateEntropy(password: string): { score: number, crackTime: string, color: string, feedback: string } {
@@ -36,6 +37,7 @@ function calculateEntropy(password: string): { score: number, crackTime: string,
 }
 
 export default function PasswordEntropyTester() {
+  const { logAudit } = useAuditLogger();
   const [activeTab, setActiveTab] = useState<'generate' | 'audit'>('generate');
   
   // Generator State
@@ -76,7 +78,14 @@ export default function PasswordEntropyTester() {
       result += pool[randomValues[i] % pool.length];
     }
     setGeneratedPassword(result);
-  }, [length, useUpper, useLower, useNumbers, useSymbols]);
+    
+    logAudit({
+      toolName: 'Password Entropy Tester',
+      action: 'GENERATED_PASSWORD',
+      status: 'SUCCESS',
+      details: `Generated password of length ${length}`
+    });
+  }, [length, useUpper, useLower, useNumbers, useSymbols, logAudit]);
 
   useEffect(() => {
     generatePassword();

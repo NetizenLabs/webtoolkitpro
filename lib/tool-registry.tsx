@@ -173,4 +173,5 @@ export const TOOL_FILES: Record<string, string> = {
   'k8s-yaml-validator': 'K8sYamlValidator',
   'aws-iam-generator': 'AwsIamGenerator',
   'cron-to-k8s': 'CronToK8s',
+  'compliance-audit-logger': 'ComplianceAuditLogger',
 }
