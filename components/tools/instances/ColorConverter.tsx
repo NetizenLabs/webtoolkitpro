@@ -1,9 +1,14 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Palette, ArrowRightLeft, Copy } from 'lucide-react'
+import { Palette, ArrowRightLeft, Copy, Trash2 } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function ColorConverter() {
+  const [isBulkMode, setIsBulkMode] = useState(false)
+  const [bulkInput, setBulkInput] = useState('')
+  const [bulkOutput, setBulkOutput] = useState('')
+  const [bulkDirection, setBulkDirection] = useState<'hex2rgb' | 'rgb2hex'>('hex2rgb')
   const [hex, setHex] = useState('#00D4B4')
   const [r, setR] = useState(0)
   const [g, setG] = useState(212)
@@ -61,8 +66,75 @@ export default function ColorConverter() {
 
   const copy = (text: string) => navigator.clipboard.writeText(text)
 
+  useEffect(() => {
+    if (!bulkInput) {
+      setBulkOutput('')
+      return
+    }
+    const lines = bulkInput.split('\n')
+    const results = lines.map(line => {
+      const clean = line.trim()
+      if (!clean) return ''
+      try {
+        if (bulkDirection === 'hex2rgb') {
+          const rgba = hexToRgb(clean)
+          return `rgba(${rgba.r}, ${rgba.g}, ${rgba.b}, ${rgba.a})`
+        } else {
+          // Parse rgb/rgba
+          const match = clean.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/)
+          if (match) {
+            return rgbToHex(parseInt(match[1]), parseInt(match[2]), parseInt(match[3]), match[4] ? parseFloat(match[4]) : 1)
+          }
+          return 'Invalid RGB'
+        }
+      } catch (e) {
+        return 'Error'
+      }
+    })
+    setBulkOutput(results.join('\n'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bulkInput, bulkDirection])
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="space-y-6">
+      <div className="flex justify-end mb-4 px-2">
+        <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Color Converter" />
+      </div>
+
+      {isBulkMode ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[500px]">
+          <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 flex flex-col">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white flex items-center gap-2">
+                Input Colors <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[10px] px-2 py-0.5 rounded-full">BULK</span>
+              </span>
+              <button onClick={() => setBulkDirection(d => d === 'hex2rgb' ? 'rgb2hex' : 'hex2rgb')} className="flex items-center gap-2 text-xs font-semibold text-blue-500 bg-blue-50 dark:bg-blue-500/10 px-3 py-1.5 rounded-full hover:bg-blue-100 dark:hover:bg-blue-500/20 transition-colors">
+                <ArrowRightLeft className="w-3 h-3" /> {bulkDirection === 'hex2rgb' ? 'HEX to RGB' : 'RGB to HEX'}
+              </button>
+            </div>
+            <textarea
+              value={bulkInput}
+              onChange={(e) => setBulkInput(e.target.value)}
+              placeholder={bulkDirection === 'hex2rgb' ? "Enter HEX codes (one per line)..." : "Enter RGB(A) codes (one per line)..."}
+              className="flex-grow w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-transparent focus:border-blue-500/30 rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono"
+            />
+          </div>
+          <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 flex flex-col">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white">Output ({bulkDirection === 'hex2rgb' ? 'RGBA' : 'HEX'})</span>
+              <button onClick={() => copy(bulkOutput)} className="text-gray-400 hover:text-blue-500">
+                <Copy className="w-4 h-4" />
+              </button>
+            </div>
+            <textarea
+              readOnly
+              value={bulkOutput}
+              className="flex-grow w-full p-4 bg-gray-50 dark:bg-[#0B1120] border border-transparent rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {/* Color Display */}
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 shadow-sm flex flex-col items-center justify-center space-y-6">
         <div 
@@ -134,7 +206,8 @@ export default function ColorConverter() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      )}
     </div>
   )
 }

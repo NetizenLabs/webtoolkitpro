@@ -2,14 +2,16 @@
 
 import React, { useState, useEffect } from 'react'
 import { Shield, Key, ShieldAlert, CheckCircle2 } from 'lucide-react'
+import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function JwtDecoderGenerator() {
   const [jwt, setJwt] = useState('')
-  const [header, setHeader] = useState('{\\n  "alg": "HS256",\\n  "typ": "JWT"\\n}')
-  const [payload, setPayload] = useState('{\\n  "sub": "1234567890",\\n  "name": "John Doe",\\n  "iat": 1516239022\\n}')
+  const [header, setHeader] = useState('{\n  "alg": "HS256",\n  "typ": "JWT"\n}')
+  const [payload, setPayload] = useState('{\n  "sub": "1234567890",\n  "name": "John Doe",\n  "iat": 1516239022\n}')
   const [signature, setSignature] = useState('')
   const [secret, setSecret] = useState('your-256-bit-secret')
   const [isValid, setIsValid] = useState<boolean | null>(null)
+  const [isBulkMode, setIsBulkMode] = useState(false)
   
   // Very basic base64url decode
   const base64UrlDecode = (str: string) => {
@@ -28,28 +30,45 @@ export default function JwtDecoderGenerator() {
 
   // Effect to decode JWT when it changes
   useEffect(() => {
-    if (!jwt) return
-    const parts = jwt.split('.')
-    if (parts.length === 3) {
-      const decodedHeader = base64UrlDecode(parts[0])
-      const decodedPayload = base64UrlDecode(parts[1])
-      if (decodedHeader) {
-        try {
-          setHeader(JSON.stringify(JSON.parse(decodedHeader), null, 2))
-        } catch {
-          setHeader(decodedHeader)
-        }
-      }
-      if (decodedPayload) {
-        try {
-          setPayload(JSON.stringify(JSON.parse(decodedPayload), null, 2))
-        } catch {
-          setPayload(decodedPayload)
-        }
-      }
-      setSignature(parts[2])
+    if (!jwt) {
+      setHeader('')
+      setPayload('')
+      setSignature('')
+      return
     }
-  }, [jwt])
+    const tokens = isBulkMode ? jwt.split('\n').filter(t => t.trim()) : [jwt]
+    let headers = ''
+    let payloads = ''
+    let signatures = ''
+    
+    tokens.forEach((token, index) => {
+      const parts = token.trim().split('.')
+      if (parts.length === 3) {
+        const decodedHeader = base64UrlDecode(parts[0])
+        const decodedPayload = base64UrlDecode(parts[1])
+        const prefix = isBulkMode ? `=== Token ${index + 1} ===\n` : ''
+        
+        let headerStr = decodedHeader
+        if (decodedHeader) {
+          try { headerStr = JSON.stringify(JSON.parse(decodedHeader), null, 2) } catch {}
+        }
+        
+        let payloadStr = decodedPayload
+        if (decodedPayload) {
+          try { payloadStr = JSON.stringify(JSON.parse(decodedPayload), null, 2) } catch {}
+        }
+        
+        headers += prefix + headerStr + (isBulkMode ? '\n\n' : '')
+        payloads += prefix + payloadStr + (isBulkMode ? '\n\n' : '')
+        signatures += prefix + parts[2] + (isBulkMode ? '\n\n' : '')
+      }
+    })
+    
+    setHeader(headers.trimEnd())
+    setPayload(payloads.trimEnd())
+    setSignature(signatures.trimEnd())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [jwt, isBulkMode])
 
   return (
     <div className="space-y-6">
@@ -67,11 +86,16 @@ export default function JwtDecoderGenerator() {
       </div>
 
       <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 shadow-sm">
-        <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white mb-4">Encoded JWT</h3>
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white flex items-center gap-2">
+            Encoded JWT {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[10px] px-2 py-0.5 rounded-full">BULK</span>}
+          </h3>
+          <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk JWT Decoder" />
+        </div>
         <textarea
           value={jwt}
           onChange={(e) => setJwt(e.target.value)}
-          placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+          placeholder={isBulkMode ? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."}
           className="w-full h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-transparent focus:border-blue-500/30 rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono break-all"
         />
       </div>
