@@ -1,12 +1,14 @@
 import React, { Suspense } from 'react'
 import Link from '@/components/ui/NativeLink';
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
+import NextDynamic from 'next/dynamic'
 import { Metadata } from 'next'
 import { getTools } from '@/lib/tools'
-const ToolSearch = dynamic(() => import('@/components/tools/ToolSearch'), { ssr: false, loading: () => <div className="h-14 animate-pulse bg-gray-100 dark:bg-[#0B1120] rounded-2xl w-full"></div> })
-const PersonalizationDashboard = dynamic(() => import('@/components/tools/PersonalizationDashboard'), { ssr: false })
+const ToolSearch = NextDynamic(() => import('@/components/tools/ToolSearch'), { ssr: false, loading: () => <div className="h-14 animate-pulse bg-gray-100 dark:bg-[#0B1120] rounded-2xl w-full"></div> })
+const PersonalizationDashboard = NextDynamic(() => import('@/components/tools/PersonalizationDashboard'), { ssr: false })
 import { CATEGORY_MAP, CATEGORY_PILLARS } from '@/lib/categories'
+
+export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
   title: '130+ Free Privacy-First Developer Tools | WebToolkit Pro',
@@ -32,9 +34,9 @@ import {
 } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 
-const Newsletter = dynamic(() => import('@/components/sections/Newsletter'), { ssr: false })
-const StatsDashboard = dynamic(() => import('@/components/sections/StatsDashboard'), { ssr: false })
-const SocialProof = dynamic(() => import('@/components/sections/SocialProof'), { ssr: false })
+const Newsletter = NextDynamic(() => import('@/components/sections/Newsletter'), { ssr: false })
+const StatsDashboard = NextDynamic(() => import('@/components/sections/StatsDashboard'), { ssr: false })
+const SocialProof = NextDynamic(() => import('@/components/sections/SocialProof'), { ssr: false })
 
 const featuredTools = [
   { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },

@@ -36,6 +36,7 @@ export async function generateStaticParams() {
 
 // ISR: revalidate tool pages once per day in the background
 // Keeps pages fast while allowing content updates without a full redeploy
+export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export async function generateMetadata({ params }: ToolPageProps): Promise<Metadata> {

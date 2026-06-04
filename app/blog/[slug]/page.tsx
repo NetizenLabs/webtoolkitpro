@@ -12,11 +12,12 @@ interface Props {
   params: { slug: string }
 }
 
-// Generate static params for all blog posts
 export function generateStaticParams() {
   const slugs = getAllSlugs()
   return slugs.map((slug) => ({ slug }))
 }
+
+export const dynamic = 'force-static'
 
 // Dynamic SEO metadata for each post
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

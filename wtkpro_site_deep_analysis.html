@@ -1,0 +1,249 @@
+
+<style>
+  .dash { padding: 1rem 0; font-family: var(--font-sans); }
+  .section-title { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .06em; margin: 1.5rem 0 .75rem; }
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+  .metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: .85rem 1rem; }
+  .metric-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .metric-value { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+  .metric-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+  .metric-value.warn { color: #BA7517; }
+  .metric-value.danger { color: #A32D2D; }
+  .metric-value.ok { color: #3B6D11; }
+  .chart-wrap { position: relative; width: 100%; margin-bottom: 1rem; }
+  .issue-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .issue-row:last-child { border-bottom: none; }
+  .issue-badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; min-width: 30px; text-align: center; }
+  .badge-crit { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .badge-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .badge-info { background: var(--color-background-info); color: var(--color-text-info); }
+  .issue-name { font-size: 13px; color: var(--color-text-primary); flex: 1; }
+  .issue-count { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); }
+  .insight-card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 10px; border-left: 3px solid; }
+  .insight-card.danger { border-left-color: #E24B4A; }
+  .insight-card.warn { border-left-color: #BA7517; }
+  .insight-card.ok { border-left-color: #639922; }
+  .insight-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+  .insight-body { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+
+<div class="dash">
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-label">Total crawl requests</div>
+      <div class="metric-value">18,091</div>
+      <div class="metric-sub">May 6 – Jun 3 (29 days)</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Success rate (200)</div>
+      <div class="metric-value ok">92.7%</div>
+      <div class="metric-sub">vs tradeconvert 68.6%</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">404 rate</div>
+      <div class="metric-value warn">2.0%</div>
+      <div class="metric-sub">17 pages confirmed</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Avg response (last 7d)</div>
+      <div class="metric-value danger">495ms</div>
+      <div class="metric-sub">was 114ms first week</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Indexed pages</div>
+      <div class="metric-value warn">206</div>
+      <div class="metric-sub">of ~444 total known</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Discovered, not indexed</div>
+      <div class="metric-value danger">149</div>
+      <div class="metric-sub">largest single issue</div>
+    </div>
+  </div>
+
+  <div class="section-title">Crawl activity — daily requests</div>
+  <div class="chart-wrap" style="height:200px;">
+    <canvas id="crawlChart" role="img" aria-label="Daily crawl requests May 6 to June 3 2026, peaking at 3698 on May 21">Daily crawl requests trend</canvas>
+  </div>
+
+  <div class="section-title">Response time degradation</div>
+  <div class="chart-wrap" style="height:160px;">
+    <canvas id="rtChart" role="img" aria-label="Average response time in milliseconds, rising from around 100ms to 656ms by June 1">Response time trend</canvas>
+  </div>
+
+  <div class="section-title">Coverage — indexed vs not indexed</div>
+  <div class="chart-wrap" style="height:180px;">
+    <canvas id="covChart" role="img" aria-label="Stacked area chart of indexed and not-indexed pages over time">Coverage trend</canvas>
+  </div>
+
+  <div class="two-col" style="margin-top:0.5rem;">
+    <div>
+      <div class="section-title">Coverage issues</div>
+      <div class="issue-row"><span class="issue-badge badge-warn">149</span><span class="issue-name">Discovered — not indexed</span></div>
+      <div class="issue-row"><span class="issue-badge badge-crit">49</span><span class="issue-name">Page with redirect (failed)</span></div>
+      <div class="issue-row"><span class="issue-badge badge-crit">17</span><span class="issue-name">Not found (404, failed)</span></div>
+      <div class="issue-row"><span class="issue-badge badge-crit">11</span><span class="issue-name">Crawled — not indexed</span></div>
+      <div class="issue-row"><span class="issue-badge badge-crit">3</span><span class="issue-name">Duplicate, no canonical</span></div>
+      <div class="issue-row"><span class="issue-badge badge-info">3</span><span class="issue-name">Google chose diff. canonical</span></div>
+      <div class="issue-row"><span class="issue-badge badge-info">3</span><span class="issue-name">Blocked by robots.txt</span></div>
+      <div class="issue-row"><span class="issue-badge badge-info">2</span><span class="issue-name">Alternate page w/ canonical</span></div>
+      <div class="issue-row"><span class="issue-badge badge-info">1</span><span class="issue-name">Excluded by noindex tag</span></div>
+    </div>
+    <div>
+      <div class="section-title">Crawl composition</div>
+      <div class="chart-wrap" style="height:180px;">
+        <canvas id="botChart" role="img" aria-label="Pie chart of Googlebot types: Desktop 72%, Other 13%, Resource load 8%, Smartphone 6%">Googlebot type breakdown</canvas>
+      </div>
+      <div class="section-title" style="margin-top:.5rem;">Purpose split</div>
+      <div class="issue-row"><span class="issue-badge badge-warn">91.2%</span><span class="issue-name">Refresh (recrawl)</span></div>
+      <div class="issue-row"><span class="issue-badge badge-info">8.8%</span><span class="issue-name">Discovery (new pages)</span></div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:1.5rem;">Key findings & recommended actions</div>
+
+  <div class="insight-card danger">
+    <div class="insight-title">🔴 Response time crisis — 4× slowdown in 3 weeks</div>
+    <div class="insight-body">Average response time jumped from 114ms (May 6–12) to 495ms (May 28–Jun 3), peaking at 696ms on May 28. This directly suppresses crawl rate — Google backs off when your server is slow. Run a server-level audit: check hosting load, memory, database queries, and any new middleware added in late May.</div>
+  </div>
+
+  <div class="insight-card danger">
+    <div class="insight-title">🔴 149 pages "discovered but not indexed" — Google sees them, won't index them</div>
+    <div class="insight-body">This is your biggest indexation problem. These are likely the ~78 culled articles from your May 2026 recovery that now have 301 redirects, thin content, or canonical issues. Audit them in GSC URL Inspection. Pages not indexed after being crawled usually have thin content, duplicate signals, or soft 404 behavior.</div>
+  </div>
+
+  <div class="insight-card danger">
+    <div class="insight-title">🔴 49 redirect pages failed validation</div>
+    <div class="insight-body">The 301 redirects you set up during the content cull appear to be misfiring. Failed redirect validation means Google is encountering redirect chains, redirect loops, or redirects to non-200 pages. Audit each redirect destination — make sure they land on live, indexable 200-response pages.</div>
+  </div>
+
+  <div class="insight-card warn">
+    <div class="insight-title">🟡 91.2% of crawls are "refresh" — Google not discovering new pages</div>
+    <div class="insight-body">Only 8.8% of crawl budget goes to discovering new content. This confirms Googlebot is in maintenance mode on your site rather than expanding coverage. Submit your updated sitemap (your 20 canonical guides) and use URL Inspection to request indexing on priority pages manually.</div>
+  </div>
+
+  <div class="insight-card warn">
+    <div class="insight-title">🟡 72% of crawls by Desktop Googlebot — mobile coverage lagging</div>
+    <div class="insight-body">Only 5.6% of crawls are Smartphone Googlebot, which is very low for a mobile-first indexed site. This suggests your mobile rendering or mobile sitemap signals may be weaker than desktop. Check if your mobile pages have the same canonical tags and structured data as desktop.</div>
+  </div>
+
+  <div class="insight-card warn">
+    <div class="insight-title">🟡 www vs non-www split — 44 requests hitting www subdomain</div>
+    <div class="insight-body">Similar to tradeconvert.pro, both wtkpro.site (18,047) and www.wtkpro.site (44) are being crawled. Confirm a clean 301 redirect from www → non-www (or vice versa) and set your preferred domain in GSC settings.</div>
+  </div>
+
+  <div class="insight-card ok">
+    <div class="insight-title">🟢 92.7% success rate — solid, much better than tradeconvert</div>
+    <div class="insight-body">Only 2% 404 rate (17 pages) vs tradeconvert's 15.4%. The content cull and redirect work has clearly reduced broken pages. The remaining 17 need to be found and either restored or redirected properly.</div>
+  </div>
+
+  <div class="insight-card ok">
+    <div class="insight-title">🟢 Indexation is growing — from 3 to 206 pages in 3 weeks</div>
+    <div class="insight-body">Coverage went from just 3 indexed pages on May 8 to 206 by May 29. The recovery overhaul is working. The trajectory is positive — the main job now is clearing the 149 "discovered not indexed" backlog and fixing the redirect validation failures.</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+const textColor = isDark ? '#9c9a92' : '#73726c';
+
+const crawlDates = ['May 6','May 7','May 8','May 9','May 10','May 11','May 12','May 13','May 14','May 15','May 16','May 17','May 18','May 19','May 20','May 21','May 22','May 23','May 24','May 25','May 26','May 27','May 28','May 29','May 30','May 31','Jun 1','Jun 2','Jun 3'];
+const crawlReqs = [11,1,4,3,23,120,59,12,55,276,1042,3121,1818,3227,240,3698,1082,182,822,408,116,145,131,304,436,304,98,153,200];
+
+new Chart(document.getElementById('crawlChart'), {
+  type: 'bar',
+  data: {
+    labels: crawlDates,
+    datasets: [{
+      label: 'Crawl requests',
+      data: crawlReqs,
+      backgroundColor: isDark ? 'rgba(55,138,221,0.5)' : 'rgba(55,138,221,0.45)',
+      borderColor: isDark ? '#378ADD' : '#185FA5',
+      borderWidth: 0.5,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 15 }, grid: { color: gridColor } },
+      y: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } }
+    }
+  }
+});
+
+const rtDates = ['May 26','May 27','May 28','May 29','May 30','May 31','Jun 1','Jun 2','Jun 3'];
+const rtVals = [327,360,696,402,238,379,656,626,471];
+
+new Chart(document.getElementById('rtChart'), {
+  type: 'line',
+  data: {
+    labels: rtDates,
+    datasets: [{
+      label: 'Avg response time (ms)',
+      data: rtVals,
+      borderColor: '#E24B4A',
+      backgroundColor: isDark ? 'rgba(226,75,74,0.15)' : 'rgba(226,75,74,0.1)',
+      fill: true,
+      tension: 0.35,
+      pointRadius: 4,
+      pointBackgroundColor: '#E24B4A',
+      borderDash: [],
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } },
+      y: { ticks: { color: textColor, font: { size: 10 }, callback: v => v + 'ms' }, grid: { color: gridColor } }
+    }
+  }
+});
+
+const covDates = ['May 8','May 9','May 12','May 16','May 19','May 23','May 26','May 29'];
+const indexed  = [3,11,16,77,140,153,206,206];
+const notIndex = [66,76,142,290,249,252,238,238];
+
+new Chart(document.getElementById('covChart'), {
+  type: 'line',
+  data: {
+    labels: covDates,
+    datasets: [
+      { label: 'Indexed', data: indexed, borderColor: '#639922', backgroundColor: isDark ? 'rgba(99,153,34,0.2)' : 'rgba(99,153,34,0.15)', fill: true, tension: 0.35, pointRadius: 3, pointBackgroundColor: '#639922' },
+      { label: 'Not indexed', data: notIndex, borderColor: '#BA7517', backgroundColor: isDark ? 'rgba(186,117,23,0.15)' : 'rgba(186,117,23,0.1)', fill: true, tension: 0.35, pointRadius: 3, pointBackgroundColor: '#BA7517', borderDash: [5,3] }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } },
+      y: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } }
+    }
+  }
+});
+
+new Chart(document.getElementById('botChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Desktop 72.2%','Other 13.3%','Resource load 8.2%','Smartphone 5.6%','Other 0.7%'],
+    datasets: [{
+      data: [72.2, 13.3, 8.2, 5.6, 0.7],
+      backgroundColor: ['#185FA5','#73726c','#3B6D11','#BA7517','#A32D2D'],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '60%',
+    plugins: { legend: { display: false } }
+  }
+});
+</script>

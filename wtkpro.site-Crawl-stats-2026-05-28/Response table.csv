@@ -1,6 +1,0 @@
-Response,Total requests ratio
-OK (200),0.9458
-Moved permanently (301),0.0428
-Not found (404),0.0111
-Other client error (4XX),0.0002
-Server error (5XX),0.0001
