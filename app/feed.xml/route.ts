@@ -2,7 +2,7 @@ import { getAllPosts } from '@/lib/blog'
 import { getTools } from '@/lib/tools'
 
 const DOMAIN = 'https://wtkpro.site'
-const FEED_TITLE = 'WebToolkit Pro — Developer Tools & SEO Blog'
+const FEED_TITLE = 'WebToolkit Pro — Developer Tools &amp; SEO Blog'
 const FEED_DESC = 'Free online developer utilities, web performance tools, SEO auditing, security tools, and in-depth technical guides for modern web developers.'
 const FEED_LANG = 'en-us'
 const FEED_AUTHOR = 'Abu Sufyan'
