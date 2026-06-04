@@ -203,7 +203,7 @@ const nextConfig = {
       { source: '/blog/json-to-csv-converters-compared', destination: '/blog/csv-to-json-nested-objects-converter/', permanent: true },
       { source: '/blog/json-to-csv-converters-compared/', destination: '/blog/csv-to-json-nested-objects-converter/', permanent: true },
       { source: '/blog/what-is-llms-txt', destination: '/blog/robots-txt-guide-block-ai-crawlers-2026/', permanent: true },
-      { source: '/blog/what-is-llms-txt/', destination: '/blog/robots-txt-guide-block-ai-crawlers-2026/', permanent: true },,
+      { source: '/blog/what-is-llms-txt/', destination: '/blog/robots-txt-guide-block-ai-crawlers-2026/', permanent: true },
       {
         source: '/tools/category/:category',
         destination: '/tools/hub/:category/',
