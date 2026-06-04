@@ -108,6 +108,7 @@ export const metadata: Metadata = {
     ],
   },
   other: {
+    'yandex-verification': '16c70ebc92c8b952',
     'google-adsense-account': 'ca-pub-4234692080899883',
     'ahrefs-site-verification': '4a8aee7293cd1e309320e8b15dcc3bcfb7dbedbfa614e03f0bdece030b77b102',
     'content-language': 'en-US',
