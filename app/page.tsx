@@ -37,6 +37,7 @@ import { getAllPosts } from '@/lib/blog'
 const Newsletter = NextDynamic(() => import('@/components/sections/Newsletter'), { ssr: false })
 const StatsDashboard = NextDynamic(() => import('@/components/sections/StatsDashboard'), { ssr: false })
 const SocialProof = NextDynamic(() => import('@/components/sections/SocialProof'), { ssr: false })
+import AdSlot from '@/components/ads/AdSlot'
 
 const featuredTools = [
   { name: 'JSON Formatter', icon: FileJson, href: '/tools/json-formatter/', color: 'from-blue-500 to-blue-600' },
@@ -181,6 +182,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+        <AdSlot />
+      </div>
 
       <StatsDashboard />
       <SocialProof />
