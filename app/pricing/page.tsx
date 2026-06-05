@@ -21,7 +21,7 @@ const structuredData = {
   "@type": "Product",
   "name": "WebToolkit Pro Subscription Tiers",
   "description": "Privacy-first developer tools with corporate compliance features including an air-gapped desktop application.",
-  "image": "https://wtkpro.site/icon.svg",
+  "image": "https://wtkpro.site/og-image.png",
   "brand": {
     "@type": "Brand",
     "name": "WebToolkit Pro"
