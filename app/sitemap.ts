@@ -106,14 +106,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  // ─── Category Pages (/tools/category/[category]) ─────────────────────────────
-  const categoryUrls: MetadataRoute.Sitemap = Object.keys(CATEGORY_MAP).map((slug) => ({
-    url: `${BASE_URL}/tools/category/${slug}`,
-    lastModified: TODAY,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
-
   // ─── Blog Posts ───────────────────────────────────────────────────────────────
   const blogUrls: MetadataRoute.Sitemap = posts
     .filter((post) => post.slug !== '_template')
@@ -144,7 +136,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allUrls = [
     ...staticUrls,
     ...hubUrls,
-    ...categoryUrls,
     ...blogUrls,
     ...toolUrls,
   ]

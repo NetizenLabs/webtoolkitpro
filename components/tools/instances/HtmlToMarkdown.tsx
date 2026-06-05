@@ -62,7 +62,7 @@ export default function HtmlToMarkdown() {
           <textarea
             value={html}
             onChange={(e) => setHtml(e.target.value)}
-            placeholder="<h1>Hello World</h1><p>Sample text...</p>"
+            placeholder="<h2>Hello World</h2><p>Sample text...</p>"
             className="w-full h-80 p-6 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-xs font-mono text-gray-800 dark:text-[#F0F6FF] outline-none"
           />
           <button 

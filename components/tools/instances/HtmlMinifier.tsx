@@ -45,7 +45,7 @@ export default function HtmlMinifier() {
         <textarea
           value={html}
           onChange={(e) => setHtml(e.target.value)}
-          placeholder="<html>\n  <body>\n    <h1>Hello</h1>\n  </body>\n</html>"
+          placeholder="<html>\n  <body>\n    <h2>Hello</h2>\n  </body>\n</html>"
           className="w-full h-64 p-6 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] rounded-2xl text-xs font-mono text-gray-800 dark:text-[#F0F6FF] outline-none"
         />
 

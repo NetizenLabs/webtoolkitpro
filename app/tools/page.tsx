@@ -46,10 +46,34 @@ export const metadata: Metadata = {
 }
 
 export default function ToolsPage() {
-  const tools = getTools()
+  const tools = getTools().filter(t => !t.isComingSoon)
+  
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: tools.map((tool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: tool.name,
+        description: tool.function.primary,
+        url: `https://wtkpro.site/tools/${tool.slug}/`,
+        applicationCategory: tool.category,
+        operatingSystem: 'Web Browser'
+      }
+    }))
+  }
+
   return (
-    <Suspense>
-      <ToolsClient initialTools={tools} />
-    </Suspense>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <Suspense>
+        <ToolsClient initialTools={tools} />
+      </Suspense>
+    </>
   )
 }

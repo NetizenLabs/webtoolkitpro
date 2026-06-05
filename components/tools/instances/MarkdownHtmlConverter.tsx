@@ -15,7 +15,7 @@ export default function MarkdownHtmlConverter() {
       return mdStr
         .replace(/^### (.*$)/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
         .replace(/^## (.*$)/gm, '<h2 class="text-xl font-bold mt-6 mb-3 border-b pb-2">$1</h2>')
-        .replace(/^# (.*$)/gm, '<h1 class="text-2xl font-black mt-8 mb-4 border-b-2 pb-2">$1</h1>')
+        .replace(/^# (.*$)/gm, '<h2 class="text-2xl font-black mt-8 mb-4 border-b-2 pb-2">$1</h2>')
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
         .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono text-sm text-sky-600">$1</code>')
