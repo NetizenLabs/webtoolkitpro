@@ -12,8 +12,11 @@ export interface SitemapUrl {
   priority?: number
 }
 
-// Ensure proper trailing slashes
-const normalizeUrl = (url: string) => (url.endsWith('/') ? url : `${url}/`)
+// Ensure proper trailing slashes, but skip for XML files
+const normalizeUrl = (url: string) => {
+  if (url.endsWith('.xml')) return url;
+  return url.endsWith('/') ? url : `${url}/`;
+}
 
 // ─── XML Generators ─────────────────────────────────────────────────────────
 
