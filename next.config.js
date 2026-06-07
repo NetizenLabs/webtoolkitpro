@@ -62,8 +62,11 @@ const nextConfig = {
       { source: '/tools/whitespace-remover', destination: '/tools/text-case-formatter/', permanent: true },
       { source: '/tools/duplicate-line-remover', destination: '/tools/text-case-formatter/', permanent: true },
       { source: '/tools/jwt-decoder', destination: '/tools/jwt-decoder-generator/', permanent: true },
+      { source: '/tools/jwt-decoder/', destination: '/tools/jwt-decoder-generator/', permanent: true },
       { source: '/tools/jwt-signer', destination: '/tools/jwt-decoder-generator/', permanent: true },
+      { source: '/tools/jwt-signer/', destination: '/tools/jwt-decoder-generator/', permanent: true },
       { source: '/tools/jwt-debugger', destination: '/tools/jwt-decoder-generator/', permanent: true },
+      { source: '/tools/jwt-debugger/', destination: '/tools/jwt-decoder-generator/', permanent: true },
       { source: '/tools/alt-text-audit', destination: '/tools/alt-text-auditor/', permanent: true },
       
       // Wave 4 Consolidation & Cleanup
