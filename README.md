@@ -1,58 +1,64 @@
-# 🚀 WebToolkit Pro: The Compounding SEO Engine
+<div align="center">
+  <img src="https://wtkpro.site/logo-optimized.webp" width="120" alt="WebToolkit Pro Logo" />
+  <h1>WebToolkit Pro</h1>
+  <p><b>An Open-Source, Privacy-First Suite of 145+ Developer Utilities.</b></p>
 
-**The Ultimate Professional Suite for Modern Web Developers & Designers — Engineered for 2026.**
+  [![Website](https://img.shields.io/badge/Live-wtkpro.site-00D4B4?style=for-the-badge&logo=google-chrome&logoColor=121212)](https://wtkpro.site/)
+  [![GitHub stars](https://img.shields.io/github/stars/WebToolkit-Pro/webtoolkitpro?style=for-the-badge&color=0094FF)](https://github.com/WebToolkit-Pro/webtoolkitpro/stargazers)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-[![Live Site](https://img.shields.io/badge/Live-Website-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wtkpro.site/)
-[![Next.js](https://img.shields.io/badge/Built%20with-Next.js%2014-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+  <h3><a href="https://wtkpro.site/">Explore the Tools</a> | <a href="https://wtkpro.site/blog/">Read the Journals</a> | <a href="https://wtkpro.site/pricing/">Enterprise Desktop</a></h3>
+</div>
 
 ---
 
-## 🔗 [Visit the Live Website: https://wtkpro.site/](https://wtkpro.site/)
+## ⭐️ Support the Project
+If you use WebToolkit Pro to format JSON, hash passwords, or debug networks, **please consider starring this repository!** 🌟 
 
-WebToolkit Pro is a high-performance, privacy-first platform engineered by **Abu Sufyan**. It features a **Compounding SEO Engine** designed to dominate search results through technical excellence and high-intent content strategy.
+Your stars help us rank higher, reach more developers, and keep the public web tools 100% free forever.
 
-## 🧠 The "Question-First" Strategy
-Our platform isn't just a blog; it's a knowledge hub. We've overhauled all **technical articles** into a "Question-First" format:
-- **TL;DR Hooks**: Immediate value delivery for maximum user retention.
-- **Intent-Led Headings**: Headers refactored into high-volume user questions to capture AI "Answer Boxes."
-- **Entity Mapping**: Advanced JSON-LD structures for SGE (Search Generative Experience) and Perplexity readability.
+## 🛡️ Why Open Source?
+We believe that manipulating sensitive payloads, formatting database strings, or decoding proprietary JWTs should never involve sending your data to a remote server. 
 
-## 🌟 Professional Tool Registry (130+ Utilities)
-We run on a **Dynamic Tool Registry** system that ensures maximum performance for every utility:
-*   💎 **[JSON Formatter](https://wtkpro.site/tools/json-formatter/)** - Zero-knowledge client-side data cleaning.
+By open-sourcing the core engine of **WebToolkit Pro**, we guarantee complete transparency. You can inspect the source code and verify that every single utility executes **100% Client-Side** using browser Web Workers. Your data never touches our servers.
+
+## 🌟 Featured Public Utilities
+*   💎 **[JSON Formatting Lab](https://wtkpro.site/tools/json-formatter/)** - Zero-knowledge client-side data cleaning.
 *   🔒 **[Password Lab](https://wtkpro.site/tools/password-generator/)** - Cryptographically secure credential generation.
-*   📡 **[Redirect Checker](https://wtkpro.site/tools/redirect-checker/)** - Enterprise-grade header and hop analysis.
-*   ⚡ **[JS Minifier](https://wtkpro.site/tools/js-minifier/)** - Lightning-fast code optimization.
+*   📡 **[Network & IP Auditor](https://wtkpro.site/tools/what-is-my-ip/)** - Secure network inspection.
+*   ⚡ **[CSS Glassmorphism Generator](https://wtkpro.site/tools/css-glassmorphism-generator/)** - Advanced modern UI design utility.
 *   🔍 **[Question Explorer](https://wtkpro.site/tools/question-explorer/)** - Real-time intent and niche research tool.
 
-## 🛠️ Technical Architecture & Innovations
-
-### 1. Edge-WAF Compatible Routing (Global SPA Bypass)
-Modern Edge Web Application Firewalls (like Cloudflare's Bot Fight Mode) often flag and silently block background Next.js `.rsc` payload fetches as DDoS attacks. To guarantee 100% uptime for all users regardless of IP reputation or aggressive adblockers (like Brave Shields), we implemented a **Global SPA Bypass**. By overriding `next/link` with native HTML `<a>` tags globally, we force standard top-level document navigations. This ensures any WAF challenges ("Verifying you are human") are presented cleanly to the user rather than silently breaking the router.
-
-### 2. Privacy-by-Design
-All sensitive data processing—such as password generation, JSON formatting, JWT decoding, and Hash Generation—happens **100% Client-Side** using browser Web Workers. Your data never touches a server.
-
-### 3. Vercel + Cloudflare Synergy
-The application is fully statically exported and hosted on Vercel's global edge network, proxying through Cloudflare for advanced threat protection and caching. We enforce strict `Cache-Control: no-transform` headers to prevent aggressive Edge optimizations (like Rocket Loader) from breaking React 18 hydration.
-
-### 4. SEO Migration Funnel
-We previously hosted on Netlify (`webtoolkit-pro.netlify.app`). To preserve our hard-earned Domain Authority (DA) and Domain Rating (DR), we utilize an invisible "Ghost Funnel" on Netlify using a `_redirects` configuration. This issues a `301 Moved Permanently` redirect for all legacy traffic, seamlessly funneling users and Googlebot to our new primary domain at `wtkpro.site`.
-
-## 📖 Key Research & Documentation
-*   [**Performance Study**](https://wtkpro.site/blog/3ms-ttfb-performance-study/) - Why millisecond performance is the primary revenue driver.
-*   [**AI Latency & UX Study**](https://wtkpro.site/blog/llm-latency-ux-impact/) - Data on user abandonment thresholds in AI applications.
-*   [**PWA Development Guide**](https://wtkpro.site/blog/pwa-development-guide/) - Building native-grade experiences on the open web.
-
-## 🤝 Contributing
-We welcome contributions that align with our high-performance standards. If you're interested in building a new tool or contributing to our technical guides, please review our contribution guidelines.
+*Want the full list? Browse all 145+ tools at [wtkpro.site](https://wtkpro.site).*
 
 ---
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🏢 Enterprise & Corporate Compliance
+While the web application is fully open-source and free for public use, we also provide a commercial **Air-Gapped Enterprise Desktop Application**. 
+
+If you operate in a **SOC 2, HIPAA, or GDPR** regulated environment and need automated offline audit trails, localized cryptographic logs, and strict PII isolation protocols, you can upgrade to the Enterprise license.
+👉 [**Explore Enterprise Compliance**](https://wtkpro.site/pricing/)
 
 ---
 
-### **[👉 Experience WebToolkit Pro](https://wtkpro.site/)**
+## 🛠️ Technical Architecture
+* **Framework:** Next.js App Router (React 18)
+* **Styling:** Tailwind CSS & Glassmorphism UI
+* **Performance:** Static Site Generation (SSG) deployed on Edge Networks
+* **Security:** Strict Client-Side processing & WebAssembly (Wasm)
+
+## 🤝 Contributing to WebToolkit Pro
+We actively welcome the developer community to contribute new tools, optimize existing algorithms, or write technical journals! 
+
+1. **Fork** the repository.
+2. **Create a branch** (`git checkout -b feature/awesome-new-tool`).
+3. **Commit your changes** (`git commit -m 'Add awesome new tool'`).
+4. **Push to the branch** (`git push origin feature/awesome-new-tool`).
+5. **Open a Pull Request**.
+
+By contributing, you not only help the open-source community but also gain exposure as a featured author on the platform!
+
+---
+<div align="center">
+  <i>Engineered with precision by <a href="https://abusufyan.xyz/">Abu Sufyan</a>.</i>
+</div>
