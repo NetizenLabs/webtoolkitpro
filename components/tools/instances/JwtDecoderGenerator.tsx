@@ -5,7 +5,7 @@ import { Shield, Key, ShieldAlert, CheckCircle2 } from 'lucide-react'
 import BulkModeToggle from '@/components/ui/BulkModeToggle'
 
 export default function JwtDecoderGenerator() {
-  const [jwt, setJwt] = useState('')
+  const [jwt, setJwt] = useState('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c')
   const [header, setHeader] = useState('{\n  "alg": "HS256",\n  "typ": "JWT"\n}')
   const [payload, setPayload] = useState('{\n  "sub": "1234567890",\n  "name": "John Doe",\n  "iat": 1516239022\n}')
   const [signature, setSignature] = useState('')
