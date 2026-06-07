@@ -229,7 +229,7 @@ When working with JSON Web Tokens, adherence to security best practices is non-n
 
 Use our free Offline JWT Decoder to inspect tokens instantly without any server round-trips. Use our free [Offline JWT Decoder](/tools/jwt-decoder/) to decode headers and payloads safely in your browser →
 
-Also, check out our [JWT signing guide](/blog/jwt-signing-guide) for backend implementations, our [password entropy tester](/tools/password-entropy-tester/) to ensure strong credentials, and our [hash generator](/tools/hash-generator/) for cryptographic utilities.
+Also, check out our [JWT signing guide](/blog/jwt-signing-guide/) for backend implementations, our [password entropy tester](/tools/password-entropy-tester/) to ensure strong credentials, and our [hash generator](/tools/hash-generator/) for cryptographic utilities.
 
 ---
 

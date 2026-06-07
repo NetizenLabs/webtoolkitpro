@@ -403,7 +403,7 @@ export const Base64RadixVisualizer: React.FC = () => {
 
 Base64 is a vital building block of modern internet routing. By understanding the binary bit-shifting math and managing the 33% payload expansion budget, you can ensure flawless asset delivery across your next platform.
 
-**Need to decode or encode a string securely in the browser?** Head over to our [Secure Base64 Decode Client Side](/tools/base64-encoder) utility. 
+**Need to decode or encode a string securely in the browser?** Head over to our [Secure Base64 Decode Client Side](/tools/base64-encoder/) utility. 
 
 It processes all transformations locally inside your browser's V8 sandbox, guaranteeing 100% data privacy and compliance.
 

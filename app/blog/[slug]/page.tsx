@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: Props) {
             </li>
             <li className="text-border">/</li>
             <li>
-              <Link href="/blog" className="hover:text-[#00D4B4] transition-colors">
+              <Link href="/blog/" className="hover:text-[#00D4B4] transition-colors">
                 Blog
               </Link>
             </li>
@@ -215,7 +215,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mb-16">
             <div className="flex items-center justify-between mb-4 px-2">
               <h2 className="text-[10px] font-bold text-[#4A6080] uppercase tracking-[0.2em] font-mono">Up-to-date Feed</h2>
-              <Link href="/blog" className="text-[9px] font-bold text-[#00D4B4] hover:underline uppercase tracking-widest">View All</Link>
+              <Link href="/blog/" className="text-[9px] font-bold text-[#00D4B4] hover:underline uppercase tracking-widest">View All</Link>
             </div>
             <div className="flex gap-4 overflow-x-auto pb-6 no-scrollbar snap-x">
               {allPosts.slice(0, 30).map((p) => (
@@ -366,7 +366,7 @@ export default async function BlogPostPage({ params }: Props) {
           <section className="mt-24 pt-16 border-t border-border" aria-label="Related articles">
             <div className="flex items-center justify-between mb-12">
               <h2 className="text-2xl font-bold text-foreground tracking-tight">Blog & Journal Archive</h2>
-              <Link href="/blog" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Entries →</Link>
+              <Link href="/blog/" className="text-[10px] font-mono font-bold text-[#00D4B4] uppercase tracking-widest hover:underline">All Entries →</Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (

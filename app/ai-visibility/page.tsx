@@ -149,7 +149,7 @@ export default function AIVisibilityPage() {
               </div>
 
               <div className="mt-12">
-                <Link href="/blog/ai-seo-optimization-2026" className="inline-flex items-center gap-2 text-[#00D4B4] text-xs font-black uppercase tracking-widest hover:gap-3 transition-all">
+                <Link href="/blog/ai-seo-optimization-2026/" className="inline-flex items-center gap-2 text-[#00D4B4] text-xs font-black uppercase tracking-widest hover:gap-3 transition-all">
                   Read AIO Guide <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>

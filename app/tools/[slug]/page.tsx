@@ -183,7 +183,7 @@ export default function ToolPage({ params }: ToolPageProps) {
             <div className="flex flex-wrap items-center gap-4 mb-12 pb-6 border-b border-gray-100 dark:border-[#1E2D47] text-xs sm:text-sm text-gray-500 dark:text-[#8A9BBE]">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-gray-900 dark:text-white">Written by</span>
-                <Link href="/about" className="text-blue-500 hover:text-blue-600 dark:text-[#00D4B4] dark:hover:text-[#00FFD4] font-medium transition-colors">
+                <Link href="/about/" className="text-blue-500 hover:text-blue-600 dark:text-[#00D4B4] dark:hover:text-[#00FFD4] font-medium transition-colors">
                   Abu Sufyan
                 </Link>
                 <span className="text-gray-300 dark:text-gray-700">|</span>

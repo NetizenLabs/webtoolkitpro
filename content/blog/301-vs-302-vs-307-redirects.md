@@ -97,7 +97,7 @@ A: This is a historical anomaly. The original HTTP/1.0 specification defined 302
 
 ---
 
-Test your redirect chains securely. Use our free [Redirect Checker](/tools/redirect-checker) to trace headers, track network latency, and verify method preservation status codes →
+Test your redirect chains securely. Use our free [Redirect Checker](/tools/redirect-checker/) to trace headers, track network latency, and verify method preservation status codes →
 
 ---
 

@@ -61,7 +61,7 @@ export default function ProGate({ children, toolName = 'This feature' }: ProGate
             Upgrade to Pro
           </a>
           <Link
-            href="/pricing"
+            href="/pricing/"
             className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gray-100 dark:bg-[#1E2D47] hover:bg-gray-200 dark:hover:bg-[#2A3F61] text-gray-900 dark:text-white rounded-xl font-bold transition-all"
           >
             View Pricing

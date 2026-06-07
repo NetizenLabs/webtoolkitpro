@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Layout, Search, BarChart3, Info, Trash2, ShieldCheck, Zap, Layers, FileCode } from 'lucide-react'
 
 export default function DomAnalyzer() {
-  const [html, setHtml] = useState('<div class="header">\n  <h2>Welcome</h2>\n  <nav>\n    <ul>\n      <li><a href="/">Home</a></li>\n      <li><a href="/about">About</a></li>\n    </ul>\n  </nav>\n</div>')
+  const [html, setHtml] = useState('<div class="header">\n  <h2>Welcome</h2>\n  <nav>\n    <ul>\n      <li><a href="/">Home</a></li>\n      <li><a href="/about/">About</a></li>\n    </ul>\n  </nav>\n</div>')
   const [stats, setStats] = useState<any>(null)
   const [error, setError] = useState('')
 
