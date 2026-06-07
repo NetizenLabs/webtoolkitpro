@@ -28,8 +28,7 @@ export default function JwtDecoderGenerator() {
     }
   }
 
-  // Effect to decode JWT when it changes
-  useEffect(() => {
+  const decodeJwt = () => {
     if (!jwt) {
       setHeader('')
       setPayload('')
@@ -67,8 +66,13 @@ export default function JwtDecoderGenerator() {
     setHeader(headers.trimEnd())
     setPayload(payloads.trimEnd())
     setSignature(signatures.trimEnd())
+  }
+  
+  // Initial decode on mount
+  useEffect(() => {
+    decodeJwt()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [jwt, isBulkMode])
+  }, [])
 
   return (
     <div className="space-y-6">
@@ -96,8 +100,18 @@ export default function JwtDecoderGenerator() {
           value={jwt}
           onChange={(e) => setJwt(e.target.value)}
           placeholder={isBulkMode ? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."}
-          className="w-full h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-transparent focus:border-blue-500/30 rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono break-all"
+          className="w-full h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] focus:border-blue-500/30 rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono break-all"
         />
+        
+        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <button
+            onClick={decodeJwt}
+            disabled={!jwt.trim()}
+            className="flex-1 flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 disabled:opacity-50 text-white rounded-xl font-bold uppercase tracking-widest text-xs shadow-xl shadow-emerald-500/20 transition-all active:scale-[0.98]"
+          >
+            <Key className="w-4 h-4" /> Decode & Verify JWT
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
