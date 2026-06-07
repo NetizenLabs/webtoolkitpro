@@ -6,10 +6,8 @@ import Image from 'next/image'
 import { Menu, X, Box, ChevronRight, Search, Command, Zap, LogOut } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 import Logo from './Logo'
-import { useSubscription } from '@/contexts/SubscriptionContext'
 
 export default function Header() {
-  const { isLoggedIn, isPro, login, logout } = useSubscription();
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -60,27 +58,6 @@ export default function Header() {
             <div className="h-6 w-px bg-border hidden xl:block opacity-50" />
             
             <div className="flex items-center gap-6 xl:gap-8">
-              
-              {isLoggedIn ? (
-                <div className="flex items-center gap-3">
-                  {isPro && (
-                    <span className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm">
-                      <Zap className="w-3 h-3" /> Team Pro
-                    </span>
-                  )}
-                  <button onClick={logout} className="text-muted-foreground hover:text-red-500 transition-colors" title="Logout">
-                    <LogOut className="w-4 h-4" />
-                  </button>
-                </div>
-              ) : (
-                <button 
-                  onClick={login}
-                  className="hidden xl:flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-muted-foreground hover:text-foreground transition-all"
-                >
-                  Login
-                </button>
-              )}
-
               <a 
                 href="/submit-tool/" 
                 className="hidden xl:flex bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] rounded-xl px-8 py-3.5 text-[11px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/10 hover:scale-105 hover:shadow-2xl transition-all whitespace-nowrap"
