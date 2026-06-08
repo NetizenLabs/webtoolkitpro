@@ -17,9 +17,12 @@ export function getTools(): ToolConfig[] {
     const rawTools = data.tools || []
     
     // Inject implementation status automatically
+    console.log('TOOL_FILES keys:', Object.keys(TOOL_FILES || {}).length);
+    if (!TOOL_FILES) console.log('TOOL_FILES IS UNDEFINED!');
+    
     cachedTools = rawTools.map(tool => ({
       ...tool,
-      isComingSoon: !(tool.slug in TOOL_FILES)
+      isComingSoon: !(TOOL_FILES && Object.keys(TOOL_FILES).includes(tool.slug?.trim()))
     }))
     
     return cachedTools
