@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import yaml from 'js-yaml'
 import { ToolConfig } from '@/types/tool'
-import { TOOL_FILES } from '@/lib/tool-registry'
+import TOOL_FILES from '@/lib/tool-registry.json'
 
 const CONFIG_PATH = path.join(process.cwd(), 'config', 'tools.yaml')
 
@@ -17,9 +17,6 @@ export function getTools(): ToolConfig[] {
     const rawTools = data.tools || []
     
     // Inject implementation status automatically
-    console.log('TOOL_FILES keys:', Object.keys(TOOL_FILES || {}).length);
-    if (!TOOL_FILES) console.log('TOOL_FILES IS UNDEFINED!');
-    
     cachedTools = rawTools.map(tool => ({
       ...tool,
       isComingSoon: !(TOOL_FILES && Object.keys(TOOL_FILES).includes(tool.slug?.trim()))

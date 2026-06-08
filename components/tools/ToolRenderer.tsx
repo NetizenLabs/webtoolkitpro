@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { TOOL_FILES } from '../../lib/tool-registry';
+import TOOL_FILES from '../../lib/tool-registry.json';
 import { Loader2 } from 'lucide-react';
 
 interface ToolRendererProps {
@@ -14,7 +14,7 @@ export default function ToolRenderer({ slug }: ToolRendererProps) {
 
   useEffect(() => {
     let isMounted = true;
-    const filename = TOOL_FILES[slug];
+    const filename = (TOOL_FILES as Record<string, string>)[slug];
     
     if (!filename) {
       if (isMounted) setError(new Error(`Tool not found: ${slug}`));

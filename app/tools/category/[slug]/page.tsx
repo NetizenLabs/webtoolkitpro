@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { getToolsByCategory } from '@/lib/tools'
 import { CATEGORY_PILLARS, CATEGORY_MAP } from '@/lib/categories'
 import ToolsClient from '../../ToolsClient'
-import { TOOL_FILES } from '@/lib/tool-registry'
+import TOOL_FILES from '@/lib/tool-registry.json'
 
 interface Props {
   params: { slug: string }
@@ -30,7 +30,7 @@ export default function CategoryPillarPage({ params }: Props) {
 
   const tools = getToolsByCategory(categoryName).map(tool => ({
     ...tool,
-    isComingSoon: !TOOL_FILES[tool.slug]
+    isComingSoon: !(TOOL_FILES as Record<string, string>)[tool.slug]
   }))
 
   return (
