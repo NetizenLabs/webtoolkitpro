@@ -4,6 +4,8 @@ import Link from '@/components/ui/NativeLink';
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPostBySlug, getAllPosts, getRelatedToolsForPost } from '@/lib/blog'
 import RelatedToolsInline from '@/components/blog/RelatedToolsInline'
+import BlogToolCTA from '@/components/blog/BlogToolCTA'
+import { getToolCTAForPost } from '@/lib/blog-tool-cta-map'
 import Image from 'next/image'
 import AdSlot from '@/components/ads/AdSlot'
 import type { Metadata } from 'next'
@@ -112,6 +114,9 @@ const categoryColors: { [k: string]: string } = {
 export default async function BlogPostPage({ params }: Props) {
   const post = await getPostBySlug(params.slug)
   if (!post) notFound()
+
+  // Resolve the primary tool CTA for this article
+  const toolCTA = getToolCTAForPost(post.slug, post.category)
 
   // Get related posts (mix of Blog and Journal)
   const isJournal = (cat: string) => ['Research', 'Engineering', 'Security'].includes(cat)
@@ -259,6 +264,9 @@ export default async function BlogPostPage({ params }: Props) {
             prose-img:rounded-[12px] prose-img:border prose-img:border-border"
           dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
         />
+
+        {/* ── PRIMARY TOOL CTA (blog → tool conversion) ── */}
+        <BlogToolCTA cta={toolCTA} />
 
         {/* Expert Tips Section */}
         {post.expertTips && post.expertTips.length > 0 && (
