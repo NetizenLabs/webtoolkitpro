@@ -1,6 +1,8 @@
 import { getTools } from '@/lib/tools'
 import { CATEGORY_MAP } from '@/lib/categories'
 import { getAllPosts } from '@/lib/blog'
+import { comparisons } from '@/lib/compare-data'
+import { guides } from '@/lib/guides-data'
 
 export const BASE_URL = 'https://wtkpro.site'
 export const TODAY = new Date()
@@ -71,6 +73,8 @@ export function getMainUrls(): SitemapUrl[] {
     { url: `${BASE_URL}/privacy`, lastModified: new Date('2026-05-01'), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/terms`, lastModified: new Date('2026-05-01'), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/disclaimer`, lastModified: new Date('2026-05-01'), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/compare`, lastModified: TODAY, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE_URL}/guides`, lastModified: TODAY, changeFrequency: 'weekly', priority: 0.9 },
   ]
 
   const hubUrls: SitemapUrl[] = Object.keys(CATEGORY_MAP).map((slug) => ({
@@ -80,7 +84,21 @@ export function getMainUrls(): SitemapUrl[] {
     priority: 0.85,
   }))
 
-  return [...staticUrls, ...hubUrls]
+  const compareUrls: SitemapUrl[] = comparisons.map((comp) => ({
+    url: `${BASE_URL}/compare/${comp.slug}`,
+    lastModified: TODAY,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const guideUrls: SitemapUrl[] = guides.map((guide) => ({
+    url: `${BASE_URL}/guides/${guide.slug}`,
+    lastModified: TODAY,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  return [...staticUrls, ...hubUrls, ...compareUrls, ...guideUrls]
 }
 
 export function getToolUrls(): SitemapUrl[] {

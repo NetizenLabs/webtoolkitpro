@@ -34,7 +34,9 @@ async function submitToIndexNow() {
             '/author',
             '/terms',
             '/brand',
-            '/disclaimer'
+            '/disclaimer',
+            '/compare',
+            '/guides'
         ];
         staticPaths.forEach(p => links.push(`${baseUrl}${p}/`));
 
