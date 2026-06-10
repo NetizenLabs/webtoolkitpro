@@ -50,7 +50,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
   // Resolve tools
   const tools = guide.toolSlugs
     .map(tSlug => getToolBySlug(tSlug))
-    .filter((t): t is NonNullable<typeof t> => t !== undefined)
+    .filter((t): t is NonNullable<typeof t> => t !== undefined && t !== null)
 
   // Resolve articles
   const articles = await Promise.all(
@@ -59,7 +59,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
       return post
     })
   )
-  const validArticles = articles.filter((a): a is NonNullable<typeof a> => a !== undefined)
+  const validArticles = articles.filter((a): a is NonNullable<typeof a> => a !== undefined && a !== null)
 
   // Generate FAQ Schema
   const faqSchema = {
