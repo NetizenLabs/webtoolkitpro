@@ -3,6 +3,8 @@ import Link from '@/components/ui/NativeLink';
 import { Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 import AdSlot from '@/components/ads/AdSlot'
+import { getToolBySlug } from '@/lib/tools'
+import RelatedToolsInline from '@/components/blog/RelatedToolsInline'
 
 // ISR: cache blog listing at the CDN edge for 1 hour
 // This is the primary fix for the /blog RES 83 score → targets TTFB reduction
@@ -144,6 +146,20 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
             Expert web development insights to level up your skills. From performance research to CSS architecture.
           </p>
         </div>
+
+        {/* Featured Tools Strip (Breaking the Blog Silo) */}
+        {blogPage === 1 && (
+          <div className="mb-24">
+            <RelatedToolsInline tools={[
+              getToolBySlug('jwt-decoder-generator'),
+              getToolBySlug('json-yaml-jsonl-converter'),
+              getToolBySlug('regex-tester'),
+              getToolBySlug('site-audit-pro'),
+              getToolBySlug('password-entropy-tester'),
+              getToolBySlug('css-generators'),
+            ].filter((t): t is NonNullable<typeof t> => t !== undefined)} />
+          </div>
+        )}
 
         {/* Blogs Section */}
         <section className="mb-24">

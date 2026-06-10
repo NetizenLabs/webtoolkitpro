@@ -234,7 +234,10 @@ export default function ToolPage({ params }: ToolPageProps) {
             </div>
 
             {/* Further Reading Section */}
-            <FurtherReading posts={getRelatedPostsForTool(tool.tags, tool.category)} />
+            <FurtherReading 
+              posts={getRelatedPostsForTool(tool.tags, tool.category)} 
+              tools={relatedTools.slice(0, 3)}
+            />
 
             {/* Related Tools Widget */}
             {(() => {
