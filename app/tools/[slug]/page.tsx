@@ -10,6 +10,7 @@ import ToolInfo from '@/components/sections/ToolInfo'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import RelatedToolsSidebar from '@/components/tools/RelatedToolsSidebar'
 import RelatedToolsWidget from '@/components/tools/RelatedToolsWidget'
+import ProBannerCTA from '@/components/tools/ProBannerCTA'
 import { RELATED_TOOLS_MAP } from '@/lib/related-tools-map'
 import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
 import ToolRating from '@/components/tools/ToolRating'
@@ -277,6 +278,7 @@ export default function ToolPage({ params }: ToolPageProps) {
               features={tool.content?.features || []} 
             />
             <RelatedToolsSidebar relatedTools={relatedTools} />
+            <ProBannerCTA />
             <div className="p-8 bg-gradient-to-br from-[#00D4B4] to-[#0094FF] rounded-[12px] text-[#0B1120] shadow-xl shadow-blue-500/10">
               <h2 className="font-bold mb-3 text-sm uppercase tracking-wider">Privacy First</h2>
               <p className="text-sm font-medium leading-relaxed">
