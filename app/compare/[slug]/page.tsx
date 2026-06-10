@@ -141,7 +141,7 @@ export default function ComparePage({ params }: ComparePageProps) {
                 </div>
                 <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-3">{useCase.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-6 italic">
-                  "{useCase.scenario}"
+                  &quot;{useCase.scenario}&quot;
                 </p>
                 <div className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-gray-100 dark:border-slate-800 text-sm text-gray-900 dark:text-white font-medium leading-relaxed">
                   <span className="font-bold text-[#00D4B4] uppercase tracking-widest text-[10px] block mb-2">Recommendation</span>

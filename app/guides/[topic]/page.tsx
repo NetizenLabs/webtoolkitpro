@@ -105,7 +105,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
         {/* What You'll Learn */}
         <div className="bg-gray-50 dark:bg-slate-900/50 rounded-[2rem] p-8 md:p-12 border border-gray-100 dark:border-slate-800 mb-20">
-          <h2 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight mb-8">What you'll learn in this guide</h2>
+          <h2 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight mb-8">What you&apos;ll learn in this guide</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {guide.whatYouWillLearn.map((item, idx) => (
               <div key={idx} className="flex items-start gap-4">
@@ -161,7 +161,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
             Practical Tools
           </h2>
           <p className="text-gray-500 dark:text-[#8A9BBE] leading-relaxed mb-8 max-w-2xl">
-            Apply what you've learned. These client-side tools are relevant to this topic cluster and process all data securely in your browser.
+            Apply what you&apos;ve learned. These client-side tools are relevant to this topic cluster and process all data securely in your browser.
           </p>
           <RelatedToolsInline tools={tools} />
         </div>
