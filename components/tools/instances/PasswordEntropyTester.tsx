@@ -258,6 +258,23 @@ export default function PasswordEntropyTester() {
                 <p className="text-sm font-medium mt-1">{auditResult.feedback}</p>
               </div>
             </div>
+
+            {/* Viral Share Prompt */}
+            {auditResult.score >= 3 && (
+              <div className="mt-4 p-4 rounded-xl bg-blue-50/50 dark:bg-[#0969DA]/10 border border-blue-100 dark:border-[#0969DA]/20 flex items-center justify-between">
+                <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
+                  Are your friends&apos; passwords this secure?
+                </p>
+                <a 
+                  href={`https://x.com/intent/tweet?text=${encodeURIComponent(`My password takes ${auditResult.crackTime} to crack. How secure is yours? Test it safely offline here:`)}&url=${encodeURIComponent('https://wtkpro.site/tools/password-generator/')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-[#1DA1F2] text-white text-xs font-bold rounded-full hover:bg-[#1a91da] transition-colors shrink-0"
+                >
+                  Share Score on X
+                </a>
+              </div>
+            )}
           </div>
           )}
         </div>
