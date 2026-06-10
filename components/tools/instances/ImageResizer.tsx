@@ -191,8 +191,15 @@ export default function ImageResizer() {
                   <Trash2 className="w-4 h-4" />
                 </button>
               </div>
-              <div className="p-6 flex items-center justify-center bg-checkered">
-                <Image src={preview!} alt="Original" className="max-h-64 object-contain shadow-lg rounded-lg" width={500} height={300} unoptimized />
+              <div className="p-6 flex items-center justify-center bg-checkered min-h-[250px]">
+                {preview ? (
+                  <Image src={preview} alt="Original" className="max-h-64 object-contain shadow-lg rounded-lg" width={500} height={300} unoptimized />
+                ) : (
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-8 h-8 border-4 border-[#00D4B4] border-t-transparent rounded-full animate-spin"></div>
+                    <span className="text-sm font-bold text-gray-500 dark:text-slate-400">Loading preview...</span>
+                  </div>
+                )}
               </div>
               <div className="p-4 bg-gray-50 dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800 grid grid-cols-2 gap-4">
                 <div className="text-center">
