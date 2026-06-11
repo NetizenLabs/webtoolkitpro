@@ -22,34 +22,10 @@ const statItems: StatItem[] = [
   { label: 'Uptime', value: '99.99%', numericTarget: 99, suffix: '.99%', icon: Activity, color: 'text-rose-500', live: true },
 ]
 
-function useCountUp(target: number, duration = 1400, active: boolean) {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (!active) return
-    let start = 0
-    const step = target / (duration / 16)
-    const timer = setInterval(() => {
-      start += step
-      if (start >= target) {
-        setCount(target)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(start))
-      }
-    }, 16)
-    return () => clearInterval(timer)
-  }, [active, target, duration])
-
-  return count
-}
-
-function StatCard({ stat, active }: { stat: StatItem; active: boolean }) {
-  const count = useCountUp(stat.numericTarget ?? 0, 1400, active && !!stat.numericTarget)
-
+function StatCard({ stat }: { stat: StatItem }) {
   const displayValue =
     stat.numericTarget !== undefined
-      ? `${count}${stat.suffix ?? ''}`
+      ? `${stat.numericTarget}${stat.suffix ?? ''}`
       : stat.value
 
   return (
@@ -72,25 +48,9 @@ function StatCard({ stat, active }: { stat: StatItem; active: boolean }) {
 }
 
 export default function StatsDashboard() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [active, setActive] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActive(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.3 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <section ref={ref} className="py-[var(--space-md)] bg-background border-b border-border relative overflow-hidden">
+    <section className="py-[var(--space-md)] bg-background border-b border-border relative overflow-hidden">
       {/* Subtle animated glow strip */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-16 bg-gradient-to-r from-[#00D4B4]/5 via-blue-500/5 to-[#0094FF]/5 blur-3xl rounded-full" />
@@ -98,7 +58,7 @@ export default function StatsDashboard() {
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-3 md:grid-cols-6 gap-6 text-center">
           {statItems.map((stat) => (
-            <StatCard key={stat.label} stat={stat} active={active} />
+            <StatCard key={stat.label} stat={stat} />
           ))}
         </div>
       </div>

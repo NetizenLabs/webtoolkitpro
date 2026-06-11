@@ -88,14 +88,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
-            Secure, Client-Side Developer<br />
+            The only toolkit enterprise devs can use on client work <br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
-              Utilities for Engineers.
+              without a security review.
             </span>
           </h1>
 
           <p className="text-[var(--font-size-lg)] text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Secure, instant-execution utilities that never send your data to a server. No tracking, no sign-ups, just pure performance.
+            130+ instant-execution utilities that never send your data to a server. No tracking, no sign-ups, just pure client-side performance.
           </p>
 
           <div className="mb-12">
@@ -188,7 +188,7 @@ export default function Home() {
       </div>
 
       <StatsDashboard />
-      <SocialProof />
+      {/* <SocialProof /> - Temporarily hidden pending real user quotes */}
 
       {/* Semantic SEO Text moved to bottom */}
       <section className="py-[var(--space-xl)] bg-transparent border-t border-gray-100/50 dark:border-slate-800/50">
