@@ -42,7 +42,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
       siteName: 'WebToolkit Pro',
       images: [
         {
-          url: 'https://wtkpro.site/blog-og-image.png',
+          url: 'https://wtkpro.site/blog-og-image.jpg',
           width: 1200,
           height: 630,
           alt: 'WebToolkit Pro Developer Blog',
@@ -56,7 +56,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { page?
       title: title,
       description: description,
       site: '@WebToolkitPro',
-      images: ['https://wtkpro.site/blog-og-image.png'],
+      images: ['https://wtkpro.site/blog-og-image.jpg'],
     },
   }
 }

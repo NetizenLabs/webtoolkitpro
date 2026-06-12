@@ -106,7 +106,7 @@ export function generateSoftwareSchema(tool: ToolConfig) {
     'applicationCategory': tool.category,
     'operatingSystem': 'Web Browser',
     'url': url,
-    'image': `${SITE_URL}/og-image.png`,
+    'image': `${SITE_URL}/og-image.jpg`,
     'featureList': tool.content?.features?.join(', ') || 'Secure, fast, private',
     'isAccessibleForFree': true,
     'version': tool.releaseDate || '2026.01.01',

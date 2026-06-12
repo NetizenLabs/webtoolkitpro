@@ -9,7 +9,7 @@ export default function SocialPreviewTester() {
   const [isBulkMode, setIsBulkMode] = useState(false)
   const [bulkResults, setBulkResults] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
-  const [metadata, setMetadata] = useState({ title: 'WebToolkit Pro', description: 'Premium developer tools.', image: 'https://wtkpro.site/og-image.png', siteName: 'WebToolkit Pro', url: 'https://wtkpro.site' })
+  const [metadata, setMetadata] = useState({ title: 'WebToolkit Pro', description: 'Premium developer tools.', image: 'https://wtkpro.site/og-image.jpg', siteName: 'WebToolkit Pro', url: 'https://wtkpro.site' })
   const [activeView, setActiveView] = useState<'mobile' | 'desktop'>('mobile')
 
   const handleFetch = async () => {

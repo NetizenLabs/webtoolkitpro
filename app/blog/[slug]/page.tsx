@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const ogImage = post.image 
     ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`)
-    : 'https://wtkpro.site/og-image.png?v=1'
+    : 'https://wtkpro.site/og-image.jpg?v=1'
 
   const baseTitle = post.seoTitle || post.title
   const brandSuffix = ' | WTK Pro'
@@ -411,7 +411,7 @@ export default async function BlogPostPage({ params }: Props) {
             '@type': 'BlogPosting',
             'headline': post.title,
             'description': post.description,
-            'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.png',
+            'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.jpg',
             'datePublished': post.date.includes('T') ? post.date : `${post.date}T09:00:00Z`,
             'dateModified': post.lastUpdated.includes('T') ? post.lastUpdated : `${post.lastUpdated}T09:00:00Z`,
             'author': {
@@ -486,7 +486,7 @@ export default async function BlogPostPage({ params }: Props) {
               '@type': 'HowTo',
               'name': post.title,
               'description': post.description,
-              'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.png',
+              'image': post.image ? (post.image.startsWith('http') ? post.image : `https://wtkpro.site${post.image}`) : 'https://wtkpro.site/og-image.jpg',
               'step': post.steps.map((step, idx) => ({
                 '@type': 'HowToStep',
                 'position': idx + 1,

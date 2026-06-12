@@ -83,7 +83,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
       type: 'website',
       images: [
         {
-          url: 'https://wtkpro.site/og-image.png',
+          url: 'https://wtkpro.site/og-image.jpg',
           width: 1200,
           height: 630,
           alt: tool.name,
@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://wtkpro.site/og-image.png'],
+      images: ['https://wtkpro.site/og-image.jpg'],
     },
 
   }

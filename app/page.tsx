@@ -153,7 +153,7 @@ export default function Home() {
       <section className="py-[var(--space-lg)] bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white mb-4">Popular Utilities</h2>
+            <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white mb-4">What are our most popular developer utilities?</h2>
             <p className="text-[var(--font-size-lg)] text-gray-500 dark:text-slate-400 max-w-xl mx-auto">Hand-picked developer essentials used by thousands</p>
           </div>
 
@@ -199,17 +199,22 @@ export default function Home() {
                 Engineering Excellence
               </div>
               <h2 className="text-[var(--font-size-3xl)] font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
-                Engineered for the <br/>
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Modern Web Ecosystem</span>
+                Why do software engineers choose <br/>
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">WebToolkit Pro?</span>
               </h2>
               
               <div className="space-y-6 text-[var(--font-size-base)] text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
                   At WebToolkit Pro, we believe that a professional web toolkit should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built specifically for modern software engineers who demand maximum security and local-first processing. 
                 </p>
-                <p>
-                  Unlike legacy toolkits that send your sensitive data to remote servers for processing, WebToolkit Pro leverages WebAssembly, Web Workers, and modern browser APIs to execute everything directly on your local machine. This guarantees zero latency and ensures that your API keys, JSON payloads, and source code are never compromised.
-                </p>
+                <div className="mt-4">
+                  Unlike legacy toolkits that send your sensitive data to remote servers, WebToolkit Pro executes directly on your local machine. This delivers three core advantages:
+                  <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-900 dark:text-white font-medium">
+                    <li><strong>Zero Latency:</strong> Instant processing leveraging WebAssembly and Web Workers.</li>
+                    <li><strong>Complete Privacy:</strong> Your API keys, JSON payloads, and source code never leave your browser.</li>
+                    <li><strong>RFC Compliance:</strong> Every utility is strictly aligned with industry standards.</li>
+                  </ul>
+                </div>
                 <p>
                   From advanced technical SEO utilities that help you dominate search rankings, to secure UUID generators and cryptographic hashing tools, every single utility in our directory is optimized for high-performance and strict RFC compliance. We have engineered these tools to handle massive payloads—whether you are formatting a 50MB JSON file or transcoding thousands of Base64 images.
                 </p>
@@ -249,6 +254,38 @@ export default function Home() {
       </section>
 
       <Newsletter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Are the tools on WebToolkit Pro safe for enterprise use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, WebToolkit Pro is built entirely on client-side execution using JS Workers. Your sensitive data, JSON payloads, and API keys never leave your local machine."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Do the tools work completely offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, many of the core utilities in WebToolkit Pro utilize Progressive Web App (PWA) technologies and WebAssembly to run perfectly offline."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Is WebToolkit Pro entirely free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all 130+ developer tools in our directory are 100% free. There are no sign-ups, no paywalls, and no hidden subscriptions."
+              }
+            }]
+          })
+        }}
+      />
     </>
   )
 }

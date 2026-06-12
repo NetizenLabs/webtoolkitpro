@@ -24,7 +24,7 @@ WebToolkit Pro (Wtkpro) is a next-generation utility platform for web profession
 ## Visual Assets
 - **Logo**: https://wtkpro.site/logo-full.png
 - **Icon**: https://wtkpro.site/favicon.png
-- **OG Image**: https://wtkpro.site/og-image.png?v=1
+- **OG Image**: https://wtkpro.site/og-image.jpg?v=1
 
 ## Submission Targets
 - **ProductHunt**: https://www.producthunt.com/posts/new
