@@ -68,6 +68,20 @@ export default function PipelineStubPage() {
           </div>
         </div>
 
+        {/* SEO Content Block (Resolves Thin Content Penalty) */}
+        <section className="mt-24 pt-16 border-t border-slate-200 dark:border-slate-800 prose dark:prose-invert max-w-none">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Engineering Roadmap & Security Standards</h2>
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            The WebToolkit Pro visual pipeline builder is currently in active development by our core engineering team. As web applications become increasingly complex, developers often need to chain multiple transformations together—for example, intercepting a Base64 encoded payload, decoding it, parsing the resulting JSON, extracting a specific JWT, and finally verifying its signature. Historically, this required writing custom Python scripts or bouncing between five different browser tabs.
+          </p>
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            Our upcoming Pipeline feature will allow you to construct these exact workflows using a drag-and-drop, node-based canvas. You will be able to pipe the output of our <strong>Hash Generators</strong> directly into our <strong>Diff Checkers</strong>, or feed the results of a <strong>Regex Matcher</strong> straight into a <strong>Code Minifier</strong>. 
+          </p>
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Most importantly, this entire pipeline engine is being built on our strict, zero-knowledge security architecture. Every single node in the pipeline will execute locally via WebAssembly and client-side JavaScript. Your complex data transformations will occur entirely within your device&apos;s memory, ensuring that sensitive API keys, database dumps, and proprietary algorithms are never transmitted to an external server. We anticipate launching the beta version of the Visual Pipeline Builder in Q4.
+          </p>
+        </section>
+
       </div>
     </div>
   );

@@ -151,22 +151,43 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <section className="mt-24 border-t border-[#1E2D47] pt-16">
-        <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-12 text-center tracking-tight">Technical Support FAQ</h2>
+      {/* SEO Content Block (Resolves Thin Content Penalty) */}
+      <section className="mt-24 border-t border-[#1E2D47] pt-16 pb-12 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-12 text-center tracking-tight">Frequently Asked Questions & Support Policies</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">Security Standards</h3>
-            <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
-              All WebToolkit Pro utilities process data entirely within your local browser memory. We never transmit sensitive inputs—such as passwords, API keys, or JSON data—to our servers. Your data stays on your machine, exactly where it belongs.
-            </p>
+          
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">Zero-Knowledge Security Standards</h3>
+              <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                When you use WebToolkit Pro to format JSON, decode JWTs, or test Regular Expressions, your data is never transmitted to our backend. We built our entire suite on a strict client-side, zero-knowledge architecture. This means your proprietary code, API keys, and PII are processed locally inside your browser&apos;s RAM and destroyed the moment you close the tab. If you have security concerns or wish to review our data handling policies, please use the contact form above and our security team will respond within 24 hours.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">Tool Requests & Bug Reports</h3>
+              <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                Are we missing a tool that your engineering team desperately needs? We are constantly expanding our library of over 150 offline developer utilities. If you encounter a bug with our Base64 encoder, or if you want to request a brand new XML formatter, select the appropriate subject line in the contact form. Please include as much detail as possible—such as browser version, operating system, and the specific input data that triggered the error—so our engineers can replicate and patch the issue quickly.
+              </p>
+            </div>
           </div>
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold text-[#1E2D47] dark:text-white mb-4 tracking-tight uppercase">High-Availability Infrastructure</h2>
-            <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
-              Since our tools run client-side, there are no artificial API limits or throttling. You can use our formatters, encoders, and auditors as often as needed without ever hitting a quota or requiring a subscription.
-            </p>
+
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">High-Availability Infrastructure</h3>
+              <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                Because our utilities execute locally via WebAssembly and JavaScript, there are no artificial API rate limits or throttling constraints. You can use our converters and validators as frequently as your workflow demands without hitting a paywall or requiring a premium subscription. This decentralized processing model ensures that WebToolkit Pro remains lightning fast and highly available, even if our primary CDN experiences heavy traffic.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-bold text-[#00D4B4] uppercase tracking-widest font-mono mb-4">Partnerships & Advertising</h3>
+              <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                WebToolkit Pro serves a highly technical audience of software engineers, DevOps specialists, and frontend designers. If you are representing a B2B SaaS company, cloud hosting provider, or API marketplace, we offer targeted advertising sponsorships that do not compromise our users&apos; privacy. Reach out via the form to discuss programmatic integrations, sponsored blog posts on our Technical SEO Hub, or dedicated tool sponsorships.
+              </p>
+            </div>
           </div>
+
         </div>
       </section>
     </div>
