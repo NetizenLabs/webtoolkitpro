@@ -276,8 +276,6 @@ const nextConfig = {
       // GSC 404 Renamed Tool Mappings (June 2026)
       { source: '/tools/sql-injection-sanitizer', destination: '/tools/xss-scanner/', permanent: true },
       { source: '/tools/sql-injection-sanitizer/', destination: '/tools/xss-scanner/', permanent: true },
-      { source: '/tools/image-resizer', destination: '/tools/image-compressor-pro/', permanent: true },
-      { source: '/tools/image-resizer/', destination: '/tools/image-compressor-pro/', permanent: true },
       { source: '/tools/css-color-extractor', destination: '/tools/color-converter/', permanent: true },
       { source: '/tools/css-color-extractor/', destination: '/tools/color-converter/', permanent: true },
       { source: '/tools/binary-to-hex', destination: '/tools/binary-hex-decimal-converter/', permanent: true },
