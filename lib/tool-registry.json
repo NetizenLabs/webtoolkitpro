@@ -43,6 +43,7 @@
   "llms-txt-generator": "LlmsTxtGenerator",
   "slug-generator": "SlugGenerator",
   "htaccess-generator": "HtaccessGenerator",
+  "exif-metadata-viewer": "ExifViewerTool",
   "favicon-generator": "FaviconGenerator",
   "xml-formatter": "XmlFormatter",
   "xml-minifier": "XmlMinifier",
