@@ -1,8 +1,8 @@
 import { getTools } from '@/lib/tools'
 import { CATEGORY_MAP } from '@/lib/categories'
 import { getAllPosts } from '@/lib/blog'
-import { comparisons } from '@/lib/compare-data'
-import { guides } from '@/lib/guides-data'
+import { COMPARE_DATA } from '@/lib/compare-data'
+import { GUIDES_DATA } from '@/lib/guides-data'
 
 export const BASE_URL = 'https://wtkpro.site'
 export const TODAY = new Date()
@@ -84,14 +84,14 @@ export function getMainUrls(): SitemapUrl[] {
     priority: 0.85,
   }))
 
-  const compareUrls: SitemapUrl[] = comparisons.map((comp) => ({
+  const compareUrls: SitemapUrl[] = COMPARE_DATA.map((comp) => ({
     url: `${BASE_URL}/compare/${comp.slug}`,
     lastModified: TODAY,
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
 
-  const guideUrls: SitemapUrl[] = guides.map((guide) => ({
+  const guideUrls: SitemapUrl[] = GUIDES_DATA.map((guide) => ({
     url: `${BASE_URL}/guides/${guide.slug}`,
     lastModified: TODAY,
     changeFrequency: 'monthly',
