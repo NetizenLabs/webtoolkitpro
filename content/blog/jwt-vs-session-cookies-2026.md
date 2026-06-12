@@ -230,3 +230,15 @@ Need to quickly inspect the claims inside a token, or verify its signature offli
 [Github](https://github.com/abusufyan-netizen)
 
 Last updated: May 2026
+
+
+## Real-World Debugging Workflows
+
+When implementing JWTs or Session Cookies, errors are inevitable. Here is a quick debugging workflow:
+
+1.  **"Invalid Token" Errors:** This usually means the signature validation failed. Ensure the server's public/private key pair matches, and that the secret hasn't been rotated.
+2.  **"Token Expired" Errors:** The `exp` claim is in the past. If this happens immediately upon generation, check your server's NTP clock synchronization.
+3.  **CORS & Cookie Issues:** If using HttpOnly session cookies, ensure your frontend is sending the `credentials: 'include'` flag in the fetch request, and your backend CORS policy explicitly allows the frontend origin.
+
+To inspect the claims of a failing token securely, run it through the [**WTKPro Offline JWT Decoder**](https://wtkpro.site/tools/jwt-decoder-generator/).
+

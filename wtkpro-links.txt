@@ -57,8 +57,10 @@ https://wtkpro.site/blog/what-is-jwt-complete-guide/
 https://wtkpro.site/blog/what-is-unified-diff/
 https://wtkpro.site/blog/xml-sitemap-best-practices-2026/
 https://wtkpro.site/brand/
+https://wtkpro.site/compare/
 https://wtkpro.site/contact/
 https://wtkpro.site/disclaimer/
+https://wtkpro.site/guides/
 https://wtkpro.site/privacy/
 https://wtkpro.site/terms/
 https://wtkpro.site/tools/

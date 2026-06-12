@@ -304,6 +304,18 @@ const nextConfig = {
       { source: '/tools/contrast-checker/', destination: '/tools/color-contrast/', permanent: true },
       { source: '/tools/json-to-markdown', destination: '/tools/json-to-code-generator/', permanent: true },
       { source: '/tools/json-to-markdown/', destination: '/tools/json-to-code-generator/', permanent: true },
+      
+      // Content Audit Thin Article Merges (June 2026)
+      { source: '/blog/json-to-pydantic-model-generator', destination: '/blog/what-is-json-complete-guide/', permanent: true },
+      { source: '/blog/json-to-pydantic-model-generator/', destination: '/blog/what-is-json-complete-guide/', permanent: true },
+      { source: '/blog/json-to-typescript-interface-converter', destination: '/blog/what-is-json-complete-guide/', permanent: true },
+      { source: '/blog/json-to-typescript-interface-converter/', destination: '/blog/what-is-json-complete-guide/', permanent: true },
+      { source: '/blog/css-box-shadow-generator-examples', destination: '/blog/25-free-developer-tools-bookmark/', permanent: true },
+      { source: '/blog/css-box-shadow-generator-examples/', destination: '/blog/25-free-developer-tools-bookmark/', permanent: true },
+      { source: '/blog/css-gradient-generator-linear-radial', destination: '/blog/25-free-developer-tools-bookmark/', permanent: true },
+      { source: '/blog/css-gradient-generator-linear-radial/', destination: '/blog/25-free-developer-tools-bookmark/', permanent: true },
+      { source: '/blog/generate-jwt-token-online-free', destination: '/blog/what-is-jwt-complete-guide/', permanent: true },
+      { source: '/blog/generate-jwt-token-online-free/', destination: '/blog/what-is-jwt-complete-guide/', permanent: true },
       // SEO Audit 2026: Merged Thin Content Redirects
 
 
