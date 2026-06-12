@@ -11,14 +11,19 @@ https://wtkpro.site/blog/add-schema-markup-without-plugin/
 https://wtkpro.site/blog/aes-encryption-javascript-browser/
 https://wtkpro.site/blog/ai-first-development-2026/
 https://wtkpro.site/blog/bcrypt-vs-argon2-password-hashing/
+https://wtkpro.site/blog/best-developer-tools-for-web-developers/
+https://wtkpro.site/blog/best-online-tools-learning-web-development/
+https://wtkpro.site/blog/best-online-wireframe-tools-developers/
 https://wtkpro.site/blog/calculate-password-entropy-bits/
 https://wtkpro.site/blog/canonical-url-seo-duplicate-content/
+https://wtkpro.site/blog/chrome-developer-tools-explained/
 https://wtkpro.site/blog/content-security-policy-generator-guide/
 https://wtkpro.site/blog/core-web-vitals-guide/
 https://wtkpro.site/blog/cron-expression-guide-examples/
 https://wtkpro.site/blog/cron-syntax-complete-reference/
 https://wtkpro.site/blog/csv-to-json-nested-objects-converter/
 https://wtkpro.site/blog/decode-jwt-token-without-library/
+https://wtkpro.site/blog/developer-tools-keyboard-shortcuts/
 https://wtkpro.site/blog/dns-propagation-how-long-check/
 https://wtkpro.site/blog/docker-compose-generator-tutorial/
 https://wtkpro.site/blog/edge-computing-guide/
@@ -28,6 +33,7 @@ https://wtkpro.site/blog/favicon-sizes-complete-guide-2026/
 https://wtkpro.site/blog/gzip-brotli-compression-web-performance/
 https://wtkpro.site/blog/how-secure-is-my-password/
 https://wtkpro.site/blog/how-to-remove-exif-data-online/
+https://wtkpro.site/blog/how-to-use-devtools-network-tab/
 https://wtkpro.site/blog/htaccess-cheat-sheet-wordpress/
 https://wtkpro.site/blog/json-formatter-vs-jq/
 https://wtkpro.site/blog/json-to-yaml-converter-offline/
@@ -48,6 +54,7 @@ https://wtkpro.site/blog/ssl-certificate-expired-check-fix/
 https://wtkpro.site/blog/url-slug-seo-best-practices/
 https://wtkpro.site/blog/validate-json-format-online/
 https://wtkpro.site/blog/wcag-color-contrast-requirements-2026/
+https://wtkpro.site/blog/web-tools-2-0-evolution/
 https://wtkpro.site/blog/what-is-base64-encoding/
 https://wtkpro.site/blog/what-is-json-complete-guide/
 https://wtkpro.site/blog/what-is-jwt-complete-guide/

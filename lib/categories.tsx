@@ -1,8 +1,8 @@
 export const CATEGORY_PILLARS: Record<string, { title: string; description: string; keywords: string }> = {
   'developer-tools': {
-    title: 'Core Developer Utilities & Formatting Hub | WebToolkit Pro',
-    description: 'Core developer utilities including formatters, converters, generators, and code optimization tools. High-performance and secure.',
-    keywords: 'developer tools, code formatters, secure utilities, web toolkit, developer productivity'
+    title: 'What are Developer Tools? Ultimate 2026 Developer Tools Hub',
+    description: 'The ultimate guide and collection of modern developer tools. Access secure, browser-based utilities for web development, formatting, encoding, and rapid prototyping.',
+    keywords: 'what are developer tools, developer tools, web developer tools, online developer tools, frontend developer tools'
   },
   'seo-tools': {
     title: 'Seo Tools - Free Online Developer Suite | wtkpro',
