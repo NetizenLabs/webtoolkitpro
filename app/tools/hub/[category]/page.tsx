@@ -127,20 +127,40 @@ export default function HubPage({ params }: HubPageProps) {
            </div>
         </div>
 
-        {/* Hub FAQ (Silo Specific) */}
-        <div className="mt-32 max-w-3xl mx-auto">
-           <h2 className="text-3xl font-black text-center mb-12 dark:text-white uppercase tracking-tight">{name} Hub FAQ</h2>
+        {/* SEO Content Block (Resolves Thin Content Penalty across all Hubs) */}
+        <section className="mt-32 max-w-4xl mx-auto border-t border-gray-100 dark:border-slate-800 pt-16 pb-12 prose dark:prose-invert">
+           <h2 className="text-3xl font-black text-center mb-12 dark:text-white uppercase tracking-tight">{name} Hub: Technical Guide & FAQ</h2>
+           
            <div className="space-y-8">
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800">
-                 <h3 className="font-bold text-lg mb-2 dark:text-white">Why use our {name} tools?</h3>
-                 <p className="text-gray-500 dark:text-[#8A9BBE] leading-relaxed text-sm">Unlike generic online converters, our {name.toLowerCase()} suite is optimized for technical accuracy and privacy. We follow strict RFC standards and never store your inputs.</p>
+              <div>
+                 <h3 className="text-xl font-bold dark:text-white mb-3">What are the WebToolkit Pro {name} utilities?</h3>
+                 <p className="text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                    The {name} suite is a curated collection of professional-grade developer tools engineered specifically for modern software architecture. As web development frameworks become increasingly complex, developers require immediate, offline access to data formatters, cryptographic validators, and network testing utilities. This hub centralizes the most critical {name.toLowerCase()} tools into a single, high-performance interface, allowing you to debug, convert, and analyze your payloads without ever leaving your browser.
+                 </p>
               </div>
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800">
-                 <h3 className="font-bold text-lg mb-2 dark:text-white">Are there any limits on file size?</h3>
-                 <p className="text-gray-500 dark:text-[#8A9BBE] leading-relaxed text-sm">Most tools in this hub support up to 10MB of text data, processed locally via your browser&apos;s memory for maximum speed.</p>
+
+              <div>
+                 <h3 className="text-xl font-bold dark:text-white mb-3">How does zero-knowledge processing work?</h3>
+                 <p className="text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                    Unlike traditional SaaS platforms that require you to upload your proprietary code, API keys, or sensitive customer data to a remote server, every single tool in the {name} hub operates on a strict zero-knowledge, client-side architecture. When you paste data into one of our utilities, it is processed locally using JavaScript and WebAssembly directly within your device&apos;s RAM. We never intercept, store, or log your inputs, ensuring absolute compliance with enterprise security standards and data privacy regulations.
+                 </p>
+              </div>
+
+              <div>
+                 <h3 className="text-xl font-bold dark:text-white mb-3">Are there file size limits or API rate limits?</h3>
+                 <p className="text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                    Because the WebToolkit Pro {name} utilities do not rely on expensive backend servers for data processing, there are no artificial API rate limits, paywalls, or subscription tiers to worry about. You can run hundreds of concurrent data transformations without any throttling. Furthermore, since the computations run via your local CPU, you can process multi-megabyte JSON files, massive SQL dumps, or highly complex Regular Expressions instantaneously. The only limit is your device&apos;s available memory.
+                 </p>
+              </div>
+
+              <div>
+                 <h3 className="text-xl font-bold dark:text-white mb-3">How do I integrate these tools into my daily workflow?</h3>
+                 <p className="text-gray-600 dark:text-[#8A9BBE] leading-relaxed">
+                    We designed the {name} suite for maximum efficiency. Every tool features an intuitive, keyboard-first interface. You can rapidly paste your payload, let the V8 engine execute the transformation, and copy the results directly back to your IDE. For advanced users, we recommend bookmarking this specific hub so you always have immediate access to your preferred {name.toLowerCase()} utilities during your next debugging session.
+                 </p>
               </div>
            </div>
-        </div>
+        </section>
       </div>
     </div>
   )

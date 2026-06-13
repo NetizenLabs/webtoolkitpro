@@ -82,21 +82,26 @@ function applySmartLinks(htmlString: string): string {
   let processedHtml = htmlString;
   
   INTERNAL_LINKS.forEach(({ keyword, url }) => {
-    // Regex explanation:
-    // (?<!href=")(?<!">) - Negative lookbehind to ensure it's not part of an existing link tag or attribute
-    // (?![^<]*<\/a>) - Negative lookahead to ensure it's not inside an <a>...</a> block
-    // \b - Word boundary
-    const regex = new RegExp(`(?<!href=")(?<!">)\\b${keyword}\\b(?![^<]*<\\/a>)`, 'gi');
-    processedHtml = processedHtml.replace(regex, (match) => {
-      return `<a href="${url}" class="text-blue-600 dark:text-blue-400 font-bold hover:underline transition-all decoration-blue-500/30">${match}</a>`;
+    // Safely skip <a> tags and other HTML tags to prevent nested links or malformed attributes
+    const regex = new RegExp(`(<a\\b[^>]*>.*?<\\/a>)|(<[^>]+>)|\\b(${keyword})\\b`, 'gi');
+    processedHtml = processedHtml.replace(regex, (match, aTag, otherTag, kw) => {
+      if (aTag) return aTag;
+      if (otherTag) return otherTag;
+      return `<a href="${url}" class="text-blue-600 dark:text-blue-400 font-bold hover:underline transition-all decoration-blue-500/30">${kw}</a>`;
     });
   });
+
   // Tool Path Auto-Linker
-  // Matches /tools/slug/ and converts to a styled link
-  const toolRegex = /(?<!href=")\/tools\/([a-z0-9-]+)\/?(?![^<]*<\/a>)/gi;
-  processedHtml = processedHtml.replace(toolRegex, (match, slug) => {
+  // Matches /tools/slug/ and converts to a styled link. 
+  // Safely ignores <a> tags, HTML tags, and absolute URLs to prevent issues like https://wtkpro.site<a href=...
+  const toolRegex = /(<a\b[^>]*>.*?<\/a>)|(<[^>]+>)|(https?:\/\/[^\s<"']+)|(\/tools\/([a-z0-9-]+)\/?)/gi;
+  processedHtml = processedHtml.replace(toolRegex, (match, aTag, otherTag, fullUrl, toolPath, slug) => {
+    if (aTag) return aTag;
+    if (otherTag) return otherTag;
+    if (fullUrl) return fullUrl;
+
     // Format the slug into a readable name (e.g., json-formatter -> Json Formatter)
-    const name = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    const name = slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     return `<a href="/tools/${slug}/" class="text-[#00D4B4] font-bold hover:underline transition-all decoration-[#00D4B4]/30">${name}</a>`;
   });
 
