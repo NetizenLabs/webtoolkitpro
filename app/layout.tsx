@@ -163,8 +163,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
-        {/* AdSense Verification Script - Must be in head */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883" crossOrigin="anonymous"></script>
+        {/* AdSense Verification Script - Lazy loaded to prevent main thread blocking on mobile */}
+        <Script 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4234692080899883" 
+          crossOrigin="anonymous" 
+          strategy="lazyOnload"
+        />
         {/* KaTeX Stylesheet for math rendering */}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
         {/* DNS prefetch for non-critical third parties (not font origins — preconnect covers those) */}
