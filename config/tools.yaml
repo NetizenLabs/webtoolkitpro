@@ -10,7 +10,7 @@ tools:
       - converter
       - accessibility
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Bidirectional conversion between Pixels and REMs
     technical:
@@ -40,6 +40,12 @@ tools:
         - px to rem converter
         - rem to px calculator
         - css unit conversion
+        - pixels to rem
+        - px rem
+        - convert pixel to rem
+        - 16px to rem
+        - px to rem conversion
+        - pixel to rem
   - name: Color Converter & Picker
     slug: color-converter
     category: Design Tools
@@ -51,7 +57,7 @@ tools:
       - converter
       - picker
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Convert between HEX and RGBA values
     technical:
@@ -71,7 +77,7 @@ tools:
         - question: What is the difference between HEX and RGBA?
           answer: HEX is a 6-character base-16 representation of Red, Green, and Blue. RGBA is a functional notation that represents the same colors in base-10, but crucially includes an 'Alpha' channel to dictate transparency.
         - question: Can a HEX code contain opacity data?
-          answer: "Yes, modern CSS supports 8-character HEX codes (e.g., #FFFFFF80), where the final two characters represent the alpha opacity. However, RGBA is still more widely used for readability."
+          answer: 'Yes, modern CSS supports 8-character HEX codes (e.g., #FFFFFF80), where the final two characters represent the alpha opacity. However, RGBA is still more widely used for readability.'
         - question: Is this color conversion mathematically exact?
           answer: Yes. The tool runs local JavaScript algorithms to precisely multiply and divide the base-16 integer pairs into their exact 0-255 decimal equivalents.
     seo:
@@ -92,7 +98,7 @@ tools:
       - generator
       - validator
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Generate, Validate, and browse Robots.txt templates
     technical:
@@ -122,6 +128,16 @@ tools:
         - robots txt generator
         - robots txt validator
         - block ai bots robots txt
+        - robots.txt validator
+        - robots txt validate
+        - validate robots txt
+        - robots.txt tester
+        - robots.txt validation
+        - robots txt validation
+        - robots.txt validators
+        - verify robots txt
+        - robots.txt validador
+        - robots txt tester
   - name: CSS Generators Toolkit
     slug: css-generators
     category: Design Tools
@@ -133,7 +149,7 @@ tools:
       - gradient
       - keyframes
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Generate CSS for shadows, gradients, and animations
     technical:
@@ -163,6 +179,7 @@ tools:
         - css shadow generator
         - css gradient maker
         - css keyframes animation generator
+        - css shadow maker
   - name: CSS Formatter & Minifier
     slug: css-formatter-minifier
     category: Developer Tools
@@ -173,7 +190,7 @@ tools:
       - minifier
       - beautifier
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Format and minify CSS code
     technical:
@@ -183,7 +200,7 @@ tools:
       description: Format messy CSS into readable code or minify it for production. 100% client-side for zero latency.
     content:
       title: CSS Formatter & Minifier
-      description: "The CSS Formatter & Minifier is a zero-latency optimization workbench designed to streamline front-end web development. Cascading Style Sheets often become bloated during the development lifecycle, accumulating unnecessary whitespace, redundant comments, and irregular indentation. This offline utility provides dual functionality: the Formatter instantly prettifies monolithic, minified CSS back into human-readable, nested structures for easy debugging and modification. Conversely, the Minifier aggressively strips out all non-essential characters, line breaks, and comments to produce a hyper-compressed payload. Minifying your CSS before production deployment is a critical Core Web Vitals optimization that significantly reduces render-blocking times and accelerates the First Contentful Paint (FCP) of your website."
+      description: 'The CSS Formatter & Minifier is a zero-latency optimization workbench designed to streamline front-end web development. Cascading Style Sheets often become bloated during the development lifecycle, accumulating unnecessary whitespace, redundant comments, and irregular indentation. This offline utility provides dual functionality: the Formatter instantly prettifies monolithic, minified CSS back into human-readable, nested structures for easy debugging and modification. Conversely, the Minifier aggressively strips out all non-essential characters, line breaks, and comments to produce a hyper-compressed payload. Minifying your CSS before production deployment is a critical Core Web Vitals optimization that significantly reduces render-blocking times and accelerates the First Contentful Paint (FCP) of your website.'
       how_it_works: All formatting is performed locally using robust regex engines running in your browser.
       keywords:
         - css formatter
@@ -214,7 +231,7 @@ tools:
       - decoder
       - json-web-token
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Offline JWT Verification & Decoding
     technical:
@@ -225,7 +242,7 @@ tools:
     content:
       title: Offline JWT Decoder & Generator
       description: JSON Web Tokens are widely utilized for stateless session authentication across microservice meshes. However, developers frequently treat them as encrypted objects when they are merely encoded string payloads. Anyone who intercepts a JWT can read your claims array. This utility allows you to instantly inspect claims (like expiration dates (`exp`), issuers (`iss`), and subject attributes (`sub`)) locally without exposing internal authorization keys to the open internet.
-      how_it_works: "This decoder accepts structured JSON Web Tokens and splits them cleanly by their standard period delimiters into three distinct strings: the Header, the Payload, and the Signature. It then pipes these tokens into a browser-native Base64URL decoding loop, transforming the binary string back into readable JSON syntax blocks with automatic code formatting and token highlighting."
+      how_it_works: 'This decoder accepts structured JSON Web Tokens and splits them cleanly by their standard period delimiters into three distinct strings: the Header, the Payload, and the Signature. It then pipes these tokens into a browser-native Base64URL decoding loop, transforming the binary string back into readable JSON syntax blocks with automatic code formatting and token highlighting.'
       keywords:
         - jwt decoder offline
         - json web token generator
@@ -244,6 +261,10 @@ tools:
         - json web token generator
         - verify jwt signature client side
         - decode jwt token
+        - jsonwebtoken decode
+        - jwt.io alternative
+        - jsonwebtoken.decode
+        - jwt security
   - name: Text Formatting & Case Toolkit
     slug: text-case-formatter
     category: Text Tools
@@ -255,7 +276,7 @@ tools:
       - formatting
       - cleaner
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Advanced Text Case & Formatting Editor
     technical:
@@ -300,7 +321,7 @@ tools:
       - image-to-base64
       - data-uri
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Base64 Text & Image Encoding Suite
     technical:
@@ -332,6 +353,15 @@ tools:
         - base64 decode
         - image to base64
         - base64 to image converter
+        - base64 encoding
+        - base64 encoded
+        - b64 encoding
+        - b64 encode
+        - what is base64 encoding
+        - base64 encryption
+        - base64 format
+        - base 64 encoding
+        - what is base 64 encoding
   - name: Binary, Hex & Decimal Converter
     slug: binary-hex-decimal-converter
     category: Developer Tools
@@ -343,7 +373,7 @@ tools:
       - converter
       - base64
     priority: 10
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Universal Number Base & Text Converter
     technical:
@@ -388,7 +418,7 @@ tools:
       - prisma
       - pydantic
     priority: 10
-    releaseDate: "2026-05-29"
+    releaseDate: '2026-05-29'
     function:
       primary: Universal JSON Developer Toolkit
     technical:
@@ -431,7 +461,7 @@ tools:
       - csv
       - converter
     priority: 10
-    releaseDate: "2026-05-29"
+    releaseDate: '2026-05-29'
     function:
       primary: Universal JSON Data Converter
     technical:
@@ -459,6 +489,11 @@ tools:
         - json to yaml converter offline
         - convert json to jsonl format
         - json lines converter tool
+        - json vs xml
+        - xml vs json
+        - xml or json
+        - json or xml
+        - difference between json and xml
   - name: Bulk UUID v4 & v7 Generator
     slug: bulk-uuid-v4-v7-generator
     category: Generators
@@ -470,7 +505,7 @@ tools:
       - v7
       - generator
     priority: 10
-    releaseDate: "2026-05-29"
+    releaseDate: '2026-05-29'
     function:
       primary: Universal Universal UUID Generator
     technical:
@@ -498,6 +533,7 @@ tools:
         - bulk uuid v4 generator online
         - uuid v7 timestamp generator
         - secure guid creator offline
+        - uuidv7
   - name: Offline Password Entropy & Strength Tester
     slug: password-entropy-tester
     category: Generators
@@ -509,7 +545,7 @@ tools:
       - auditor
       - tester
     priority: 10
-    releaseDate: "2026-05-29"
+    releaseDate: '2026-05-29'
     function:
       primary: Universal Enterprise Password Security Suite
     technical:
@@ -549,7 +585,7 @@ tools:
       - json
       - converter
     priority: 10
-    releaseDate: "2026-05-29"
+    releaseDate: '2026-05-29'
     function:
       primary: Universal Data Converter
     technical:
@@ -588,7 +624,7 @@ tools:
       - location
       - privacy
     priority: 2
-    releaseDate: "2026-05-09"
+    releaseDate: '2026-05-09'
     function:
       primary: Instantly find your public IPv4/IPv6, location, and connection audit
     technical:
@@ -659,7 +695,7 @@ tools:
       - optimization
       - performance
     priority: 4
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: High-performance JavaScript compression for production deployment
     technical:
@@ -730,7 +766,7 @@ tools:
       - twitter-cards
       - visibility
     priority: 5
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Create Google-ready meta tags for high search visibility
     technical:
@@ -803,7 +839,7 @@ tools:
       - mockup
       - copywriting
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Professional placeholder text for designers and developers
     technical:
@@ -834,7 +870,7 @@ tools:
         - Mocking up database content for CMS (Content Management System) development.
       features:
         - Dynamic generation engine that guarantees no two text blocks are identical.
-        - "Adjustable granularity: generate by words, sentences, or paragraphs."
+        - 'Adjustable granularity: generate by words, sentences, or paragraphs.'
         - HTML tag injection (optionally wrap output in `<p>` tags for instant web deployment).
         - Zero reliance on external APIs; instantly generates text natively in the browser.
       faq:
@@ -873,7 +909,7 @@ tools:
       - checksum
       - integrity
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: MD5, SHA-256, and SHA-512 cryptographic hashing tool
     technical:
@@ -896,7 +932,7 @@ tools:
         - verify file integrity
         - cryptographic hash calculator
       tldr: Instantly generate secure cryptographic hashes (MD5, SHA-256, SHA-512) entirely in your browser without sending sensitive data over the internet.
-      entity_definition: "A Secure Hash Generator is a cryptographic tool that takes any text or data file and turns it into a fixed-length string of characters, called a hash or checksum. Think of it like a digital fingerprint: even the tiniest change to your input will completely change the resulting hash. This makes it the perfect tool for verifying that a file hasn't been corrupted during download, or securely hashing passwords before storing them in a database. Unlike encryption, hashing is a one-way street—you cannot 'decrypt' a hash back into the original text."
+      entity_definition: 'A Secure Hash Generator is a cryptographic tool that takes any text or data file and turns it into a fixed-length string of characters, called a hash or checksum. Think of it like a digital fingerprint: even the tiniest change to your input will completely change the resulting hash. This makes it the perfect tool for verifying that a file hasn''t been corrupted during download, or securely hashing passwords before storing them in a database. Unlike encryption, hashing is a one-way street—you cannot ''decrypt'' a hash back into the original text.'
       how_it_works: Our tool runs directly in your web browser using the native Web Crypto API. When you type your text or drop a file, your browser's own hardware calculates the hash locally. Your data is never uploaded to our servers, ensuring total privacy.
       use_cases:
         - Verifying that downloaded software or ISO files haven't been tampered with by comparing the provided MD5 or SHA-256 checksum.
@@ -951,7 +987,7 @@ tools:
       - indexing
       - google-search-console
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Verify XML sitemap health and indexing compatibility
     technical:
@@ -988,7 +1024,7 @@ tools:
         - 100% client-side validation—no data is sent to external auditing servers.
       faq:
         - question: Why is Google Search Console telling me 'Sitemap contains errors'?
-          answer: "The most common reasons are: 1) Your sitemap contains more than 50,000 URLs, 2) The file size exceeds 50MB, 3) It is missing the required `xmlns` namespace declaration at the top of the file, or 4) One of the URLs contains an unescaped special character (like an ampersand) which breaks the XML structure."
+          answer: 'The most common reasons are: 1) Your sitemap contains more than 50,000 URLs, 2) The file size exceeds 50MB, 3) It is missing the required `xmlns` namespace declaration at the top of the file, or 4) One of the URLs contains an unescaped special character (like an ampersand) which breaks the XML structure.'
         - question: What is the difference between a Sitemap and a Sitemap Index?
           answer: A standard XML Sitemap lists up to 50,000 specific web pages. If your website is larger than that, you must split the pages into multiple sitemaps. A Sitemap Index is essentially a 'sitemap of sitemaps'—it lists the locations of those smaller sitemap files, allowing search engines to discover all of them.
         - question: Do I need an XML Sitemap if my website is very small?
@@ -1019,10 +1055,10 @@ tools:
       - seo
       - redirect
       - trace
-      - "301"
-      - "302"
+      - '301'
+      - '302'
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Trace URL redirect chains and HTTP status codes
     technical:
@@ -1063,7 +1099,7 @@ tools:
       faq:
         - question: What is a 'Redirect Chain' and why is it bad?
           answer: A redirect chain occurs when there is more than one redirect between the initial URL and the destination (e.g., Page A -> Page B -> Page C). Each hop adds latency and reduces the 'link equity' passed to the final page.
-        - question: "301 vs 302: Which one should I use?"
+        - question: '301 vs 302: Which one should I use?'
           answer: Use 301 for permanent moves; it tells search engines to transfer the ranking power to the new URL. Use 302 only for temporary changes (like a 24-hour maintenance window).
         - question: Can this tool find 'Infinite Loops'?
           answer: Yes. If a URL redirects back to itself or into a circular path, our engine will identify the loop and stop after 10 hops to prevent a timeout.
@@ -1082,6 +1118,16 @@ tools:
         - check 301 redirect online
         - find redirect loops
         - url redirect tracer
+        - htaccess redirect 301 not working
+        - 301 redirect checker
+        - 301 checker
+        - 301 vs 302
+        - redirect 301 htaccess not working
+        - htaccess 301 generator
+        - 301 redirect check
+        - check redirect 301
+        - 301 vs 307
+        - 302 vs 307
       tldr: Trace complex HTTP redirect chains and detect SEO-damaging redirect loops instantly.
       entity_definition: The WebToolkit Pro HTTP Redirect Checker is a diagnostic network utility that traces the exact hop-by-hop journey of a URL. By initiating a HEAD request and manually intercepting the "Location" headers, the tool exposes the entire redirect chain—including the specific HTTP status codes (like 301 Moved Permanently or 302 Found) returned by the server at each step. This is critical for Technical SEO, as long redirect chains dilute "link equity" (PageRank), slow down First Contentful Paint (FCP), and can trap search engine crawlers in infinite redirect loops.
     faqs:
@@ -1102,7 +1148,7 @@ tools:
       - revenue
       - business
     priority: 10
-    releaseDate: "2026-05-05"
+    releaseDate: '2026-05-05'
     function:
       primary: Analyze the financial impact of network latency on revenue
     technical:
@@ -1172,7 +1218,7 @@ tools:
       - monetization
       - traffic
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Estimate website earnings from Google AdSense
     technical:
@@ -1195,7 +1241,7 @@ tools:
         - adsense income projection
         - monetization calculator for blogs
       entity_definition: The AdSense Revenue Estimator is a financial modeling engine built for digital publishers, bloggers, and media operators. Because Google AdSense payouts fluctuate wildly depending on user intent and advertiser competition, estimating income can be difficult. This tool bridges that gap by utilizing historical niche-specific benchmarks for CPC (Cost Per Click) and CTR (Click-Through Rate), allowing creators to accurately project their potential advertising income based on their unique traffic volume.
-      how_it_works: "The estimator relies on the standard digital advertising formula: `Revenue = (Traffic × (CTR / 100)) × CPC`. By inputting your daily pageviews, the engine calculates your total ad impressions. It then applies the specific CTR and CPC multipliers relevant to your industry (e.g., Finance vs. Entertainment) to project your daily, monthly, and annual earnings."
+      how_it_works: 'The estimator relies on the standard digital advertising formula: `Revenue = (Traffic × (CTR / 100)) × CPC`. By inputting your daily pageviews, the engine calculates your total ad impressions. It then applies the specific CTR and CPC multipliers relevant to your industry (e.g., Finance vs. Entertainment) to project your daily, monthly, and annual earnings.'
       use_cases:
         - Validating the profitability of a new blog niche before investing months into content creation.
         - Setting realistic monthly revenue goals for a growing digital publishing business.
@@ -1223,7 +1269,7 @@ tools:
         - cpc ctr traffic calculator
         - website revenue estimator
       tldr: Accurately project your website's daily and annual Google AdSense revenue based on niche metrics.
-      entity_definition: "The AdSense Revenue Calculator is a projection engine for digital publishers and content creators. It utilizes the standard digital advertising formula: Revenue = (Traffic × (CTR / 100)) × CPC. By factoring in your daily pageviews, the Click-Through Rate (the percentage of visitors who click an ad), and the Cost Per Click (the average payout per click in your specific niche), the tool instantly models your daily, monthly, and annual financial trajectory. This is vital for bloggers planning content strategies and assessing the viability of entering high-payout niches like Finance or Technology."
+      entity_definition: 'The AdSense Revenue Calculator is a projection engine for digital publishers and content creators. It utilizes the standard digital advertising formula: Revenue = (Traffic × (CTR / 100)) × CPC. By factoring in your daily pageviews, the Click-Through Rate (the percentage of visitors who click an ad), and the Cost Per Click (the average payout per click in your specific niche), the tool instantly models your daily, monthly, and annual financial trajectory. This is vital for bloggers planning content strategies and assessing the viability of entering high-payout niches like Finance or Technology.'
     faqs:
       - question: What is a good CTR for Google AdSense?
         answer: A standard Click-Through Rate (CTR) for AdSense across most industries is between 1% and 2%. If your CTR is significantly lower, you may need to optimize your ad placements or ensure the ads are highly relevant to your content.
@@ -1242,7 +1288,7 @@ tools:
       - units
       - conversion
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Convert between pixels, rem, em, and viewport units
     technical:
@@ -1273,7 +1319,7 @@ tools:
         - Building 'Fluid Typography' systems that smoothly scale text sizes based on the user's screen width.
         - Refactoring legacy codebases to replace hard-coded PX values with scalable REMs.
       features:
-        - "Bi-directional conversion: seamlessly switch between PX, REM, EM, VW, and VH."
+        - 'Bi-directional conversion: seamlessly switch between PX, REM, EM, VW, and VH.'
         - Customizable Root Font Size (supports the popular `62.5%` / 10px CSS reset trick).
         - Instant viewport unit calculations based on custom screen resolutions.
         - 100% offline, browser-based calculation for zero latency.
@@ -1313,7 +1359,7 @@ tools:
       - uri
       - seo
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Safely encode and decode strings for URI compatibility
     technical:
@@ -1351,7 +1397,7 @@ tools:
         - question: Why do spaces in my URL turn into `%20` or `+`?
           answer: Spaces are not allowed in valid URLs because they can break HTTP request headers. The standard percent-encoding for a space character is `%20`. In some specific contexts (like form data submissions), a space is encoded as a `+` symbol, but `%20` is the universally safer choice for general URLs.
         - question: What is the difference between `encodeURI` and `encodeURIComponent`?
-          answer: "`encodeURI` is meant for encoding a full, complete URL; it ignores structural characters like `/`, `?`, and `&` so the link still works. `encodeURIComponent` is much more aggressive and is used to encode a *single parameter* inside a URL. It encodes `/`, `?`, and `&` to prevent those characters from accidentally creating new, unintended parameters."
+          answer: '`encodeURI` is meant for encoding a full, complete URL; it ignores structural characters like `/`, `?`, and `&` so the link still works. `encodeURIComponent` is much more aggressive and is used to encode a *single parameter* inside a URL. It encodes `/`, `?`, and `&` to prevent those characters from accidentally creating new, unintended parameters.'
         - question: Can a URL be double-encoded by mistake?
           answer: Yes. If you run a string through an encoder twice, the `%` symbol from the first encoding will itself be encoded into `%25` (e.g., `%20` becomes `%2520`). This causes broken links and server errors. Always ensure you are only encoding raw strings once.
     seo:
@@ -1383,7 +1429,7 @@ tools:
       - caching
       - optimization
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Verify CDN presence and edge performance status
     technical:
@@ -1414,15 +1460,15 @@ tools:
         - Confirming that Brotli compression is enabled to reduce payload sizes for mobile users.
         - Auditing third-party API endpoints to ensure they are returning appropriate CORS and Cache headers.
       features:
-        - "Instant detection of `X-Cache: HIT` vs `MISS` statuses."
+        - 'Instant detection of `X-Cache: HIT` vs `MISS` statuses.'
         - Verification of `Content-Encoding` (Brotli `br`, Gzip `gzip`, or uncompressed).
         - Detailed breakdown of `Cache-Control` directives (max-age, s-maxage, immutable).
         - Server-side execution prevents CORS (Cross-Origin Resource Sharing) blocks.
       faq:
-        - question: "What does 'X-Cache: HIT' mean?"
+        - question: 'What does ''X-Cache: HIT'' mean?'
           answer: A 'HIT' means the CDN successfully found a saved copy of your file in its edge node's memory and served it directly to the user. This bypasses your origin server completely, resulting in lightning-fast load times and reduced bandwidth costs.
         - question: Why am I constantly getting a 'MISS'?
-          answer: "A 'MISS' occurs if the file was not in the cache, or if your origin server sent headers explicitly forbidding caching (like `Cache-Control: no-cache` or `private`). It can also happen if the file is rarely requested, causing the CDN to evict it from memory."
+          answer: 'A ''MISS'' occurs if the file was not in the cache, or if your origin server sent headers explicitly forbidding caching (like `Cache-Control: no-cache` or `private`). It can also happen if the file is rarely requested, causing the CDN to evict it from memory.'
         - question: Is Brotli compression better than Gzip?
           answer: Yes. Brotli is a modern compression algorithm developed by Google that consistently outperforms Gzip, resulting in file sizes that are roughly 15% to 20% smaller. Smaller files mean faster downloads and higher Core Web Vitals scores.
     seo:
@@ -1438,7 +1484,7 @@ tools:
       tldr: Instantly verify if your website is properly caching assets on a CDN edge network.
       entity_definition: The CDN Readiness Tester is a network analysis utility designed for DevOps and Web Performance engineers. A Content Delivery Network (CDN) like Cloudflare or Vercel drastically improves page load times by caching assets on servers physically closer to the user. This tool acts as an HTTP client, making a cross-origin request to your domain to extract and analyze critical HTTP response headers (such as `x-cache`, `cf-cache-status`, and `content-encoding`), definitively proving whether your server is successfully offloading traffic to the edge.
     faqs:
-      - question: "What does X-Cache: HIT mean?"
+      - question: 'What does X-Cache: HIT mean?'
         answer: A `HIT` indicates that the CDN successfully served the file from its edge cache without having to query your origin server. A `MISS` means the CDN had to fetch the file from your origin, slowing down the request.
       - question: Why is Brotli compression important?
         answer: Brotli (`br`) is a modern compression algorithm developed by Google that reduces file sizes by roughly 15-20% more than legacy GZIP, significantly improving your Core Web Vitals.
@@ -1455,7 +1501,7 @@ tools:
       - colors
       - compliance
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Verify color combinations against WCAG accessibility standards
     technical:
@@ -1525,7 +1571,7 @@ tools:
       - xss
       - sanitization
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Encode and decode HTML entities for web security
     technical:
@@ -1598,7 +1644,7 @@ tools:
       - timestamp
       - utility
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Convert between Unix timestamps and human dates
     technical:
@@ -1668,7 +1714,7 @@ tools:
       - preview
       - marketing
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Visualize and test social media meta tags
     technical:
@@ -1740,7 +1786,7 @@ tools:
       - content
       - seo
     priority: 10
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Real-time word, character, and sentence counting
     technical:
@@ -1750,7 +1796,7 @@ tools:
         - stats
       processing: client-side
     meta:
-      title: "Word Counter: Character Count & Reading Time Tool"
+      title: 'Word Counter: Character Count & Reading Time Tool'
       description: Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content.
     content:
       title: Word Counter — Real-time Writing Statistics
@@ -1782,7 +1828,7 @@ tools:
         - question: How is Reading Time calculated?
           answer: The industry standard for reading speed is roughly 250 words per minute for the average adult. Our tool divides your total word count by 250 to provide a highly accurate estimation of how long it will take a user to consume your article.
         - question: Does the counter include punctuation?
-          answer: "For 'Character Count', yes, all punctuation and symbols are counted. We provide two separate metrics: 'Characters (with spaces)' and 'Characters (without spaces)' to accommodate different platform requirements. Punctuation does not falsely inflate the 'Word Count' metric."
+          answer: 'For ''Character Count'', yes, all punctuation and symbols are counted. We provide two separate metrics: ''Characters (with spaces)'' and ''Characters (without spaces)'' to accommodate different platform requirements. Punctuation does not falsely inflate the ''Word Count'' metric.'
     seo:
       title: Professional Word & Character Counter — SEO Text Analyzer
       description: Count words, characters, and lines instantly. Analyze your text length for Twitter limits, SEO meta descriptions, and academic essays.
@@ -1813,7 +1859,7 @@ tools:
       - questions
       - content-strategy
     priority: 15
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Find real user questions from Reddit
       secondary: Analyze customer pain points and search intent
@@ -1892,12 +1938,12 @@ tools:
       - code-cleaner
       - web-dev
     priority: 16
-    releaseDate: "2026-05-01"
+    releaseDate: '2026-05-01'
     function:
       primary: Beautify and format HTML5 source code
       secondary: Clean up messy or minified markup instantly
     meta:
-      title: "HTML Beautifier: Format & Clean Your Website Markup"
+      title: 'HTML Beautifier: Format & Clean Your Website Markup'
       description: Beautify, format, and indent your HTML code instantly. Clean up messy source code for better readability, W3C compliance, and SEO-friendly markup.
     content:
       title: HTML Beautifier — Free Online Code Formatter
@@ -1967,7 +2013,7 @@ tools:
       - code-review
       - version-control
     priority: 14
-    releaseDate: "2026-05-13"
+    releaseDate: '2026-05-13'
     function:
       primary: Compare two text blocks and visualize differences line-by-line
       secondary: Identify additions, deletions, and unchanged lines instantly
@@ -2025,6 +2071,13 @@ tools:
         - code difference
         - text comparator
         - find differences in text
+        - unified diff
+        - diff online
+        - compare code online
+        - unified diff format
+        - code difference checker
+        - code diff online
+        - compare code
       tldr: Compare two blocks of code or text to instantly highlight what was added or removed.
       entity_definition: The Code Diff Checker is a text comparison utility used to analyze source code or document revisions. It implements the Longest Common Subsequence (LCS) algorithm entirely client-side using TypeScript. By dynamically computing a dynamic programming matrix, it tracks the exact sequence of additions and deletions required to transform the original text into the modified text, presenting the results in a standard developer Git-style red/green visual output.
     faqs:
@@ -2048,12 +2101,12 @@ tools:
       - robots
       - generative-engine-optimization
     priority: 12
-    releaseDate: "2026-05-13"
+    releaseDate: '2026-05-13'
     function:
       primary: Generate a machine-readable llms.txt file to guide AI crawlers
       secondary: Optimize your site for Generative Engine Optimization (GEO)
     meta:
-      title: "llms.txt Generator: Optimize Your Site for AI Crawlers"
+      title: 'llms.txt Generator: Optimize Your Site for AI Crawlers'
       description: Generate a structured llms.txt file to help AI models like ChatGPT, Perplexity, and Gemini understand and cite your website accurately. Implement the new robots.txt for the AI era.
     content:
       title: llms.txt Generator — AI Crawler Optimization Tool
@@ -2125,12 +2178,12 @@ tools:
       - generator
       - clean-url
     priority: 17
-    releaseDate: "2026-05-13"
+    releaseDate: '2026-05-13'
     function:
       primary: Create SEO-friendly URL slugs from any text
       secondary: Remove stop words and special characters automatically
     meta:
-      title: "SEO Slug Generator: Create Clean URL Permalinks"
+      title: 'SEO Slug Generator: Create Clean URL Permalinks'
       description: Transform your post titles into clean, SEO-optimized URL slugs. Automatically removes stop words, special characters, and formats for maximum search visibility and user readability.
     content:
       title: SEO Slug Generator — Create Clean URL Permalinks
@@ -2199,7 +2252,7 @@ tools:
       - design
       - app-icon
     priority: 20
-    releaseDate: "2026-05-13"
+    releaseDate: '2026-05-13'
     function:
       primary: Generate professional favicons and app icons
       secondary: Create PWA-ready manifest icons from text or emoji
@@ -2261,11 +2314,18 @@ tools:
         - letter favicon
         - icon generator
         - pwa icon generator
+        - size of favicon
+        - favicon dimensions 2026
+        - best favicon generator
+        - favicon size 2026
+        - realfavicongenerator
+        - html favicon size
+        - favicon size 2022
       tldr: Design a beautiful lettermark favicon and generate all standard dimensions instantly.
       entity_definition: The Favicon Generator is a brand identity and web configuration utility. A favicon (favorite icon) is the small icon displayed in browser tabs, bookmarks, and mobile home screens. Instead of requiring complex graphic design software, this tool utilizes the HTML5 Canvas API to programmatically draw text-based (lettermark) logos, automatically exporting them into every standard dimension required by modern browsers and Progressive Web Apps (PWAs).
     faqs:
       - question: What are the standard favicon sizes?
-        answer: "Modern web standards require multiple sizes: 16x16 (standard tabs), 32x32 (taskbar shortcuts), 180x180 (Apple Touch Icon), and 192x192 / 512x512 (Android/Chrome PWAs). Our tool generates all of these automatically."
+        answer: 'Modern web standards require multiple sizes: 16x16 (standard tabs), 32x32 (taskbar shortcuts), 180x180 (Apple Touch Icon), and 192x192 / 512x512 (Android/Chrome PWAs). Our tool generates all of these automatically.'
       - question: Do I still need an .ico file?
         answer: Usually, no. Almost all modern browsers perfectly support standard `.png` files for favicons, which offer better transparency and file sizes than legacy `.ico` formats.
       - question: How do I install the favicon on my website?
@@ -2282,7 +2342,7 @@ tools:
       - json
       - converter
     priority: 10
-    releaseDate: "2026-05-13"
+    releaseDate: '2026-05-13'
     function:
       primary: Convert between PHP Serialized data and JSON
       secondary: Repair and format PHP serialized strings
@@ -2309,7 +2369,7 @@ tools:
         - Migrating legacy PHP applications to Node.js or Python by translating their data blobs to JSON.
         - Testing payload injections for PHP Object Injection vulnerabilities during security audits.
       features:
-        - "Bi-directional conversion: PHP to JSON, and JSON to PHP."
+        - 'Bi-directional conversion: PHP to JSON, and JSON to PHP.'
         - Strict syntax validation that instantly flags missing brackets or incorrect string length markers.
         - Handles complex multidimensional arrays and standard object mapping.
         - 100% offline local execution, keeping your database dumps secure.
@@ -2355,7 +2415,7 @@ tools:
       - kb
       - optimization
     priority: 8
-    releaseDate: "2026-05-14"
+    releaseDate: '2026-05-14'
     function:
       primary: Resize images by pixels, percentage, or target file size (KB)
     technical:
@@ -2391,7 +2451,7 @@ tools:
         - Hitting strict file-size limits (e.g., 'Upload must be under 2MB') for visa applications or government portals.
         - Converting high-resolution, uncompressed PNG files into web-optimized WebP or JPEG formats.
       features:
-        - "Dual-mode processing: Resize by exact Pixel Width/Height, or Compress to an exact Target KB."
+        - 'Dual-mode processing: Resize by exact Pixel Width/Height, or Compress to an exact Target KB.'
         - Smart aspect-ratio locking to prevent image stretching and distortion.
         - Multi-format output support, enabling seamless conversion to modern WebP.
         - 100% private, client-side processing—your private photos never touch an external server.
@@ -2439,7 +2499,7 @@ tools:
       - passwords
       - cryptography
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate secure Bcrypt hashes for passwords
       secondary: Support for custom salt rounds and verification
@@ -2509,7 +2569,7 @@ tools:
       - passwords
       - cryptography
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate Argon2 hashes (winner of PHC)
       secondary: Configure memory, iterations, and parallelism settings
@@ -2579,7 +2639,7 @@ tools:
       - security
       - privacy
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Encrypt and decrypt text with AES algorithms
       secondary: Support for 128, 192, and 256-bit keys and custom IVs
@@ -2612,7 +2672,7 @@ tools:
         - Testing application-level encryption logic
       features:
         - 128, 192, and 256-bit key support
-        - "Multiple modes: CBC, ECB, GCM"
+        - 'Multiple modes: CBC, ECB, GCM'
         - Custom Initialization Vector (IV) support
         - Base64 and Hex output formats
       faq:
@@ -2637,7 +2697,7 @@ tools:
       - question: Can you recover my data if I forget the password?
         answer: No. The encryption executes entirely on your local machine via the `window.crypto.subtle` API. We do not transmit, log, or store your passwords or ciphertext. If you lose your password, the data is mathematically unrecoverable.
       - question: What is symmetric vs asymmetric encryption?
-        answer: "AES is symmetric, meaning you use the exact same password to lock and unlock the data. Asymmetric encryption (like RSA) uses two separate keys: a Public Key to lock the data, and a Private Key to unlock it."
+        answer: 'AES is symmetric, meaning you use the exact same password to lock and unlock the data. Asymmetric encryption (like RSA) uses two separate keys: a Public Key to lock the data, and a Private Key to unlock it.'
   - name: RSA Key Pair Generator
     slug: rsa-key-gen
     category: Generators
@@ -2650,7 +2710,7 @@ tools:
       - ssh
       - cryptography
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate RSA public and private key pairs
       secondary: Support for 1024, 2048, and 4096-bit key strengths
@@ -2675,7 +2735,7 @@ tools:
         - asymmetric encryption key tool
         - create ssh-rsa keys online
       tldr: Generate secure, high-strength RSA key pairs for your development and security needs in seconds.
-      entity_definition: "RSA Key Pair Generator is a cryptographic utility for asymmetric encryption. Unlike symmetric encryption (like AES), RSA uses a pair of mathematically linked keys: a public key for encryption and a private key for decryption. This is the foundation of secure web communication (SSL/TLS) and SSH authentication."
+      entity_definition: 'RSA Key Pair Generator is a cryptographic utility for asymmetric encryption. Unlike symmetric encryption (like AES), RSA uses a pair of mathematically linked keys: a public key for encryption and a private key for decryption. This is the foundation of secure web communication (SSL/TLS) and SSH authentication.'
       how_it_works: The tool utilizes a cryptographically secure random number generator to find large prime numbers and calculate the key parameters according to the RSA algorithm.
       use_cases:
         - Setting up SSH access for servers
@@ -2721,7 +2781,7 @@ tools:
       - input-validation
       - dev
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Test text for potential XSS vulnerabilities
       secondary: Identify dangerous scripts and unescaped HTML tags
@@ -2791,7 +2851,7 @@ tools:
       - checksum
       - sha256
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Verify file integrity with cryptographic hashes
       secondary: Compare uploaded files against SHA-256, MD5, and SHA-1 checksums
@@ -2861,7 +2921,7 @@ tools:
       - pii
       - redaction
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Mask and redact sensitive data for screenshots
       secondary: Identify and hide emails, phones, and credit cards from text
@@ -2931,7 +2991,7 @@ tools:
       - devops
       - visual
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Describe Cron expressions in plain English
       secondary: Visualize execution schedules and next run times
@@ -2987,7 +3047,7 @@ tools:
       - question: What does an asterisk (*) mean in Cron?
         answer: The asterisk acts as a wildcard, meaning "every". For example, an asterisk in the "Hour" column means the task will execute every single hour.
       - question: What order are the time fields in?
-        answer: "The standard 5-part cron syntax reads from left to right: Minute (0-59), Hour (0-23), Day of Month (1-31), Month (1-12), and Day of Week (0-6, where 0 is Sunday)."
+        answer: 'The standard 5-part cron syntax reads from left to right: Minute (0-59), Hour (0-23), Day of Month (1-31), Month (1-12), and Day of Week (0-6, where 0 is Sunday).'
       - question: Can cron run tasks every second?
         answer: No. The smallest unit of time supported by standard Unix cron is one minute.
   - name: Regular Expression Explainer
@@ -3002,7 +3062,7 @@ tools:
       - visual
       - dev
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Visualize and explain Regular Expressions (Regex)
       secondary: Break down complex patterns into logical steps
@@ -3073,7 +3133,7 @@ tools:
       - scraping
       - utility
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Extract data from HTML tables to JSON/CSV
       secondary: Automate data scraping from web pages
@@ -3144,7 +3204,7 @@ tools:
       - conversion
       - devops
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Convert XML data to human-readable YAML
       secondary: Simplify complex XML hierarchies for configuration files
@@ -3197,7 +3257,7 @@ tools:
       entity_definition: The XML to YAML Converter is a DevOps configuration utility. While XML relies on verbose opening and closing tags (`<node></node>`), YAML uses clean, indentation-based formatting, making it vastly superior for human readability and version control diffs. This tool recursively traverses an XML Document Object Model, extracting node hierarchies and attributes, and elegantly serializes them into strict YAML syntax, enabling seamless migrations of legacy configurations into modern CI/CD pipelines.
     faqs:
       - question: How are XML attributes converted to YAML?
-        answer: "Because YAML doesn't support native \"attributes,\" our parser preserves them by prepending them with an underscore (e.g., `_id: 123`) directly underneath the parent node in the YAML hierarchy."
+        answer: 'Because YAML doesn''t support native "attributes," our parser preserves them by prepending them with an underscore (e.g., `_id: 123`) directly underneath the parent node in the YAML hierarchy.'
       - question: Why migrate from XML to YAML?
         answer: YAML is much easier for humans to read and write. It is the industry standard for modern DevOps tools like Docker Compose, Kubernetes, and GitHub Actions, replacing legacy XML configurations.
       - question: Does indentation matter in YAML?
@@ -3214,7 +3274,7 @@ tools:
       - content
       - parsing
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Convert HTML code to clean Markdown
       secondary: Extract content from web pages for blogs and documentation
@@ -3284,7 +3344,7 @@ tools:
       - parsing
       - networking
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Parse and decode complex URLs and query strings
       secondary: Identify parameters, protocol, and fragment details
@@ -3334,7 +3394,7 @@ tools:
         - url inspector
         - extract url queries
       tldr: Deconstruct any web address into its underlying protocol, domain, and query components.
-      entity_definition: "The URL Parser is a web routing utility. A Uniform Resource Locator (URL) is a structured string that dictates how a browser communicates with a server. This tool utilizes the browser's native `URL()` constructor to break apart complex links into their distinct structural components: the Protocol (http/https), Hostname (domain), Pathname (route), Search Params (query variables), and Hash (anchor links)."
+      entity_definition: 'The URL Parser is a web routing utility. A Uniform Resource Locator (URL) is a structured string that dictates how a browser communicates with a server. This tool utilizes the browser''s native `URL()` constructor to break apart complex links into their distinct structural components: the Protocol (http/https), Hostname (domain), Pathname (route), Search Params (query variables), and Hash (anchor links).'
     faqs:
       - question: What are Search Params?
         answer: Search Params (or Query Strings) are the key-value pairs following the `?` in a URL (e.g., `?utm_source=google`). They are used to pass data to the server or analytics platforms without altering the page route.
@@ -3354,7 +3414,7 @@ tools:
       - data
       - parsing
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate JSON Schema from sample data
       secondary: Create validation rules and documentation for APIs
@@ -3424,7 +3484,7 @@ tools:
       - security
       - json
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Anonymize sensitive data in JSON or CSV
       secondary: Replace PII with placeholder data for testing
@@ -3496,7 +3556,7 @@ tools:
       - device-detection
       - networking
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Parse and decode browser User-Agent strings
       secondary: Identify device type, OS, and browser engine details
@@ -3566,7 +3626,7 @@ tools:
       - main-thread
       - tbt
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Simulate and audit JavaScript execution costs
       secondary: Identify main-thread blocking segments and TBT impact
@@ -3636,7 +3696,7 @@ tools:
       - optimization
       - lcp
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate Preload, Prefetch, and Preconnect tags
       secondary: Optimize resource discovery for critical assets
@@ -3672,7 +3732,7 @@ tools:
         - Crossorigin policy configuration
         - One-click copy to head
       faq:
-        - question: "Preload vs Prefetch: what is the difference?"
+        - question: 'Preload vs Prefetch: what is the difference?'
           answer: Preload is for assets needed in the *current* page. Prefetch is for assets needed in the *next* page the user might visit.
         - question: Can I preload everything?
           answer: No. Preloading too many assets can actually slow down your site by competing for bandwidth with other critical resources.
@@ -3689,7 +3749,7 @@ tools:
       entity_definition: The Resource Priority Hint Generator is a web performance optimization utility. Browsers naturally discover and download assets as they parse the HTML Document Object Model (DOM). However, critical assets (like hero images or web fonts) are often hidden deep in CSS files, delaying rendering. This tool generates declarative Resource Hints (`<link rel="preload">`, `preconnect`, `prefetch`) to explicitly instruct the browser to prioritize specific network connections and file downloads, massively improving the Largest Contentful Paint (LCP).
     faqs:
       - question: What is the difference between Preload and Prefetch?
-        answer: "`preload` tells the browser to download an asset immediately because it is required for the *current* page. `prefetch` suggests downloading an asset in the background because the user might need it for the *next* page."
+        answer: '`preload` tells the browser to download an asset immediately because it is required for the *current* page. `prefetch` suggests downloading an asset in the background because the user might need it for the *next* page.'
       - question: When should I use Preconnect?
         answer: Use `preconnect` to establish early TCP and TLS handshakes for crucial third-party domains (like Google Fonts or a CDN) before the browser even knows which specific files it needs from them.
       - question: Can I preload too many things?
@@ -3706,7 +3766,7 @@ tools:
       - latency
       - 3g
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Visualize the impact of network speed on load times
       secondary: Simulate 3G, 4G, and slow DSL connectivity profiles
@@ -3737,7 +3797,7 @@ tools:
         - Verifying site usability on spotty mobile data
         - Comparing asset-loading sequences on different speeds
       features:
-        - "Preset profiles: Slow 3G, Fast 3G, 4G, Fiber"
+        - 'Preset profiles: Slow 3G, Fast 3G, 4G, Fiber'
         - Visual 'First Meaningful Paint' indicators
         - Impact analysis for large JS/Image payloads
         - Interactive latency slider
@@ -3776,7 +3836,7 @@ tools:
       - headers
       - networking
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate HTTP Strict Transport Security (HSTS) headers
       secondary: Configure secure-only connections and preload eligibility
@@ -3846,7 +3906,7 @@ tools:
       - headers
       - networking
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate complex Content Security Policy (CSP) headers
       secondary: Protect against XSS and data injection attacks
@@ -3916,7 +3976,7 @@ tools:
       - cdn
       - networking
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate Subresource Integrity (SRI) hashes
       secondary: Secure CDN assets against unauthorized modification
@@ -3987,7 +4047,7 @@ tools:
       - networking
       - browser
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate Browser Permissions Policy headers
       secondary: Control access to Camera, Mic, and Geolocation features
@@ -4040,7 +4100,7 @@ tools:
       entity_definition: The Permissions-Policy Generator is a web privacy utility. The `Permissions-Policy` (formerly Feature Policy) HTTP header allows site owners to explicitly declare which web platform features—such as the Camera, Microphone, WebUSB, or Geolocation—can be used on their domain or within embedded iframes. This tool generates the complex comma-separated syntax required to selectively enable or disable these powerful APIs, ensuring malicious third-party scripts cannot compromise user privacy.
     faqs:
       - question: What happened to Feature-Policy?
-        answer: "`Feature-Policy` was the original name for this header. The W3C standardized and renamed it to `Permissions-Policy`, updating the syntax to use parentheses and commas instead of spaces."
+        answer: '`Feature-Policy` was the original name for this header. The W3C standardized and renamed it to `Permissions-Policy`, updating the syntax to use parentheses and commas instead of spaces.'
       - question: What does "self" mean?
         answer: Using `self` means the feature (like the camera) is only allowed for the same origin (your exact domain). Third-party scripts or iframes from other domains will be blocked from using it.
       - question: How do I block a feature entirely?
@@ -4057,7 +4117,7 @@ tools:
       - records
       - google-dns
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Check DNS propagation status globally
       secondary: Verify A, CNAME, MX, and TXT records across multiple regions
@@ -4127,7 +4187,7 @@ tools:
       - server
       - connectivity
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Test website latency from multiple global locations
       secondary: Measure TTFB and response times for server auditing
@@ -4198,7 +4258,7 @@ tools:
       - certificate
       - https
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Verify and audit SSL/TLS certificates
       secondary: Check expiration, issuer, and protocol support
@@ -4268,7 +4328,7 @@ tools:
       - performance
       - page-speed
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Check if Gzip or Brotli compression is enabled
       secondary: Measure character savings and payload reduction
@@ -4304,7 +4364,7 @@ tools:
         - Comparison of compressed vs uncompressed payloads
         - Visual performance optimization tips
       faq:
-        - question: "Brotli vs Gzip: which is better?"
+        - question: 'Brotli vs Gzip: which is better?'
           answer: Brotli generally offers better compression ratios for text files, leading to smaller files and faster loads than Gzip.
         - question: How do I enable compression?
           answer: It is usually enabled via server configuration (nginx.conf or .htaccess) or through your CDN provider's settings.
@@ -4325,7 +4385,7 @@ tools:
       - question: Does compression work on images?
         answer: No. Server-level Gzip/Brotli should strictly be used for text-based files (HTML, CSS, JSON, JS). Images (like JPEG or PNG) and videos are already mathematically compressed; attempting to Gzip them wastes CPU cycles and can actually increase file size.
       - question: How do I enable Brotli?
-        answer: "Brotli is enabled at the web server level (Nginx, Apache) or at the CDN level (Cloudflare, AWS CloudFront). Modern browsers automatically advertise support for it via the `Accept-Encoding: br` header."
+        answer: 'Brotli is enabled at the web server level (Nginx, Apache) or at the CDN level (Cloudflare, AWS CloudFront). Modern browsers automatically advertise support for it via the `Accept-Encoding: br` header.'
   - name: DOM Depth & Complexity Analyzer
     slug: dom-analyzer
     category: Network & Performance
@@ -4338,7 +4398,7 @@ tools:
       - rendering
       - optimization
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Audit and visualize DOM tree complexity
       secondary: Identify deep nesting that slows down browser rendering
@@ -4409,7 +4469,7 @@ tools:
       - rendering
       - lcp
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate Critical Path CSS for above-the-fold content
       secondary: Optimize Largest Contentful Paint (LCP) by inlining styles
@@ -4481,7 +4541,7 @@ tools:
       - infrastructure
       - audit
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Identify and audit website CDN providers
       secondary: Detect Cloudflare, Akamai, Fastly, and other edge networks
@@ -4539,7 +4599,7 @@ tools:
       - question: What is a CNAME record?
         answer: A Canonical Name (CNAME) record maps one domain name to another. CDNs heavily rely on CNAMEs (e.g., `cdn.example.com` pointing to `example.cloudfront.net`) to route traffic into their infrastructure.
       - question: Why do HTTP headers reveal the CDN?
-        answer: "Most CDNs inject custom HTTP headers into their responses (like `x-cache: HIT` or `server: cloudflare`) for debugging purposes, making them easily identifiable to network scanners."
+        answer: 'Most CDNs inject custom HTTP headers into their responses (like `x-cache: HIT` or `server: cloudflare`) for debugging purposes, making them easily identifiable to network scanners.'
   - name: WHOIS Lookup (Privacy Focus)
     slug: whois-lookup
     category: Network & Performance
@@ -4552,7 +4612,7 @@ tools:
       - ownership
       - expiry
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Check domain ownership and expiration details
       secondary: Audit domain privacy and registrar information
@@ -4622,7 +4682,7 @@ tools:
       - server
       - map
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Locate IP addresses on a map online
       secondary: Identify server physical location and ISP data
@@ -4694,7 +4754,7 @@ tools:
       - optimization
       - google
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Validate meta description lengths for search engines
       secondary: Real-time character count for Google and Bing snippets
@@ -4764,7 +4824,7 @@ tools:
       - fcp
       - core-web-vitals
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Estimate LCP and FCP performance metrics
       secondary: Visualize Core Web Vitals budget and load segments
@@ -4834,7 +4894,7 @@ tools:
       - responsiveness
       - google
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate and optimize Mobile Viewport meta tags
       secondary: Standardized tags for responsive design and mobile-first indexing
@@ -4871,7 +4931,7 @@ tools:
         - One-click HTML code generation
       faq:
         - question: What is the standard viewport tag?
-          answer: "Usually: <meta name='viewport' content='width=device-width, initial-scale=1.0'>"
+          answer: 'Usually: <meta name=''viewport'' content=''width=device-width, initial-scale=1.0''>'
         - question: Does this affect mobile-first indexing?
           answer: Yes. Without a proper viewport tag, Google may assume your site is not mobile-friendly, which can harm your rankings.
     seo:
@@ -4904,7 +4964,7 @@ tools:
       - json-ld
       - rich-snippets
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate FAQPage JSON-LD for rich search snippets
       secondary: Build question-and-answer markup for Google
@@ -4974,7 +5034,7 @@ tools:
       - seo
       - json-ld
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Create AggregateRating and Review JSON-LD
       secondary: Generate star rating markup for search results
@@ -5044,7 +5104,7 @@ tools:
       - json-ld
       - google-maps
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate LocalBusiness and Organization JSON-LD
       secondary: Build address and contact markup for local search
@@ -5110,11 +5170,11 @@ tools:
     tags:
       - redirects
       - seo
-      - "301"
+      - '301'
       - crawling
       - performance
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Identify and visualize multiple redirect hops
       secondary: Audit redirect chains for SEO and performance crawl budget
@@ -5184,7 +5244,7 @@ tools:
       - google
       - indexing
     priority: 10
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate XML sitemaps for search engines
       secondary: Automated crawling simulation for site structure
@@ -5256,7 +5316,7 @@ tools:
       - tags
       - audit
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Verify and audit Canonical URL tags
       secondary: Identify duplicate content risks and tag mismatches
@@ -5327,7 +5387,7 @@ tools:
       - tags
       - google
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate multi-language hreflang tags
       secondary: International SEO builder for multi-regional sites
@@ -5398,7 +5458,7 @@ tools:
       - ctr
       - snippet
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Preview and optimize search engine results (SERP)
       secondary: Real-time character count and pixel-width validation
@@ -5468,7 +5528,7 @@ tools:
       - accessibility
       - audit
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Audit and visualize page heading hierarchy
       secondary: Check for skipped levels and multiple H1 tags
@@ -5539,7 +5599,7 @@ tools:
       - facebook
       - preview
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Preview and debug Open Graph meta tags
       secondary: Social media link preview simulation for Facebook and LinkedIn
@@ -5610,7 +5670,7 @@ tools:
       - cards
       - preview
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate and preview Twitter Card meta tags
       secondary: Support for Summary and Large Image card formats
@@ -5680,7 +5740,7 @@ tools:
       - optimization
       - keywords
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Create clean and SEO-friendly URL slugs
       secondary: Remove stop-words and special characters for better ranking
@@ -5705,7 +5765,7 @@ tools:
         - generate permalinks for blog
       tldr: Generate clean, high-performance URL slugs by automatically stripping bloat and optimizing for search engine relevance.
       entity_definition: SEO URL Slug Optimizer is a permalink utility that converts plain-English titles into optimized URL strings. It follows SEO best practices by removing non-essential 'stop words' (the, and, of), replacing spaces with hyphens, and stripping special characters that can cause crawling or social sharing issues.
-      how_it_works: "The tool applies a sequence of string transformations: lowercasing, character replacement, stop-word filtering, and hyphen normalization."
+      how_it_works: 'The tool applies a sequence of string transformations: lowercasing, character replacement, stop-word filtering, and hyphen normalization.'
       use_cases:
         - Creating permalinks for WordPress or Jamstack blogs
         - Standardizing URL structures for large e-commerce sites
@@ -5750,7 +5810,7 @@ tools:
       - analysis
       - content
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Analyze keyword frequency and distribution in text
       secondary: Identify primary topics and prevent keyword stuffing
@@ -5821,7 +5881,7 @@ tools:
       - reverse-proxy
       - ssl
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate optimized Nginx server configurations
       secondary: Visual builder for reverse proxies, SSL, and security headers
@@ -5892,7 +5952,7 @@ tools:
       - security
       - seo
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Build secure and SEO-friendly .htaccess files
       secondary: Visual generator for 301 redirects and access control
@@ -5948,11 +6008,18 @@ tools:
         - generate 301 redirects htaccess
         - force https htaccess
         - htaccess rewrite rules
+        - htaccess checker
+        - apache rewrite rule tester
+        - htaccess rewrite generator
+        - htaccess rewrite rule generator
+        - htaccess rewriterule generator
+        - htaccess rewrite url generator
+        - htaccess errors
       tldr: Generate complex Apache `.htaccess` directives for URL routing and folder security.
       entity_definition: The Apache .htaccess Generator is a web server configuration utility. The `.htaccess` file is a powerful, directory-level configuration file used by Apache web servers to alter settings without requiring root server access. This tool visually constructs the complex RegEx-based `mod_rewrite` rules needed to enforce 301 redirects, force HTTPS connections, strip "www" from domains, and password-protect sensitive directories (using `htpasswd`).
     faqs:
       - question: What does mod_rewrite do?
-        answer: "`mod_rewrite` is an Apache module that uses regular expressions to rewrite requested URLs on the fly. It is commonly used to create clean, SEO-friendly URLs (e.g., rewriting `/about.php` to `/about`)."
+        answer: '`mod_rewrite` is an Apache module that uses regular expressions to rewrite requested URLs on the fly. It is commonly used to create clean, SEO-friendly URLs (e.g., rewriting `/about.php` to `/about`).'
       - question: How do I force HTTPS?
         answer: You must add a `RewriteRule` that checks if the incoming connection is on port 80 (HTTP) and issues a 301 Permanent Redirect to the equivalent `https://` URL.
       - question: Does Nginx use .htaccess?
@@ -5969,7 +6036,7 @@ tools:
       - cidr
       - engineering
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Calculate network subnets and CIDR masks
       secondary: Visual breakdown of IP ranges and host capacities
@@ -6006,7 +6073,7 @@ tools:
         - Support for all IPv4 classes (A, B, C)
       faq:
         - question: What is the difference between total IP addresses and usable host addresses?
-          answer: "Every subnet reserves exactly two addresses: the very first address (Network ID) used for routing, and the very last address (Broadcast) used to send messages to all nodes. Therefore, a /24 network has 256 total IPs, but only 254 usable hosts."
+          answer: 'Every subnet reserves exactly two addresses: the very first address (Network ID) used for routing, and the very last address (Broadcast) used to send messages to all nodes. Therefore, a /24 network has 256 total IPs, but only 254 usable hosts.'
         - question: Does this utility support IPv6 CIDR calculations?
           answer: Currently, this specific tool is hyper-optimized for IPv4 bitwise mathematics and legacy Class A/B/C routing. A dedicated, 128-bit IPv6 hexadecimal subnetting tool is required for modern IPv6 addressing.
     seo:
@@ -6039,7 +6106,7 @@ tools:
       - audit
       - privacy
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Simulate and explain network port status
       secondary: Security educational tool for common web service ports
@@ -6109,7 +6176,7 @@ tools:
       - protection
       - minifier
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Protect JavaScript code from simple scraping
       secondary: Safe-mode transformation to make code difficult to read
@@ -6181,7 +6248,7 @@ tools:
       - terminal
       - design
     priority: 6
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Convert text into stylized ASCII banners
       secondary: Professional terminal-style art for code and docs
@@ -6251,7 +6318,7 @@ tools:
       - communication
       - utility
     priority: 6
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Translate text to Morse Code and Phonetic Alphabet
       secondary: NATO phonetic alphabet and Morse code bridge
@@ -6262,7 +6329,7 @@ tools:
         - text
       processing: client-side
     meta:
-      title: "Morse Code & NATO Phonetic Converter: Instant Tool"
+      title: 'Morse Code & NATO Phonetic Converter: Instant Tool'
       description: Translate text to Morse code or the NATO phonetic alphabet instantly. A professional utility for radio communication, technical naming, and secure messaging.
     content:
       title: Morse Code & Phonetic Converter — Instant Translation
@@ -6321,7 +6388,7 @@ tools:
       - scheduler
       - automation
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Build and explain Crontab schedules
       secondary: Visual cron builder for Linux and Cloud jobs
@@ -6373,11 +6440,15 @@ tools:
         - create cron expression
         - linux cron scheduler
         - visual cron builder
+        - crontab evaluator
+        - cron generator
+        - cron translator
+        - cron-editor
       tldr: Visually construct exact 5-part Cron expressions for Linux server automation.
       entity_definition: The Cron Job Generator is a Linux automation utility. The `cron` daemon executes background scripts on Unix-like servers based on a cryptic 5-part syntax (Minute, Hour, Day, Month, Day-of-Week). This tool provides an intuitive visual interface—allowing users to select specific days, intervals, or hours—and compiles those selections into a mathematically perfect `* * * * *` string, eliminating the risk of catastrophic scheduling errors in production environments.
     faqs:
       - question: What do the 5 asterisks mean?
-        answer: "They represent (from left to right): Minute (0-59), Hour (0-23), Day of the Month (1-31), Month (1-12), and Day of the Week (0-6, where 0 is Sunday). An asterisk means \"every\"."
+        answer: 'They represent (from left to right): Minute (0-59), Hour (0-23), Day of the Month (1-31), Month (1-12), and Day of the Week (0-6, where 0 is Sunday). An asterisk means "every".'
       - question: How do I run a job every 5 minutes?
         answer: You use the step operator (a forward slash). Setting the minute field to `*/5` tells the cron daemon to execute the task every time the minute is divisible by 5.
       - question: What is a Crontab?
@@ -6394,7 +6465,7 @@ tools:
       - javascript
       - parsing
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Test and debug Regular Expressions in real-time
       secondary: Visual regex matching with group capture highlights
@@ -6469,7 +6540,7 @@ tools:
       - api
       - javascript
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Convert Curl commands to JavaScript request code
       secondary: Support for Fetch API and Axios request formats
@@ -6539,7 +6610,7 @@ tools:
       - text-comparison
       - debugging
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Compare two code snippets visually
       secondary: Identify additions, deletions, and modifications instantly
@@ -6610,7 +6681,7 @@ tools:
       - escaping
       - xss-prevention
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Escape and unescape HTML entities
       secondary: Safe-mode encoding for code display and security
@@ -6682,7 +6753,7 @@ tools:
       - security
       - nodejs
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate secure environment file templates
       secondary: Standardized scaffolding for Node.js, Python, and Go projects
@@ -6753,7 +6824,7 @@ tools:
       - workflow
       - helper
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate and explain common Git commands
       secondary: Workflow-based helper for branching, merging, and fixing errors
@@ -6808,7 +6879,7 @@ tools:
       - question: What is a Git Rebase?
         answer: Rebasing is the process of moving or combining a sequence of commits to a new base commit. It creates a cleaner, linear project history compared to a standard `git merge`, but requires more advanced Git knowledge.
       - question: What does a Hard Reset do?
-        answer: "`git reset --hard` forces your current working directory and staging area to perfectly match a specific past commit, permanently deleting any uncommitted changes you were working on."
+        answer: '`git reset --hard` forces your current working directory and staging area to perfectly match a specific past commit, permanently deleting any uncommitted changes you were working on.'
       - question: What is Cherry-Picking?
         answer: Cherry-picking allows you to select a specific commit from one branch and apply it to another, without having to merge the entire branch.
   - name: Docker Compose Scaffolder
@@ -6823,7 +6894,7 @@ tools:
       - devops
       - containerization
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate multi-container Docker Compose files
       secondary: Visual scaffolding for Node, Python, and database services
@@ -6894,7 +6965,7 @@ tools:
       - parsing
       - developer-tools
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Convert YAML data to structured JSON format
       secondary: Validate and clean YAML inputs
@@ -6967,7 +7038,7 @@ tools:
       - optimization
       - page-speed
     priority: 9
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Compress HTML source code for faster page loads
       secondary: Remove comments, whitespace, and redundant attributes
@@ -6980,7 +7051,7 @@ tools:
         - txt
       processing: client-side
     meta:
-      title: "HTML Minifier: Compress & Optimize Your Website Code"
+      title: 'HTML Minifier: Compress & Optimize Your Website Code'
       description: Reduce your website's file size by minifying HTML code. Our professional optimizer removes comments, unnecessary spaces, and redundant code to boost Core Web Vitals and SEO rankings.
     content:
       title: HTML Code Minifier — High-Performance Page Optimization
@@ -7042,7 +7113,7 @@ tools:
       - markup
       - validation
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Beautify and validate XML markup
       secondary: Structural indentation and syntax highlighting
@@ -7115,7 +7186,7 @@ tools:
       - app
       - json
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate valid manifest.json for PWAs
       secondary: Configure icons, theme colors, and display modes
@@ -7170,7 +7241,7 @@ tools:
       - question: What does "standalone" display mode do?
         answer: Setting the display mode to `standalone` tells the mobile device to hide the standard browser UI (like the URL bar and back buttons), making your website look and feel exactly like a native iOS or Android app.
       - question: What icon sizes are required?
-        answer: "For a PWA to be fully compliant and installable, you must provide at least two icon sizes: 192x192 pixels and 512x512 pixels, usually in PNG format."
+        answer: 'For a PWA to be fully compliant and installable, you must provide at least two icon sizes: 192x192 pixels and 512x512 pixels, usually in PNG format.'
       - question: Why isn't my PWA installing?
         answer: To trigger the installation prompt, your website MUST have a valid `manifest.json` linked in the HTML `<head>`, it MUST be served over a secure HTTPS connection, and it usually requires a registered Service Worker.
   - name: Readability Grade Calculator
@@ -7185,7 +7256,7 @@ tools:
       - writing
       - analysis
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Calculate reading level and readability scores
       secondary: Support for Flesch-Kincaid and Gunning Fog indices
@@ -7256,7 +7327,7 @@ tools:
       - design
       - formatting
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Find and copy Emoji Unicode characters
       secondary: Search by keyword and category for blog content
@@ -7327,7 +7398,7 @@ tools:
       - audit
       - branding
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Extract color palettes from CSS files
       secondary: Find brand colors and variables from any stylesheet
@@ -7398,7 +7469,7 @@ tools:
       - debug
       - visualizer
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Visualize and debug Webhook payloads
       secondary: Format and inspect incoming JSON from Stripe, GitHub, etc.
@@ -7468,7 +7539,7 @@ tools:
       - browser
       - dev
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Inspect and manage Browser LocalStorage
       secondary: Visualize data usage and clean up web storage
@@ -7521,7 +7592,7 @@ tools:
       entity_definition: The Web Storage Auditor is a privacy and frontend debugging utility. Modern web applications save massive amounts of state data directly into the user's browser to maintain sessions without hitting the database. This tool hooks into the browser's Web Storage API to explicitly list all Key/Value pairs currently saved in `localStorage` (persistent data) and `sessionStorage` (tab-specific data), as well as extracting active HTTP Cookies, allowing developers to debug authentication flows and ensure GDPR compliance.
     faqs:
       - question: What is the difference between LocalStorage and SessionStorage?
-        answer: "`localStorage` is persistent; the data remains in the browser forever until manually deleted by the user or JavaScript. `sessionStorage` is ephemeral; the data is instantly wiped the moment the user closes the specific browser tab."
+        answer: '`localStorage` is persistent; the data remains in the browser forever until manually deleted by the user or JavaScript. `sessionStorage` is ephemeral; the data is instantly wiped the moment the user closes the specific browser tab.'
       - question: Are Cookies the same as LocalStorage?
         answer: No. Cookies are automatically sent back and forth to the server with every single HTTP request (used primarily for authentication). LocalStorage remains strictly client-side and is never sent to the server.
       - question: Can I store passwords in LocalStorage?
@@ -7538,7 +7609,7 @@ tools:
       - similarity
       - analysis
     priority: 7
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Calculate similarity between two text blocks
       secondary: Identify duplicate content for SEO and plagiarism checks
@@ -7607,7 +7678,7 @@ tools:
       - lighthouse
       - core web vitals
     priority: 8
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Comprehensive technical SEO and performance audit
       secondary: Analyze Core Web Vitals and accessibility
@@ -7678,7 +7749,7 @@ tools:
       - video
       - image
     priority: 15
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Calculate width/height proportions and responsive dimensions
     technical:
@@ -7707,7 +7778,7 @@ tools:
         - question: What does a 16:9 aspect ratio actually mean?
           answer: It means that for every 16 units of horizontal width, there must be 9 units of vertical height. This is the global standard for HDTVs, computer monitors, and YouTube videos (e.g., 1920x1080 resolution is a 16:9 ratio).
         - question: How is CSS `aspect-ratio` different from this tool?
-          answer: "Modern CSS now includes the `aspect-ratio: 16 / 9;` property, which makes the browser do this math automatically. However, you still need this calculator when generating static image assets in Photoshop, or when working with legacy codebases that don't support the new CSS property."
+          answer: 'Modern CSS now includes the `aspect-ratio: 16 / 9;` property, which makes the browser do this math automatically. However, you still need this calculator when generating static image assets in Photoshop, or when working with legacy codebases that don''t support the new CSS property.'
         - question: What happens if I change the ratio of an existing image?
           answer: You cannot change an image's ratio without a destructive action. You must either 'crop' the image (losing the edges), 'stretch' it (distorting the visual data), or 'letterbox' it (adding solid black or colored bars to fill the empty space).
     meta:
@@ -7728,7 +7799,7 @@ tools:
       - question: What is 16:9?
         answer: 16:9 is the standard aspect ratio for high-definition video (HDTV, YouTube, 1080p, 4K). It means for every 16 units of width, there are 9 units of height.
       - question: How does CSS aspect-ratio work?
-        answer: "The modern CSS property `aspect-ratio: 16 / 9;` automatically calculates the height of an element based on its current width, eliminating the need for old \"padding-top hacks\" used for responsive iframes."
+        answer: 'The modern CSS property `aspect-ratio: 16 / 9;` automatically calculates the height of an element based on its current width, eliminating the need for old "padding-top hacks" used for responsive iframes.'
       - question: Does changing the aspect ratio crop the image?
         answer: Yes. If you force an image with a 4:3 ratio into a 16:9 container, you must either stretch the pixels (distortion), add black bars (letterboxing), or crop the top and bottom off the image.
   - name: Percentage Calculator
@@ -7741,7 +7812,7 @@ tools:
       - calculator
       - business
     priority: 15
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Fast percentage calculations for data and design
     technical:
@@ -7789,9 +7860,9 @@ tools:
       entity_definition: The Percentage Calculator is a mathematical utility. In software development and e-commerce, computing percentages is a daily requirement—whether calculating discount pricing logic, analyzing Server Uptime (e.g., 99.99%), or translating absolute pixel widths into fluid CSS percentage layouts (e.g., 300px out of 1200px is 25%). This tool provides instant, multi-modal algebraic calculations for exact percentages, absolute differences, and relative growth.
     faqs:
       - question: How do you calculate percentage increase?
-        answer: "Subtract the old value from the new value. Divide that difference by the old value, and then multiply by 100. For example: from 50 to 75 is an increase of 25. (25 / 50) * 100 = 50% increase."
+        answer: 'Subtract the old value from the new value. Divide that difference by the old value, and then multiply by 100. For example: from 50 to 75 is an increase of 25. (25 / 50) * 100 = 50% increase.'
       - question: What is a fluid percentage in CSS?
-        answer: "In responsive web design, instead of giving a sidebar a static width of `300px`, developers divide the target width by the parent container's width (e.g., 300 / 1200 = 0.25). The CSS is then set to `width: 25%`, allowing it to scale fluidly."
+        answer: 'In responsive web design, instead of giving a sidebar a static width of `300px`, developers divide the target width by the parent container''s width (e.g., 300 / 1200 = 0.25). The CSS is then set to `width: 25%`, allowing it to scale fluidly.'
       - question: Are percentages reversible?
         answer: No. A 50% increase followed by a 50% decrease does not return you to the original number. If you increase 100 by 50%, you get 150. Decreasing 150 by 50% results in 75.
   - name: NanoID Generator
@@ -7804,7 +7875,7 @@ tools:
       - nanoid
       - url-friendly
     priority: 12
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate compact, URL-friendly unique IDs
     technical:
@@ -7868,7 +7939,7 @@ tools:
       - editing
       - length
     priority: 10
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Count characters, words, and spaces in real-time
     technical:
@@ -7932,7 +8003,7 @@ tools:
       - ecommerce
       - luhn
     priority: 12
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Validate credit card numbers using the Luhn algorithm
     technical:
@@ -7996,7 +8067,7 @@ tools:
       - banking
       - iban
     priority: 11
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Verify the mathematical validity of any International Bank Account Number (IBAN)
     technical:
@@ -8060,7 +8131,7 @@ tools:
       - audit
       - status-codes
     priority: 11
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Identify broken links (404s) and dead URLs on any page
     technical:
@@ -8125,7 +8196,7 @@ tools:
       - performance
       - webp
     priority: 15
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Optimize images for the web with zero quality loss
     technical:
@@ -8192,7 +8263,7 @@ tools:
       - ocr
       - extraction
     priority: 10
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Extract raw text from PDF documents instantly
     technical:
@@ -8256,7 +8327,7 @@ tools:
       - ai
       - tts
     priority: 10
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Convert text to natural-sounding audio in your browser
     technical:
@@ -8322,7 +8393,7 @@ tools:
       - compiler
       - coding
     priority: 8
-    releaseDate: "2026-05-16"
+    releaseDate: '2026-05-16'
     function:
       primary: Evaluate and test JavaScript in a secure sandbox
       secondary: Real-time console logs and performance tracking
@@ -8395,7 +8466,7 @@ tools:
       - optimization
       - markup
     priority: 8
-    releaseDate: "2026-05-16"
+    releaseDate: '2026-05-16'
     function:
       primary: Compress and minify XML payloads instantly
       secondary: Remove comments and redundant spacing for SEO optimization
@@ -8466,7 +8537,7 @@ tools:
       - text
       - source-code
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Count lines, empty lines, and source code length
       secondary: Analyze and clean text files instantly
@@ -8536,7 +8607,7 @@ tools:
       - encryption
       - obfuscation
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Obfuscate text using ROT13 Caesar cipher shift
       secondary: Instant client-side key-less cipher utility
@@ -8605,7 +8676,7 @@ tools:
       - placeholder
       - mock-data
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate realistic fake user profiles for testing
       secondary: Perfect for seeding databases and UI mockups
@@ -8675,7 +8746,7 @@ tools:
       - code128
       - inventory
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate industry standard barcodes (Code 128, EAN, UPC)
       secondary: Perfect for retail and logistics placeholder labels
@@ -8745,7 +8816,7 @@ tools:
       - compressor
       - minifier
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Optimize and minify SVG vector paths
       secondary: Reduce raw markup size while maintaining rendering quality
@@ -8814,7 +8885,7 @@ tools:
       - seo-metrics
       - expiration
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Check domain registration age and expiry date
       secondary: Determine trust indicators of search domains
@@ -8883,7 +8954,7 @@ tools:
       - colors
       - a11y
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Validate color contrast ratios for WCAG compliance
       secondary: Ensure text readability on web components
@@ -8932,6 +9003,7 @@ tools:
         - check text contrast ratio
         - web design contrast tool
         - ada compliance colors
+        - wcag color contrast checker
       tldr: Calculate the visual contrast ratio between two colors to ensure WCAG accessibility.
       entity_definition: The Color Contrast Checker is a web accessibility and UI design utility. The Web Content Accessibility Guidelines (WCAG) define strict mathematical ratios for how much contrast must exist between text (foreground) and its background to be readable by visually impaired users. This tool calculates the relative luminance of two HEX/RGB colors and outputs a ratio (e.g., 4.5:1). It explicitly passes or fails the combination based on WCAG AA (standard) and AAA (enhanced) requirements for both large and small text.
     faqs:
@@ -8953,7 +9025,7 @@ tools:
       - security
       - hasher
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Compute scrypt key derivation hashes
       secondary: Secure client-side cryptographic hashing
@@ -9022,7 +9094,7 @@ tools:
       - api-auth
       - hasher
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Generate keyed-hash message authentication codes (HMAC)
       secondary: Verify API signatures with MD5, SHA-1, SHA-256
@@ -9091,7 +9163,7 @@ tools:
       - security-headers
       - debugging
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Parse and inspect raw HTTP request and response headers
       secondary: Analyze caching directives and security policies
@@ -9140,10 +9212,10 @@ tools:
         - view http status code
         - check security headers
       tldr: Inspect the raw HTTP response headers of any URL to debug caching and security policies.
-      entity_definition: "The HTTP Headers Inspector is a network debugging utility. When a browser requests a webpage, the server sends back \"Headers\" before the actual HTML content. These hidden key-value pairs contain critical metadata controlling browser caching (`Cache-Control`), security policies (`Content-Security-Policy`), server architecture (`Server: nginx`), and redirection logic. This tool executes a precise HTTP GET/HEAD request to a target URL, bypassing browser abstractions to expose the raw header payload for diagnostic auditing."
+      entity_definition: 'The HTTP Headers Inspector is a network debugging utility. When a browser requests a webpage, the server sends back "Headers" before the actual HTML content. These hidden key-value pairs contain critical metadata controlling browser caching (`Cache-Control`), security policies (`Content-Security-Policy`), server architecture (`Server: nginx`), and redirection logic. This tool executes a precise HTTP GET/HEAD request to a target URL, bypassing browser abstractions to expose the raw header payload for diagnostic auditing.'
     faqs:
       - question: What is Cache-Control?
-        answer: "`Cache-Control` is an HTTP header that dictates how long a browser or CDN is allowed to save (cache) a copy of the webpage before it must request a fresh version from the server."
+        answer: '`Cache-Control` is an HTTP header that dictates how long a browser or CDN is allowed to save (cache) a copy of the webpage before it must request a fresh version from the server.'
       - question: Why are Security Headers important?
         answer: Headers like `Strict-Transport-Security` (HSTS) and `X-Frame-Options` actively instruct the browser to block malicious actions, such as preventing your site from being embedded in a hacker's invisible iframe (Clickjacking).
       - question: How do I spot a 301 Redirect?
@@ -9160,7 +9232,7 @@ tools:
       - viewport
       - devices
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Test website layouts across multiple standard viewport sizes
       secondary: Ensure fluid design styling on mobile and tablet displays
@@ -9196,7 +9268,7 @@ tools:
         - Fully client-side rendering
       faq:
         - question: Why won't my site load in the checker?
-          answer: "If your website sends a \"X-Frame-Options: SAMEORIGIN\" security header, browsers will block the iframe from loading it inside third-party pages. You can test local files by running the tool directly."
+          answer: 'If your website sends a "X-Frame-Options: SAMEORIGIN" security header, browsers will block the iframe from loading it inside third-party pages. You can test local files by running the tool directly.'
         - question: Does it simulate actual mobile hardware?
           answer: It simulates the screen dimensions and user-agent scaling. It does not emulate mobile operating systems or specific rendering engines.
     seo:
@@ -9216,7 +9288,7 @@ tools:
       - question: Why do I have horizontal scrolling?
         answer: Horizontal scrolling on mobile is almost always caused by an element (like a massive image, a wide table, or an unbroken string of text) that is explicitly set to a fixed pixel width wider than the screen itself.
       - question: What is a CSS Media Query?
-        answer: "A media query is a CSS rule that applies styles only when specific conditions are met. For example, `@media (max-width: 768px)` tells the browser to apply specific mobile styles only when the screen is smaller than an iPad."
+        answer: 'A media query is a CSS rule that applies styles only when specific conditions are met. For example, `@media (max-width: 768px)` tells the browser to apply specific mobile styles only when the screen is smaller than an iPad.'
   - name: Color Blindness Simulator
     slug: color-blind-simulator
     category: Design Tools
@@ -9229,7 +9301,7 @@ tools:
       - a11y
       - ui-ux
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Simulate how color palettes appear to color-blind users
       secondary: Test accessibility for Deuteranopia, Protanopia, Tritanopia
@@ -9299,7 +9371,7 @@ tools:
       - accessibility
       - a11y
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Audit page HTML markup for missing or empty image alt tags
       secondary: Maximize search ranking footprint and accessibility
@@ -9353,7 +9425,7 @@ tools:
       - question: What makes good Alt Text?
         answer: Good alt text is highly descriptive but concise. Instead of "dog", write "A golden retriever catching a red frisbee in a park." Never start with "Image of..." as screen readers already announce that it is an image.
       - question: What if the image is purely decorative?
-        answer: "If an image adds no informational value (like a background swoosh or a generic divider), you MUST still include the alt attribute, but leave it completely empty: `alt=\"\"`. This explicitly tells the screen reader to skip it."
+        answer: 'If an image adds no informational value (like a background swoosh or a generic divider), you MUST still include the alt attribute, but leave it completely empty: `alt=""`. This explicitly tells the screen reader to skip it.'
       - question: Can bad alt text hurt my SEO?
         answer: Yes. If you "keyword stuff" your alt text (e.g., `alt="cheap shoes buy shoes online discount shoes"`), Google's algorithm will flag it as spam and potentially penalize your page rankings.
   - name: Domain Authority & Rank Simulator
@@ -9368,7 +9440,7 @@ tools:
       - rankings
       - backlinks
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Simulate how domain authority impacts search rankings
       secondary: Model link building scenarios for technical SEO campaigns
@@ -9437,7 +9509,7 @@ tools:
       - transpile
       - polyfill
     priority: 5
-    releaseDate: "2026-05-15"
+    releaseDate: '2026-05-15'
     function:
       primary: Check feature compatibility across major web browsers
       secondary: Identify legacy agent viewport rendering issues instantly
@@ -9463,7 +9535,7 @@ tools:
         - css prefix validator
       tldr: Audit and verify modern CSS/JS browser support matrices to optimize compatibility across active user devices.
       entity_definition: CSS/JS Browser Compatibility Checker is a frontend diagnostic utility that maps CSS properties, JavaScript APIs, and modern HTML elements against global browser support matrices. It helps engineers identify if specific design layout features require vendor prefixes or polyfills to support legacy browsers.
-      how_it_works: "This tool checks properties and keywords against a localized array of data structures tracking global browser platform capabilities. When you search for a script method (e.g., `Object.fromEntries`) or a style property (e.g., `display: grid`), the engine parses the string and pulls up the exact minimum version support matrices across Chromium, WebKit, and Gecko engines."
+      how_it_works: 'This tool checks properties and keywords against a localized array of data structures tracking global browser platform capabilities. When you search for a script method (e.g., `Object.fromEntries`) or a style property (e.g., `display: grid`), the engine parses the string and pulls up the exact minimum version support matrices across Chromium, WebKit, and Gecko engines.'
       use_cases:
         - Auditing modern CSS properties (like clamp, subgrid, dialog) for support stability
         - Verifying legacy iOS Safari support for custom JS API layers
@@ -9495,7 +9567,7 @@ tools:
       - question: Why do I need to check mobile browsers separately?
         answer: Mobile browsers (like iOS Safari or Chrome for Android) often have distinct rendering limits compared to their desktop counterparts to conserve battery life and RAM. A feature supported on Desktop Safari might be entirely missing on iOS Safari.
       - question: What is a fallback?
-        answer: "A fallback is writing legacy code right before modern code. For example, writing `background: red;` immediately followed by `background: linear-gradient(...)`. Old browsers read the first line and ignore the second. Modern browsers read the first, and then overwrite it with the second."
+        answer: 'A fallback is writing legacy code right before modern code. For example, writing `background: red;` immediately followed by `background: linear-gradient(...)`. Old browsers read the first line and ignore the second. Modern browsers read the first, and then overwrite it with the second.'
   - name: RAG Context Optimizer (Text Minifier)
     slug: rag-optimizer
     category: Developer Tools
@@ -9508,7 +9580,7 @@ tools:
       - minifier
       - tokens
     priority: 16
-    releaseDate: "2026-05-22"
+    releaseDate: '2026-05-22'
     function:
       primary: Strip unnecessary characters from raw text to save LLM context window tokens
       secondary: Calculate token and cost savings instantly
@@ -9578,7 +9650,7 @@ tools:
       - gpt4
       - calculator
     priority: 15
-    releaseDate: "2026-05-22"
+    releaseDate: '2026-05-22'
     function:
       primary: Calculate exact token counts and estimated costs for LLM prompts
       secondary: Encode strings using official tiktoken encodings locally
@@ -9629,7 +9701,7 @@ tools:
       entity_definition: The Prompt Token Calculator is a Machine Learning DevOps utility. Large Language Models (LLMs) like GPT-4 do not process text as "words"—they process text as "Tokens" (sub-word fragments). Because AI APIs charge per token, and models have strict maximum context limits (e.g., 128k tokens), developers must accurately measure their inputs. This tool utilizes algorithms like OpenAI's `tiktoken` (BPE encoding) to break down raw strings into exact token arrays, calculating precise API costs.
     faqs:
       - question: What is a Token?
-        answer: "A token is a piece of a word. The AI tokenizer splits words based on statistical frequency. A common word like \"apple\" might be one token, while a complex word like \"hamburger\" might be split into three tokens: `ham`, `bur`, `ger`."
+        answer: 'A token is a piece of a word. The AI tokenizer splits words based on statistical frequency. A common word like "apple" might be one token, while a complex word like "hamburger" might be split into three tokens: `ham`, `bur`, `ger`.'
       - question: Is one word equal to one token?
         answer: No. A general rule of thumb for English text is that 1 token is approximately 4 characters, or about 0.75 of a word. 100 tokens generally equals 75 words.
       - question: Why do code snippets cost more tokens?
@@ -9646,7 +9718,7 @@ tools:
       - devops
       - linter
     priority: 16
-    releaseDate: "2026-05-22"
+    releaseDate: '2026-05-22'
     function:
       primary: Lint and validate Kubernetes YAML manifests instantly
       secondary: Detect deprecated API versions and missing resource limits
@@ -9715,7 +9787,7 @@ tools:
       - cloud
       - json
     priority: 16
-    releaseDate: "2026-05-22"
+    releaseDate: '2026-05-22'
     function:
       primary: Visually build strict AWS IAM JSON policies
       secondary: Enforce least-privilege access control
@@ -9750,7 +9822,7 @@ tools:
         - Automatic normalization of single vs array strings
       faq:
         - question: Can I use this for AWS S3 bucket policies?
-          answer: "Yes. The generated JSON uses the standard AWS Policy format (`Version: 2012-10-17`), which is fully compatible with IAM Users, Roles, and inline S3 Bucket Policies."
+          answer: 'Yes. The generated JSON uses the standard AWS Policy format (`Version: 2012-10-17`), which is fully compatible with IAM Users, Roles, and inline S3 Bucket Policies.'
         - question: How do I specify multiple actions?
           answer: Simply type them as a comma-separated list (e.g., `s3:GetObject, s3:ListBucket`). The generator will automatically format them into a valid JSON array.
     seo:
@@ -9762,13 +9834,15 @@ tools:
         - aws security policy maker
         - s3 bucket policy generator
         - least privilege aws tool
+        - s3 policy generator
+        - aws policy gen
       tldr: Visually construct highly secure, least-privilege AWS IAM JSON policies.
       entity_definition: The AWS IAM Policy Generator is a cloud security utility. Amazon Web Services Identity and Access Management (IAM) requires complex JSON documents to explicitly allow or deny users access to specific cloud resources. Hand-writing these JSON policies often leads to developers using dangerous wildcards (e.g., `s3:*`) out of frustration. This tool provides a visual UI to select exact AWS Services (like EC2 or DynamoDB), define granular Actions, and specify exact Resource ARNs, outputting a syntactically perfect, highly secure JSON policy document.
     faqs:
       - question: What is the Principle of Least Privilege?
         answer: It is a core cybersecurity concept stating that a user or application should only be granted the absolute minimum permissions necessary to perform its job. For example, if an app only needs to read photos from an S3 bucket, it should never be given permission to delete them.
       - question: What does a wildcard (*) do in IAM?
-        answer: "A wildcard grants access to EVERYTHING. If your policy says `Action: \"*\"` and `Resource: \"*\"`, you have essentially granted the user God-mode \"AdministratorAccess\" to do whatever they want in your entire AWS account. This is incredibly dangerous."
+        answer: 'A wildcard grants access to EVERYTHING. If your policy says `Action: "*"` and `Resource: "*"`, you have essentially granted the user God-mode "AdministratorAccess" to do whatever they want in your entire AWS account. This is incredibly dangerous.'
       - question: What is an ARN?
         answer: An ARN (Amazon Resource Name) is a unique string that explicitly identifies a specific AWS resource. For example, `arn:aws:s3:::my-company-bucket` specifically targets one single S3 bucket, rather than all buckets.
   - name: Cron to Kubernetes CronJob
@@ -9783,7 +9857,7 @@ tools:
       - devops
       - yaml
     priority: 16
-    releaseDate: "2026-05-22"
+    releaseDate: '2026-05-22'
     function:
       primary: Convert Linux cron expressions to K8s CronJob manifests
       secondary: Generate production-ready batch/v1 YAML wrappers
@@ -9820,7 +9894,7 @@ tools:
         - question: Does Kubernetes support the 6-field cron expression?
           answer: No. Unlike some Linux distributions or Node.js libraries that support a 6th field for 'seconds', Kubernetes strictly requires the standard 5-field format (`Minute Hour DayOfMonth Month DayOfWeek`).
         - question: What restart policy is generated?
-          answer: "The generated manifest defaults to `restartPolicy: OnFailure`, which is the best practice for CronJobs to ensure transient failures are retried without infinitely looping crashed pods."
+          answer: 'The generated manifest defaults to `restartPolicy: OnFailure`, which is the best practice for CronJobs to ensure transient failures are retried without infinitely looping crashed pods.'
     seo:
       title: Cron to Kubernetes CronJob — Convert Schedules
       description: Convert standard Linux Cron expressions into Kubernetes CronJob YAML manifests instantly. Scaffold batch jobs, backups, and scheduled tasks for your K8s cluster.
@@ -9849,7 +9923,7 @@ tools:
       - structured data
       - validator
     icon: Database
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Generate and validate JSON-LD structured data.
     technical:
@@ -9882,6 +9956,18 @@ tools:
           answer: Writing nested JSON-LD manually is highly prone to syntax errors (like missing commas or unclosed brackets). A generator ensures your syntax is flawless and perfectly aligns with Google's strict requirements for rich results.
         - question: Does my data get saved on a server?
           answer: No. This tool runs 100% locally using client-side JavaScript. Your business details, product prices, and article data never leave your browser.
+    seo:
+      keywords:
+        - jsonld generator
+        - ld json schema generator
+        - json-ld generator
+        - json ld schema generator
+        - json ld generator
+        - json-ld schema generator
+        - ld json generator
+        - json-ld code generator
+        - json-ld schema generator for seo
+        - schema json ld generator
   - name: QR Code Generator
     slug: qr-code-generator
     category: Generators
@@ -9891,7 +9977,7 @@ tools:
       - generator
       - link
     icon: QrCode
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Generate high-resolution QR codes from URLs or text.
     technical:
@@ -9932,7 +10018,7 @@ tools:
       - sanitizer
       - security
     icon: Terminal
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Format, minify, and sanitize SQL queries.
     technical:
@@ -9973,7 +10059,7 @@ tools:
       - converter
       - editor
     icon: FileCode
-    releaseDate: "2026-05-30"
+    releaseDate: '2026-05-30'
     function:
       primary: Convert Markdown to HTML with live preview.
     technical:
@@ -10015,7 +10101,7 @@ tools:
       - security
       - soc2
     priority: 1
-    releaseDate: "2026-06-03"
+    releaseDate: '2026-06-03'
     function:
       primary: Securely view and export all offline interactions with sensitive utilities.
     technical:
@@ -10038,64 +10124,85 @@ tools:
       keywords:
         - audit logger
         - compliance
-  - name: "EXIF Metadata Viewer & Stripper"
-    slug: "exif-metadata-viewer"
-    category: "Security Tools"
-    icon: "Camera"
-    tags: ["exif", "metadata", "image", "photo", "privacy", "strip"]
+  - name: EXIF Metadata Viewer & Stripper
+    slug: exif-metadata-viewer
+    category: Security Tools
+    icon: Camera
+    tags:
+      - exif
+      - metadata
+      - image
+      - photo
+      - privacy
+      - strip
     priority: 8
-    releaseDate: "2026-06-12"
+    releaseDate: '2026-06-12'
     function:
-      primary: "View hidden EXIF metadata and securely strip it from photos offline."
+      primary: View hidden EXIF metadata and securely strip it from photos offline.
     technical:
-      input_formats: ["jpg", "png", "webp", "heic"]
-      output_formats: ["jpg", "png", "webp"]
-      processing: "client-side"
+      input_formats:
+        - jpg
+        - png
+        - webp
+        - heic
+      output_formats:
+        - jpg
+        - png
+        - webp
+      processing: client-side
     meta:
-      title: "EXIF Metadata Viewer & Stripper | Free Offline Privacy Tool"
-      description: "View hidden EXIF data (GPS location, camera model) in your photos. Instantly strip and remove all metadata locally in your browser for 100% privacy."
+      title: EXIF Metadata Viewer & Stripper | Free Offline Privacy Tool
+      description: View hidden EXIF data (GPS location, camera model) in your photos. Instantly strip and remove all metadata locally in your browser for 100% privacy.
     content:
-      title: "EXIF Metadata Viewer & Privacy Stripper"
-      description: "Every photo you take with your smartphone contains hidden EXIF data, including exact GPS coordinates, timestamps, and device serial numbers. Use this zero-knowledge tool to securely view and permanently delete that metadata before sharing your photos online."
-      keywords: ["exiftool online", "remove exif data online", "strip metadata from photo", "view exif data", "photo privacy tool"]
-      tldr: "Drag and drop a photo to instantly reveal hidden EXIF GPS and camera data, then securely strip it all out with one click."
-      entity_definition: "The EXIF Metadata Viewer & Stripper is a zero-knowledge, client-side utility built for digital privacy. It utilizes browser-native file processing and the HTML5 Canvas API to extract and permanently wipe Exchangeable Image File Format (EXIF) metadata. This guarantees that your sensitive location history and device fingerprints are neutralized without your private photos ever being uploaded to a remote server."
-      how_it_works: "When an image is loaded, our tool reads the binary file header to extract the EXIF directories. To strip the data, the image is painted onto a hidden HTML5 Canvas element. Because the Canvas only cares about pixel color data and ignores metadata, re-exporting the image from the Canvas yields a mathematically clean, sanitized image file."
+      title: EXIF Metadata Viewer & Privacy Stripper
+      description: Every photo you take with your smartphone contains hidden EXIF data, including exact GPS coordinates, timestamps, and device serial numbers. Use this zero-knowledge tool to securely view and permanently delete that metadata before sharing your photos online.
+      keywords:
+        - exiftool online
+        - remove exif data online
+        - strip metadata from photo
+        - view exif data
+        - photo privacy tool
+      tldr: Drag and drop a photo to instantly reveal hidden EXIF GPS and camera data, then securely strip it all out with one click.
+      entity_definition: The EXIF Metadata Viewer & Stripper is a zero-knowledge, client-side utility built for digital privacy. It utilizes browser-native file processing and the HTML5 Canvas API to extract and permanently wipe Exchangeable Image File Format (EXIF) metadata. This guarantees that your sensitive location history and device fingerprints are neutralized without your private photos ever being uploaded to a remote server.
+      how_it_works: When an image is loaded, our tool reads the binary file header to extract the EXIF directories. To strip the data, the image is painted onto a hidden HTML5 Canvas element. Because the Canvas only cares about pixel color data and ignores metadata, re-exporting the image from the Canvas yields a mathematically clean, sanitized image file.
       use_cases:
-        - "Sanitizing personal photos to remove GPS coordinates before uploading them to social media or forums."
-        - "Forensic analysis of images to determine the exact camera model, lens, ISO, and exposure settings used."
-        - "Stripping bloated thumbnail and metadata caches from JPEGs to slightly reduce file size for web optimization."
-        - "Verifying if a photo has been manipulated by checking the Software/Firmware EXIF tags."
+        - Sanitizing personal photos to remove GPS coordinates before uploading them to social media or forums.
+        - Forensic analysis of images to determine the exact camera model, lens, ISO, and exposure settings used.
+        - Stripping bloated thumbnail and metadata caches from JPEGs to slightly reduce file size for web optimization.
+        - Verifying if a photo has been manipulated by checking the Software/Firmware EXIF tags.
       features:
-        - "Detailed EXIF Extraction: View GPS Location, Camera Make/Model, Exposure Time, F-Stop, and ISO."
-        - "One-Click Stripper: Safely re-encode your image to destroy all tracking metadata instantly."
-        - "Zero-Knowledge Architecture: Your photos never leave your device. All processing is 100% local."
-        - "Drag and Drop Support: Works instantly with JPG, WEBP, and PNG files."
+        - 'Detailed EXIF Extraction: View GPS Location, Camera Make/Model, Exposure Time, F-Stop, and ISO.'
+        - 'One-Click Stripper: Safely re-encode your image to destroy all tracking metadata instantly.'
+        - 'Zero-Knowledge Architecture: Your photos never leave your device. All processing is 100% local.'
+        - 'Drag and Drop Support: Works instantly with JPG, WEBP, and PNG files.'
       faq:
-        - question: "Is it safe to use online EXIF tools?"
-          answer: "Most online EXIF tools require you to upload your image to their server. If the photo contains sensitive GPS data, you are actively exposing your location to a third party. Our tool is different: it runs entirely within your browser's memory, ensuring absolute privacy."
-        - question: "Why do photos have EXIF data?"
-          answer: "Cameras and smartphones embed EXIF (Exchangeable Image File Format) data to help organize photos. It includes the date/time, camera settings (aperture, ISO), and often the exact GPS coordinates where the photo was taken so your phone can map them."
-        - question: "Does stripping EXIF data reduce image quality?"
-          answer: "Stripping EXIF data simply removes the text-based metadata headers from the file. However, because our tool repaints the image using an HTML5 Canvas to ensure a complete wipe, the image is re-encoded. We default to a 100% quality target to ensure no visible loss of fidelity."
+        - question: Is it safe to use online EXIF tools?
+          answer: 'Most online EXIF tools require you to upload your image to their server. If the photo contains sensitive GPS data, you are actively exposing your location to a third party. Our tool is different: it runs entirely within your browser''s memory, ensuring absolute privacy.'
+        - question: Why do photos have EXIF data?
+          answer: Cameras and smartphones embed EXIF (Exchangeable Image File Format) data to help organize photos. It includes the date/time, camera settings (aperture, ISO), and often the exact GPS coordinates where the photo was taken so your phone can map them.
+        - question: Does stripping EXIF data reduce image quality?
+          answer: Stripping EXIF data simply removes the text-based metadata headers from the file. However, because our tool repaints the image using an HTML5 Canvas to ensure a complete wipe, the image is re-encoded. We default to a 100% quality target to ensure no visible loss of fidelity.
       technical_specs:
-        - label: "Engine"
-          value: "Client-Side EXIFR"
-        - label: "Sanitization"
-          value: "Canvas Re-encoding"
-        - label: "Privacy"
-          value: "Zero-Knowledge"
+        - label: Engine
+          value: Client-Side EXIFR
+        - label: Sanitization
+          value: Canvas Re-encoding
+        - label: Privacy
+          value: Zero-Knowledge
     seo:
-      title: "Remove EXIF Data Online | Secure Metadata Stripper"
-      description: "View and strip EXIF data (GPS, Camera Model) from your photos securely offline. 100% private, client-side processing."
-      keywords: ["exiftool online", "strip image metadata", "remove exif data", "photo privacy"]
-      tldr: "Securely view and remove hidden GPS and camera data from your photos."
-      entity_definition: "A digital privacy utility that leverages client-side processing to safely parse and obliterate EXIF metadata from image files without requiring server-side transmission."
+      title: Remove EXIF Data Online | Secure Metadata Stripper
+      description: View and strip EXIF data (GPS, Camera Model) from your photos securely offline. 100% private, client-side processing.
+      keywords:
+        - exiftool online
+        - strip image metadata
+        - remove exif data
+        - photo privacy
+      tldr: Securely view and remove hidden GPS and camera data from your photos.
+      entity_definition: A digital privacy utility that leverages client-side processing to safely parse and obliterate EXIF metadata from image files without requiring server-side transmission.
     faqs:
-      - question: "Can anyone see the location of my photos?"
-        answer: "Yes, if your camera or smartphone has Location Services enabled, anyone who downloads the original photo can extract the exact GPS coordinates using an EXIF viewer."
-      - question: "How do I remove metadata from a photo?"
-        answer: "Simply upload your photo to this tool and click 'Strip Metadata & Download'. We will generate a sanitized version of the image stripped of all identifying EXIF information."
-      - question: "Are my photos uploaded to a server?"
-        answer: "No. This is a Zero-Knowledge tool. The EXIF extraction and metadata stripping happen entirely within your computer's browser."
-
+      - question: Can anyone see the location of my photos?
+        answer: Yes, if your camera or smartphone has Location Services enabled, anyone who downloads the original photo can extract the exact GPS coordinates using an EXIF viewer.
+      - question: How do I remove metadata from a photo?
+        answer: Simply upload your photo to this tool and click 'Strip Metadata & Download'. We will generate a sanitized version of the image stripped of all identifying EXIF information.
+      - question: Are my photos uploaded to a server?
+        answer: No. This is a Zero-Knowledge tool. The EXIF extraction and metadata stripping happen entirely within your computer's browser.
