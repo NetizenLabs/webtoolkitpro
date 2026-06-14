@@ -169,8 +169,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           crossOrigin="anonymous" 
           strategy="lazyOnload"
         />
-        {/* KaTeX Stylesheet for math rendering */}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+        {/* KaTeX Stylesheet moved to blog/[slug]/page.tsx to prevent global render blocking */}
         {/* DNS prefetch for non-critical third parties (not font origins — preconnect covers those) */}
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

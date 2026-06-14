@@ -144,6 +144,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" precedence="default" />
       <article className="dynamic-padding max-w-5xl mx-auto min-h-screen">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-12 pt-12">
