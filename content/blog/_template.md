@@ -5,7 +5,7 @@ description: "[Meta description: 140-160 characters. Include primary keyword. De
 date: '[YYYY-MM-DD]'
 category: "[Engineering | SEO Tools | Developer Tools | Security]"
 tags: ["Tag1", "Tag2", "Tag3"]
-keywords: ["primary keyword phrase", "secondary keyword phrase", "long-tail keyword 1", "long-tail keyword 2"]
+keywords: ["primary keyword phrase", "secondary keyword phrase", "long-tail keyword 1", "long-tail keyword 2", 'secure offline [post title: primary keyword + value proposition]', 'client-side [post title: primary keyword + value proposition]']
 readTime: '[X min read]'
 tldr: "[2-3 sentence summary of the post's core finding or argument. Write for the developer who already knows the basics and wants the actionable insight immediately.]"
 author: "Abu Sufyan"

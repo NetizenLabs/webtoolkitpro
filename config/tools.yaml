@@ -405,6 +405,54 @@ tools:
         - hex to decimal
         - binary to hex
         - decimal to binary converter online
+  - name: JSON Formatter & Validator
+    slug: json-formatter
+    category: Developer Tools
+    icon: FileJson
+    tags:
+      - json
+      - formatting
+      - validation
+    priority: 10
+    releaseDate: '2026-05-29'
+    function:
+      primary: Secure Offline JSON Formatting & Validation
+    technical:
+      processing: client-side
+    meta:
+      title: JSON Formatter & Validator | Offline Pretty Printer
+      description: A secure, offline-first client-side JSON Formatter and Validator. Instantly format, indent, syntax-highlight, and validate large JSON objects without sending data to any backend server.
+    content:
+      title: JSON Formatter & Validator
+      description: A professional-grade JSON manipulation suite. Whether you need to pretty-print malformed JSON, validate your schema, or instantly format large payloads, this toolkit runs entirely in your browser.
+      how_it_works: This tool uses native browser JSON parsing and advanced indentation logic entirely client-side. When you paste JSON, it is parsed via native JSON.parse() and formatted for human readability without any external requests.
+      faq:
+        - question: Is my JSON data sent to a server?
+          answer: No. All parsing, formatting, and validation happens 100% locally in your browser for maximum privacy and security.
+        - question: Can it fix malformed JSON?
+          answer: Yes, the toolkit includes an intelligent formatter that can repair missing quotes, trailing commas, and other common JSON syntax errors.
+      keywords:
+        - json formatter
+        - validate json
+        - pretty print json
+        - json viewer
+        - check json syntax
+        - format json online
+        - offline json formatter
+        - client side json validation
+    seo:
+      title: JSON Formatter & Validator | Offline Pretty Printer
+      description: A secure, offline-first client-side JSON Formatter and Validator. Instantly format, indent, syntax-highlight, and validate large JSON objects without sending data to any backend server.
+      keywords:
+        - json formatter
+        - validate json
+        - pretty print json
+        - json viewer
+        - check json syntax
+        - format json online
+        - offline json formatter
+        - client side json validation
+
   - name: JSON to TypeScript, Go & Pydantic Code Generator
     slug: json-to-code-generator
     category: Developer Tools

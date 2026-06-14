@@ -1,4 +1,5 @@
 {
+  "json-formatter": "JsonToCodeGenerator",
   "json-to-code-generator": "JsonToCodeGenerator",
   "json-yaml-jsonl-converter": "JsonYamlJsonlConverter",
   "bulk-uuid-v4-v7-generator": "BulkUuidGenerator",

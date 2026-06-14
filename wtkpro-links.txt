@@ -156,6 +156,7 @@ https://wtkpro.site/tools/js-evaluator/
 https://wtkpro.site/tools/js-execution-audit/
 https://wtkpro.site/tools/js-minifier/
 https://wtkpro.site/tools/js-obfuscator/
+https://wtkpro.site/tools/json-formatter/
 https://wtkpro.site/tools/json-schema-gen/
 https://wtkpro.site/tools/json-to-code-generator/
 https://wtkpro.site/tools/json-yaml-jsonl-converter/
