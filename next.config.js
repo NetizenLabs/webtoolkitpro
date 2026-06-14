@@ -98,6 +98,8 @@ const nextConfig = {
       { source: '/tools/data-converter', destination: '/tools/csv-json-xml-converter', permanent: true },
       { source: '/tools/csv-to-xml', destination: '/tools/csv-json-xml-converter', permanent: true },
       { source: '/tools/json-formatter', destination: '/tools/json-to-code-generator', permanent: true },
+      { source: '/tools/json-formatter-validator', destination: '/tools/json-to-code-generator', permanent: true },
+      { source: '/tools/json-formatter-validator/', destination: '/tools/json-to-code-generator/', permanent: true },
       { source: '/tools/json-formatter-pro', destination: '/tools/json-to-code-generator', permanent: true },
       { source: '/tools/json-to-ts', destination: '/tools/json-to-code-generator', permanent: true },
       { source: '/tools/json-to-go', destination: '/tools/json-to-code-generator', permanent: true },
