@@ -2,7 +2,15 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  // Intercept requests asking for Markdown (Agent/Crawler Negotiation)
+  // 1. URL parameter cleanup (SEO Canonicalization)
+  // 301 Redirect to strip referral parameters and consolidate link equity
+  if (request.nextUrl.searchParams.has('ref')) {
+    const cleanUrl = request.nextUrl.clone()
+    cleanUrl.searchParams.delete('ref')
+    return NextResponse.redirect(cleanUrl, 301)
+  }
+
+  // 2. Intercept requests asking for Markdown (Agent/Crawler Negotiation)
   const acceptHeader = request.headers.get('accept') || ''
   
   if (acceptHeader.includes('text/markdown')) {
