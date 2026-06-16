@@ -50,7 +50,7 @@ I throttled my Chrome network to Fast 3G and loaded a product page. Here is exac
 
 The layout shift wasn't just an SEO metric failure; it was physically preventing users from checking out. Google tracks this exact user experience secretly via Chrome. They collect Field Data (CrUX - Chrome User Experience Report) from millions of real devices on real 3G networks. Google uses this Field Data—not the perfect Lab Data you see in your local Lighthouse tests—to calculate your SEO rankings. 
 
-If your JavaScript bundle is 3MB, the V8 engine has to halt everything to parse it. If the user clicks a button during this phase, the browser simply cannot respond, destroying your Interaction to Next Paint (INP) score. Performance optimization is not about making servers faster; it is about respecting human interface mechanics and browser thread limitations.
+If your JavaScript bundle is 3MB, the V8 engine has to halt everything to parse it. If the user clicks a button during this phase, the browser simply cannot respond, destroying your Interaction to Next Paint (INP) score. Performance optimization is not about making servers faster; it is about respecting human interface mechanics and browser thread limitations. (For example, inefficient loops or badly written regexes can block the thread—read our [JavaScript Regex Multiline Guide](/blog/javascript-regex-multiline-match-guide/) to prevent this).
 
 ---
 

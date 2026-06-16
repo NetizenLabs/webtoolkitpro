@@ -248,7 +248,7 @@ STRUCTURED DATA
       "name": "Why does my regex randomly fail on the second attempt?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If you use the Global (g) or Sticky (y) flags, JavaScript caches the state of the regular expression via the .lastIndex property. If you run the exact same regex .test() multiple times without resetting .lastIndex = 0, it will start scanning from the middle of the string and fail."
+        "text": "If you use the Global (g) or Sticky (y) flags, JavaScript caches the state of the regular expression via the .lastIndex property. If you run the exact same regex .test() multiple times without resetting .lastIndex = 0, it will start scanning from the middle of the string and fail. For issues spanning line breaks, read our [multiline match guide](/blog/javascript-regex-multiline-match-guide/)."
       }
     }
   ]
