@@ -124,7 +124,7 @@ export default function AuthorPage() {
                 {[
                   { name: 'TradeConvert', desc: 'Trade Engineering Unit Lab', href: 'https://tradeconvert.pro' },
                   { name: 'Severance Calc', desc: 'Global Labor Law Engine', href: 'https://www.severancecalculator.xyz/' },
-                  { name: 'DEVHUB INDEX', desc: 'Enterprise Authority Hub', href: 'https://devhubindex.vercel.app/' },
+
                   { name: 'Personal Portfolio', desc: 'Engineering Showcase', href: 'https://abusufyan.xyz' },
                 ].map((site) => (
                   <a key={site.href} href={site.href} target="_blank" rel="noopener noreferrer" className="group block">

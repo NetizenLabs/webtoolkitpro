@@ -11,8 +11,8 @@ import { CATEGORY_MAP, CATEGORY_PILLARS } from '@/lib/categories'
 export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
-  title: '130+ Free Privacy-First Developer Tools | WebToolkit Pro',
-  description: 'Access Web Toolkit Pro: 130+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and technical SEO.',
+  title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
+  description: 'Access Web Toolkit Pro: 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and technical SEO.',
   keywords: ['wtkpro', 'WebToolkit', 'WebToolkit Pro', 'web toolkit', 'web toolkits', 'developer tools', 'json formatter', 'client-side tools'],
   alternates: {
     canonical: 'https://wtkpro.site/',
@@ -95,7 +95,7 @@ export default function Home() {
           </h1>
 
           <p className="text-[var(--font-size-lg)] text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            130+ instant-execution utilities that never send your data to a server. No tracking, no sign-ups, just pure client-side performance.
+            150+ instant-execution utilities that never send your data to a server. No tracking, no sign-ups, just pure client-side performance.
           </p>
 
           <div className="mb-12">
@@ -177,7 +177,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/tools/" prefetch={false} className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-lg hover:gap-3 transition-all uppercase tracking-widest text-sm">
-              View All 130+ Tools <ArrowRight className="w-4 h-4" />
+              View All 150+ Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function Home() {
 
               <div className="pt-6 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-slate-900">
                 <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">130+</div>
+                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">150+</div>
                   <div className="text-sm uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
                 </div>
                 <div>
@@ -280,7 +280,7 @@ export default function Home() {
               "name": "Is WebToolkit Pro entirely free?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, all 130+ developer tools in our directory are 100% free. There are no sign-ups, no paywalls, and no hidden subscriptions."
+                "text": "Yes, all 150+ developer tools in our directory are 100% free. There are no sign-ups, no paywalls, and no hidden subscriptions."
               }
             }]
           })

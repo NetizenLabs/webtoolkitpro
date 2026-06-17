@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const NEW_COUNT = "130+";
+const NEW_COUNT = "150+";
 const OLD_COUNTS = [/150\+/g, /190\+/g];
 
 const filesToUpdate = [

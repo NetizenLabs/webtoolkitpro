@@ -60,11 +60,64 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Netizen Labs",
+    "url": "https://netizenlabs.online",
+    "logo": "https://netizenlabs.online/logo.png",
+    "description": "Enterprise Next.js architecture agency specializing in technical SEO, edge-deployed web applications, and LLM search readiness.",
+    "sameAs": [
+      "https://twitter.com/WebToolkitPro"
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an enterprise Next.js architecture agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An enterprise Next.js architecture agency focuses on building highly scalable, edge-deployed web applications using the Next.js framework. We ensure perfect Core Web Vitals, maximum SEO visibility, and optimal server-side rendering for large-scale SaaS businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you achieve perfect Core Web Vitals scores?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We achieve 100/100 Lighthouse performance scores by leveraging edge caching on Cloudflare and Vercel, aggressive image optimization, removing render-blocking JavaScript, and structuring Semantic HTML5 directly into our React component trees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is LLM search readiness consulting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LLM search readiness involves structuring a website's data, heading hierarchy, and entity relationships so that AI search engines (like ChatGPT, Perplexity, and Google SGE) can easily parse, understand, and recommend your services over competitors."
+        }
+      }
+    ]
+  };
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">

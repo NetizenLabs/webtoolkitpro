@@ -1,23 +1,6 @@
 import Link from 'next/link';
 
 export default function ToolsPage() {
-  const upcomingTools = [
-    {
-      title: "Core Web Vitals Auditor",
-      description: "Analyze any URL for Lighthouse performance metrics natively at the edge.",
-      status: "In Development",
-    },
-    {
-      title: "Tech Stack Analyzer",
-      description: "Instantly detect the exact frontend frameworks, CDNs, and libraries used by competitors.",
-      status: "In Development",
-    },
-    {
-      title: "SEO Architecture Scraper",
-      description: "Extract heading structures, schema markup, and meta tag integrity for high-intent SEO.",
-      status: "Planning",
-    }
-  ];
 
   return (
     <main className="min-h-screen pt-32 pb-24 bg-[var(--background)] text-[var(--foreground)] flex flex-col items-center">
@@ -35,20 +18,44 @@ export default function ToolsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 hero-enter delay-100">
-          {upcomingTools.map((tool, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 flex flex-col justify-between group hover:border-[var(--accent)]/50 transition-colors">
-              <div>
-                <h3 className="text-2xl font-bold mb-3 tracking-tight">{tool.title}</h3>
-                <p className="opacity-70 leading-relaxed mb-6">{tool.description}</p>
-              </div>
-              <div className="flex items-center justify-between mt-auto pt-6 border-t border-[var(--foreground)]/10">
-                <span className="text-xs font-bold uppercase tracking-widest opacity-50">{tool.status}</span>
-                <span className="text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </span>
-              </div>
+          <Link href="/tools/web-vitals" className="p-8 rounded-2xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 flex flex-col justify-between group hover:border-[var(--accent)]/50 transition-colors">
+            <div>
+              <h3 className="text-2xl font-bold mb-3 tracking-tight">Core Web Vitals Auditor</h3>
+              <p className="opacity-70 leading-relaxed mb-6">Analyze any URL for Lighthouse performance metrics natively at the edge.</p>
             </div>
-          ))}
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-[var(--foreground)]/10">
+              <span className="text-xs font-bold uppercase tracking-widest opacity-50 text-[var(--accent)] group-hover:opacity-100 transition-opacity">Launch Tool</span>
+              <span className="text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </Link>
+
+          <Link href="/tools/tech-stack" className="p-8 rounded-2xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 flex flex-col justify-between group hover:border-[var(--accent)]/50 transition-colors">
+            <div>
+              <h3 className="text-2xl font-bold mb-3 tracking-tight">Tech Stack Analyzer</h3>
+              <p className="opacity-70 leading-relaxed mb-6">Instantly detect the exact frontend frameworks, CDNs, and libraries used by competitors.</p>
+            </div>
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-[var(--foreground)]/10">
+              <span className="text-xs font-bold uppercase tracking-widest opacity-50 text-[var(--accent)] group-hover:opacity-100 transition-opacity">Launch Tool</span>
+              <span className="text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </Link>
+
+          <Link href="/tools/seo-scraper" className="p-8 rounded-2xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 flex flex-col justify-between group hover:border-[var(--accent)]/50 transition-colors">
+            <div>
+              <h3 className="text-2xl font-bold mb-3 tracking-tight">SEO Architecture Scraper</h3>
+              <p className="opacity-70 leading-relaxed mb-6">Extract heading structures, schema markup, and meta tag integrity for high-intent SEO.</p>
+            </div>
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-[var(--foreground)]/10">
+              <span className="text-xs font-bold uppercase tracking-widest opacity-50 text-[var(--accent)] group-hover:opacity-100 transition-opacity">Launch Tool</span>
+              <span className="text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </Link>
           
           <div className="p-8 rounded-2xl bg-[var(--background)] border border-dashed border-[var(--foreground)]/20 flex flex-col items-center justify-center text-center opacity-70 hover:opacity-100 transition-opacity">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>

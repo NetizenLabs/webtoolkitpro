@@ -55,7 +55,7 @@ const INTERNAL_LINKS = [
   { keyword: 'TTFB', url: '/blog/3ms-ttfb-performance-study/' },
   
   // External Authored
-  { keyword: 'DEVHUB INDEX', url: 'https://devhubindex.vercel.app' },
+
   { keyword: 'Abu Sufyan', url: 'https://abusufyan.xyz' },
 ]
 

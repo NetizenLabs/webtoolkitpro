@@ -1,6 +1,6 @@
 # WebToolkit Pro
 
-> 130+ Free Privacy-First Developer Tools
+> 150+ Free Privacy-First Developer Tools
 
 WebToolkit Pro is a high-performance suite of over 150 developer utilities designed for enterprise-grade security. 
 All operations—such as JSON formatting, JWT decoding, Hash generation, and Data conversion—are executed 100% locally in the browser using Web Workers and WebAssembly. No sensitive data is ever transmitted to a server.

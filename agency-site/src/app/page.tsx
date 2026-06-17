@@ -8,7 +8,7 @@ import CTA from '@/components/CTA';
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[var(--background)] text-[var(--foreground)] min-h-screen flex flex-col items-center justify-center pt-32 pb-16 transition-colors duration-500">
+      <section className="relative overflow-hidden bg-[var(--background)] text-[var(--foreground)] min-h-screen flex flex-col items-center justify-center pt-20 pb-12 transition-colors duration-500">
         
         {/* Bespoke Background Element instead of generic mesh */}
         <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none opacity-20 dark:opacity-10">
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
 
           {/* Trust/Authority Bridge */}
-          <div className="mt-24 pt-8 border-t border-[var(--foreground)]/10 w-full max-w-3xl flex flex-col items-center hero-enter delay-300">
+          <div className="mt-12 pt-6 border-t border-[var(--foreground)]/10 w-full max-w-3xl flex flex-col items-center hero-enter delay-300">
             <p className="text-sm opacity-50 uppercase tracking-[0.2em] mb-6 font-mono font-semibold">
               Architected for scale. Engineered for speed.
             </p>
@@ -75,6 +75,16 @@ export default function Home() {
       <Services />
       <Philosophy />
       <Portfolio />
+      
+      {/* Moved long-tail keyword copy down here for SEO/LLM optimization without ruining hero aesthetic */}
+      <section className="py-16 bg-[var(--background)]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-sm md:text-base opacity-50 leading-relaxed font-mono">
+            As an enterprise Next.js architecture agency, we build bespoke SaaS platforms, edge-deployed web applications, and lightning-fast digital experiences. Through rigorous technical SEO optimization, we guarantee perfect performance scores and uncompromised LLM search readiness.
+          </p>
+        </div>
+      </section>
+
       <CTA />
     </>
   );

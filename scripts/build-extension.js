@@ -21,7 +21,7 @@ async function buildExtension() {
     manifest_version: 3,
     name: 'WebToolkit Pro',
     version: '1.0.0',
-    description: '130+ Free Premium Online Developer Tools',
+    description: '150+ Free Premium Online Developer Tools',
     action: {
       // Assuming you want the homepage or a specific popup route
       default_popup: 'index.html',

@@ -45,8 +45,8 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
-  title: '130+ Free Privacy-First Developer Tools | WebToolkit Pro',
-  description: 'Access 130+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
+  title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
+  description: 'Access 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
   publisher: 'WebToolkit Pro',
@@ -76,8 +76,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '130+ Free Privacy-First Developer Tools | WebToolkit Pro',
-    description: 'Access 130+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
+    title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
+    description: 'Access 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
     url: 'https://wtkpro.site/',
     siteName: 'WebToolkit Pro',
     images: [
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
         url: 'https://wtkpro.site/og-image.jpg?v=4',
         width: 1200,
         height: 630,
-        alt: 'WebToolkit Pro - 130+ Professional Developer Tools',
+        alt: 'WebToolkit Pro - 150+ Professional Developer Tools',
       },
     ],
     locale: 'en_US',
@@ -93,8 +93,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '130+ Free Privacy-First Developer Tools | WebToolkit Pro',
-    description: 'Access 130+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
+    title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
+    description: 'Access 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
     images: ['https://wtkpro.site/og-image.jpg?v=4'],
     creator: '@WebToolKitPro',
   },
