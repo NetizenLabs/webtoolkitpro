@@ -20,7 +20,7 @@ export default function Footer() {
               WebToolkit Pro empowers engineers with enterprise-grade tools
               that never transmit sensitive data.
             </p>
-            <div className="mb-6">
+            <div className="flex flex-col gap-4 mb-6">
               <a href="https://huntscreens.com/en/products/webtoolkitpro" target="_blank" rel="noopener noreferrer" title="Featured on HuntScreens" aria-label="Featured on HuntScreens" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
                 <svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="filter drop-shadow-[0_4px_12px_rgba(0,212,180,0.08)] max-w-full h-auto">
                   <rect width="238" height="58" x="1" y="1" rx="10" fill="#0F172A" stroke="url(#badge-border-gradient)" strokeWidth="1.5"/>
@@ -57,6 +57,14 @@ export default function Footer() {
                     </linearGradient>
                   </defs>
                 </svg>
+              </a>
+              <a href="https://lift-off.sh/p/webtoolkit-pro" target="_blank" rel="noopener noreferrer" title="LiftOff launch badge" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
+                <img
+                  src="https://lift-off.sh/images/badges/badgeLaunchedDarkBAR.webp"
+                  alt="LiftOff launch badge"
+                  width={200}
+                  style={{ height: 'auto' }}
+                />
               </a>
             </div>
           </div>

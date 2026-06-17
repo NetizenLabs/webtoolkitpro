@@ -5,19 +5,9 @@ export default function Footer() {
     <footer className="border-t border-[var(--foreground)]/10 py-12 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         
-        <div className="flex flex-col items-center md:items-start gap-4">
-          <div>
-            <div className="font-bold text-lg tracking-tight">Netizen Labs</div>
-            <p className="text-sm opacity-50">Engineered for performance.</p>
-          </div>
-          <a href="https://lift-off.sh/p/webtoolkit-pro" target="_blank" rel="noopener noreferrer" title="LiftOff launch badge" className="inline-block hover:scale-[1.02] active:scale-98 transition-all">
-            <img
-              src="https://lift-off.sh/images/badges/badgeLaunchedDarkBAR.webp"
-              alt="LiftOff launch badge"
-              width={160}
-              style={{ height: 'auto' }}
-            />
-          </a>
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <div className="font-bold text-lg tracking-tight">Netizen Labs</div>
+          <p className="text-sm opacity-50">Engineered for performance.</p>
         </div>
 
         <div className="flex items-center gap-6 opacity-70">
