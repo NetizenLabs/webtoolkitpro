@@ -11,7 +11,7 @@ export default function Portfolio() {
             <p className="text-lg opacity-80">Explore our flagship zero-server developer toolkit. It's the exact same edge-optimized architecture we build for our clients.</p>
           </div>
           <Link 
-            href="https://netizenlabs.online/tools" 
+            href="https://wtkpro.site" 
             className="px-6 py-3 rounded-full border border-[var(--background)]/20 font-bold hover:bg-[var(--background)]/10 transition-colors whitespace-nowrap"
           >
             View WebToolkit Pro
@@ -32,7 +32,7 @@ export default function Portfolio() {
                 WebToolkit Pro
               </h3>
               <p className="text-[var(--foreground)]/60 text-lg">
-                130+ instant-execution utilities. No tracking, no latency.
+                150+ instant-execution utilities. No tracking, no latency.
               </p>
               
               <div className="mt-12 flex justify-center gap-4">

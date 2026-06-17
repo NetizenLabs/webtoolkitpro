@@ -23,9 +23,14 @@ export default function Footer() {
         </div>
 
       </div>
-      <div className="max-w-6xl mx-auto px-6 mt-8 pt-8 border-t border-[var(--foreground)]/5 flex flex-col md:flex-row items-center justify-between text-xs opacity-40">
+      <div className="max-w-6xl mx-auto px-6 mt-8 pt-8 border-t border-[var(--foreground)]/5 flex flex-col md:flex-row items-center justify-between text-xs opacity-40 gap-4">
         <p>© {new Date().getFullYear()} Netizen Labs. All rights reserved.</p>
-        <div className="flex gap-4 mt-4 md:mt-0">
+        <div className="flex gap-4">
+          <Link href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] hover:underline font-bold transition-colors">
+            Lead Architect: Abu Sufyan
+          </Link>
+        </div>
+        <div className="flex gap-4">
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
           <Link href="/terms" className="hover:underline">Terms of Service</Link>
         </div>

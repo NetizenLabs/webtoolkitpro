@@ -3,6 +3,7 @@ import TechStack from '@/components/TechStack';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
 import Philosophy from '@/components/Philosophy';
+import Team from '@/components/Team';
 import CTA from '@/components/CTA';
 
 export default function Home() {
@@ -74,6 +75,7 @@ export default function Home() {
       <TechStack />
       <Services />
       <Philosophy />
+      <Team />
       <Portfolio />
       
       {/* Moved long-tail keyword copy down here for SEO/LLM optimization without ruining hero aesthetic */}
