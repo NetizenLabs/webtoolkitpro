@@ -173,13 +173,13 @@ export default function ApiEndpointVerifier() {
               {['GET', 'HEAD'].includes(method) ? (
                 <div className="p-8 text-center text-gray-400">
                   <AlertCircle className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                  <p>GET and HEAD requests usually don't have a body.</p>
+                  <p>GET and HEAD requests usually don&apos;t have a body.</p>
                 </div>
               ) : (
                 <textarea 
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
-                  placeholder="{\n  \"key\": \"value\"\n}"
+                  placeholder={`{\n  "key": "value"\n}`}
                   className="w-full h-48 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-md font-mono text-sm focus:outline-none focus:border-blue-500 resize-y"
                 />
               )}

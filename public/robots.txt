@@ -5,14 +5,12 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /cdn-cgi/
 Disallow: /private/
-Disallow: /*?
 
 User-agent: PerplexityBot
 Allow: /blog/
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*?
 
 User-agent: Perplexity-User
 Allow: /
@@ -22,14 +20,12 @@ Allow: /blog/
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*?
 
 User-agent: ClaudeBot
 Allow: /blog/
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*?
 
 Sitemap: https://wtkpro.site/sitemap.xml
 Host: https://wtkpro.site

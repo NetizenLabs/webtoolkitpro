@@ -32,18 +32,6 @@ export async function middleware(request: NextRequest) {
         }
       }
       
-      // For other pages, we provide a generic markdown fallback response
-      // (Since edge middleware cannot easily parse complex React HTML trees to Markdown natively)
-      const genericMd = `# WebToolkit Pro - ${request.nextUrl.pathname}\n\nWelcome to WebToolkit Pro. This page is currently being viewed by an AI agent requesting raw Markdown.\n\nPlease refer to our homepage for the full agent catalog.`
-      
-      return new NextResponse(genericMd, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/markdown; charset=utf-8',
-          'x-markdown-tokens': 'estimated-100'
-        }
-      })
-      
     } catch (e) {
       // Fail silently and fallback to standard HTML
       return NextResponse.next()
