@@ -35,6 +35,7 @@ https://wtkpro.site/blog/how-secure-is-my-password/
 https://wtkpro.site/blog/how-to-remove-exif-data-online/
 https://wtkpro.site/blog/how-to-use-devtools-network-tab/
 https://wtkpro.site/blog/htaccess-cheat-sheet-wordpress/
+https://wtkpro.site/blog/javascript-regex-multiline-match-guide/
 https://wtkpro.site/blog/json-formatter-vs-jq/
 https://wtkpro.site/blog/json-to-yaml-converter-offline/
 https://wtkpro.site/blog/jwt-token-expiry-error-nodejs/
@@ -71,6 +72,7 @@ https://wtkpro.site/tools/
 https://wtkpro.site/tools/adsense-calculator/
 https://wtkpro.site/tools/aes-encryption/
 https://wtkpro.site/tools/alt-text-auditor/
+https://wtkpro.site/tools/api-endpoint-verifier/
 https://wtkpro.site/tools/api-latency-calculator/
 https://wtkpro.site/tools/argon2-hasher/
 https://wtkpro.site/tools/ascii-art/
