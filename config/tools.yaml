@@ -10254,3 +10254,44 @@ tools:
         answer: Simply upload your photo to this tool and click 'Strip Metadata & Download'. We will generate a sanitized version of the image stripped of all identifying EXIF information.
       - question: Are my photos uploaded to a server?
         answer: No. This is a Zero-Knowledge tool. The EXIF extraction and metadata stripping happen entirely within your computer's browser.
+  - name: API Endpoint Verifier (Postman Clone)
+    slug: api-endpoint-verifier
+    category: Developer Tools
+    icon: Globe
+    tags:
+      - api
+      - rest
+      - http
+      - postman
+      - verifier
+    priority: 10
+    releaseDate: '2026-06-19'
+    function:
+      primary: Construct and test REST API endpoints offline
+    technical:
+      processing: server-side
+    meta:
+      title: API Endpoint Verifier & REST Client
+      description: A secure, browser-based REST API client to construct HTTP requests, test endpoints, and inspect responses instantly.
+    content:
+      title: API Endpoint Verifier
+      description: Testing APIs and debugging HTTP responses shouldn't require downloading heavy desktop applications like Postman or Insomnia. This lightweight, browser-based API Endpoint Verifier provides a complete testing suite directly in your browser. Construct complex GET, POST, PUT, and DELETE requests, append custom HTTP headers, inject JSON payloads, and instantly inspect the server's response. Featuring a secure serverless proxy, it easily bypasses browser CORS restrictions allowing you to ping any public API endpoint.
+      how_it_works: The tool uses a secure serverless Edge proxy to execute your HTTP request. This bypasses the browser's restrictive CORS policies, returning the raw headers, status codes, and timing metrics directly to your screen.
+      keywords:
+        - api tester online
+        - postman alternative
+        - rest client browser
+        - test api endpoint
+      faq:
+        - question: How does this bypass CORS errors?
+          answer: Browsers block cross-origin requests by default. We route your request through our secure Next.js backend proxy, which executes the fetch natively and streams the exact result back to your browser.
+        - question: Is my request data logged?
+          answer: No. Our proxy executes the request in-memory and immediately discards the payload. We do not store your headers, API keys, or JSON bodies.
+    seo:
+      title: API Endpoint Verifier & REST Client
+      description: A secure, browser-based REST API client to construct HTTP requests, test endpoints, and inspect responses instantly.
+      keywords:
+        - api tester online
+        - postman alternative
+        - rest client browser
+        - test api endpoint

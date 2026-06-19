@@ -13,7 +13,6 @@ import RelatedToolsWidget from '@/components/tools/RelatedToolsWidget'
 import ProBannerCTA from '@/components/tools/ProBannerCTA'
 import { RELATED_TOOLS_MAP } from '@/lib/related-tools-map'
 import ToolUsageTracker from '@/components/tools/ToolUsageTracker'
-import ToolRating from '@/components/tools/ToolRating'
 import AdSlot from '@/components/ads/AdSlot'
 import AIOContextButton from '@/components/tools/AIOContextButton'
 import { CATEGORY_MAP } from '@/lib/categories'
@@ -149,7 +148,6 @@ export default function ToolPage({ params }: ToolPageProps) {
                   <Link href={`/tools/hub/${categorySlug}`} className="badge-pill bg-[#0D1526] text-[#00D4B4] border border-[#1E2D47] mt-3 hover:border-[#00D4B4]/50 transition-all inline-flex">
                     {tool.category} <ArrowRight className="w-3 h-3 ml-1" strokeWidth={1.5} />
                   </Link>
-                  <ToolRating toolName={tool.name} slug={tool.slug} />
                 </div>
               </div>
               
@@ -204,10 +202,8 @@ export default function ToolPage({ params }: ToolPageProps) {
 
             <AdSlot />
 
-            {/* Detailed Info */}
             <ToolInfo 
               title={tool.name}
-              description={tool.content?.description || ''}
               howItWorks={tool.content?.how_it_works || ''}
               features={tool.content?.features || []}
               faqs={tool.content?.faq?.map(f => ({ q: f.question, a: f.answer })) || []}
@@ -222,9 +218,6 @@ export default function ToolPage({ params }: ToolPageProps) {
               </div>
               <p className="mb-3">
                 This utility is engineered and maintained under strict editorial and technical standards. All source calculations are audited against official formatting standards and RFC specifications to guarantee mathematical and logic accuracy.
-              </p>
-              <p className="mb-4">
-                <strong>Content Creation & Automation Transparency:</strong> To ensure our dynamic developer specifications and reference datasets remain fully comprehensive and updated against newly released RFC updates, this page compiles technical documentation using advanced programmatic retrieval tools. Every output data block, feature list, and system specification is subsequently audited, fact-checked, and verified by our systems engineers for absolute correctness and accuracy.
               </p>
               <p className="mb-4">
                 <strong>Security Guarantee:</strong> To guarantee absolute user privacy, this tool executes 100% client-side inside your web browser. None of your input strings, payloads, keys, or files are ever transmitted to a server or stored externally.

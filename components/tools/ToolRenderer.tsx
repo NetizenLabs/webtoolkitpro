@@ -53,9 +53,8 @@ export default function ToolRenderer({ slug }: ToolRendererProps) {
 
   if (!ToolComponent) {
     return (
-      <div className="p-12 flex flex-col items-center justify-center gap-4 bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
+      <div className="min-h-[400px] flex flex-col items-center justify-center gap-4 bg-gray-50 dark:bg-[#0B1120] rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-gray-400 dark:text-[#8A9BBE]">
         <Loader2 className="w-8 h-8 animate-spin text-violet-500" />
-        <span className="font-semibold tracking-wide uppercase text-xs">Loading {slug}...</span>
       </div>
     );
   }

@@ -6,26 +6,21 @@ import SectionHeading from '@/components/ui/SectionHeading'
 
 interface ToolInfoProps {
   title: string
-  description: string
   howItWorks: string
   features: string[]
   faqs: { q: string; a: string }[]
   technicalSpecs?: { label: string; value: string }[]
 }
 
-export default function ToolInfo({ title, description, features, faqs, howItWorks, technicalSpecs }: ToolInfoProps) {
+export default function ToolInfo({ title, features, faqs, howItWorks, technicalSpecs }: ToolInfoProps) {
   return (
     <div className="mt-24 space-y-24">
       {/* Description & Features */}
       <section className={`grid grid-cols-1 ${features && features.length > 0 ? 'lg:grid-cols-2' : ''} gap-16`}>
         <div>
-          <SectionHeading number="01" title={`Why Use our ${title}?`} className="mb-8" />
-          <p className="text-lg text-gray-600 dark:text-[#8A9BBE] leading-relaxed mb-8">
-            {description}
-          </p>
+          <SectionHeading number="01" title={`How ${title} Works`} className="mb-8" />
           <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[12px] relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 dark:bg-[#00D4B4]/5 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
-            <h3 className="font-mono text-xs font-bold text-blue-600 dark:text-[#00D4B4] mb-4 uppercase tracking-[0.15em]">How it works</h3>
             <p className="text-sm text-gray-700 dark:text-[#8A9BBE] leading-relaxed relative z-10">
               {howItWorks}
             </p>
