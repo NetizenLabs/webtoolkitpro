@@ -306,7 +306,8 @@ const nextConfig = {
       { source: '/blog/generate-jwt-token-online-free', destination: '/blog/what-is-jwt-complete-guide/', permanent: true },
       { source: '/blog/generate-jwt-token-online-free/', destination: '/blog/what-is-jwt-complete-guide/', permanent: true },
       // SEO Audit 2026: Merged Thin Content Redirects
-
+      { source: '/tools/uk-dashboard', destination: '/tools/hub/', permanent: true },
+      { source: '/tools/uk-dashboard/', destination: '/tools/hub/', permanent: true },
 
       {
         source: '/:path*',
