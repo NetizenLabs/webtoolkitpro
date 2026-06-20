@@ -110,6 +110,7 @@ export default function Footer() {
               <li><a href="/pricing/" className="hover:text-[#00D4B4] transition-colors font-bold text-[#0094FF]">Pricing Tiers</a></li>
               <li><a href="/submit-tool/" className="hover:text-[#00D4B4] transition-colors">Partner Program</a></li>
               <li><a href="/contact/" className="hover:text-[#00D4B4] transition-colors">Direct Support</a></li>
+              <li><a href="/pipeline/" className="hover:text-[#00D4B4] transition-colors">Visual Pipeline</a></li>
               <li><a href="/brand/" className="hover:text-[#00D4B4] transition-colors">Brand Assets</a></li>
             </ul>
           </div>
