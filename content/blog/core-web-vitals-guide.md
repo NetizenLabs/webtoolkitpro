@@ -120,7 +120,7 @@ Yes. While Google initially introduced CWV exclusively as a mobile ranking signa
 
 **Related tools:**
 - [XML Sitemap Generator](https://wtkpro.site/tools/sitemap-generator/) — Ensure your fast, optimized pages are fully indexed by search engines.
-- [JSON-LD Schema Generator](https://wtkpro.site/tools/json-ld-generator/) — Add structured data to boost the visibility of your high-performance articles.
+- [JSON-LD Schema Generator](https://wtkpro.site/tools/schema-markup-generator/) — Add structured data to boost the visibility of your high-performance articles.
 
 ---
 

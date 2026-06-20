@@ -127,7 +127,7 @@ Standard validators only know about built-in resources (Deployments, Pods, Servi
 
 **Related tools:**
 - [JSON to YAML Converter](https://wtkpro.site/tools/json-yaml-jsonl-converter/) — Instantly translate JSON payloads into cleanly formatted YAML.
-- [Base64 Encode/Decode](https://wtkpro.site/tools/base64-encode-decode/) — Safely encode your API keys before placing them inside Kubernetes Secret manifests.
+- [Base64 Encode/Decode](https://wtkpro.site/tools/base64-encoder-decoder/) — Safely encode your API keys before placing them inside Kubernetes Secret manifests.
 
 ---
 

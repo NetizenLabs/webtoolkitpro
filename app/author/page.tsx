@@ -261,7 +261,7 @@ export default function AuthorPage() {
             {
               title: 'The WebToolkit Pro Trust Network',
               desc: 'Architectural overview of the decentralized authority hub and its impact on technical E-E-A-T.',
-              href: '/blog/webtoolkit-pro-trust-network/'
+              href: '/about/'
             },
             {
               title: 'LLM Latency & UX Impact',

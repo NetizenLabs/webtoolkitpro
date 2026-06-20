@@ -31,7 +31,7 @@ robots: "index, follow"
 
 Meta tags are hidden HTML `<head>` elements that dictate how search engine crawlers and social media bots parse your web pages. To optimize a page in 2026, you must include a Title (under 60 characters), a Meta Description (under 155 characters), absolute Canonical URL links to prevent duplicate content, and Open Graph (`og:`) properties to ensure your links generate rich image cards when shared on platforms like LinkedIn and Discord.
 
-👉 **[Try the Meta Tags Generator free →](/tools/meta-tags-generator/)** — instantly generate syntax-perfect SEO and Open Graph headers with real-time character limit validation.
+👉 **[Try the Meta Tags Generator free →](/tools/meta-tag-generator/)** — instantly generate syntax-perfect SEO and Open Graph headers with real-time character limit validation.
 
 ---
 
@@ -93,7 +93,7 @@ If you want your site indexed by Google but do not want OpenAI or Anthropic scra
 
 Typing out 15 different Open Graph and Twitter Card properties manually inevitably leads to typos and broken social previews. Use our dedicated utility to fill out a simple form, validate your character counts in real-time, and copy a perfect, production-ready block of HTML.
 
-[Open Meta Tags Generator — Free, No Signup →](/tools/meta-tags-generator/)
+[Open Meta Tags Generator — Free, No Signup →](/tools/meta-tag-generator/)
 
 ---
 
@@ -130,7 +130,7 @@ The `<meta name="robots" content="noarchive">` tag prevents Google from storing 
 ---
 
 **Related tools:**
-- [Meta Tags Generator](/tools/meta-tags-generator/) — Build perfect SEO, Open Graph, and Twitter tags visually.
+- [Meta Tags Generator](/tools/meta-tag-generator/) — Build perfect SEO, Open Graph, and Twitter tags visually.
 - [Schema Markup Generator](/tools/schema-markup-generator/) — Generate valid JSON-LD structured data for rich snippets.
 
 ---

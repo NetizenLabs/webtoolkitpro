@@ -182,7 +182,7 @@ Yes. Googlebot renders JavaScript upon crawling, meaning it will execute GTM con
 
 **Related tools:**
 - [Schema Markup Generator](/tools/schema-markup-generator/) — Build error-free JSON-LD instantly for FAQ, Article, Product, and more.
-- [Meta Tags Generator](/tools/meta-tags-generator/) — Generate optimized OpenGraph and Twitter cards in seconds.
+- [Meta Tags Generator](/tools/meta-tag-generator/) — Generate optimized OpenGraph and Twitter cards in seconds.
 
 ---
 

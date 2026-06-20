@@ -159,7 +159,7 @@ Redirect chains (e.g., A -> B -> C -> D) are terrible for performance. Each hop 
 
 **Related tools:**
 - [Redirect Checker](/tools/redirect-checker/) — Trace redirect chains and HTTP status codes securely.
-- [Nginx Config Generator](/tools/nginx-config-generator/) — Generate production-ready Nginx configurations with strict redirect rules.
+- [Nginx Config Generator](/tools/nginx-generator/) — Generate production-ready Nginx configurations with strict redirect rules.
 
 ---
 

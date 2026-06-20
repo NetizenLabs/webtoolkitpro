@@ -182,7 +182,7 @@ Access tokens should have a very short lifespan, typically between 10 to 15 minu
 
 **Related tools:**
 - [JWT Decoder Generator](/tools/jwt-decoder-generator/) — Securely inspect your JSON Web Tokens offline.
-- [Base64 Encoder/Decoder](/tools/base64-encode-decode/) — Quickly encode or decode standard Base64 payloads utilized in JWT headers.
+- [Base64 Encoder/Decoder](/tools/base64-encoder-decoder/) — Quickly encode or decode standard Base64 payloads utilized in JWT headers.
 
 ---
 

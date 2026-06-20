@@ -31,7 +31,7 @@ robots: "index, follow"
 
 "Web Tools 2.0" represents the paradigm shift in developer utilities from heavy, locally-installed desktop software and centralized cloud-processing websites, to lightweight, client-side applications running natively in the browser. Powered by WebAssembly (Wasm) and advanced JavaScript engines, modern developer tools process massive payloads—like formatting JSON or encoding Base64—instantly on your local machine with absolute zero-knowledge privacy, ensuring your proprietary data never touches a third-party server.
 
-👉 **[Try the Base64 Encode/Decode Tool free →](https://wtkpro.site/tools/base64-encode-decode/)** — Experience Web Tools 2.0 firsthand with zero-latency, offline text encoding.
+👉 **[Try the Base64 Encode/Decode Tool free →](https://wtkpro.site/tools/base64-encoder-decoder/)** — Experience Web Tools 2.0 firsthand with zero-latency, offline text encoding.
 
 ---
 

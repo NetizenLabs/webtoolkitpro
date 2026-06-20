@@ -130,7 +130,7 @@ Before deploying the code to your production server, always paste your HTML or r
 ---
 
 **Related tools:**
-- [JSON-LD Generator](https://wtkpro.site/tools/json-ld-generator/) — Build Article, Local Business, and Product schema instantly.
+- [JSON-LD Generator](https://wtkpro.site/tools/schema-markup-generator/) — Build Article, Local Business, and Product schema instantly.
 - [JSON Formatter](https://wtkpro.site/tools/json-formatter/) — Validate your manually written JSON-LD to ensure it is free of syntax errors.
 
 ---

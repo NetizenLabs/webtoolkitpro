@@ -123,7 +123,7 @@ Instead of manually clicking through the "Sources" tree, use the "Open File" sho
 ---
 
 **Related tools:**
-- [Base64 Encode/Decode](https://wtkpro.site/tools/base64-encode-decode/) — Instantly decode Base64 strings you find in the DevTools Network tab.
+- [Base64 Encode/Decode](https://wtkpro.site/tools/base64-encoder-decoder/) — Instantly decode Base64 strings you find in the DevTools Network tab.
 - [JWT Decoder](https://wtkpro.site/tools/jwt-decoder-generator/) — Paste your authorization headers to safely inspect JWT token payloads offline.
 
 ---

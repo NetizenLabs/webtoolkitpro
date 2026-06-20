@@ -48,10 +48,10 @@ const INTERNAL_LINKS = [
   { keyword: 'technical SEO', url: '/blog/ai-seo-optimization-2026/' },
   { keyword: 'structured data', url: '/blog/seo-meta-tags-complete-guide/' },
   { keyword: 'meta tags', url: '/blog/seo-meta-tags-complete-guide/' },
-  { keyword: 'Trust Network', url: '/blog/webtoolkit-pro-trust-network/' },
+  { keyword: 'Trust Network', url: '/about/' },
   { keyword: 'RFC 8259', url: '/blog/what-is-json-complete-guide/' },
-  { keyword: 'JSON-LD', url: '/blog/json-ld-schema-tutorial/' },
-  { keyword: 'Edge Runtime', url: '/blog/edge-computing-performance-2026/' },
+  { keyword: 'JSON-LD', url: '/tools/schema-markup-generator/' },
+  { keyword: 'Edge Runtime', url: '/blog/edge-computing-guide/' },
   { keyword: 'TTFB', url: '/blog/3ms-ttfb-performance-study/' },
   
   // External Authored

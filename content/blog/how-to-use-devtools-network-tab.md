@@ -116,8 +116,8 @@ A "Pending" status means the browser has dispatched the HTTP request to the serv
 ---
 
 **Related tools:**
-- [Base64 Encode/Decode](https://wtkpro.site/tools/base64-encode-decode/) — Decode authentication strings intercepted in the Network tab headers.
-- [URL Encoder/Decoder](https://wtkpro.site/tools/url-encoder-decoder/) — Safely encode query parameters before appending them to your API fetch requests.
+- [Base64 Encode/Decode](https://wtkpro.site/tools/base64-encoder-decoder/) — Decode authentication strings intercepted in the Network tab headers.
+- [URL Encoder/Decoder](https://wtkpro.site/tools/url-encoder/) — Safely encode query parameters before appending them to your API fetch requests.
 
 ---
 

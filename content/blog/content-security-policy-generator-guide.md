@@ -132,7 +132,7 @@ Yes. It is highly recommended. You can send a strict `Content-Security-Policy` h
 
 **Related tools:**
 - [CSP Builder](/tools/csp-builder/) — Visually construct and validate Content Security Policy headers.
-- [HSTS Generator](/tools/hsts-generator/) — Secure your domain with HTTP Strict Transport Security.
+- [HSTS Generator](/tools/hsts-gen/) — Secure your domain with HTTP Strict Transport Security.
 
 ---
 

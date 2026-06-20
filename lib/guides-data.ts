@@ -245,7 +245,7 @@ export const GUIDES_DATA: GuideCluster[] = [
       'aes-encryption-javascript-browser',
       'enterprise-web-security-checklist',
       'xss-prevention-guide',
-      'rsa-key-pair-generator'
+      'what-is-sha256'
     ],
     toolSlugs: [
       'password-entropy-tester',

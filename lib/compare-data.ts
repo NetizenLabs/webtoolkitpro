@@ -260,8 +260,7 @@ export const COMPARE_DATA: CompareItem[] = [
     winner: 'ECDSA',
     metaTitle: 'RSA vs ECDSA: Public Key Cryptography Comparison',
     metaDescription: 'Compare RSA and ECDSA for generating SSL certificates and SSH keys. Learn why Elliptic Curve is replacing RSA for modern security.',
-    tools: ['rsa-key-gen'],
-    blogSlug: 'rsa-key-pair-generator', // Note: Using the generic rsa blog post as anchor
+    tools: ['rsa-key-gen'], // Note: Using the generic rsa blog post as anchor
     features: [
       {
         label: 'Key Size (for equivalent security)',
@@ -416,14 +415,14 @@ export const COMPARE_DATA: CompareItem[] = [
     ]
   },
   {
+{
     slug: 'markdown-vs-html',
     title: 'Markdown vs HTML',
     description: 'Comparing markup languages for content creation. When should developers use Markdown instead of raw HTML?',
-    winner: 'Markdown (for writing)',
+    winner: 'Situational',
     metaTitle: 'Markdown vs HTML: When to use which?',
     metaDescription: 'Compare Markdown and HTML for web content. Understand the pros, cons, and use cases for each markup language in modern web development.',
     tools: ['markdown-html-converter'],
-    blogSlug: 'markdown-vs-html-content',
     features: [
       {
         label: 'Readability (Raw Source)',
@@ -531,7 +530,6 @@ export const COMPARE_DATA: CompareItem[] = [
     metaTitle: 'SHA-256 vs SHA-512: Hash Function Comparison',
     metaDescription: 'Compare SHA-256 and SHA-512 cryptographic hashes. Learn the differences in bit length, collision resistance, and performance on 64-bit systems.',
     tools: ['hash-generator'],
-    blogSlug: 'what-is-sha256-hashing',
     features: [
       {
         label: 'Output Length',

@@ -122,7 +122,7 @@ You shouldn't. If the JWT is secured in an `HttpOnly` cookie, your frontend Java
 
 **Related tools:**
 - [JWT Decoder Generator](/tools/jwt-decoder-generator/) — Securely decode and debug JWTs entirely offline in your browser.
-- [Base64 Encoder/Decoder](/tools/base64-encode-decode/) — Instantly encode or decode JSON payloads into Base64 format.
+- [Base64 Encoder/Decoder](/tools/base64-encoder-decoder/) — Instantly encode or decode JSON payloads into Base64 format.
 
 ---
 

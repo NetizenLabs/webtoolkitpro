@@ -131,7 +131,7 @@ Open Chrome DevTools (F12), navigate to the Network tab, reload the page, and cl
 
 **Related tools:**
 - [Compression Test Tool](/tools/compression-test/) — Instantly audit your server's HTTP headers and compression ratios.
-- [Nginx Config Generator](/tools/nginx-config-generator/) — Scaffold production-ready server blocks with Brotli and Gzip pre-configured.
+- [Nginx Config Generator](/tools/nginx-generator/) — Scaffold production-ready server blocks with Brotli and Gzip pre-configured.
 
 ---
 

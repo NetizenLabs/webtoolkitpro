@@ -113,7 +113,7 @@ Yes, you can specify multiple `Sitemap:` directives at the bottom of your `robot
 
 **Related tools:**
 - [Schema Markup Generator](https://wtkpro.site/tools/schema-markup-generator/) — Build flawless JSON-LD structured data to accompany your newly indexed pages.
-- [Robots.txt Generator](https://wtkpro.site/tools/robots-txt-generator/) — Ensure you aren't accidentally blocking search engines from crawling your XML sitemaps.
+- [Robots.txt Generator](https://wtkpro.site/tools/robots-txt-toolkit/) — Ensure you aren't accidentally blocking search engines from crawling your XML sitemaps.
 
 ---
 

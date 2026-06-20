@@ -130,7 +130,7 @@ Frequent forced rotations cause password fatigue. Users naturally circumvent thi
 
 **Related tools:**
 - [Random Password Generator](/tools/password-generator/) — Create cryptographically secure passwords locally in your browser.
-- [Base64 Encoder/Decoder](/tools/base64-encode-decode/) — Encode strings into Base64 format safely offline.
+- [Base64 Encoder/Decoder](/tools/base64-encoder-decoder/) — Encode strings into Base64 format safely offline.
 
 ---
 

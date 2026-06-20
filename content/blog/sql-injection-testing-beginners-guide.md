@@ -122,7 +122,7 @@ Most modern Object-Relational Mappers (ORMs) like Prisma, TypeORM, or Entity Fra
 
 **Related tools:**
 - [SQL Formatter](https://wtkpro.site/tools/sql-formatter/) — Format, visualize, and debug complex SQL injection payloads safely.
-- [URL Encoder/Decoder](https://wtkpro.site/tools/url-encoder-decoder/) — URL-encode your SQLi payloads to bypass basic WAF and frontend sanitization filters.
+- [URL Encoder/Decoder](https://wtkpro.site/tools/url-encoder/) — URL-encode your SQLi payloads to bypass basic WAF and frontend sanitization filters.
 
 ---
 
