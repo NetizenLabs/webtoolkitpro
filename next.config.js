@@ -188,6 +188,20 @@ const nextConfig = {
       { source: '/blog/markdown-vs-html-content/', destination: '/tools/markdown-html-converter/', permanent: true },
       { source: '/blog/json-ld-schema-tutorial', destination: '/tools/schema-markup-generator/', permanent: true },
       { source: '/blog/json-ld-schema-tutorial/', destination: '/tools/schema-markup-generator/', permanent: true },
+      
+      // GSC 404 Fixes (June 2026)
+      { source: '/blog/llms-txt-generator-guide', destination: '/tools/llms-txt-generator/', permanent: true },
+      { source: '/blog/llms-txt-generator-guide/', destination: '/tools/llms-txt-generator/', permanent: true },
+      { source: '/blog/excel-vs-google-sheets-json', destination: '/tools/csv-json-xml-converter/', permanent: true },
+      { source: '/blog/excel-vs-google-sheets-json/', destination: '/tools/csv-json-xml-converter/', permanent: true },
+      { source: '/blog/test-htaccess-redirects', destination: '/tools/htaccess-generator/', permanent: true },
+      { source: '/blog/test-htaccess-redirects/', destination: '/tools/htaccess-generator/', permanent: true },
+      { source: '/blog/wordpress-rest-api-export-csv', destination: '/tools/csv-json-xml-converter/', permanent: true },
+      { source: '/blog/wordpress-rest-api-export-csv/', destination: '/tools/csv-json-xml-converter/', permanent: true },
+      { source: '/blog/css-gradient-generators-compared', destination: '/tools/css-generators/', permanent: true },
+      { source: '/blog/css-gradient-generators-compared/', destination: '/tools/css-generators/', permanent: true },
+      { source: '/old-page', destination: '/', permanent: true },
+      { source: '/old-page/', destination: '/', permanent: true },
 
       // Bucket 1: Deleted Blog Posts 301 Redirects to fix GSC 404 crawl errors
       { source: '/blog/slug-generator-vs-manual-entry', destination: '/blog/url-slug-seo-best-practices/', permanent: true },
