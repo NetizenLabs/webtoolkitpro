@@ -34,7 +34,7 @@ async function getAccessToken() {
   }
 }
 
-async function uploadPin(pinData, accessToken) {
+async function uploadPin(pinData, accessToken, boardId) {
   const filePath = path.join(PINS_DIR, pinData.filename);
   
   if (!fs.existsSync(filePath)) {
@@ -50,7 +50,7 @@ async function uploadPin(pinData, accessToken) {
     link: pinData.link,
     title: pinData.title,
     description: pinData.description,
-    board_id: BOARD_ID,
+    board_id: boardId,
     media_source: {
       source_type: "image_base64",
       content_type: contentType,
@@ -111,9 +111,15 @@ async function runBot() {
   const pinsToUpload = pendingPins.slice(0, PINS_PER_DAY);
   let uploadCount = 0;
 
+  // Support multiple boards separated by commas
+  const boardIds = BOARD_ID.split(',').map(id => id.trim()).filter(Boolean);
+
   for (const pin of pinsToUpload) {
-    console.log(`Uploading pin: ${pin.title}`);
-    const success = await uploadPin(pin, accessToken);
+    // Pick a random board ID from the list
+    const randomBoardId = boardIds[Math.floor(Math.random() * boardIds.length)];
+    
+    console.log(`Uploading pin: ${pin.title} to board: ${randomBoardId}`);
+    const success = await uploadPin(pin, accessToken, randomBoardId);
     if (success) {
       pin.status = 'published';
       pin.postedAt = new Date().toISOString();
