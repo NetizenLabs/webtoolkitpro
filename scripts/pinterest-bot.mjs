@@ -36,7 +36,7 @@ async function getAccessToken() {
 
 async function uploadPin(pinData, accessToken, boardId) {
   const filePath = path.join(PINS_DIR, pinData.filename);
-  
+
   if (!fs.existsSync(filePath)) {
     console.error(`File not found: ${filePath}`);
     return false;
@@ -117,7 +117,7 @@ async function runBot() {
   for (const pin of pinsToUpload) {
     // Pick a random board ID from the list
     const randomBoardId = boardIds[Math.floor(Math.random() * boardIds.length)];
-    
+
     console.log(`Uploading pin: ${pin.title} to board: ${randomBoardId}`);
     const success = await uploadPin(pin, accessToken, randomBoardId);
     if (success) {
