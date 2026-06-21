@@ -9,6 +9,12 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 async function submitToIndexNow() {
     try {
         const repoDir = path.join(__dirname, '..', 'tradeconvert');
+        
+        if (!fs.existsSync(repoDir)) {
+            console.warn(`[IndexNow] Directory not found: ${repoDir}. Skipping TradeConvert submission.`);
+            return;
+        }
+
         const baseUrl = `https://${HOST}`;
         const links = [];
 
