@@ -60,7 +60,7 @@ export default function Footer() {
               </a>
               <a href="https://lift-off.sh/p/webtoolkit-pro" target="_blank" rel="noopener noreferrer" title="LiftOff launch badge" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
                 <img
-                  src="https://lift-off.sh/images/badges/badgeLaunchedDarkBAR.webp"
+                  src="https://lift-off.sh/images/badges/badgeLaunchedDark.webp"
                   alt="LiftOff launch badge"
                   width={200}
                   style={{ height: 'auto' }}
