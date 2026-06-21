@@ -30,7 +30,7 @@ As a Frontend Engineer, your workflow demands specific security and performance 
 > Always verify that your Base64 Encoder executes strictly in the browser. This ensures your tokens and data never leave your local machine.
 
 <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl my-8">
-  <h3 className="text-xl font-bold text-blue-400 mt-0">🚀 Recommended Tool</h3>
+  <h3 className="text-xl font-bold text-blue-400 mt-0">Recommended Tool</h3>
   <p className="text-gray-300">Need to get this done right now? Stop wasting time and use our free, secure, offline-first tool.</p>
   <a href="/tools/base64-encoder/" className="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">
     Open the Base64 Encoder &rarr;
