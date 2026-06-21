@@ -1,0 +1,8 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="238" height="58" x="1" y="1" rx="10" fill="#1C1C1C" stroke="#333333" stroke-width="1.5"/>
+  <text x="70" y="25" fill="#888888" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="0.1em">LAUNCHED ON</text>
+  <text x="70" y="45" fill="#FFFFFF" font-family="sans-serif" font-size="18" font-weight="900" letter-spacing="0.05em">LiftOff</text>
+  <circle cx="36" cy="30" r="16" fill="#FF5F5F" fill-opacity="0.1"/>
+  <path d="M26 38L36 22L46 38H26Z" fill="#FF5F5F"/>
+  <path d="M210 26L214 30L210 34" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
