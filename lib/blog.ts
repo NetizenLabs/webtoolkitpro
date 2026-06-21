@@ -221,8 +221,14 @@ export function getAllPosts(): BlogPost[] {
     } as BlogPost
   });
 
+  const now = new Date().getTime();
+  const validPosts = posts.filter(post => {
+    const postDate = new Date(post.date).getTime();
+    return !isNaN(postDate) && postDate <= now;
+  });
+
   // Safe sort with date validation
-  const sorted = posts.sort((a, b) => {
+  const sorted = validPosts.sort((a, b) => {
     const dateA = new Date(a.date).getTime()
     const dateB = new Date(b.date).getTime()
     return (isNaN(dateB) ? 0 : dateB) - (isNaN(dateA) ? 0 : dateA)

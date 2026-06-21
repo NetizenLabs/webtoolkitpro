@@ -64,6 +64,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'mDdN3EPYoUOznSZf30r9MWseEpejEY2n2l18mhlQX1k',
+    other: {
+      'p:domain_verify': '2ba9853c4805b18819e68cb100de9c16'
+    }
   },
   robots: {
     index: true,
