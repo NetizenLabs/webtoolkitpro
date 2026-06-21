@@ -1,13 +1,13 @@
-import { BASE_URL, buildSitemapIndexXml } from '@/lib/sitemap-utils'
+import { getMainUrls, getToolUrls, getBlogUrls, buildUrlsetXml } from '@/lib/sitemap-utils'
 
 export async function GET() {
-  const sitemaps = [
-    `${BASE_URL}/sitemap-main.xml`,
-    `${BASE_URL}/sitemap-tools.xml`,
-    `${BASE_URL}/sitemap-blog.xml`,
-  ]
+  const mainUrls = getMainUrls()
+  const toolUrls = getToolUrls()
+  const blogUrls = getBlogUrls()
 
-  const xml = buildSitemapIndexXml(sitemaps)
+  const allUrls = [...mainUrls, ...toolUrls, ...blogUrls]
+
+  const xml = buildUrlsetXml(allUrls)
 
   return new Response(xml, {
     headers: {

@@ -4,6 +4,7 @@
  * When no exact slug match exists, the category fallback is used.
  * All tool slugs are verified against lib/tool-registry.json.
  */
+import { TOOL_COUNT } from '@/lib/constants';
 
 export interface ToolCTA {
   slug: string         // Tool route slug → /tools/{slug}/
