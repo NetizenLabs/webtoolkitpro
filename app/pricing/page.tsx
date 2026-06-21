@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Shield, Zap, Lock, Terminal, FileCode2, Download, CheckCircle2, ShieldCheck, FileKey, Scale } from 'lucide-react';
+import { TOOL_COUNT } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Pricing & Enterprise Licensing — WebToolkit Pro',
@@ -128,7 +129,7 @@ export default function PricingPage() {
             Free for Developers.<br /> Paid for Corporate Compliance.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Individual engineers can use WebToolkit Pro&apos;s 150+ browser tools completely free. But if you operate in a <strong className="text-foreground">SOC 2, HIPAA, or GDPR</strong> regulated environment, you cannot risk production credentials touching a public website. That is what our Enterprise Desktop license is for.
+            Individual engineers can use WebToolkit Pro&apos;s {TOOL_COUNT} browser tools completely free—no paywall, no sign-ups. But if you operate in a <strong className="text-foreground">SOC 2, HIPAA, or GDPR</strong> regulated environment, you cannot risk production credentials touching a public website. That is what our Enterprise Desktop license is for.
           </p>
         </div>
 
@@ -178,7 +179,7 @@ export default function PricingPage() {
             <ul className="space-y-4 mb-10 flex-1">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <CheckCircle2 className="w-5 h-5 text-gray-400 shrink-0" />
-                Access all 150+ browser tools
+                Access all {TOOL_COUNT} browser tools
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <CheckCircle2 className="w-5 h-5 text-gray-400 shrink-0" />
@@ -234,7 +235,7 @@ export default function PricingPage() {
             </ul>
 
             <a 
-              href="https://whop.com/webtoolkit-pro/team-pro/"
+              href="https://webtoolkit-pro.lemonsqueezy.com/checkout/buy/placeholder_team_pro"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-xl text-center font-bold bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-md"
@@ -289,7 +290,7 @@ export default function PricingPage() {
             </ul>
 
             <a 
-              href="https://whop.com/webtoolkit-pro/air-gapped-enterprise/"
+              href="https://webtoolkit-pro.lemonsqueezy.com/checkout/buy/placeholder_enterprise"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-4 rounded-xl text-center font-bold bg-gradient-to-r from-[#00D4B4] to-[#0094FF] text-[#0D1117] transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
@@ -299,11 +300,11 @@ export default function PricingPage() {
           </div>
         </div>
 
-        {/* Whop Trust Signal */}
+        {/* Lemon Squeezy Trust Signal */}
         <div className="max-w-2xl mx-auto text-center border-t border-border pt-8">
           <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Secure Payments Powered by Whop</strong><br />
-            All subscription payments are securely processed and managed by Whop.com. WebToolkit Pro never sees or stores your credit card data, and Whop has absolutely zero access to your offline Desktop App data. Your compliance boundaries are strictly maintained.
+            <strong className="text-foreground">Secure Payments Powered by Lemon Squeezy</strong><br />
+            All subscription payments are securely processed and managed by Lemon Squeezy. WebToolkit Pro never sees or stores your credit card data, and Lemon Squeezy has absolutely zero access to your offline Desktop App data. Your compliance boundaries are strictly maintained.
           </p>
         </div>
 

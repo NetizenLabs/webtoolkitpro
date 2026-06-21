@@ -21,6 +21,7 @@ import { getTools } from '@/lib/tools'
 import WebMCPProvider from '@/components/tools/WebMCPProvider'
 import DesktopLicenseGuard from '@/components/auth/DesktopLicenseGuard'
 import { generateOrganizationSchema, generateWebSiteSchema } from '@/lib/seo/schema'
+import { TOOL_COUNT } from '@/lib/constants'
 
 // Lazy-load non-critical UI so it doesn't block the initial render / LCP
 const NewContentNotification = dynamic(
@@ -45,8 +46,8 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
-  title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
-  description: 'Access 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
+  title: `${TOOL_COUNT} Free Privacy-First Developer Tools | WebToolkit Pro`,
+  description: `Access ${TOOL_COUNT} secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.`,
   authors: [{ name: 'WebToolkit Pro' }],
   creator: 'WebToolkit Pro',
   publisher: 'WebToolkit Pro',
@@ -76,8 +77,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
-    description: 'Access 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
+    title: `${TOOL_COUNT} Free Privacy-First Developer Tools | WebToolkit Pro`,
+    description: `Access ${TOOL_COUNT} secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.`,
     url: 'https://wtkpro.site/',
     siteName: 'WebToolkit Pro',
     images: [
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
         url: 'https://wtkpro.site/og-image.jpg?v=4',
         width: 1200,
         height: 630,
-        alt: 'WebToolkit Pro - 150+ Professional Developer Tools',
+        alt: `WebToolkit Pro - ${TOOL_COUNT} Professional Developer Tools`,
       },
     ],
     locale: 'en_US',
@@ -93,8 +94,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '150+ Free Privacy-First Developer Tools | WebToolkit Pro',
-    description: 'Access 150+ secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.',
+    title: `${TOOL_COUNT} Free Privacy-First Developer Tools | WebToolkit Pro`,
+    description: `Access ${TOOL_COUNT} secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.`,
     images: ['https://wtkpro.site/og-image.jpg?v=4'],
     creator: '@WebToolKitPro',
   },

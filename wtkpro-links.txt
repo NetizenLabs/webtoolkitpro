@@ -18,10 +18,13 @@ https://wtkpro.site/blog/calculate-password-entropy-bits/
 https://wtkpro.site/blog/canonical-url-seo-duplicate-content/
 https://wtkpro.site/blog/chrome-developer-tools-explained/
 https://wtkpro.site/blog/content-security-policy-generator-guide/
+https://wtkpro.site/blog/convert-curl-commands-python-requests/
 https://wtkpro.site/blog/core-web-vitals-guide/
 https://wtkpro.site/blog/cron-expression-guide-examples/
 https://wtkpro.site/blog/cron-syntax-complete-reference/
 https://wtkpro.site/blog/csv-to-json-nested-objects-converter/
+https://wtkpro.site/blog/curl-to-php-curl-guzzle-guide/
+https://wtkpro.site/blog/debug-cors-errors-api-testing-online/
 https://wtkpro.site/blog/decode-jwt-token-without-library/
 https://wtkpro.site/blog/developer-tools-keyboard-shortcuts/
 https://wtkpro.site/blog/dns-propagation-how-long-check/
@@ -52,6 +55,8 @@ https://wtkpro.site/blog/seo-audit-checklist/
 https://wtkpro.site/blog/seo-meta-tags-complete-guide/
 https://wtkpro.site/blog/sql-injection-testing-beginners-guide/
 https://wtkpro.site/blog/ssl-certificate-expired-check-fix/
+https://wtkpro.site/blog/test-rest-api-endpoints-browser-no-postman/
+https://wtkpro.site/blog/translate-curl-nodejs-fetch-api/
 https://wtkpro.site/blog/url-slug-seo-best-practices/
 https://wtkpro.site/blog/validate-json-format-online/
 https://wtkpro.site/blog/wcag-color-contrast-requirements-2026/

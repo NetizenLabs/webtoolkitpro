@@ -482,7 +482,7 @@ export function getToolCTAForPost(slug: string, category: string): ToolCTA {
     blogToolCTAMap[slug] ??
     categoryToolCTAFallback[category] ?? {
       slug: '',   // empty = link to /tools/ hub
-      name: 'WebToolkit Pro — 150+ Free Tools',
+      name: `WebToolkit Pro — ${TOOL_COUNT} Free Tools`,
       description: 'Developer tools, SEO utilities, converters and more — all free, all private, no sign-up.',
       emoji: '🛠️',
       badge: 'Free forever',

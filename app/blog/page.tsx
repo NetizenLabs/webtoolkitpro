@@ -5,6 +5,7 @@ import { getAllPosts } from '@/lib/blog'
 import AdSlot from '@/components/ads/AdSlot'
 import { getToolBySlug } from '@/lib/tools'
 import RelatedToolsInline from '@/components/blog/RelatedToolsInline'
+import { TOOL_COUNT } from '@/lib/constants'
 
 // ISR: cache blog listing at the CDN edge for 1 hour
 // This is the primary fix for the /blog RES 83 score → targets TTFB reduction
@@ -256,7 +257,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
             Our editorial philosophy strictly avoids generic, high-level fluff. Instead, we publish granular, actionable tutorials and rigorous case studies. Whether you are learning how to securely parse authentication payloads using our <Link href="/tools/jwt-decoder-generator/" className="text-[#00D4B4] hover:underline">JWT Decoder</Link>, formatting massive API responses with our <Link href="/tools/json-to-code-generator/" className="text-[#00D4B4] hover:underline">JSON utilities</Link>, or deep-diving into the nuances of Core Web Vitals, every article is engineered to solve specific friction points in your development workflow.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            By pairing these technical guides directly with our suite of 150+ zero-knowledge, client-side web developer tools, we aim to provide an unmatched educational ecosystem. You don&apos;t just read about how cryptographic hashes or Regular Expressions work—you immediately apply those concepts using our offline utilities, ensuring absolute data privacy and zero latency. Bookmark this page, as our engineering team publishes new performance studies and technical deep-dives on a weekly basis to keep you at the cutting edge of web development.
+            By pairing these technical guides directly with our suite of {TOOL_COUNT} zero-knowledge, client-side web developer tools, we aim to provide an unmatched educational ecosystem. You don&apos;t just read about how cryptographic hashes or Regular Expressions work—you immediately apply those concepts using our offline utilities, ensuring absolute data privacy and zero latency. Bookmark this page, as our engineering team publishes new performance studies and technical deep-dives on a weekly basis to keep you at the cutting edge of web development.
           </p>
         </section>
 

@@ -4,6 +4,7 @@ import {
   Users, Zap, Shield, Heart, Code2, Globe2, Coffee, Sparkles, 
   ArrowRight, ShieldCheck, Milestone, Star, Terminal 
 } from 'lucide-react'
+import { TOOL_COUNT } from '@/lib/constants'
 
 export const metadata = {
   title: 'About WebToolkit Pro: Technical Story & Mission',
@@ -98,14 +99,14 @@ export default function AboutPage() {
           <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-[#00D4B4] dark:to-[#0094FF] bg-clip-text text-transparent">Future of Web Tools</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 dark:text-[#8A9BBE] max-w-3xl mx-auto leading-relaxed">
-          WebToolkit Pro is an enterprise-grade ecosystem of 150+ high-performance, accessible developer utilities optimized for the modern 2026 engineering workflow. 100% secure, browser-based, and zero-server dependent.
+          WebToolkit Pro is an enterprise-grade ecosystem of {TOOL_COUNT} high-performance, accessible developer utilities optimized for the modern 2026 engineering workflow. 100% secure, browser-based, and zero-server dependent.
         </p>
       </header>
 
       {/* Overview Metric Cards */}
       <section aria-label="Key Performance Indicators" className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
         {[
-          { metric: '150+', label: 'Technical Tools' },
+          { metric: TOOL_COUNT, label: 'Technical Tools' },
           { metric: '0ms', label: 'Server Lag' },
           { metric: '100%', label: 'Data Privacy' },
           { metric: 'A11y', label: 'WCAG Compliant' }
