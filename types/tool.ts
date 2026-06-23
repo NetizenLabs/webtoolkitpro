@@ -44,6 +44,8 @@ export interface ToolConfig {
     faq: ToolFAQ[];
     keywords?: string[] | string;
     technical_specs?: TechnicalSpec[];
+    practical_application?: string;
+    code_blueprints?: { language: string; code: string; title?: string }[];
   };
 
   related_tools?: string[]; // Manual overrides if needed
