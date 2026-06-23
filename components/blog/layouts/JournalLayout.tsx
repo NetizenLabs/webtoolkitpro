@@ -75,7 +75,7 @@ export default function JournalLayout({
                 <Code className="w-4 h-4" /> ABSTRACT_SUMMARY
               </div>
               <p className="text-xl text-white font-medium leading-relaxed italic">
-                "{post.tldr}"
+                &quot;{post.tldr}&quot;
               </p>
             </div>
           )}
