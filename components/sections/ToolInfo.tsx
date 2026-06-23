@@ -10,9 +10,11 @@ interface ToolInfoProps {
   features: string[]
   faqs: { q: string; a: string }[]
   technicalSpecs?: { label: string; value: string }[]
+  practicalApplication?: string
+  codeBlueprints?: { language: string; code: string; title?: string }[]
 }
 
-export default function ToolInfo({ title, features, faqs, howItWorks, technicalSpecs }: ToolInfoProps) {
+export default function ToolInfo({ title, features, faqs, howItWorks, technicalSpecs, practicalApplication, codeBlueprints }: ToolInfoProps) {
   return (
     <div className="mt-24 space-y-24">
       {/* Description & Features */}
@@ -41,6 +43,46 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
           </div>
         )}
       </section>
+
+      {/* Practical Application & Code Blueprints */}
+      {(practicalApplication || (codeBlueprints && codeBlueprints.length > 0)) && (
+        <section className="mt-24">
+          <SectionHeading number="03" title={`Practical Application & Code Integration`} className="mb-12" as="h3" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {practicalApplication && (
+              <div>
+                <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[12px] shadow-sm">
+                  <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-4 flex items-center gap-2">
+                    <Shield className="w-5 h-5 text-blue-500 dark:text-[#00D4B4]" strokeWidth={2} />
+                    Use-Case Context
+                  </h4>
+                  <div className="text-sm text-gray-700 dark:text-[#8A9BBE] leading-relaxed whitespace-pre-wrap">
+                    {practicalApplication}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {codeBlueprints && codeBlueprints.length > 0 && (
+              <div className="space-y-6">
+                {codeBlueprints.map((bp, i) => (
+                  <div key={i} className="bg-gray-900 rounded-[12px] overflow-hidden border border-gray-800 shadow-xl shadow-black/20">
+                    <div className="bg-black/40 px-4 py-2 border-b border-gray-800 flex justify-between items-center">
+                      <span className="text-xs font-mono text-gray-400">{bp.title || bp.language.toUpperCase()}</span>
+                    </div>
+                    <div className="p-4 overflow-x-auto">
+                      <pre className="text-sm font-mono text-gray-300">
+                        <code>{bp.code}</code>
+                      </pre>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <section>

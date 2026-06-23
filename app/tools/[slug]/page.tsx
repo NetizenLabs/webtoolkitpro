@@ -208,6 +208,8 @@ export default function ToolPage({ params }: ToolPageProps) {
               features={tool.content?.features || []}
               faqs={tool.content?.faq?.map(f => ({ q: f.question, a: f.answer })) || []}
               technicalSpecs={tool.content?.technical_specs}
+              practicalApplication={tool.content?.practical_application}
+              codeBlueprints={tool.content?.code_blueprints}
             />
 
             {/* E-E-A-T Sourcing & Client-Side Privacy Guarantee */}
