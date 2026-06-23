@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/submit-indexnow.js && node scripts/submit-indexnow-tradeconvert.js",
+    "postbuild": "echo 'Skipping automatic IndexNow submission to protect crawl budget.'",
     "start": "next start",
     "lint": "next lint",
     "publish-reddit": "node scripts/publish-reddit.mjs",
