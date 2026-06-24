@@ -101,6 +101,9 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
 
 import DeveloperToolLayout from '@/components/tools/layouts/DeveloperToolLayout'
 import DefaultToolLayout from '@/components/tools/layouts/DefaultToolLayout'
+import DesignToolLayout from '@/components/tools/layouts/DesignToolLayout'
+import SEOToolLayout from '@/components/tools/layouts/SEOToolLayout'
+import TextToolLayout from '@/components/tools/layouts/TextToolLayout'
 
 export default function ToolPage({ params }: ToolPageProps) {
   const tool = getToolBySlug(params.slug)
@@ -123,8 +126,13 @@ export default function ToolPage({ params }: ToolPageProps) {
     case 'Security Tools':
     case 'Network & Performance':
       return <DeveloperToolLayout {...layoutProps} />
+    case 'Design Tools':
+      return <DesignToolLayout {...layoutProps} />
+    case 'SEO Tools':
+      return <SEOToolLayout {...layoutProps} />
+    case 'Text Tools':
+      return <TextToolLayout {...layoutProps} />
     default:
-      // We will add DesignToolLayout and SEOToolLayout later as needed
       return <DefaultToolLayout {...layoutProps} />
   }
 }
