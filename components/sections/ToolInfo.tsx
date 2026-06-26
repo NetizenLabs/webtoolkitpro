@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { CheckCircle2, Info, Zap, Shield, HelpCircle } from 'lucide-react'
+import { CheckCircle2, Info, Zap, Shield, HelpCircle, BookOpen } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 interface ToolInfoProps {
@@ -12,9 +12,10 @@ interface ToolInfoProps {
   technicalSpecs?: { label: string; value: string }[]
   practicalApplication?: string
   codeBlueprints?: { language: string; code: string; title?: string }[]
+  relatedGuides?: { title: string; url: string }[]
 }
 
-export default function ToolInfo({ title, features, faqs, howItWorks, technicalSpecs, practicalApplication, codeBlueprints }: ToolInfoProps) {
+export default function ToolInfo({ title, features, faqs, howItWorks, technicalSpecs, practicalApplication, codeBlueprints, relatedGuides }: ToolInfoProps) {
   return (
     <div className="mt-24 space-y-24">
       {/* Description & Features */}
@@ -24,7 +25,7 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
           <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[12px] relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 dark:bg-[#00D4B4]/5 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <p className="text-sm text-gray-700 dark:text-[#8A9BBE] leading-relaxed relative z-10">
-              {howItWorks}
+              {howItWorks || `WebToolkit Pro's ${title} is a specialized, privacy-first utility. It leverages modern Web Workers to process your data 100% locally within your browser, ensuring zero latency and maximum security.`}
             </p>
           </div>
         </div>
@@ -84,21 +85,48 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
         </section>
       )}
 
-      {/* FAQ Section */}
-      <section>
-        <SectionHeading number="03" title={`Common Questions About ${title}`} className="mb-12" as="h3" />
+      {/* Related Guides Section */}
+      {relatedGuides && relatedGuides.length > 0 && (
+        <section className="mt-24">
+          <SectionHeading number="04" title={`Related Guides`} className="mb-8" as="h3" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+            {relatedGuides.map((guide, i) => (
+              <a 
+                key={i} 
+                href={guide.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-6 rounded-[12px] group hover:border-blue-500/30 dark:hover:border-[#00D4B4]/30 transition-all flex items-center gap-4"
+              >
+                <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-[#00D4B4]/10 flex items-center justify-center shrink-0">
+                  <BookOpen className="w-5 h-5 text-blue-500 dark:text-[#00D4B4]" />
+                </div>
+                <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-[#00D4B4] transition-colors line-clamp-2">
+                  {guide.title}
+                </h4>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
-          {faqs.map((faq, i) => (
-            <article key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[24px] hover:border-blue-500/20 dark:hover:border-[#00D4B4]/20 transition-all shadow-sm">
-              <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-4 tracking-tight">{faq.q}</h3>
-              <div>
-                <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">{faq.a}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      {/* FAQ Section */}
+      {faqs && faqs.length > 0 && (
+        <section>
+          <SectionHeading number="03" title={`Common Questions About ${title}`} className="mb-12" as="h3" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+            {faqs.map((faq, i) => (
+              <article key={i} className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[24px] hover:border-blue-500/20 dark:hover:border-[#00D4B4]/20 transition-all shadow-sm">
+                <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-4 tracking-tight">{faq.q}</h3>
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed">{faq.a}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Technical Engine Specs */}
       {technicalSpecs && (

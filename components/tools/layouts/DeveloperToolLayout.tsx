@@ -16,6 +16,7 @@ import { getRelatedPostsForTool } from '@/lib/blog'
 import FurtherReading from '@/components/sections/FurtherReading'
 import ToolPersonalizationClient from '@/components/tools/ToolPersonalizationClient'
 import { getRelatedToolsForWidget } from '@/lib/tools'
+import ToolSecurityBadge from '@/components/tools/ToolSecurityBadge'
 
 // @ts-ignore
 export default function DeveloperToolLayout({ tool, categorySlug, relatedTools, softwareSchema }) {
@@ -115,6 +116,7 @@ export default function DeveloperToolLayout({ tool, categorySlug, relatedTools, 
             </div>
 
             <div className="font-sans">
+              <ToolSecurityBadge />
               <ToolInfo 
                 title={tool.name}
                 howItWorks={tool.content?.how_it_works || ''}
@@ -123,6 +125,7 @@ export default function DeveloperToolLayout({ tool, categorySlug, relatedTools, 
                 technicalSpecs={tool.content?.technical_specs}
                 practicalApplication={tool.content?.practical_application}
                 codeBlueprints={tool.content?.code_blueprints}
+                relatedGuides={tool.content?.related_guides}
               />
             </div>
 

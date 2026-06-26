@@ -2,19 +2,19 @@ import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import ToolsClient from './ToolsClient'
 import { getTools } from '@/lib/tools'
-
+import { TOOL_COUNT } from '@/lib/constants'
 
 
 export const metadata: Metadata = {
   title: 'Developer Tools Directory | WebToolkit Pro',
-  description: 'Browse our complete directory of 190+ professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.',
+  description: `Browse our complete directory of ${TOOL_COUNT} professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.`,
   keywords: 'developer tools directory, web utilities list, professional coding tools, secure online tools',
   alternates: {
     canonical: 'https://wtkpro.site/tools/',
   },
   openGraph: {
     title: 'Developer Tools Directory | WebToolkit Pro',
-    description: 'Browse our complete directory of 190+ professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.',
+    description: `Browse our complete directory of ${TOOL_COUNT} professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.`,
     url: 'https://wtkpro.site/tools/',
     siteName: 'WebToolkit Pro',
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: 'https://wtkpro.site/og-image.jpg?v=4',
         width: 1200,
         height: 630,
-        alt: 'WebToolkit Pro - 190+ Professional Developer Tools',
+        alt: `WebToolkit Pro - ${TOOL_COUNT} Professional Developer Tools`,
       },
     ],
     locale: 'en_US',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Developer Tools Directory | WebToolkit Pro',
-    description: 'Browse our complete directory of 190+ professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.',
+    description: `Browse our complete directory of ${TOOL_COUNT} professional developer tools. Secure, client-side utilities for JSON, SEO, Security, and Performance.`,
     images: ['https://wtkpro.site/og-image.jpg?v=4'],
     site: '@WebToolkitPro',
   },

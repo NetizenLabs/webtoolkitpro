@@ -580,8 +580,10 @@ tools:
       practical_application: >-
         JSON Web Tokens (JWT) are the standard bearer tokens for modern
         microservices and API authentication. However, a massive security
-        vulnerability occurs when developers use generic, online JWT decoders to
-        inspect their tokens. Pasting a valid production JWT into a third-party
+        vulnerability occurs when developers use generic, online decoders.
+        
+        Using a proper **jwt decoder offline browser** tool is critical.
+        Pasting a valid production JWT into a third-party
         website effectively transmits your live session credentials—and
         potentially sensitive PII (Personally Identifiable Information)
         contained in the payload—to an unknown server. This 100% offline decoder
@@ -751,7 +753,8 @@ tools:
       title: Base64 Encoder & Decoder Toolkit
       description: >-
         The Base64 Encoder & Decoder Toolkit is an essential web utility for
-        secure data serialization and inline asset generation. Base64 encoding
+        secure data serialization and inline asset generation. As a true **base64 encoder no server upload** tool,
+        it ensures that your sensitive data never leaves your machine. Base64 encoding
         is widely used to embed binary data (like images or fonts) directly into
         HTML and CSS files, or to safely transmit complex payloads within JSON
         Web Tokens and HTTP headers. This zero-server application allows
@@ -1230,8 +1233,8 @@ tools:
         scalability. Traditional UUID v4 identifiers are completely random,
         which destroys indexing efficiency inside relational databases like
         PostgreSQL or MySQL because random strings fracture B-Tree indexing
-        nodes. UUID v7 solves this architecture bottleneck by introducing a
-        time-ordered prefix. This ensures sequential sorting upon generation,
+        nodes. A **uuid v7 database primary key generator** solves this architecture bottleneck 
+        by introducing a time-ordered prefix. This ensures sequential sorting upon generation,
         drastically accelerating database inserts while preventing cluster
         fragmentation.
       how_it_works: >-
@@ -1264,6 +1267,9 @@ tools:
         - bulk uuid v4 generator online
         - uuid v7 timestamp generator
         - secure guid creator offline
+      related_guides:
+        - title: "Stop Using UUID v4 As Your Database Primary Key (And What To Use Instead)"
+          url: "https://dev.to/abusufyan909/stop-using-uuid-v4-as-your-database-primary-key-and-what-to-use-instead-4o0m"
       practical_application: >-
         In highly distributed microservice architectures (like Kubernetes
         clusters), generating UUIDs at the client or edge layer prevents

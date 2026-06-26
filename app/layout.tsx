@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://wtkpro.site'),
   title: `${TOOL_COUNT} Free Privacy-First Developer Tools | WebToolkit Pro`,
   description: `Access ${TOOL_COUNT} secure, free client-side developer tools. Offline-first utilities for bulk UUID generation, secure local data conversion, and SEO.`,
-  authors: [{ name: 'WebToolkit Pro' }],
-  creator: 'WebToolkit Pro',
-  publisher: 'WebToolkit Pro',
+  authors: [{ name: 'Abu Sufyan' }],
+  creator: 'Abu Sufyan',
+  publisher: 'Abu Sufyan',
   referrer: 'strict-origin-when-cross-origin',
   formatDetection: {
     email: false,
@@ -163,6 +163,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <head>
+        <link rel="llms-txt" href="/llms.txt" />
         {/* Preconnect to critical origins before any render */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

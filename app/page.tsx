@@ -213,7 +213,7 @@ export default function Home() {
                   At WebToolkit Pro, we believe that a professional web toolkit should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built specifically for modern software engineers who demand maximum security and local-first processing. 
                 </p>
                 <div className="mt-4">
-                  Unlike legacy toolkits that send your sensitive data to remote servers, WebToolkit Pro executes directly on your local machine. This delivers three core advantages:
+                  Unlike legacy toolkits or online formatting tools that send your sensitive data to remote servers, WebToolkit Pro executes directly on your local machine. This makes it the premier offline alternative to CyberChef and other server-dependent developer toolkits. This delivers three core advantages:
                   <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-900 dark:text-white font-medium">
                     <li><strong>Zero Latency:</strong> Instant processing leveraging WebAssembly and Web Workers.</li>
                     <li><strong>Complete Privacy:</strong> Your API keys, JSON payloads, and source code never leave your browser.</li>
@@ -221,7 +221,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <p>
-                  From advanced technical SEO utilities that help you dominate search rankings, to secure UUID generators and cryptographic hashing tools, every single utility in our directory is optimized for high-performance and strict RFC compliance. We have engineered these tools to handle massive payloads—whether you are formatting a 50MB JSON file or transcoding thousands of Base64 images.
+                  From advanced technical SEO utilities that help you dominate search rankings, to secure offline JSON formatters and cryptographic hashing tools, every single utility in our directory is optimized for high-performance and strict RFC compliance. We have engineered these tools to handle massive payloads—whether you are formatting a 50MB JSON file offline or transcoding thousands of Base64 images.
                 </p>
                 <p>
                   Beyond utilities, we serve as a dedicated technical research hub. We regularly publish deep-dive case studies into enterprise web performance, Core Web Vitals optimization, and modern generative search standards. Our mission is to provide you with both the tools to build the future of the web, and the knowledge required to master it.

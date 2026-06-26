@@ -82,20 +82,8 @@ export function generatePersonSchema() {
   }
 }
 
-function getDeterministicRating(slug: string) {
-  let hash = 0;
-  for (let i = 0; i < slug.length; i++) {
-    hash = ((hash << 5) - hash) + slug.charCodeAt(i);
-    hash |= 0;
-  }
-  // Generate a realistic rating between 4.5 and 4.9
-  const rating = 4.5 + (Math.abs(hash) % 5) / 10;
-  return rating.toFixed(1);
-}
-
 export function generateSoftwareSchema(tool: ToolConfig) {
   const url = `${SITE_URL}/tools/${tool.slug}/`
-  const rating = getDeterministicRating(tool.slug)
   
   return {
     '@context': 'https://schema.org',
@@ -110,22 +98,6 @@ export function generateSoftwareSchema(tool: ToolConfig) {
     'featureList': tool.content?.features?.join(', ') || 'Secure, fast, private',
     'isAccessibleForFree': true,
     'version': tool.releaseDate || '2026.01.01',
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': rating,
-      'ratingCount': '1'
-    },
-    'review': {
-      '@type': 'Review',
-      'reviewRating': {
-        '@type': 'Rating',
-        'ratingValue': rating
-      },
-      'author': {
-        '@type': 'Person',
-        'name': 'Abu Sufyan'
-      }
-    },
     'author': {
       '@id': `${AUTHOR_URL}/#person`
     },
@@ -141,3 +113,17 @@ export function generateSoftwareSchema(tool: ToolConfig) {
   }
 }
 
+export function generateFAQSchema(questions: { question: string, answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': questions.map(q => ({
+      '@type': 'Question',
+      'name': q.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': q.answer
+      }
+    }))
+  }
+}

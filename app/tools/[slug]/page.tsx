@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from '@/components/ui/NativeLink';
 import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget } from '@/lib/tools'
-import { generateSoftwareSchema } from '@/lib/seo/schema'
+import { generateSoftwareSchema, generateFAQSchema } from '@/lib/seo/schema'
 import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
 import ToolRenderer from '@/components/tools/ToolRenderer'
 import ToolInfo from '@/components/sections/ToolInfo'
@@ -46,19 +46,19 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const brandSuffix = ' | WTK Pro'
   let title = tool.meta?.title || `${tool.name} | Professional Online ${tool.category}`
   
-  if ((title.length + brandSuffix.length) > 58) {
-    const maxLength = 58 - brandSuffix.length - 3
-    const truncated = title.slice(0, maxLength)
-    // Trim to last full word
-    title = truncated.slice(0, truncated.lastIndexOf(' ')).trim() + '...'
+  // If the title with suffix is too long, fall back to just the tool name
+  if ((title.length + brandSuffix.length) > 60) {
+    title = `${tool.name}${brandSuffix}`
+  } else {
+    title += brandSuffix
   }
-  title += brandSuffix
 
   let description = tool.content?.description || `Free online ${tool.name}. Secure, private, and fast developer utility.`
   
-  // Truncate description to 155 chars for safety (SEO pixel limit)
+  // Truncate description gracefully if necessary
   if (description.length > 155) {
-    description = description.substring(0, 152).trim() + '...'
+    const truncated = description.substring(0, 155)
+    description = truncated.slice(0, truncated.lastIndexOf(' ')).trim() + '.'
   }
   
   // Use dedicated keywords if available, fallback to tags
@@ -69,6 +69,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   return {
     title,
     description,
+    authors: [{ name: 'Abu Sufyan' }],
     alternates: {
       canonical: `https://wtkpro.site/tools/${tool.slug}/`,
     },
@@ -111,6 +112,7 @@ export default function ToolPage({ params }: ToolPageProps) {
 
   const relatedTools = getRelatedTools(tool)
   const softwareSchema = generateSoftwareSchema(tool)
+  const faqSchema = tool.content?.faq?.length ? generateFAQSchema(tool.content.faq.map((f: any) => ({ question: f.question, answer: f.answer }))) : null;
   const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
 
   const layoutProps = {
@@ -121,18 +123,32 @@ export default function ToolPage({ params }: ToolPageProps) {
   }
 
   // Dispatcher Pattern: Break the DOM footprint based on category
-  switch (tool.category) {
-    case 'Developer Tools':
-    case 'Security Tools':
-    case 'Network & Performance':
-      return <DeveloperToolLayout {...layoutProps} />
-    case 'Design Tools':
-      return <DesignToolLayout {...layoutProps} />
-    case 'SEO Tools':
-      return <SEOToolLayout {...layoutProps} />
-    case 'Text Tools':
-      return <TextToolLayout {...layoutProps} />
-    default:
-      return <DefaultToolLayout {...layoutProps} />
+  const renderLayout = () => {
+    switch (tool.category) {
+      case 'Developer Tools':
+      case 'Security Tools':
+      case 'Network & Performance':
+        return <DeveloperToolLayout {...layoutProps} />
+      case 'Design Tools':
+        return <DesignToolLayout {...layoutProps} />
+      case 'SEO Tools':
+        return <SEOToolLayout {...layoutProps} />
+      case 'Text Tools':
+        return <TextToolLayout {...layoutProps} />
+      default:
+        return <DefaultToolLayout {...layoutProps} />
+    }
   }
+
+  return (
+    <>
+      {renderLayout()}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+    </>
+  )
 }
