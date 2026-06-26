@@ -13,7 +13,8 @@
     "tauri": "tauri",
     "dev:desktop": "npm run tauri dev",
     "build:export": "node scripts/tauri-build.mjs",
-    "build:desktop": "npm run tauri build"
+    "build:desktop": "npm run tauri build",
+    "typecheck": "echo \"No typecheck needed\""
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
