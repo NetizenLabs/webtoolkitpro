@@ -45,6 +45,7 @@ jobs:
         # This step only runs if health-check.mjs exits with code 0
         run: |
           if [[ -n $(git status -s) ]]; then
+            git add .
             git commit -m "chore(bot): daily publish and health check passed"
             git push origin main
           else
