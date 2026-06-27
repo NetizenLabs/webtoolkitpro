@@ -127,3 +127,26 @@ export function generateFAQSchema(questions: { question: string, answer: string 
     }))
   }
 }
+
+export function generateHowToSchema(tool: ToolConfig) {
+  if (!tool.content?.steps || tool.content.steps.length === 0) {
+    return null;
+  }
+
+  const url = `${SITE_URL}/tools/${tool.slug}/`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    'name': `How to use the ${tool.name}`,
+    'description': tool.content.how_it_works || tool.content.description,
+    'image': `${SITE_URL}/og-image.jpg`,
+    'step': tool.content.steps.map((step, idx) => ({
+      '@type': 'HowToStep',
+      'position': idx + 1,
+      'name': step.name,
+      'text': step.text,
+      'url': `${url}#step-${idx + 1}`
+    }))
+  };
+}

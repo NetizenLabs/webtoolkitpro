@@ -14,7 +14,7 @@ og:description: "Learn how to deploy code closer to your users using V8 Isolates
 og:image: "https://wtkpro.site/blog/edge-computing-guide.jpg"
 og:type: "article"
 twitter:card: "summary_large_image"
-robots: "index, follow"
+robots: "noindex, follow"
 ---
 
 [Home](https://wtkpro.site/) / [Blog](https://wtkpro.site/blog/) / Edge Computing Architecture: V8 Isolates and CAP Theorem (2026)

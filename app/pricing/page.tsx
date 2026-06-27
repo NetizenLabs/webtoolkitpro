@@ -27,22 +27,6 @@ const structuredData = {
     "@type": "Brand",
     "name": "WebToolkit Pro"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "128"
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Tech Audit Daily"
-    }
-  },
   "offers": [
     {
       "@type": "Offer",

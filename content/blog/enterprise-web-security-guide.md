@@ -14,7 +14,7 @@ og:description: "Master enterprise web security in 2026. A comprehensive guide c
 og:image: "https://wtkpro.site/blog/enterprise-web-security-guide.jpg"
 og:type: "article"
 twitter:card: "summary_large_image"
-robots: "index, follow"
+robots: "noindex, follow"
 ---
 
 [Home](https://wtkpro.site/) / [Blog](https://wtkpro.site/blog/) / Enterprise Web Security Guide: Zero-Trust & OWASP Mitigations (2026)

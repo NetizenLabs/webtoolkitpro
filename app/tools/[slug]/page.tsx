@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from '@/components/ui/NativeLink';
 import { getToolBySlug, getTools, getRelatedTools, getRelatedToolsForWidget } from '@/lib/tools'
-import { generateSoftwareSchema, generateFAQSchema } from '@/lib/seo/schema'
+import { generateSoftwareSchema, generateFAQSchema, generateHowToSchema } from '@/lib/seo/schema'
 import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
 import ToolRenderer from '@/components/tools/ToolRenderer'
 import ToolInfo from '@/components/sections/ToolInfo'
@@ -113,6 +113,7 @@ export default function ToolPage({ params }: ToolPageProps) {
   const relatedTools = getRelatedTools(tool)
   const softwareSchema = generateSoftwareSchema(tool)
   const faqSchema = tool.content?.faq?.length ? generateFAQSchema(tool.content.faq.map((f: any) => ({ question: f.question, answer: f.answer }))) : null;
+  const howToSchema = generateHowToSchema(tool);
   const categorySlug = Object.keys(CATEGORY_MAP).find(key => CATEGORY_MAP[key] === tool.category) || 'developer-tools'
 
   const layoutProps = {
@@ -147,6 +148,12 @@ export default function ToolPage({ params }: ToolPageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
         />
       )}
     </>
