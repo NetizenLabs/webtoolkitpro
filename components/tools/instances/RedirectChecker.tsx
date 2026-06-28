@@ -49,16 +49,16 @@ export default function RedirectChecker() {
       </div>
       <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-sm">
         <div className="flex flex-col sm:flex-row gap-4">
-          <div className="relative flex-grow">
+          <div className="relative flex-grow group">
             {!isBulkMode && (
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <Globe className="h-5 w-5 text-gray-400" />
+                <Globe className="h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
               </div>
             )}
             {isBulkMode ? (
               <textarea
                 placeholder="Enter URLs to trace (one per line)..."
-                className="block w-full h-32 p-4 bg-gray-50 dark:bg-slate-800/50 border border-transparent rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all dark:text-white font-medium whitespace-pre"
+                className="block w-full h-32 p-4 bg-gray-50/50 dark:bg-slate-800/30 border border-gray-200 dark:border-slate-700 rounded-2xl focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-indigo-500/50 outline-none transition-all duration-300 dark:text-white font-medium whitespace-pre"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
               />
@@ -66,7 +66,7 @@ export default function RedirectChecker() {
               <input
                 type="url"
                 placeholder="Enter URL to trace..."
-                className="block w-full pl-11 pr-4 py-4 bg-gray-50 dark:bg-slate-800/50 border border-transparent rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all dark:text-white font-medium"
+                className="block w-full pl-11 pr-4 py-4 bg-gray-50/50 dark:bg-slate-800/30 border border-gray-200 dark:border-slate-700 rounded-2xl focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-indigo-500/50 outline-none transition-all duration-300 dark:text-white font-medium"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
               />
@@ -75,7 +75,7 @@ export default function RedirectChecker() {
           <button
             onClick={handleCheck}
             disabled={loading}
-            className="px-10 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2 disabled:opacity-50"
+            className="px-10 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-2xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] flex items-center justify-center gap-2 disabled:opacity-50 active:scale-95"
           >
             {loading ? <RefreshCw className="w-5 h-5 animate-spin" /> : <Search className="w-5 h-5" />}
             Trace
@@ -89,25 +89,25 @@ export default function RedirectChecker() {
           {results.chain.map((step: any, index: number) => {
             const isLast = index === results.chain.length - 1
             return (
-              <div key={index} className="relative">
-                <div className={`absolute -left-[33px] sm:-left-[41px] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 border-white dark:border-slate-900 flex items-center justify-center z-10 shadow-sm ${isLast ? 'bg-green-500' : 'bg-indigo-500'}`}>
-                  {isLast ? <CheckCircle2 className="w-3 h-3 text-white" /> : <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />}
+              <div key={index} className="relative group">
+                <div className={`absolute -left-[33px] sm:-left-[41px] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 border-white dark:border-slate-900 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(99,102,241,0.3)] transition-transform duration-300 group-hover:scale-110 ${isLast ? 'bg-gradient-to-br from-green-400 to-green-600' : 'bg-gradient-to-br from-indigo-400 to-indigo-600'}`}>
+                  {isLast ? <CheckCircle2 className="w-3 h-3 text-white drop-shadow-md" /> : <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse shadow-sm" />}
                 </div>
-                <div className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-sm">
+                <div className="bg-white dark:bg-slate-900/50 p-6 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:border-indigo-500/30">
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                     <div className="min-w-0 flex-grow">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-md ${isLast ? 'bg-green-100 text-green-700' : 'bg-indigo-100 text-indigo-700'}`}>{isLast ? 'Destination' : `Hop #${index + 1}`}</span>
+                        <span className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-lg shadow-sm ${isLast ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20' : 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20'}`}>{isLast ? 'Destination' : `Hop #${index + 1}`}</span>
                         <span className="text-[10px] font-mono text-gray-400">{step.statusText}</span>
                       </div>
                       <h3 className="text-sm font-bold text-gray-900 dark:text-white truncate">{step.url}</h3>
                     </div>
                     <div className="flex items-center gap-4 shrink-0">
                       <div className="flex flex-col items-end">
-                        <div className={`text-2xl font-black ${step.status < 300 ? 'text-green-500' : 'text-amber-500'}`}>{step.status}</div>
-                        <span className="text-[9px] font-bold text-gray-400 uppercase">Status</span>
+                        <div className={`text-2xl font-black drop-shadow-sm ${step.status < 300 ? 'text-green-500' : 'text-amber-500'}`}>{step.status}</div>
+                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Status</span>
                       </div>
-                      <div className="w-12 h-12 bg-gray-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-gray-400">{isLast ? <Shield className="w-6 h-6" /> : <ArrowRight className="w-6 h-6" />}</div>
+                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${isLast ? 'bg-green-500/10 text-green-500' : 'bg-indigo-500/10 text-indigo-500'}`}>{isLast ? <Shield className="w-5 h-5" /> : <ArrowRight className="w-5 h-5" />}</div>
                     </div>
                   </div>
                 </div>

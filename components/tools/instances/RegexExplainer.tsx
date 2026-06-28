@@ -28,28 +28,28 @@ export default function RegexExplainer() {
 
   return (
     <div className="space-y-8">
-      <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-[2.5rem] p-10 shadow-sm">
+      <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-10 shadow-xl shadow-gray-200/40 dark:shadow-none group focus-within:border-blue-500/50 focus-within:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
         <div className="space-y-6">
           <div className="flex justify-between items-center px-1">
-            <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Regex Pattern</label>
-            <HelpCircle className="w-4 h-4 text-gray-300" />
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest drop-shadow-sm group-focus-within:text-blue-500 transition-colors">Regex Pattern</label>
+            <HelpCircle className="w-4 h-4 text-gray-300 group-hover:text-blue-400 transition-colors" />
           </div>
-          <div className="relative">
-            <div className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 font-mono text-lg">/</div>
+          <div className="relative group/input">
+            <div className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 font-mono text-lg group-focus-within/input:text-blue-500 transition-colors duration-300">/</div>
             <input 
               type="text"
               value={regex}
               onChange={(e) => setRegex(e.target.value)}
-              className="w-full pl-10 pr-10 py-5 bg-gray-50 dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl text-sm font-mono dark:text-blue-400 outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              className="w-full pl-10 pr-10 py-6 bg-gray-50/50 dark:bg-[#0D1526] border-2 border-transparent rounded-2xl text-sm font-mono dark:text-blue-400 outline-none focus:border-blue-500/30 focus:bg-white dark:focus:bg-[#0B1120] transition-all duration-300 focus:shadow-inner"
             />
-            <div className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-mono text-lg">/g</div>
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-mono text-lg group-focus-within/input:text-blue-500 transition-colors duration-300">/g</div>
           </div>
           
           <button 
             onClick={explainRegex}
-            className="w-full py-5 bg-blue-600 text-white rounded-2xl font-black hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/20 uppercase tracking-widest text-xs flex items-center justify-center gap-3"
+            className="w-full py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-black hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95 uppercase tracking-widest text-xs flex items-center justify-center gap-3"
           >
-            <Search className="w-4 h-4" /> Explain Pattern
+            <Search className="w-4 h-4 drop-shadow-md" /> Explain Pattern
           </button>
         </div>
       </div>

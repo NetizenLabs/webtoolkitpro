@@ -350,8 +350,6 @@ const nextConfig = {
       { source: '/blog/regex-javascript-vs-python-vs-php/', destination: '/blog/regex-cheat-sheet-javascript/', permanent: true },
       { source: '/blog/favicon-generator-tools-compared', destination: '/blog/favicon-sizes-complete-guide-2026/', permanent: true },
       { source: '/blog/favicon-generator-tools-compared/', destination: '/blog/favicon-sizes-complete-guide-2026/', permanent: true },
-      { source: '/blog/json-vs-xml-comparison', destination: '/blog/what-is-json-complete-guide/', permanent: true },
-      { source: '/blog/json-vs-xml-comparison/', destination: '/blog/what-is-json-complete-guide/', permanent: true },
       { source: '/blog/flattening-nested-json-csv', destination: '/blog/csv-to-json-nested-objects-converter/', permanent: true },
       { source: '/blog/flattening-nested-json-csv/', destination: '/blog/csv-to-json-nested-objects-converter/', permanent: true },
       { source: '/blog/how-to-fix-common-json-errors', destination: '/blog/what-is-json-complete-guide/', permanent: true },

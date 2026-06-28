@@ -117,19 +117,19 @@ export default function CsvJsonXmlConverter() {
       <div className="flex justify-end px-2">
         <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Data Converter" />
       </div>
-      <div className="flex flex-col lg:flex-row gap-6 w-full h-[800px] bg-background">
+      <div className="flex flex-col lg:flex-row gap-6 w-full h-[800px]">
         {/* Left Pane - Input */}
-        <div className="flex-1 flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 gap-3 border-b border-border bg-muted/30">
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-xs font-semibold uppercase text-muted-foreground mr-2 flex items-center gap-2">
-                Input: {isBulkMode && inputFormat === 'json' && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">JSONL</span>}
+        <div className="flex-1 flex flex-col rounded-3xl overflow-hidden border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl shadow-gray-200/50 dark:shadow-none group focus-within:ring-2 focus-within:ring-indigo-500/50 transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 gap-3 border-b border-gray-100 dark:border-slate-800 bg-gray-50/50 dark:bg-[#0B1120]">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-black uppercase text-gray-500 tracking-widest mr-2 flex items-center gap-2">
+                Input: {isBulkMode && inputFormat === 'json' && <span className="bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-[9px] px-2 py-0.5 rounded-md">JSONL</span>}
               </span>
             {(['json', 'csv', 'xml'] as const).map((m) => (
               <button
                 key={m}
                 onClick={() => setInputFormat(m)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${inputFormat === m ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:bg-secondary hover:text-foreground'}`}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${inputFormat === m ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/20' : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white'}`}
               >
                 {m.toUpperCase()}
               </button>
@@ -154,24 +154,24 @@ export default function CsvJsonXmlConverter() {
       </div>
 
       {/* Center - Icon */}
-      <div className="hidden lg:flex items-center justify-center -mx-4 z-10">
-        <div className="bg-primary p-3 rounded-full text-primary-foreground shadow-lg border-4 border-background">
-          <Repeat className="w-5 h-5" />
+      <div className="hidden lg:flex items-center justify-center -mx-4 z-10 drop-shadow-xl">
+        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-4 rounded-2xl text-white shadow-[0_0_20px_rgba(99,102,241,0.4)] border-4 border-white dark:border-slate-950 transition-transform duration-500 hover:rotate-180 hover:scale-110 cursor-pointer">
+          <Repeat className="w-6 h-6" />
         </div>
       </div>
 
         {/* Right Pane - Output */}
-        <div className="flex-1 flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 gap-3 border-b border-border bg-muted/30">
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-xs font-semibold uppercase text-muted-foreground mr-2 flex items-center gap-2">
-                Output: {isBulkMode && outputFormat === 'json' && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">JSONL</span>}
+        <div className="flex-1 flex flex-col rounded-3xl overflow-hidden border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl shadow-gray-200/50 dark:shadow-none group focus-within:ring-2 focus-within:ring-purple-500/50 transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 gap-3 border-b border-gray-100 dark:border-slate-800 bg-gray-50/50 dark:bg-[#0B1120]">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-black uppercase text-gray-500 tracking-widest mr-2 flex items-center gap-2">
+                Output: {isBulkMode && outputFormat === 'json' && <span className="bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-[9px] px-2 py-0.5 rounded-md">JSONL</span>}
               </span>
             {(['json', 'csv', 'xml'] as const).map((m) => (
               <button
                 key={m}
                 onClick={() => setOutputFormat(m)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${outputFormat === m ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:bg-secondary hover:text-foreground'}`}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${outputFormat === m ? 'bg-purple-500 text-white shadow-md shadow-purple-500/20' : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white'}`}
               >
                 {m.toUpperCase()}
               </button>
@@ -179,9 +179,9 @@ export default function CsvJsonXmlConverter() {
           </div>
           <button 
             onClick={handleCopy}
-            className="text-xs font-medium px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all flex items-center gap-1.5 whitespace-nowrap"
+            className="text-xs font-bold px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white transition-all duration-300 flex items-center gap-2 whitespace-nowrap active:scale-95"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-green-500" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
             {copied ? 'Copied!' : 'Copy Data'}
           </button>
         </div>

@@ -89,10 +89,10 @@ export default function JwtDecoderGenerator() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 shadow-sm">
+      <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 shadow-xl shadow-gray-200/40 dark:shadow-none group transition-all duration-300 hover:shadow-2xl hover:border-blue-500/30">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white flex items-center gap-2">
-            Encoded JWT {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[10px] px-2 py-0.5 rounded-full">BULK</span>}
+          <h3 className="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-white flex items-center gap-2 group-hover:text-blue-500 transition-colors">
+            Encoded JWT {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[10px] px-2 py-0.5 rounded-full shadow-sm">BULK</span>}
           </h3>
           <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk JWT Decoder" />
         </div>
@@ -100,7 +100,7 @@ export default function JwtDecoderGenerator() {
           value={jwt}
           onChange={(e) => setJwt(e.target.value)}
           placeholder={isBulkMode ? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."}
-          className="w-full h-32 p-4 bg-gray-50 dark:bg-[#0B1120] border border-gray-100 dark:border-[#1E2D47] focus:border-blue-500/30 rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono break-all"
+          className="w-full h-32 p-5 bg-gray-50/50 dark:bg-[#0D1526] border-2 border-transparent focus:border-blue-500/50 focus:bg-white dark:focus:bg-[#0B1120] rounded-2xl text-sm outline-none dark:text-gray-300 resize-none font-mono break-all focus:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300"
         />
         
         <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -114,49 +114,49 @@ export default function JwtDecoderGenerator() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="space-y-6">
-          <div className="bg-white dark:bg-[#0D1526] border border-red-100 dark:border-red-500/20 rounded-3xl p-6 shadow-sm flex flex-col">
-            <h3 className="text-sm font-black uppercase tracking-widest text-red-500 mb-4">Header (Algorithm & Token Type)</h3>
+          <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-red-100 dark:border-red-500/20 rounded-3xl p-6 shadow-lg shadow-red-500/5 group focus-within:border-red-500/50 focus-within:shadow-[0_0_30px_rgba(239,68,68,0.15)] transition-all duration-500 flex flex-col">
+            <h3 className="text-sm font-black uppercase tracking-widest text-red-500 mb-4 drop-shadow-sm">Header (Algorithm & Token Type)</h3>
             <textarea
               value={header}
               onChange={(e) => setHeader(e.target.value)}
-              className="w-full h-32 p-4 bg-red-50 dark:bg-red-500/5 border border-transparent rounded-2xl text-sm outline-none text-red-700 dark:text-red-300 resize-none font-mono"
+              className="w-full h-32 p-5 bg-red-50/50 dark:bg-red-500/5 border-2 border-transparent focus:border-red-500/30 focus:bg-white dark:focus:bg-[#0D1526] rounded-2xl text-sm outline-none text-red-700 dark:text-red-300 resize-none font-mono transition-all duration-300"
             />
           </div>
-          <div className="bg-white dark:bg-[#0D1526] border border-fuchsia-100 dark:border-fuchsia-500/20 rounded-3xl p-6 shadow-sm flex flex-col">
-            <h3 className="text-sm font-black uppercase tracking-widest text-fuchsia-500 mb-4">Payload (Data)</h3>
+          <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-fuchsia-100 dark:border-fuchsia-500/20 rounded-3xl p-6 shadow-lg shadow-fuchsia-500/5 group focus-within:border-fuchsia-500/50 focus-within:shadow-[0_0_30px_rgba(217,70,239,0.15)] transition-all duration-500 flex flex-col">
+            <h3 className="text-sm font-black uppercase tracking-widest text-fuchsia-500 mb-4 drop-shadow-sm">Payload (Data)</h3>
             <textarea
               value={payload}
               onChange={(e) => setPayload(e.target.value)}
-              className="w-full h-64 p-4 bg-fuchsia-50 dark:bg-fuchsia-500/5 border border-transparent rounded-2xl text-sm outline-none text-fuchsia-700 dark:text-fuchsia-300 resize-none font-mono"
+              className="w-full h-64 p-5 bg-fuchsia-50/50 dark:bg-fuchsia-500/5 border-2 border-transparent focus:border-fuchsia-500/30 focus:bg-white dark:focus:bg-[#0D1526] rounded-2xl text-sm outline-none text-fuchsia-700 dark:text-fuchsia-300 resize-none font-mono transition-all duration-300 custom-scrollbar"
             />
           </div>
         </div>
         
-        <div className="bg-white dark:bg-[#0D1526] border border-cyan-100 dark:border-cyan-500/20 rounded-3xl p-6 shadow-sm flex flex-col">
-          <div className="flex items-center gap-2 text-sm font-black uppercase tracking-widest text-cyan-500 mb-4">
+        <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-cyan-100 dark:border-cyan-500/20 rounded-3xl p-6 shadow-lg shadow-cyan-500/5 group focus-within:border-cyan-500/50 focus-within:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 flex flex-col">
+          <div className="flex items-center gap-2 text-sm font-black uppercase tracking-widest text-cyan-500 mb-4 drop-shadow-sm">
             <Key className="w-4 h-4" /> Verify Signature
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 bg-gray-50/50 dark:bg-[#0D1526] p-4 rounded-2xl font-mono leading-relaxed border border-gray-100 dark:border-[#1E2D47]">
             HMACSHA256(
             <br />
-            &nbsp;&nbsp;base64UrlEncode(header) + &quot;.&quot; +
+            &nbsp;&nbsp;<span className="text-red-500">base64UrlEncode(header)</span> + &quot;.&quot; +
             <br />
-            &nbsp;&nbsp;base64UrlEncode(payload),
+            &nbsp;&nbsp;<span className="text-fuchsia-500">base64UrlEncode(payload)</span>,
             <br />
-            &nbsp;&nbsp;your-256-bit-secret
+            &nbsp;&nbsp;<span className="text-cyan-500">your-256-bit-secret</span>
             <br />
             )
           </p>
           <div className="space-y-4">
             <div>
-              <label className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2 block">Secret Key</label>
+              <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2 block">Secret Key</label>
               <input
                 type="text"
                 value={secret}
                 onChange={(e) => setSecret(e.target.value)}
-                className="w-full p-4 bg-cyan-50 dark:bg-cyan-500/5 border border-transparent rounded-2xl text-sm outline-none text-cyan-700 dark:text-cyan-300 font-mono"
+                className="w-full p-5 bg-cyan-50/50 dark:bg-cyan-500/5 border-2 border-transparent focus:border-cyan-500/30 focus:bg-white dark:focus:bg-[#0D1526] rounded-2xl text-sm outline-none text-cyan-700 dark:text-cyan-300 font-mono transition-all duration-300"
               />
             </div>
             {isValid === false && (

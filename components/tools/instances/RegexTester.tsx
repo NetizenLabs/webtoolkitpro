@@ -115,23 +115,22 @@ export default function RegexTester() {
       <div className="flex justify-end px-2">
         <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Line Filter" />
       </div>
-      {/* RegEx Pattern Input */}
-      <div className="bg-[#0D1526] border border-[#1E2D47] rounded-3xl p-6 md:p-8">
-        <div className="flex flex-col md:flex-row gap-6 items-start">
+      <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-gray-100 dark:border-[#1E2D47] rounded-3xl p-6 md:p-10 shadow-xl shadow-gray-200/40 dark:shadow-none group focus-within:border-blue-500/50 focus-within:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+        <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="flex-grow w-full">
-            <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-3 block">Regular Expression</label>
-            <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-mono text-lg">/</span>
+            <label className="text-[10px] font-black text-gray-500 dark:text-slate-500 uppercase tracking-widest mb-3 block drop-shadow-sm group-focus-within:text-blue-500 transition-colors">Regular Expression</label>
+            <div className="relative group/input">
+              <span className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 font-mono text-lg group-focus-within/input:text-blue-500 transition-colors duration-300">/</span>
               <input
                 value={regex}
                 onChange={(e) => setRegex(e.target.value)}
                 placeholder="([a-z0-9._%+-]+)@([a-z0-9.-]+\.[a-z]{2,})"
-                className="w-full bg-[#0B1120] border border-[#1E2D47] rounded-xl py-4 pl-8 pr-12 font-mono text-lg text-white focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all"
+                className="w-full bg-gray-50/50 dark:bg-[#0D1526] border-2 border-transparent rounded-2xl py-6 pl-12 pr-16 font-mono text-lg dark:text-white focus:border-blue-500/30 focus:bg-white dark:focus:bg-[#0B1120] outline-none transition-all duration-300 focus:shadow-inner"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-mono text-lg">/{flags}</span>
+              <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-mono text-lg group-focus-within/input:text-blue-500 transition-colors duration-300">/{flags}</span>
             </div>
             {error && (
-              <div className="mt-3 flex items-center gap-2 text-red-400 text-xs font-medium">
+              <div className="mt-4 flex items-center gap-2 text-red-500 text-xs font-bold bg-red-50 dark:bg-red-500/10 p-3 rounded-xl border border-red-100 dark:border-red-500/20">
                 <AlertCircle className="w-4 h-4" />
                 {error}
               </div>
@@ -162,32 +161,32 @@ export default function RegexTester() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Test String */}
-        <div className="space-y-4">
+        <div className="space-y-4 group">
           <div className="flex items-center justify-between">
-            <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest flex items-center gap-2">
-              Test String {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">BULK</span>}
+            <label className="text-[10px] font-black text-gray-500 dark:text-slate-500 uppercase tracking-widest flex items-center gap-2 drop-shadow-sm group-focus-within:text-blue-500 transition-colors">
+              Test String {isBulkMode && <span className="bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-[9px] px-2 py-0.5 rounded-md shadow-sm">BULK</span>}
             </label>
             <button 
               onClick={() => setTestText('')}
-              className="text-xs font-bold text-red-500 hover:text-red-600 flex items-center gap-1.5 px-3 py-1.5 bg-red-50 dark:bg-red-900/10 rounded-lg transition-all"
+              className="text-xs font-bold text-red-500 hover:text-white flex items-center gap-1.5 px-3 py-1.5 bg-red-50 dark:bg-red-900/10 hover:bg-red-500 dark:hover:bg-red-500 rounded-lg transition-all duration-300 shadow-sm active:scale-95 border border-transparent hover:border-red-600"
             >
-              <Trash2 className="w-4 h-4" /> Clear
+              <Trash2 className="w-3.5 h-3.5" /> Clear
             </button>
           </div>
           <textarea
             value={testText}
             onChange={(e) => setTestText(e.target.value)}
             placeholder="Insert text to test your regex..."
-            className="w-full h-[300px] p-6 font-mono text-sm bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl shadow-sm focus:ring-2 focus:ring-[#00D4B4] focus:border-transparent outline-none resize-none dark:text-white transition-all"
+            className="w-full h-[350px] p-6 font-mono text-sm bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl border border-gray-100 dark:border-[#1E2D47] rounded-3xl shadow-xl shadow-gray-200/40 dark:shadow-none focus:border-blue-500/50 focus:shadow-[0_0_30px_rgba(59,130,246,0.15)] focus:bg-white dark:focus:bg-[#0D1526] outline-none resize-none dark:text-white transition-all duration-500 custom-scrollbar"
           />
         </div>
 
         {/* Highlighted Results */}
-        <div className="space-y-4">
-          <label className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">
+        <div className="space-y-4 group">
+          <label className="text-[10px] font-black text-gray-500 dark:text-slate-500 uppercase tracking-widest drop-shadow-sm">
             {isBulkMode ? 'Filtered Lines' : 'Match Result'}
           </label>
-          <div className={`w-full h-[300px] p-6 font-mono text-sm bg-[#0B1120] border border-[#1E2D47] rounded-3xl shadow-2xl overflow-auto dark:text-[#8A9BBE] ${isBulkMode ? 'whitespace-pre overflow-x-auto' : 'whitespace-pre-wrap'}`}>
+          <div className={`w-full h-[350px] p-6 font-mono text-sm bg-[#0B1120]/90 backdrop-blur-xl border border-[#1E2D47] rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-auto dark:text-[#8A9BBE] custom-scrollbar transition-all duration-500 group-hover:border-[#00D4B4]/30 group-hover:shadow-[0_0_40px_rgba(0,212,180,0.1)] ${isBulkMode ? 'whitespace-pre overflow-x-auto' : 'whitespace-pre-wrap'}`}>
             {highlightedText}
           </div>
         </div>

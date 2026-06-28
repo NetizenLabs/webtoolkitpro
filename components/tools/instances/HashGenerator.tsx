@@ -175,29 +175,31 @@ export default function HashGenerator() {
       <div className="flex justify-end mb-2 px-2">
         <BulkModeToggle isBulkMode={isBulkMode} setIsBulkMode={setIsBulkMode} featureName="Bulk Hash Generator" />
       </div>
-      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-8 shadow-sm">
-        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-2 mb-2 flex items-center gap-2">
-          Input Text {isBulkMode && <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-[9px] px-1.5 py-0.5 rounded-full">BULK</span>}
+      <div className="bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-xl rounded-3xl border border-gray-100 dark:border-[#1E2D47] p-8 shadow-xl shadow-gray-200/40 dark:shadow-none group focus-within:border-slate-500/50 transition-all duration-500">
+        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest px-2 mb-3 flex items-center gap-2 drop-shadow-sm group-focus-within:text-slate-400 transition-colors">
+          Input Text {isBulkMode && <span className="bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-[9px] px-2 py-0.5 rounded-md shadow-sm">BULK</span>}
         </label>
         <textarea 
           value={input} 
           onChange={(e) => setInput(e.target.value)} 
           placeholder={isBulkMode ? "Enter multiple lines of text to hash..." : "Enter text to hash..."}
-          className="w-full h-32 p-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-slate-500 outline-none resize-none mb-4 dark:text-white" 
+          className="w-full h-32 p-5 bg-gray-50/50 dark:bg-[#0D1526] border-2 border-transparent focus:border-slate-500/30 focus:bg-white dark:focus:bg-[#0B1120] rounded-2xl outline-none resize-none mb-6 dark:text-white transition-all duration-300 focus:shadow-[0_0_30px_rgba(100,116,139,0.15)] font-mono text-sm custom-scrollbar" 
         />
-        <button onClick={generate} className="w-full py-4 bg-slate-800 dark:bg-slate-700 text-white rounded-2xl font-bold hover:bg-slate-900 transition-all shadow-lg mb-8">Generate Secure Hashes</button>
+        <button onClick={generate} className="w-full py-4 bg-gradient-to-r from-slate-700 to-slate-900 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:from-slate-800 hover:to-black transition-all duration-300 shadow-[0_0_20px_rgba(15,23,42,0.3)] hover:shadow-[0_0_30px_rgba(15,23,42,0.5)] active:scale-95 mb-10 flex items-center justify-center gap-3">
+          <Shield className="w-5 h-5 drop-shadow-md" /> Generate Secure Hashes
+        </button>
         {Object.keys(hashes).length > 0 && (
           <div className="space-y-4">
             {Object.entries(hashes).map(([algo, hash]) => (
-              <div key={algo} className="p-5 bg-gray-50 dark:bg-slate-800/50 rounded-2xl border border-gray-100 dark:border-slate-700 transition-all group">
+              <div key={algo} className="p-5 bg-gray-50/80 dark:bg-[#0D1526]/80 rounded-2xl border border-gray-100 dark:border-[#1E2D47] transition-all duration-300 hover:scale-[1.01] hover:border-slate-500/30 hover:shadow-lg group/card">
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{algo}</span>
-                  <button onClick={() => handleCopy(algo)} className="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1.5 font-bold transition-colors">
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover/card:text-slate-400 transition-colors drop-shadow-sm">{algo}</span>
+                  <button onClick={() => handleCopy(algo)} className="text-xs text-gray-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5 font-bold transition-all duration-300 hover:scale-105 bg-white dark:bg-[#0B1120] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-[#1E2D47]">
                     {copied===algo ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />} 
                     <span>{copied===algo ? 'Copied' : 'Copy Hash'}</span>
                   </button>
                 </div>
-                <div className={`font-mono text-sm text-gray-600 dark:text-slate-300 break-all bg-white dark:bg-slate-900 p-3 rounded-xl border border-gray-100 dark:border-slate-800 ${isBulkMode ? 'whitespace-pre overflow-x-auto' : ''}`}>{hash}</div>
+                <div className={`font-mono text-sm text-gray-700 dark:text-slate-300 break-all bg-white dark:bg-[#0B1120] p-4 rounded-xl border border-gray-100 dark:border-[#1E2D47] shadow-inner transition-colors duration-300 group-hover/card:border-slate-500/20 ${isBulkMode ? 'whitespace-pre overflow-x-auto custom-scrollbar' : ''}`}>{hash}</div>
               </div>
             ))}
           </div>

@@ -65,32 +65,47 @@ export default function PxRemConverter() {
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex-1 w-full">
             <label className="text-xs font-semibold text-gray-600 dark:text-gray-400 block mb-2 px-2">Pixels (PX)</label>
-            <div className="relative">
+            <div className="relative group">
               <input 
                 type="number" 
                 value={pxValue}
                 onChange={handlePxChange}
-                className="w-full p-6 bg-white dark:bg-[#0D1526] border-2 border-gray-100 dark:border-[#1E2D47] rounded-2xl text-3xl font-black outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors text-center dark:text-white shadow-inner"
+                className="w-full p-6 bg-white dark:bg-[#0D1526] border-2 border-gray-100 dark:border-[#1E2D47] rounded-2xl text-3xl font-black outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300 text-center dark:text-white"
               />
-              <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold">px</span>
+              <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold group-focus-within:text-blue-500 transition-colors">px</span>
             </div>
           </div>
 
-          <div className="w-12 h-12 bg-blue-50 dark:bg-blue-500/10 rounded-full flex items-center justify-center text-blue-500 shrink-0 shadow-sm mt-6 md:mt-0">
+          <div className="w-12 h-12 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-full flex items-center justify-center text-blue-500 shrink-0 shadow-inner border border-blue-500/20 mt-6 md:mt-0 transition-transform duration-300 hover:rotate-180">
             <ArrowRightLeft className="w-5 h-5" />
           </div>
 
           <div className="flex-1 w-full">
             <label className="text-xs font-semibold text-gray-600 dark:text-gray-400 block mb-2 px-2">Root EM (REM)</label>
-            <div className="relative">
+            <div className="relative group">
               <input 
                 type="number" 
                 value={remValue}
                 onChange={handleRemChange}
-                className="w-full p-6 bg-white dark:bg-[#0D1526] border-2 border-gray-100 dark:border-[#1E2D47] rounded-2xl text-3xl font-black outline-none focus:border-emerald-500 dark:focus:border-emerald-500 transition-colors text-center dark:text-white shadow-inner"
+                className="w-full p-6 bg-white dark:bg-[#0D1526] border-2 border-gray-100 dark:border-[#1E2D47] rounded-2xl text-3xl font-black outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 text-center dark:text-white"
               />
-              <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold">rem</span>
+              <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold group-focus-within:text-emerald-500 transition-colors">rem</span>
             </div>
+          </div>
+        </div>
+
+        {/* Visual Preview */}
+        <div className="mt-12 p-8 bg-gray-50/50 dark:bg-slate-800/30 rounded-3xl border border-gray-100 dark:border-slate-800 flex flex-col items-center justify-center overflow-hidden min-h-[200px] relative">
+          <div className="absolute top-4 left-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Visual Scale Preview</div>
+          <div 
+            className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-[0_0_30px_rgba(99,102,241,0.3)] transition-all duration-300 flex items-center justify-center text-white font-bold"
+            style={{ 
+              width: `${Math.min(Math.max(Number(pxValue) || 0, 16), 300)}px`, 
+              height: `${Math.min(Math.max(Number(pxValue) || 0, 16), 300)}px`,
+              opacity: (Number(pxValue) > 0) ? 1 : 0
+            }}
+          >
+            {Number(pxValue) > 40 && `${pxValue}px`}
           </div>
         </div>
       </div>
