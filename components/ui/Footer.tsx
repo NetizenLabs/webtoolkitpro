@@ -66,6 +66,15 @@ export default function Footer() {
                   style={{ height: 'auto' }}
                 />
               </a>
+              <a href="https://findly.tools/webtoolkit-pro?utm_source=webtoolkit-pro" target="_blank" rel="noopener noreferrer" title="Featured on Findly.tools" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
+                <img
+                  src="https://findly.tools/badges/findly-tools-badge-light.svg"
+                  alt="Featured on Findly.tools"
+                  width={175}
+                  height={55}
+                  style={{ height: 'auto' }}
+                />
+              </a>
             </div>
           </div>
 
