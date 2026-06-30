@@ -29,11 +29,6 @@ export const CATEGORY_PILLARS: Record<string, { title: string; description: stri
     description: 'Tools for content analysis, word counting, text transformation, and content optimization.',
     keywords: 'word counter, content utilities, social preview, text transformation, content optimization'
   },
-  'revenue-analytics': {
-    title: 'Revenue & Analytics - Free Online Developer Suite | wtkpro',
-    description: 'Calculators and estimators for AdSense earnings and website monetization analysis.',
-    keywords: 'adsense revenue estimator, monetization calculator, website earnings, ad revenue'
-  },
 }
 
 export const CATEGORY_MAP: Record<string, string> = {
@@ -42,6 +37,5 @@ export const CATEGORY_MAP: Record<string, string> = {
   'design-tools': 'Design Tools',
   'generators': 'Generators',
   'network-performance': 'Network & Performance',
-  'content-utilities': 'Content Utilities',
-  'revenue-analytics': 'Revenue & Analytics'
+  'content-utilities': 'Content Utilities'
 }

@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import { CheckCircle, AlertTriangle, Info, Copy, RefreshCw, Trash2, Database, Layers, ShieldCheck, FileJson } from 'lucide-react'
+import { CheckCircle, AlertTriangle, Info, Copy, RefreshCw, Trash2, Database, Layers, ShieldCheck, FileJson, HelpCircle } from 'lucide-react'
 
 export default function SchemaMarkupGenerator() {
-  const [activeTab, setActiveTab] = useState<'entity' | 'breadcrumb' | 'validate'>('entity')
+  const [activeTab, setActiveTab] = useState<'entity' | 'breadcrumb' | 'faq' | 'validate'>('entity')
 
   // --- Entity Generator State ---
   const [type, setType] = useState('Organization')
@@ -14,6 +14,9 @@ export default function SchemaMarkupGenerator() {
 
   // --- Breadcrumb Generator State ---
   const [items, setItems] = useState([{ name: 'Home', url: 'https://example.com' }])
+
+  // --- FAQ Generator State ---
+  const [faqItems, setFaqItems] = useState([{ question: '', answer: '' }])
 
   // --- Validator State ---
   const [validateContent, setValidateContent] = useState('')
@@ -46,7 +49,28 @@ export default function SchemaMarkupGenerator() {
     return JSON.stringify(schema, null, 2)
   }
 
-  const getActiveSchema = () => activeTab === 'entity' ? generateEntitySchema() : generateBreadcrumbSchema()
+  const generateFaqSchema = () => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.question || 'Untitled Question',
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer || 'No answer provided yet.'
+        }
+      }))
+    }
+    return JSON.stringify(schema, null, 2)
+  }
+
+  const getActiveSchema = () => {
+    if (activeTab === 'entity') return generateEntitySchema()
+    if (activeTab === 'breadcrumb') return generateBreadcrumbSchema()
+    if (activeTab === 'faq') return generateFaqSchema()
+    return ''
+  }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(getActiveSchema())
@@ -87,6 +111,7 @@ export default function SchemaMarkupGenerator() {
         {[
           { id: 'entity', label: 'Entity Generator', icon: Database },
           { id: 'breadcrumb', label: 'Breadcrumbs', icon: Layers },
+          { id: 'faq', label: 'FAQ Schema', icon: HelpCircle },
           { id: 'validate', label: 'Pro Validator', icon: ShieldCheck }
         ].map(tab => (
           <button
@@ -152,7 +177,7 @@ export default function SchemaMarkupGenerator() {
                   <div><label className="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase mb-3">URL</label><input value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://example.com" className="w-full px-5 py-4 bg-gray-50 dark:bg-[#0B1120] rounded-2xl outline-none dark:text-white border border-transparent dark:border-[#1E2D47]" /></div>
                   <div><label className="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase mb-3">Description</label><textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Overview..." rows={3} className="w-full px-5 py-4 bg-gray-50 dark:bg-[#0B1120] rounded-2xl outline-none dark:text-white resize-none border border-transparent dark:border-[#1E2D47]" /></div>
                 </div>
-              ) : (
+              ) : activeTab === 'breadcrumb' ? (
                 <div className="space-y-4">
                   {items.map((item, i) => (
                     <div key={i} className="space-y-2 p-4 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-transparent dark:border-[#1E2D47]">
@@ -162,6 +187,33 @@ export default function SchemaMarkupGenerator() {
                     </div>
                   ))}
                   <button onClick={() => setItems([...items, { name: '', url: '' }])} className="w-full py-3 border-2 border-dashed border-gray-200 dark:border-[#1E2D47] rounded-xl text-[10px] font-black uppercase text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-all">Add Level</button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {faqItems.map((item, i) => (
+                    <div key={i} className="space-y-2 p-4 bg-gray-50 dark:bg-[#0B1120] rounded-xl border border-transparent dark:border-[#1E2D47]">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] font-black text-gray-400">Q&A Pair {i + 1}</span>
+                        <button onClick={() => setFaqItems(faqItems.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-600">
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                      <input 
+                        value={item.question} 
+                        onChange={(e) => { const newItems = [...faqItems]; newItems[i].question = e.target.value; setFaqItems(newItems); }} 
+                        placeholder="Question" 
+                        className="w-full p-3 bg-white dark:bg-[#0D1526] rounded-lg text-xs font-bold outline-none border border-gray-100 dark:border-[#1E2D47] dark:text-white mb-2" 
+                      />
+                      <textarea 
+                        value={item.answer} 
+                        onChange={(e) => { const newItems = [...faqItems]; newItems[i].answer = e.target.value; setFaqItems(newItems); }} 
+                        placeholder="Answer" 
+                        rows={2}
+                        className="w-full p-3 bg-white dark:bg-[#0D1526] rounded-lg text-xs font-bold outline-none border border-gray-100 dark:border-[#1E2D47] dark:text-white resize-none" 
+                      />
+                    </div>
+                  ))}
+                  <button onClick={() => setFaqItems([...faqItems, { question: '', answer: '' }])} className="w-full py-3 border-2 border-dashed border-gray-200 dark:border-[#1E2D47] rounded-xl text-[10px] font-black uppercase text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-all">Add Q&A Pair</button>
                 </div>
               )}
             </div>

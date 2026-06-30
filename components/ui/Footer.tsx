@@ -131,7 +131,6 @@ export default function Footer() {
               <li><a href="/tools/hub/seo-tools/" className="hover:text-[#00D4B4] transition-colors">SEO Performance</a></li>
               <li><a href="/tools/hub/network-performance/" className="hover:text-[#00D4B4] transition-colors">Edge & Network</a></li>
               <li><a href="/tools/hub/generators/" className="hover:text-[#00D4B4] transition-colors">Security Generators</a></li>
-              <li><a href="/tools/hub/revenue-analytics/" className="hover:text-[#00D4B4] transition-colors">Ad Revenue Calc</a></li>
               <li><a href="/tools/hub/content-utilities/" className="hover:text-[#00D4B4] transition-colors">Content Optimization</a></li>
             </ul>
           </div>

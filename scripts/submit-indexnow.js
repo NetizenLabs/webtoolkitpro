@@ -13,8 +13,7 @@ const CATEGORY_KEYS = [
     'design-tools',
     'generators',
     'network-performance',
-    'content-utilities',
-    'revenue-analytics'
+    'content-utilities'
 ];
 
 async function submitToIndexNow() {

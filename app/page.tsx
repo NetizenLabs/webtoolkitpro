@@ -68,8 +68,7 @@ export default function Home() {
       'design-tools': Palette,
       'generators': Key,
       'network-performance': Zap,
-      'content-utilities': FileText,
-      'revenue-analytics': Star
+      'content-utilities': FileText
     }
     return map[slug] || LayoutGrid
   }
