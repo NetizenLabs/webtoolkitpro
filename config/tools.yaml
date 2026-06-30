@@ -12270,3 +12270,160 @@ tools:
         - postman alternative
         - rest client browser
         - test api endpoint
+  - name: XML Beautifier
+    slug: xml-beautifier
+    category: Developer Tools
+    icon: FileCode
+    tags:
+      - xml
+      - beautifier
+      - formatter
+      - markup
+      - parser
+    priority: 10
+    releaseDate: '2026-06-30'
+    function:
+      primary: Format, structure, and indent raw XML payloads client-side
+    technical:
+      processing: client-side
+    meta:
+      title: XML Beautifier Online — Clean & Format XML
+      description: Format and beautify XML strings instantly with our free XML beautifier online. Features customizable indentation, syntax highlighting, and 100% secure client-side execution.
+    content:
+      title: Secure XML Beautifier & Indenter
+      description: In modern enterprise development, raw XML payloads, SOAP request headers, and complex SVG configuration vectors are often minified into single, unreadable lines of text. This XML Beautifier allows web developers to instantly format, structure, and indent raw XML blocks directly in their browser. By using a secure client-side tokenizer, it validates XML syntax rules and formats node structures without transmitting your confidential payload to external database engines.
+      how_it_works: The parser uses browser-native DOMParser and XMLSerializer engines to safely tokenize your XML string. It traverses the DOM hierarchy tree, checks for syntax anomalies, and injects customized tab or space indentations before serializing the structured code back to your screen.
+      faq:
+        - question: Does this XML Beautifier support SOAP structures?
+          answer: Yes. Since SOAP is built entirely on XML standards, this beautifier will format SOAP envelopes, headers, and bodies perfectly.
+        - question: Will this tool leak my data to the server?
+          answer: No. It operates entirely on-device in your local browser using client-side scripts. No data is sent or logged.
+      keywords:
+        - xml beautifier online
+        - beautify xml code free
+        - format xml string online
+        - online xml parser and beautifier
+      practical_application: Large XML structures like sitemaps or SOAP bodies can span thousands of nested elements, making manual parsing impossible. This beautifier exposes parsing errors and nested hierarchies instantly, allowing engineers to reverse-engineer API responses safely without exposing proprietary endpoints.
+      code_blueprints:
+        - language: javascript
+          title: Node.js XML Formatting Script
+          code: |-
+            const xmlFormat = require('xml-formatter');
+            const rawXml = '<root><user id="1"><name>Alice</name></user></root>';
+            const beautified = xmlFormat(rawXml, {
+              indentation: '  ',
+              collapseContent: true
+            });
+            console.log(beautified);
+    seo:
+      title: XML Beautifier Online — Clean & Format XML Markup
+      description: Secure, offline XML Beautifier. Prettify, structure, and validate XML payloads with syntax highlighting. 100% client-side data protection.
+      keywords:
+        - xml beautifier online
+        - xml beautifier
+        - format xml online
+        - pretty print xml
+  - name: SQL Minifier & Compressor
+    slug: sql-minifier
+    category: Developer Tools
+    icon: Terminal
+    tags:
+      - sql
+      - minifier
+      - compressor
+      - optimization
+      - database
+    priority: 10
+    releaseDate: '2026-06-30'
+    function:
+      primary: Strip comments and compress SQL queries client-side
+    technical:
+      processing: client-side
+    meta:
+      title: SQL Minifier Online — Fast & Secure SQL Compressor
+      description: Minify and compress your SQL queries instantly. Remove comments, strip redundant whitespace, and optimize database scripts securely in your browser.
+    content:
+      title: SQL Minifier & Script Compressor
+      description: When executing massive database seed scripts or migrating millions of records, SQL file size and query density matter. Unoptimized SQL scripts loaded with multi-line documentation comments, nested indentation, and arbitrary white spacing take longer to transmit over database network networks and parse inside engines. This offline SQL Minifier compresses raw queries into their smallest executable footprint, stripping comments and space footprints while keeping query validity intact.
+      how_it_works: The minifier parses SQL scripts client-side to detect and extract comment patterns (such as double dash -- comments and /* block comments */). It collapses consecutive line breaks and whitespace strings, leaving a clean, compact query structure that executes with minimal parsing latency.
+      faq:
+        - question: Does minifying SQL affect query performance?
+          answer: While it doesn't speed up execution inside the database engine, it significantly reduces transfer payload size when running massive migration or migration scripts, saving network bandwidth.
+        - question: Is it safe to minify queries with strings?
+          answer: Yes. The parser respects strings and quoted values, ensuring that text parameters are not altered during spacing optimization.
+      keywords:
+        - sql minifier
+        - minify sql online
+        - sql script compressor
+        - compress sql query
+      practical_application: Migrating schemas using CD pipelines can be slowed by massive SQL files containing line breaks and documentation. Running a minifier removes metadata comments and layout formatting, producing optimized SQL payloads that execute rapidly.
+      code_blueprints:
+        - language: javascript
+          title: Basic JavaScript SQL Minification
+          code: |-
+            function minifySql(sql) {
+              return sql
+                .replace(/\/\*[\s\S]*?\*\//g, ' ') // Strip block comments
+                .replace(/--.*$/gm, ' ')          // Strip inline comments
+                .replace(/\s+/g, ' ')             // Collapse whitespace
+                .trim();
+            }
+            console.log(minifySql("SELECT * FROM users; -- get all"));
+    seo:
+      title: SQL Minifier Online — Compress SQL Queries
+      description: Compress SQL scripts, queries, and migrations instantly. Remove whitespace, comments, and optimize databases client-side.
+      keywords:
+        - sql minifier
+        - minify sql
+        - sql compressor
+        - database script optimization
+  - name: HTML Formatter & Beautifier
+    slug: html-formatter
+    category: Developer Tools
+    icon: FileCode
+    tags:
+      - html
+      - formatter
+      - beautifier
+      - markup
+      - layout
+    priority: 10
+    releaseDate: '2026-06-30'
+    function:
+      primary: Format, indent, and beautify HTML documents client-side
+    technical:
+      processing: client-side
+    meta:
+      title: HTML Formatter Online — Clean & Beautify HTML Code
+      description: Format, indent, and beautify your HTML code instantly. Get clean, human-readable HTML strings with proper nesting and custom indentation size.
+    content:
+      title: Secure HTML Formatter & Pretty Printer
+      description: When working with dynamically generated web pages, minified assets, or messy template files, deciphering the DOM hierarchy is a constant struggle. Unformatted HTML lacks indentation and proper nesting, hiding bugs and misplaced tags. This HTML Formatter & Beautifier processes raw or minified HTML markup, instantly rebuilding a clear visual tree. Running entirely client-side, it is optimized to preserve absolute data confidentiality.
+      how_it_works: It uses a client-side lexical tokenizer to split HTML tags, text nodes, and attributes. It then maps the element nestings and formats tags with consistent, custom indentations (spaces or tabs), auto-wrapping long lines for layout readability.
+      faq:
+        - question: Will formatting HTML break my inline CSS or scripts?
+          answer: No. The beautifier parses CSS inside `<style>` blocks and JavaScript inside `<script>` blocks using nested context-aware formatters, preserving code integrity.
+        - question: Does this tool fix unclosed HTML tags?
+          answer: The parser automatically attempts to close unclosed inline tags, helping you discover layout nesting bugs instantly.
+      keywords:
+        - html formatter online
+        - beautify html code
+        - format html file free
+        - pretty print html online
+      practical_application: Web scrapers or automated browser tests often dump unformatted HTML structures. Re-formatting the markup reveals container shapes and nesting levels, allowing developers to identify scraping target nodes or CSS selectors.
+      code_blueprints:
+        - language: javascript
+          title: Browser HTML Formatting using js-beautify
+          code: |-
+            const beautify = require('js-beautify').html;
+            const messyHtml = '<div class="card"><p>Hello World</p></div>';
+            const clean = beautify(messyHtml, { indent_size: 2 });
+            console.log(clean);
+    seo:
+      title: HTML Formatter Online — Format & Indent HTML Markup
+      description: Secure, client-side HTML formatter and beautifier. Indent raw HTML tags, format nested structures, and repair spacing issues in your browser.
+      keywords:
+        - html formatter
+        - html formatter online
+        - beautify html
+        - pretty print html

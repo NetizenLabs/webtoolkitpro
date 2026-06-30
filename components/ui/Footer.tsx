@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from '@/components/ui/NativeLink';
+import Image from 'next/image'
 import { Github, Twitter, Mail, Terminal, Rocket } from 'lucide-react'
 import Logo from './Logo'
 
@@ -59,16 +60,17 @@ export default function Footer() {
                 </svg>
               </a>
               <a href="https://lift-off.sh/p/webtoolkit-pro" target="_blank" rel="noopener noreferrer" title="LiftOff launch badge" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
-                <img
+                <Image
                   src="/images/liftoff-badge.svg"
                   alt="LiftOff launch badge"
                   width={200}
+                  height={40}
                   style={{ height: 'auto' }}
                 />
               </a>
               <a href="https://findly.tools/webtoolkit-pro?utm_source=webtoolkit-pro" target="_blank" rel="noopener noreferrer" title="Featured on Findly.tools" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
-                <img
-                  src="https://findly.tools/badges/findly-tools-badge-light.svg"
+                <Image
+                  src="/images/findly-tools-badge-dark.svg"
                   alt="Featured on Findly.tools"
                   width={175}
                   height={55}
