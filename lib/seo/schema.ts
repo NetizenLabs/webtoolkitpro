@@ -55,7 +55,7 @@ export function generateWebSiteSchema() {
     'url': SITE_URL,
     'name': 'WebToolkit Pro',
     'publisher': {
-      '@id': `${SITE_URL}/#organization`
+      '@id': 'https://netizenlabs.com/#organization'
     },
     'potentialAction': {
       '@type': 'SearchAction',
@@ -74,7 +74,7 @@ export function generatePersonSchema() {
     'url': AUTHOR_URL,
     'jobTitle': 'Lead Systems Architect & Performance Engineer',
     'worksFor': {
-      '@id': `${SITE_URL}/#organization`
+      '@id': 'https://netizenlabs.com/#organization'
     },
     'sameAs': [
       'https://pk.linkedin.com/in/abu-sufyan-b34571410',
@@ -82,12 +82,26 @@ export function generatePersonSchema() {
       'https://dev.to/abusufyan909'
     ],
     'knowsAbout': [
-      'Edge Computing',
-      'Technical SEO',
-      'Software Architecture',
-      'React',
-      'Next.js',
-      'Client-Side Security'
+      {
+        '@type': 'Thing',
+        'name': 'Edge Computing',
+        'sameAs': 'https://www.wikidata.org/wiki/Q1048805'
+      },
+      {
+        '@type': 'Thing',
+        'name': 'Technical SEO',
+        'sameAs': 'https://www.wikidata.org/wiki/Q180711'
+      },
+      {
+        '@type': 'Thing',
+        'name': 'Software Architecture',
+        'sameAs': 'https://www.wikidata.org/wiki/Q189725'
+      },
+      {
+        '@type': 'Thing',
+        'name': 'Client-Side Security',
+        'sameAs': 'https://www.wikidata.org/wiki/Q11652'
+      }
     ],
     'image': {
       '@type': 'ImageObject',
