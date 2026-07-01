@@ -22,7 +22,7 @@ export default async function ToolRenderer({ slug }: ToolRendererProps) {
   try {
     const mod = await import(`../tools/instances/${filename}`);
     const ToolComponent = mod.default;
-    return <ToolComponent />;
+    return <ToolComponent slug={slug} />;
   } catch (error: any) {
     console.error("Failed to load tool chunk:", error);
     return (

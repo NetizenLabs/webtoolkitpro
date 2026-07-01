@@ -5,10 +5,11 @@ import Editor from '@monaco-editor/react';
 import { Copy, FileJson, Check, AlertCircle, Code, AlignLeft, RefreshCw } from 'lucide-react';
 import { generateTypescript, generateGo, generatePydantic } from '../../../lib/json-generators';
 
-export default function JsonToCodeGenerator() {
+export default function JsonToCodeGenerator({ slug }: { slug?: string }) {
+  const isCodeGenerator = slug === 'json-to-code-generator';
   const [input, setInput] = useState<string>('{\n  "name": "WebToolkit",\n  "version": 1.0,\n  "features": ["json", "formatting"]\n}');
   const [output, setOutput] = useState<string>('');
-  const [mode, setMode] = useState<'format' | 'typescript' | 'go' | 'pydantic'>('format');
+  const [mode, setMode] = useState<'format' | 'typescript' | 'go' | 'pydantic'>(isCodeGenerator ? 'typescript' : 'format');
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
@@ -44,9 +45,13 @@ export default function JsonToCodeGenerator() {
     }
   }, []);
 
+  // Reactive compiler for initial load & input/mode updates
+  React.useEffect(() => {
+    processJson(input, mode);
+  }, [input, mode, processJson]);
+
   const handleModeChange = (newMode: 'format' | 'typescript' | 'go' | 'pydantic') => {
     setMode(newMode);
-    processJson(input, newMode);
   };
 
   const handleCopy = () => {
@@ -102,9 +107,7 @@ export default function JsonToCodeGenerator() {
             theme="vs-dark"
             value={input}
             onChange={(val) => {
-              const newVal = val || '';
-              setInput(newVal);
-              processJson(newVal, mode);
+              setInput(val || '');
             }}
             options={{ minimap: { enabled: false }, fontSize: 14, wordWrap: 'on' }}
           />
