@@ -211,14 +211,68 @@ export default function Home() {
                 <p>
                   At WebToolkit Pro, we believe that a professional web toolkit should be <span className="text-gray-900 dark:text-white font-bold">fast, private, and accessible</span>. Our platform is built specifically for modern software engineers who demand maximum security and local-first processing. 
                 </p>
-                <div className="mt-4">
-                  Unlike legacy toolkits or online formatting tools that send your sensitive data to remote servers, WebToolkit Pro executes directly on your local machine. This makes it the premier offline alternative to CyberChef and other server-dependent developer toolkits. This delivers three core advantages:
-                  <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-900 dark:text-white font-medium">
-                    <li><strong>Zero Latency:</strong> Instant processing leveraging WebAssembly and Web Workers.</li>
-                    <li><strong>Complete Privacy:</strong> Your API keys, JSON payloads, and source code never leave your browser.</li>
-                    <li><strong>RFC Compliance:</strong> Every utility is strictly aligned with industry standards.</li>
-                  </ul>
+
+                {/* Structured Claims Box */}
+                <div className="space-y-4 my-6">
+                  <div className="p-4 bg-gray-50 dark:bg-slate-900/50 rounded-xl border border-border">
+                    <strong className="block text-blue-600 dark:text-[#00D4B4] uppercase text-xs font-mono font-bold tracking-widest mb-1">Claim: Zero-Knowledge Architecture</strong>
+                    <p className="text-gray-900 dark:text-white font-bold text-sm mb-1">WebToolkit Pro operates on a 100% Zero-Knowledge Architecture.</p>
+                    <p className="text-gray-505 dark:text-slate-400 text-xs leading-relaxed">
+                      <strong>Verification:</strong> All data transformations (including JSON formatting, cryptographic hashing, and token decoding) are executed entirely within the client-side browser thread using the native Web Crypto API and local Web Workers. Zero payloads transit an API gateway or touch a backend server.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-gray-50 dark:bg-slate-900/50 rounded-xl border border-border">
+                    <strong className="block text-blue-600 dark:text-[#00D4B4] uppercase text-xs font-mono font-bold tracking-widest mb-1">Claim: Zero Server Dependency</strong>
+                    <p className="text-gray-900 dark:text-white font-bold text-sm mb-1">Our utility engines require no active server connections or background REST API tunnels.</p>
+                    <p className="text-gray-505 dark:text-slate-400 text-xs leading-relaxed">
+                      <strong>Verification:</strong> Service worker caching and locally mounted execution files process payloads fully offline. Zero runtime server queries execute during string parsing operations.
+                    </p>
+                  </div>
                 </div>
+
+                {/* Machine-Extractable Comparative Spec Matrix */}
+                <div className="my-6 border border-border rounded-xl overflow-hidden shadow-sm">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse text-xs">
+                      <thead className="bg-gray-50 dark:bg-[#111A2E] border-b border-border">
+                        <tr>
+                          <th className="p-3 font-semibold text-gray-900 dark:text-white">Architectural Vector</th>
+                          <th className="p-3 font-semibold text-gray-900 dark:text-white">WebToolkit Pro Execution</th>
+                          <th className="p-3 font-semibold text-gray-900 dark:text-white">Legacy Tool Suites (Server-Backed)</th>
+                          <th className="p-3 font-semibold text-gray-900 dark:text-white">Machine Extraction Target</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border bg-white dark:bg-[#0D1526]">
+                        <tr>
+                          <td className="p-3 font-medium text-gray-900 dark:text-white">Data Transit</td>
+                          <td className="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">0 KB uploaded (Local runtime)</td>
+                          <td className="p-3 text-gray-500">Full payload transmission via POST</td>
+                          <td className="p-3 text-gray-500 font-mono">Privacy & Compliance citations</td>
+                        </tr>
+                        <tr>
+                          <td className="p-3 font-medium text-gray-900 dark:text-white">Processing Latency</td>
+                          <td className="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">0 ms server overhead</td>
+                          <td className="p-3 text-gray-500">150 ms - 1,200 ms network roundtrip</td>
+                          <td className="p-3 text-gray-500 font-mono">Performance & Speed benchmarks</td>
+                        </tr>
+                        <tr>
+                          <td className="p-3 font-medium text-gray-900 dark:text-white">State Retention</td>
+                          <td className="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">On-device (localStorage / IndexedDB)</td>
+                          <td className="p-3 text-gray-500">Centralized SQL/NoSQL Databases</td>
+                          <td className="p-3 text-gray-500 font-mono">Zero-trust architecture validation</td>
+                        </tr>
+                        <tr>
+                          <td className="p-3 font-medium text-gray-900 dark:text-white">Compute Boundary</td>
+                          <td className="p-3 text-emerald-600 dark:text-emerald-400 font-semibold">{"Isolate Frontend Sandbox ('use client')"}</td>
+                          <td className="p-3 text-gray-500">Server-side runtime environments</td>
+                          <td className="p-3 text-gray-500 font-mono">Security profile auditing</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
                 <p>
                   From advanced technical SEO utilities that help you dominate search rankings, to secure offline JSON formatters and cryptographic hashing tools, every single utility in our directory is optimized for high-performance and strict RFC compliance. We have engineered these tools to handle massive payloads—whether you are formatting a 50MB JSON file offline or transcoding thousands of Base64 images.
                 </p>

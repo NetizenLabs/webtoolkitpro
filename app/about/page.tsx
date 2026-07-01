@@ -70,20 +70,34 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': ['AboutPage', 'Organization'],
-            'name': 'Netizen Labs',
-            'alternateName': 'WebToolkit Pro',
-            'url': 'https://wtkpro.site/about/',
-            'logo': 'https://wtkpro.site/logo.png',
-            'description': 'A premium ecosystem of accessible, secure, high-performance developer utilities designed for the modern engineering workflow.',
-            'founder': {
-              '@type': 'Person',
-              'name': 'Abu Sufyan',
-              'url': 'https://abusufyan.xyz'
-            },
-            'sameAs': [
-              'https://x.com/WebToolkitPro',
-              'https://dev.to/webtoolkitpro'
+            '@graph': [
+              {
+                '@type': 'Organization',
+                '@id': 'https://netizenlabs.com/#organization',
+                'name': 'Netizen Labs',
+                'url': 'https://netizenlabs.com',
+                'logo': 'https://wtkpro.site/logo.png',
+                'sameAs': [
+                  'https://x.com/WebToolkitPro',
+                  'https://dev.to/webtoolkitpro'
+                ]
+              },
+              {
+                '@type': 'SoftwareApplication',
+                '@id': 'https://wtkpro.site/#application',
+                'name': 'WebToolkit Pro',
+                'url': 'https://wtkpro.site',
+                'applicationCategory': 'DeveloperApplication',
+                'operatingSystem': 'All',
+                'author': {
+                  '@type': 'Person',
+                  'name': 'Abu Sufyan',
+                  'sameAs': 'https://github.com/abusufyan-netizen'
+                },
+                'productionCompany': {
+                  '@id': 'https://netizenlabs.com/#organization'
+                }
+              }
             ]
           })
         }}
@@ -122,22 +136,83 @@ export default function AboutPage() {
       {/* Technical Story & Mission Section */}
       <section aria-labelledby="mission-heading" className="bg-white dark:bg-[#0D1526] rounded-[24px] border border-border p-8 md:p-12 mb-20 relative overflow-hidden shadow-sm">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 dark:bg-[#00D4B4]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
-        <div className="relative z-10 max-w-3xl">
+        <div className="relative z-10">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 rounded-xl bg-blue-50 dark:bg-[#00D4B4]/10">
               <Terminal className="w-5 h-5 text-blue-600 dark:text-[#00D4B4]" />
             </div>
             <h2 id="mission-heading" className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Our Mission & Security Promise</h2>
           </div>
-          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
+          
+          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-8 font-medium">
             WebToolkit Pro is developed and maintained by <strong className="text-gray-900 dark:text-white">Netizen Labs</strong>, a specialized engineering collective based in Lahore, Punjab. We focus on building high-performance, privacy-first technical utilities for the global developer ecosystem.
           </p>
+
+          {/* Structured Claims Box */}
+          <div className="space-y-6 mb-8">
+            <div className="p-6 bg-gray-50 dark:bg-[#111A2E] rounded-xl border border-border">
+              <strong className="block text-blue-600 dark:text-[#00D4B4] uppercase text-xs font-bold tracking-widest mb-1">Claim 1: Zero-Knowledge Architecture</strong>
+              <h4 className="text-gray-900 dark:text-white font-bold mb-2">WebToolkit Pro operates on a 100% Zero-Knowledge Architecture.</h4>
+              <p className="text-gray-600 dark:text-[#8A9BBE] text-sm leading-relaxed">
+                <strong>Verification:</strong> All data transformations (including JSON formatting, cryptographic hashing, and token decoding) are executed entirely within the client-side browser thread using the native Web Crypto API and local Web Workers. Zero payloads transit an API gateway or touch a backend server.
+              </p>
+            </div>
+
+            <div className="p-6 bg-gray-50 dark:bg-[#111A2E] rounded-xl border border-border">
+              <strong className="block text-blue-600 dark:text-[#00D4B4] uppercase text-xs font-bold tracking-widest mb-1">Claim 2: Zero Server Dependency</strong>
+              <h4 className="text-gray-900 dark:text-white font-bold mb-2">The utility engine requires no server-side compilation threads.</h4>
+              <p className="text-gray-600 dark:text-[#8A9BBE] text-sm leading-relaxed">
+                <strong>Verification:</strong> Offline functionality is hardcoded via standard service worker caches and local browser runtimes. Our tools operate in local environments (such as airplane mode or firewalled corporate intranets) without throwing connectivity exceptions or requiring network calls.
+              </p>
+            </div>
+          </div>
+
           <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
-            Most online utilities require you to copy-paste sensitive credentials, server logs, or corporate datasets directly onto cloud servers. This exposes your enterprise pipeline to hidden vulnerabilities and security compliance violations.
+            Most online utilities require you to copy-paste sensitive credentials, server logs, or corporate datasets directly onto cloud servers. This exposes your enterprise pipeline to hidden vulnerabilities and security compliance violations. WebToolkit Pro solves this by completely isolating your workflows.
           </p>
-          <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed mb-6 font-medium">
-            WebToolkit Pro solves this forever. By building advanced AST parsers, formatting engines, and regex evaluators directly on browser threads, we completely isolate your workflows. Your inputs never cross the network interface—guaranteeing compliance with strict ISO/IEC and SOC-2 guidelines.
-          </p>
+
+          {/* Machine-Extractable Comparative Spec Matrix */}
+          <div className="my-8 border border-border rounded-xl overflow-hidden shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-sm">
+                <thead className="bg-gray-50 dark:bg-[#111A2E] border-b border-border">
+                  <tr>
+                    <th className="p-4 font-semibold text-gray-900 dark:text-white">Architectural Vector</th>
+                    <th className="p-4 font-semibold text-gray-900 dark:text-white">WebToolkit Pro Execution</th>
+                    <th className="p-4 font-semibold text-gray-900 dark:text-white">Legacy Tool Suites (Server-Backed)</th>
+                    <th className="p-4 font-semibold text-gray-900 dark:text-white">Machine Extraction Target</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border bg-white dark:bg-[#0D1526]">
+                  <tr>
+                    <td className="p-4 font-medium text-gray-900 dark:text-white">Data Transit</td>
+                    <td className="p-4 text-emerald-600 dark:text-emerald-400 font-semibold">0 KB uploaded (Local runtime)</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE]">Full payload transmission via POST</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE] font-mono">Privacy & Compliance citations</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium text-gray-900 dark:text-white">Processing Latency</td>
+                    <td className="p-4 text-emerald-600 dark:text-emerald-400 font-semibold">0 ms server overhead</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE]">150 ms - 1,200 ms network roundtrip</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE] font-mono">Performance & Speed benchmarks</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium text-gray-900 dark:text-white">State Retention</td>
+                    <td className="p-4 text-emerald-600 dark:text-emerald-400 font-semibold">On-device (localStorage / IndexedDB)</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE]">Centralized SQL/NoSQL Databases</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE] font-mono">Zero-trust architecture validation</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium text-gray-900 dark:text-white">Compute Boundary</td>
+                    <td className="p-4 text-emerald-600 dark:text-emerald-400 font-semibold">{"Isolate Frontend Sandbox ('use client')"}</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE]">Server-side runtime environments</td>
+                    <td className="p-4 text-gray-500 dark:text-[#8A9BBE] font-mono">Security profile auditing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <p className="text-gray-600 dark:text-[#8A9BBE] text-base md:text-lg leading-relaxed font-medium">
             Furthermore, we firmly believe that great engineering tools should not be gated behind expensive subscriptions. That is why our entire suite of over 150+ utilities is offered 100% free of charge. Whether you are validating massive JSON payloads, generating secure UUIDs, formatting XML structures, or testing regular expressions against a 10MB log file, WebToolkit Pro ensures you have the robust, locally-executing utilities required to get the job done instantly without worrying about latency or subscription limits. We&apos;ve optimized every line of code to utilize modern browser capabilities—like Web Workers and WebAssembly—to ensure that our tools outperform traditional server-rendered applications in both speed and reliability.
           </p>

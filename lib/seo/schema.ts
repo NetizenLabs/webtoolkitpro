@@ -6,30 +6,44 @@ export const AUTHOR_URL = 'https://abusufyan.xyz'
 export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
-    'name': 'WebToolkit Pro',
-    'url': SITE_URL,
-    'logo': {
-      '@type': 'ImageObject',
-      'url': `${SITE_URL}/logo-optimized.webp`,
-      'width': '512',
-      'height': '512'
-    },
-    'sameAs': [
-      'https://github.com/WebToolkit-Pro',
-      'https://twitter.com/WebToolKitPro',
-      'https://producthunt.com/products/webtoolkit-pro',
-      'https://severancecalculator.xyz',
-      'https://tradeconvert.pro',
-      'https://abusufyan.xyz'
-    ],
-    'description': 'The global standard for secure, client-side developer utilities and technical engineering journals.',
-    'contactPoint': {
-      '@type': 'ContactPoint',
-      'email': 'hello@wtkpro.site',
-      'contactType': 'customer support'
-    }
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://netizenlabs.com/#organization',
+        'name': 'Netizen Labs',
+        'url': 'https://netizenlabs.com',
+        'logo': {
+          '@type': 'ImageObject',
+          'url': `${SITE_URL}/logo-optimized.webp`,
+          'width': '512',
+          'height': '512'
+        },
+        'sameAs': [
+          'https://github.com/WebToolkit-Pro',
+          'https://twitter.com/WebToolKitPro',
+          'https://producthunt.com/products/webtoolkit-pro',
+          'https://severancecalculator.xyz',
+          'https://tradeconvert.pro',
+          'https://abusufyan.xyz'
+        ]
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${SITE_URL}/#application`,
+        'name': 'WebToolkit Pro',
+        'url': SITE_URL,
+        'applicationCategory': 'DeveloperApplication',
+        'operatingSystem': 'All',
+        'author': {
+          '@type': 'Person',
+          'name': 'Abu Sufyan',
+          'sameAs': 'https://github.com/abusufyan-netizen'
+        },
+        'productionCompany': {
+          '@id': 'https://netizenlabs.com/#organization'
+        }
+      }
+    ]
   }
 }
 
