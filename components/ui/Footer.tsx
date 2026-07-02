@@ -77,6 +77,11 @@ export default function Footer() {
                   style={{ height: 'auto' }}
                 />
               </a>
+              {/* Launchpadly — WebToolkit Pro (light) */}
+              <a href="https://launchpadly.co/startup/webtoolkit-pro" target="_blank" rel="noopener noreferrer" data-launchpadly-badge="webtoolkit-pro" data-launchpadly-badge-variant="light" className="inline-block hover:scale-[1.02] active:scale-98 transition-all max-w-full">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://launchpadly.co/embed/badges/startup/webtoolkit-pro.svg?variant=light" alt="Launchpadly Startup Directory" width="220" height="48" style={{ display: 'block', border: 0 }} />
+              </a>
             </div>
           </div>
 
