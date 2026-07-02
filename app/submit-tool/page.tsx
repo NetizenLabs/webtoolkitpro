@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Send, Sparkles, MessageSquare, Code2, ShieldCheck, CheckCircle2, Zap, Copy } from 'lucide-react'
 import { triggerSuccess } from '@/lib/effects'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export default function SubmitToolPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
@@ -89,6 +90,7 @@ export default function SubmitToolPage() {
 
   return (
     <div className="min-h-screen dynamic-padding">
+      <BreadcrumbSchema name="Submit a Tool" slug="submit-tool" />
       <div className="max-w-5xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-16 pt-12">
@@ -128,9 +130,10 @@ export default function SubmitToolPage() {
           <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-sm font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Your Name</label>
+                <label htmlFor="submit-name" className="text-sm font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Your Name</label>
                 <input 
                   required
+                  id="submit-name"
                   name="name"
                   type="text" 
                   className="w-full bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] px-6 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
@@ -138,9 +141,10 @@ export default function SubmitToolPage() {
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-sm font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Email Address</label>
+                <label htmlFor="submit-email" className="text-sm font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Email Address</label>
                 <input 
                   required
+                  id="submit-email"
                   name="email"
                   type="email" 
                   className="w-full bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] px-6 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium"
@@ -149,9 +153,10 @@ export default function SubmitToolPage() {
               </div>
             </div>
             <div className="space-y-3">
-              <label className="text-sm font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Tool Concept / Idea</label>
+              <label htmlFor="submit-idea" className="text-sm font-bold text-gray-500 dark:text-white uppercase tracking-widest font-mono ml-2">Tool Concept / Idea</label>
               <textarea 
                 required
+                id="submit-idea"
                 name="idea"
                 className="w-full bg-gray-50 dark:bg-[#0B1120] border border-gray-200 dark:border-[#1E2D47] rounded-[12px] px-6 py-6 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#4A6080] focus:ring-2 focus:ring-[#00D4B4] outline-none transition-all font-medium min-h-[150px] resize-none"
                 placeholder="Tell us about the tool... (e.g., 'A CSS-in-JS performance profiler' or 'A JWT debugger')"

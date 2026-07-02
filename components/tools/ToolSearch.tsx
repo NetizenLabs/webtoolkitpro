@@ -85,7 +85,9 @@ export default function ToolSearch({ tools }: ToolSearchProps) {
           onFocus={() => query && setIsOpen(true)}
           placeholder="Search for formatting, converting, or encoding tools..."
           className="w-full p-4 pl-12 pr-20 text-lg bg-white dark:bg-[#0D1526] border border-gray-200 dark:border-[#1E2D47] rounded-xl focus:ring-2 focus:ring-[#00D4B4] focus:border-transparent outline-none text-gray-900 dark:text-white transition-all shadow-sm"
+          aria-label="Search all developer tools"
         />
+
         
         {/* Visual cue for users that the shortcut exists */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-1 pointer-events-none">

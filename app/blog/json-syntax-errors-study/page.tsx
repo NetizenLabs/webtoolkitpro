@@ -28,17 +28,28 @@ export default function JsonStudyPage() {
             'headline': '2026 Developer Report: The 10 Most Common JSON Syntax Errors',
             'description': 'A comprehensive data study on why JSON fails and how modern developers can avoid common syntax pitfalls.',
             'image': 'https://wtkpro.site/og-study-json.png',
+
             'author': {
               '@type': 'Organization',
-              'name': 'Netizen Labs Data Team'
+              'name': 'Netizen Labs Data Team',
+              'url': 'https://netizenlabs.com',
+              'sameAs': [
+                'https://github.com/netizen-labs'
+              ]
             },
             'publisher': {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
               'logo': {
                 '@type': 'ImageObject',
-                'url': 'https://wtkpro.site/logo.png'
-              }
+                'url': 'https://wtkpro.site/logo-high-res.png'
+              },
+              'url': 'https://wtkpro.site/',
+              'sameAs': [
+                'https://github.com/WebToolkit-Pro',
+                'https://twitter.com/WebToolKitPro',
+                'https://producthunt.com/products/webtoolkit-pro'
+              ]
             },
             'datePublished': '2026-05-07'
           })

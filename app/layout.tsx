@@ -227,15 +227,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="font-sans bg-background text-foreground antialiased transition-colors duration-300">
-      <div className="min-h-screen flex flex-col">
-        <SubscriptionProvider>
-          <AuditLoggerProvider>
-            <PipelineProvider>
-              <Header />
-              <main className="flex-grow">
-                <DesktopLicenseGuard>{children}</DesktopLicenseGuard>
-              </main>
-              <Footer />
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#00D4B4] text-[#0B1120] px-4 py-2 rounded-md font-bold z-[300] outline-none"
+        >
+          Skip to main content
+        </a>
+        <div className="min-h-screen flex flex-col">
+          <SubscriptionProvider>
+            <AuditLoggerProvider>
+              <PipelineProvider>
+                <Header />
+                <main id="main-content" className="flex-grow">
+                  <DesktopLicenseGuard>{children}</DesktopLicenseGuard>
+                </main>
+                <Footer />
+
               <CommandBar tools={allTools} />
               <CookieConsent />
               <NewContentNotification latestItem={latestItem} />

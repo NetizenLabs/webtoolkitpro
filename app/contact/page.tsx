@@ -4,6 +4,7 @@ import React, { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react'
 import { triggerQuickSuccess } from '@/lib/effects'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 function ContactForm() {
   const searchParams = useSearchParams()
@@ -66,9 +67,10 @@ function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Your Name</label>
+            <label htmlFor="contact-name" className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Your Name</label>
             <input 
               required
+              id="contact-name"
               name="name"
               type="text" 
               placeholder="John Doe" 
@@ -76,9 +78,10 @@ function ContactForm() {
             />
           </div>
           <div>
-            <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Email Address</label>
+            <label htmlFor="contact-email" className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Email Address</label>
             <input 
               required
+              id="contact-email"
               name="email"
               type="email" 
               placeholder="john@example.com" 
@@ -87,9 +90,10 @@ function ContactForm() {
           </div>
         </div>
         <div>
-          <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Subject</label>
+          <label htmlFor="contact-subject" className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Subject</label>
           <input 
             required
+            id="contact-subject"
             name="subject"
             type="text" 
             defaultValue={subjectParam}
@@ -98,9 +102,10 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Message</label>
+          <label htmlFor="contact-message" className="text-[10px] font-bold text-gray-500 dark:text-white mb-3 block uppercase tracking-widest font-mono ml-2">Message</label>
           <textarea 
             required
+            id="contact-message"
             name="message"
             rows={6} 
             placeholder="Detailed report or suggestion..." 
@@ -123,6 +128,7 @@ function ContactForm() {
 export default function ContactPage() {
   return (
     <div className="dynamic-padding max-w-4xl mx-auto min-h-screen">
+      <BreadcrumbSchema name="Contact" slug="contact" />
       <div className="text-center mb-16 pt-12">
         <h1 className="text-4xl md:text-6xl font-bold text-[#1E2D47] dark:text-white mb-6 tracking-tighter">
           Connect with <span className="text-[#00D4B4]">Us</span>

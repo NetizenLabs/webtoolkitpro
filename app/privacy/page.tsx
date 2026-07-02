@@ -59,13 +59,19 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. GDPR and CCPA Compliance</h2>
             <p className="text-gray-600 dark:text-slate-400 leading-relaxed mb-4">
-              We respect your rights under the GDPR and CCPA.
+              We respect your rights under the General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA). Under these regulations, users residing within the European Economic Area (EEA) and California hold the following data protection rights:
             </p>
-            <ul className="list-disc pl-6 text-gray-600 dark:text-slate-400 space-y-2">
-              <li><strong>Right to access and erasure:</strong> You can request your data be deleted.</li>
-              <li><strong>Right to opt-out:</strong> You can decline cookies through our consent banner.</li>
+            <ul className="list-disc pl-6 text-gray-600 dark:text-slate-400 space-y-3 mb-4">
+              <li><strong>Right to Access:</strong> You have the right to request copies of your personal data.</li>
+              <li><strong>Right to Rectification:</strong> You have the right to request that we correct any information you believe is inaccurate.</li>
+              <li><strong>Right to Erasure (Right to be Forgotten):</strong> You have the right to request that we erase your personal data under certain conditions. Since we do not store your data on our servers and all calculations run locally in your browser&apos;s RAM, no personal data resides on our infrastructure. However, you have the absolute right to request the erasure of any communications or records (such as support emails) by contacting us at hello@wtkpro.site.</li>
+              <li><strong>Right to Restrict or Object to Processing:</strong> You have the right to restrict or object to the processing of your personal data under certain conditions.</li>
+              <li><strong>Right to Data Portability:</strong> You have the right to request that we transfer the data we have collected to another organization.</li>
+              <li><strong>Right to Opt-Out:</strong> You can decline cookies through our consent banner or adjust browser settings to stop tracking scripts.</li>
             </ul>
           </section>
+
+
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">6. Contact Us</h2>

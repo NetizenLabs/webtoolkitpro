@@ -97,6 +97,7 @@ export default function CommandBar({ tools }: CommandBarProps) {
             value={search}
             onChange={e => setSearch(e.target.value)}
             onKeyDown={handleKeyDown}
+            aria-label="Search tools and commands"
           />
           <button 
             onClick={() => setIsOpen(false)}

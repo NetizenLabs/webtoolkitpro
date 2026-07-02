@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Shield, Zap, Lock, Terminal, FileCode2, Download, CheckCircle2, ShieldCheck, FileKey, Scale } from 'lucide-react';
 import { TOOL_COUNT } from '@/lib/constants';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Pricing & Enterprise Licensing — WebToolkit Pro',
@@ -94,6 +95,7 @@ const structuredData = {
 export default function PricingPage() {
   return (
     <main className="min-h-screen pt-24 pb-20 relative overflow-hidden">
+      <BreadcrumbSchema name="Pricing" slug="pricing" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

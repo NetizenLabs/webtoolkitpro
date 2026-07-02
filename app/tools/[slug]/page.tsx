@@ -143,6 +143,7 @@ export default function ToolPage({ params }: ToolPageProps) {
 
   return (
     <>
+      <BreadcrumbSchema name={tool.name} slug={`tools/${tool.slug}`} />
       {renderLayout()}
       {faqSchema && (
         <script

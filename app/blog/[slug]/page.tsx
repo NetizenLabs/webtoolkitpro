@@ -180,6 +180,7 @@ export default async function BlogPostPage({ params }: Props) {
                 'https://github.com/abusufyan-netizen'
               ]
             },
+
             'publisher': {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
@@ -188,6 +189,11 @@ export default async function BlogPostPage({ params }: Props) {
                 'url': 'https://wtkpro.site/logo-high-res.png'
               },
               'url': 'https://wtkpro.site/',
+              'sameAs': [
+                'https://github.com/WebToolkit-Pro',
+                'https://twitter.com/WebToolKitPro',
+                'https://producthunt.com/products/webtoolkit-pro'
+              ]
             },
             'mainEntityOfPage': {
               '@type': 'WebPage',

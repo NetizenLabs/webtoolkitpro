@@ -278,8 +278,18 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
             'publisher': {
               '@type': 'Organization',
               'name': 'WebToolkit Pro',
-              'url': 'https://wtkpro.site',
+              'url': 'https://wtkpro.site/',
+              'logo': {
+                '@type': 'ImageObject',
+                'url': 'https://wtkpro.site/logo-high-res.png'
+              },
+              'sameAs': [
+                'https://github.com/WebToolkit-Pro',
+                'https://twitter.com/WebToolKitPro',
+                'https://producthunt.com/products/webtoolkit-pro'
+              ]
             },
+
             'blogPost': allPosts.map((post) => ({
               '@type': 'BlogPosting',
               'headline': post.title,

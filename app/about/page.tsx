@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Link from '@/components/ui/NativeLink';
 import { 
@@ -5,6 +6,7 @@ import {
   ArrowRight, ShieldCheck, Milestone, Star, Terminal 
 } from 'lucide-react'
 import { TOOL_COUNT } from '@/lib/constants'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
   title: 'About WebToolkit Pro: Technical Story & Mission',
@@ -61,9 +63,9 @@ export default function AboutPage() {
       desc: 'Upgraded layout architectures, optimized mobile execution pipelines using React 18 deferred rendering states, and achieved optimal performance scores.'
     }
   ]
-
   return (
     <main id="main-content" className="dynamic-padding max-w-5xl mx-auto min-h-screen" aria-label="About WebToolkit Pro Page">
+      <BreadcrumbSchema name="About" slug="about" />
       {/* Structured Schema Data */}
       <script
         type="application/ld+json"
