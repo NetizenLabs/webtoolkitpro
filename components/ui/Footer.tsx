@@ -118,14 +118,17 @@ export default function Footer() {
               <li><Link href="/blog/ai-seo-optimization-2026/" className="hover:text-[#00D4B4] transition-colors">AI Optimization (AIO)</Link></li>
             </ul>
           </div>
-
           <div>
             <h3 className="text-foreground font-bold mb-6 uppercase tracking-widest text-[9px] font-mono border-b border-border pb-2">Ecosystem</h3>
             <ul className="space-y-2 text-[11px] font-medium">
               <li><a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">TradeConvert</a></li>
-
-              <li><a href="https://www.severancecalculator.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Severance Calculator</a></li>
+              <li><a href="https://www.severancecalculator.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Severance Pay Calculator</a></li>
               <li><a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Abu Sufyan Portfolio</a></li>
+              <li><a href="https://netizenlabs.online" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Netizen Labs</a></li>
+              <li><a href="https://getstudynova.online" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">StudyNova</a></li>
+              <li><a href="https://quranhub.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">QuranHub</a></li>
+              <li><a href="https://slabreachcalculator.site" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">SLA Breach Calculator</a></li>
+              <li><a href="https://taxforfreelancers.online" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D4B4] transition-colors">Freelance Tax Calculator</a></li>
               <li><a href="/author/" className="hover:text-[#00D4B4] transition-colors">Engineering Leadership</a></li>
               <li><a href="/about/" className="hover:text-[#00D4B4] transition-colors">Our Philosophy</a></li>
               <li><a href="/pricing/" className="hover:text-[#00D4B4] transition-colors font-bold text-[#0094FF]">Pricing Tiers</a></li>
