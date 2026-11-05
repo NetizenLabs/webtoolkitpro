@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 import { 
   FileJson, Key, FileText, Palette, Hash, Type, Clock, Binary, Shield, Code, 
   Ruler, Shuffle, FileCode, Globe, ArrowRight, Sparkles, Zap, Users, Star, Share2,
-  CheckCircle, Server, RefreshCw, Terminal, BookOpen, ExternalLink, MessageSquare, LayoutGrid
+  CheckCircle, RefreshCw, Terminal, BookOpen, ExternalLink, MessageSquare, LayoutGrid
 } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 
@@ -88,14 +88,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-[var(--font-size-4xl)] font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
-            The only toolkit enterprise devs can use on client work <br />
+            {TOOL_COUNT} free developer tools that run <br />
             <span className="bg-gradient-to-r from-[#00D4B4] to-[#0094FF] bg-clip-text text-transparent">
-              without a security review.
+              instantly in your browser.
             </span>
           </h1>
 
           <p className="text-[var(--font-size-lg)] text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            {TOOL_COUNT} instant-execution utilities that never send your data to a server. No tracking, no sign-ups, just pure client-side performance.
+            Format JSON, encode Base64, count words, test regex and more — every tool is free and runs entirely in your browser. No sign-ups, and your data never leaves your device.
           </p>
 
           <div className="mb-4">
@@ -103,7 +103,7 @@ export default function Home() {
           </div>
           
           <div className="text-sm font-medium text-muted-foreground mb-8">
-            100% Free for Individual Developers. Paid for Corporate Compliance.
+            100% Free. No sign-ups, no paywalls — just open a tool and use it.
           </div>
           
           <div className="flex items-center justify-center gap-6 text-sm font-bold uppercase tracking-widest text-muted-foreground">
@@ -197,8 +197,8 @@ export default function Home() {
       {/* Semantic SEO Text moved to bottom */}
       <section className="py-[var(--space-xl)] bg-transparent border-t border-gray-100/50 dark:border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
+          <div className="grid grid-cols-1 gap-20 items-center">
+            <div className="space-y-8 max-w-3xl">
               <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-black uppercase tracking-[0.2em] rounded-full">
                 Engineering Excellence
               </div>
@@ -281,31 +281,6 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="pt-6 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-slate-900">
-                <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">{TOOL_COUNT}</div>
-                  <div className="text-sm uppercase tracking-widest text-gray-400 font-bold">Premium Utilities</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">Instant</div>
-                  <div className="text-sm uppercase tracking-widest text-gray-400 font-bold">Execution</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { label: 'Client-Side Only', desc: 'JS Workers processing', icon: Zap, color: 'text-blue-600' },
-                { label: 'RFC Compliant', desc: 'Industry standards', icon: CheckCircle, color: 'text-emerald-600' },
-                { label: 'No Tracking', desc: 'Zero data retention', icon: Shield, color: 'text-purple-600' },
-                { label: 'Cloud Native', desc: 'Edge delivery network', icon: Server, color: 'text-amber-600' },
-              ].map((feature) => (
-                <div key={feature.label} className="p-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[2.5rem] border border-white/40 dark:border-slate-800/50 hover:shadow-2xl transition-all group">
-                  <feature.icon className={`w-10 h-10 ${feature.color} mb-6 group-hover:scale-110 transition-transform`} />
-                  <div className="font-bold text-gray-900 dark:text-white text-lg mb-2 tracking-tight">{feature.label}</div>
-                  <div className="text-sm text-gray-400 dark:text-slate-500 font-black uppercase tracking-widest">{feature.desc}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

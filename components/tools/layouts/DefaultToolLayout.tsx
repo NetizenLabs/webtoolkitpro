@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '@/components/ui/NativeLink';
-import { ArrowRight, ShieldCheck, Info } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ToolRenderer from '@/components/tools/ToolRenderer'
 import ToolInfo from '@/components/sections/ToolInfo'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
@@ -16,7 +16,6 @@ import { getRelatedPostsForTool } from '@/lib/blog'
 import FurtherReading from '@/components/sections/FurtherReading'
 import ToolPersonalizationClient from '@/components/tools/ToolPersonalizationClient'
 import { getRelatedToolsForWidget } from '@/lib/tools'
-import ToolSecurityBadge from '@/components/tools/ToolSecurityBadge'
 
 // @ts-ignore
 export default function DefaultToolLayout({ tool, categorySlug, relatedTools, softwareSchema }) {
@@ -95,21 +94,10 @@ export default function DefaultToolLayout({ tool, categorySlug, relatedTools, so
                 <span className="text-gray-300 dark:text-gray-700">|</span>
                 <span className="text-gray-400 dark:text-[#5B719E]">Systems Engineer</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-gray-300 dark:text-gray-700">•</span>
-                <span className="flex items-center gap-1 text-emerald-600 dark:text-[#00D4B4] font-medium">
-                  <ShieldCheck className="w-4 h-4" strokeWidth={2} /> Fact-Checked & Verified
-                </span>
-                <span className="text-gray-300 dark:text-gray-700">•</span>
-                <span className="text-gray-400 dark:text-[#5B719E]">Compliance: 2026 Standards</span>
-                <span className="text-gray-300 dark:text-gray-700">•</span>
-                <span className="text-gray-400 dark:text-[#5B719E]">Last Updated: May 2026</span>
-              </div>
             </div>
 
             <AdSlot />
 
-            <ToolSecurityBadge />
             <ToolInfo 
               title={tool.name}
               howItWorks={tool.content?.how_it_works || ''}
@@ -121,21 +109,6 @@ export default function DefaultToolLayout({ tool, categorySlug, relatedTools, so
               relatedGuides={tool.content?.related_guides}
             />
 
-            <div className="mt-12 p-8 bg-gray-50 dark:bg-[#0D1526]/50 rounded-[12px] border border-gray-100 dark:border-[#1E2D47] text-sm text-gray-600 dark:text-[#8A9BBE] leading-relaxed shadow-inner">
-              <div className="flex items-center gap-3 mb-4 text-[#1E2D47] dark:text-white font-bold text-base">
-                <Info className="w-5 h-5 text-blue-500 dark:text-[#00D4B4]" strokeWidth={2} />
-                Editorial Standards & Processing Transparency
-              </div>
-              <p className="mb-3">
-                This utility is engineered and maintained under strict editorial and technical standards. All source calculations are audited against official formatting standards and RFC specifications to guarantee mathematical and logic accuracy.
-              </p>
-              <p className="mb-4">
-                <strong>Security Guarantee:</strong> To guarantee absolute user privacy, this tool executes 100% client-side inside your web browser. None of your input strings, payloads, keys, or files are ever transmitted to a server or stored externally.
-              </p>
-              <p className="mt-4 pt-4 border-t border-gray-200 dark:border-[#1E2D47] text-xs font-mono">
-                Built by <a href="https://abusufyan.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-[#00D4B4] hover:underline">Abu Sufyan</a> • Also explore: <a href="https://www.severancecalculator.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-[#00D4B4] hover:underline">Severance Calculator</a> & <a href="https://tradeconvert.pro" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-[#00D4B4] hover:underline">TradeConvert</a>
-              </p>
-            </div>
 
             <FurtherReading 
               posts={getRelatedPostsForTool(tool.tags, tool.category)} 

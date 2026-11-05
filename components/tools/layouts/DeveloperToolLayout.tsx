@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '@/components/ui/NativeLink';
-import { ArrowRight, ShieldCheck, Info, Terminal } from 'lucide-react'
+import { ArrowRight, Info, Terminal } from 'lucide-react'
 import ToolRenderer from '@/components/tools/ToolRenderer'
 import ToolInfo from '@/components/sections/ToolInfo'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
@@ -16,7 +16,6 @@ import { getRelatedPostsForTool } from '@/lib/blog'
 import FurtherReading from '@/components/sections/FurtherReading'
 import ToolPersonalizationClient from '@/components/tools/ToolPersonalizationClient'
 import { getRelatedToolsForWidget } from '@/lib/tools'
-import ToolSecurityBadge from '@/components/tools/ToolSecurityBadge'
 
 // @ts-ignore
 export default function DeveloperToolLayout({ tool, categorySlug, relatedTools, softwareSchema }) {
@@ -105,18 +104,9 @@ export default function DeveloperToolLayout({ tool, categorySlug, relatedTools, 
                 <span>|</span>
                 <span>Systems Engineer</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span>•</span>
-                <span className="flex items-center gap-1 text-[#00D4B4] font-medium">
-                  <ShieldCheck className="w-3 h-3" strokeWidth={2} /> Verified
-                </span>
-                <span>•</span>
-                <span>Protocol: 2026-STABLE</span>
-              </div>
             </div>
 
             <div className="font-sans">
-              <ToolSecurityBadge />
               <ToolInfo 
                 title={tool.name}
                 howItWorks={tool.content?.how_it_works || ''}
@@ -127,17 +117,6 @@ export default function DeveloperToolLayout({ tool, categorySlug, relatedTools, 
                 codeBlueprints={tool.content?.code_blueprints}
                 relatedGuides={tool.content?.related_guides}
               />
-            </div>
-
-            {/* E-E-A-T Sourcing & Client-Side Privacy Guarantee */}
-            <div className="mt-12 p-8 bg-[#0D1526] rounded-[8px] border border-[#1E2D47] text-xs text-[#8A9BBE] leading-relaxed">
-              <div className="flex items-center gap-3 mb-4 text-white font-bold text-sm">
-                <ShieldCheck className="w-4 h-4 text-[#00D4B4]" strokeWidth={2} />
-                Strict Client-Side Execution Policy
-              </div>
-              <p className="mb-4">
-                <strong>Zero-Knowledge Protocol:</strong> To guarantee absolute user privacy, this tool executes 100% client-side inside your web browser via WebAssembly and local JavaScript. None of your input strings, payloads, keys, or files are ever transmitted to a remote server.
-              </p>
             </div>
 
             <div className="mt-12 font-sans">
