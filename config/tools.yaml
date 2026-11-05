@@ -475,8 +475,8 @@ tools:
       description: Encode and decode Base64 text safely. Upload an image to generate a Base64 Data URI string, or paste a string to preview the image.
     content:
       title: Base64 Encoder & Decoder Toolkit
-      description: The Base64 Encoder & Decoder Toolkit is an essential web utility for secure data serialization and inline asset generation. As a true **base64 encoder no server upload** tool, it ensures that your sensitive data never leaves your machine. Base64 encoding is widely used to embed binary data (like images or fonts) directly into HTML and CSS files, or to safely transmit complex payloads within JSON Web Tokens and HTTP headers. This zero-server application allows developers to instantly encode plain text into Base64 strings, or decode intercepted Base64 payloads back into readable UTF-8 text. Beyond text, the tool features a robust Image-to-Data-URI converter. By leveraging the native HTML5 FileReader API, you can drag and drop images to generate embeddable CSS Data URIs completely offline. This ensures that your proprietary assets and sensitive decoded payloads never leave your local machine.
-      how_it_works: Runs 100% locally in your browser. Text encoding handles full UTF-8 characters safely. Image conversion uses the native FileReader API to generate secure Data URIs offline.
+      description: Base64 turns binary data into plain ASCII text so it can travel through systems built for words — email, JSON, URLs and HTML. This toolkit runs in both directions. Type or paste text and it encodes to Base64, converting through UTF-8 first so accented and non-Latin characters survive; paste a Base64 string and it decodes back to readable text. Hand it an image instead and it returns a complete data URI — the data:image string you paste into an img tag or a CSS background — generated in your browser with the FileReader API, never uploaded. Decoding earns its keep too — inspecting a token, an authorization header or a MIME attachment starts with seeing the plain text underneath. Every conversion happens on your own machine.
+      how_it_works: Base64 works on bytes in threes. Take 3 bytes of input — 24 bits — and split them into four groups of 6 bits. Each group, a number from 0 to 63, selects one character from the 64-character alphabet — A to Z, a to z, 0 to 9, then + and /. Watch it happen with the word Cat. The bytes are 67, 97 and 116, in binary 01000011 01100001 01110100. Regrouped in sixes — 010000, 110110, 000101, 110100 — they are the numbers 16, 54, 5 and 52, which select Q, 2, F and 0. Cat encodes to Q2F0. When the input is not a multiple of three, the remainder explains the = signs on so many strings. One leftover byte, such as A, fills two characters and takes two padding signs — QQ==. Two leftover bytes, such as Hi, fill three characters and take one — SGk=. Padding holds no data — it tells the decoder how many real bytes the final group contains.
       keywords:
         - base64 encode
         - base64 decode
@@ -484,12 +484,21 @@ tools:
         - base64 to image converter
       faq:
         - question: What is Base64 encoding used for?
-          answer: Base64 translates binary data into a standard ASCII string format. It is heavily used in email protocols, for embedding images directly into CSS files to reduce HTTP requests, and for encoding API authentication headers.
+          answer: Base64 translates binary data into a standard ASCII string format. It is used in email protocols, for embedding images directly into CSS files, and for encoding API authentication headers.
         - question: Is Base64 encoding considered encryption?
           answer: No. Base64 is merely a data translation format, not a cryptographic security measure. Anyone with a decoder can instantly read Base64 text. Do not use it to secure passwords.
         - question: Does uploading an image to get the Data URI consume bandwidth?
-          answer: No. The image is processed locally using the browser's native FileReader API. It is never uploaded to a server, meaning it uses zero bandwidth and guarantees privacy.
-      practical_application: Base64 encoding is an indispensable protocol for transmitting binary data across text-based network streams. For front-end architects optimizing web performance, embedding small vector graphics (SVGs) or placeholder images directly into a CSS file as a Base64 Data URI eliminates extra HTTP request round-trips, dramatically improving page load speeds. For security engineers, decoding intercepted API headers or webhook payloads safely is a daily task. By executing the FileReader API and Base64 conversion algorithms entirely client-side, this tool guarantees that your proprietary assets and sensitive data streams never leave your local environment.
+          answer: No. The image is processed locally with the browser's native FileReader API and never uploaded to a server, so it uses zero bandwidth.
+        - question: Why is the output about 33% larger than the input?
+          answer: Every 3 bytes of input become 4 characters of output, so the encoded form is a third larger — 3 KB in, roughly 4 KB out — before any line wrapping. The overhead is the price of squeezing arbitrary bytes into an alphabet every system can carry; Base64 is a transport format, not a compression format.
+        - question: Can I decode a string that contains line breaks?
+          answer: Yes. Email and older tools wrap long strings at 76 characters. Paste it as it stands and use the line-by-line mode — each wrapped line is decoded in turn and the results joined, so you never stitch lines together by hand.
+      practical_application: |-
+        One alphabet, several dialects. Standard Base64 uses + and / and, inside email, wraps output at 76 characters per line (MIME) so legacy mail software cannot mangle it. URL-safe Base64 exists because + and / mean other things inside a URL — it swaps them for - and _, so the bytes that encode to Pj4+ in standard form become Pj4- in a URL. A data URI embeds it directly in markup — data:image/png;base64, followed by the encoded bytes. A JSON Web Token is three Base64URL segments joined by dots, and its header alone, {"alg":"HS256","typ":"JWT"}, produces the eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 string that opens almost every token. HTTP Basic authentication is the word Basic plus the Base64 of username:password — one reason a captured header decodes in seconds, and why Basic auth belongs behind HTTPS.
+
+        Most decoding failures trace to four causes. An invalid-character error means something outside the alphabet crept in — often a URL-safe string fed to a strict decoder, so swap - and _ back first. A padding or length error means the string was truncated in copying; genuine Base64 is a multiple of four characters. Double-encoding catches everyone once — hello encodes to aGVsbG8=, and encoding that result again gives YUdWc2JHOD0=, so if one decode hands you another Base64-looking string, decode a second time. The subtlest trap is Unicode — Base64 moves bytes, not characters, so text must first become UTF-8 bytes. Code that treats text as Latin-1 — the classic btoa shortcut — encodes café to Y2Fm6Q== instead of the correct Y2Fmw6k=, and throws an error outright beyond Latin-1, such as ✓. This tool encodes through UTF-8, so both survive the round trip.
+
+        One myth deserves its own paragraph — Base64 is not encryption. There is no key and no secret — anyone holding the string holds the content. Encoding solves a transport problem, moving bytes through text-only channels intact. It is the wrong tool for secrecy, and a password or token that has only been encoded should be treated as written in plain text.
       code_blueprints:
         - language: css
           title: CSS Base64 Background Image
@@ -611,17 +620,19 @@ tools:
       description: A secure, offline-first client-side JSON Formatter and Validator. Instantly format, indent, syntax-highlight, and validate large JSON objects without sending data to any backend server.
     content:
       title: JSON Formatter & Validator
-      description: An advanced, enterprise-grade JSON Formatter, Minifier, and Validator designed to process massive objects with maximum efficiency. In the modern web development ecosystem, JavaScript Object Notation (JSON) has replaced XML as the industry standard for REST APIs, microservice message buses, and cloud configuration files. However, debugging unformatted or compact API responses directly in terminal pipes is difficult. WebToolkit Pro offers a 100% browser-isolated pretty-printer. It parses raw JSON inputs, checks them against the official RFC 8259 syntax specifications, and outputs structured, syntax-highlighted code blocks. Because this tool runs entirely client-side, your corporate configurations, proprietary object schemas, and sensitive client database records never transit a network gateway, making it fully compliant with SOC-2, HIPAA, and corporate data governance policies.
-      how_it_works: Accepts raw data inputs inside an offline Monaco editor container. The code is tokenized and parsed locally using the browser's native V8 JavaScript engine runtime (JSON.parse()). If parsing succeeds, it generates a human-readable text block formatted with customizable tab indents (defaulting to 2 spaces) and applies semantic token highlighting. If syntax validation fails, the parser catches the exact line and position of the error (such as a missing quote, a trailing comma, or a mismatched bracket) and displays a detailed syntax explanation immediately without requesting server-side validation resources.
+      description: This JSON Formatter and Validator takes a raw payload — a one-line API response, a config file you no longer trust, a webhook body copied out of a log — and turns it into indented structure you can actually inspect. Paste your data in and it is parsed with the browser's native JSON engine, checked against the JSON specification (RFC 8259), and reprinted with a two-space indent, one key per line, arrays and nested objects opened up so types sit in plain sight. Numbers, strings, booleans and nulls stop hiding inside each other. If the payload is broken, validation names the first syntax error and the line and column where parsing failed. Formatted JSON can be minified back to a single line. Everything runs locally in your browser — the payload never leaves your machine.
+      how_it_works: The tool hands your input to the same JSON.parse engine your own JavaScript code runs on. If parsing succeeds, the value is reprinted with a two-space indent, which normalises bracket placement and spacing while leaving every key and value untouched, with syntax highlighting. If parsing fails, the engine stops at the first character it rejects, and the tool shows you that error with its line and column, so you can jump to the fault. All of it happens on your machine; no request leaves the browser.
       faq:
-        - question: Is my JSON data sent to a server?
-          answer: No. All parsing, formatting, and validation happens 100% locally in your browser for maximum privacy and security.
         - question: Can it fix malformed JSON?
-          answer: Yes, the toolkit includes an intelligent formatter that can repair missing quotes, trailing commas, and other common JSON syntax errors.
+          answer: It repairs the slips people make most — the auto-repair pass strips trailing commas and converts single-quoted strings to standard double quotes, then formats the result. It cannot guess at structural damage; a missing closing brace has no single obvious fix. Start from the line and column the validator reports.
         - question: How does this tool handle large JSON files without lagging the browser?
-          answer: Unlike simple text areas, WebToolkit Pro embeds the high-performance Monaco Editor. For extremely large datasets, syntax highlighting and text rendering are deferred to local Web Workers to prevent main thread blocking and memory overflows.
-        - question: Can I format JSON documents containing trailing commas?
-          answer: Standard JSON specifications (RFC 8259) do not allow trailing commas. If your payload contains them, the validator will highlight the syntax violation. However, our parser's auto-repair feature can automatically strip trailing commas and convert single quotes to standard double quotes to make the payload valid.
+          answer: The editor is Monaco, the engine behind VS Code, so multi-megabyte payloads stay responsive, and all formatting runs locally. The toolkit is built for payloads up to about 10MB; for deeply nested documents, expand a few levels at a time.
+        - question: Why does JSON.parse fail on output from my API?
+          answer: Usually because what arrived is not quite JSON — an object with unquoted keys or single quotes, a trailing comma, NaN or undefined values, or an HTML error page where JSON was expected. Paste the raw response in — the reported line and column point at the first offending character.
+        - question: What is the difference between beautify and minify in production?
+          answer: Beautifying adds indentation and line breaks for human readers; minifying strips every removable whitespace character. Neither changes the data. Beautify for debugging and review, minify for payloads you ship — though gzip or Brotli compression shrinks the saving further.
+        - question: Does this validate against a JSON Schema?
+          answer: No — this page checks syntax, whether the document is legal JSON. Schema validation answers a different question — whether required fields exist with the right types — and needs a schema to check against. The JSON Schema Generator here will draft one from a sample payload.
       keywords:
         - json formatter
         - validate json
@@ -631,7 +642,54 @@ tools:
         - format json online
         - offline json formatter
         - client side json validation
-      practical_application: When debugging production REST APIs or microservice database records (such as NoSQL MongoDB or PostgreSQL JSONB documents), engineers routinely copy and paste payloads containing sensitive API keys, session tokens, or user PII. Generic online beautifiers upload these inputs to backend servers, creating severe compliance vulnerabilities. WebToolkit Pro acts as a local browser sandbox. It handles large payloads up to 10MB instantly, allowing you to format, minify, and inspect arrays without risking data exposure. Additionally, it features an auto-repair mode to automatically fix minor JSON syntax errors like unescaped strings, single-quoted keys, or misplaced trailing commas.
+      practical_application: |-
+        Worked example. A user record from an API arrives as one unbroken line, like this —
+        {"id":1042,"name":"Ayesha Khan","email":"ayesha@example.com","roles":["admin","editor"],"address":{"city":"Lahore","zip":"54000"},"active":true,"lastLogin":null,"orders":[{"id":"A-100","total":59.99},{"id":"A-101","total":120.5}]}
+        Format it, and the same data opens up —
+        {
+          "id": 1042,
+          "name": "Ayesha Khan",
+          "email": "ayesha@example.com",
+          "roles": [
+            "admin",
+            "editor"
+          ],
+          "address": {
+            "city": "Lahore",
+            "zip": "54000"
+          },
+          "active": true,
+          "lastLogin": null,
+          "orders": [
+            {
+              "id": "A-100",
+              "total": 59.99
+            },
+            {
+              "id": "A-101",
+              "total": 120.5
+            }
+          ]
+        }
+        Three things become visible. The address is one nested object, not two loose fields. The orders are an array of two separate records. And the types line up — 1042 is a number, "54000" is a string that only looks like one, active is a boolean, and lastLogin is a null rather than a missing key. That last distinction quietly breaks integrations.
+
+        Formatter, validator, linter — three jobs often confused. A formatter only rearranges whitespace, and a successful format is itself proof the syntax is valid, since formatting cannot run until the text parses. A validator checks the document against JSON's rules and reports the first place it breaks them. A linter judges style — duplicate keys, inconsistent naming, numbers stored as strings. This page does the first two.
+
+        The errors everyone pastes — what the parser reports and the fix.
+
+        Trailing comma — {"name":"test",} — fails at the closing brace with "Expected double-quoted property name in JSON at position 15". Legal in JavaScript, never in JSON. Delete it.
+
+        Single-quoted strings — {'name':'test'} — fails at the first character with "Expected property name or '}' in JSON at position 1". JSON strings are always double-quoted — usually a JavaScript literal or Python dict got copied.
+
+        Unquoted keys — {name:"test"} — the same error, at the same position. Keys are strings and must be quoted, even when they look like identifiers.
+
+        Comments — {"a":1 /* note */} — fails with "Expected ',' or '}' after property value in JSON at position 7". Strict JSON has no comments.
+
+        NaN and Infinity — {"value":NaN} — fails with "Unexpected token 'N'" because the input "is not valid JSON". Legal in JavaScript, and emitted by Python's json module by default — but neither exists in JSON. Send null, or the value as a quoted string.
+
+        Duplicate keys — {"a":1,"a":2} — the exception, because nothing fails. The parser accepts the document and keeps the last value, 2. When a config setting seems to vanish, check for a repeated key.
+
+        Two edge cases. Numbers — JavaScript stores every number as a double-precision float, so integers beyond 2^53 lose exactness. Paste 9007199254740993 and the output reads 9007199254740992. If an API hands you 64-bit IDs, ask for them as strings. Depth — a document nested hundreds of levels can exhaust a parser's stack.
       code_blueprints:
         - language: javascript
           title: Safe JSON Parsing with Error Handling
