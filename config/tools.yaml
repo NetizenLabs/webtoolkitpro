@@ -478,8 +478,8 @@ tools:
       description: Convert text to UPPERCASE, lowercase, Title Case, reverse text, remove whitespace, and delete duplicate lines instantly in your browser.
     content:
       title: Text Case Converter & Formatting Toolkit
-      description: The Text Formatting & Case Conversion Toolkit is a comprehensive offline editor built to rapidly standardize string anomalies. Whether you are a developer cleaning up messy database exports, a copywriter formatting blog headlines, or a data analyst removing duplicate entries from a CSV column, this tool provides instant string manipulation. With a single click, convert massive text blocks between UPPERCASE, lowercase, Title Case, camelCase, and snake_case. The toolkit also includes advanced regex-powered utilities to automatically strip excessive whitespace, remove empty lines, reverse strings, and intelligently filter out duplicate rows. All text processing occurs synchronously in your browser's local memory, guaranteeing that sensitive documents, client emails, and proprietary lists remain entirely confidential.
-      how_it_works: All text transformations are executed locally using advanced Regex manipulation.
+      description: The Text Case Converter & Formatting Toolkit is a one-click editor for fixing the case and cleanliness of text you already have. Paste in a heading, a paragraph, a column of names or a messy list and restyle it instantly — UPPERCASE for labels and emphasis, lowercase to tame text that arrives shouting, Title Case for headings, iNVERSE cASE to flip every letter to its opposite, or Reverse Text to turn a string end to end. Two cleaners ride alongside — Remove Spaces deletes whitespace, and Remove Duplicate Lines drops repeated lines from a list. A live character, word and line counter sits above the editor, and everything runs locally in your browser — nothing you paste is uploaded anywhere.
+      how_it_works: Each button transforms the text in place, in your browser. UPPERCASE and lowercase map every letter through JavaScript's built-in case conversion. Title Case capitalizes the first letter of each word and lowercases the rest of that word. Inverse case walks the text character by character, flipping every letter to the opposite case while digits and punctuation stay untouched. Reverse Text reverses the character order, Remove Spaces deletes whitespace characters, and Remove Duplicate Lines keeps only the first copy of each line. With Bulk Mode on, the buttons work line by line instead of across the whole block at once — which matters most for Reverse Text, where each line flips separately.
       keywords:
         - case converter
         - title case generator
@@ -488,12 +488,22 @@ tools:
         - text reverser
       faq:
         - question: How does the 'Remove Duplicates' feature work?
-          answer: The tool splits your text by line breaks, pushes the lines into a JavaScript Set to instantly filter out exact matches, and returns a deduplicated list—all in milliseconds.
-        - question: What is the difference between camelCase and snake_case?
-          answer: camelCase capitalizes the first letter of each subsequent word without spaces (e.g., 'myVariableName'), while snake_case uses underscores to separate lowercase words (e.g., 'my_variable_name'). Both are standard programming conventions.
-        - question: Is there a character limit for formatting?
-          answer: There is no hard limit imposed by the tool. However, formatting blocks exceeding 5 million characters may cause temporary browser lag depending on your device's RAM.
-      practical_application: Data normalization is a persistent headache for backend engineers and database administrators. When migrating legacy databases, importing massive CSV files from third-party vendors, or processing raw user input, string formats are almost always inconsistent. A single stray whitespace or a mismatch between 'camelCase' and 'snake_case' can crash an entire ETL (Extract, Transform, Load) pipeline or cause severe SQL query failures. This local formatting matrix provides a high-speed sandbox to instantly normalize massive text arrays, strip hidden unicode spaces, and deduplicate records before they touch your production database schemas.
+          answer: Your text is split into lines and passed through a JavaScript Set, which keeps the first copy of each line and discards every later repeat, preserving the original order. Matching is exact — 'Apple' and 'apple' are different lines and both survive, as do two lines differing only by a trailing space. Built for cleaning pasted lists, exported columns and log extracts.
+        - question: Does this tool convert text to camelCase or snake_case?
+          answer: No — worth knowing before you hunt for the button. camelCase and snake_case are identifier styles for code, built by joining words with capitals or underscores; this toolkit restyles whole text instead. Its case buttons are UPPERCASE, lowercase, Title Case and iNVERSE cASE, backed by the reverse, whitespace and duplicate-line cleaners. For a heading or label, Title Case is the one you want.
+        - question: Why did Title Case change my brand name or acronym?
+          answer: Because this Title Case applies one simple rule to every word — first letter up, the rest down. That flattens deliberately irregular spellings — O'BRIEN comes out as O'brien, McDonald as Mcdonald, HTML as Html, iPhone as Iphone. With no dictionary of exceptions behind the button, run Title Case first, then hand-correct the few names and acronyms it flattened.
+        - question: What does Bulk Mode change?
+          answer: Off, a button treats everything you pasted as one block. On, the text is split at line breaks, each line is transformed separately, and the lines are rejoined. UPPERCASE looks the same either way, but Reverse Text shows the difference — off, the whole document flips end to end; on, every line flips in place and the line order survives.
+        - question: Does Remove Spaces remove only the extra spaces?
+          answer: No — it removes every whitespace character, not just the doubles. Spaces, tabs and line breaks all go, so 'too many spaces' comes out fused as toomanyspaces. That is what you want when joining tokens or shrinking a pasted value to one string — and not what you want anywhere near a paragraph you still need to read.
+      practical_application: |-
+        One sentence, every button. Take the mixed-case line 'the Quick Brown Fox jumps over the lazy Dog' —
+        UPPERCASE gives THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG. Lowercase gives the quick brown fox jumps over the lazy dog. Title Case gives The Quick Brown Fox Jumps Over The Lazy Dog. iNVERSE cASE gives THE qUICK bROWN fOX JUMPS OVER THE LAZY dOG. Reverse Text gives goD yzal eht revo spmuj xoF nworB kciuQ eht.
+
+        Read the Title Case row closely — the Title Case here is one simple rule, not an editorial style guide. Every word is capitalized, including the small ones — 'the lord of the rings' becomes The Lord Of The Rings, where AP or Chicago style would print The Lord of the Rings. Contractions survive (don't becomes Don't), but anything with irregular capitals of its own — acronyms, names, brands — is flattened, so a heading is best finished with a quick manual pass over the names.
+
+        The cleaners earn their keep on lists. Paste a column running apples, oranges, apples, bananas, oranges, apples and Remove Duplicate Lines hands back apples, oranges, bananas — first copies kept, order intact. Its partner button is blunter. Remove Spaces deletes tabs and line breaks along with the spaces, which is how you fuse a pasted value into a single token — not how you tidy up prose.
       code_blueprints:
         - language: javascript
           title: JavaScript String Normalization Utility
@@ -2281,7 +2291,7 @@ tools:
       description: Convert Unix timestamps to human-readable dates and vice-versa. Supports seconds, milliseconds, and multiple timezones for precise developer debugging.
     content:
       title: Unix Timestamp Converter — Online Epoch Date Tool
-      description: Convert Unix timestamps to human-readable dates and vice-versa. Supports seconds, milliseconds, and multiple timezones for precise developer debugging.
+      description: The Unix Timestamp Converter turns raw epoch numbers — the integers buried in database rows, log lines and API responses — into dates you can actually read. Paste a timestamp and the moment appears three ways at once — your local time, UTC, and ISO 8601. The unit is detected for you — a 10-digit value is read as seconds, a 13-digit value as milliseconds — and a live Current Epoch clock at the top ticks off the present second, ready to copy. Bulk Mode converts a whole column of timestamps, one per line, into ISO strings. Everything is computed by your browser's own Date engine, on your machine — no timestamp you paste is sent anywhere.
       keywords:
         - unix timestamp converter
         - epoch to date online
@@ -2290,7 +2300,7 @@ tools:
         - mysql datetime to epoch
         - programming date converter
       entity_definition: The Unix Timestamp Converter is an essential chronological utility for backend developers and database administrators. Unix time (or Epoch time) is a universal system for describing a point in time, defined as the total number of seconds that have elapsed since January 1, 1970 (UTC). Because computers can process raw integers significantly faster than complex strings, nearly all databases and APIs rely on Unix timestamps. This tool seamlessly translates those raw integers back into human-readable ISO 8601 formats and localized timezones.
-      how_it_works: The tool leverages the browser's native `Date` object engine. It accepts a raw integer and first runs a heuristic check to determine if the value represents seconds (10 digits, standard Unix) or milliseconds (13 digits, JavaScript standard). It then calculates the exact offset from the Unix Epoch and formats the output into UTC, ISO 8601, and the user's local timezone.
+      how_it_works: The converter hands your input to the browser's native Date engine. First it counts the characters you typed — 10 or fewer means the value is in seconds, the Unix unit, and it is multiplied by 1,000; more than 10 means milliseconds, the JavaScript unit, and it is used as it stands. The result is printed as your local time, UTC and ISO 8601. Two sharp edges follow from counting characters — a minus sign counts as a character, which can trip very large negative values, and the input must be a whole number — a pasted date string is not parsed, only its first number is read.
       use_cases:
         - Deciphering raw database logs (like MySQL or MongoDB) where creation dates are stored as raw integers.
         - Debugging JWT (JSON Web Token) authentication payloads to verify exactly when a token `exp` (expires).
@@ -2305,10 +2315,21 @@ tools:
         - question: What exactly is the Unix Epoch?
           answer: The Unix Epoch is midnight on January 1, 1970, Coordinated Universal Time (UTC). It was chosen by early computer scientists as an arbitrary 'Zero Hour'. Every Unix timestamp simply counts the number of seconds that have passed since that exact moment, completely ignoring leap seconds.
         - question: Why does JavaScript use 13 digits instead of 10?
-          answer: Standard Unix time counts in seconds (a 10-digit number like 1700000000). However, JavaScript's `Date.now()` API counts in milliseconds for higher precision, resulting in a 13-digit number. This converter automatically detects the length and applies the correct math to avoid returning dates in the year 55,000.
+          answer: Standard Unix time counts in seconds (a 10-digit number like 1700000000). However, JavaScript's `Date.now()` API counts in milliseconds for higher precision, resulting in a 13-digit number. This converter automatically detects the length and applies the correct math to avoid returning dates in the year 55,840.
         - question: What is the Year 2038 problem?
           answer: Often called the 'Y2K38 bug', it refers to the moment when the Unix timestamp will exceed the maximum value of a 32-bit signed integer (2,147,483,647). At 03:14:07 UTC on January 19, 2038, unpatched 32-bit systems will 'roll over' to a negative number, interpreting the year as 1901. Modern 64-bit systems have resolved this issue.
-      practical_application: Unix timestamps (seconds since Jan 1, 1970) are the universal standard for storing absolute time in databases like PostgreSQL or MongoDB because they avoid timezone ambiguity. Converting timestamps correctly ensures accurate chronological sorting, audit logging, and job scheduling in globally distributed architectures.
+        - question: Why is my converted date wrong by exactly 1000×?
+          answer: Because the number was read in the wrong unit. A seconds value interpreted as milliseconds shrinks a thousandfold and lands in January 1970 — 1700000000 read that way is 20 January 1970. A millisecond value interpreted as seconds stretches a thousandfold into the year 55840. This converter guesses the unit from the digit count, which covers seconds and milliseconds. Microsecond timestamps (16 digits) pasted here are read as milliseconds — divide by 1,000 first.
+        - question: Is a Unix timestamp the same in every timezone?
+          answer: Yes — that is the point of it. The number names one instant worldwide; timezones only change how it is written down. 1700000000 is 22:13:20 on 14 November 2023 in London and 03:13:20 on 15 November in Karachi (UTC+5) — two labels, one moment. It is also why the timestamp itself never shifts for daylight saving; only its local display does.
+      practical_application: |-
+        Start with one real conversion. The timestamp 1700000000 is Tuesday 14 November 2023, 22:13:20 in UTC — 2023-11-14T22:13:20Z in ISO 8601. The same instant reads 03:13:20 on Wednesday 15 November in Karachi (UTC+5) and 17:13:20 on Tuesday 14 November in New York (EST, UTC-5). In milliseconds it is 1700000000000, and this converter reads both forms to the same second — it tells them apart by digit count (10 for seconds, 13 for milliseconds, 16 for the microsecond timestamps some logging systems emit, which pasted here are misread as milliseconds and land in the year 55840).
+
+        That digit gap is where the ×1000 bug lives. Feed a seconds value to code expecting milliseconds and the date collapses to January 1970; feed milliseconds to code expecting seconds and it explodes into the far future. When a converted date looks absurd, suspect a unit mismatch first and check the digit count.
+
+        Two boundaries are worth knowing. 2147483647 — 19 January 2038, 03:14:07 UTC — is the largest second a signed 32-bit counter can hold, and systems storing time that way wrap to December 1901 a second later; this converter reads 2147483648 as 03:14:08 without trouble, because the bug lives in 32-bit storage, not in the arithmetic. Negative values count backwards from the epoch — -1 is 31 December 1969, 23:59:59 UTC — though the minus sign counts toward the digit check, so very large negatives are misread as milliseconds.
+
+        You meet these numbers in JWT access tokens (the exp and iat claims — decode the token with the JWT Decoder, then check its expiry here), in database created_at columns, and throughout server logs.
       code_blueprints:
         - language: javascript
           title: Node.js Timestamp Validation

@@ -224,7 +224,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'CSS Unit Converter', href: '/tools/css-unit-converter/' },
     ]
   },
-  'case-converter': {
+  'text-case-formatter': {
     featured: { name: 'Word Counter', href: '/tools/word-counter/', desc: 'Count characters and words', icon: '📝' },
     cards: [
       { name: 'Markdown Converter', href: '/tools/markdown-html-converter/', desc: 'MD to HTML converter', icon: '🧩' },
