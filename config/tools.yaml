@@ -817,13 +817,21 @@ tools:
       description: Generate thousands of random UUID v4 and time-based UUID v7 identifiers securely in your browser.
     content:
       title: Bulk UUID v4 & v7 Generator
-      description: Choosing the correct unique identifier layout is vital for database scalability. Traditional UUID v4 identifiers are completely random, which destroys indexing efficiency inside relational databases like PostgreSQL or MySQL because random strings fracture B-Tree indexing nodes. A **uuid v7 database primary key generator** solves this architecture bottleneck  by introducing a time-ordered prefix. This ensures sequential sorting upon generation, drastically accelerating database inserts while preventing cluster fragmentation.
-      how_it_works: This tool leverages the browser's native cryptographically secure random number generator interface (`crypto.getRandomValues`). For standard UUID v4 strings, it constructs an array of 128 pseudo-random bits while strictly setting the mandatory 4-bit variant and version markers. For modern UUID v7 requests, the engine captures a precise Unix timestamp in milliseconds to seed the initial 48 bits, sequentially packing the remaining bits with cryptographically safe random values.
+      description: >-
+        This generator creates UUIDs in bulk — up to 1,000 at a time, or 100,000 with bulk mode switched on — in the two versions modern systems use. UUID v4 is pure randomness: 122 random bits, no pattern, no information inside. UUID v7 keeps the same 128-bit shape but spends its first 48 bits on a millisecond timestamp, so every new ID sorts after the ones created before it. Random v4 values scatter inserts across a database index; time-ordered v7 values append neatly at its end. Pick a version, set a quantity, copy the batch — all generated locally in your browser.
+      how_it_works: >-
+        For v4, the generator calls the browser's built-in crypto.randomUUID(). Four of its 128 bits are the version marker and two the variant marker, leaving 122 bits of pure randomness. For v7, it reads the current Unix time in milliseconds into the first 48 bits, stamps version 7 and the standard variant, then fills the remaining 74 bits (a 12-bit and a 62-bit random field) from crypto.getRandomValues, the browser's secure random source. Because the timestamp leads, v7 values sort in creation order at millisecond precision; IDs minted inside the same millisecond share a timestamp and order randomly among themselves. Generation, formatting, and copying happen on this page — nothing is sent to a server.
       faq:
         - question: What is the practical collision risk when batch-generating UUID v4 strings?
           answer: The probability of a collision is mathematically infinitesimal. With a space of 122 random bits, you would need to generate billions of UUIDs every single second for hundreds of years to reach a fractional 1% probability of a duplication event.
         - question: Why is UUID v7 heavily preferred over v4 for primary keys in database tables?
           answer: Because UUID v7 is naturally time-ordered and sequential, new database records are always inserted at the logical end of the index tree. This prevents random write fragmentation across disk storage blocks, directly preserving query performance as table row counts scale.
+        - question: What is the difference between a UUID and a GUID?
+          answer: Only the name. GUID (Globally Unique Identifier) is Microsoft's term for the same 128-bit format, and a GUID from Windows or .NET follows the same layout and version rules. Values from this tool work anywhere a GUID is expected.
+        - question: Should UUIDs be uppercase or stored without hyphens?
+          answer: The standard text form is lowercase hex with hyphens in the 8-4-4-4-12 pattern. Uppercase spells the same value — hex digits are case-insensitive — and some systems store UUIDs as 32 hex characters without hyphens, or as 16 raw bytes — all the same ID. Pick one representation per system — sorting assumes a single format.
+        - question: Can I use a UUID as an API key or password?
+          answer: No. A UUID is an identifier, not a secret. A v7 value is partly predictable — it embeds its own creation time — and even v4's randomness guarantees uniqueness, not secrecy. Anyone who sees the ID knows the whole thing. For API keys and tokens, use a dedicated random secret from a password generator instead.
       keywords:
         - bulk uuid v4 generator online
         - uuid v7 timestamp generator
@@ -831,7 +839,14 @@ tools:
       related_guides:
         - title: Stop Using UUID v4 As Your Database Primary Key (And What To Use Instead)
           url: https://dev.to/abusufyan909/stop-using-uuid-v4-as-your-database-primary-key-and-what-to-use-instead-4o0m
-      practical_application: In highly distributed microservice architectures (like Kubernetes clusters), generating UUIDs at the client or edge layer prevents database collision and reduces network bottlenecks. UUIDv4 provides cryptographic randomness, while UUIDv7 is strictly time-sorted, making it optimal for PostgreSQL primary keys to avoid B-tree index fragmentation.
+      practical_application: |
+        Two real outputs show the difference. A v4 from this generator: 52b25e61-16ee-48a6-b630-0bb5eac8db7e. In its 8-4-4-4-12 groups, the third starts with 4 (the version) and the fourth with b, one of the four valid variant markers 8, 9, a, or b. Everything else is random; there is nothing to decode. A v7: 01a1aa85-f409-7282-9095-82883cdd20b4. The third group starts with 7 and the fourth with 9, but its first twelve hex digits, 01a1aa85f409, are the creation moment as a Unix millisecond timestamp, decoding to 5 November 2026, 07:04:27 UTC.
+
+        Versions 1 to 5 come from RFC 4122; version 7 arrived with RFC 9562 in 2024. Version 1 mixes a timestamp with the machine's MAC address — sortable, but it leaks hardware identity. Versions 3 and 5 hash a name within a namespace (MD5 for v3, SHA-1 for v5), so the same input always yields the same ID — the choice when an identifier must be reproducible rather than random. Version 4 remains the general-purpose default; version 7 is the one for when order matters.
+
+        In practice, database primary keys in PostgreSQL or MySQL go to v7: new rows append at the end of the index instead of fragmenting it, and creation order reads straight from the key. Idempotency keys, request and correlation IDs, file names, and anything that must stay opaque go to v4. Most stacks generate natively too — the blueprints below show JavaScript, PostgreSQL, Python, and C#, including the native uuidv7() that arrived in PostgreSQL 18.
+
+        A v4 would need roughly 2.7 quintillion values generated before the odds of one duplicate reach 50 percent; even 100 trillion values keep the odds near one in a billion. Version 7 narrows the randomness to 74 bits, but two v7 IDs collide only if minted in the same millisecond with identical random bits.
       code_blueprints:
         - language: javascript
           title: Node.js UUIDv4 Integration
@@ -851,6 +866,19 @@ tools:
                 id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
                 email VARCHAR(255) UNIQUE NOT NULL
             );
+        - language: python
+          title: Python uuid Module
+          code: |-
+            import uuid
+
+            # Random (v4) — the everyday default
+            print(uuid.uuid4())
+        - language: csharp
+          title: C# Guid.NewGuid
+          code: |-
+            // A GUID is the same 128-bit format; NewGuid() generates version 4
+            Guid id = Guid.NewGuid();
+            Console.WriteLine(id);
       steps:
         - name: Select Version
           text: Choose between UUID v4 (random) or v7 (time-ordered).
@@ -2290,7 +2318,8 @@ tools:
       description: Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content.
     content:
       title: Word Counter — Real-time Writing Statistics
-      description: Count words, characters, sentences, and paragraphs in real-time. Estimate reading and speaking time for your content.
+      description: >-
+        Type or paste your text and watch three numbers update with every keystroke: words, characters, and lines. That is what most writing jobs ask for — an essay inside a word limit, a post capped at so many characters, a script that fits the page. Students check assignments before submitting, writers pace drafts and trim chapters, and marketers fit headlines and ad copy inside platform limits. Switch on bulk mode and each line is counted separately — handy for a pasted list of titles or posts. Everything runs in your browser tab, so an unpublished draft stays unpublished.
       keywords:
         - word counter online
         - character count tool
@@ -2301,7 +2330,9 @@ tools:
       entity_definition: |
         The Word & Character Counter is a comprehensive text analysis utility designed for copywriters, SEO specialists, and authors. In the digital landscape, strict character limits define everything from Google Meta Descriptions to X (Twitter) posts, while long-form content relies on specific word counts to satisfy search engine algorithms. This tool provides instant, real-time metrics on the volume and structure of your text, ensuring your content perfectly matches the requirements of its destination platform.
       how_it_works: |
-        Operating entirely in your browser's memory, the engine utilizes advanced Regular Expressions (Regex) to parse your input keystroke-by-keystroke. It intelligently distinguishes between letters, punctuation, and whitespace to accurately calculate word boundaries, sentence lengths, and total paragraphs. It also applies standard linguistic algorithms (assuming 250 words per minute) to generate accurate reading and speaking time estimates.
+        Counting follows one simple rule: a word is whatever sits between runs of whitespace. The text is trimmed, then split wherever spaces, tabs, or line breaks appear, and the pieces are counted. That is why "well-known" and "don't" each count as one word, and why a number like 2026 counts as a word too. Punctuation never splits a word or creates one.
+
+        The character count is the length of the whole text, spaces and punctuation included, measured the way JavaScript measures a string, so most emoji add 2 to the count — they are stored as a pair of UTF-16 units. The line count covers lines that contain text; blank lines are skipped. One honest caveat: scripts that do not separate words with spaces, such as Chinese or Japanese, will show a very low word count for a long passage — for those, trust the character count.
       use_cases:
         - Drafting SEO-optimized Title Tags and Meta Descriptions that stay under Google's strict pixel/character truncation limits.
         - Ensuring academic essays or freelance articles meet exact minimum or maximum word count requirements.
@@ -2316,10 +2347,21 @@ tools:
         - question: Why do character limits matter for SEO?
           answer: Google and other search engines truncate (cut off) search results that are too long. A Title Tag should generally be under 60 characters, and a Meta Description should be under 160 characters. If your text exceeds these limits, it will end with an ellipsis (...), potentially hiding your primary call-to-action and lowering your click-through rate.
         - question: How is Reading Time calculated?
-          answer: The industry standard for reading speed is roughly 250 words per minute for the average adult. Our tool divides your total word count by 250 to provide a highly accurate estimation of how long it will take a user to consume your article.
+          answer: Start with the word count — timing is a simple division from there. Average adults read silently at about 200 words per minute and speak at about 130, so divide your word count by 200 for reading time or by 130 for speaking time. A 1,000-word article is roughly a 5-minute read, or about 8 minutes aloud.
         - question: Does the counter include punctuation?
-          answer: 'For ''Character Count'', yes, all punctuation and symbols are counted. We provide two separate metrics: ''Characters (with spaces)'' and ''Characters (without spaces)'' to accommodate different platform requirements. Punctuation does not falsely inflate the ''Word Count'' metric.'
-      practical_application: Content length directly correlates with search engine ranking for long-form informational queries. Additionally, LLM prompt engineering often requires strict token/word limits to prevent truncation. A precise word counter ensures SEO articles hit the 1,500+ word threshold and ad copy remains within platform constraints.
+          answer: Yes — the character count covers every character, letters, punctuation, and spaces alike, because platform limits measure your text the same way. Punctuation never changes the word count. A word is only counted when whitespace separates it, so a sentence full of commas counts by its words.
+        - question: Can it count words in a table or a pasted document?
+          answer: Yes. Paste the text in and it is counted exactly as pasted; because words split on any whitespace — spaces, tabs, line breaks — text copied from a table counts cell by cell. There is no file upload, so for a document, copy the text across first.
+        - question: What is a good average sentence length?
+          answer: About 15 to 20 words per sentence is a comfortable average for clear writing; much beyond that, readers lose the thread. To find your own average, divide your word count by your sentence count. For a full readability score rather than a single average, try the Readability Checker tool.
+      practical_application: |
+        Here is a real check, start to finish — a short passage about a student trimming an essay:
+
+        "The night before the deadline, Ayesha opened her essay draft and counted the words for the third time. She was still eighty words over the limit, and every sentence felt too important to cut. So she read the whole piece aloud, slowly, the way her teacher had shown her. The sentences that stumbled were the ones to shorten. By midnight the essay fit, and it read better than the longer version ever had."
+
+        The passage is five sentences in a single paragraph. Pasted into the counter, it reports 73 words, 403 characters, and 1 line. The word count doubles as a timer: at an average silent reading speed of 200 words per minute, the passage takes roughly 22 seconds to read, and about 34 seconds read aloud at a speaking pace of 130.
+
+        Most checks, though, are about limits. A standard post on X allows 280 characters. An Instagram caption allows 2,200 characters and a LinkedIn post 3,000. In search results, Google typically shows about 50 to 60 characters of a title and 155 to 160 of a description before cutting them off. School assignments are usually set in round numbers — 500, 1,000, or 2,000 words — and a double-spaced page in a standard font holds roughly 250 words, so a ten-page essay is a 2,500-word target. With many small texts to check at once, bulk mode counts each pasted line on its own, so a month of headlines can be verified in one paste.
       code_blueprints:
         - language: javascript
           title: Fast Regex Word Counting

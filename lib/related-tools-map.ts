@@ -254,23 +254,8 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'Social Preview Tester', href: '/tools/social-preview-tester/' },
     ]
   },
-  'uuid-generator': {
-    featured: { name: 'Bulk UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/', desc: 'Next-gen time-sorted UUIDs', icon: '🆔', badge: 'New' },
-    cards: [
-      { name: 'Hash Generator', href: '/tools/hash-generator/', desc: 'MD5, SHA-256, SHA-512', icon: '🔐' },
-      { name: 'Password Generator', href: '/tools/password-entropy-tester/', desc: 'Generate secure passwords', icon: '🎲' },
-      { name: 'Timestamp Converter', href: '/tools/timestamp-converter/', desc: 'Unix to human readable', icon: '⏱️' },
-    ],
-    pills: [
-      { name: 'Base64 Encoder', href: '/tools/base64-encoder-decoder/' },
-      { name: 'Binary Converter', href: '/tools/binary-hex-decimal-converter/' },
-      { name: 'URL Encoder', href: '/tools/url-encoder/' },
-      { name: 'JSON Formatter', href: '/tools/json-to-code-generator/' },
-      { name: 'JWT Decoder', href: '/tools/jwt-decoder-generator/' },
-    ]
-  },
   'bulk-uuid-v4-v7-generator': {
-    featured: { name: 'UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/', desc: 'Generate v4 UUIDs', icon: '🆔' },
+    featured: { name: 'Bulk UUID Generator', href: '/tools/bulk-uuid-v4-v7-generator/', desc: 'Next-gen time-sorted UUIDs', icon: '🆔', badge: 'New' },
     cards: [
       { name: 'Timestamp Converter', href: '/tools/timestamp-converter/', desc: 'Unix to human readable', icon: '⏱️' },
       { name: 'Hash Generator', href: '/tools/hash-generator/', desc: 'MD5, SHA-256, SHA-512', icon: '🔐' },
@@ -299,7 +284,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'Markdown Converter', href: '/tools/markdown-html-converter/' },
     ]
   },
-  'binary-converter': {
+  'binary-hex-decimal-converter': {
     featured: { name: 'Hash Generator', href: '/tools/hash-generator/', desc: 'MD5, SHA-256, SHA-512', icon: '🔐' },
     cards: [
       { name: 'Base64 Encoder', href: '/tools/base64-encoder-decoder/', desc: 'Encode binary data', icon: '🧩' },
