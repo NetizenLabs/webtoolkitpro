@@ -16,12 +16,18 @@ interface ToolInfoProps {
 }
 
 export default function ToolInfo({ title, features, faqs, howItWorks, technicalSpecs, practicalApplication, codeBlueprints, relatedGuides }: ToolInfoProps) {
+  // Section numbers are assigned in render order so the optional sections
+  // never produce duplicates or gaps (numbers were previously hardcoded,
+  // which rendered 01, 02, 03, 03, 04, 04 when all sections were present).
+  let sectionCount = 0
+  const nextSectionNumber = () => String(++sectionCount).padStart(2, '0')
+
   return (
     <div className="mt-24 space-y-24">
       {/* Description & Features */}
       <section className={`grid grid-cols-1 ${features && features.length > 0 ? 'lg:grid-cols-2' : ''} gap-16`}>
         <div>
-          <SectionHeading number="01" title={`How ${title} Works`} className="mb-8" />
+          <SectionHeading number={nextSectionNumber()} title={`How ${title} Works`} className="mb-8" />
           <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 rounded-[12px] relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 dark:bg-[#00D4B4]/5 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <p className="text-sm text-gray-700 dark:text-[#8A9BBE] leading-relaxed relative z-10">
@@ -32,7 +38,7 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
 
         {features && features.length > 0 && (
           <div>
-            <SectionHeading number="02" title={`Key Features of ${title}`} className="mb-8" as="h3" />
+            <SectionHeading number={nextSectionNumber()} title={`Key Features of ${title}`} className="mb-8" as="h3" />
             <div className="grid grid-cols-1 gap-4">
               {features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] rounded-[12px] group hover:border-blue-500/30 dark:hover:border-[#00D4B4]/30 transition-all">
@@ -48,7 +54,7 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
       {/* Practical Application & Code Blueprints */}
       {(practicalApplication || (codeBlueprints && codeBlueprints.length > 0)) && (
         <section className="mt-24">
-          <SectionHeading number="03" title={`Practical Application & Code Integration`} className="mb-12" as="h3" />
+          <SectionHeading number={nextSectionNumber()} title={`Practical Application & Code Integration`} className="mb-12" as="h3" />
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {practicalApplication && (
@@ -88,7 +94,7 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
       {/* Related Guides Section */}
       {relatedGuides && relatedGuides.length > 0 && (
         <section className="mt-24">
-          <SectionHeading number="04" title={`Related Guides`} className="mb-8" as="h3" />
+          <SectionHeading number={nextSectionNumber()} title={`Related Guides`} className="mb-8" as="h3" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
             {relatedGuides.map((guide, i) => (
               <a 
@@ -113,7 +119,7 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
       {/* FAQ Section */}
       {faqs && faqs.length > 0 && (
         <section>
-          <SectionHeading number="03" title={`Common Questions About ${title}`} className="mb-12" as="h3" />
+          <SectionHeading number={nextSectionNumber()} title={`Common Questions About ${title}`} className="mb-12" as="h3" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
             {faqs.map((faq, i) => (
@@ -131,7 +137,7 @@ export default function ToolInfo({ title, features, faqs, howItWorks, technicalS
       {/* Technical Engine Specs */}
       {technicalSpecs && (
         <section>
-          <SectionHeading number="04" title={`${title} Utility Performance Specs`} className="mb-12" as="h3" />
+          <SectionHeading number={nextSectionNumber()} title={`${title} Utility Performance Specs`} className="mb-12" as="h3" />
           <div className="bg-gray-50 dark:bg-[#0D1526] border border-gray-100 dark:border-[#1E2D47] p-8 md:p-12 rounded-[24px] relative overflow-hidden group max-w-4xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/5 dark:from-[#00D4B4]/10 dark:to-[#0094FF]/5 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 relative z-10">
