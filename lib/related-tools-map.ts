@@ -14,7 +14,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'Binary Converter', href: '/tools/binary-hex-decimal-converter/' },
     ]
   },
-  'base64-encoder': {
+  'base64-encoder-decoder': {
     featured: { name: 'JWT Decoder', href: '/tools/jwt-decoder-generator/', desc: 'Decode JWT tokens instantly', icon: '🔑', badge: 'New' },
     cards: [
       { name: 'URL Encoder', href: '/tools/url-encoder/', desc: 'Encode query strings safely', icon: '🔗' },
@@ -22,7 +22,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'HTML Encoder', href: '/tools/html-encoder/', desc: 'Encode special characters', icon: '📄' },
     ],
     pills: [
-      { name: 'JSON Formatter', href: '/tools/json-to-code-generator/' },
+      { name: 'JSON Formatter', href: '/tools/json-formatter/' },
       { name: 'Binary Converter', href: '/tools/binary-hex-decimal-converter/' },
       { name: 'Case Converter', href: '/tools/text-case-formatter/' },
       { name: 'Markdown Converter', href: '/tools/markdown-html-converter/' },
