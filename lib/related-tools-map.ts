@@ -59,7 +59,7 @@ export const RELATED_TOOLS_MAP: Record<string, any> = {
       { name: 'JSON Formatter', href: '/tools/json-to-code-generator/' },
     ]
   },
-  'password-generator': {
+  'password-entropy-tester': {
     featured: { name: 'Hash Generator', href: '/tools/hash-generator/', desc: 'MD5, SHA-256, SHA-512', icon: '🔐' },
     cards: [
       { name: 'JWT Decoder', href: '/tools/jwt-decoder-generator/', desc: 'Decode JWT tokens instantly', icon: '🔑', badge: 'New' },
