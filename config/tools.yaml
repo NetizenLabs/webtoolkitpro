@@ -945,20 +945,24 @@ tools:
       description: Test your password strength, calculate entropy crack times, and generate secure local passwords without sending data to a server.
     content:
       title: Offline Password Entropy & Strength Tester
-      description: A complete cryptographic toolkit for passwords. Generate highly entropic passwords, test their cracking time against modern hardware, and evaluate their strength without ever transmitting your keystrokes over the internet.
-      how_it_works: Generation relies on the Web Crypto API. The auditor uses zxcvbn (a standard password strength estimator) to calculate entropy and estimated crack times locally.
+      description: "Generate a strong password first, then prove it is strong — that is the order this tool works in. The Generator tab is the default view: set a length from 8 to 64 characters, toggle uppercase, lowercase, digits and symbols, and a fresh password appears, regenerated whenever you change a setting. Bulk mode makes ten passwords at a time, or audits a pasted list line by line. Switch to the Auditor tab to check a password you already rely on: it scores it from 0 to 4 and estimates its offline crack time. Everything runs locally in your browser via the Web Crypto API — nothing you generate or type here is transmitted, logged or stored. Reusing one memorable password everywhere because strong ones are tedious to invent? This removes the excuse."
+      how_it_works: "Generation is driven by crypto.getRandomValues, the browser's cryptographically secure random number generator. It fills an array with random 32-bit values from the operating system; each value picks one character from the pool your toggles define — 26 lowercase, 26 uppercase, 10 digits, 29 symbols; 91 with every set on. Because each character is an independent, uniform draw, the entropy maths is exact: length multiplied by log2 of the pool size — about 104 bits for the default 16 characters. The auditor reverses the same maths: it detects which character classes a typed password contains (counting symbols as a 32-character pool), multiplies length by log2 of the pool, and maps the result to a 0–4 score with a broad crack-time band — under 40 bits scores 1, 40 to 59 scores 2, 60 to 79 scores 3, and 80 or more scores 4."
       faq:
         - question: Is it safe to type my password here?
-          answer: Yes. The entire Password Suite is built with client-side JavaScript. Your password never leaves your device and is never transmitted to a server.
+          answer: "Yes. Everything here runs as client-side JavaScript in your own browser. An audited password never leaves the device, and a generated one exists only in this page until you copy it — refresh the tab and it is gone."
         - question: How is password cracking time calculated?
-          answer: We use the industry-standard zxcvbn algorithm, which analyzes entropy, dictionary words, common patterns, and substitution techniques to estimate how long an offline brute-force attack would take.
+          answer: "The auditor works from size, not pattern-matching: it totals the character pool your password draws from (lowercase, uppercase, digits, symbols) and multiplies length by log2 of that pool — exact for randomly generated passwords. It runs no dictionary or pattern checks, so for human-invented passwords the result is an optimistic upper bound. The maths would credit 'correct horse battery staple' with about 164 bits, but four words picked from a 7,776-word list really carry about 52 bits, at 12.9 bits per word. Discount high scores built on real words, names or dates."
         - question: What makes a password strong?
-          answer: Length is more important than complexity. A 16-character passphrase of random words is significantly harder to crack than an 8-character password with symbols.
+          answer: "Length plus genuine randomness. Each added character multiplies the search space, so a random 16-character password beats an 8-character one stuffed with symbols. Tricks that feel clever add little: leetspeak like 'p@ssw0rd', keyboard walks like 'qwerty123' and season-plus-year formulas all sit in cracking dictionaries, tried early. Reuse is the quiet killer — a strong password on ten accounts falls with the weakest site's leak. NIST guidance agrees: favour length, drop forced symbol mixtures and routine expiry, screen against breach lists."
+        - question: How many bits of entropy is enough?
+          answer: "Match the number to the attack. Behind a throttled login page, 60 bits is comfortable for an everyday account, especially with two-factor authentication on. Where an attacker can guess offline at full speed — a stolen password-manager vault, an encrypted drive — aim for 90 bits or more. And no figure rescues a password already in a breach: once it sits in a cracking dictionary its effective entropy is zero, however long it is."
+        - question: Are generated passwords stored anywhere?
+          answer: "No. A generated password lives only in this page's memory on your device — never sent to a server, written to an account or kept in a history, and reloading the page discards it. It leaves the tab only when you act — copy button, or pasting it into the service it was made for. Generate it, save it to your password manager at once, and it need not exist anywhere else."
       keywords:
         - offline password strength tester
         - calculate password entropy crack time
         - secure local password generator without server
-      practical_application: Password entropy measures the predictability of a password. A high-entropy password ensures resistance against brute-force and dictionary attacks. Implement entropy validation on user registration flows to enforce true security rather than relying on arbitrary rules (like requiring exactly one special character).
+      practical_application: "Entropy only matters as a number, so here is what the bits buy you. Take the serious scenario: an offline attack, where the attacker has a stolen password database and tests guesses at full hardware speed — say 10 billion per second, no rate limits. Eight lowercase letters (37.6 bits) fall in about ten seconds on average. Eight characters using every set give 52.1 bits and last a few days. Twelve characters from the full set reach 78.1 bits, roughly half a million years; sixteen reach 104.1 bits, thousands of times the age of the universe. Against a live login page the picture inverts — throttling and lockouts slow online guessing to a trickle, so even the 37.6-bit password takes decades at 100 guesses a second. Judge passwords by the offline number. Working rule: 60 bits or more suits everyday accounts backed by two-factor authentication, while a password-manager master password or disk-encryption passphrase should clear 90 bits. A 16-character password from this generator qualifies at 104 bits; so does a seven-word passphrase — from a 7,776-word list, each word adds 12.9 bits (five words: 64.6; seven: 90.5)."
       code_blueprints:
         - language: javascript
           title: Zxcvbn Entropy Validation
@@ -11746,9 +11750,9 @@ tools:
       title: Free QR Code Generator | High-Res PNG Download
       description: Create high-resolution QR codes instantly. Fast, offline-first, secure, and privacy-friendly. Download as PNG directly from your browser.
     content:
-      description: Generate high-quality, scan-ready QR codes for your URLs, text, or contact information securely in your browser.
+      description: "Turn any link or piece of text into a scannable QR code. Paste a URL, type a message, or use one of the structured payloads described below — WiFi credentials, a contact card, a pre-filled SMS — and the code renders instantly as you type, ready to download as a 1000-pixel PNG or copy straight to your clipboard. Codes are drawn in near-black on white, the high-contrast combination phone cameras read most reliably, and they are static: the destination is encoded in the pattern itself, so a code printed today keeps working for as long as the link or text behind it stays valid. No sign-up, no scan tracking, no intermediary link — it is generated entirely in your browser and contains only what you typed."
       entity_definition: A Quick Response (QR) code is a two-dimensional barcode capable of storing large amounts of data. Our client-side generator translates your input text or URLs into an optimized, high-resolution QR image suitable for print or digital distribution.
-      how_it_works: Simply type or paste your URL or text into the input field. The QR code is generated instantly in real-time. You can then copy the image to your clipboard or download it as a PNG file.
+      how_it_works: "Your text is packed into the smallest QR version that fits — from version 1 (21 by 21 modules) up to version 40 (177 by 177), which holds at most 2,331 bytes of text at the setting used here — then Reed-Solomon error-correction codewords are added so damaged codes still read. The four standard levels, L, M, Q and H, trade capacity for damage tolerance, from about 7 percent recovery at L to about 30 percent at H; this generator builds every code at level M, the middle setting, which tolerates roughly 15 percent of the area being scratched, dirty or covered. The symbol is drawn at 1000 by 1000 pixels with a white border, dark slate on white, and handed to you as a PNG download or a clipboard copy. The output is a standard QR code any phone camera or scanner app can read — no proprietary format, no redirect through a third-party server."
       use_cases:
         - Creating scannable links for marketing materials.
         - Generating WiFi access codes.
@@ -11760,10 +11764,23 @@ tools:
         - Zero server tracking
       faq:
         - question: Are the QR codes permanent?
-          answer: Yes, the QR codes generated are static, meaning they will work forever as long as the underlying URL or text remains valid.
+          answer: "Yes. These are static codes: the URL or text is encoded directly into the pattern, with nothing in between that could lapse. A code keeps working for as long as its destination does — if the page it points to is taken down, the code still scans; it just leads nowhere."
         - question: Can I use these for commercial printing?
-          answer: Absolutely. The PNG downloads are high-resolution and suitable for commercial print applications.
-      practical_application: QR Codes bridge physical marketing with digital routing. Dynamically generating SVG QR Codes via Canvas allows platforms to generate tracking-parameterized URLs (UTMs) on the fly for concert tickets, restaurant menus, and Wi-Fi login portals without incurring third-party API rate limits.
+          answer: "Yes, for any commercial purpose. The download is a 1000-pixel PNG, sharp enough for business cards, flyers, packaging and signage at sensible sizes. Print it in the original near-black on white where you can — scanners depend on that contrast, and inverted or low-contrast colour schemes are a common reason printed codes fail."
+        - question: Do QR codes made here expire?
+          answer: "No. Nothing in a code made here carries an expiry date, and no account or subscription keeps it alive. That is the trade-off with dynamic codes from subscription services: they encode a redirect link the service controls, so scans can be counted and the destination changed — but the code dies if the service or subscription does. A static code cannot be edited later, and cannot be switched off either."
+        - question: What size should I print a QR code?
+          answer: "Work backwards from scanning distance: a reliable rule of thumb is a printed width of about one tenth of it — roughly 10 centimetres for a code scanned from a metre away, 30 for a poster read across a room. For close-up print such as a business card or receipt, stay above roughly 2 centimetres wide. Long payloads produce denser codes with finer modules, so give those extra size, and keep a clear white margin around the code in your layout."
+        - question: Can I change the link after printing?
+          answer: "No — with a static code the destination is the pattern, so changing the link means generating a new code and reprinting. If you expect the destination to change, point the code at a page you control and update that page instead. Dynamic-code services solve it with a redirect they host — at the cost of your printed code depending on their service staying up."
+      keywords:
+        - qr code generator online free
+        - free qr code generator
+        - qr code maker online
+        - create qr code for url
+        - wifi qr code generator
+        - qr code png download
+      practical_application: "The input accepts any text, so the useful skill is knowing the payload formats phones recognise. For a website, paste the full URL including https:// — scanners open it directly. For WiFi, use WIFI:T:WPA;S:HomeNet;P:your-password;; — S is the network name and P the password, and a phone that scans it offers to join. Use T:WEP for a very old router, or T:nopass with no P field for an open network; add H:true before the closing ;; for a hidden network, and place a backslash before any backslash, semicolon, comma, colon or quote characters inside the name or password. For a contact card, paste a vCard with each field on its own line: BEGIN:VCARD, VERSION:3.0, FN:Jane Smith, TEL;TYPE=CELL:+15551234567, EMAIL:jane@example.com, END:VCARD. A pre-filled text message uses SMSTO:+15551234567:Your message here, and an email uses mailto:you@example.com?subject=Hello&body=Line%20one, with %20 standing in for spaces. Shorter payloads scan better — every extra character forces a denser code — so trim tracking parameters from URLs and keep messages brief for small print."
       code_blueprints:
         - language: javascript
           title: React QRCode SVG
@@ -11775,6 +11792,14 @@ tools:
               const wifiString = `WIFI:T:WPA;S:${ssid};P:${password};;`;
               return <QRCode value={wifiString} size={256} level="H" />;
             }
+    seo:
+      keywords:
+        - qr code generator online free
+        - free qr code generator
+        - qr code maker online
+        - create qr code for url
+        - wifi qr code generator
+        - qr code png download
   - name: SQL Toolkit
     slug: sql-toolkit
     category: Developer Tools
