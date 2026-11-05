@@ -339,8 +339,18 @@ tools:
       description: Decode, verify, and generate JSON Web Tokens (JWT) 100% offline. Protect your secret keys by ensuring they never leave your browser.
     content:
       title: Offline JWT Decoder & Generator
-      description: JSON Web Tokens are widely utilized for stateless session authentication across microservice meshes. However, developers frequently treat them as encrypted objects when they are merely encoded string payloads. Anyone who intercepts a JWT can read your claims array. This utility allows you to instantly inspect claims (like expiration dates (`exp`), issuers (`iss`), and subject attributes (`sub`)) locally without exposing internal authorization keys to the open internet.
-      how_it_works: 'This decoder accepts structured JSON Web Tokens and splits them cleanly by their standard period delimiters into three distinct strings: the Header, the Payload, and the Signature. It then pipes these tokens into a browser-native Base64URL decoding loop, transforming the binary string back into readable JSON syntax blocks with automatic code formatting and token highlighting.'
+      description: |-
+        A JSON Web Token carries a small JSON document — the claims —, usually to prove who a user is. It has three
+        parts separated by dots: a header naming the signing algorithm, a payload holding claims such as sub (who the
+        token is about), iss (who issued it), aud and exp (when it stops being accepted), and a signature. The header
+        and payload are only Base64URL-encoded, never encrypted, so anyone holding the token can read them without it
+        leaving your browser.
+      how_it_works: |-
+        Paste a token and the tool splits it on its two dots into header, payload and signature. The first two segments
+        are Base64URL-decoded — the URL-safe Base64 variant that swaps + and / for - and _ and drops the = padding,
+        which the decoder restores automatically — then parsed as JSON and pretty-printed. The signature segment is
+        extracted and displayed as-is: this tool unpacks tokens, it does not recompute or check signatures. A bulk mode
+        decodes several tokens at once. Everything runs locally in your browser.
       keywords:
         - jwt decoder offline
         - json web token generator
@@ -348,12 +358,66 @@ tools:
         - decode jwt token
       faq:
         - question: Does decoding my JSON Web Token using this web utility validate its cryptographic signature?
-          answer: No. This tool operates strictly as a local visual decoder to unpack header configurations and payload variables. Cryptographic signature validation requires processing the token strings against your private secret key or public RSA keys via your backend auth framework.
+          answer: |-
+            No. This tool is strictly a visual decoder for header and payload contents. Signature validation means
+            processing the token against your private secret key or public RSA keys in your backend auth framework.
         - question: Is my authentication session payload exposed to any tracking scripts during the decoding process?
-          answer: Never. The utility runs completely sandboxed within your browser window. No token contents are posted back to analytics servers, ensuring security metrics remain completely compliant with zero data storage traces.
+          answer: |-
+            Never. The utility runs sandboxed within your browser window: no token contents are posted to analytics servers
+            and nothing is stored.
+        - question: Where do I find my token in the browser?
+          answer: |-
+            Open the site's DevTools. Tokens usually live in the Application tab, under Local Storage or Cookies, or in the
+            Network tab: select any API request and read the Authorization: Bearer header. Copy the part after "Bearer " and
+            paste it here; decoding is local, so the token never leaves your machine.
+        - question: What is the kid header, and where do I get the public key (JWKS)?
+          answer: |-
+            kid (key ID) names which of an issuer's keys signed the token, so a verifier knows which one applies. With
+            RS256, issuers publish their public keys as a JWKS (JSON Web Key Set), normally at https://your-issuer/.well-
+            known/jwks.json, discoverable via /.well-known/openid-configuration. Your auth library fetches that set and
+            picks the key whose kid matches.
+        - question: Can this tool read an encrypted token (JWE)?
+          answer: |-
+            No. An encrypted JWE has five dot-separated segments instead of three, and its payload segment is ciphertext:
+            decoding it produces bytes, not JSON, so there is nothing readable to display. This tool reads signed JWTs
+            (JWS), whose header and payload are plain Base64URL-encoded JSON. Only the decryption key holder can open a
+            five-segment token.
       practical_application: |-
-        JSON Web Tokens (JWT) are the standard bearer tokens for modern microservices and API authentication. However, a massive security vulnerability occurs when developers use generic, online decoders.
-        Using a proper **jwt decoder offline browser** tool is critical. Pasting a valid production JWT into a third-party website effectively transmits your live session credentials—and potentially sensitive PII (Personally Identifiable Information) contained in the payload—to an unknown server. This 100% offline decoder ensures your zero-trust architecture remains intact. It unpacks the Base64URL encoding locally in your browser's memory, allowing you to debug expiration claims and scope configurations without risking a catastrophic credential leak.
+        **A worked example, decoded end to end**
+
+        `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ODIxIiwibmFtZSI6IkF5ZXNoYSBLaGFuIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmV4YW1wbGUuY29tIiwiYXVkIjoiYmlsbGluZy1hcGkiLCJpYXQiOjE3NjcyMjU2MDAsIm5iZiI6MTc2NzIyNTYwMCwiZXhwIjoxNzY3MjI5MjAwLCJzY29wZSI6Imludm9pY2VzOnJlYWQifQ.opD742V7eokrOFtiLZmdsC9K-LK7A89g0S8c2-fb_8Y`
+
+        This token was created and signed with the throwaway secret "demo-secret". The header segment decodes to {"alg":
+        "HS256", "typ": "JWT"} — HMAC with SHA-256. The payload decodes to:
+
+        {"sub": "4821", "name": "Ayesha Khan", "iss": "https://auth.example.com", "aud": "billing-api", "iat": 1767225600, "nbf": 1767225600, "exp": 1767229200, "scope": "invoices:read"}
+
+        Read the registered claims: sub (subject) is the user ID, 4821; iss (issuer) is the auth service that minted the
+        token; aud (audience) restricts acceptance to the billing API. The three timestamps are Unix seconds, not dates:
+        iat (issued at) 1767225600 is Thu 01 Jan 2026, 00:00 UTC; nbf (not before) is the same instant; exp (expires)
+        1767229200 is 01:00 UTC — a lifetime of 3,600 seconds. The third segment (43 characters) is the signature: the
+        Base64URL form of the 32-byte, 256-bit HMAC-SHA256 computed over the first two segments and the dot between
+        them.
+
+        **Decoding is not verifying**
+
+        Reading a token proves nothing about whether it is genuine. Verification happens on your backend, which
+        recomputes the signature over the received header and payload — with the shared secret for HS256, or the
+        issuer's public key for RS256 — compares it with the signature segment, and only then trusts the claims. HS256
+        uses one shared secret to sign and verify, so its holder can also mint tokens; RS256 signs with a private key
+        and verifies with a public one. This decoder stops at decoding, so a live production token never has to be
+        pasted into a server-side tool that might log it. An attacker who steals the token can decode it too: payloads
+        are public. And a header claiming "alg": "none" means the token arrives unsigned, ending in a trailing dot with
+        an empty third segment; such tokens must always be rejected.
+
+        **Why a token fails — read it off the payload**
+
+        Most rejected-token debugging ends in the decoded payload. An exp in the past means the session aged out. An nbf
+        a few minutes in the future usually means clock skew between the issuing server and yours — why verification
+        libraries allow 30 to 60 seconds of leeway around the time claims. A string that does not split into exactly
+        three segments is truncated, or is not a JWT: an opaque session ID has no dots. Garbage from a hand-rolled
+        decoder is usually padding: Base64URL strips the trailing = characters, strict decoders need them restored, and
+        a segment whose length modulo 4 is 1 is never valid.
       code_blueprints:
         - language: javascript
           title: Node.js JWT Verification Example
@@ -7773,7 +7837,12 @@ tools:
       description: Professional Regex tester for real-time JavaScript regular expression debugging. Features visual match highlighting, capture group identification, and AI-powered logic explanations.
     content:
       title: Regex Tester — Visual Regular Expression Debugging
-      description: Regular expressions are powerful but notorious for introducing invisible runtime traps like catastrophic backtracking, which occurs when nested quantifiers cause an exponential evaluation path that freezes browser tabs. Using a visual, responsive tester allows you to safely construct complex regex constraints, evaluate boundary matches, and inspect capture group indexing side-by-side before committing patterns to production codebases.
+      description: |-
+        A regex tester lets you build a pattern against real text and watch what it matches before the pattern ships.
+        This one runs on your browser's own JavaScript engine — the same V8 RegExp your front-end code uses — and shows
+        live match highlighting, a match count, and each match's capture groups. Flags (g, i, m, s, u) are toggled from
+        the panel instead of being retyped, log excerpts can be pasted in, and a bulk mode filters text down to matching
+        lines only.
       keywords:
         - regex tester javascript online
         - regular expression debugger with groups
@@ -7788,7 +7857,12 @@ tools:
         - debug regex patterns offline
       tldr: Master complex regular expressions with real-time matching, group identification, and step-by-step logic breakdowns.
       entity_definition: Regex Tester & Explainer is a technical utility for developing and validating regular expressions. It provides a split-pane interface where users can write patterns and test them against sample strings. The tool identifies matches, highlights capturing groups, and provides a 'plan' or explanation of how the regex engine interprets the specific sequence of characters.
-      how_it_works: This utility compiles standard JavaScript regular expressions in real-time via the local browser runtime environment. It evaluates your user-supplied input text against your custom pattern modifiers (`g`, `i`, `m`, `s`, `u`, `y`) to locate matches instantly. Simultaneously, the engine tokenizes the structure of your expression, breaking down escape sequences, capture groups, lookarounds, and quantifiers into an explicit, sequential layout.
+      how_it_works: |-
+        Every keystroke recompiles your pattern with the JavaScript RegExp constructor and the flags you have toggled,
+        then runs it over the test text. With g on, the tester loops exec() past each match, collecting every match with
+        its index and groups; with g off it reports the first match only. Matches are painted back into the text pane,
+        and a summary counts them. A pattern that fails to compile shows the engine's error instead. Nothing is
+        uploaded.
       use_cases:
         - Validating input form patterns
         - Extracting data from log files
@@ -7800,10 +7874,70 @@ tools:
         - Support for global and multi-line flags
       faq:
         - question: What do the global (g) and multiline (m) flags change during validation testing?
-          answer: The global flag (`g`) ensures the regex engine finds all matching occurrences across the string rather than stopping at the first instance. The multiline flag (`m`) alters line anchors (`^`) and (`$`) to match the beginning and end of individual lines within a text block, instead of treating the entire string as a single line.
+          answer: |-
+            The global flag (`g`) makes the regex engine find all matching occurrences across the string rather than
+            stopping at the first instance. The multiline flag (`m`) alters line anchors (`^`) and (`$`) to match the
+            beginning and end of individual lines within a text block, instead of treating the entire string as a single
+            line.
         - question: Does this tester support regex syntaxes from alternative languages like PCRE (PHP) or Python?
-          answer: This tool executes natively using the browser's JavaScript engine (ECMAScript RegExp rules). While the vast majority of core behaviors (literal characters, classes, and groups) align closely with PCRE and Python, minor language-specific anomalies—like specific lookbehind supports—may vary slightly.
-      practical_application: Testing Regular Expressions with real-world edge cases ensures correct validation constraints. For example, validating an email address purely with regex is notoriously difficult; testing against RFC-5322 compliance prevents user registration failures while stopping basic SQL injection attempts disguised as input strings.
+          answer: |-
+            This tool executes natively using the browser's JavaScript engine (ECMAScript RegExp rules). While the vast
+            majority of core behaviors (literal characters, classes, and groups) align closely with PCRE and Python, minor
+            language-specific anomalies—like specific lookbehind supports—may vary slightly.
+        - question: Why does my pattern match empty strings?
+          answer: |-
+            Because quantifiers like * and ? allow zero occurrences. Run /a*/g against "baa baa" in this tester and you get
+            six matches: the two "aa" runs (indexes 1 and 5) plus empty strings at indexes 0, 3, 4 and 7 — a zero-length
+            match at every position where no a is present. If empty matches are noise, the pattern usually needs + instead
+            of *.
+        - question: How do I test against multiline input?
+          answer: |-
+            Paste the whole block into the test string box; the newlines are preserved. Turn on the m flag so ^ and $ anchor
+            at line boundaries instead of only at the very start and end of the text, and keep g on to collect the match
+            from every line. If you only need the matching lines themselves, bulk mode filters the input down to those
+            lines.
+      practical_application: |-
+        **Worked example 1 — pulling fields out of log lines**
+
+        Pattern `^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2}) (INFO|WARN|ERROR)` with flags gm, run over these three lines:
+
+        2026-01-05 14:23:01 INFO Server started on port 8080
+        2026-01-05 14:23:04 ERROR Database connection failed: timeout after 3000ms
+        2026-01-05 14:24:10 WARN Retry 2 of 5 for job nightly-import
+
+        The result is 3 matches, one per line. The m flag lets ^ anchor at every line start, and g keeps searching after
+        the first hit. The groups matter more: group 1 captures the date (2026-01-05), group 2 the time (14:23:01),
+        group 3 the level (INFO) — three parsed fields per line, ready to feed a script.
+
+        **Worked example 2 — the email trap, handled honestly**
+
+        `[\w.+-]+@[\w-]+(\.[\w-]+)+` over "Reach admin+alerts@mail.example.co.uk or helpdesk@example.com; ignore not-an-
+        email@ or @nowhere" matches exactly the two real addresses and skips both broken strings. Group 1 captures only
+        .uk and .com — a repeated group keeps just its last iteration. Even this is a typo filter, not a validator: the
+        full RFC 5322 grammar allows forms no readable regex covers.
+
+        **Flags, demonstrated**
+
+        On "Error / error / ERROR / No errors here", /error/g finds 2 matches — the second is the first five letters of
+        "errors", since an unanchored pattern matches anywhere — and adding i finds all 4. On "start" and "end" split by
+        a newline, /start.end/ needs s (dotall) before . will cross the break. And the u flag unlocks classes like
+        \p{L}: /\p{L}+/u returns "Café" whole from "Café costs €5", where \w+ stops at "Caf".
+
+        **Porting a pattern to another flavour**
+
+        This tester speaks JavaScript. Named groups are (?<name>…) here and in PCRE, but Python spells them (?P<name>…).
+        Lookbehind works in JavaScript — (?<=\$)\d+ pulls 42 and 7 out of "$42 and $7" — and in PCRE, but Python's re
+        insists each lookbehind alternative be a fixed width. JavaScript has no possessive quantifiers (a++ is a syntax
+        error here), no atomic groups and no \G anchor — PCRE has all three. The Regex Explainer tool breaks any of
+        these patterns down token by token.
+
+        **The pitfall that freezes tabs: catastrophic backtracking**
+
+        /^(a+)+$/ nests a quantifier inside another quantifier. Run in Node against runs of a's ending in "!" (so the
+        match must fail), rejecting 20 a's took about 60 ms and 24 a's about 980 ms: four extra characters, roughly
+        sixteen times the work — the engine tries every split of the run between the two groups. The single-group
+        rewrite /^a+$/ rejects the same input in under a millisecond. Greedy versus lazy matters too: <b>.*</b> swallows
+        "<b>one</b> <b>two</b>" as one match; <b>.*?</b> returns the two tags separately.
       code_blueprints:
         - language: javascript
           title: Robust Email Validation
